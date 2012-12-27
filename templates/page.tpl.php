@@ -71,44 +71,46 @@
 ?>
 <div id="top-stripe"></div> <!-- stripe goes full browser page width -->
 <div id="page">
-<div id="max-wrapper">
-  <div id="wwuheader">
-      <a href="http://www.wwu.edu"><img src="http://www.wwu.edu/wwucommon/wwu.png" alt="Western Washington University" /></a>
-      <ul id="wwumenu">
-        <li class="wwulinks"><a href="http://www.wwu.edu/academic_calendar">Calendar</a></li>
-        <li class="wwulinks"><a href="http://www.wwu.edu/directory">Directory</a></li>    
-        <li class="wwulinks"><a href="http://www.wwu.edu/index">Index</a></li>    
-        <li class="wwulinks"><a href="http://www.wwu.edu/campusmaps">Map</a></li>    
-        <li class="wwulinks"><a href="http://mywestern.wwu.edu">myWestern</a></li>
-        <li class="wwusearch"><img width="35" height="40" src="http://www.wwu.edu/wwucommon/SearchIcon.png"></li>
-      </ul>
-<!-- Jamin's code for animating the search box (also see js/script.js) -->
-<!--       <div id="searchwrapper" title="" >
-        <div id="search" style="display:none;">
-          <a id="close-me" href="#">»</a>
-          <form action="get">
-            <div id="context">
-              <label>
-                <input type="radio" checked="" name="searchcontext">
-                WWU
-              </label>
-              <label>
-                <input type="radio" name="searchcontext">
-                this site
-              </label>
-            </div>
-            <input id="query" type="text" value="search" name="query">
-          </form>
-        </div>
-      </div>
-      <div id="iconbox" >
-        <a id="s-toggle" href="#">
-          <img width="35" height="40" src="http://www.wwu.edu/wwucommon/SearchIcon.png">
-        </a>
-      </div> -->
-  </div><!-- wwuheader -->
   <header id="header" role="banner">
-    
+    <div id="wwuheader">
+        <a href="http://www.wwu.edu">
+          <img src="http://www.wwu.edu/wwucommon/wwu.png" alt="Western Washington University" />
+        </a>
+        <ul id="wwumenu">
+          <li class="wwulinks"><a href="http://www.wwu.edu/academic_calendar">Calendar</a></li>
+          <li class="wwulinks"><a href="http://www.wwu.edu/directory">Directory</a></li>    
+          <li class="wwulinks"><a href="http://www.wwu.edu/index">Index</a></li>    
+          <li class="wwulinks"><a href="http://www.wwu.edu/campusmaps">Map</a></li>    
+          <li class="wwulinks"><a href="http://mywestern.wwu.edu">myWestern</a></li>
+          <li class="wwusearch"><img width="35" height="40" src="http://www.wwu.edu/wwucommon/SearchIcon.png"></li>
+        </ul>
+  <!-- Jamin's code for animating the search box (also see js/script.js) -->
+  <!--       <div id="searchwrapper" title="" >
+          <div id="search" style="display:none;">
+            <a id="close-me" href="#">»</a>
+            <form action="get">
+              <div id="context">
+                <label>
+                  <input type="radio" checked="" name="searchcontext">
+                  WWU
+                </label>
+                <label>
+                  <input type="radio" name="searchcontext">
+                  this site
+                </label>
+              </div>
+              <input id="query" type="text" value="search" name="query">
+            </form>
+          </div>
+        </div>
+        <div id="iconbox" >
+          <a id="s-toggle" href="#">
+            <img width="35" height="40" src="http://www.wwu.edu/wwucommon/SearchIcon.png">
+          </a>
+        </div> -->
+    </div><!-- wwuheader -->
+  
+    <div id="collegeheader">
     <!-- Group Logo (banner) and Site Name and Main Menu for Group -->
     <?php if ($logo): ?>
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
@@ -129,21 +131,7 @@
       </hgroup><!-- /#name-and-slogan -->
     <?php endif; ?>
 
-    <?php if ($secondary_menu): ?>
-      <nav id="secondary-menu" role="navigation">
-        <?php print theme('links__system_secondary_menu', array(
-          'links' => $secondary_menu,
-          'attributes' => array(
-            'class' => array('links', 'inline', 'clearfix'),
-          ),
-          'heading' => array(
-            'text' => $secondary_menu_heading,
-            'level' => 'h2',
-            'class' => array('element-invisible'),
-          ),
-        )); ?>
-      </nav>
-    <?php endif; ?>
+
 
     <?php print render($page['header']); ?>
     <div id="navigation">
@@ -195,7 +183,23 @@
       <?php print render($page['content']); ?>
       <?php print $feed_icons; ?>
     </div><!-- /#content -->
-
+<!--add in secondary menu here in first sidebar -->
+        <?php if ($secondary_menu ): ?>
+        <nav id="secondary-menu" role="navigation">
+          <?php print theme('links__system_secondary_menu', array(
+            'links' => $secondary_menu,
+            'attributes' => array(
+              'class' => array('links', 'inline', 'clearfix'),
+            ),
+          'heading' => array(
+            'text' => $secondary_menu_heading,
+            'level' => 'h2',
+            'class' => array('element-invisible'),
+          ),
+        )); ?>
+      </nav>
+    <?php endif; ?>
+<!-- end of secondary menu -->
 
 
     <?php
@@ -206,11 +210,15 @@
 
     <?php if ($sidebar_first || $sidebar_second): ?>
       <aside class="sidebars">
+
         <?php print $sidebar_first; ?>
         <?php print $sidebar_second; ?>
       </aside><!-- /.sidebars -->
     <?php endif; ?>
-
+    <div id="footer">
+      <div id="wwufooter">
+      </div>
+    </div>
 
   </div><!-- /#main -->
   </div><!-- /#max-wrapper  -->
