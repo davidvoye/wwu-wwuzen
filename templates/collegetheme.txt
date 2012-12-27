@@ -1,0 +1,92 @@
+12 columns: 50px each, 30 px gutters
+3 cols = 210px
+4 cols = 290px
+9 cols = 690px
+
+Page: 960px
+Header:
+Container: 930px
+  Navigation: 210px bar
+  Main: 690px
+Footer
+  WWU Footer: 290px
+
+Images: (w x h)
+	Western logo with shadow = 240x145 with 10px each side for shadow = 220px visible width
+	  offset +10px from col 1 (visually +20px from col1 not counting shadow)
+	  wwu.png
+	Search Icon = 35x40
+	  flush right on col 12 (+15px on left of col 12)
+	  SearchIcon.png
+	Content Gradient = 1 x 360 
+	  contentbg.png
+	Footer Nameplate with shadow 310 x 56 ; 10px shadow each side = 290px visible width
+	  offset -10px left of column 9
+	  offset -33px up from top of blue area
+	  wwuFooterTitleBG.png
+	Address gradient 1 x 180
+	  wwuFooterContentBG.png
+	3 yellow address icons (12 x 11)
+	  PhoneIcon.ng  AddressIcon.png  EmailIcon.png
+	6 white social icons (24 x 24)
+	  TwitterIcon.ng  RSSicon.png  FacbookIcon.png  FlickrIcon.png  GooglePlusIcon.png  YouTubeIcon.png
+
+/* Page Background
+/* .light grey #e9e9e9
+/*
+/* WWU Header
+/* .Light Blue Line
+/* .. height 6px
+/* .. width of browser page
+/* .. brand light blue #0083d6
+/* .Search Symbol
+/* ..Do NOT use Color Profiles on this image!
+/* ..image file: SearchIcon.png
+/* 0 offset from top
+/* .Top Links
+/* .WWU Logo
+/* ..Do NOT use Color Profiles on this image!
+/* ..240x145 with 10px each side for shadow = 220px visible width
+/* ..offset +10px from col 1 (visually +20px from col1 not counting shadow)
+/* ..image file:  wwu.png
+/* ....X= padding-left: 10px from edge of column 1
+/* ....Y=top of browser page + 16px
+/* College Header
+/* ..start white container 56px down from top of page
+/* .White Surround is 10px white border around banner image and menu buttons
+/* .Banner Image
+/* ..image file
+/* ..930px x 180px
+/* .College Nameplate
+/* .. 290px x 110px, 10% transparency
+/* Georgia italic and Muli 
+/* .Menu Buttons
+/* .. font Muli 16pt all caps, color white #fff
+/* .. normal: color brand blue #003f87 with white letters
+/* .. selected: button color grey #ddddddd with brand blue letters
+/* .. button ht: 34px, place 10 px below banner image
+/* .. button width: # of buttons/
+/* .. 5px between buttons and nav buttons
+/* Page Header
+/* .Content Background (gradient) .. Gradient 960px x 350px
+/* .H1 Titleplate
+/* .Breadcrumbs
+/* 5px spacer below , 12px above
+/* .Navigation
+/* ..210px x 30px for each button
+/* Footer brand blue box is page size 
+/* WWU Footer starts in col 9 (1/3)
+/* .WWU Nameplate
+/* ..image file for shadowed title box 320px with shadow
+/* ..image file for gradient box 300px wide
+/* 33px above blue bar (23px above white bar)
+/* .WWU Footer Links
+/* ..10px high white bar
+/* .WWU Footer icons
+/* ..image file for each of 6 social icons
+/* .WWU Social Icons
+/* ..24x24 and 10px apart
+/* College Footer
+/*..menu starts in col 5 (1/3)
+/* Content Area
+/* .. Gradient 960px x 350px
