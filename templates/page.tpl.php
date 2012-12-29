@@ -163,6 +163,7 @@
   </header>
 
   <div id="main">
+    <p>MAIN</p>
     <?php print render($title_prefix); ?>
       <?php if ($title): ?>
         <h1 class="title" id="page-title"><?php print $title; ?></h1>
@@ -215,15 +216,15 @@
         <?php print $sidebar_second; ?>
       </aside><!-- /.sidebars -->
     <?php endif; ?>
-    <div id="footer">
-      <div id="wwufooter">
-      </div>
-    </div>
 
   </div><!-- /#main -->
   </div><!-- /#max-wrapper  -->
-
-  <?php print render($page['footer']); ?>
+    <div id="footer">
+        <?php print render($page['footer']); ?>
+        <div id="wwufooter">
+          <p>WWU Footer</p>
+        </div>
+    </div>
 
 </div><!-- /#page -->
 

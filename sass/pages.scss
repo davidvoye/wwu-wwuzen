@@ -63,27 +63,37 @@ body {
   ul#wwumenu {
     float:right;
     font-size: .8em;
-    list-style-image: url("../images/bullet.gif");
-    margin: 0 .5em 2px 0;
-    li {
-      display:inline-block;
+    
+    margin: -5px 10px 2px 0;
+    li  {
+      display:inline;
+      font-family: $muli;
+      //list-style-type: disc;
+      //margin-left: .5em;
+      padding-left: .5em;
       // border-right: 1px solid $wwuBlue;
-      padding: 0 .5em .5em 2em;
-
+      
+      //padding: .35em 0 0;
+      //margin-top: .25em;
+      //&:first-child {list-style-type: none;}
+      
+      img {margin-top: 5px;}
     }
-
-    .wwulinks {
-      // margin-top: .25em;
+    li.wwulinks {
+      padding-left: 5px;
+      //background: url("../images/menu-leaf.png") no-repeat left center;
+      
+      &:not(:first-child):before{content: "\00B7 \0020 ";}
+      //&:before:first-child {content: " ";}
       a {
         text-decoration: none;
+        padding-left: 6px;
         color: $wwuBlue;
-        &:hover{ color:$wwuLtblue; text-decoration:underline;
-        }
+        &:hover{ color:$wwuLtblue; text-decoration:underline;}
       }
     }
     .wwusearch {
-
-      // width: 35px; height:40px;
+      //width: 35px; height:40px;
 
     }
   }
@@ -98,8 +108,8 @@ body {
 
 #collegeheader {
   padding: 10px;
-  margin-top: -85px -10px -10px -10px;
-  margin: -10px;
+  // margin-top: -85px -10px -10px -10px;
+  // margin: -10px;
   background-color: #fff;
   height: 200px;
   #navigation{
@@ -107,7 +117,7 @@ body {
   }
 }
 #collegeheader {
-  
+  margin-top: -90px;
   img {
     
   }
@@ -117,7 +127,7 @@ body {
   padding: 0;
   width: 100%;
   img {
-    margin-top: -85px;
+    
     vertical-align: bottom;
   }
 }
@@ -297,6 +307,9 @@ span.field-label { /* The inline field label used by the Fences module */
  */
 
 #footer {
+  height:200px;
+  background-color: $wwuBlue;
+  color: white;
 }
 
 /*

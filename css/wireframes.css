@@ -1,9 +1,17 @@
+@import url(http://fonts.googleapis.com/css?family=Muli:400,400italic);
 /**
  * @file
  * Wireframes Styling
  *
  * Add wireframes to the basic layout elements.
  */
+/* Basic CSS for WWU Styles */
+/* line 85, ../sass/_base.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Muli, Tahoma, Verdana, "DejaVu Sans", sans-serif;
+  font-weight: normal;
+}
+
 /* line 19, ../sass/wireframes.scss */
 .with-wireframes #header,
 .with-wireframes #main,

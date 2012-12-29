@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Muli:400,400italic);
 /* normalize.css 2012-03-11T12:53 UTC - http://github.com/necolas/normalize.css */
 /* =============================================================================
    Normalize.css is intended to be used as an alternative to CSS resets.
@@ -9,6 +10,13 @@
    Also: @see http://meiert.com/en/blog/20080419/reset-style-sheets-are-bad/
          @see http://snook.ca/archives/html_and_css/no_css_reset/
    ========================================================================== */
+/* Basic CSS for WWU Styles */
+/* line 85, ../sass/_base.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Muli, Tahoma, Verdana, "DejaVu Sans", sans-serif;
+  font-weight: normal;
+}
+
 /* =============================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -193,9 +201,9 @@ h2 {
 /* line 219, ../sass/normalize.scss */
 h3 {
   font-size: 1.17em;
-  line-height: 1.282em;
-  margin-top: 1.282em;
-  margin-bottom: 1.282em;
+  line-height: 1.28205em;
+  margin-top: 1.28205em;
+  margin-bottom: 1.28205em;
 }
 
 /* line 225, ../sass/normalize.scss */
@@ -209,9 +217,9 @@ h4 {
 /* line 231, ../sass/normalize.scss */
 h5 {
   font-size: 0.83em;
-  line-height: 1.807em;
-  margin-top: 1.807em;
-  margin-bottom: 1.807em;
+  line-height: 1.80723em;
+  margin-top: 1.80723em;
+  margin-bottom: 1.80723em;
 }
 
 /* line 237, ../sass/normalize.scss */
@@ -474,17 +482,17 @@ fieldset {
   margin: 0 2px;
   /* Apply borders and padding that keep the vertical rhythm. */
   border-top-style: solid;
-  border-top-width: 0.063em;
-  padding-top: 0.462em;
+  border-top-width: 0.0625em;
+  padding-top: 0.4625em;
   border-bottom-style: solid;
-  border-bottom-width: 0.063em;
-  padding-bottom: 0.913em;
+  border-bottom-width: 0.0625em;
+  padding-bottom: 0.9125em;
   border-left-style: solid;
-  border-left-width: 0.063em;
-  padding-left: 0.913em;
+  border-left-width: 0.0625em;
+  padding-left: 0.9125em;
   border-right-style: solid;
-  border-right-width: 0.063em;
-  padding-right: 0.913em;
+  border-right-width: 0.0625em;
+  padding-right: 0.9125em;
 }
 
 /*

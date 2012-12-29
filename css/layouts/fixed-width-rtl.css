@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Muli:400,400italic);
 /**
  * @file
  * RTL companion for the fixed-width.css file.
@@ -12,6 +13,13 @@
  *
  * This layout uses the Zen Grids plugin for Compass: http://zengrids.com
  */
+/* Basic CSS for WWU Styles */
+/* line 85, ../../sass/_base.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Muli, Tahoma, Verdana, "DejaVu Sans", sans-serif;
+  font-weight: normal;
+}
+
 /*
  * Center the page.
  */
@@ -22,7 +30,7 @@
    * this is the standards-compliant way to do that. */
   margin-left: auto;
   margin-right: auto;
-  width: 980px;
+  width: 1080px;
 }
 
 /*
@@ -35,8 +43,8 @@
 .region-sidebar-first,
 .region-sidebar-second,
 #footer {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
   border: 0 !important;
   word-wrap: break-word;
 }
@@ -76,7 +84,7 @@
   top: 0;
   /* Move the navbar up inside #main's padding. */
   height: 3em;
-  width: 960px;
+  width: 1050px;
 }
 
 /*
@@ -86,17 +94,17 @@
 .sidebar-first #content {
   /* Span 4 columns, starting in 2nd column from left. */
   float: right;
-  width: 764px;
-  margin-right: 196px;
-  margin-left: -980px;
+  width: 780px;
+  margin-right: 270px;
+  margin-left: -1080px;
 }
 /* line 99, ../../sass/layouts/fixed-width.scss */
 .sidebar-first .region-sidebar-first {
   /* Span 1 column, starting in 1st column from left. */
   float: right;
-  width: 176px;
+  width: 240px;
   margin-right: 0px;
-  margin-left: -196px;
+  margin-left: -270px;
 }
 
 /*
@@ -106,17 +114,17 @@
 .sidebar-second #content {
   /* Span 4 columns, starting in 1st column from left. */
   float: right;
-  width: 764px;
+  width: 780px;
   margin-right: 0px;
-  margin-left: -784px;
+  margin-left: -810px;
 }
 /* line 113, ../../sass/layouts/fixed-width.scss */
 .sidebar-second .region-sidebar-second {
   /* Span 1 column, starting in 5th column from left. */
   float: right;
-  width: 176px;
-  margin-right: 784px;
-  margin-left: -980px;
+  width: 240px;
+  margin-right: 810px;
+  margin-left: -1080px;
 }
 
 /*
@@ -126,23 +134,23 @@
 .two-sidebars #content {
   /* Span 3 columns, starting in 2nd column from left. */
   float: right;
-  width: 568px;
-  margin-right: 196px;
-  margin-left: -784px;
+  width: 510px;
+  margin-right: 270px;
+  margin-left: -810px;
 }
 /* line 127, ../../sass/layouts/fixed-width.scss */
 .two-sidebars .region-sidebar-first {
   /* Span 1 column, starting in 1st column from left. */
   float: right;
-  width: 176px;
+  width: 240px;
   margin-right: 0px;
-  margin-left: -196px;
+  margin-left: -270px;
 }
 /* line 131, ../../sass/layouts/fixed-width.scss */
 .two-sidebars .region-sidebar-second {
   /* Span 1 column, starting in 5th column from left. */
   float: right;
-  width: 176px;
-  margin-right: 784px;
-  margin-left: -980px;
+  width: 240px;
+  margin-right: 810px;
+  margin-left: -1080px;
 }

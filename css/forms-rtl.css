@@ -1,7 +1,15 @@
+@import url(http://fonts.googleapis.com/css?family=Muli:400,400italic);
 /**
  * @file
  * RTL companion for the forms.css file.
  */
+/* Basic CSS for WWU Styles */
+/* line 85, ../sass/_base.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Muli, Tahoma, Verdana, "DejaVu Sans", sans-serif;
+  font-weight: normal;
+}
+
 /*
  * Drupal's default login form block
  */

@@ -101,3 +101,35 @@ li a.active {
 
 .block-menu-block {
 }
+  /* W W U   S T Y L E S */
+#navigation #main-menu {
+  top: 250px;
+  display:table;
+  ul.links {
+    background:white;
+    padding:5px;
+    margin:20px auto;
+    width:100%;
+    display:table;
+    border:1px solid lightgray; /* border for visibility */
+    li {
+      background-color: $wwuBlue;
+      border-style: solid;
+      border-color: white;
+      border-width: 0 5px 0 0;
+      text-align:center;
+      display:table-cell;
+      padding:10px;
+      text-transform:uppercase;
+      color:white;
+      
+      &:last-child { border:none; }
+      &:hover { background:gray; cursor:pointer; } 
+
+    }
+    .active {
+        background: #ddd;
+        color: $wwuBlue;
+    }
+  }
+}
