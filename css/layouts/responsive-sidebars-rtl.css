@@ -14,7 +14,7 @@
  * This layout uses the Zen Grids plugin for Compass: http://zengrids.com
  */
 /* Basic CSS for WWU Styles */
-/* line 85, ../../sass/_base.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/_base\.scss}line{font-family:\0000385}}
 h1, h2, h3, h4, h5, h6 {
   font-family: Muli, Tahoma, Verdana, "DejaVu Sans", sans-serif;
   font-weight: normal;
@@ -23,7 +23,7 @@ h1, h2, h3, h4, h5, h6 {
 /*
  * Center the page.
  */
-/* line 44, ../../sass/layouts/responsive-sidebars.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\0000344}}
 #page,
 .region-bottom {
   /* For screen sizes larger than 1200px, prevent excessively long lines of text
@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 /*
  * Apply the shared properties of grid items in a single, efficient ruleset.
  */
-/* line 62, ../../sass/layouts/responsive-sidebars.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\0000362}}
 #header,
 #content,
 #navigation,
@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 /*
  * Containers for grid items and flow items.
  */
-/* line 52, ../../sass-extensions/zen-grids/stylesheets/zen/_grids.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass-extensions\/zen-grids\/stylesheets\/zen\/_grids\.scss}line{font-family:\0000352}}
 #header:before, #header:after,
 #main:before,
 #main:after,
@@ -64,7 +64,7 @@ h1, h2, h3, h4, h5, h6 {
   content: "";
   display: table;
 }
-/* line 56, ../../sass-extensions/zen-grids/stylesheets/zen/_grids.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass-extensions\/zen-grids\/stylesheets\/zen\/_grids\.scss}line{font-family:\0000356}}
 #header:after,
 #main:after,
 #footer:after {
@@ -75,14 +75,7 @@ h1, h2, h3, h4, h5, h6 {
  * Navigation bar
  */
 @media all and (min-width: 480px) {
-  /* line 82, ../../sass/layouts/responsive-sidebars.scss */
-  #main {
-    padding-top: 3em;
-    /* Move all the children of #main down to make room. */
-    position: relative;
-  }
-
-  /* line 86, ../../sass/layouts/responsive-sidebars.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\0000386}}
   #navigation {
     width: 100%;
   }
@@ -94,71 +87,71 @@ h1, h2, h3, h4, h5, h6 {
   /*
    * The layout when there is only one sidebar, the left one.
    */
-  /* line 105, ../../sass/layouts/responsive-sidebars.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003105}}
   .sidebar-first #content {
     /* Span 2 columns, starting in 2nd column from left. */
     float: right;
-    width: 66.66667%;
-    margin-right: 33.33333%;
+    width: 66.667%;
+    margin-right: 33.333%;
     margin-left: -100%;
   }
-  /* line 109, ../../sass/layouts/responsive-sidebars.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003109}}
   .sidebar-first .region-sidebar-first {
     /* Span 1 column, starting in 1st column from left. */
     float: right;
-    width: 33.33333%;
+    width: 33.333%;
     margin-right: 0%;
-    margin-left: -33.33333%;
+    margin-left: -33.333%;
   }
 
   /*
    * The layout when there is only one sidebar, the right one.
    */
-  /* line 119, ../../sass/layouts/responsive-sidebars.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003119}}
   .sidebar-second #content {
     /* Span 2 columns, starting in 1st column from left. */
     float: right;
-    width: 66.66667%;
+    width: 66.667%;
     margin-right: 0%;
-    margin-left: -66.66667%;
+    margin-left: -66.667%;
   }
-  /* line 123, ../../sass/layouts/responsive-sidebars.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003123}}
   .sidebar-second .region-sidebar-second {
     /* Span 1 column, starting in 3rd column from left. */
     float: right;
-    width: 33.33333%;
-    margin-right: 66.66667%;
+    width: 33.333%;
+    margin-right: 66.667%;
     margin-left: -100%;
   }
 
   /*
    * The layout when there are two sidebars.
    */
-  /* line 133, ../../sass/layouts/responsive-sidebars.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003133}}
   .two-sidebars #content {
     /* Span 2 columns, starting in 2nd column from left. */
     float: right;
-    width: 44.44444%;
-    margin-right: 33.33333%;
-    margin-left: -77.77778%;
+    width: 44.444%;
+    margin-right: 33.333%;
+    margin-left: -77.778%;
   }
-  /* line 137, ../../sass/layouts/responsive-sidebars.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003137}}
   .two-sidebars .region-sidebar-first {
     /* Span 1 column, starting in 1st column from left. */
     float: right;
-    width: 33.33333%;
+    width: 33.333%;
     margin-right: 0%;
-    margin-left: -33.33333%;
+    margin-left: -33.333%;
   }
-  /* line 141, ../../sass/layouts/responsive-sidebars.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003141}}
   .two-sidebars .region-sidebar-second {
     /* Start a new row and span all 3 columns. */
     float: right;
-    width: 22.22222%;
-    margin-right: 77.77778%;
+    width: 22.222%;
+    margin-right: 77.778%;
     margin-left: -100%;
   }
-  /* line 146, ../../sass/layouts/responsive-sidebars.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003146}}
   .two-sidebars .region-sidebar-second .block {
     padding-left: 15px;
     padding-right: 15px;
@@ -168,29 +161,29 @@ h1, h2, h3, h4, h5, h6 {
     box-sizing: border-box;
     word-wrap: break-word;
   }
-  /* line 149, ../../sass/layouts/responsive-sidebars.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003149}}
   .two-sidebars .region-sidebar-second .block:nth-child(3n+1) {
     /* Span 1 column, starting in the 1st column from left. */
     float: right;
-    width: 33.33333%;
+    width: 33.333%;
     margin-right: 0%;
-    margin-left: -33.33333%;
+    margin-left: -33.333%;
     clear: right;
   }
-  /* line 153, ../../sass/layouts/responsive-sidebars.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003153}}
   .two-sidebars .region-sidebar-second .block:nth-child(3n+2) {
     /* Span 1 column, starting in the 2nd column from left. */
     float: right;
-    width: 33.33333%;
-    margin-right: 33.33333%;
-    margin-left: -66.66667%;
+    width: 33.333%;
+    margin-right: 33.333%;
+    margin-left: -66.667%;
   }
-  /* line 156, ../../sass/layouts/responsive-sidebars.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003156}}
   .two-sidebars .region-sidebar-second .block:nth-child(3n) {
     /* Span 1 column, starting in the 3rd column from left. */
     float: right;
-    width: 33.33333%;
-    margin-right: 66.66667%;
+    width: 33.333%;
+    margin-right: 66.667%;
     margin-left: -100%;
   }
 }
@@ -201,7 +194,15 @@ h1, h2, h3, h4, h5, h6 {
   /*
    * The layout when there is only one sidebar, the left one.
    */
-  /* line 174, ../../sass/layouts/responsive-sidebars.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003172}}
+  #navigation {
+    float: right;
+    width: 100%;
+    margin-right: 0%;
+    margin-left: -100%;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003176}}
   .sidebar-first #content {
     /* Span 4 columns, starting in 2nd column from left. */
     float: right;
@@ -209,7 +210,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 25%;
     margin-left: -100%;
   }
-  /* line 178, ../../sass/layouts/responsive-sidebars.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003180}}
   .sidebar-first .region-sidebar-first {
     /* Span 1 column, starting in 1st column from left. */
     float: right;
@@ -221,7 +222,7 @@ h1, h2, h3, h4, h5, h6 {
   /*
    * The layout when there is only one sidebar, the right one.
    */
-  /* line 188, ../../sass/layouts/responsive-sidebars.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003190}}
   .sidebar-second #content {
     /* Span 4 columns, starting in 1st column from left. */
     float: right;
@@ -229,7 +230,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 0%;
     margin-left: -75%;
   }
-  /* line 192, ../../sass/layouts/responsive-sidebars.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003194}}
   .sidebar-second .region-sidebar-second {
     /* Span 1 column, starting in 5th column from left. */
     float: right;
@@ -241,7 +242,7 @@ h1, h2, h3, h4, h5, h6 {
   /*
    * The layout when there are two sidebars.
    */
-  /* line 202, ../../sass/layouts/responsive-sidebars.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003204}}
   .two-sidebars #content {
     /* Span 3 columns, starting in 2nd column from left. */
     float: right;
@@ -249,7 +250,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 25%;
     margin-left: -75%;
   }
-  /* line 206, ../../sass/layouts/responsive-sidebars.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003208}}
   .two-sidebars .region-sidebar-first {
     /* Span 1 column, starting in 1st column from left. */
     float: right;
@@ -257,7 +258,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 0%;
     margin-left: -25%;
   }
-  /* line 210, ../../sass/layouts/responsive-sidebars.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/cmssites\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003212}}
   .two-sidebars .region-sidebar-second {
     /* Span 1 column, starting in 5th column from left. */
     float: right;

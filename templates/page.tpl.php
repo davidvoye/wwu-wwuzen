@@ -130,10 +130,7 @@
         <?php endif; ?>
       </hgroup><!-- /#name-and-slogan -->
     <?php endif; ?>
-
-
-
-    <?php print render($page['header']); ?>
+ 
     <div id="navigation">
 
       <?php if ($main_menu): ?>
@@ -156,10 +153,11 @@
           )); ?>
         </nav>
       <?php endif; ?>
-
+    
       <?php print render($page['navigation']); ?>
 
     </div><!-- /#navigation -->
+    <?php print render($page['header']); ?>
   </header>
 
   <div id="main">

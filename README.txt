@@ -1,4 +1,6 @@
-BUILD A THEME WITH ZEN
+Western Washington College Theme
+For Drupal built from the Zen Drupal Theme
+wwuzen is the theme name
 ----------------------
 
 The base Zen theme is designed to be easily extended by its sub-themes. You

@@ -46,9 +46,10 @@ li a.active {
 
 #navigation {
   /* overflow: hidden; */ /* Sometimes you want to prevent overlapping with main div. */
-
+  padding-top: 10px;
   .block {
     margin-bottom: 0;
+    width: 100%;
   }
 
   .block-menu .block-title,
@@ -64,7 +65,8 @@ li a.active {
 
     li { /* A simple method to get navigation links to appear in one line. */
       float: left; /* LTR */
-      padding: 0 10px 0 0; /* LTR */
+      //padding: 0 10px 0 0; /* LTR */
+      padding: 5px;
       list-style-type: none;
       list-style-image: none;
     }
@@ -102,34 +104,48 @@ li a.active {
 .block-menu-block {
 }
   /* W W U   S T Y L E S */
+#navigation {
+  padding:10px 0 0 0;
+  height: 24px;
+}
 #navigation #main-menu {
-  top: 250px;
+
   display:table;
+  //background:white;
+  font-family: $muli;
   ul.links {
-    background:white;
-    padding:5px;
-    margin:20px auto;
-    width:100%;
-    display:table;
-    border:1px solid lightgray; /* border for visibility */
+    //padding:5px;
+    //margin:20px auto;
+    width:1040px;
+    //display:table;
+    //border:1px solid lightgray; /* border for visibility */
     li {
       background-color: $wwuBlue;
       border-style: solid;
       border-color: white;
       border-width: 0 5px 0 0;
       text-align:center;
-      display:table-cell;
-      padding:10px;
+      //display:table-cell;
+      padding:5px 15px;
       text-transform:uppercase;
-      color:white;
       
       &:last-child { border:none; }
-      &:hover { background:gray; cursor:pointer; } 
-
-    }
-    .active {
-        background: #ddd;
-        color: $wwuBlue;
-    }
-  }
-}
+      &:link, &:visited { 
+      }
+      &:hover, &:active { 
+        background:#cccccc;  
+      }      
+      a.active {
+        &:link, &:visited {
+          color: #ffffff;
+          text-decoration:none;
+        }
+        &:hover, &:active { 
+          color: $wwuBlue;
+          cursor:pointer; 
+          text-decoration: underline;
+        } 
+      } //a.active
+    }//li.active
+  }//ul.links
+}//#navigation

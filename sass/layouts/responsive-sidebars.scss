@@ -80,8 +80,8 @@ $zen-auto-include-item-base: false;
 @media all and (min-width: 480px) {
   $zen-column-count: 3;
   #main {
-    padding-top: 3em; /* Move all the children of #main down to make room. */
-    position: relative;
+    //padding-top: 3em; /* Move all the children of #main down to make room. */
+    //position: relative;
   }
   #navigation {
     //position: absolute;
@@ -169,7 +169,9 @@ $zen-auto-include-item-base: false;
   /*
    * The layout when there is only one sidebar, the left one.
    */
-
+   #navigation{
+    @include zen-grid-item(12,1);
+   }
   .sidebar-first {
     #content { /* Span 4 columns, starting in 2nd column from left. */
       @include zen-grid-item(9, 4);
