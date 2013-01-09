@@ -151,3 +151,34 @@ li a.active {
       }//ul.links li.active
   }//ul.links
 }//#navigation
+
+//Accordion Menus
+.block-accordion-menu .ui-accordion-header {
+  background-color:$wwuBlue;
+  background-image:none;
+  border:none;
+  margin-bottom:.313em;
+
+  &:hover {
+    background-color:#dddddd;
+  }
+
+  a {
+    color: #ffffff;
+  
+  &:hover {
+    color:$wwuBlue;
+  }
+  }
+}
+
+ .ui-corner-all {
+    border-radius:0;
+  }
+.block-accordion-menu h3.active {
+  background-color:#dddddd;
+
+  a.active {
+    color:$wwuBlue;
+  }
+  }
