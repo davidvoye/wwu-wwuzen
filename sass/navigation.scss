@@ -158,23 +158,39 @@ li a.active {
   background-image:none;
   border:none;
   margin-bottom:.313em;
+  padding:.2em;
 
   &:hover {
     background-color:#dddddd;
   }
 
+  span.accordion-link {
+    color:#ffffff;
+
+    &:hover {
+      color:$wwuBlue;
+    }
+  }
+
   a {
     color: #ffffff;
+    display:inline;
   
   &:hover {
     color:$wwuBlue;
   }
+ 
   }
 }
 
+//Get rid of the default border radii
  .ui-corner-all {
     border-radius:0;
   }
+  .ui-corner-top {
+    border-radius:0;
+  }
+
 .block-accordion-menu h3.active {
   background-color:#dddddd;
 
