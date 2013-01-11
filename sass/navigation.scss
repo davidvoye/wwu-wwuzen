@@ -172,7 +172,7 @@ li a.active {
     }
   }
 
-  a {
+ a {
     color: #ffffff;
     display:inline;
   
@@ -190,11 +190,43 @@ li a.active {
   .ui-corner-top {
     border-radius:0;
   }
+  .ui-corner-bottom {
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
+  }
 
-.block-accordion-menu h3.active {
+//style the interior accordion content
+  .ui-accordion .ui-accordion-content {
+    margin-top:0px;
+    padding-left:1.1em;
+    top:0px;
+    border:none;
+    background-color:#dddddd;
+  }
+  .ui-accordion-content ul.menu {
+    margin:0;
+    padding:0;
+
+    li a{
+      background-color:#dddddd;
+      color:$wwuBlue;
+      text-decoration:none;
+      display:block;
+      margin-bottom:.18em;
+      padding: 0.2em 0 0.2em 2.688em;
+      width:95%;
+
+      .active {
+       background-color:$wwuBlue;
+       color:#ffffff;
+      }
+    }
+  }
+
+.block-accordion-menu h3.active, span.active-trail, .block-accordion-menu h3.active-trail {
   background-color:#dddddd;
 
-  a.active {
+  a.active, span.active-trail {
     color:$wwuBlue;
   }
   }
