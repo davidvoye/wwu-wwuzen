@@ -160,7 +160,7 @@ body {
  */
 
 #main {
-   margin: 10px 15px;
+   margin: 12px 15px; // changed to 12px b/c collegetheme.txt
    padding: 10px;
    background: url("../images/contentbg.png") repeat-x ;
    & > p:first-child { display:none; }
@@ -201,6 +201,10 @@ h2.title, /* Comment section heading */
 h2.comment-form, /* Comment form heading */
 h3.title { /* Comment title */
   margin: 0;
+}
+
+h1.title {
+  
 }
 
 tr.even { /* Some tables have rows marked even or odd. */
