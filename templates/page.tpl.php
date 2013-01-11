@@ -161,7 +161,6 @@
   </header>
 
   <div id="main">
-    <p>MAIN</p>
     <?php print render($title_prefix); ?>
       <?php if ($title): ?>
         <h1 class="title" id="page-title"><?php print $title; ?></h1>
