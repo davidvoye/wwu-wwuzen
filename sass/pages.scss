@@ -160,9 +160,9 @@ body {
  */
 
 #main {
-   margin: 10px 15px;
+   margin: 12px 15px;
    padding: 10px;
-   background: url("../images/contentbg.png")  repeat-x ; 
+   background: url("../images/contentbg.png") repeat-x ;
 }
 
 /*
@@ -170,13 +170,23 @@ body {
  */
 
 #content {
+  clear:both;
+}
 
+header#department {
+  border-bottom:solid 3px #E9E9E9;
+  padding:0 1em .5em 1em;
 }
 
 .region-highlighted {
 }
 
 .breadcrumb { /* The path to the current page in the form of a list of links */
+  float:right;
+  font-size:.75em;
+  font-family:$muli;
+  color:gray;
+  line-height:2.17;
   ol {
     margin: 0;
     padding: 0;
@@ -186,8 +196,15 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    a {
+      color:gray;
+      text-decoration:none;
+      &.active { color:$wwuLtblue; }
+    }
   }
 }
+
+#secondary-menu { }
 
 h1.title, /* The title of the page */
 h2.node-title, /* Title of a piece of content when it is given in a list of content */
@@ -196,6 +213,12 @@ h2.title, /* Comment section heading */
 h2.comment-form, /* Comment form heading */
 h3.title { /* Comment title */
   margin: 0;
+}
+
+h1.title {
+  display:inline-block;
+  font-size:1.17em;
+  color:$wwuBlue;
 }
 
 tr.even { /* Some tables have rows marked even or odd. */

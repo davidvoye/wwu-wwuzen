@@ -66,7 +66,7 @@ li a.active {
     li { /* A simple method to get navigation links to appear in one line. */
       float: left; /* LTR */
       //padding: 0 10px 0 0; /* LTR */
-      padding: 5px;
+      //padding: 5px;
       list-style-type: none;
       list-style-image: none;
     }
@@ -108,44 +108,46 @@ li a.active {
   padding:10px 0 0 0;
   height: 24px;
 }
+
 #navigation #main-menu {
 
   display:table;
-  //background:white;
   font-family: $muli;
+
   ul.links {
-    //padding:5px;
-    //margin:20px auto;
     width:1040px;
-    //display:table;
-    //border:1px solid lightgray; /* border for visibility */
+
     li {
       background-color: $wwuBlue;
       border-style: solid;
       border-color: white;
       border-width: 0 5px 0 0;
-      text-align:center;
-      //display:table-cell;
       padding:5px 15px;
       text-transform:uppercase;
       
-      &:last-child { border:none; }
-      &:link, &:visited { 
-      }
-      &:hover, &:active { 
-        background:#cccccc;  
-      }      
-      a.active {
-        &:link, &:visited {
-          color: #ffffff;
-          text-decoration:none;
-        }
-        &:hover, &:active { 
+        &:hover {
+          background-color: #dddddd; 
           color: $wwuBlue;
           cursor:pointer; 
-          text-decoration: underline;
+
+          a {
+            color:$wwuBlue;
+          } //ul.links li:hover a
         } 
-      } //a.active
-    }//li.active
+
+        a {
+          color:#ffffff;
+          text-decoration:none;
+          padding:5px 10px;
+        }
+
+        } //ul.links li    
+
+    li.active {
+        background-color:#dddddd;
+        .active { 
+          color:$wwuBlue;
+        }//ul.links li.active a.active
+      }//ul.links li.active
   }//ul.links
 }//#navigation
