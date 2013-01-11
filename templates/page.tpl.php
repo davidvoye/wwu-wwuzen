@@ -161,11 +161,13 @@
   </header>
 
   <div id="main">
+    <header id="department">
     <?php print render($title_prefix); ?>
       <?php if ($title): ?>
         <h1 class="title" id="page-title"><?php print $title; ?></h1>
       <?php endif; ?>
     <?php print $breadcrumb; ?>
+    </header>
     <div id="content" class="column" role="main">
       <?php print render($page['highlighted']); ?>
       
