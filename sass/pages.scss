@@ -163,7 +163,6 @@ body {
    margin: 12px 15px; // changed to 12px b/c collegetheme.txt
    padding: 10px;
    background: url("../images/contentbg.png") repeat-x ;
-   & > p:first-child { display:none; }
 }
 
 /*
@@ -171,13 +170,14 @@ body {
  */
 
 #content {
-
+  clear:both;
 }
 
 .region-highlighted {
 }
 
 .breadcrumb { /* The path to the current page in the form of a list of links */
+  float:right;
   ol {
     margin: 0;
     padding: 0;
@@ -194,6 +194,8 @@ body {
   }
 }
 
+#secondary-menu { float:right; }
+
 h1.title, /* The title of the page */
 h2.node-title, /* Title of a piece of content when it is given in a list of content */
 h2.block-title, /* Block title */
@@ -204,7 +206,7 @@ h3.title { /* Comment title */
 }
 
 h1.title {
-  
+  float:left;
 }
 
 tr.even { /* Some tables have rows marked even or odd. */
