@@ -162,7 +162,8 @@ body {
 #main {
    margin: 10px 15px;
    padding: 10px;
-   background: url("../images/contentbg.png")  repeat-x ; 
+   background: url("../images/contentbg.png") repeat-x ;
+   & > p:first-child { display:none; }
 }
 
 /*
