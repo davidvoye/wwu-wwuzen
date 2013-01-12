@@ -372,10 +372,42 @@ span.field-label {
   color: white;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003331}}
+#footer-wrapper {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003338}}
+#footer-left {
+  float: left;
+  width: 19.5em;
+  padding: 1.25em;
+  border: thin #fff solid;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003345}}
+#footer-center {
+  float: left;
+  width: 19.5em;
+  padding: 1.25em;
+  border: thin #fff solid;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003352}}
+#footer-right {
+  float: left;
+  width: 19.5em;
+  padding: 1.25em;
+  border: thin #fff solid;
+}
+
 /*
  * Page bottom
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003363}}
 .region-bottom {
   /* Wrapper for any blocks placed in the page bottom region */
 }
