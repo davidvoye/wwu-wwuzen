@@ -19,8 +19,8 @@ $(document).ready(function() {
 	// START SEARCH SLIDER CODE
 	$('#search a').click(function() {
 		var search = $('#search');
-		search.hide("slide",{direction: 'right'}, 300);
-		$('#links').animate({left: '440px'}, 300);
+		search.hide("slide",{direction: "right"}, 300);
+		$('#wwulinks').animate({left: '440px'}, 300);
 	});
 	
 	$('#s-toggle').click(function() {
@@ -28,8 +28,8 @@ $(document).ready(function() {
 		if (search.is(':visible')) {
 			window.location.href = 'http://www.wwu.edu/gsearch/' + $('#query').val();
 		} else {
-			search.show("slide",{direction: 'right'}, 300);
-			if ($('#push').is(':checked')) {$('#links').animate({left: '140px'}, 300)};
+			search.show("slide",{direction: "right"}, 300);
+			$('#wwulinks').animate({left: '140px'}, 300);
 			$('#query').select();
 		};
 	});
@@ -49,9 +49,8 @@ $(document).ready(function() {
  
  	$('#collegeheader').css({'height': totalHeight +"px"});;
 
-	//$("#page-title").html("div height is: " + total_height + " px");
-});
- 
+	});
+	//END RESIZE COLLEGE HEADER CODE 
 
 
 

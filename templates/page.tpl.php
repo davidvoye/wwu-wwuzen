@@ -82,8 +82,25 @@
           <li class="wwulinks"><a href="http://www.wwu.edu/index">Index</a></li>    
           <li class="wwulinks"><a href="http://www.wwu.edu/campusmaps">Map</a></li>    
           <li class="wwulinks"><a href="http://mywestern.wwu.edu">myWestern</a></li>
-          <li class="wwusearch"><img width="35" height="40" src="http://www.wwu.edu/wwucommon/SearchIcon.png"></li>
-        </ul>
+          </ul>
+          <div id="search" style="display:block;">
+            <a id="close-me" href="#">»</a>
+            <form action="get">
+              <input id="query" type="text" value="Search" name="query">
+            <div id="context">
+              <label>
+                <input type="radio" checked="" name="searchcontext">
+                  Western
+                </label>
+                <label>
+                  <input type="radio" name="searchcontext">
+                  This Site
+                </label>
+            </div>
+            
+              </form>
+            </div>
+         <aside class="wwusearch"><a id="s-toggle" href="#"><img width="35" height="40" src="http://www.wwu.edu/wwucommon/SearchIcon.png"></a></aside>
   <!-- Jamin's code for animating the search box (also see js/script.js) -->
   <!--       <div id="searchwrapper" title="" >
           <div id="search" style="display:none;">
