@@ -107,23 +107,28 @@ li a.active {
 #navigation {
   padding:10px 0 0 0;
   height: 24px;
+  width:100.5%
 }
 
 #navigation #main-menu {
 
-  display:table;
+
   font-family: $muli;
 
-  ul.links {
-    width:1040px;
+ ul {
+    width:100%;
+    display:table;
 
     li {
       background-color: $wwuBlue;
       border-style: solid;
       border-color: white;
-      border-width: 0 5px 0 0;
-      padding:5px 15px;
+      border-width: 0 3px 0 0;
+      padding:5px 0px;
       text-transform:uppercase;
+      display:table-cell;
+      float:none;
+      text-align: center;
       
         &:hover {
           background-color: #dddddd; 
@@ -132,14 +137,16 @@ li a.active {
 
           a {
             color:$wwuBlue;
-          } //ul.links li:hover a
+            } //ul.links li:hover a
         } 
 
         a {
           color:#ffffff;
           text-decoration:none;
-          padding:5px 10px;
+          padding:5px 7px;
         }
+
+         &:last-child { border:none; }
 
         } //ul.links li    
 
@@ -151,3 +158,87 @@ li a.active {
       }//ul.links li.active
   }//ul.links
 }//#navigation
+
+//Accordion Menus
+.block-accordion-menu .ui-accordion-header {
+  background-color:$wwuBlue;
+  background-image:none;
+  border:none;
+  margin-bottom:.313em;
+  padding:.2em;
+
+  &:hover {
+    background-color:#dddddd;
+  }
+
+  span.accordion-link {
+    color:#ffffff;
+
+    &:hover {
+      color:$wwuBlue;
+    }
+  }
+
+ a {
+    color: #ffffff;
+    display:inline;
+  
+  &:hover {
+    color:$wwuBlue;
+  }
+ 
+  }
+
+}
+
+//Get rid of the default border radii
+ .ui-corner-all {
+    border-radius:0;
+  }
+  .ui-corner-top {
+    border-radius:0;
+  }
+  .ui-corner-bottom {
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
+  }
+
+//style the interior accordion content
+  .ui-accordion .ui-accordion-content {
+    margin-top:0px;
+    padding-left:1.1em;
+    top:0px;
+    border:none;
+  }
+
+  .ui-widget-content {
+      background:none;
+  } 
+  
+  .ui-accordion-content ul.menu {
+    margin:0;
+    padding:0;
+
+    li a{
+      background-color:#dddddd;
+      color:$wwuBlue;
+      text-decoration:none;
+      display:block;
+      margin-bottom:.18em;
+      padding: 0.2em 0 0.2em 2.688em;
+      width:95%;
+
+      .active {
+       background-color:$wwuBlue;
+       color:#ffffff;
+      }
+    }
+  }
+
+.block-accordion-menu h3.active, span.active-trail, .block-accordion-menu h3.active-trail {
+  background-color:#dddddd;
+
+  a.active, span.active-trail {
+    color:$wwuBlue;
+  }
+  }
