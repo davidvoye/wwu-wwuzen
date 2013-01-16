@@ -51,18 +51,77 @@ body {
  */
 #wwuheader {
   height: 145px;
-  // margin-top: 0px;
-  margin-left: 20px;
   
-  img {
+  img.wwuLogo {
      z-index: 100;
-     margin-top: -6px;
+     margin: -6px 0 0 20px;
   }
+
+  .search-form {
+    height:100%;
+    margin-bottom:0em;
+  }
+  #search-form #edit-basic {
+    color:red;
+    height:2.2em;
+
+    .form-item {
+      margin:0em;
+    }
+  }
+  aside.wwusearch {
+      float:right;
+      margin-top:-.313em;
+
+    }
+  #search {
+    height:24%;
+    width:165px;
+    background:#fff;
+    display:block;
+    float:right;
+    overflow:hidden;
+    position:relative;
+
+    a {
+      color:#999;
+      line-height: 40px;
+      background:#E4E4E4;
+      height:100%;
+      float:left;
+      width:12px;
+      text-align:center;
+      text-decoration:none;
+    }
+    
+    a:hover {
+      color:#666;
+    }
+
+    label {
+      font-size:.8em;
+      font-weight:normal;
+      padding-left:6%;
+    }
+
+    #query {
+      color: #333333;
+      display: block;
+      float: right;
+      font-family: Verdana,Geneva,sans-serif;
+      font-size: 14px;
+      height: 24px;
+      margin: 2px 43px 0 0;
+      padding: 0 0 0 5px;
+      width: 195px;
+    }  
+  }
+}
   ul#wwumenu {
     float:right;
     font-size: .8em;
-    
-    margin: 7px 60px 2px 0;
+    position:relative;
+    margin: 7px 20px 2px 0;
     li  {
       display:inline;
       font-family: $muli;
@@ -85,57 +144,6 @@ body {
       }
     }
   }
-  aside.wwusearch {
-      //width: 35px; height:40px;
-      float:right;
-      margin-right:-26.3em;
-      margin-top:6px;
-    }
-  #search {
-    margin-right:-26.3em;
-    height:31%;
-    width:356px;
-    background:#fff;
-    display:block;
-    float:right;
-    overflow:hidden;
-
-    a {
-      font-size: 18px;
-      color:#999;
-      line-height: 40px;
-      background:#E4E4E4;
-      height:100%;
-      float:left;
-      width:12px;
-      text-align:center;
-      text-decoration:none;
-    }
-    
-    a:hover {
-      color:#666;
-    }
-
-    label {
-      font-size:.8em;
-      font-weight:normal;
-      padding-left:6%;
-    }
-
-    #query {
-      border: 1px solid #999999;
-      color: #333333;
-      display: block;
-      float: right;
-      font-family: Verdana,Geneva,sans-serif;
-      font-size: 14px;
-      height: 28px;
-      margin: 10px 43px 0 0;
-      padding: 0 0 0 5px;
-      width: 195px;
-    }  
-  }
-}
 #searchwrapper {
   // position:absolute; left:307px; top:39px; width:650px; height:38px;
 }

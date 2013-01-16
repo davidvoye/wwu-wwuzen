@@ -146,9 +146,13 @@ function wwuzen_preprocess_html(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
+
 function wwuzen_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+  //Render the search box variable so we can place it in the header.
+  $search_box = drupal_get_form('search_form');
+  $variables['search_box'] = drupal_render($search_box);
+  //Add the slide effect for our search box
+  drupal_add_library('system','effects.slide');
 }
 // */
 

@@ -14,13 +14,16 @@
 
 
 // Place your code here.
-$(document).ready(function() {
-	
+
+Drupal.behaviors.searchSlider = {
+	attach: function() {
+
 	// START SEARCH SLIDER CODE
 	$('#search a').click(function() {
+		$('#wwumenu').animate({left: '0x'}, 300);
+		$('#wwumenu').css('right', '');
 		var search = $('#search');
 		search.hide("slide",{direction: "right"}, 300);
-		$('#wwulinks').animate({left: '440px'}, 300);
 	});
 	
 	$('#s-toggle').click(function() {
@@ -28,9 +31,9 @@ $(document).ready(function() {
 		if (search.is(':visible')) {
 			window.location.href = 'http://www.wwu.edu/gsearch/' + $('#query').val();
 		} else {
+			$('#wwumenu').animate({right: '0px'}, 300);
+			$('#wwumenu').css('left', '');
 			search.show("slide",{direction: "right"}, 300);
-			$('#wwulinks').animate({left: '140px'}, 300);
-			$('#query').select();
 		};
 	});
 	$('form').submit(function() {
@@ -38,7 +41,11 @@ $(document).ready(function() {
 		return false;
 	});
 	// END SEARCH SLIDER CODE
-	
+	}
+}	
+
+Drupal.behaviors.resizeHeader = {
+	attach: function() {	
 	//START RESIZE COLLEGE HEADER AND SET HEIGHT CODE
    
  $(window).resize(function() {
@@ -51,9 +58,7 @@ $(document).ready(function() {
 
 	});
 	//END RESIZE COLLEGE HEADER CODE 
-
-
-
-});
+	}
+}
 
 })(jQuery, Drupal, this, this.document);

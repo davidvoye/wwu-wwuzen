@@ -74,57 +74,22 @@
   <header id="header" role="banner">
     <div id="wwuheader">
         <a href="http://www.wwu.edu">
-          <img src="http://www.wwu.edu/wwucommon/wwu.png" alt="Western Washington University" />
+          <img class="wwuLogo" src="http://www.wwu.edu/wwucommon/wwu.png" alt="Western Washington University" />
         </a>
+       <aside class="wwusearch"><a id="s-toggle" href="#"><img width="35" height="40" src="http://www.wwu.edu/wwucommon/SearchIcon.png"></a></aside>
+       <div id="search" style="display:none;">
+            <a id="close-me" href="#">»</a>
+              <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
+              <?php print $search_box; ?>
+            </div>
         <ul id="wwumenu">
           <li class="wwulinks"><a href="http://www.wwu.edu/academic_calendar">Calendar</a></li>
           <li class="wwulinks"><a href="http://www.wwu.edu/directory">Directory</a></li>    
           <li class="wwulinks"><a href="http://www.wwu.edu/index">Index</a></li>    
           <li class="wwulinks"><a href="http://www.wwu.edu/campusmaps">Map</a></li>    
           <li class="wwulinks"><a href="http://mywestern.wwu.edu">myWestern</a></li>
-          </ul>
-          <div id="search" style="display:block;">
-            <a id="close-me" href="#">»</a>
-            <form action="get">
-              <input id="query" type="text" value="Search" name="query">
-            <div id="context">
-              <label>
-                <input type="radio" checked="" name="searchcontext">
-                  Western
-                </label>
-                <label>
-                  <input type="radio" name="searchcontext">
-                  This Site
-                </label>
-            </div>
-            
-              </form>
-            </div>
-         <aside class="wwusearch"><a id="s-toggle" href="#"><img width="35" height="40" src="http://www.wwu.edu/wwucommon/SearchIcon.png"></a></aside>
-  <!-- Jamin's code for animating the search box (also see js/script.js) -->
-  <!--       <div id="searchwrapper" title="" >
-          <div id="search" style="display:none;">
-            <a id="close-me" href="#">»</a>
-            <form action="get">
-              <div id="context">
-                <label>
-                  <input type="radio" checked="" name="searchcontext">
-                  WWU
-                </label>
-                <label>
-                  <input type="radio" name="searchcontext">
-                  this site
-                </label>
-              </div>
-              <input id="query" type="text" value="search" name="query">
-            </form>
-          </div>
-        </div>
-        <div id="iconbox" >
-          <a id="s-toggle" href="#">
-            <img width="35" height="40" src="http://www.wwu.edu/wwucommon/SearchIcon.png">
-          </a>
-        </div> -->
+          </ul>   
+  
     </div><!-- wwuheader -->
   
     <div id="collegeheader">
