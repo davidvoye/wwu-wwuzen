@@ -36,10 +36,10 @@ Drupal.behaviors.searchSlider = {
 			search.show("slide",{direction: "right"}, 300);
 		};
 	});
-	$('form').submit(function() {
-		window.location.href = 'http://www.wwu.edu/gsearch/' + $('#query').val();
-		return false;
-	});
+	//$('form').submit(function() {
+	//	window.location.href = 'http://www.wwu.edu/gsearch/' + $('#query').val();
+	//	return false;
+	//});
 	// END SEARCH SLIDER CODE
 	}
 }	

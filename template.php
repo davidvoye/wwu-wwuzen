@@ -138,6 +138,32 @@ function wwuzen_preprocess_html(&$variables, $hook) {
 }
 // */
 
+//Modify the default search form for use in the header.
+function wwuzen_preprocess_search_block_form(&$variables) {
+  $variables['form']['search_block_form']['#title'] = t('');
+
+   // Add a custom class and placeholder text to the search box.
+  $variables['form']['search_block_form']['#attributes'] = array('class' => 'NormalTextBox txtSearch', 'placeholder' =>'Search WWUzen');
+
+
+  // Change the text on the submit button
+  //$variables['form']['submit']['#value'] = t('Go');
+
+  // Rebuild the rendered version (search form only, rest remains unchanged)
+  unset($variables['form']['search_block_form']['#printed']);
+  $variables['search']['search_block_form'] = drupal_render($variables['form']['search_block_form']);
+
+  $variables['form']['submit']['#type'] = 'image_button';
+  $variables['form']['submit']['#src'] = path_to_theme() . '/images/SearchIcon.png';
+
+  // Rebuild the rendered version (submit button, rest remains unchanged)
+  unset($variables['form']['submit']['#printed']);
+  $variables['search']['submit'] = drupal_render($variables['form']['submit']);
+
+  // Collect all form elements to make it easier to print the whole form.
+  $variables['search_form'] = implode($variables['search']);
+}
+
 /**
  * Override or insert variables into the page templates.
  *
@@ -149,7 +175,7 @@ function wwuzen_preprocess_html(&$variables, $hook) {
 
 function wwuzen_preprocess_page(&$variables, $hook) {
   //Render the search box variable so we can place it in the header.
-  $search_box = drupal_get_form('search_form');
+  $search_box = drupal_get_form('search_block_form');
   $variables['search_box'] = drupal_render($search_box);
   //Add the slide effect for our search box
   drupal_add_library('system','effects.slide');
