@@ -107,23 +107,28 @@ li a.active {
 #navigation {
   padding:10px 0 0 0;
   height: 24px;
+  width:100.5%
 }
 
 #navigation #main-menu {
 
-  display:table;
+
   font-family: $muli;
 
-  ul.links {
-    width:1040px;
+ ul {
+    width:100%;
+    display:table;
 
     li {
       background-color: $wwuBlue;
       border-style: solid;
       border-color: white;
-      border-width: 0 5px 0 0;
-      padding:5px 15px;
+      border-width: 0 3px 0 0;
+      padding:5px 0px;
       text-transform:uppercase;
+      display:table-cell;
+      float:none;
+      text-align: center;
       
         &:hover {
           background-color: #dddddd; 
@@ -132,14 +137,16 @@ li a.active {
 
           a {
             color:$wwuBlue;
-          } //ul.links li:hover a
+            } //ul.links li:hover a
         } 
 
         a {
           color:#ffffff;
           text-decoration:none;
-          padding:5px 10px;
+          padding:5px 7px;
         }
+
+         &:last-child { border:none; }
 
         } //ul.links li    
 
@@ -181,6 +188,7 @@ li a.active {
   }
  
   }
+
 }
 
 //Get rid of the default border radii
@@ -201,8 +209,12 @@ li a.active {
     padding-left:1.1em;
     top:0px;
     border:none;
-    background-color:#dddddd;
   }
+
+  .ui-widget-content {
+      background:none;
+  } 
+  
   .ui-accordion-content ul.menu {
     margin:0;
     padding:0;

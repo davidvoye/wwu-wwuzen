@@ -39,7 +39,22 @@ $(document).ready(function() {
 	});
 	// END SEARCH SLIDER CODE
 	
-	
+	//START RESIZE COLLEGE HEADER AND SET HEIGHT CODE
+   
+ $(window).resize(function() {
+ 	var divHeight = $("#collegeheader").children().outerHeight(true);
+ 	var menuHeight = $("#main-menu").outerHeight(true);
+ 	//add the two heights and 10 more pixels for beneath the menu
+ 	var totalHeight = divHeight + menuHeight + 10;
+ 
+ 	$('#collegeheader').css({'height': totalHeight +"px"});;
+
+	//$("#page-title").html("div height is: " + total_height + " px");
+});
+ 
+
+
+
 });
 
 })(jQuery, Drupal, this, this.document);
