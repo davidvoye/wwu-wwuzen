@@ -15,48 +15,37 @@
 
 // Place your code here.
 
-Drupal.behaviors.searchSlider = {
-	attach: function() {
+	Drupal.behaviors.searchSlider = {
+		attach: function () {
 
-	// START SEARCH SLIDER CODE
-	$('#search a').click(function() {
-		$('#wwumenu').animate({left: '0x'}, 300);
-		$('#wwumenu').css('right', '');
-		var search = $('#search');
-		search.hide("slide",{direction: "right"}, 300);
+	// START SEARCH TOGGLE CODE
+
+		$('#s-toggle').click(function () {
+			var search = $('#search');
+			if (search.is(':visible')) {
+				search.slideToggle();
+			} else {
+				search.slideToggle("slow");
+		}
 	});
-	
-	$('#s-toggle').click(function() {
-		var search = $('#search');
-		if (search.is(':visible')) {
-			window.location.href = 'http://www.wwu.edu/gsearch/' + $('#query').val();
-		} else {
-			$('#wwumenu').animate({right: '0px'}, 300);
-			$('#wwumenu').css('left', '');
-			search.show("slide",{direction: "right"}, 300);
-		};
-	});
-	//$('form').submit(function() {
-	//	window.location.href = 'http://www.wwu.edu/gsearch/' + $('#query').val();
-	//	return false;
-	//});
-	// END SEARCH SLIDER CODE
+	// END SEARCH TOGGLE CODE
 	}
-}	
+}
 
 Drupal.behaviors.resizeHeader = {
-	attach: function() {	
+	attach: function () {
 	//START RESIZE COLLEGE HEADER AND SET HEIGHT CODE
-   
- $(window).resize(function() {
- 	var divHeight = $("#collegeheader").children().outerHeight(true);
- 	var menuHeight = $("#main-menu").outerHeight(true);
- 	//add the two heights and 10 more pixels for beneath the menu
- 	var totalHeight = divHeight + menuHeight + 10;
- 
- 	$('#collegeheader').css({'height': totalHeight +"px"});;
 
-	});
+	$(window).resize(function () {
+		var divHeight = $("#collegeheader").children().outerHeight(true);
+		var menuHeight = $("#main-menu").outerHeight(true);
+
+		//add the two heights and 10 more pixels to compensate for space beneath the main menu
+		var totalHeight = divHeight + menuHeight + 10;
+
+		$('#collegeheader').css({'height': totalHeight + "px"});
+
+		});
 	//END RESIZE COLLEGE HEADER CODE 
 	}
 }

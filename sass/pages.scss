@@ -49,12 +49,16 @@ body {
 /*
  * Header
  */
+ #header {
+  position:relative;
+ }
 #wwuheader {
   height: 9.063em;
   
   img.wwuLogo {
-     z-index: 100;
+     z-index: 1000;
      margin: -6px 0 0 20px;
+     position:relative;
   }
 
   .search-form {
@@ -62,6 +66,7 @@ body {
     margin-bottom:0em;
   }
   .search-form input {
+    display:block;
     width:10.313em;
     height:1.750em;
   }
@@ -76,17 +81,20 @@ body {
   aside.wwusearch {
       float:right;
       margin-top:-.313em;
-
     }
   #search {
-    height:10.063em;
-    width:33.313em;
-    background:#fff;
+    height:6.063em;
+    width:12.313em;
+    background:#0083D5;
+    padding:0.5em 0 0.5em 0.5em;
     display:block;
     float:right;
     overflow:hidden;
-    position:relative;
-    border:1px solid #E9E9E9;
+    position:absolute;
+    border:1px solid #0083D5;
+    z-index:200;
+    top:2.2em;
+    right:.95em;
 
     a {
       color:#999;
@@ -104,6 +112,7 @@ body {
     }
 
     label {
+      display:block;
       font-size:.8em;
       font-weight:normal;
       padding-left:6%;
@@ -148,9 +157,8 @@ body {
 
 
 #collegeheader {
+  position:relative;
   padding: 10px;
-  // margin-top: -85px -10px -10px -10px;
-  // margin: -10px;
   background-color: #fff;
   height: 224px; //extend white background below menu
   margin-top: -100px; //slide college logo (banner) right under wwu logo

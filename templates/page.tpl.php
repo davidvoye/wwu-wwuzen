@@ -78,7 +78,6 @@
         </a>
        <aside class="wwusearch"><a id="s-toggle" href="#"><img width="35" height="40" src="http://www.wwu.edu/wwucommon/SearchIcon.png"></a></aside>
        <div id="search" style="display:none;">
-            <a id="close-me" href="#">»</a>
               <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
               <?php print $search_box; ?>
             </div>
