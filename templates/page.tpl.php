@@ -219,11 +219,21 @@
   </div><!-- /#main -->
   </div><!-- /#max-wrapper  -->
     <div id="footer">
-        <?php print render($page['footer']); ?>
-        <div id="wwufooter">
-          <p>WWU Footer</p>
-        </div>
-    </div>
+      <div id="footer-wrapper">
+      <div id="footer-left">Left Footer
+        <?php print render($page['footer_left']); ?>
+      </div>
+      <div id="footer-center">Center Footer
+        <?php print render($page['footer_center']); ?>
+      </div>
+      <div id="footer-right">Right Footer
+        <?php print render($page['footer_right']); ?>
+      </div>
+      <!-- <div id="wwufooter">
+        <p>WWU Footer</p>
+      </div> -->
+    </div><!-- /#footer-wrapper -->
+  </div><!-- /#footer -->
 
 </div><!-- /#page -->
 
