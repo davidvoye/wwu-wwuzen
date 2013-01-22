@@ -8,6 +8,8 @@
  */
 
 @import "base";
+@import "compass/css3/box-shadow";
+@import "compass/css3/images";
 /*
  * Body
  */
@@ -160,8 +162,8 @@ body {
  */
 
 #main {
-   margin: 12px 15px;
-   padding: 10px;
+   margin: .8em .938em 4.250em .8em;
+   padding: .625em;
    background: url("../images/contentbg.png") repeat-x ;
 }
 
@@ -324,13 +326,15 @@ span.field-label { /* The inline field label used by the Fences module */
  */
 
 #footer {
-  height:200px;
   background-color: $wwuBlue;
   color: white;
+  font-size:.625em;
+  border-top:.8em solid #ffffff;
+  padding-bottom:3.813em;
 }
 
 #footer-wrapper {
-  max-width: 1080px;
+  max-width:1080px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.5em;
@@ -338,23 +342,72 @@ span.field-label { /* The inline field label used by the Fences module */
 
 #footer-left {
   float: left;
-  width: 19.5em;
-  padding: 1.25em;
-  border: thin #fff solid;
+  width: 27.5%;
+  padding: .688em 0em 1.25em 1.25em;
 }
 
 #footer-center {
   float: left;
-  width: 19.5em;
-  padding: 1.25em;
-  border: thin #fff solid;
+  width: 29.5%;
+  padding: .688em 3.25em 1.25em 0em;
+
+
+  li {
+    border-bottom:1px solid #ffffff;
+    width: 100%;
+    list-style: none;
+
+    a {
+      color:#ffffff;
+      text-decoration:none;
+      padding-left:.15em;
+      text-transform:capitalize;
+    }
+  }
 }
 
 #footer-right {
-  float: left;
-  width: 19.5em;
-  padding: 1.25em;
-  border: thin #fff solid;
+  float: right;
+  margin-right:2em;
+  width: 24.5%;
+  @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
+  margin-top:-1.813em;
+
+  #footer-right-heading {
+    background-color: #ffffff;
+    width:100%;
+    height:3em;
+    @include box-shadow(#c1c1c1 2px 0px 3px);
+
+  h3 {
+    color:$wwuBlue;
+    margin:0;
+    padding-left: 1.25em;
+    padding-top: 0.5em;
+    }
+  }
+
+  #footer-right-contact-info {
+    padding-left:1.25em;
+    margin-top:1.500em;
+
+    img {
+      float:left;
+      padding-right:.625em;
+      margin-top:.5em;
+    }
+    p {
+      margin-bottom:0;
+      margin-top:0;
+    }
+    a {
+      color:#ffffff;
+    }
+  }
+  #footer-right-social-media-icons {
+    position:relative;
+    margin-top:1.438em;
+  }
 }
 
 /*
