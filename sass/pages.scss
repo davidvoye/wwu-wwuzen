@@ -60,41 +60,34 @@ body {
      margin: -6px 0 0 20px;
      position:relative;
   }
-
-  .search-form {
-    height: 2.063em;
-    margin-bottom:0em;
+  #edit-search-block-form--2{
+    float:left;
   }
-  .search-form input {
-    display:block;
-    width:10.313em;
-    height:1.750em;
+  .form-submit {
+    background-color:$wwuLime;
+    border:1px solid transparent;
+    color:$wwuBlue;
+    margin-left:.5em;
+    height:1.75em;
   }
-  #search-form #edit-basic {
-    color:red;
-    height: 2.063em;
-
-    .form-item {
-      margin:0em;
-    }
-  }
+  
   aside.wwusearch {
       float:right;
       margin-top:-.313em;
     }
   #search {
-    height:6.063em;
-    width:12.313em;
-    background:#0083D5;
+    height:2em;
+    width:17.15em;
+    background:$wwuBlue;
     padding:0.5em 0 0.5em 0.5em;
     display:block;
     float:right;
     overflow:hidden;
     position:absolute;
-    border:1px solid #0083D5;
+    border-top:4px solid $wwuLtblue;
     z-index:200;
     top:2.2em;
-    right:.95em;
+    right:.9em;
 
     a {
       color:#999;
@@ -106,7 +99,7 @@ body {
       text-align:center;
       text-decoration:none;
     }
-    
+   
     a:hover {
       color:#666;
     }
