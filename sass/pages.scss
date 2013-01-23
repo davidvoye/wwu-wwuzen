@@ -342,7 +342,7 @@ span.field-label { /* The inline field label used by the Fences module */
 
 #footer-left {
   float: left;
-  width: 27.5%;
+  width: 29.5%;
   padding: .688em 0em 1.25em 1.25em;
 }
 
@@ -357,11 +357,19 @@ span.field-label { /* The inline field label used by the Fences module */
     width: 100%;
     list-style: none;
 
+    &:hover {
+      border-bottom:1px solid $wwuYellow;
+    }
+
+
     a {
       color:#ffffff;
       text-decoration:none;
       padding-left:.15em;
       text-transform:capitalize;
+     &:hover {
+      color:$wwuYellow;
+      }
     }
   }
 }
@@ -398,8 +406,12 @@ span.field-label { /* The inline field label used by the Fences module */
     }
     p {
       margin-bottom:0;
-      margin-top:0;
+      margin-top:0; 
     }
+    p.second-address-line {
+      padding-left:2em; 
+      margin-top:-.825em
+      }
     a {
       color:#ffffff;
     }

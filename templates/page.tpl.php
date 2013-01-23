@@ -250,15 +250,15 @@
             <h3>Western Washington University</h3>
           </div>
           <div id="footer-right-contact-info">
-            <img src="<?php print $addressIcon;?>" width="14px" height="12px" /><p>516 High Street <br/>Bellingham, WA 98225</p>
+            <img src="<?php print $addressIcon;?>" width="14px" height="12px" /><p>516 High Street</p><p class="second-address-line">Bellingham, WA 98225</p>
             <img src="<?php print $phoneIcon;?>" width="12px" height="11px"/><p>(360) 650-3000</p>
             <img src="<?php print $emailIcon;?>" width="12px" height="8px" /><p><a href="http://www.wwu.edu/wwucontact/">Contact Western</a></p>
             <div id="footer-right-social-media-icons">
-              <img src="<?php print $facebookIcon;?>" width="24px" height="24px" />
-              <img src="<?php print $flickrIcon;?>" width="24px" height="24px" />
-              <img src="<?php print $twitterIcon;?>" width="24px" height="24px" />
-              <img src="<?php print $youTubeIcon;?>" width="24px" height="24px" />
-              <img src="<?php print $googlePlusIcon;?>" width="24px" height="24px" />
+              <a href="http://www.facebook.com/westernwashingtonuniversity"><img src="<?php print $facebookIcon;?>" width="24px" height="24px" /></a>
+              <a href="http://www.flickr.com/wwu"><img src="<?php print $flickrIcon;?>" width="24px" height="24px" /></a>
+              <a href="https://twitter.com/#!/WWU"><img src="<?php print $twitterIcon;?>" width="24px" height="24px" /></a>
+              <a href="http://www.youtube.com/wwu"><img src="<?php print $youTubeIcon;?>" width="24px" height="24px" /></a>
+              <a href="https://plus.google.com/+wwu/posts"><img src="<?php print $googlePlusIcon;?>" width="24px" height="24px" />
               <img src="<?php print $rssIcon;?>" width="24px" height="24px" />
             </div>
           </div>
