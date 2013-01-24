@@ -49,31 +49,88 @@ body {
 /*
  * Header
  */
+ #header {
+  position:relative;
+ }
 #wwuheader {
-  height: 145px;
-  // margin-top: 0px;
-  margin-left: 20px;
+  height: 9.063em;
   
-  img {
-     z-index: 100;
-     margin-top: -6px;
+  img.wwuLogo {
+     z-index: 1000;
+     margin: -6px 0 0 20px;
+     position:relative;
   }
+
+  .search-form {
+    height: 2.063em;
+    margin-bottom:0em;
+  }
+  .search-form input {
+    display:block;
+    width:10.313em;
+    height:1.750em;
+  }
+  #search-form #edit-basic {
+    color:red;
+    height: 2.063em;
+
+    .form-item {
+      margin:0em;
+    }
+  }
+  aside.wwusearch {
+      float:right;
+      margin-top:-.313em;
+    }
+  #search {
+    height:6.063em;
+    width:12.313em;
+    background:#0083D5;
+    padding:0.5em 0 0.5em 0.5em;
+    display:block;
+    float:right;
+    overflow:hidden;
+    position:absolute;
+    border:1px solid #0083D5;
+    z-index:200;
+    top:2.2em;
+    right:.95em;
+
+    a {
+      color:#999;
+      line-height: 31px;
+      background:#E4E4E4;
+      height:2.063em;
+      float:left;
+      width:12px;
+      text-align:center;
+      text-decoration:none;
+    }
+    
+    a:hover {
+      color:#666;
+    }
+
+    label {
+      display:block;
+      font-size:.8em;
+      font-weight:normal;
+      padding-left:6%;
+    }
+
+ 
+  }
+}
   ul#wwumenu {
     float:right;
     font-size: .8em;
-    
-    margin: -5px 10px 2px 0;
+    position:relative;
+    margin: 7px 20px 2px 0;
     li  {
       display:inline;
       font-family: $muli;
-      //list-style-type: disc;
-      //margin-left: .5em;
       padding-left: .5em;
-      // border-right: 1px solid $wwuBlue;
-      
-      //padding: .35em 0 0;
-      //margin-top: .25em;
-      //&:first-child {list-style-type: none;}
+
       
       img {margin-top: -1px;}
     }
@@ -90,12 +147,7 @@ body {
         &:hover{ color:$wwuLtblue; text-decoration:underline;}
       }
     }
-    .wwusearch {
-      //width: 35px; height:40px;
-
-    }
   }
-}
 #searchwrapper {
   // position:absolute; left:307px; top:39px; width:650px; height:38px;
 }
@@ -105,9 +157,8 @@ body {
 
 
 #collegeheader {
+  position:relative;
   padding: 10px;
-  // margin-top: -85px -10px -10px -10px;
-  // margin: -10px;
   background-color: #fff;
   height: 222px; //extend white background below menu
   margin-top: -100px; //slide college logo (banner) right under wwu logo
