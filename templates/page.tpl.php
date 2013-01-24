@@ -80,7 +80,7 @@
     ?>
     <div id="wwuheader">
         <a href="http://www.wwu.edu">
-          <img src="<?php print $wwuLogo;?>" alt="Western Washington University" />
+          <img class="wwuLogo" src="<?php print $wwuLogo;?>" alt="Western Washington University" width="240px" height="145px" />
         </a>
        <aside class="wwusearch"><a id="s-toggle" href="#"><img width="35" height="40" src="http://www.wwu.edu/wwucommon/SearchIcon.png"></a></aside>
        <div id="search" style="display:none;">
