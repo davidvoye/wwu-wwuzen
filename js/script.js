@@ -14,47 +14,40 @@
 
 
 // Place your code here.
-$(document).ready(function() {
-	
-	// START SEARCH SLIDER CODE
-	$('#search a').click(function() {
-		var search = $('#search');
-		search.hide("slide",{direction: 'right'}, 300);
-		$('#links').animate({left: '440px'}, 300);
+
+	Drupal.behaviors.searchSlider = {
+		attach: function () {
+
+	// START SEARCH TOGGLE CODE
+
+		$('#s-toggle').click(function () {
+			var search = $('#search');
+			if (search.is(':visible')) {
+				search.slideToggle();
+			} else {
+				search.slideToggle(400);
+		}
 	});
-	
-	$('#s-toggle').click(function() {
-		var search = $('#search');
-		if (search.is(':visible')) {
-			window.location.href = 'http://www.wwu.edu/gsearch/' + $('#query').val();
-		} else {
-			search.show("slide",{direction: 'right'}, 300);
-			if ($('#push').is(':checked')) {$('#links').animate({left: '140px'}, 300)};
-			$('#query').select();
-		};
-	});
-	$('form').submit(function() {
-		window.location.href = 'http://www.wwu.edu/gsearch/' + $('#query').val();
-		return false;
-	});
-	// END SEARCH SLIDER CODE
-	
+	// END SEARCH TOGGLE CODE
+	}
+}
+
+Drupal.behaviors.resizeHeader = {
+	attach: function () {
 	//START RESIZE COLLEGE HEADER AND SET HEIGHT CODE
-   
- $(window).resize(function() {
- 	var divHeight = $("#collegeheader").children().outerHeight(true);
- 	var menuHeight = $("#main-menu").outerHeight(true);
- 	//add the two heights and 10 more pixels for beneath the menu
- 	var totalHeight = divHeight + menuHeight + 10;
- 
- 	$('#collegeheader').css({'height': totalHeight +"px"});;
 
-	//$("#page-title").html("div height is: " + total_height + " px");
-});
- 
+	$(window).resize(function () {
+		var divHeight = $("#collegeheader").children().outerHeight(true);
+		var menuHeight = $("#main-menu").outerHeight(true);
 
+		//add the two heights and 10 more pixels to compensate for space beneath the main menu
+		var totalHeight = divHeight + menuHeight + 10;
 
+		$('#collegeheader').css({'height': totalHeight + "px"});
 
-});
+		});
+	//END RESIZE COLLEGE HEADER CODE 
+	}
+}
 
 })(jQuery, Drupal, this, this.document);
