@@ -75,7 +75,6 @@
     <!--Retrieve our images for use in the header -->
     <?php
       $wwuLogo = base_path().path_to_theme() . '/images/wwu.png';
-      $searchIcon = base_path().path_to_theme() . '/images/SearchIcon.png';
 
 
     ?>
@@ -94,7 +93,6 @@
           <li class="wwulinks"><a href="http://www.wwu.edu/index">Index</a></li>    
           <li class="wwulinks"><a href="http://www.wwu.edu/campusmaps">Map</a></li>    
           <li class="wwulinks"><a href="http://mywestern.wwu.edu">myWestern</a></li>
-          <li class="wwusearch"><img width="35" height="40" src="<?php print $searchIcon;?>"></li>
         </ul> 
   
       </div><!-- wwuheader -->
