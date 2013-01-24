@@ -386,37 +386,43 @@ span.field-label { /* The inline field label used by the Fences module */
 
 #footer-left {
   float: left;
-  width: 29.5%;
+  width: 24.5%;
   padding: .688em 0em 1.25em 1.25em;
+  background:blue;
 }
 
 #footer-center {
   float: left;
-  width: 29.5%;
-  padding: .688em 3.25em 1.25em 0em;
-
-
-  li {
-    border-bottom:1px solid #ffffff;
-    width: 100%;
-    list-style: none;
-
-    &:hover {
-      border-bottom:1px solid $wwuYellow;
-    }
-
-
-    a {
-      color:#ffffff;
-      text-decoration:none;
-      padding-left:.15em;
-      text-transform:capitalize;
-     &:hover {
-      color:$wwuYellow;
+  width: 24.5%;
+  padding: .688em 0 1.25em 0;
+  margin-left:11%;
+  .menu {
+    padding-left:0;
+    li {
+      width: 100%;
+      border-bottom:1px solid #fff;
+      list-style-type:none;
+      list-style-image:none;
+      a {
+        color:#ffffff;
+        text-decoration:none;
+        padding-left:.15em;
+        text-transform:capitalize;
+        &:hover {
+          color:$wwuYellow;
+          &:after {
+            content: "\00A0";
+            border-bottom:1px solid $wwuYellow;
+            width:100%;
+            position:absolute;
+            left:0;
+          }
+        }
       }
     }
   }
 }
+
 
 #footer-right {
   float: right;
