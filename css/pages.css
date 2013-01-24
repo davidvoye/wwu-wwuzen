@@ -65,7 +65,7 @@ body {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\0000360}}
 #wwuheader img.wwuLogo {
-  z-index: 1000;
+  z-index: 200;
   margin: -6px 0 0 20px;
   position: relative;
 }
