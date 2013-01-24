@@ -72,9 +72,16 @@
 <div id="top-stripe"></div> <!-- stripe goes full browser page width -->
 <div id="page">
   <header id="header" role="banner">
+    <!--Retrieve our images for use in the header -->
+    <?php
+      $wwuLogo = base_path().path_to_theme() . '/images/wwu.png';
+      $searchIcon = base_path().path_to_theme() . '/images/SearchIcon.png';
+
+
+    ?>
     <div id="wwuheader">
         <a href="http://www.wwu.edu">
-          <img src="http://www.wwu.edu/wwucommon/wwu.png" alt="Western Washington University" />
+          <img src="<?php print $wwuLogo;?>" alt="Western Washington University" />
         </a>
         <ul id="wwumenu">
           <li class="wwulinks"><a href="http://www.wwu.edu/academic_calendar">Calendar</a></li>
@@ -82,7 +89,7 @@
           <li class="wwulinks"><a href="http://www.wwu.edu/index">Index</a></li>    
           <li class="wwulinks"><a href="http://www.wwu.edu/campusmaps">Map</a></li>    
           <li class="wwulinks"><a href="http://mywestern.wwu.edu">myWestern</a></li>
-          <li class="wwusearch"><img width="35" height="40" src="http://www.wwu.edu/wwucommon/SearchIcon.png"></li>
+          <li class="wwusearch"><img width="35" height="40" src="<?php print $searchIcon;?>"></li>
         </ul>
   <!-- Jamin's code for animating the search box (also see js/script.js) -->
   <!--       <div id="searchwrapper" title="" >
@@ -219,11 +226,50 @@
   </div><!-- /#main -->
   </div><!-- /#max-wrapper  -->
     <div id="footer">
-        <?php print render($page['footer']); ?>
-        <div id="wwufooter">
-          <p>WWU Footer</p>
-        </div>
-    </div>
+      <div id="footer-wrapper">
+      <div id="footer-left">
+        <?php print render($page['footer_left']); ?>
+      </div>
+      <div id="footer-center">
+        <?php print render($page['footer_center']); ?>
+      </div>
+      <div id="footer-right">
+        <!-- //Retrieve our icon images -->
+        <?php 
+          $addressIcon = base_path().path_to_theme() . '/images/AddressIcon.png';
+          $phoneIcon = base_path().path_to_theme() . '/images/PhoneIcon.png';
+          $emailIcon = base_path().path_to_theme() . '/images/EmailIcon.png';
+          $facebookIcon = base_path().path_to_theme() . '/images/FacebookIcon.png';
+          $flickrIcon = base_path().path_to_theme() . '/images/FlickrIcon.png';
+          $twitterIcon = base_path().path_to_theme() . '/images/TwitterIcon.png';
+          $youTubeIcon = base_path().path_to_theme() . '/images/YouTubeIcon.png';
+          $googlePlusIcon = base_path().path_to_theme() . '/images/GooglePlusIcon.png';
+          $rssIcon = base_path().path_to_theme() . '/images/RSSicon.png';
+         ?>
+          <div id="footer-right-heading">
+            <h3>Western Washington University</h3>
+          </div>
+          <div id="footer-right-contact-info">
+            <img src="<?php print $addressIcon;?>" width="14px" height="12px" /><p>516 High Street</p><p class="second-address-line">Bellingham, WA 98225</p>
+            <img src="<?php print $phoneIcon;?>" width="12px" height="11px"/><p>(360) 650-3000</p>
+            <img src="<?php print $emailIcon;?>" width="12px" height="8px" /><p><a href="http://www.wwu.edu/wwucontact/">Contact Western</a></p>
+            <div id="footer-right-social-media-icons">
+              <a href="http://www.facebook.com/westernwashingtonuniversity"><img src="<?php print $facebookIcon;?>" width="24px" height="24px" /></a>
+              <a href="http://www.flickr.com/wwu"><img src="<?php print $flickrIcon;?>" width="24px" height="24px" /></a>
+              <a href="https://twitter.com/#!/WWU"><img src="<?php print $twitterIcon;?>" width="24px" height="24px" /></a>
+              <a href="http://www.youtube.com/wwu"><img src="<?php print $youTubeIcon;?>" width="24px" height="24px" /></a>
+              <a href="https://plus.google.com/+wwu/posts"><img src="<?php print $googlePlusIcon;?>" width="24px" height="24px" /></a>
+              <a href="http://news.wwu.edu/go/feed/1538/ru/atom/"><img src="<?php print $rssIcon;?>" width="24px" height="24px" /></a>
+            </div>
+          </div>
+
+        <?php print render($page['footer_right']); ?>
+      </div>
+      <!-- <div id="wwufooter">
+        <p>WWU Footer</p>
+      </div> -->
+    </div><!-- /#footer-wrapper -->
+  </div><!-- /#footer -->
 
 </div><!-- /#page -->
 
