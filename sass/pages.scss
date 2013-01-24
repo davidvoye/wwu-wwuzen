@@ -8,6 +8,8 @@
  */
 
 @import "base";
+@import "compass/css3/box-shadow";
+@import "compass/css3/images";
 /*
  * Body
  */
@@ -60,41 +62,34 @@ body {
      margin: -6px 0 0 20px;
      position:relative;
   }
-
-  .search-form {
-    height: 2.063em;
-    margin-bottom:0em;
+  #edit-search-block-form--2{
+    float:left;
   }
-  .search-form input {
-    display:block;
-    width:10.313em;
-    height:1.750em;
+  .form-submit {
+    background-color:$wwuLime;
+    border:1px solid transparent;
+    color:$wwuBlue;
+    margin-left:.5em;
+    height:1.75em;
   }
-  #search-form #edit-basic {
-    color:red;
-    height: 2.063em;
-
-    .form-item {
-      margin:0em;
-    }
-  }
+  
   aside.wwusearch {
       float:right;
       margin-top:-.313em;
     }
   #search {
-    height:6.063em;
-    width:12.313em;
-    background:#0083D5;
+    height:2em;
+    width:17.15em;
+    background:$wwuBlue;
     padding:0.5em 0 0.5em 0.5em;
     display:block;
     float:right;
     overflow:hidden;
     position:absolute;
-    border:1px solid #0083D5;
+    border-top:4px solid $wwuLtblue;
     z-index:200;
     top:2.2em;
-    right:.95em;
+    right:.9em;
 
     a {
       color:#999;
@@ -106,7 +101,7 @@ body {
       text-align:center;
       text-decoration:none;
     }
-    
+   
     a:hover {
       color:#666;
     }
@@ -211,8 +206,8 @@ body {
  */
 
 #main {
-   margin: 12px 15px;
-   padding: 10px;
+   margin: .8em .938em 4.250em .8em;
+   padding: .625em;
    background: url("../images/contentbg.png") repeat-x ;
 }
 
@@ -375,9 +370,100 @@ span.field-label { /* The inline field label used by the Fences module */
  */
 
 #footer {
-  height:200px;
   background-color: $wwuBlue;
   color: white;
+  font-size:.625em;
+  border-top:.8em solid #ffffff;
+  padding-bottom:3.813em;
+}
+
+#footer-wrapper {
+  max-width:1080px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5em;
+}
+
+#footer-left {
+  float: left;
+  width: 29.5%;
+  padding: .688em 0em 1.25em 1.25em;
+}
+
+#footer-center {
+  float: left;
+  width: 29.5%;
+  padding: .688em 3.25em 1.25em 0em;
+
+
+  li {
+    border-bottom:1px solid #ffffff;
+    width: 100%;
+    list-style: none;
+
+    &:hover {
+      border-bottom:1px solid $wwuYellow;
+    }
+
+
+    a {
+      color:#ffffff;
+      text-decoration:none;
+      padding-left:.15em;
+      text-transform:capitalize;
+     &:hover {
+      color:$wwuYellow;
+      }
+    }
+  }
+}
+
+#footer-right {
+  float: right;
+  margin-right:2em;
+  width: 24.5%;
+  @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
+  margin-top:-1.813em;
+
+  #footer-right-heading {
+    background-color: #ffffff;
+    width:100%;
+    height:3em;
+    @include box-shadow(#c1c1c1 2px 0px 3px);
+
+  h3 {
+    color:$wwuBlue;
+    margin:0;
+    padding-left: 1.25em;
+    padding-top: 0.5em;
+    }
+  }
+
+  #footer-right-contact-info {
+    padding-left:1.25em;
+    margin-top:1.500em;
+
+    img {
+      float:left;
+      padding-right:.625em;
+      margin-top:.5em;
+    }
+    p {
+      margin-bottom:0;
+      margin-top:0; 
+    }
+    p.second-address-line {
+      padding-left:2em; 
+      margin-top:-.825em
+      }
+    a {
+      color:#ffffff;
+    }
+  }
+  #footer-right-social-media-icons {
+    position:relative;
+    margin-top:1.438em;
+  }
 }
 
 /*

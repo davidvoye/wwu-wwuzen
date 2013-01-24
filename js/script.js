@@ -25,7 +25,7 @@
 			if (search.is(':visible')) {
 				search.slideToggle();
 			} else {
-				search.slideToggle("slow");
+				search.slideToggle(400);
 		}
 	});
 	// END SEARCH TOGGLE CODE
