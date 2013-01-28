@@ -243,10 +243,12 @@ header#department {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    color: gray;
     a {
-      color:gray;
+      color:$wwuLtblue;
       text-decoration:none;
-      &.active { color:$wwuLtblue; }
+      &.active { color:$wwuRed; }
+      &:hover {text-decoration: underline;}
     }
   }
 }
@@ -254,9 +256,10 @@ header#department {
 /* link styling */
 
 a {
+  text-decoration: none;
   color: $wwuLtblue;
   &:visited {color: $wwuBlue;}
-  &:hover {color: $wwuRed;}
+  &:hover {text-decoration: underline;}
 }
 
 #secondary-menu { }
