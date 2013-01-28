@@ -8,7 +8,7 @@
  * ul.links, .pager, .more-link, etc.
  */
 /* Basic CSS for WWU Styles */
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/_base\.scss}line{font-family:\0000385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/_base\.scss}line{font-family:\0000387}}
 h1, h2, h3, h4, h5, h6 {
   font-family: Muli, Tahoma, Verdana, "DejaVu Sans", sans-serif;
   font-weight: normal;
@@ -290,21 +290,21 @@ h3.title {
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003266}}
 h1.title {
   display: inline-block;
-  font-size: 1.17em;
+  font-size: 18.72px;
   color: #003f87;
 }
 
 /* Generic header styling */
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003273}}
 h2 {
-  font-size: 1.4em;
+  font-size: 22.4px;
   color: #003f87;
   padding: 5px 10px;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003279}}
 h3 {
-  font-size: 1.25em;
+  font-size: 20px;
   color: #003f87;
   border-bottom: #003f87 1px solid;
   padding: 2px 6px;
@@ -313,21 +313,21 @@ h3 {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003287}}
 h4 {
-  font-size: 1.20em;
+  font-size: 19.2px;
   color: #003f87;
   padding: 2px 4px;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003293}}
 h5 {
-  font-size: 1.10em;
+  font-size: 17.6px;
   color: #003f87;
   padding: 0px 3px;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003299}}
 h6 {
-  font-size: 1.05em;
+  font-size: 16.8px;
   color: #003f87;
   padding: 0px 3px;
 }
@@ -542,38 +542,39 @@ span.field-label {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003468}}
 #footer-right #footer-right-heading h3 {
+  font-size: 16.8px;
   color: #003f87;
   margin: 0;
   padding-left: 1.25em;
   padding-top: 0.5em;
   border: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003477}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003478}}
 #footer-right #footer-right-contact-info {
   padding-left: 1.25em;
   margin-top: 1.500em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003481}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003482}}
 #footer-right #footer-right-contact-info img {
   float: left;
   padding-right: .625em;
   margin-top: .5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003486}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003487}}
 #footer-right #footer-right-contact-info p {
   margin-bottom: 0;
   margin-top: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003490}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003491}}
 #footer-right #footer-right-contact-info p.second-address-line {
   padding-left: 2em;
   margin-top: -0.825em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003494}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003495}}
 #footer-right #footer-right-contact-info a {
   color: #ffffff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003498}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003499}}
 #footer-right #footer-right-social-media-icons {
   position: relative;
   margin-top: 1.438em;
@@ -582,7 +583,7 @@ span.field-label {
 /*
  * Page bottom
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003508}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/drup_zen\/drupal-7\.18\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003509}}
 .region-bottom {
   /* Wrapper for any blocks placed in the page bottom region */
 }

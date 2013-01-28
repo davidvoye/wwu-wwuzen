@@ -265,19 +265,19 @@ h3.title { /* Comment title */
 
 h1.title {
   display:inline-block;
-  font-size:1.17em;
+  font-size: $h1-font-size;
   color:$wwuBlue;
 }
 
 /* Generic header styling */
 h2 {
-  font-size: 1.4em;
+  font-size: $h2-font-size;
   color: $wwuBlue;
   padding: 5px 10px;
 }
 
 h3 {
-  font-size: 1.25em;
+  font-size: $h3-font-size;
   color: $wwuBlue;
   border-bottom: $wwuBlue 1px solid;
   padding: 2px 6px;
@@ -285,19 +285,19 @@ h3 {
 }
 
 h4 {
-  font-size: 1.20em;
+  font-size: $h4-font-size;
   color: $wwuBlue;
   padding: 2px 4px;
 }
 
 h5 {
-  font-size: 1.10em;
+  font-size: $h5-font-size;
   color: $wwuBlue;
   padding: 0px 3px;
 }
 
 h6 {
-  font-size: 1.05em;
+  font-size: $h6-font-size;
   color: $wwuBlue;
   padding: 0px 3px;
 }
@@ -466,6 +466,7 @@ span.field-label { /* The inline field label used by the Fences module */
     @include box-shadow(#c1c1c1 2px 0px 3px);
 
   h3 {
+    font-size: $footer-h3-font-size;
     color:$wwuBlue;
     margin:0;
     padding-left: 1.25em;
