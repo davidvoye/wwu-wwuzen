@@ -160,7 +160,31 @@ $zen-auto-include-item-base: false;
   }
 }
 
-@media all and (min-width: 1025px) {
+@media all and (min-width: 480px) and (max-width: 800px) {
+  /*
+   * Use 5 grid columns for medium sized screens.
+   */
+  $zen-column-count: 12;
+
+  
+  /*
+   * The layout when there is only one sidebar, the left one.
+   */
+   #navigation{
+    @include zen-grid-item(12,1);
+   }
+  .sidebar-first {
+    #content { /* Span 4 columns, starting in 2nd column from left. */
+      @include zen-grid-item(9, 4);
+    }
+
+    .region-sidebar-first { /* Span 1 column, starting in 1st column from left. */
+      @include zen-grid-item(3, 1);
+      }
+    }
+  }
+
+@media all and (min-width: 801px) {
   /*
    * Use 5 grid columns for larger screens.
    */

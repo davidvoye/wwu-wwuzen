@@ -129,6 +129,7 @@ li a.active {
       display:table-cell;
       float:none;
       text-align: center;
+      vertical-align:middle;
       
         &:hover {
           background-color: #dddddd; 
@@ -143,7 +144,7 @@ li a.active {
         a {
           color:#ffffff;
           text-decoration:none;
-          padding:5px 7px;
+          padding:5px 5px;
         }
 
          &:last-child { border:none; }
