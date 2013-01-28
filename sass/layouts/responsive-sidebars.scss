@@ -162,7 +162,7 @@ $zen-auto-include-item-base: false;
 
 @media all and (min-width: 480px) and (max-width: 800px) {
   /*
-   * Use 5 grid columns for medium sized screens.
+   * Use 12 grid columns for medium sized screens.
    */
   $zen-column-count: 12;
 
@@ -182,11 +182,15 @@ $zen-auto-include-item-base: false;
       @include zen-grid-item(3, 1);
       }
     }
+
+    #collegeheader{
+      @include zen-grid-item(4,8);
+    }
   }
 
 @media all and (min-width: 801px) {
   /*
-   * Use 5 grid columns for larger screens.
+   * Use 12 grid columns for larger screens.
    */
   $zen-column-count: 12;
 
