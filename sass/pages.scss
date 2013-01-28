@@ -251,6 +251,14 @@ header#department {
   }
 }
 
+/* link styling */
+
+a {
+  color: $wwuLtblue;
+  &:visited {color: $wwuBlue;}
+  &:hover {color: $wwuRed;}
+}
+
 #secondary-menu { }
 
 h1.title, /* The title of the page */
