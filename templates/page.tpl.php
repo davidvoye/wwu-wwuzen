@@ -69,7 +69,15 @@
  * @see template_process()
  */
 ?>
-<div id="top-stripe"></div> <!-- stripe goes full browser page width -->
+<div id="top-stripe">
+  <?php 
+    $wwuHorizontalLogo = base_path().path_to_theme() . '/images/wwuhorizlogo.png'; 
+  ?>
+  <aside id="top-stripe-left"><image src="<?php print $wwuHorizontalLogo;?>" height="100%" width="100%"/></aside>
+  <aside id="top-stripe-center"><h3><?php print $site_name; ?></h3></aside>
+  <aside id="top-stripe-right">Mobile Menu</aside>
+
+</div> <!-- stripe goes full browser page width -->
 <div id="page">
   <header id="header" role="banner">
     <!--Retrieve our images for use in the header -->

@@ -19,11 +19,35 @@ body {
   padding: 0;
   background-color: #e9e9e9;
 }
-#top-stripe{
-  height: 6px;
-  top: 0;
-  z-index: 90;
-  background-color:$wwuLtblue;
+@media all and (min-width: 801px) {
+  #top-stripe{
+    height: 6px;
+    top: 0;
+    z-index: 90;
+    background-color:$wwuLtblue;
+  }
+  #top-stripe-left, #top-stripe-center, #top-stripe-right {
+    display:none;
+  }
+}
+@media all and (min-width:480px) and (max-width:800px) {
+  #top-stripe{
+    height: 3.975em;
+    top: 0;
+    z-index: 90;
+    background-color:$wwuLtblue;
+  }
+    #top-stripe-left{
+    float:left;
+    width:19.375em
+  }
+  #top-stripe-center {
+    float:left;
+    padding:0 1em 0 5em;
+  }
+  #top-stripe-right {
+    float:right;
+  } 
 }
 
 #page {
@@ -56,12 +80,20 @@ body {
  }
 #wwuheader {
   height: 9.063em;
-  
+
+@media all and (min-width: 801px) {  
   img.wwuLogo {
      z-index: 200;
      margin: -6px 0 0 20px;
      position:relative;
   }
+}
+@media all and (min-width:480px) and (max-width:800px) {
+  img.wwuLogo {
+    display:none;
+  }
+}
+
   #edit-search-block-form--2{
     float:left;
   }
