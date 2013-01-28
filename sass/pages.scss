@@ -416,85 +416,175 @@ span.field-label { /* The inline field label used by the Fences module */
   padding-left: 1.5em;
 }
 
-#footer-left {
-  float: left;
-  width: 29.5%;
-  padding: .688em 0em 1.25em 1.25em;
+@media all and (min-width: 801px) {
+  #footer-left {
+    float: left;
+    width: 29.5%;
+    padding: .688em 0em 1.25em 1.25em;
+  }
 }
 
-#footer-center {
-  float: left;
-  width: 29.5%;
-  padding: .688em 3.25em 1.25em 0em;
+@media all and (max-width: 800px) {
+  #footer-left {
+    display: none;
+  }
+}
+@media all and (min-width: 801px) {
+  #footer-center {
+    float: left;
+    width: 29.5%;
+    padding: .688em 3.25em 1.25em 0em;
 
 
-  li {
-    border-bottom:1px solid #ffffff;
-    width: 100%;
-    list-style: none;
+    li {
+      border-bottom:1px solid #ffffff;
+      width: 100%;
+      list-style: none;
 
-    &:hover {
-      border-bottom:1px solid $wwuYellow;
+      &:hover {
+        border-bottom:1px solid $wwuYellow;
+      }
+
+
+      a {
+        color:#ffffff;
+        text-decoration:none;
+        padding-left:.15em;
+        text-transform:capitalize;
+       &:hover {
+        color:$wwuYellow;
+        }
+      }
     }
+  }
+}
+@media all and (max-width: 800px) {
+  #footer-center {
+    float: left;
+    width: 45%;
+    padding: .688em 3.25em 1.25em 0em;
 
 
-    a {
-      color:#ffffff;
-      text-decoration:none;
-      padding-left:.15em;
-      text-transform:capitalize;
-     &:hover {
-      color:$wwuYellow;
+    li {
+      border-bottom:1px solid #ffffff;
+      width: 100%;
+      list-style: none;
+
+      &:hover {
+        border-bottom:1px solid $wwuYellow;
+      }
+
+
+      a {
+        color:#ffffff;
+        text-decoration:none;
+        padding-left:.15em;
+        text-transform:capitalize;
+       &:hover {
+        color:$wwuYellow;
+        }
       }
     }
   }
 }
 
-#footer-right {
-  float: right;
-  margin-right:2em;
-  width: 24.5%;
-  @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
-  margin-top:-1.813em;
+@media all and (min-width: 801px) {
+  #footer-right {
+    float: right;
+    margin-right:2em;
+    width: 24.5%;
+    @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
+    margin-top:-1.813em;
 
-  #footer-right-heading {
-    background-color: #ffffff;
-    width:100%;
-    height:3em;
-    @include box-shadow(#c1c1c1 2px 0px 3px);
+    #footer-right-heading {
+      background-color: #ffffff;
+      width:100%;
+      height:3em;
+      @include box-shadow(#c1c1c1 2px 0px 3px);
 
-  h3 {
-    color:$wwuBlue;
-    margin:0;
-    padding-left: 1.25em;
-    padding-top: 0.5em;
-    }
-  }
-
-  #footer-right-contact-info {
-    padding-left:1.25em;
-    margin-top:1.500em;
-
-    img {
-      float:left;
-      padding-right:.625em;
-      margin-top:.5em;
-    }
-    p {
-      margin-bottom:0;
-      margin-top:0; 
-    }
-    p.second-address-line {
-      padding-left:2em; 
-      margin-top:-.825em
+    h3 {
+      color:$wwuBlue;
+      margin:0;
+      padding-left: 1.25em;
+      padding-top: 0.5em;
       }
-    a {
-      color:#ffffff;
+    }
+
+    #footer-right-contact-info {
+      padding-left:1.25em;
+      margin-top:1.500em;
+
+      img {
+        float:left;
+        padding-right:.625em;
+        margin-top:.5em;
+      }
+      p {
+        margin-bottom:0;
+        margin-top:0; 
+      }
+      p.second-address-line {
+        padding-left:2em; 
+        margin-top:-.825em
+        }
+      a {
+        color:#ffffff;
+      }
+    }
+    #footer-right-social-media-icons {
+      position:relative;
+      margin-top:1.438em;
     }
   }
-  #footer-right-social-media-icons {
-    position:relative;
-    margin-top:1.438em;
+}
+
+@media all and (max-width: 800px) {
+  #footer-right {
+    float: right;
+    margin-right:2em;
+    width: 47%;
+    @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
+    margin-top:-1.813em;
+
+    #footer-right-heading {
+      background-color: #ffffff;
+      width:100%;
+      height:3em;
+      @include box-shadow(#c1c1c1 2px 0px 3px);
+
+    h3 {
+      color:$wwuBlue;
+      margin:0;
+      padding-left: 1.25em;
+      padding-top: 0.5em;
+      }
+    }
+
+    #footer-right-contact-info {
+      padding-left:1.25em;
+      margin-top:1.500em;
+
+      img {
+        float:left;
+        padding-right:.625em;
+        margin-top:.5em;
+      }
+      p {
+        margin-bottom:0;
+        margin-top:0; 
+      }
+      p.second-address-line {
+        padding-left:2em; 
+        margin-top:-.825em
+        }
+      a {
+        color:#ffffff;
+      }
+    }
+    #footer-right-social-media-icons {
+      position:relative;
+      margin-top:1.438em;
+    }
   }
 }
 
