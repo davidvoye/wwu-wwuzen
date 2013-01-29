@@ -183,10 +183,7 @@ $zen-auto-include-item-base: false;
       }
     }
 
-    #collegeheader{
-      @include zen-grid-item(4,8);
-    }
-  }
+}
 
 @media all and (min-width: 801px) {
   /*
