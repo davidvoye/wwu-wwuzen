@@ -440,7 +440,12 @@ span.field-label { /* The inline field label used by the Fences module */
     @media all and (max-width: 320px) {
       width: 100%;
     }
-    padding: .688em 3.25em 1.25em 0em;
+
+    @media all and (max-width: 320px) {
+      ul {
+        padding: 0px 0px 0px 5px;
+      }
+    }
 
     li {
       border-bottom:1px solid #ffffff;
@@ -476,6 +481,8 @@ span.field-label { /* The inline field label used by the Fences module */
     @media all and (max-width: 320px) {
       min-width: 250px;
       clear: both;
+      margin-right: .75em;
+      margin-top: 1em;
     }
     @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
     margin-top:-1.813em;
