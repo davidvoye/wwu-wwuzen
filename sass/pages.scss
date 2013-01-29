@@ -19,25 +19,27 @@ body {
   padding: 0;
   background-color: #e9e9e9;
 }
-@media all and (min-width: 801px) {
-  #top-stripe{
+
+#top-stripe {
+  @media all and (min-width: 801px) {
     height: 6px;
-    top: 0;
-    z-index: 90;
-    background-color:$wwuLtblue;
   }
+  @media all and (min-width:480px) and (max-width:800px) {
+    height: 3.975em;
+  }
+  top: 0;
+  z-index: 90;
+  background-color:$wwuLtblue;
+}
+
+@media all and (min-width: 801px) {
   #top-stripe-left, #top-stripe-center, #top-stripe-right {
-    display:none;
+    display: none;
   }
 }
+
 @media all and (min-width:480px) and (max-width:800px) {
-  #top-stripe{
-    height: 3.975em;
-    top: 0;
-    z-index: 90;
-    background-color:$wwuLtblue;
-  }
-    #top-stripe-left{
+  #top-stripe-left{
     float:left;
     width:19.375em
   }
@@ -47,8 +49,9 @@ body {
   }
   #top-stripe-right {
     float:right;
-  } 
+  }
 }
+
 #page {
 }
 
@@ -417,86 +420,106 @@ span.field-label { /* The inline field label used by the Fences module */
 }
 
 #footer-left {
-  float: left;
-  width: 29.5%;
-  padding: .688em 0em 1.25em 1.25em;
+  @media all and (min-width: 801px) {
+      float: left;
+      width: 29.5%;
+      padding: .688em 0em 1.25em 1.25em;
+    }
+  @media all and (max-width: 800px) {
+    display: none;
+  }
 }
 
 #footer-center {
-  float: left;
-  width: 29.5%;
-  padding: .688em 3.25em 1.25em 0em;
-
-
-  li {
-    border-bottom:1px solid #ffffff;
-    width: 100%;
-    list-style: none;
-
-    &:hover {
-      border-bottom:1px solid $wwuYellow;
+    float: left;
+    @media all and (min-width: 801px) {
+      width: 24.5%;
     }
+    @media all and (min-width: 321px) and (max-width: 800px) {
+      width: 45%;
+    }
+    @media all and (max-width: 320px) {
+      width: 100%;
+    }
+    padding: .688em 3.25em 1.25em 0em;
+
+    li {
+      border-bottom:1px solid #ffffff;
+      width: 100%;
+      list-style: none;
+
+      &:hover {
+        border-bottom:1px solid $wwuYellow;
+      }
 
 
-    a {
-      color:#ffffff;
-      text-decoration:none;
-      padding-left:.15em;
-      text-transform:capitalize;
-     &:hover {
-      color:$wwuYellow;
+      a {
+        color:#ffffff;
+        text-decoration:none;
+        padding-left:.15em;
+        text-transform:capitalize;
+      &:hover {
+        color:$wwuYellow;
       }
     }
   }
 }
 
 #footer-right {
-  float: right;
-  margin-right:2em;
-  width: 24.5%;
-  @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
-  margin-top:-1.813em;
-
-  #footer-right-heading {
-    background-color: #ffffff;
-    width:100%;
-    height:3em;
-    @include box-shadow(#c1c1c1 2px 0px 3px);
-
-  h3 {
-    color:$wwuBlue;
-    margin:0;
-    padding-left: 1.25em;
-    padding-top: 0.5em;
+    float: right;
+    margin-right:2em;
+    @media all and (min-width: 801px) {
+      width: 24.5%;
     }
-  }
-
-  #footer-right-contact-info {
-    padding-left:1.25em;
-    margin-top:1.500em;
-
-    img {
-      float:left;
-      padding-right:.625em;
-      margin-top:.5em;
+    @media all and (min-width: 321px) and (max-width: 800px) {
+      width: 45%;
     }
-    p {
-      margin-bottom:0;
-      margin-top:0; 
+    @media all and (max-width: 320px) {
+      min-width: 250px;
+      clear: both;
     }
-    p.second-address-line {
-      padding-left:2em; 
-      margin-top:-.825em
+    @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
+    margin-top:-1.813em;
+
+    #footer-right-heading {
+      background-color: #ffffff;
+      width:100%;
+      height:3em;
+      @include box-shadow(#c1c1c1 2px 0px 3px);
+
+    h3 {
+      color:$wwuBlue;
+      margin:0;
+      padding-left: 1.25em;
+      padding-top: 0.5em;
       }
-    a {
-      color:#ffffff;
+    }
+
+    #footer-right-contact-info {
+      padding-left:1.25em;
+      margin-top:1.500em;
+      img {
+        float:left;
+        padding-right:.625em;
+        margin-top:.5em;
+      }
+      p {
+        margin-bottom:0;
+        margin-top:0; 
+      }
+      p.second-address-line {
+        padding-left:2em; 
+        margin-top:-.825em
+        }
+      a {
+        color:#ffffff;
+      }
+    }
+    #footer-right-social-media-icons {
+      position:relative;
+      margin-top:1.438em;
     }
   }
-  #footer-right-social-media-icons {
-    position:relative;
-    margin-top:1.438em;
-  }
-}
 
 /*
  * Page bottom
