@@ -93,6 +93,7 @@ body {
 @media all and (min-width:480px) and (max-width:800px) {
   img.wwuLogo {
     display:none;
+    position:relative;
   }
 }
 
@@ -472,17 +473,19 @@ span.field-label { /* The inline field label used by the Fences module */
 #footer-right {
     float: right;
     margin-right:2em;
+    min-width: 24.563em;
     @media all and (min-width: 801px) {
-      width: 24.5%;
+      /* Nothing to do here. */
     }
     @media all and (min-width: 321px) and (max-width: 800px) {
-      width: 45%;
+      /* Nothing to do here. */
     }
     @media all and (max-width: 320px) {
       min-width: 250px;
       clear: both;
       margin-right: .75em;
       margin-top: 1em;
+      float:none;
     }
     @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
     margin-top:-1.813em;
