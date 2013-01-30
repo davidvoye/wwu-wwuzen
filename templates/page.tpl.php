@@ -79,81 +79,7 @@
 
 </div> <!-- stripe goes full browser page width -->
 <div id="page">
-  <header id="header" role="banner">
-    <!--Retrieve our images for use in the header -->
-    <?php
-      $wwuLogo = base_path().path_to_theme() . '/images/wwu.png';
 
-
-    ?>
-    <div id="wwuheader">
-        <a href="http://www.wwu.edu">
-          <img class="wwuLogo" src="<?php print $wwuLogo;?>" alt="Western Washington University" width="240px" height="145px" />
-        </a>
-       <aside class="wwusearch"><a id="s-toggle" href="#"><img width="35" height="40" src="http://www.wwu.edu/wwucommon/SearchIcon.png"></a></aside>
-       <div id="search" style="display:none;">
-              <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
-              <?php print $search_box; ?>
-            </div>
-        <ul id="wwumenu">
-          <li class="wwulinks"><a href="http://www.wwu.edu/academic_calendar">Calendar</a></li>
-          <li class="wwulinks"><a href="http://www.wwu.edu/directory">Directory</a></li>    
-          <li class="wwulinks"><a href="http://www.wwu.edu/index">Index</a></li>    
-          <li class="wwulinks"><a href="http://www.wwu.edu/campusmaps">Map</a></li>    
-          <li class="wwulinks"><a href="http://mywestern.wwu.edu">myWestern</a></li>
-        </ul> 
-  
-      </div><!-- wwuheader -->
-  
-    <div id="collegeheader">
-    <!-- Group Logo (banner) and Site Name and Main Menu for Group -->
-    <?php if ($logo): ?>
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-      <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
-    <?php endif; ?>
-  
-    <?php if ($site_name || $site_slogan): ?>
-      <hgroup id="name-and-slogan">
-        <?php if ($site_name): ?>
-          <h1 id="site-name">
-            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-          </h1>
-        <?php endif; ?>
-
-        <?php if ($site_slogan): ?>
-          <h2 id="site-slogan"><?php print $site_slogan; ?></h2>
-        <?php endif; ?>
-      </hgroup><!-- /#name-and-slogan -->
-    <?php endif; ?>
- 
-    <div id="navigation">
-
-      <?php if ($main_menu): ?>
-        <nav id="main-menu" role="navigation">
-          <?php
-          // This code snippet is hard to modify. We recommend turning off the
-          // "Main menu" on your sub-theme's settings form, deleting this PHP
-          // code block, and, instead, using the "Menu block" module.
-          // @see http://drupal.org/project/menu_block
-          print theme('links__system_main_menu', array(
-            'links' => $main_menu,
-            'attributes' => array(
-              'class' => array('links', 'inline', 'clearfix'),
-            ),
-            'heading' => array(
-              'text' => t('Main menu'),
-              'level' => 'h2',
-              'class' => array('element-invisible'),
-            ),
-          )); ?>
-        </nav>
-      <?php endif; ?>
-    
-      <?php print render($page['navigation']); ?>
-
-    </div><!-- /#navigation -->
-    <?php print render($page['header']); ?>
-  </header>
 
   <div id="main">
     <header id="department">
@@ -212,6 +138,80 @@
     <?php endif; ?>
 
   </div><!-- /#main -->
+
+      <!--Retrieve our images for use in the header -->
+    <?php
+      $wwuLogo = base_path().path_to_theme() . '/images/wwu.png';
+    ?>
+    <div id="wwuheader">
+        <a href="http://www.wwu.edu">
+          <img class="wwuLogo" src="<?php print $wwuLogo;?>" alt="Western Washington University" width="240px" height="145px" />
+        </a>
+       <aside class="wwusearch"><a id="s-toggle" href="#"><img width="35" height="40" src="http://www.wwu.edu/wwucommon/SearchIcon.png"></a></aside>
+       <div id="search" style="display:none;">
+              <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
+              <?php print $search_box; ?>
+            </div>
+        <ul id="wwumenu">
+          <li class="wwulinks"><a href="http://www.wwu.edu/academic_calendar">Calendar</a></li>
+          <li class="wwulinks"><a href="http://www.wwu.edu/directory">Directory</a></li>    
+          <li class="wwulinks"><a href="http://www.wwu.edu/index">Index</a></li>    
+          <li class="wwulinks"><a href="http://www.wwu.edu/campusmaps">Map</a></li>    
+          <li class="wwulinks"><a href="http://mywestern.wwu.edu">myWestern</a></li>
+        </ul> 
+  
+      </div><!-- wwuheader -->
+  <header id="header" role="banner">
+    <div id="collegeheader">
+    <!-- Group Logo (banner) and Site Name and Main Menu for Group -->
+    <?php if ($logo): ?>
+      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+      <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
+    <?php endif; ?>
+  
+    <?php if ($site_name || $site_slogan): ?>
+      <hgroup id="name-and-slogan">
+        <?php if ($site_name): ?>
+          <h1 id="site-name">
+            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+          </h1>
+        <?php endif; ?>
+
+        <?php if ($site_slogan): ?>
+          <h2 id="site-slogan"><?php print $site_slogan; ?></h2>
+        <?php endif; ?>
+      </hgroup><!-- /#name-and-slogan -->
+    <?php endif; ?>
+ 
+    <div id="navigation">
+
+      <?php if ($main_menu): ?>
+        <nav id="main-menu" role="navigation">
+          <?php
+          // This code snippet is hard to modify. We recommend turning off the
+          // "Main menu" on your sub-theme's settings form, deleting this PHP
+          // code block, and, instead, using the "Menu block" module.
+          // @see http://drupal.org/project/menu_block
+          print theme('links__system_main_menu', array(
+            'links' => $main_menu,
+            'attributes' => array(
+              'class' => array('links', 'inline', 'clearfix'),
+            ),
+            'heading' => array(
+              'text' => t('Main menu'),
+              'level' => 'h2',
+              'class' => array('element-invisible'),
+            ),
+          )); ?>
+        </nav>
+      <?php endif; ?>
+    
+      <?php print render($page['navigation']); ?>
+
+    </div><!-- /#navigation -->
+    <?php print render($page['header']); ?>
+  </header>
+  
   </div><!-- /#max-wrapper  -->
     <div id="footer">
       <div id="footer-wrapper">

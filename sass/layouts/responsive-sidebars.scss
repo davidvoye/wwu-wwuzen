@@ -50,11 +50,21 @@ $zen-auto-include-item-base: false;
 }
 
 /*
+ * Containers for grid items and flow items.
+ */
+
+#page,
+#footer {
+  @include zen-grid-container();
+}
+
+/*
  * Apply the shared properties of grid items in a single, efficient ruleset.
  */
 // See the note about $zen-auto-include-item-base above.
 
 #page,
+#wwuheader,
 #header,
 #main,
 #content,
@@ -65,16 +75,6 @@ $zen-auto-include-item-base: false;
   @include zen-grid-item-base();
 }
 
-/*
- * Containers for grid items and flow items.
- */
-
-#page,
-#header,
-#main,
-#footer {
-  @include zen-grid-container();
-}
 
 /*
  * Navigation bar
@@ -186,7 +186,29 @@ $zen-auto-include-item-base: false;
       }
   }
 
-  /*
+  #wwuheader {
+     @include zen-grid-item(12.25,1, right);
+        margin-bottom:6.563em;
+    }
+  #header {
+    @include zen-clear(right);
+    @include zen-grid-item(12,1, right);
+    
+    #collegeheader {
+    @include zen-grid-item(12,1, right);
+      //height:116px;
+      margin-top:-6.875em;
+    }
+  }
+
+  #main {
+    @include zen-clear();
+    @include zen-grid-item(12,1);
+    width:99%;
+    margin: 18.8em .938em 4.250em 1em;
+  }
+
+   /*
    * The layout when there is only one sidebar, the left one.
    */
    #navigation{
@@ -201,19 +223,8 @@ $zen-auto-include-item-base: false;
       @include zen-grid-item(3, 1);
       }
     }
-  #header {
-    //@include zen-clear();
-    #collegeheader {
-      height:116px;
-      margin-top:0;
-    }
-    .wwusearch {
-      //@include zen-clear();
-      @include zen-grid-item(9,1);
-    }
+   
   }
-
-}
 
 @media all and (min-width: 801px) {
   /*
@@ -224,7 +235,7 @@ $zen-auto-include-item-base: false;
 
   #top-stripe {
     @include zen-grid-item(12,1);
-    height: 6px;
+    height: .375em;
     top: 0;
     z-index: 90;
     background-color:$wwuLtblue;
@@ -234,20 +245,26 @@ $zen-auto-include-item-base: false;
     }
   }
 
-  #header {
-    @include zen-clear();
-   // @include zen-grid-item(12,1);
-    #collegeheader {
-    @include zen-grid-item(12,1);
-      //height:116px;
-      margin-top:-110px;
+  #wwuheader {
+     @include zen-grid-item(12.25,1, right);
+        margin-bottom:.563em;
     }
-
+  #header {
+    @include zen-clear(right);
+    @include zen-grid-item(12,1, right);
+    
+    #collegeheader {
+    @include zen-grid-item(12,1, right);
+      //height:116px;
+      margin-top:-6.875em;
+    }
   }
+
   #main {
     @include zen-clear();
     @include zen-grid-item(12,1);
     width:99%;
+    margin: 18.8em .938em 4.250em 1em;
   }
   
   /*
