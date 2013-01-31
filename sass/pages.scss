@@ -259,13 +259,47 @@ h2.block-title, /* Block title */
 h2.title, /* Comment section heading */
 h2.comment-form, /* Comment form heading */
 h3.title { /* Comment title */
+  border: none;
   margin: 0;
 }
 
 h1.title {
   display:inline-block;
-  font-size:1.17em;
+  font-size: $h1-font-size;
   color:$wwuBlue;
+}
+
+/* Generic header styling */
+h2 {
+  font-size: $h2-font-size;
+  color: $wwuBlue;
+  padding: 5px 10px;
+}
+
+h3 {
+  font-size: $h3-font-size;
+  color: $wwuBlue;
+  border-bottom: $wwuBlue 1px solid;
+  padding: 2px 6px;
+  max-width: 300px;
+}
+
+h4 {
+  font-size: $h4-font-size;
+  color: $wwuBlue;
+  padding: 2px 4px;
+}
+
+h5 {
+  font-size: $h5-font-size;
+  color: $wwuBlue;
+  padding: 0px 3px;
+}
+
+h6 {
+  font-size: $h6-font-size;
+  color: $wwuBlue;
+  padding: 0px 3px;
 }
 
 tr.even { /* Some tables have rows marked even or odd. */
@@ -432,10 +466,12 @@ span.field-label { /* The inline field label used by the Fences module */
     @include box-shadow(#c1c1c1 2px 0px 3px);
 
   h3 {
+    font-size: $footer-h3-font-size;
     color:$wwuBlue;
     margin:0;
     padding-left: 1.25em;
     padding-top: 0.5em;
+    border: none;
     }
   }
 
