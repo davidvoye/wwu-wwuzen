@@ -76,9 +76,47 @@ $zen-auto-include-item-base: false;
 }
 
 
-/*
- * Navigation bar
- */
+@media all and (max-width:360px) {
+  $zen-column-count: 1;
+
+  #top-stripe {
+    height: 3.975em;
+    top: 0;
+    z-index: 90;
+    background-color:$wwuLtblue;
+ 
+      #top-stripe-left {
+        @include zen-grid-item(1,1);
+        background-color:#ffffff;
+      }
+      #top-stripe-center{
+        @include zen-clear();
+        @include zen-grid-item(1,1);
+        margin-left:5%;
+      }
+      #top-stripe-right {
+        @include zen-clear();
+        @include zen-grid-item(1,1);
+        margin-left:5%;
+      }
+  }
+
+  #header, img.wwuLogo {
+    display:none;
+  }
+
+  #main {
+    @include zen-clear();
+    @include zen-grid-item(1,1, right);
+    margin-top:1em;
+  }
+
+  #wwuheader {
+    @include zen-clear(right);
+    @include zen-grid-item(1,1);
+  }
+
+}
 
 @media all and (min-width: 480px) {
   $zen-column-count: 3;
@@ -179,10 +217,10 @@ $zen-auto-include-item-base: false;
         @include zen-grid-item(4,1);
       }
       #top-stripe-center{
-        @include zen-grid-item(4,6);
+        @include zen-grid-item(7,6);
       }
       #top-stripe-right {
-        @include zen-grid-item(2,10);
+        @include zen-grid-item(1,12);
       }
   }
 
@@ -261,7 +299,7 @@ $zen-auto-include-item-base: false;
   }
 
   #main {
-    @include zen-clear();
+    @include zen-clear(right);
     @include zen-grid-item(12,1);
     width:99%;
     margin: 18.8em .938em 4.250em 1em;

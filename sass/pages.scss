@@ -399,14 +399,14 @@ span.field-label { /* The inline field label used by the Fences module */
     @media all and (min-width: 801px) {
       width: 24.5%;
     }
-    @media all and (min-width: 321px) and (max-width: 800px) {
+    @media all and (min-width: 361px) and (max-width: 800px) {
       width: 45%;
     }
-    @media all and (max-width: 320px) {
+    @media all and (max-width: 360px) {
       width: 100%;
     }
 
-    @media all and (max-width: 320px) {
+    @media all and (max-width: 360px) {
       ul {
         padding: 0px 0px 0px 5px;
       }
@@ -444,7 +444,7 @@ span.field-label { /* The inline field label used by the Fences module */
     @media all and (min-width: 321px) and (max-width: 800px) {
       /* Nothing to do here. */
     }
-    @media all and (max-width: 320px) {
+    @media all and (max-width: 360px) {
       min-width: 250px;
       clear: both;
       margin-right: .75em;
