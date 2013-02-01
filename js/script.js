@@ -31,6 +31,24 @@
 	// END SEARCH TOGGLE CODE
 	}
 }
+	
+	Drupal.behaviors.mobileWwuMenu = {
+		attach: function () {
+
+	// START SEARCH TOGGLE CODE
+
+		$('#mobileWWUmenu').click(function () {
+			var search = $('#wwumenu');
+			if (search.is(':visible')) {
+				search.slideToggle();
+			} else {
+				search.slideToggle(400);
+		}
+	});
+	// END SEARCH TOGGLE CODE
+	}
+}
+
 
 Drupal.behaviors.resizeHeader = {
 	attach: function () {

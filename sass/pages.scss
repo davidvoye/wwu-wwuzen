@@ -151,19 +151,6 @@ body {
 }
 
 
-#collegeheader {
-  position:relative;
-  padding: 10px;
-  background-color: #fff;
-  height: 222px; //extend white background below menu
-  margin-top: -100px; //slide college logo (banner) right under wwu logo
-  #navigation{
-  }
-}
-#collegeheader {
-  img {
-  }
-}
 #logo { /* Wrapping link for college banner = logo */
   float: left; /* LTR */
   padding: 0;
@@ -176,20 +163,6 @@ body {
 
 #name-and-slogan { /* Wrapper for website name and slogan */
   //float: left;
-}
-
-#site-name { /* The name of the website */
-  display:none; //college name is shown as part of image on banner
-  a:link,
-  a:visited {
-    color: #000;
-    text-decoration: none;
-  }
-
-  a:hover,
-  a:focus {
-    text-decoration: underline;
-  }
 }
 
 #site-slogan { /* The slogan (or tagline) of a website */

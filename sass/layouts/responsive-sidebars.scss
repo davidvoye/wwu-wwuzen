@@ -79,41 +79,84 @@ $zen-auto-include-item-base: false;
 @media all and (max-width:360px) {
   $zen-column-count: 1;
 
-  #top-stripe {
-    height: 3.975em;
-    top: 0;
-    z-index: 90;
-    background-color:$wwuLtblue;
- 
-      #top-stripe-left {
-        @include zen-grid-item(1,1);
-        background-color:#ffffff;
+#wwuheader {
+    @include zen-clear();
+    @include zen-grid-item(1,1,left);
+
+    .desktop {
+      display:none;
+    }
+    .wwusearch {
+      float:right;
+    }
+
+    #mobileWWUmenu {
+      float:right;
+      width:3.125em;
+    }
+    ul#wwumenu {
+      float:right;
+      font-size:1em;
+      line-height:0em;
+      margin:0;
+      padding:0;
+      display:none;
+      li  {
+        display:inline;
+        font-family: $muli;
+        padding-left: .5em;
       }
-      #top-stripe-center{
-        @include zen-clear();
-        @include zen-grid-item(1,1);
-        margin-left:5%;
+
+      .wwulinks:not(:first-child):before {
+          content:"";
+        }
+      .wwulinks ul {
+         border: 1px solid #e6e6e6;
       }
-      #top-stripe-right {
-        @include zen-clear();
-        @include zen-grid-item(1,1);
-        margin-left:5%;
+      .wwulinks li {
+         font-size: 1.8em;
+         border-bottom: 1px solid #eee;
       }
+      .wwulinks li:last-child {
+         border-bottom: 0;
+      }
+      .wwulinks a {
+         display: block;
+         padding: 1em 0em;
+         text-decoration: none;
+         color: #333;
+      }
+      .wwulinks a:hover {
+         background-color: #f8f8f8;
+      }
+      .wwulinks .nav-current {
+         font-weight: bold;
+      }
+    }
   }
 
-  #header, img.wwuLogo {
+  #logo, #logoImage, #navigation{
     display:none;
   }
-
+  #collegeheader {
+    @include zen-clear();
+    @include zen-grid-item(1,1);
+    padding: 0;
+    background-color:transparent;
+    
+    #site-name { /* The name of the website */
+      display:block; //college name is shown as part of image on banner
+      a:link,
+        a:visited {
+          color: #000;
+          text-decoration: none;
+        }
+    }
+  }
   #main {
     @include zen-clear();
     @include zen-grid-item(1,1, right);
     margin-top:1em;
-  }
-
-  #wwuheader {
-    @include zen-clear(right);
-    @include zen-grid-item(1,1);
   }
 
 }
@@ -284,25 +327,50 @@ $zen-auto-include-item-base: false;
   }
 
   #wwuheader {
-     @include zen-grid-item(12.25,1, right);
+     @include zen-grid-item(12,1);
         margin-bottom:.563em;
+
+      .mobile { display:none;}
+
+    #mobileWWUmenu {
+      display:none;
     }
-  #header {
-    @include zen-clear(right);
-    @include zen-grid-item(12,1, right);
-    
-    #collegeheader {
-    @include zen-grid-item(12,1, right);
-      //height:116px;
-      margin-top:-6.875em;
+    #wwumenu {
+      display: block;
     }
   }
+  #header {
+    @include zen-clear();
+    @include zen-grid-item(12,1);
+    
+    #collegeheader {
+    @include zen-grid-item(12,1);
+    position:relative;
+    padding: 10px;
+    background-color: #fff;
+    height: 222px; //extend white background below menu
+    margin-top: -100px; //slide college logo (banner) right under wwu logo
+}
 
+#site-name { /* The name of the website */
+  display:none; //college name is shown as part of image on banner
+  a:link,
+  a:visited {
+    color: #000;
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+    }
+  }
+}
   #main {
-    @include zen-clear(right);
+    @include zen-clear();
     @include zen-grid-item(12,1);
     width:99%;
-    margin: 18.8em .938em 4.250em 1em;
+    margin: 0.5em .938em 4.250em .95em;
   }
   
   /*
