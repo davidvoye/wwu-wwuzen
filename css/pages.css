@@ -8,7 +8,7 @@
  * ul.links, .pager, .more-link, etc.
  */
 /* Basic CSS for WWU Styles */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/_base\.scss}line{font-family:\0000385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/_base\.scss}line{font-family:\0000387}}
 h1, h2, h3, h4, h5, h6 {
   font-family: Muli, Tahoma, Verdana, "DejaVu Sans", sans-serif;
   font-weight: normal;
@@ -264,18 +264,38 @@ header#department {
   list-style-type: none;
   margin: 0;
   padding: 0;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003246}}
-.breadcrumb li a {
   color: gray;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003247}}
+.breadcrumb li a {
+  color: #0083d6;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003249}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003250}}
 .breadcrumb li a.active {
-  color: #0083d6;
+  color: #cc2d30;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003251}}
+.breadcrumb li a:hover {
+  text-decoration: underline;
 }
 
+/* link styling */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003258}}
+a {
+  text-decoration: none;
+  color: #0083d6;
+}
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003261}}
+a:visited {
+  color: #003f87;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003262}}
+a:hover {
+  text-decoration: underline;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003272}}
 h1.title,
 h2.node-title,
 h2.block-title,
@@ -283,47 +303,86 @@ h2.title,
 h2.comment-form,
 h3.title {
   /* Comment title */
+  border: none;
   margin: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003265}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003277}}
 h1.title {
   display: inline-block;
-  font-size: 1.17em;
+  font-size: 18.72px;
   color: #003f87;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003271}}
+/* Generic header styling */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003284}}
+h2 {
+  font-size: 22.4px;
+  color: #003f87;
+  padding: 5px 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003290}}
+h3 {
+  font-size: 20px;
+  color: #003f87;
+  border-bottom: #003f87 1px solid;
+  padding: 2px 6px;
+  max-width: 300px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003298}}
+h4 {
+  font-size: 19.2px;
+  color: #003f87;
+  padding: 2px 4px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003304}}
+h5 {
+  font-size: 17.6px;
+  color: #003f87;
+  padding: 0px 3px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003310}}
+h6 {
+  font-size: 16.8px;
+  color: #003f87;
+  padding: 0px 3px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003316}}
 tr.even {
   /* Some tables have rows marked even or odd. */
   /* background-color: #eee; */
   /* Drupal core uses a #eee background */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003275}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003320}}
 tr.odd {
   /* background-color: #eee; */
   /* Drupal core uses a #eee background */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003279}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003324}}
 div.messages {
   /* Important messages (status, warning, and error) for the user. See also the declarations in messages.css. */
   margin: 1.5em 0;
   /* Drupal core uses "6px 0" margin */
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003282}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003327}}
 div.messages ul {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003288}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003333}}
 div.status {
   /* Normal priority messages */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003292}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003337}}
 div.warning,
 tr.warning {
   /* Medium priority messages */
@@ -331,53 +390,53 @@ tr.warning {
   /* Drupal core uses: 1px solid #f0c020 */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003297}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003342}}
 div.error,
 tr.error {
   /* High priority messages. See also the .error declaration below. */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003300}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003345}}
 .error {
   /* Errors that are separate from div.messages status messages. */
   /* color: #e55; */
   /* Drupal core uses a #e55 background */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003304}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003349}}
 .warning {
   /* Warnings that are separate from div.messages status messages. */
   /* color: #e09010; */
   /* Drupal core uses a #e09010 background */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003308}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003353}}
 .tabs {
   /* See also the tabs.css file. */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003356}}
 .region-help {
   /* Help text on a page */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003359}}
 .more-help-link {
   /* Link to more help */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003362}}
 .region-content {
   /* Wrapper for the actual page content */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003365}}
 ul.inline {
   /* List of links generated by theme_links() */
   display: inline;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003369}}
 ul.inline li {
   display: inline;
   list-style-type: none;
@@ -385,30 +444,30 @@ ul.inline li {
   /* LTR */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003375}}
 span.field-label {
   /* The inline field label used by the Fences module */
   padding: 0 1em 0 0;
   /* LTR */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003379}}
 .item-list .pager {
   /* A list of page numbers when more than 1 page of content is available */
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003382}}
 .item-list .pager li {
   /* Each page number in the pager list */
   padding: 0 0.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003387}}
 .feed-icon {
   /* The link to the RSS or Atom feed for the current list of content */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003390}}
 .more-link {
   /* Aggregator, blog, and forum more link */
 }
@@ -428,7 +487,7 @@ span.field-label {
 /*
  * Footer
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003417}}
 #footer {
   background-color: #003f87;
   color: white;
@@ -437,7 +496,7 @@ span.field-label {
   padding-bottom: 3.813em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003425}}
 #footer-wrapper {
   max-width: 1080px;
   margin-left: auto;
@@ -445,42 +504,42 @@ span.field-label {
   padding-left: 1.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003432}}
 #footer-left {
   float: left;
   width: 29.5%;
   padding: 0.688em 0em 1.25em 1.25em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003438}}
 #footer-center {
   float: left;
   width: 29.5%;
   padding: 0.688em 3.25em 1.25em 0em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003444}}
 #footer-center li {
   border-bottom: 1px solid white;
   width: 100%;
   list-style: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003404}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003449}}
 #footer-center li:hover {
   border-bottom: 1px solid #ffc61e;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003409}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003454}}
 #footer-center li a {
   color: #ffffff;
   text-decoration: none;
   padding-left: .15em;
   text-transform: capitalize;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003414}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003459}}
 #footer-center li a:hover {
   color: #ffc61e;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003421}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003466}}
 #footer-right {
   float: right;
   margin-right: 2em;
@@ -492,7 +551,7 @@ span.field-label {
   background: linear-gradient(top, #3a5a8f, #003f87);
   margin-top: -1.813em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003428}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003473}}
 #footer-right #footer-right-heading {
   background-color: #ffffff;
   width: 100%;
@@ -501,39 +560,41 @@ span.field-label {
   -moz-box-shadow: #c1c1c1 2px 0px 3px;
   box-shadow: #c1c1c1 2px 0px 3px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003434}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003479}}
 #footer-right #footer-right-heading h3 {
+  font-size: 14.4px;
   color: #003f87;
   margin: 0;
   padding-left: 1.25em;
   padding-top: 0.5em;
+  border: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003442}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003489}}
 #footer-right #footer-right-contact-info {
   padding-left: 1.25em;
   margin-top: 1.500em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003446}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003493}}
 #footer-right #footer-right-contact-info img {
   float: left;
   padding-right: .625em;
   margin-top: .5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003451}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003498}}
 #footer-right #footer-right-contact-info p {
   margin-bottom: 0;
   margin-top: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003455}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003502}}
 #footer-right #footer-right-contact-info p.second-address-line {
   padding-left: 2em;
   margin-top: -0.825em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003459}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003506}}
 #footer-right #footer-right-contact-info a {
   color: #ffffff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003463}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003510}}
 #footer-right #footer-right-social-media-icons {
   position: relative;
   margin-top: 1.438em;
@@ -542,7 +603,7 @@ span.field-label {
 /*
  * Page bottom
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003473}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003520}}
 .region-bottom {
   /* Wrapper for any blocks placed in the page bottom region */
 }
