@@ -94,30 +94,24 @@ li a.active {
 /*
  * Menu blocks
  */
-/*
- * "Menu block" blocks
- *
- * Drupal core has limited ways in which it can display its menus. To get around
- * these limitations, see http://drupal.org/project/menu_block
- */
 /* W W U   S T Y L E S */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003107}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003100}}
 #navigation {
   padding: 10px 0 0 0;
   height: 24px;
-  width: 100.5%;
+  width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003113}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003106}}
 #navigation #main-menu {
   font-family: Muli, Tahoma, Verdana, "DejaVu Sans", sans-serif;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003118}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003109}}
 #navigation #main-menu ul {
   width: 100%;
   display: table;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003122}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003113}}
 #navigation #main-menu ul li {
   background-color: #003f87;
   border-style: solid;
@@ -129,36 +123,36 @@ li a.active {
   float: none;
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003133}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003124}}
 #navigation #main-menu ul li:hover {
   background-color: #dddddd;
   color: #003f87;
   cursor: pointer;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003138}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003129}}
 #navigation #main-menu ul li:hover a {
   color: #003f87;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003143}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003134}}
 #navigation #main-menu ul li a {
   color: #ffffff;
   text-decoration: none;
   padding: 5px 7px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003149}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003140}}
 #navigation #main-menu ul li:last-child {
   border: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003153}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003144}}
 #navigation #main-menu ul li.active {
   background-color: #dddddd;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003155}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003146}}
 #navigation #main-menu ul li.active .active {
   color: #003f87;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003163}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003154}}
 .block-accordion-menu .ui-accordion-header {
   background-color: #003f87;
   background-image: none;
@@ -166,45 +160,45 @@ li a.active {
   margin-bottom: .313em;
   padding: .2em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003170}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003161}}
 .block-accordion-menu .ui-accordion-header:hover {
   background-color: #dddddd;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003174}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003165}}
 .block-accordion-menu .ui-accordion-header span.accordion-link {
   color: #ffffff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003177}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003168}}
 .block-accordion-menu .ui-accordion-header span.accordion-link:hover {
   color: #003f87;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003182}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003173}}
 .block-accordion-menu .ui-accordion-header a {
   color: #ffffff;
   display: inline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003186}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003177}}
 .block-accordion-menu .ui-accordion-header a:hover {
   color: #003f87;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003195}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003186}}
 .ui-corner-all {
   border-radius: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003198}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003189}}
 .ui-corner-top {
   border-radius: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003201}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003192}}
 .ui-corner-bottom {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003207}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003198}}
 .ui-accordion .ui-accordion-content {
   margin-top: 0px;
   padding-left: 1.1em;
@@ -212,17 +206,17 @@ li a.active {
   border: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003214}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003205}}
 .ui-widget-content {
   background: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003218}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003209}}
 .ui-accordion-content ul.menu {
   margin: 0;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003222}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003213}}
 .ui-accordion-content ul.menu li a {
   background-color: #dddddd;
   color: #003f87;
@@ -232,17 +226,17 @@ li a.active {
   padding: 0.2em 0 0.2em 2.688em;
   width: 95%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003231}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003222}}
 .ui-accordion-content ul.menu li a .active {
   background-color: #003f87;
   color: #ffffff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003238}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003229}}
 .block-accordion-menu h3.active, span.active-trail, .block-accordion-menu h3.active-trail {
   background-color: #dddddd;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003241}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/navigation\.scss}line{font-family:\00003232}}
 .block-accordion-menu h3.active a.active, .block-accordion-menu h3.active span.active-trail, span.active-trail a.active, span.active-trail span.active-trail, .block-accordion-menu h3.active-trail a.active, .block-accordion-menu h3.active-trail span.active-trail {
   color: #003f87;
 }

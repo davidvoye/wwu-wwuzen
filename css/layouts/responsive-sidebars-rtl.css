@@ -142,7 +142,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003138}}
-  #logo, #logoImage, #navigation {
+  #logo, #logoImage {
     display: none;
   }
 
@@ -450,24 +450,28 @@ h1, h2, h3, h4, h5, h6 {
     height: 222px;
     margin-top: -100px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003354}}
+  #header #collegeheader #navigation ul li ul {
+    display: none;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003359}}
   #header #site-name {
     /* The name of the website */
     display: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003358}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003362}}
   #header #site-name a:link,
   #header #site-name a:visited {
     color: #000;
     text-decoration: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003368}}
   #header #site-name a:hover,
   #header #site-name a:focus {
     text-decoration: underline;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003373}}
   #main {
     clear: right;
     float: right;
@@ -481,7 +485,7 @@ h1, h2, h3, h4, h5, h6 {
   /*
    * The layout when there is only one sidebar, the left one.
    */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003383}}
   #navigation {
     float: right;
     width: 100%;
@@ -489,7 +493,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: -100%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003387}}
   .sidebar-first #content {
     /* Span 4 columns, starting in 2nd column from left. */
     float: right;
@@ -497,7 +501,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 25%;
     margin-left: -100%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003391}}
   .sidebar-first .region-sidebar-first {
     /* Span 1 column, starting in 1st column from left. */
     float: right;

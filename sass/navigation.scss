@@ -94,25 +94,16 @@ li a.active {
 .block-menu {
 }
 
-/*
- * "Menu block" blocks
- *
- * Drupal core has limited ways in which it can display its menus. To get around
- * these limitations, see http://drupal.org/project/menu_block
- */
-
 .block-menu-block {
 }
   /* W W U   S T Y L E S */
 #navigation {
   padding:10px 0 0 0;
   height: 24px;
-  width:100.5%
+  width:100%
 }
 
 #navigation #main-menu {
-
-
   font-family: $muli;
 
  ul {

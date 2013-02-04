@@ -135,7 +135,7 @@ $zen-auto-include-item-base: false;
     }
   }
 
-  #logo, #logoImage, #navigation{
+  #logo, #logoImage{
     display:none;
   }
   #collegeheader {
@@ -350,6 +350,10 @@ $zen-auto-include-item-base: false;
     background-color: #fff;
     height: 222px; //extend white background below menu
     margin-top: -100px; //slide college logo (banner) right under wwu logo
+
+    #navigation ul li ul {
+      display:none;
+    }
 }
 
 #site-name { /* The name of the website */
