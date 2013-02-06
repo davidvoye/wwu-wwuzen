@@ -200,34 +200,34 @@ h2 {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/normalize\.scss}line{font-family:\00003219}}
 h3 {
-  font-size: 1.5em;
-  line-height: 2em;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  font-size: 1.4em;
+  line-height: 2.14286em;
+  margin-top: 1.07143em;
+  margin-bottom: 1.07143em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/normalize\.scss}line{font-family:\00003225}}
 h4 {
-  font-size: 1.25em;
-  line-height: 1.2em;
-  margin-top: 1.2em;
-  margin-bottom: 1.2em;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/normalize\.scss}line{font-family:\00003231}}
-h5 {
   font-size: 1.17em;
   line-height: 1.28205em;
   margin-top: 1.28205em;
   margin-bottom: 1.28205em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/normalize\.scss}line{font-family:\00003237}}
-h6 {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/normalize\.scss}line{font-family:\00003231}}
+h5 {
   font-size: 1em;
   line-height: 1.5em;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/normalize\.scss}line{font-family:\00003237}}
+h6 {
+  font-size: 0.925em;
+  line-height: 1.62162em;
+  margin-top: 1.62162em;
+  margin-bottom: 1.62162em;
 }
 
 /* Thematic break */

@@ -274,7 +274,7 @@ h3.title { /* Comment title */
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin:1em 0;
+  margin:1.17em 0 .55em 0;
   line-height:1;
   color:$wwuBlue;
 }
@@ -283,40 +283,20 @@ h1, h2, h3, h4, h5, h6 {
   h#{$h} { font-size:$h#{$h}-font-size; }
 } 
 
-h1.title {
-  display:inline-block;
-}
+h1.title { display:inline-block; }
 
-/* Generic header styling */
-h2 {
-  margin-top:0;
-}
+h2 { margin-top:.5em; }
 
-#footer-wrapper h2.block-title {
-  color: #fff;
-}
-
-h3 {
-  margin:1em 0;
-}
+#footer-wrapper h2.block-title { color: #fff; }
 
 h4 {
-  margin:1em 0;
   border-bottom: #ddd 3px solid;
-  padding-bottom:.5em;
-}
-
-h5 {
-  margin:1em 0;
-}
-
-h6 {
-  margin:1em 0;
+  padding-bottom:.25em;
 }
 
 p, ul, ol, blockquote {
   font-size:.875em;
-  line-height:1.65em;
+  line-height:1.563em;
   font-family:$muli;
 }
 
@@ -335,6 +315,13 @@ p {
   blockquote & { font-size:1em; }
 }
 
+blockquote {
+  background:#ddd;
+  padding:1em 1.5em;
+  color:$wwuBlue;
+  margin:.5em 0;
+  p:last-child { margin-bottom:0; }
+}
 
 tr.even { /* Some tables have rows marked even or odd. */
   /* background-color: #eee; */ /* Drupal core uses a #eee background */
