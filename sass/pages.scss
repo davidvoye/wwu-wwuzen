@@ -258,7 +258,6 @@ header#department {
 a {
   text-decoration: none;
   color: $wwuLtblue;
-  &:visited {color: $wwuBlue;}
   &:hover {text-decoration: underline;}
 }
 
@@ -274,17 +273,23 @@ h3.title { /* Comment title */
   margin: 0;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin:1em 0;
+  line-height:1;
+  color:$wwuBlue;
+}
+
+@for $h from 1 through 6 {
+  h#{$h} { font-size:$h#{$h}-font-size; }
+} 
+
 h1.title {
   display:inline-block;
-  font-size: $h1-font-size;
-  color:$wwuBlue;
 }
 
 /* Generic header styling */
 h2 {
-  font-size: $h2-font-size;
-  color: $wwuBlue;
-  padding: 5px 10px;
+  margin-top:0;
 }
 
 #footer-wrapper h2.block-title {
@@ -292,30 +297,44 @@ h2 {
 }
 
 h3 {
-  font-size: $h3-font-size;
-  color: $wwuBlue;
-  border-bottom: $wwuBlue 1px solid;
-  padding: 2px 6px;
-  max-width: 300px;
+  margin:1em 0;
 }
 
 h4 {
-  font-size: $h4-font-size;
-  color: $wwuBlue;
-  padding: 2px 4px;
+  margin:1em 0;
+  border-bottom: #ddd 3px solid;
+  padding-bottom:.5em;
 }
 
 h5 {
-  font-size: $h5-font-size;
-  color: $wwuBlue;
-  padding: 0px 3px;
+  margin:1em 0;
 }
 
 h6 {
-  font-size: $h6-font-size;
-  color: $wwuBlue;
-  padding: 0px 3px;
+  margin:1em 0;
 }
+
+p, ul, ol, blockquote {
+  font-size:.875em;
+  line-height:1.65em;
+  font-family:$muli;
+}
+
+.code, code {
+  font-family:"Courier New", Courier, monospace;
+  font-weight: 700;
+  color: $wwuRed;
+  margin-left: 3em;
+  p & { margin-left:0; }
+}
+
+
+p {
+  margin-top:0;
+  margin-bottom:.5em;
+  blockquote & { font-size:1em; }
+}
+
 
 tr.even { /* Some tables have rows marked even or odd. */
   /* background-color: #eee; */ /* Drupal core uses a #eee background */

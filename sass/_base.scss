@@ -40,12 +40,12 @@ $legacy-support-for-ie8: true;
 $base-font-size:   16px; // The font size set on the root html element.
 $base-line-height: 24px; // This line-height determines the basic unit of vertical rhythm.
 
-$h1-font-size: 1.17 * $base-font-size;
-$h2-font-size: 1.4  * $base-font-size;
-$h3-font-size: 1.25 * $base-font-size;
-$h4-font-size: 1.2  * $base-font-size;
-$h5-font-size: 1.1 	* $base-font-size;
-$h6-font-size: 1.05 * $base-font-size;
+$h1-font-size: 1.4 * $base-font-size;
+$h2-font-size: 1.75  * $base-font-size;
+$h3-font-size: 1.5 * $base-font-size;
+$h4-font-size: 1.25  * $base-font-size;
+$h5-font-size: 1.17 	* $base-font-size;
+$h6-font-size: 1 * $base-font-size;
 
 $footer-h3-font-size: .9 * $base-font-size;
 
