@@ -287,6 +287,8 @@ h1.title { display:inline-block; }
 
 h2 { margin-top:.5em; }
 
+.block-title { font-size:1em ;}
+
 #footer-wrapper h2.block-title { color: #fff; }
 
 h4 {
@@ -294,34 +296,75 @@ h4 {
   padding-bottom:.25em;
 }
 
-p, ul, ol, blockquote {
-  font-size:.875em;
-  line-height:1.563em;
+#content {
+  p, ul, ol, blockquote {
+    font-size:.875em;
+    line-height:1.563em;
+    font-family:$muli;
+  }
+  .code, code {
+    font-family:"Courier New", Courier, monospace;
+    font-weight: 700;
+    color: $wwuRed;
+    margin-left: 3em;
+  }
+  p {
+    margin-top:0;
+    margin-bottom:.5em;
+    blockquote & { font-size:1em; }
+    code { margin-left:0; }
+  }
+  blockquote {
+    background:#ddd;
+    padding:1em 1.5em;
+    color:$wwuBlue;
+    margin:.5em 0;
+    p:last-child { margin-bottom:0; }
+  }
+}
+
+#content ul, #content ol {
+  margin:0;
+  padding-left:1.5em;
+}
+
+// Table styles
+
+table { 
+  border-collapse:collapse;
+  font-size:.85em;
   font-family:$muli;
 }
 
-.code, code {
-  font-family:"Courier New", Courier, monospace;
-  font-weight: 700;
-  color: $wwuRed;
-  margin-left: 3em;
-  p & { margin-left:0; }
+// Zebra striping
+tr:nth-of-type(odd) { background:#eee; }
+
+th {
+  font-weight:normal;
+  background-color:#ddd;
 }
 
-
-p {
-  margin-top:0;
-  margin-bottom:.5em;
-  blockquote & { font-size:1em; }
+td, th { 
+  padding:.5em;  
+  text-align:left; 
 }
 
-blockquote {
-  background:#ddd;
-  padding:1em 1.5em;
-  color:$wwuBlue;
-  margin:.5em 0;
-  p:last-child { margin-bottom:0; }
+tr { border-bottom:1px solid #fff; }
+td, th { border-right:1px solid #fff; }
+
+
+// Definition lists
+
+dl {
+  @extend p;
+  margin-left: 1.5em;
+  dt { @extend h4; }
+  dd { margin-left: 1.5em; }
 }
+
+.right { float:right; margin:1em 0 1em 1em; }
+
+.left { float:left; margin:1em 1em 1em 0; }
 
 tr.even { /* Some tables have rows marked even or odd. */
   /* background-color: #eee; */ /* Drupal core uses a #eee background */
