@@ -473,6 +473,7 @@ span.field-label { /* The inline field label used by the Fences module */
   font-size:.625em;
   border-top:.8em solid #ffffff;
   padding-bottom:3.813em;
+  font-family:$muli;
 }
 
 #footer-wrapper {
@@ -484,50 +485,61 @@ span.field-label { /* The inline field label used by the Fences module */
 
 #footer-left {
   float: left;
-  width: 29.5%;
+  width: 25%;
   padding: .688em 0em 1.25em 1.25em;
 }
 
 #footer-center {
   float: left;
-  width: 29.5%;
-  padding: .688em 3.25em 1.25em 0em;
-
-
-  li {
-    border-bottom:1px solid #ffffff;
-    width: 100%;
-    list-style: none;
-
-    &:hover {
-      border-bottom:1px solid $wwuYellow;
-    }
-
-
-    a {
-      color:#ffffff;
-      text-decoration:none;
-      padding-left:.15em;
-      text-transform:capitalize;
-     &:hover {
-      color:$wwuYellow;
+  width: 25%;
+  padding: .688em 0 1.25em 0;
+  margin-left:11%;
+  font-family:$muli;
+  font-size:1.15em;
+  line-height:1.5;
+  .menu {
+    padding-left:0;
+    li {
+      width: 100%;
+      border-bottom:1px solid #fff;
+      list-style-type:none;
+      list-style-image:none;
+      padding-top:.75em;
+      a {
+        color:#ffffff;
+        text-decoration:none;
+        padding-left:.15em;
+        text-transform:capitalize;
+        &:hover {
+          color:$wwuYellow;
+          &:after {
+            content: "\00A0";
+            border-bottom:1px solid $wwuYellow;
+            width:100%;
+            position:absolute;
+            left:0;
+          }
+        }
       }
     }
   }
 }
 
+
 #footer-right {
   float: right;
   margin-right:2em;
-  width: 24.5%;
+  width: 25%;
   @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
   margin-top:-1.813em;
+  font-family:$muli;
+
 
   #footer-right-heading {
     background-color: #ffffff;
     width:100%;
-    height:3em;
-    @include box-shadow(#c1c1c1 2px 0px 3px);
+    height:3.17em;
+    @include box-shadow(#555 0 0 7px);
 
   h3 {
     font-size: $footer-h3-font-size;
@@ -536,13 +548,14 @@ span.field-label { /* The inline field label used by the Fences module */
     padding-left: 1.25em;
     padding-top: 0.5em;
     border: none;
+    text-transform:uppercase;
     }
   }
 
   #footer-right-contact-info {
     padding-left:1.25em;
     margin-top:1.500em;
-
+    font-size:1.15em;
     img {
       float:left;
       padding-right:.625em;
