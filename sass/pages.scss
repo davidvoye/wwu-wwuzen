@@ -291,7 +291,8 @@ h2 { margin-top:.5em; }
 
 #footer-wrapper h2.block-title { color: #fff; }
 
-h4 {
+// To be used (on headers) in Drupal WYSIWYG Styles Dropdown
+.title-underline {
   border-bottom: #ddd 3px solid;
   padding-bottom:.25em;
 }
