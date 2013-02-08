@@ -215,12 +215,22 @@ header#department {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    color: gray;
     a {
-      color:gray;
+      color:$wwuLtblue;
       text-decoration:none;
-      &.active { color:$wwuLtblue; }
+      &.active { color:$wwuRed; }
+      &:hover {text-decoration: underline;}
     }
   }
+}
+
+/* link styling */
+
+a {
+  text-decoration: none;
+  color: $wwuLtblue;
+  &:hover {text-decoration: underline;}
 }
 
 #secondary-menu { }
@@ -231,14 +241,103 @@ h2.block-title, /* Block title */
 h2.title, /* Comment section heading */
 h2.comment-form, /* Comment form heading */
 h3.title { /* Comment title */
+  border: none;
   margin: 0;
 }
 
-h1.title {
-  display:inline-block;
-  font-size:1.17em;
+h1, h2, h3, h4, h5, h6 {
+  margin:1.17em 0 .55em 0;
+  line-height:1;
   color:$wwuBlue;
 }
+
+@for $h from 1 through 6 {
+  h#{$h} { font-size:$h#{$h}-font-size; }
+} 
+
+h1.title { display:inline-block; }
+
+h2 { margin-top:.5em; }
+
+.block-title { font-size:1em ;}
+
+#footer-wrapper h2.block-title { color: #fff; }
+
+// To be used (on headers) in Drupal WYSIWYG Styles Dropdown
+.title-underline {
+  border-bottom: #ddd 3px solid;
+  padding-bottom:.25em;
+}
+
+#content {
+  p, ul, ol, blockquote {
+    font-size:.875em;
+    line-height:1.563em;
+    font-family:$muli;
+  }
+  .code, code {
+    font-family:"Courier New", Courier, monospace;
+    font-weight: 700;
+    color: $wwuRed;
+    margin-left: 3em;
+  }
+  p {
+    margin-top:0;
+    margin-bottom:.5em;
+    blockquote & { font-size:1em; }
+    code { margin-left:0; }
+  }
+  blockquote {
+    background:#ddd;
+    padding:1em 1.5em;
+    color:$wwuBlue;
+    margin:.5em 0;
+    p:last-child { margin-bottom:0; }
+  }
+}
+
+#content ul, #content ol {
+  margin:0;
+  padding-left:1.5em;
+}
+
+// Table styles
+
+table { 
+  border-collapse:collapse;
+  font-size:.85em;
+  font-family:$muli;
+}
+
+// Zebra striping
+tr:nth-of-type(odd) { background:#eee; }
+
+th {
+  font-weight:normal;
+  background-color:#ddd;
+}
+
+td, th { 
+  padding:.5em;  
+  text-align:left; 
+}
+
+tr { border-bottom:1px solid #fff; }
+td, th { border-right:1px solid #fff; }
+
+
+// Definition lists
+
+dl {
+  @extend p;
+  margin-left: 1.5em;
+  dt { @extend h4; }
+  dd { margin-left: 1.5em; }
+}
+
+.right { float:right; margin:1em 0 1em 1em; }
+
+.left { float:left; margin:1em 1em 1em 0; }
 
 tr.even { /* Some tables have rows marked even or odd. */
   /* background-color: #eee; */ /* Drupal core uses a #eee background */
@@ -347,6 +446,7 @@ span.field-label { /* The inline field label used by the Fences module */
   font-size:.625em;
   border-top:.8em solid #ffffff;
   padding-bottom:3.813em;
+  font-family:$muli;
 }
 
 #footer-wrapper {
@@ -394,20 +494,28 @@ span.field-label { /* The inline field label used by the Fences module */
         border-bottom:1px solid $wwuYellow;
       }
 
-
       a {
         color:#ffffff;
         text-decoration:none;
         padding-left:.15em;
         text-transform:capitalize;
-      &:hover {
-        color:$wwuYellow;
+        &:hover {
+          color:$wwuYellow;
+          &:after {
+            content: "\00A0";
+            border-bottom:1px solid $wwuYellow;
+            width:100%;
+            position:absolute;
+            left:0;
+          }
+        }
       }
     }
   }
-}
+
 
 #footer-right {
+
     float: right;
     margin-right:2em;
     min-width: 24.563em;
@@ -416,8 +524,40 @@ span.field-label { /* The inline field label used by the Fences module */
     }
     @media all and (min-width: 321px) and (max-width: 800px) {
       /* Nothing to do here. */
+
+  @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
+  margin-top:-1.813em;
+  font-family:$muli;
+
+
+  #footer-right-heading {
+    background-color: #ffffff;
+    width:100%;
+    height:3.17em;
+    @include box-shadow(#555 0 0 7px);
+
+  h3 {
+    font-size: $footer-h3-font-size;
+    color:$wwuBlue;
+    margin:0;
+    padding-left: 1.25em;
+    padding-top: 0.5em;
+    border: none;
+    text-transform:uppercase;
     }
-    @media all and (max-width: 360px) {
+  }
+
+  #footer-right-contact-info {
+    padding-left:1.25em;
+    margin-top:1.500em;
+    font-size:1.15em;
+    img {
+      float:left;
+      padding-right:.625em;
+      margin-top:.5em;
+
+    }
+    @media all and (max-width: 320px) {
       min-width: 250px;
       clear: both;
       margin-right: .75em;
@@ -427,28 +567,6 @@ span.field-label { /* The inline field label used by the Fences module */
     @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
     margin-top:-1.813em;
 
-    #footer-right-heading {
-      background-color: #ffffff;
-      width:100%;
-      height:3em;
-      @include box-shadow(#c1c1c1 2px 0px 3px);
-
-    h3 {
-      color:$wwuBlue;
-      margin:0;
-      padding-left: 1.25em;
-      padding-top: 0.5em;
-      }
-    }
-
-    #footer-right-contact-info {
-      padding-left:1.25em;
-      margin-top:1.500em;
-      img {
-        float:left;
-        padding-right:.625em;
-        margin-top:.5em;
-      }
       p {
         margin-bottom:0;
         margin-top:0; 
@@ -466,7 +584,7 @@ span.field-label { /* The inline field label used by the Fences module */
       margin-top:1.438em;
     }
   }
-
+}
 /*
  * Page bottom
  */

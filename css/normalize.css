@@ -11,7 +11,7 @@
          @see http://snook.ca/archives/html_and_css/no_css_reset/
    ========================================================================== */
 /* Basic CSS for WWU Styles */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/_base\.scss}line{font-family:\0000385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/_base\.scss}line{font-family:\0000387}}
 h1, h2, h3, h4, h5, h6 {
   font-family: Muli, Tahoma, Verdana, "DejaVu Sans", sans-serif;
   font-weight: normal;
@@ -183,51 +183,51 @@ a:active {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/normalize\.scss}line{font-family:\00003204}}
 h1 {
   /* Sets the font-size and line-height while keeping a proper vertical rhythm. */
-  font-size: 2em;
-  line-height: 1.5em;
+  font-size: 1.4em;
+  line-height: 2.14286em;
   /* Sets 1 unit of vertical rhythm on the top and bottom margins. */
-  margin-top: 0.75em;
-  margin-bottom: 0.75em;
+  margin-top: 1.07143em;
+  margin-bottom: 1.07143em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/normalize\.scss}line{font-family:\00003213}}
 h2 {
-  font-size: 1.5em;
-  line-height: 2em;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  font-size: 1.75em;
+  line-height: 1.71429em;
+  margin-top: 0.85714em;
+  margin-bottom: 0.85714em;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/normalize\.scss}line{font-family:\00003219}}
 h3 {
+  font-size: 1.4em;
+  line-height: 2.14286em;
+  margin-top: 1.07143em;
+  margin-bottom: 1.07143em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/normalize\.scss}line{font-family:\00003225}}
+h4 {
   font-size: 1.17em;
   line-height: 1.28205em;
   margin-top: 1.28205em;
   margin-bottom: 1.28205em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/normalize\.scss}line{font-family:\00003225}}
-h4 {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/normalize\.scss}line{font-family:\00003231}}
+h5 {
   font-size: 1em;
   line-height: 1.5em;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/normalize\.scss}line{font-family:\00003231}}
-h5 {
-  font-size: 0.83em;
-  line-height: 1.80723em;
-  margin-top: 1.80723em;
-  margin-bottom: 1.80723em;
-}
-
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/normalize\.scss}line{font-family:\00003237}}
 h6 {
-  font-size: 0.75em;
-  line-height: 2em;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  font-size: 0.925em;
+  line-height: 1.62162em;
+  margin-top: 1.62162em;
+  margin-bottom: 1.62162em;
 }
 
 /* Thematic break */
