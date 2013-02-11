@@ -73,6 +73,8 @@ $zen-auto-include-item-base: false;
 .region-sidebar-second,
 #footer {
   @include zen-grid-item-base();
+  padding-left:0px;
+  padding-right:0px;
 }
 
 
@@ -80,20 +82,30 @@ $zen-auto-include-item-base: false;
   $zen-column-count: 1;
 
 #wwuheader {
-    @include zen-clear();
-    @include zen-grid-item(1,1,left);
 
+    a.mobile {
+      @include zen-grid-item(1,1,left);
+      margin-bottom:-.375em;
+    }
     .desktop {
       display:none;
     }
+    #mobileWWUmenu {
+      @include zen-grid-item(1,1,right);
+      background-color:rgb(75, 104, 156);
+      width:2.75em;
+    }
     .wwusearch {
-      float:right;
+      @include zen-clear(both);
+      @include zen-grid-item(1,1,right);
+      background-color:rgb(75, 104, 156);
+      width:16%;
+
+      img {
+        float:right;
+        }
     }
 
-    #mobileWWUmenu {
-      float:right;
-      width:3.125em;
-    }
     ul#wwumenu {
       float:right;
       font-size:1em;
@@ -140,9 +152,8 @@ $zen-auto-include-item-base: false;
   }
   #collegeheader {
     @include zen-clear();
-    @include zen-grid-item(1,1);
-    padding: 0;
-    background-color:transparent;
+    padding:.0625em 0 0 1.25em;
+    @include background(linear-gradient(top, $wwuLtblue, $wwuBlue));
     
     #site-name { /* The name of the website */
       display:block; //college name is shown as part of image on banner
@@ -159,6 +170,23 @@ $zen-auto-include-item-base: false;
     margin-top:1em;
   }
 
+  #footer-left {
+    display:none;
+  }
+
+  #footer-center {
+      @include zen-clear();
+      width: 100%;
+      margin-left:-3em;
+      padding: 0px 0px 0px 0px;
+    }
+
+
+  #footer-right {
+    @include zen-clear();
+    margin-top:0em;
+  }
+
 }
 
 @media all and (min-width: 480px) {
@@ -172,6 +200,10 @@ $zen-auto-include-item-base: false;
     //top: 0; /* Move the navbar up inside #main's padding. */
     //height: 3em;
     width: $zen-grid-width;
+  }
+
+  #footer-left {
+    display:none;
   }
 }
 
@@ -242,6 +274,9 @@ $zen-auto-include-item-base: false;
       }
     }
   }
+    #footer-left {
+    display:none;
+  }
 }
 
 @media all and (min-width: 480px) and (max-width: 800px) {
@@ -304,8 +339,10 @@ $zen-auto-include-item-base: false;
       @include zen-grid-item(3, 1);
       }
     }
-   
+  #footer-left {
+    display:none;
   }
+}
 
 @media all and (min-width: 801px) {
   /*
@@ -332,6 +369,10 @@ $zen-auto-include-item-base: false;
 
       .mobile { display:none;}
 
+    aside.wwusearch {
+      float:right;
+      margin-top:-.313em;
+    }
     #mobileWWUmenu {
       display:none;
     }
@@ -391,6 +432,18 @@ $zen-auto-include-item-base: false;
     .region-sidebar-first { /* Span 1 column, starting in 1st column from left. */
       @include zen-grid-item(3, 1);
     }
+  }
+
+  #footer-left {
+    @include zen-grid-item(3,1);
+    padding: .688em 0em 1.25em 1.25em;
+
+  }
+  #footer-center {
+    @include zen-grid-item(3,4);
+  }
+  #footer-right {
+      margin-top:-1.813em;
   }
 
 }

@@ -83,14 +83,9 @@
           <img class="wwuLogo" src="<?php print $wwuLogo;?>" alt="Western Washington University" width="240px" height="145px" />
         </a>
         <a href="http://www.wwu.edu" class="mobile">
-          <img class="wwuLogo" src="<?php print $wwuHorizontalLogo;?>" alt="Western Washington University" width="65%" />
+          <img class="wwuLogo" src="<?php print $wwuHorizontalLogo;?>" alt="Western Washington University" />
         </a>
-       <aside class="wwusearch"><a id="s-toggle" href="#"><img width="35" height="40" src="http://www.wwu.edu/wwucommon/SearchIcon.png"></a></aside>
-        <div id="search" style="display:none;">
-          <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
-          <?php print $search_box; ?>
-        </div>
-        <nav id="mobileWWUmenu" role="navigation">WWU Nav</nav>
+       <nav id="mobileWWUmenu" role="navigation">WWU Nav</nav>
         <ul id="wwumenu">
           <li class="wwulinks"><a href="http://www.wwu.edu/academic_calendar">Calendar</a></li>
           <li class="wwulinks"><a href="http://www.wwu.edu/directory">Directory</a></li>    
@@ -98,6 +93,12 @@
           <li class="wwulinks"><a href="http://www.wwu.edu/campusmaps">Map</a></li>    
           <li class="wwulinks"><a href="http://mywestern.wwu.edu">myWestern</a></li>
         </ul> 
+       <aside class="wwusearch"><a id="s-toggle" href="#"><img width="35" height="40" src="http://www.wwu.edu/wwucommon/SearchIcon.png"></a></aside>
+        <div id="search" style="display:none;">
+          <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
+          <?php print $search_box; ?>
+        </div>
+       
   
       </div><!-- wwuheader -->
   <header id="header" role="banner">

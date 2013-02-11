@@ -73,10 +73,6 @@ body {
     height:1.75em;
   }
   
-  aside.wwusearch {
-      float:right;
-      margin-top:-.313em;
-    }
   #search {
     height:2em;
     width:17.15em;
@@ -456,51 +452,26 @@ span.field-label { /* The inline field label used by the Fences module */
   padding-left: 1.5em;
 }
 
-#footer-left {
-  @media all and (min-width: 801px) {
-      float: left;
-      width: 29.5%;
-      padding: .688em 0em 1.25em 1.25em;
-    }
-  @media all and (max-width: 800px) {
-    display: none;
-  }
-}
+#footer-left {}
 
 #footer-center {
-    float: left;
-    @media all and (min-width: 801px) {
-      width: 24.5%;
-    }
-    @media all and (min-width: 361px) and (max-width: 800px) {
-      width: 45%;
-    }
-    @media all and (max-width: 360px) {
-      width: 100%;
-    }
+  li {
+    border-bottom:1px solid #ffffff;
+    width: 100%;
+    list-style: none;
 
-    @media all and (max-width: 360px) {
-      ul {
-        padding: 0px 0px 0px 5px;
-      }
-    }
-
-    li {
-      border-bottom:1px solid #ffffff;
-      width: 100%;
-      list-style: none;
-
-      &:hover {
+    &:hover {
         border-bottom:1px solid $wwuYellow;
       }
 
-      a {
-        color:#ffffff;
-        text-decoration:none;
-        padding-left:.15em;
-        text-transform:capitalize;
-        &:hover {
-          color:$wwuYellow;
+    a {
+      color:#ffffff;
+      text-decoration:none;
+      padding-left:.15em;
+      text-transform:capitalize;
+
+      &:hover {
+        color:$wwuYellow;
           &:after {
             content: "\00A0";
             border-bottom:1px solid $wwuYellow;
@@ -517,23 +488,15 @@ span.field-label { /* The inline field label used by the Fences module */
 #footer-right {
 
     float: right;
-    margin-right:2em;
     min-width: 24.563em;
-    @media all and (min-width: 801px) {
-      /* Nothing to do here. */
-    }
-    @media all and (min-width: 321px) and (max-width: 800px) {
-      /* Nothing to do here. */
-
-  @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
-  margin-top:-1.813em;
-  font-family:$muli;
+    @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
+    font-family:$muli;
 
 
   #footer-right-heading {
     background-color: #ffffff;
     width:100%;
-    height:3.17em;
+    height:5.17em;
     @include box-shadow(#555 0 0 7px);
 
   h3 {
@@ -541,7 +504,8 @@ span.field-label { /* The inline field label used by the Fences module */
     color:$wwuBlue;
     margin:0;
     padding-left: 1.25em;
-    padding-top: 0.5em;
+    padding-top: 0.7em;
+    padding-right:1.25em;
     border: none;
     text-transform:uppercase;
     }
@@ -557,15 +521,6 @@ span.field-label { /* The inline field label used by the Fences module */
       margin-top:.5em;
 
     }
-    @media all and (max-width: 320px) {
-      min-width: 250px;
-      clear: both;
-      margin-right: .75em;
-      margin-top: 1em;
-      float:none;
-    }
-    @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
-    margin-top:-1.813em;
 
       p {
         margin-bottom:0;
@@ -584,7 +539,6 @@ span.field-label { /* The inline field label used by the Fences module */
       margin-top:1.438em;
     }
   }
-}
 /*
  * Page bottom
  */
