@@ -48,6 +48,27 @@
 	// END SEARCH TOGGLE CODE
 	
 	// START MENU EXPANSION CODE
+
+		$(".expanded").click(function(e) {
+		  if ($(this).hasClass("opened")) {
+		    $(this).children().children().hide();
+		    //$(this).parent().children().show();
+		    $(this).removeClass("opened");
+		    // Close all children as well
+		    var x = $(this).children().children("li");
+		    while (x.size() > 0) {
+	      	x.removeClass("opened");
+	      	x.children().children().hide();
+	      	x = x.children().children("li");
+	    	}
+	   	} else {
+	     	$(this).children().children().show();
+	     	$(this).parent().children().not(this).removeClass("opened");
+	     	$(this).parent().children().not(this).children().children().hide();
+	     	$(this).addClass("opened");
+	   	}
+		  e.stopPropagation();
+		});
 	
 	// END MENU EXPANSION CODE
 	}
