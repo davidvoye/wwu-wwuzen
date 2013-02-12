@@ -154,9 +154,12 @@ $zen-auto-include-item-base: false;
   }
   #collegeheader {
     @include zen-clear();
-    padding:.0625em 0 0 1.25em;
     @include background(linear-gradient(top, $wwuLtblue, $wwuBlue));
     
+    #name-and-slogan {
+      padding: 0.625em 0 0 1.25em;
+    }
+
     #site-name { /* The name of the website */
       display:block; //college name is shown as part of image on banner
       a:link,
@@ -165,11 +168,13 @@ $zen-auto-include-item-base: false;
           text-decoration: none;
         }
     }
-    #navigation #main-menu ul.menu {
-      margin:5% 20%;
+    #navigation {
+      padding:0;
+   #main-menu ul.menu {
       background-color:#003f87;
       text-transform:uppercase;
       display:block;
+      list-style-type:none;
         a {
           text-decoration:none;
           color:#fff;
@@ -179,18 +184,11 @@ $zen-auto-include-item-base: false;
               @include transition(.2s);
               }
             }
-          li { display:block;}
-        li, ul { padding:0; }
-
-      ul {
-        list-style-type:none;
-        top:0;
-        width:400px;
         li {
           display:block;
           background-color:#003f87;
           padding: .5em 0em;
-          border-bottom:solid 1px #0083d6;
+          border-bottom:solid 1px #E9E9E9;
           a {
             padding: .5em;
           }
@@ -199,15 +197,14 @@ $zen-auto-include-item-base: false;
                 width: 98%;
                 padding-left: 2%;
                 li {
-                  border: solid 1px #0083d6;
+                  border: solid 1px #E9E9E9;
                 }
                 position: relative;
               }
           }
-       
         }
       }
-    } //End college header
+    } //End college header 
 
 
 
