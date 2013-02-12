@@ -226,14 +226,20 @@ $zen-auto-include-item-base: false;
   #footer-center {
       @include zen-clear();
       width: 100%;
-      margin-left:-3em;
+      margin-left:-1em;
       padding: 0px 0px 0px 0px;
+
+      ul.menu {
+        padding: 0px 0px 0px 15px;
+        width: 90%;
+      }
     }
 
 
   #footer-right {
     @include zen-clear();
     margin-top:0em;
+    margin-right: 2em;
   }
 
 }
