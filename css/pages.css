@@ -113,7 +113,6 @@ body {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/pages\.scss}line{font-family:\00003115}}
 ul#wwumenu {
-  float: right;
   font-size: .8em;
   position: relative;
   margin: 7px 20px 2px 0;
