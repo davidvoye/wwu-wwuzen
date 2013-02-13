@@ -95,57 +95,52 @@ $zen-auto-include-item-base: false;
       width:2.75em;
     }
     .wwusearch {
-      @include zen-clear(both);
-      @include zen-grid-item(1,1,right);
-      background-color:rgb(75, 104, 156);
-      width:16%;
-      height:20px;
-      background-image:url('../../images/college-icon-2.png') no-repeat;
-      img {
-        display:none;
-        }
+      clear: left;
+      left: 17em;
+      margin-bottom: -46px;
+      position: relative;
+      z-index: 20;
+      background-color:rgb(75, 104, 156);    
     }
-
+    #search {
+      position: relative;
+      right: 0;
+      top: 2.5em;
+      width: 18.55em;
+    }
     ul#wwumenu {
-      float:right;
-      font-size:1em;
-      line-height:0em;
-      margin:0;
-      padding:0;
+      font-size: 1em;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      background-color:#003f87;
+      text-transform:uppercase;
+      display:block;
+      list-style-type:none;
+      top: 62px;
+      width: 100%;
       display:none;
-      li  {
-        display:inline;
-        font-family: $muli;
-      }
-
-      .wwulinks:not(:first-child):before {
+      height:16.7em;
+        
+        li {
+          display:block;
+          background-color:#003f87;
+          border-bottom:solid 1px #E9E9E9;
+          padding:.5em .6em;
+          a {
+          text-decoration:none;
+          color:#ffffff;
+          @include transition(1s);
+            &:hover {
+              color:#ffc61e;
+              @include transition(.2s);
+              }
+          }
+        }
+       .wwulinks:not(:first-child):before {
           content:"";
         }
-      .wwulinks ul {
-         border: 1px solid #e6e6e6;
-      }
-      .wwulinks li {
-         font-size: 1.8em;
-         border-bottom: 1px solid #eee;
-      }
-      .wwulinks li:last-child {
-         border-bottom: 0;
-      }
-      .wwulinks a {
-         display: block;
-         padding: 1em 0em;
-         text-decoration: none;
-         color: #333;
-      }
-      .wwulinks a:hover {
-         background-color: #f8f8f8;
-      }
-      .wwulinks .nav-current {
-         font-weight: bold;
-      }
-    }
-
-    
+    }   
 }
 
   #logo, #logoImage{
@@ -153,9 +148,12 @@ $zen-auto-include-item-base: false;
   }
   #collegeheader {
     @include zen-clear();
-    padding:.0625em 0 0 1.25em;
-    background:$wwuLtblue;
-    
+    position:relative;
+    @include background(linear-gradient(top, $wwuLtblue, $wwuBlue));
+    #name-and-slogan {
+      padding: 0.625em 0 0 1.25em;
+    }
+
     #site-name { /* The name of the website */
       display:block; //college name is shown as part of image on banner
       a:link,
@@ -164,11 +162,13 @@ $zen-auto-include-item-base: false;
           text-decoration: none;
         }
     }
-    #navigation #main-menu ul.menu {
-      margin:5% 20%;
+    #navigation {
+      padding:0;
+   #main-menu ul.menu {
       background-color:#003f87;
       text-transform:uppercase;
       display:block;
+      list-style-type:none;
         a {
           text-decoration:none;
           color:#fff;
@@ -178,18 +178,11 @@ $zen-auto-include-item-base: false;
               @include transition(.2s);
               }
             }
-          li { display:block;}
-        li, ul { padding:0; }
-
-      ul {
-        list-style-type:none;
-        top:0;
-        width:400px;
         li {
           display:block;
           background-color:#003f87;
           padding: .5em 0em;
-          border-bottom:solid 1px #0083d6;
+          border-bottom:solid 1px #E9E9E9;
           a {
             padding: .5em;
           }
@@ -198,15 +191,18 @@ $zen-auto-include-item-base: false;
                 width: 98%;
                 padding-left: 2%;
                 li {
-                  border: solid 1px #0083d6;
+                  border: solid 1px #E9E9E9;
                 }
                 position: relative;
               }
           }
-       
+
+          li.expanded ul.menu li {
+                display: none;
+          }
         }
       }
-    } //End college header
+    } //End college header 
 
 
 
@@ -224,14 +220,20 @@ $zen-auto-include-item-base: false;
   #footer-center {
       @include zen-clear();
       width: 100%;
-      margin-left:-3em;
+      margin-left:-1em;
       padding: 0px 0px 0px 0px;
+
+      ul.menu {
+        padding: 0px 0px 0px 15px;
+        width: 90%;
+      }
     }
 
 
   #footer-right {
     @include zen-clear();
     margin-top:0em;
+    margin-right: 2em;
   }
 
 }
@@ -352,7 +354,14 @@ $zen-auto-include-item-base: false;
   #wwuheader {
      @include zen-grid-item(12.25,1, right);
         margin-bottom:6.563em;
+
+    #search {
+      width:17.15em;
+      position:absolute;
+      top:2.2em;
+      right:.9em;
     }
+  }
   #header {
     @include zen-clear(right);
     @include zen-grid-item(12,1, right);
@@ -419,6 +428,12 @@ $zen-auto-include-item-base: false;
     aside.wwusearch {
       @include zen-grid-item(1,12);
       margin-top:-.313em;
+    }
+    #search {
+      width:17.15em;
+      position:absolute;
+      top:4em;
+      right:7.4em;
     }
     #mobileWWUmenu {
       display:none;

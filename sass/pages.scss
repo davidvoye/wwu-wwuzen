@@ -1,3 +1,7 @@
+//Hide the darn contextual link of the main menu when the page loads for admins
+#navigation #main-menu div.contextual-links-wrapper ul.contextual-links {
+  display:none;
+}
 /**
  * @file
  * Page Styling
@@ -75,17 +79,13 @@ body {
   
   #search {
     height:2em;
-    width:17.15em;
     background:$wwuBlue;
     padding:0.5em 0 0.5em 0.5em;
     display:block;
     float:right;
     overflow:hidden;
-    position:absolute;
     border-top:4px solid $wwuLtblue;
     z-index:200;
-    top:2.2em;
-    right:.9em;
 
     a {
       color:#999;
@@ -113,7 +113,7 @@ body {
   }
 }
   ul#wwumenu {
-    float:right;
+   
     font-size: .8em;
     position:relative;
     margin: 7px 20px 2px 0;
