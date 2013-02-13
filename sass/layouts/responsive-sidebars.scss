@@ -35,7 +35,6 @@ $zen-gutter-width:  30px; // was 20px
 $zen-auto-include-item-base: false;
 // $zen-auto-include-flow-item-base: false;
 
-
 /*
  * Center the page.
  */
@@ -100,9 +99,10 @@ $zen-auto-include-item-base: false;
       @include zen-grid-item(1,1,right);
       background-color:rgb(75, 104, 156);
       width:16%;
-
+      height:20px;
+      background-image:url('../../images/college-icon-2.png') no-repeat;
       img {
-        float:right;
+        display:none;
         }
     }
 
@@ -116,7 +116,6 @@ $zen-auto-include-item-base: false;
       li  {
         display:inline;
         font-family: $muli;
-        padding-left: .5em;
       }
 
       .wwulinks:not(:first-child):before {
@@ -155,13 +154,13 @@ $zen-auto-include-item-base: false;
   #collegeheader {
     @include zen-clear();
     padding:.0625em 0 0 1.25em;
-    @include background(linear-gradient(top, $wwuLtblue, $wwuBlue));
+    background:$wwuLtblue;
     
     #site-name { /* The name of the website */
       display:block; //college name is shown as part of image on banner
       a:link,
         a:visited {
-          color: #000;
+          color: #fff;
           text-decoration: none;
         }
     }
