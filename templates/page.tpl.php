@@ -75,8 +75,11 @@
     <?php
     //Desktops get this image
       $wwuLogo = base_path().path_to_theme() . '/images/wwu.png';
-    //Mobile devices get this image
+    //Mobile devices get these images
       $wwuHorizontalLogo = base_path().path_to_theme() . '/images/wwuhorizlogo.png'; 
+      $wwuMobileMenuIcon = base_path().path_to_theme() . '/images/mobileMenuIcon.png';
+      $wwuMobileSearchIcon = base_path().path_to_theme() . '/images/mobileSearchIcon.png';
+      $wwuMobileMainMenuIcon = base_path().path_to_theme() . '/images/mobileMainMenuIcon.png';  
     ?>
     <div id="wwuheader">
         <a href="http://www.wwu.edu" class="desktop">
@@ -85,7 +88,7 @@
         <a href="http://www.wwu.edu" class="mobile">
           <img class="wwuLogo" src="<?php print $wwuHorizontalLogo;?>" alt="Western Washington University" />
         </a>
-       <nav id="mobileWWUmenu" role="navigation">WWU Nav</nav>
+       <nav id="mobileWWUmenu" role="navigation"><img src="<?php print $wwuMobileMenuIcon;?>" alt="Click here for quick links." width="44px" height="44px"/></nav>
         <ul id="wwumenu">
           <li class="wwulinks"><a href="http://www.wwu.edu/academic_calendar">Calendar</a></li>
           <li class="wwulinks"><a href="http://www.wwu.edu/directory">Directory</a></li>    
@@ -93,7 +96,7 @@
           <li class="wwulinks"><a href="http://www.wwu.edu/campusmaps">Map</a></li>    
           <li class="wwulinks"><a href="http://mywestern.wwu.edu">myWestern</a></li>
         </ul> 
-       <aside class="wwusearch"><a id="s-toggle" href="#"><img width="35" height="40" src="http://www.wwu.edu/wwucommon/SearchIcon.png"></a></aside>
+       <aside class="wwusearch"><a id="s-toggle" href="#"><img src="<?php print $wwuMobileSearchIcon;?>" alt="Click here for quick links." width="44px" height="44px"/></a></aside>
         <div id="search" style="display:none;">
           <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
           <?php print $search_box; ?>
@@ -122,7 +125,7 @@
         <?php endif; ?>
       </hgroup><!-- /#name-and-slogan -->
     <?php endif; ?>
- 
+    <aside id="mobileNavTrigger"><img src="<?php print $wwuMobileMainMenuIcon;?>" alt="Click here for the main menu links." width="44px" height="44px"/></a></aside>
     <div id="navigation">
       <nav id="main-menu" role="navigation">
             <?php print render($page['navigation']); ?>  

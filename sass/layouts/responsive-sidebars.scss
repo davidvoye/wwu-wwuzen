@@ -86,6 +86,7 @@ $zen-auto-include-item-base: false;
     a.mobile {
       @include zen-grid-item(1,1,left);
       margin-bottom:-.375em;
+      background-color:rgb(75, 104, 156);
     }
     .desktop {
       display:none;
@@ -96,12 +97,13 @@ $zen-auto-include-item-base: false;
       width:2.75em;
     }
     .wwusearch {
-      clear: left;
-      left: 17em;
-      margin-bottom: -46px;
+      @include zen-clear(right);
+      @include zen-grid-item(1,1,right);
       position: relative;
       z-index: 20;
-      background-color:rgb(75, 104, 156);    
+      background-color:rgb(75, 104, 156);  
+      width:14.5%;  
+      top:0%;
     }
     #search {
       position: relative;
@@ -151,26 +153,36 @@ $zen-auto-include-item-base: false;
   #collegeheader {
     @include zen-clear();
     position:relative;
-    @include background(linear-gradient(top, $wwuLtblue, $wwuBlue));
+    @include background(linear-gradient(top, #319bde, #0083d6));
     
     #name-and-slogan {
-      padding: 0.625em 0 0 1.25em;
+      @include zen-grid-item(1,1);
+      padding: 0 0 0 1.25em;
+      font-family:$muli;
     }
 
     #site-name { /* The name of the website */
       display:block; //college name is shown as part of image on banner
       a:link,
         a:visited {
-          color: #000;
+          color: #ffffff;
           text-decoration: none;
         }
     }
+
+    #mobileNavTrigger{
+      @include zen-clear(right);
+      @include zen-grid-item(1,1,right);
+      background-color:rgb(75, 104, 156);
+      width:2.75em;
+    }
     #navigation {
       padding:0;
-   #main-menu ul.menu {
+      height:0;
+    #main-menu ul.menu {
+      display:none;
       background-color:#003f87;
       text-transform:uppercase;
-      display:block;
       list-style-type:none;
         a {
           text-decoration:none;
@@ -213,7 +225,17 @@ $zen-auto-include-item-base: false;
   #main {
     @include zen-clear();
     @include zen-grid-item(1,1, right);
-    margin-top:1em;
+    margin-top:0em;
+
+    header#department {
+      border-bottom:none;
+      padding:.9em 0 1em 0;
+      margin-bottom:0em;
+    }
+    .breadcrumb {
+      display: none;
+    }
+
   }
 
   #footer-left {
@@ -239,6 +261,10 @@ $zen-auto-include-item-base: false;
     margin-right: 2em;
   }
 
+  //Override of normalize.scss for the comment subject input area 
+  #edit-subject {
+    width: 100%;
+  }
 }
 
 @media all and (min-width: 480px) {
@@ -482,6 +508,10 @@ $zen-auto-include-item-base: false;
     @include zen-grid-item(12,1);
     width:99%;
     margin: 0.5em .938em 4.250em .95em;
+
+    header#department {
+      border-bottom:solid 3px #E9E9E9;
+    }
   }
   
   /*
