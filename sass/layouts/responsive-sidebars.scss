@@ -196,6 +196,8 @@ $zen-auto-include-item-base: false;
               }
             }
         li {
+          width: 100%;
+          text-align: left; 
           display:block;
           background-color:#003f87;
           padding: .5em 0em;
@@ -208,10 +210,22 @@ $zen-auto-include-item-base: false;
                 width: 98%;
                 padding-left: 2%;
                 li {
-                  border: solid 1px #E9E9E9;
+                  background-color: #4B689C;
+                  border-bottom: solid 1px #E9E9E9;
                 }
                 position: relative;
               }
+            &.expanded {
+              background-image: url("../../images/plusIcon.png");
+              background-position: right top;
+              background-repeat: no-repeat;
+            }
+
+            &.opened {
+              background-image: url("../../images/minusIcon.png");
+              background-position: right top;
+              background-repeat: no-repeat;
+            }            
           }
 
           li.expanded ul.menu li {
