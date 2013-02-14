@@ -462,6 +462,7 @@ span.field-label { /* The inline field label used by the Fences module */
 
     &:hover {
         border-bottom:1px solid $wwuYellow;
+        //color: $wwuYellow;
       }
 
     a {
@@ -470,19 +471,22 @@ span.field-label { /* The inline field label used by the Fences module */
       padding-left:.15em;
       text-transform:capitalize;
 
-      &:hover {
-        color:$wwuYellow;
-          &:after {
-            content: "\00A0";
+      &:after {
+          content: "\00A0";
+          &:hover {
             border-bottom:1px solid $wwuYellow;
-            width:100%;
-            position:absolute;
-            left:0;
+          }
+          width:100%;
+          position: absolute;
+          left:0;
+      }
+
+      &:hover {
+        color:$wwuYellow; 
           }
         }
       }
     }
-  }
 
 
 #footer-right {
