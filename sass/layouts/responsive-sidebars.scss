@@ -283,7 +283,7 @@ $zen-auto-include-item-base: false;
   }
 }
 
-@media all and (min-width: 361px) and (max-width: 480px) {
+@media all and (min-width: 361px) and (max-width: 800px) {
   $zen-column-count: 3;
  
 #wwuheader {
@@ -489,149 +489,31 @@ $zen-auto-include-item-base: false;
 
 }
 
-@media all and (min-width: 480px) and (max-width: 700px) {
-  /*
-   * Use 3 grid columns for smaller screens.
-   */
-  $zen-column-count: 9;
 
-  /*
-   * The layout when there is only one sidebar, the left one.
-   */
+@media all and (min-width:640px) and (max-width: 800px) {
+  $zen-column-count: 3;
 
-  .sidebar-first {
-    #content { /* Span 2 columns, starting in 2nd column from left. */
-      @include zen-grid-item(6, 4);
-    }
-
-    .region-sidebar-first { /* Span 1 column, starting in 1st column from left. */
-      @include zen-grid-item(3, 1);
-    }
-  }
-
-  /*
-   * The layout when there is only one sidebar, the right one.
-   */
-
-  .sidebar-second {
-    #content { /* Span 2 columns, starting in 1st column from left. */
-      @include zen-grid-item(6, 1);
-    }
-
-    .region-sidebar-second { /* Span 1 column, starting in 3rd column from left. */
-      @include zen-grid-item(3, 7);
-    }
-  }
-
-  /*
-   * The layout when there are two sidebars.
-   */
-
-  .two-sidebars { //do 3 col, 4 col, 2 col
-    #content { /* Span 2 columns, starting in 2nd column from left. */
-      @include zen-grid-item(4, 4);
-    }
-
-    .region-sidebar-first { /* Span 1 column, starting in 1st column from left. */
-      @include zen-grid-item(3, 1);
-    }
-
-    .region-sidebar-second { /* Start a new row and span all 3 columns. */
-      @include zen-grid-item(2, 8);
-      // @include zen-nested-container(); // Since we're making every block in this region be a grid item.
-      // @include zen-clear();
-
-      .block {
-        @include zen-grid-item-base();
-      }
-      .block:nth-child(3n+1) { /* Span 1 column, starting in the 1st column from left. */
-        @include zen-grid-item(3, 1);
-        @include zen-clear();
-      }
-      .block:nth-child(3n+2) { /* Span 1 column, starting in the 2nd column from left. */
-        @include zen-grid-item(3, 4);
-      }
-      .block:nth-child(3n) { /* Span 1 column, starting in the 3rd column from left. */
-        @include zen-grid-item(3, 7);
-      }
-    }
-  }
-    #footer-left {
-    display:none;
-  }
-}
-
-@media all and (min-width: 481px) and (max-width: 800px) {
-  /*
-   * Use 12 grid columns for medium sized screens.
-   */
-  $zen-column-count: 12;
-
-  #top-stripe {
-    height: .25em;
-    top: 0;
-    z-index: 90;
-    background-color:$wwuLtblue;
- 
-      #top-stripe-left {
-        @include zen-grid-item(4,1);
-      }
-      #top-stripe-center{
-        @include zen-grid-item(7,6);
-      }
-      #top-stripe-right {
-        @include zen-grid-item(1,12);
-      }
-  }
-
-  #wwuheader {
-     @include zen-grid-item(12.25,1, right);
-        margin-bottom:6.563em;
-
-    #search {
-      width:17.15em;
-      position:absolute;
-      top:2.2em;
-      right:.9em;
-    }
-  }
-  #header {
-    @include zen-clear(right);
-    @include zen-grid-item(12,1, right);
-    
-    #collegeheader {
-    @include zen-grid-item(12,1, right);
-      //height:116px;
-      margin-top:-6.875em;
-    }
-  }
-
-  #main {
-    @include zen-clear();
-    @include zen-grid-item(12,1);
-    width:99%;
-    margin: 18.8em .938em 4.250em 1em;
-  }
-
-   /*
-   * The layout when there is only one sidebar, the left one.
-   */
-   #navigation{
-    @include zen-grid-item(12,1);
-   }
-  .sidebar-first {
-    #content { /* Span 4 columns, starting in 2nd column from left. */
-      @include zen-grid-item(9  , 4);
-    }
-
-    .region-sidebar-first { /* Span 1 column, starting in 1st column from left. */
-      @include zen-grid-item(3, 1);
-      }
-    }
+ #footer-wrapper {
+  @include zen-grid-item(3,1);
+ }
   #footer-left {
     display:none;
+
   }
+  #footer-center {
+    @include zen-grid-item(1,1,left);
+  }
+  #footer-right {
+    @include zen-clear(none);
+    float:none;
+    @include zen-grid-item(1,2);
+      margin-top:-1.813em;
+  }
+
 }
+
+
+
 
 @media all and (min-width: 801px) {
   /*
@@ -678,13 +560,14 @@ $zen-auto-include-item-base: false;
       display:none;
     }
     #wwumenu {
-      @include zen-grid-item(5,8);
+      @include zen-grid-item(5,7);
       display: block;
     }
   }
   #header {
     @include zen-clear();
     @include zen-grid-item(12,1);
+    width:98%;
     
     #collegeheader {
     @include zen-grid-item(12,1);
@@ -716,8 +599,8 @@ $zen-auto-include-item-base: false;
   #main {
     @include zen-clear();
     @include zen-grid-item(12,1);
-    width:99%;
-    margin: 0.5em .938em 4.250em .95em;
+    width:100%;
+    margin: 0.5em 0em 4.250em 0em;
 
     header#department {
       border-bottom:solid 3px #E9E9E9;
