@@ -46,9 +46,29 @@
 		}
 	});
 	// END SEARCH TOGGLE CODE
-	
-	// START MENU EXPANSION CODE
+    }
+ }
 
+	// START MAIN MENU TOGGLE CODE
+	Drupal.behaviors.mobileWwuMainMenu = {
+		attach: function () {
+
+	// START SEARCH TOGGLE CODE
+
+		$('#mobileNavTrigger').click(function () {
+			var mainMenu = $('#main-menu ul.menu');
+			if (mainMenu.is(':visible')) {
+				mainMenu.slideToggle();
+			} else {
+				mainMenu.slideToggle(400);
+		}
+	});
+	// END MAIN MENU TOGGLE CODE
+	}
+}
+	// START MENU EXPANSION CODE
+	Drupal.behaviors.menuExpansion = {
+		attach: function () {
 		$(".expanded").click(function(e) {
 		  if ($(this).hasClass("opened")) {
 		    $(this).children().children().hide();
