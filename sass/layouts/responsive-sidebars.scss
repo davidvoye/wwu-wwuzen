@@ -283,22 +283,210 @@ $zen-auto-include-item-base: false;
   }
 }
 
-@media all and (min-width: 480px) {
+@media all and (min-width: 361px) and (max-width: 480px) {
   $zen-column-count: 3;
-  #main {
-    //padding-top: 3em; /* Move all the children of #main down to make room. */
-    //position: relative;
+ 
+#wwuheader {
+
+    a.mobile {
+      @include zen-grid-item(3,1);
+      margin-bottom:-.375em;
+      //background-color:rgb(75, 104, 156);
+      background-color:$wwuBlue;
+    }
+    .desktop {
+      display:none;
+    }
+    #mobileWWUmenu {
+      float:right;
+      background-color:rgb(75, 104, 156);
+      width:2.75em;
+      height:100%;
+    }
+    .wwusearch {
+      @include zen-clear(right);
+      float:right;
+      position: relative;
+      z-index: 20;
+      background-color:rgb(75, 104, 156);  
+      width:2.75em;  
+      top:0%;
+    }
+    #search {
+      position: relative;
+      right: 0;
+      top: 2.5em;
+      width: 18.55em;
+    }
+    ul#wwumenu {
+      font-size: 1em;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      background-color:#003f87;
+      text-transform:uppercase;
+      display:block;
+      list-style-type:none;
+      top: 62px;
+      width: 100%;
+      display:none;
+      height:16.7em;
+        
+        li {
+          display:block;
+          background-color:#003f87;
+          border-bottom:solid 1px #E9E9E9;
+          padding:.5em .6em;
+
+          a {
+          text-decoration:none;
+          color:#ffffff;
+          @include transition(1s);
+            &:hover {
+              color:#ffc61e;
+              @include transition(.2s);
+              }
+          }
+        }
+       .wwulinks:not(:first-child):before {
+          content:"";
+        }
+    }   
+}
+
+  #logo, #logoImage{
+    display:none;
   }
-  #navigation {
-    //position: absolute;
-    //top: 0; /* Move the navbar up inside #main's padding. */
-    //height: 3em;
-    width: $zen-grid-width;
+  #collegeheader {
+    @include zen-clear();
+    @include background(linear-gradient(top, #319bde, #0083d6));
+    
+    #name-and-slogan {
+      @include zen-grid-item(2,1);
+      font-family:$muli;
+      padding:0 0 0 1.25em;
+    }
+
+    #site-name { /* The name of the website */
+      display:block; //college name is shown as part of image on banner
+      width:80%; //Prevents the name from sliding under the mobile nav at 360px wide
+      a:link,
+        a:visited {
+          color: #ffffff;
+          text-decoration: none;
+        }
+    }
+
+    #mobileNavTrigger{
+      @include zen-clear(right);
+      float:right;
+      background-color:rgb(75, 104, 156);
+      width:2.75em;
+    }
+    #navigation {
+      padding:0;
+      height:0;
+    #main-menu ul.menu {
+      display:none;
+      background-color:#003f87;
+      text-transform:uppercase;
+      list-style-type:none;
+        a {
+          text-decoration:none;
+          color:#fff;
+          @include transition(1s);
+            &:hover {
+              color:#ffc61e;
+              @include transition(.2s);
+              }
+            }
+        li {
+          width: 100%;
+          text-align: left; 
+          display:block;
+          background-color:#003f87;
+          padding: .5em 0em;
+          border-bottom:solid 1px #E9E9E9;
+          a {
+            padding: .5em;
+          }
+
+          ul {
+                width: 98%;
+                padding-left: 2%;
+                li {
+                  background-color: #4B689C;
+                  border-bottom: solid 1px #E9E9E9;
+                }
+                position: relative;
+              }
+            &.expanded {
+              background-image: url("../../images/plusIcon.png");
+              background-position: right top;
+              background-repeat: no-repeat;
+            }
+
+            &.opened {
+              background-image: url("../../images/minusIcon.png");
+              background-position: right top;
+              background-repeat: no-repeat;
+            }            
+          }
+
+          li.expanded ul.menu li {
+                display: none;
+          }
+        }
+      }
+    } //End college header 
+
+
+
+
+  #main {
+    @include zen-clear();
+    @include zen-grid-item(3,1);
+    margin-top:0em;
+
+    header#department {
+      border-bottom:none;
+      padding:.9em 0 1em 0;
+      margin-bottom:0em;
+    }
+    .breadcrumb {
+      display: none;
+    }
+
   }
 
   #footer-left {
     display:none;
   }
+
+  #footer-center {
+      @include zen-clear();
+      @include zen-grid-item(2,1);
+    //  width: 100%;
+  //    margin-left:-1em;
+      padding: 0px 0px 0px 0px;
+
+      ul.menu {
+        padding: 0px 0px 0px 15px;
+        width: 90%;
+      }
+    }
+
+
+  #footer-right {
+    @include zen-clear();
+    @include zen-grid-item(2,1);
+    margin-top:0em;
+  }
+  //Override of normalize.scss for the comment subject input area 
+  #edit-subject {
+    width: 100%;
+  }
+
 }
 
 @media all and (min-width: 480px) and (max-width: 700px) {
@@ -373,14 +561,14 @@ $zen-auto-include-item-base: false;
   }
 }
 
-@media all and (min-width: 480px) and (max-width: 800px) {
+@media all and (min-width: 481px) and (max-width: 800px) {
   /*
    * Use 12 grid columns for medium sized screens.
    */
   $zen-column-count: 12;
 
   #top-stripe {
-    height: 3.975em;
+    height: .25em;
     top: 0;
     z-index: 90;
     background-color:$wwuLtblue;
@@ -467,6 +655,12 @@ $zen-auto-include-item-base: false;
   #wwuheader {
      @include zen-grid-item(12,1);
         margin-bottom:.563em;
+
+    img.wwuLogo {
+      z-index: 200;
+      margin: -6px 0 0 20px;
+      position:relative;
+    }
 
       .mobile { display:none;}
 
@@ -555,6 +749,7 @@ $zen-auto-include-item-base: false;
     @include zen-grid-item(3,4);
   }
   #footer-right {
+      float:right;
       margin-top:-1.813em;
   }
 
