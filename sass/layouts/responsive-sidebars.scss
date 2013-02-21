@@ -211,14 +211,14 @@ $zen-auto-include-item-base: false;
                 position: relative;
                 background-color:#E9E9E9;
                 li {
-                  background-color:tint(#4B689C, 20%);
+                  background-color:tint($wwuGrayBlue, 20%);
                   margin-bottom:1px;
                   border:none;
                   font-size:1em;
                   ul li {
-                    background-color:tint(#4B689C, 40%);
+                    background-color:tint($wwuGrayBlue, 40%);
                     ul li {
-                      background-color:tint(#4B689C, 60%);
+                      background-color:tint($wwuGrayBlue, 60%);
                     }
                   }
                 }
@@ -237,21 +237,35 @@ $zen-auto-include-item-base: false;
 }
 
 .expanded {
-  background-image: linear-gradient(90deg, transparent 50%, rgba(255,255,255,.5) 50%);
+  background-image: url("../../images/plus-icon.png");
+  .opened &, .expanded & {
+    background-color:$wwuGrayBlue;
+    background-image: url("../../images/plus-icon-2.png");
+    .opened &, .expanded & {
+      background-color:tint($wwuGrayBlue, 20%);
+      background-image: url("../../images/plus-icon-3.png");
+      .opened &, .expanded & {
+        background-color:tint($wwuGrayBlue, 40%);
+        background-image: url("../../images/plus-icon-4.png");
+        }
+      }
+    }
 }
 
 .opened {
-background-image: url("../../images/minus-icon.png");
-background-color:tint(#4B689C, 20%);
-.opened &, .expanded & {
-  background-color:tint(#4B689C, 40%);
+  background-image: url("../../images/minus-icon.png");
   .opened &, .expanded & {
-    background-color:tint(#4B689C, 60%);
+    background-color:$wwuGrayBlue;
+    background-image: url("../../images/minus-icon-2.png");
     .opened &, .expanded & {
-      background-color:tint(#4B689C, 80%);
+      background-color:tint($wwuGrayBlue, 20%);
+      background-image: url("../../images/minus-icon-3.png");
+        .opened &, .expanded & {
+        background-color:tint($wwuGrayBlue, 40%);
+        background-image: url("../../images/minus-icon-4.png");
+        }
       }
     }
-  }
 }
 
 //End college header 
@@ -434,22 +448,12 @@ background-color:tint(#4B689C, 20%);
                 width: 98%;
                 padding-left: 2%;
                 li {
-                  background-color: #4B689C;
+                  background-color: $wwuGrayBlue;
                   border-bottom: solid 1px #E9E9E9;
                 }
                 position: relative;
               }
-            &.expanded {
-              background-image: url("../../images/plusIcon.png");
-              background-position: right top;
-              background-repeat: no-repeat;
-            }
-
-            &.opened {
-              background-image: url("../../images/minusIcon.png");
-              background-position: right top;
-              background-repeat: no-repeat;
-            }            
+                      
           }
 
           li.expanded ul.menu li {
