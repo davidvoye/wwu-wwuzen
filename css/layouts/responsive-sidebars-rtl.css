@@ -263,18 +263,18 @@ h1, h2, h3, h4, h5, h6 {
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003213}}
   #collegeheader #navigation #main-menu ul.menu li ul li {
-    background-color: #6f86af;
+    background-color: #4b689c;
     margin-bottom: 1px;
     border: none;
     font-size: 1em;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003218}}
   #collegeheader #navigation #main-menu ul.menu li ul li ul li {
-    background-color: #93a4c3;
+    background-color: #6f86af;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003220}}
   #collegeheader #navigation #main-menu ul.menu li ul li ul li ul li {
-    background-color: #b7c2d7;
+    background-color: #93a4c3;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003228}}
   #collegeheader #navigation #main-menu ul.menu li.expanded ul.menu li {
@@ -283,12 +283,12 @@ h1, h2, h3, h4, h5, h6 {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003233}}
   .expanded {
-    background-position: right -320px;
+    background-position: right -280px;
   }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003234}}
   .opened {
-    background-position: right -240px;
+    background-position: right -120px;
   }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003236}}
@@ -298,27 +298,27 @@ h1, h2, h3, h4, h5, h6 {
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003240}}
   .expanded .expanded, .opened .expanded {
-    background-position: right -360px;
+    background-position: right -320px;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003241}}
   .expanded .opened, .opened .opened {
-    background-position: right -200px;
+    background-position: right -160px;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003244}}
   .expanded .expanded .expanded, .expanded .opened .expanded, .opened .expanded .expanded, .opened .opened .expanded {
-    background-position: right -400px;
+    background-position: right -360px;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003245}}
   .expanded .expanded .opened, .expanded .opened .opened, .opened .expanded .opened, .opened .opened .opened {
-    background-position: right -240px;
+    background-position: right -200px;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003248}}
   .expanded .expanded .expanded .expanded, .expanded .expanded .opened .expanded, .expanded .opened .expanded .expanded, .expanded .opened .opened .expanded, .opened .expanded .expanded .expanded, .opened .expanded .opened .expanded, .opened .opened .expanded .expanded, .opened .opened .opened .expanded {
-    background-position: right -440px;
+    background-position: right -400px;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003249}}
   .expanded .expanded .expanded .opened, .expanded .expanded .opened .opened, .expanded .opened .expanded .opened, .expanded .opened .opened .opened, .opened .expanded .expanded .opened, .opened .expanded .opened .opened, .opened .opened .expanded .opened, .opened .opened .opened .opened {
-    background-position: right -280px;
+    background-position: right -240px;
   }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003257}}

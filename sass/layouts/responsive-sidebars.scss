@@ -211,14 +211,14 @@ $zen-auto-include-item-base: false;
                 position: relative;
                 background-color:#E9E9E9;
                 li {
-                  background-color:tint($wwuGrayBlue, 20%);
+                  background-color:$wwuGrayBlue;
                   margin-bottom:1px;
                   border:none;
                   font-size:1em;
                   ul li {
-                    background-color:tint($wwuGrayBlue, 40%);
+                    background-color:tint($wwuGrayBlue, 20%);
                     ul li {
-                      background-color:tint($wwuGrayBlue, 60%);
+                      background-color:tint($wwuGrayBlue, 40%);
                     }
                   }
                 }
@@ -230,23 +230,23 @@ $zen-auto-include-item-base: false;
       }
     }
 
-.expanded { background-position:right -320px; }
-.opened { background-position:right -240px; }
+.expanded { background-position:right -280px; }
+.opened { background-position:right -120px; }
 
 .expanded, .opened {
   background-image: url("../../images/nav-sprites.png");
   background-repeat: no-repeat;
 
-  .expanded { background-position:right -360px; }
-  .opened { background-position:right -200px; }
+  .expanded { background-position:right -320px; }
+  .opened { background-position:right -160px; }
 
   .expanded, .opened {
-    .expanded { background-position:right -400px; }
-    .opened { background-position:right -240px; }
+    .expanded { background-position:right -360px; }
+    .opened { background-position:right -200px; }
 
     .expanded, .opened {
-      .expanded { background-position:right -440px; }
-      .opened { background-position:right -280px; }
+      .expanded { background-position:right -400px; }
+      .opened { background-position:right -240px; }
     }
   }
 }
