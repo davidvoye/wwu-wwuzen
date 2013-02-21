@@ -96,21 +96,34 @@
 
 
 Drupal.behaviors.resizeHeader = {
-	attach: function () {
-	//START RESIZE COLLEGE HEADER AND SET HEIGHT CODE
+                attach: function () {
+                //START RESIZE COLLEGE HEADER AND SET HEIGHT CODE
 
-	$(window).resize(function () {
-		var divHeight = $("#collegeheader").children().outerHeight(true);
-		var menuHeight = $("#main-menu").outerHeight(true);
+                $(window).resize(function () {
+                                var divHeight = $("#collegeheader").children().outerHeight(true);
+                                var menuHeight = $("#main-menu").outerHeight(true);
+                                //For the mobile views we need another container to use since main menu is collapsed
+                                var nameAndSlogan = $("#name-and-slogan").outerHeight(true);
 
-		//add the two heights and 10 more pixels to compensate for space beneath the main menu
-		var totalHeight = divHeight + menuHeight + 10;
+                                //add the two heights and 10 more pixels to compensate for space beneath the main menu
+                                var totalHeightWithMenu = divHeight + menuHeight + 10;
+                                var totalHeightSansMenu = divHeight + nameAndSlogan;
+                                //Testing for a condition forces the height to be calculated. 
+                                if (totalHeightSansMenu <= 61) { 
+                                                totalHeightSansMenu = totalHeightSansMenu + 19;
+                                                $('#collegeheader').css({'height': totalHeightSansMenu + "px"});
+                                } else if (totalHeightSansMenu <= 84) { 
+                                                totalHeightSansMenu = totalHeightSansMenu + 1;
+                                                $('#collegeheader').css({'height': totalHeightSansMenu + "px"});
+                                } else {
+                                                $('#collegeheader').css({'height': totalHeightWithMenu + "px"});
+                                }
 
-		$('#collegeheader').css({'height': totalHeight + "px"});
 
-		});
-	//END RESIZE COLLEGE HEADER CODE 
-	}
+                                });
+                //END RESIZE COLLEGE HEADER CODE 
+                }
 }
+
 
 })(jQuery, Drupal, this, this.document);
