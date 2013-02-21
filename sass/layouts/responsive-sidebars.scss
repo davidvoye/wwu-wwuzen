@@ -230,42 +230,25 @@ $zen-auto-include-item-base: false;
       }
     }
 
+.expanded { background-position:right -320px; }
+.opened { background-position:right -160px; }
+
 .expanded, .opened {
-  background-position: right top;
+  background-image: url("../../images/nav-sprites.png");
   background-repeat: no-repeat;
-  background-size:40px 40px;
-}
 
-.expanded {
-  background-image: url("../../images/plus-icon.png");
-  .opened &, .expanded & {
-    background-color:$wwuGrayBlue;
-    background-image: url("../../images/plus-icon-2.png");
-    .opened &, .expanded & {
-      background-color:tint($wwuGrayBlue, 20%);
-      background-image: url("../../images/plus-icon-3.png");
-      .opened &, .expanded & {
-        background-color:tint($wwuGrayBlue, 40%);
-        background-image: url("../../images/plus-icon-4.png");
-        }
-      }
-    }
-}
+  .expanded { background-position:right -360px; }
+  .opened { background-position:right -200px; }
 
-.opened {
-  background-image: url("../../images/minus-icon.png");
-  .opened &, .expanded & {
-    background-color:$wwuGrayBlue;
-    background-image: url("../../images/minus-icon-2.png");
-    .opened &, .expanded & {
-      background-color:tint($wwuGrayBlue, 20%);
-      background-image: url("../../images/minus-icon-3.png");
-        .opened &, .expanded & {
-        background-color:tint($wwuGrayBlue, 40%);
-        background-image: url("../../images/minus-icon-4.png");
-        }
-      }
+  .expanded, .opened {
+    .expanded { background-position:right -400px; }
+    .opened { background-position:right -240px; }
+
+    .expanded, .opened {
+      .expanded { background-position:right -440px; }
+      .opened { background-position:right -280px; }
     }
+  }
 }
 
 //End college header 
