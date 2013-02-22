@@ -117,7 +117,6 @@ $zen-auto-include-item-base: false;
       padding: 0;
       position: relative;
       background-color:$wwuBlue;
-      text-transform:uppercase;
       display:block;
       list-style-type:none;
       top: 62px;
@@ -131,12 +130,14 @@ $zen-auto-include-item-base: false;
           border-bottom:solid 1px #E9E9E9;
           padding:.5em .6em;
           a {
-          text-decoration:none;
-          color:#fff;
-          @include transition(1s);
-            &:hover {
-              color:$wwuLtblue;
-              @include transition(.2s);
+            text-decoration:none;
+            color:#fff;
+            font-size:.9em;
+            text-transform:none;
+            @include transition(1s);
+              &:hover {
+                color:$wwuLime;
+                @include transition(.2s);
               }
           }
         }
