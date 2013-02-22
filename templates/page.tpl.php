@@ -77,9 +77,9 @@
       $wwuLogo = base_path().path_to_theme() . '/images/wwu.png';
     //Mobile devices get these images
       $wwuHorizontalLogo = base_path().path_to_theme() . '/images/wwuhorizlogo.png'; 
-      $wwuMobileMenuIcon = base_path().path_to_theme() . '/images/mobileMenuIcon.png';
-      $wwuMobileSearchIcon = base_path().path_to_theme() . '/images/mobileSearchIcon.png';
-      $wwuMobileMainMenuIcon = base_path().path_to_theme() . '/images/mobileMainMenuIcon.png';  
+      $wwuMobileMenuIcon = base_path().path_to_theme() . '/images/icons/toolbar-links.png';
+      $wwuMobileSearchIcon = base_path().path_to_theme() . '/images/icons/search.png';
+      $wwuMobileMainMenuIcon = base_path().path_to_theme() . '/images/icons/main-menu.png';  
     ?>
     <div id="wwuheader">
         <a href="http://www.wwu.edu" class="desktop">
@@ -96,7 +96,7 @@
           <li class="wwulinks"><a href="http://www.wwu.edu/campusmaps">Map</a></li>    
           <li class="wwulinks"><a href="http://mywestern.wwu.edu">myWestern</a></li>
         </ul> 
-       <aside class="wwusearch"><a id="s-toggle" href="#"><img src="<?php print $wwuMobileSearchIcon;?>" alt="Click here for quick links." width="44px" height="44px"/></a></aside>
+       <aside class="wwusearch"><a id="s-toggle" href="#"><img src="<?php print $wwuMobileSearchIcon;?>" alt="Click here to search." width="44px" height="44px"/></a></aside>
         <div id="search" style="display:none;">
           <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
           <?php print $search_box; ?>

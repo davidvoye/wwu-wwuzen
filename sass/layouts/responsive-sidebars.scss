@@ -116,7 +116,7 @@ $zen-auto-include-item-base: false;
       margin: 0;
       padding: 0;
       position: relative;
-      background-color:#003f87;
+      background-color:$wwuBlue;
       display:block;
       list-style-type:none;
       top: 62px;
@@ -126,16 +126,18 @@ $zen-auto-include-item-base: false;
         
         li {
           display:block;
-          background-color:#003f87;
+          background-color:$wwuBlue;
           border-bottom:solid 1px #E9E9E9;
           padding:.5em .6em;
           a {
-          text-decoration:none;
-          color:#ffffff;
-          @include transition(1s);
-            &:hover {
-              color:#ffc61e;
-              @include transition(.2s);
+            text-decoration:none;
+            color:#fff;
+            font-size:.9em;
+            text-transform:none;
+            @include transition(1s);
+              &:hover {
+                color:$wwuLime;
+                @include transition(.2s);
               }
           }
         }
@@ -164,7 +166,7 @@ $zen-auto-include-item-base: false;
       width:80%; //Prevents the name from sliding under the mobile nav at 360px wide
       a:link,
         a:visited {
-          color: #ffffff;
+          color: #fff;
           text-decoration: none;
         }
     }
@@ -185,12 +187,12 @@ $zen-auto-include-item-base: false;
         a {
           text-decoration:none;
           color:#fff;
-          padding: .5em 0 .4em 1em;
+          padding: .7em 0 .65em 1em;
           display:block;
           width:83%;
           @include transition(1s);
             &:hover {
-              color:#ffc61e;
+              color:$wwuLime;
               @include transition(.2s);
               }
             }
@@ -198,7 +200,7 @@ $zen-auto-include-item-base: false;
           width: 100%;
           text-align: left; 
           display:block;
-          background-color:#003f87;
+          background-color:$wwuBlue;
           margin-bottom:1px;
           border:none;
           text-transform:none;
@@ -211,14 +213,14 @@ $zen-auto-include-item-base: false;
                 position: relative;
                 background-color:#E9E9E9;
                 li {
-                  background-color:tint(#4B689C, 20%);
+                  background-color:$wwuGrayBlue;
                   margin-bottom:1px;
                   border:none;
                   font-size:1em;
                   ul li {
-                    background-color:tint(#4B689C, 40%);
+                    background-color:tint($wwuGrayBlue, 20%);
                     ul li {
-                      background-color:tint(#4B689C, 60%);
+                      background-color:tint($wwuGrayBlue, 40%);
                     }
                   }
                 }
@@ -230,35 +232,34 @@ $zen-auto-include-item-base: false;
       }
     }
 
-.expanded {
-  background-image: url("../../images/plusIcon.png");
-  background-position: right top;
-  background-repeat: no-repeat;
-  background-color:#4B689C;
-  margin-top:0;
-  padding-bottom:-6px;
+@mixin nav-icons($fileName) {
+  background-image:url("../../images/icons/#{$fileName}.png");
 }
 
-.opened {
-background-image: url("../../images/minusIcon.png");
-background-position: right top;
-background-repeat: no-repeat;
-background-color:tint(#4B689C, 20%);
-margin-top:0;
-.opened &, .expanded & {
-  background-color:tint(#4B689C, 40%);
-  .opened &, .expanded & {
-    background-color:tint(#4B689C, 60%);
-    .opened &, .expanded & {
-      background-color:tint(#4B689C, 80%);
-      }
+.expanded { @include nav-icons(expandable-parent); }
+  .opened { @include nav-icons(opened-parent); }
+
+.expanded, .opened {
+  background-repeat: no-repeat;
+  background-position:right top;
+  background-size:44px 44px;
+  @include transition(11s);
+
+    .expanded { @include nav-icons(expandable-first-child); }
+    .opened { @include nav-icons(opened-first-child); }
+
+    .expanded, .opened {
+      .expanded { @include nav-icons(expandable-grandchild); }
+      .opened { @include nav-icons(opened-grandchild); }
+
+      .expanded, .opened {
+        .expanded { @include nav-icons(expandable-great-grandchild); }
+        .opened { @include nav-icons(opened-great-grandchild); }
     }
   }
 }
 
-            //End college header 
-
-
+//End college header 
 
 
   #main {
@@ -320,10 +321,23 @@ margin-top:0;
 }
 
 @media all and (min-width: 361px) and (max-width: 800px) {
-  $zen-column-count: 3;
- 
-#wwuheader {
+#mobileWWUmenu, .wwusearch, #mobileNavTrigger {
+  &:before {
+      content:' ';
+      display:block;
+      width:5px;
+      background-image:url("../../images/drop-shadow.png");
+      background-repeat: repeat-y;
+      height:50px;
+      position:absolute;
+      right:44px;
+    }
+}
 
+@media all and (min-width: 361px) and (max-width: 480px) {
+  $zen-column-count: 3;
+
+#wwuheader {
     a.mobile {
       @include zen-grid-item(3,1);
       margin-bottom:-.375em;
@@ -359,7 +373,8 @@ margin-top:0;
       margin: 0;
       padding: 0;
       position: relative;
-      background-color:#003f87;
+      background-color:$wwuBlue;
+      text-transform:uppercase;
       display:block;
       list-style-type:none;
       top: 62px;
@@ -369,16 +384,16 @@ margin-top:0;
         
         li {
           display:block;
-          background-color:#003f87;
+          background-color:$wwuBlue;
           border-bottom:solid 1px #E9E9E9;
           padding:.5em .6em;
 
           a {
           text-decoration:none;
-          color:#ffffff;
+          color:#fff;
           @include transition(1s);
             &:hover {
-              color:#ffc61e;
+              color:$wwuYellow;
               @include transition(.2s);
               }
           }
@@ -386,7 +401,7 @@ margin-top:0;
        .wwulinks:not(:first-child):before {
           content:"";
         }
-    }   
+    }
 }
 
   #logo, #logoImage{
@@ -394,7 +409,7 @@ margin-top:0;
   }
   #collegeheader {
     @include zen-clear();
-    @include background(linear-gradient(top, #319bde, #0083d6));
+    @include background(linear-gradient(top, #319bde, $wwuLtblue));
     
     #name-and-slogan {
       @include zen-grid-item(2,1);
@@ -407,7 +422,7 @@ margin-top:0;
       width:80%; //Prevents the name from sliding under the mobile nav at 360px wide
       a:link,
         a:visited {
-          color: #ffffff;
+          color: #fff;
           text-decoration: none;
         }
     }
@@ -423,7 +438,7 @@ margin-top:0;
       height:0;
     #main-menu ul.menu {
       display:none;
-      background-color:#003f87;
+      background-color:$wwuBlue;
       text-transform:uppercase;
       list-style-type:none;
         a {
@@ -431,7 +446,7 @@ margin-top:0;
           color:#fff;
           @include transition(1s);
             &:hover {
-              color:#ffc61e;
+              color:$wwuYellow;
               @include transition(.2s);
               }
             }
@@ -439,7 +454,7 @@ margin-top:0;
           width: 100%;
           text-align: left; 
           display:block;
-          background-color:#003f87;
+          background-color:$wwuBlue;
           padding: .5em 0em;
           border-bottom:solid 1px #E9E9E9;
           a {
@@ -450,22 +465,12 @@ margin-top:0;
                 width: 98%;
                 padding-left: 2%;
                 li {
-                  background-color: #4B689C;
+                  background-color: $wwuGrayBlue;
                   border-bottom: solid 1px #E9E9E9;
                 }
                 position: relative;
               }
-            &.expanded {
-              background-image: url("../../images/plusIcon.png");
-              background-position: right top;
-              background-repeat: no-repeat;
-            }
-
-            &.opened {
-              background-image: url("../../images/minusIcon.png");
-              background-position: right top;
-              background-repeat: no-repeat;
-            }            
+                      
           }
 
           li.expanded ul.menu li {
