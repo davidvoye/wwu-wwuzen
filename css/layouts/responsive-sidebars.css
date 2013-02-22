@@ -146,7 +146,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003137}}
   #wwuheader ul#wwumenu li a:hover {
-    color: #ffc61e;
+    color: #0083d6;
     -webkit-transition: 0.2s;
     -moz-transition: 0.2s;
     -o-transition: 0.2s;
@@ -228,7 +228,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003192}}
   #collegeheader #navigation #main-menu ul.menu a:hover {
-    color: #ffc61e;
+    color: #bad80a;
     -webkit-transition: 0.2s;
     -moz-transition: 0.2s;
     -o-transition: 0.2s;

@@ -135,7 +135,7 @@ $zen-auto-include-item-base: false;
           color:#ffffff;
           @include transition(1s);
             &:hover {
-              color:#ffc61e;
+              color:$wwuLtblue;
               @include transition(.2s);
               }
           }
@@ -190,7 +190,7 @@ $zen-auto-include-item-base: false;
           width:83%;
           @include transition(1s);
             &:hover {
-              color:#ffc61e;
+              color:$wwuLime;
               @include transition(.2s);
               }
             }
