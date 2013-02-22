@@ -156,6 +156,7 @@ $zen-auto-include-item-base: false;
       @include zen-grid-item(1,1);
       padding: 0 0 0 1.25em;
       font-family:$muli;
+      width:93%;
     }
 
     #site-name { /* The name of the website */
@@ -287,14 +288,20 @@ margin-top:0;
   }
 
   #footer-center {
+      position: relative;
       @include zen-clear();
-      width: 100%;
-      margin-left:-1em;
+      margin-left:-.5em;
       padding: 0px 0px 0px 0px;
+      width:98%;
 
       ul.menu {
         padding: 0px 0px 0px 15px;
-        width: 90%;
+
+        li {
+          font-size:1.6em; //We have to go bigger because the base font size for the footer is .625
+          display: block;
+          padding: 0.5em 0.6em;
+        }
       }
     }
 
@@ -302,7 +309,8 @@ margin-top:0;
   #footer-right {
     @include zen-clear();
     margin-top:0em;
-    margin-right: 2em;
+    margin-right: 1em;
+    margin-left:1em;
   }
 
   //Override of normalize.scss for the comment subject input area 
@@ -495,15 +503,20 @@ margin-top:0;
   }
 
   #footer-center {
+      position: relative;
       @include zen-clear();
-      @include zen-grid-item(2,1);
-    //  width: 100%;
-  //    margin-left:-1em;
+      margin-left:-.5em;
       padding: 0px 0px 0px 0px;
+      width:69%;
 
       ul.menu {
         padding: 0px 0px 0px 15px;
-        width: 90%;
+
+        li {
+          font-size:1.6em; //We have to go bigger because the base font size for the footer is .625
+          display: block;
+          padding: 0.5em 0.6em;
+        }
       }
     }
 
@@ -512,6 +525,7 @@ margin-top:0;
     @include zen-clear();
     @include zen-grid-item(2,1);
     margin-top:0em;
+    margin-left:1em;
   }
   //Override of normalize.scss for the comment subject input area 
   #edit-subject {
@@ -520,6 +534,29 @@ margin-top:0;
 
 }
 
+@media all and (min-width:480px) and (max-width: 639px) {
+  #footer-left {
+    display:none;
+  }
+  #footer-center {
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    width:67%;
+
+    ul.menu {
+      padding:0;
+    }
+  }
+  #footer-right {
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    width:66.6667%;
+    float:none;
+  }
+  
+}
 
 @media all and (min-width:640px) and (max-width: 800px) {
   $zen-column-count: 3;
@@ -532,13 +569,17 @@ margin-top:0;
 
   }
   #footer-center {
+    position: relative;
     @include zen-grid-item(1,1,left);
+    width:45%;
+    margin-right:0%;
   }
   #footer-right {
     @include zen-clear(none);
     float:none;
     @include zen-grid-item(1,2);
       margin-top:-1.813em;
+      margin-left:7.333%;
   }
 
 }
@@ -569,6 +610,7 @@ margin-top:0;
      @include zen-grid-item(12,1);
         margin-bottom:.563em;
 
+
     img.wwuLogo {
       z-index: 200;
       margin: -6px 0 0 20px;
@@ -580,6 +622,7 @@ margin-top:0;
     aside.wwusearch {
       @include zen-grid-item(1,12);
       margin-top:-.313em;
+      width:2.750em;
     }
     #search {
       width:17.15em;
@@ -665,11 +708,26 @@ margin-top:0;
 
   }
   #footer-center {
-    @include zen-grid-item(3,4);
-  }
+    position:relative;
+    @include zen-grid-item(3,5);
+      padding: 0px 0px 0px 0px;
+      margin-right:0;
+
+      ul.menu {
+        padding: 0px 0px 0px 15px;
+
+        li {
+          font-size:1.6em; //We have to go bigger because the base font size for the footer is .625
+          display: block;
+          padding: 0.5em 0.6em;
+        }
+      }
+    }
+
   #footer-right {
       float:right;
       margin-top:-1.813em;
+      margin-right:2em;
   }
 
   #mobileNavTrigger {
