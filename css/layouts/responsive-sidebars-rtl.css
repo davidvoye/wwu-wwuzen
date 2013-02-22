@@ -142,7 +142,7 @@ h1, h2, h3, h4, h5, h6 {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003133}}
   #wwuheader ul#wwumenu li a {
     text-decoration: none;
-    color: #ffffff;
+    color: #fff;
     -webkit-transition: 1s;
     -moz-transition: 1s;
     -o-transition: 1s;
@@ -194,7 +194,7 @@ h1, h2, h3, h4, h5, h6 {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003166}}
   #collegeheader #site-name a:link,
   #collegeheader #site-name a:visited {
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003172}}
@@ -434,7 +434,7 @@ h1, h2, h3, h4, h5, h6 {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003357}}
   #wwuheader ul#wwumenu li a {
     text-decoration: none;
-    color: #ffffff;
+    color: #fff;
     -webkit-transition: 1s;
     -moz-transition: 1s;
     -o-transition: 1s;
@@ -485,7 +485,7 @@ h1, h2, h3, h4, h5, h6 {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003390}}
   #collegeheader #site-name a:link,
   #collegeheader #site-name a:visited {
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/layouts\/responsive-sidebars\.scss}line{font-family:\00003396}}

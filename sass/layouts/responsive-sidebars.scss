@@ -116,7 +116,7 @@ $zen-auto-include-item-base: false;
       margin: 0;
       padding: 0;
       position: relative;
-      background-color:#003f87;
+      background-color:$wwuBlue;
       text-transform:uppercase;
       display:block;
       list-style-type:none;
@@ -127,12 +127,12 @@ $zen-auto-include-item-base: false;
         
         li {
           display:block;
-          background-color:#003f87;
+          background-color:$wwuBlue;
           border-bottom:solid 1px #E9E9E9;
           padding:.5em .6em;
           a {
           text-decoration:none;
-          color:#ffffff;
+          color:#fff;
           @include transition(1s);
             &:hover {
               color:$wwuLtblue;
@@ -164,7 +164,7 @@ $zen-auto-include-item-base: false;
       width:80%; //Prevents the name from sliding under the mobile nav at 360px wide
       a:link,
         a:visited {
-          color: #ffffff;
+          color: #fff;
           text-decoration: none;
         }
     }
@@ -198,7 +198,7 @@ $zen-auto-include-item-base: false;
           width: 100%;
           text-align: left; 
           display:block;
-          background-color:#003f87;
+          background-color:$wwuBlue;
           margin-bottom:1px;
           border:none;
           text-transform:none;
@@ -339,7 +339,7 @@ $zen-auto-include-item-base: false;
       margin: 0;
       padding: 0;
       position: relative;
-      background-color:#003f87;
+      background-color:$wwuBlue;
       text-transform:uppercase;
       display:block;
       list-style-type:none;
@@ -350,16 +350,16 @@ $zen-auto-include-item-base: false;
         
         li {
           display:block;
-          background-color:#003f87;
+          background-color:$wwuBlue;
           border-bottom:solid 1px #E9E9E9;
           padding:.5em .6em;
 
           a {
           text-decoration:none;
-          color:#ffffff;
+          color:#fff;
           @include transition(1s);
             &:hover {
-              color:#ffc61e;
+              color:$wwuYellow;
               @include transition(.2s);
               }
           }
@@ -375,7 +375,7 @@ $zen-auto-include-item-base: false;
   }
   #collegeheader {
     @include zen-clear();
-    @include background(linear-gradient(top, #319bde, #0083d6));
+    @include background(linear-gradient(top, #319bde, $wwuLtblue));
     
     #name-and-slogan {
       @include zen-grid-item(2,1);
@@ -388,7 +388,7 @@ $zen-auto-include-item-base: false;
       width:80%; //Prevents the name from sliding under the mobile nav at 360px wide
       a:link,
         a:visited {
-          color: #ffffff;
+          color: #fff;
           text-decoration: none;
         }
     }
@@ -404,7 +404,7 @@ $zen-auto-include-item-base: false;
       height:0;
     #main-menu ul.menu {
       display:none;
-      background-color:#003f87;
+      background-color:$wwuBlue;
       text-transform:uppercase;
       list-style-type:none;
         a {
@@ -412,7 +412,7 @@ $zen-auto-include-item-base: false;
           color:#fff;
           @include transition(1s);
             &:hover {
-              color:#ffc61e;
+              color:$wwuYellow;
               @include transition(.2s);
               }
             }
@@ -420,7 +420,7 @@ $zen-auto-include-item-base: false;
           width: 100%;
           text-align: left; 
           display:block;
-          background-color:#003f87;
+          background-color:$wwuBlue;
           padding: .5em 0em;
           border-bottom:solid 1px #E9E9E9;
           a {
