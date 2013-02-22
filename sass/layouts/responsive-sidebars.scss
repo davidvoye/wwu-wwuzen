@@ -185,7 +185,7 @@ $zen-auto-include-item-base: false;
         a {
           text-decoration:none;
           color:#fff;
-          padding: .5em 0 .4em 1em;
+          padding: .7em 0 .65em 1em;
           display:block;
           width:83%;
           @include transition(1s);
@@ -230,23 +230,28 @@ $zen-auto-include-item-base: false;
       }
     }
 
-.expanded { background-position:right -280px; }
-.opened { background-position:right -120px; }
+@mixin nav-icons($fileName) {
+  background-image:url("../../images/icons/#{$fileName}.png");
+}
+
+.expanded { @include nav-icons(expandable-parent); }
+  .opened { @include nav-icons(opened-parent); }
 
 .expanded, .opened {
-  background-image: url("../../images/nav-sprites.png");
   background-repeat: no-repeat;
+  background-position:right top;
+  background-size:44px 44px;
 
-  .expanded { background-position:right -320px; }
-  .opened { background-position:right -160px; }
-
-  .expanded, .opened {
-    .expanded { background-position:right -360px; }
-    .opened { background-position:right -200px; }
+    .expanded { @include nav-icons(expandable-first-child); }
+    .opened { @include nav-icons(opened-first-child); }
 
     .expanded, .opened {
-      .expanded { background-position:right -400px; }
-      .opened { background-position:right -240px; }
+      .expanded { @include nav-icons(expandable-grandchild); }
+      .opened { @include nav-icons(opened-grandchild); }
+
+      .expanded, .opened {
+        .expanded { @include nav-icons(expandable-great-grandchild); }
+        .opened { @include nav-icons(opened-great-grandchild); }
     }
   }
 }
