@@ -241,6 +241,7 @@ $zen-auto-include-item-base: false;
   background-repeat: no-repeat;
   background-position:right top;
   background-size:44px 44px;
+  @include transition(11s);
 
     .expanded { @include nav-icons(expandable-first-child); }
     .opened { @include nav-icons(opened-first-child); }
