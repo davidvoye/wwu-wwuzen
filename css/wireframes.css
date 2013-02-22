@@ -6,13 +6,13 @@
  * Add wireframes to the basic layout elements.
  */
 /* Basic CSS for WWU Styles */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/_base\.scss}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/_base\.scss}line{font-family:\0000387}}
 h1, h2, h3, h4, h5, h6 {
   font-family: Muli, Tahoma, Verdana, "DejaVu Sans", sans-serif;
   font-weight: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/MAMP\/htdocs\/wwuzen\/sites\/all\/themes\/wwuzen\/sass\/wireframes\.scss}line{font-family:\0000319}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/drupal\/sites\/all\/themes\/wwuzen\/sass\/wireframes\.scss}line{font-family:\0000319}}
 .with-wireframes #header,
 .with-wireframes #main,
 .with-wireframes #content,
@@ -21,5 +21,5 @@ h1, h2, h3, h4, h5, h6 {
 .with-wireframes .region-sidebar-second,
 .with-wireframes #footer,
 .with-wireframes .region-bottom {
-  outline: 1px solid #cccccc;
+  outline: 1px solid #ccc;
 }
