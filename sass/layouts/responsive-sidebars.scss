@@ -35,7 +35,6 @@ $zen-gutter-width:  30px; // was 20px
 $zen-auto-include-item-base: false;
 // $zen-auto-include-flow-item-base: false;
 
-
 /*
  * Center the page.
  */
@@ -130,7 +129,6 @@ $zen-auto-include-item-base: false;
           background-color:#003f87;
           border-bottom:solid 1px #E9E9E9;
           padding:.5em .6em;
-
           a {
           text-decoration:none;
           color:#ffffff;
@@ -153,12 +151,12 @@ $zen-auto-include-item-base: false;
   #collegeheader {
     @include zen-clear();
     position:relative;
-    @include background(linear-gradient(top, #319bde, #0083d6));
-    
+    @include background(linear-gradient(top, lighten($wwuLtblue, 10%), $wwuLtblue));
     #name-and-slogan {
       @include zen-grid-item(1,1);
       padding: 0 0 0 1.25em;
       font-family:$muli;
+      width:93%;
     }
 
     #site-name { /* The name of the website */
@@ -182,12 +180,14 @@ $zen-auto-include-item-base: false;
       height:0;
     #main-menu ul.menu {
       display:none;
-      background-color:#003f87;
-      text-transform:uppercase;
+      background-color:#E9E9E9;
       list-style-type:none;
         a {
           text-decoration:none;
           color:#fff;
+          padding: .5em 0 .4em 1em;
+          display:block;
+          width:83%;
           @include transition(1s);
             &:hover {
               color:#ffc61e;
@@ -199,40 +199,64 @@ $zen-auto-include-item-base: false;
           text-align: left; 
           display:block;
           background-color:#003f87;
-          padding: .5em 0em;
-          border-bottom:solid 1px #E9E9E9;
-          a {
-            padding: .5em;
-          }
-
+          margin-bottom:1px;
+          border:none;
+          text-transform:none;
+          font-size:.9em;
+          padding-top:0;
+          padding-bottom:0;
+          @include transition(.25s);
           ul {
-                width: 98%;
-                padding-left: 2%;
-                li {
-                  background-color: #4B689C;
-                  border-bottom: solid 1px #E9E9E9;
-                }
+                padding-left:0;
                 position: relative;
-              }
-            &.expanded {
-              background-image: url("../../images/plusIcon.png");
-              background-position: right top;
-              background-repeat: no-repeat;
-            }
-
-            &.opened {
-              background-image: url("../../images/minusIcon.png");
-              background-position: right top;
-              background-repeat: no-repeat;
-            }            
+                background-color:#E9E9E9;
+                li {
+                  background-color:tint(#4B689C, 20%);
+                  margin-bottom:1px;
+                  border:none;
+                  font-size:1em;
+                  ul li {
+                    background-color:tint(#4B689C, 40%);
+                    ul li {
+                      background-color:tint(#4B689C, 60%);
+                    }
+                  }
+                }
+              }          
           }
 
-          li.expanded ul.menu li {
-                display: none;
-          }
+          li.expanded ul.menu li { display: none; }
         }
       }
-    } //End college header 
+    }
+
+.expanded {
+  background-image: url("../../images/plusIcon.png");
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-color:#4B689C;
+  margin-top:0;
+  padding-bottom:-6px;
+}
+
+.opened {
+background-image: url("../../images/minusIcon.png");
+background-position: right top;
+background-repeat: no-repeat;
+background-color:tint(#4B689C, 20%);
+margin-top:0;
+.opened &, .expanded & {
+  background-color:tint(#4B689C, 40%);
+  .opened &, .expanded & {
+    background-color:tint(#4B689C, 60%);
+    .opened &, .expanded & {
+      background-color:tint(#4B689C, 80%);
+      }
+    }
+  }
+}
+
+            //End college header 
 
 
 
@@ -264,14 +288,20 @@ $zen-auto-include-item-base: false;
   }
 
   #footer-center {
+      position: relative;
       @include zen-clear();
-      width: 100%;
-      margin-left:-1em;
+      margin-left:-.5em;
       padding: 0px 0px 0px 0px;
+      width:98%;
 
       ul.menu {
         padding: 0px 0px 0px 15px;
-        width: 90%;
+
+        li {
+          font-size:1.6em; //We have to go bigger because the base font size for the footer is .625
+          display: block;
+          padding: 0.5em 0.6em;
+        }
       }
     }
 
@@ -279,7 +309,8 @@ $zen-auto-include-item-base: false;
   #footer-right {
     @include zen-clear();
     margin-top:0em;
-    margin-right: 2em;
+    margin-right: 1em;
+    margin-left:1em;
   }
 
   //Override of normalize.scss for the comment subject input area 
@@ -472,15 +503,20 @@ $zen-auto-include-item-base: false;
   }
 
   #footer-center {
+      position: relative;
       @include zen-clear();
-      @include zen-grid-item(2,1);
-    //  width: 100%;
-  //    margin-left:-1em;
+      margin-left:-.5em;
       padding: 0px 0px 0px 0px;
+      width:69%;
 
       ul.menu {
         padding: 0px 0px 0px 15px;
-        width: 90%;
+
+        li {
+          font-size:1.6em; //We have to go bigger because the base font size for the footer is .625
+          display: block;
+          padding: 0.5em 0.6em;
+        }
       }
     }
 
@@ -489,6 +525,7 @@ $zen-auto-include-item-base: false;
     @include zen-clear();
     @include zen-grid-item(2,1);
     margin-top:0em;
+    margin-left:1em;
   }
   //Override of normalize.scss for the comment subject input area 
   #edit-subject {
@@ -497,6 +534,29 @@ $zen-auto-include-item-base: false;
 
 }
 
+@media all and (min-width:480px) and (max-width: 639px) {
+  #footer-left {
+    display:none;
+  }
+  #footer-center {
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    width:67%;
+
+    ul.menu {
+      padding:0;
+    }
+  }
+  #footer-right {
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    width:66.6667%;
+    float:none;
+  }
+  
+}
 
 @media all and (min-width:640px) and (max-width: 800px) {
   $zen-column-count: 3;
@@ -509,13 +569,17 @@ $zen-auto-include-item-base: false;
 
   }
   #footer-center {
+    position: relative;
     @include zen-grid-item(1,1,left);
+    width:45%;
+    margin-right:0%;
   }
   #footer-right {
     @include zen-clear(none);
     float:none;
     @include zen-grid-item(1,2);
       margin-top:-1.813em;
+      margin-left:7.333%;
   }
 
 }
@@ -546,6 +610,7 @@ $zen-auto-include-item-base: false;
      @include zen-grid-item(12,1);
         margin-bottom:.563em;
 
+
     img.wwuLogo {
       z-index: 200;
       margin: -6px 0 0 20px;
@@ -557,6 +622,7 @@ $zen-auto-include-item-base: false;
     aside.wwusearch {
       @include zen-grid-item(1,12);
       margin-top:-.313em;
+      width:2.750em;
     }
     #search {
       width:17.15em;
@@ -642,11 +708,26 @@ $zen-auto-include-item-base: false;
 
   }
   #footer-center {
-    @include zen-grid-item(3,4);
-  }
+    position:relative;
+    @include zen-grid-item(3,5);
+      padding: 0px 0px 0px 0px;
+      margin-right:0;
+
+      ul.menu {
+        padding: 0px 0px 0px 15px;
+
+        li {
+          font-size:1.6em; //We have to go bigger because the base font size for the footer is .625
+          display: block;
+          padding: 0.5em 0.6em;
+        }
+      }
+    }
+
   #footer-right {
       float:right;
       margin-top:-1.813em;
+      margin-right:2em;
   }
 
   #mobileNavTrigger {

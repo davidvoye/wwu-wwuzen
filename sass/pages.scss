@@ -322,12 +322,25 @@ dl {
 
 .left { float:left; margin:1em 1em 1em 0; }
 
-tr.even { /* Some tables have rows marked even or odd. */
-  /* background-color: #eee; */ /* Drupal core uses a #eee background */
+// Figures and figcaptions
+
+figure {
+  background-color:#fff;
+  padding:.75em;
+  @include box-shadow(#ccc 0 0 3px 1px);
+  display:inline-block;
+  img { margin:0 auto; }
+  figcaption { margin-top:.75em; }
 }
 
-tr.odd {
-  /* background-color: #eee; */ /* Drupal core uses a #eee background */
+.float-left {
+  float:left;
+  margin:1em 1em 1em 0;
+}
+
+.float-right {
+  float:right;
+  margin:1em 0 1em 1em;
 }
 
 div.messages { /* Important messages (status, warning, and error) for the user. See also the declarations in messages.css. */
@@ -436,7 +449,6 @@ span.field-label { /* The inline field label used by the Fences module */
   max-width:1080px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.5em;
 }
 
 #footer-left {}
@@ -444,13 +456,7 @@ span.field-label { /* The inline field label used by the Fences module */
 #footer-center {
   li {
     border-bottom:1px solid #ffffff;
-    width: 100%;
     list-style: none;
-
-    &:hover {
-        border-bottom:1px solid $wwuYellow;
-        //color: $wwuYellow;
-      }
 
     a {
       color:#ffffff;
@@ -469,7 +475,7 @@ span.field-label { /* The inline field label used by the Fences module */
       }
 
       &:hover {
-        color:$wwuYellow; 
+        color:$wwuLime; 
           }
         }
       }
@@ -478,7 +484,7 @@ span.field-label { /* The inline field label used by the Fences module */
 
 #footer-right {
 
-    min-width: 24.563em;
+    min-width: 28.50em;
     @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
     font-family:$muli;
 
@@ -486,16 +492,16 @@ span.field-label { /* The inline field label used by the Fences module */
   #footer-right-heading {
     background-color: #ffffff;
     width:100%;
-    height:5.17em;
+    height:3.586em;
     @include box-shadow(#555 0 0 7px);
 
   h3 {
-    font-size: $footer-h3-font-size;
+    font-size: 1.4em;
     color:$wwuBlue;
     margin:0;
-    padding-left: 1.25em;
-    padding-top: 0.7em;
-    padding-right:1.25em;
+    padding-left: 1em;
+    padding-top: 0.8em;
+    padding-right:1em;
     border: none;
     text-transform:uppercase;
     }
