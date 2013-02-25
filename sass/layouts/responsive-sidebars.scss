@@ -1,3 +1,4 @@
+
 /**
  * @file
  * Positioning for responsive layout .
@@ -24,7 +25,7 @@ $zen-gutter-width:  30px; // was 20px
 // - (Preferred) Install the box-sizing polyfill and set the variable below to
 //   the absolute path URL to the boxsizing.htc file.
 //   @see https://github.com/Schepp/box-sizing-polyfill
-//   $box-sizing-polyfill-path: "/path/to/boxsizing.htc";
+     $box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
 // - Use the same CSS unit for grid width and gutter width (use px for both or
 //   use % for both, etc.) and set the box-sizing variable to content-box.
 //   $zen-box-sizing: content-box;
@@ -281,8 +282,9 @@ margin-top:0;
   #block-accordion-menu-1 {
     display:none;
   }
-
-
+  #footer {
+    @include zen-clear(both);
+  }
   #footer-left {
     display:none;
   }
@@ -497,7 +499,9 @@ margin-top:0;
   #block-accordion-menu-1 {
     display:none;
   }
-  
+  #footer {
+    @include zen-clear(both);
+  }  
   #footer-left {
     display:none;
   }
@@ -535,6 +539,10 @@ margin-top:0;
 }
 
 @media all and (min-width:480px) and (max-width: 639px) {
+  #footer {
+    @include zen-clear(both);
+  }
+
   #footer-left {
     display:none;
   }
@@ -564,6 +572,9 @@ margin-top:0;
  #footer-wrapper {
   @include zen-grid-item(3,1);
  }
+  #footer {
+    @include zen-clear(both);
+  } 
   #footer-left {
     display:none;
 
@@ -700,6 +711,10 @@ margin-top:0;
     .region-sidebar-first { /* Span 1 column, starting in 1st column from left. */
       @include zen-grid-item(3, 1);
     }
+  }
+
+  #footer {
+    @include zen-clear(both);
   }
 
   #footer-left {
