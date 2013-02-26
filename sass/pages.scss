@@ -163,7 +163,10 @@ body {
 
 #main {
    padding: .625em;
-   background: url("../images/contentbg.png") repeat-x ;
+   $experimental-support-for-svg: true;
+   @include background-image(
+    linear-gradient(left top, rgba(255,255,255,1),rgba(233,233,233,1) 80%));
+
 }
 
 /*
