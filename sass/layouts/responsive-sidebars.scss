@@ -319,8 +319,6 @@ $zen-auto-include-item-base: false;
     width: 100%;
   }
 }
-
-@media all and (min-width: 361px) and (max-width: 800px) {
 #mobileWWUmenu, .wwusearch, #mobileNavTrigger {
   &:before {
       content:' ';
@@ -332,8 +330,8 @@ $zen-auto-include-item-base: false;
       position:absolute;
       right:44px;
     }
+  }
 }
-
 @media all and (min-width: 361px) and (max-width: 480px) {
   $zen-column-count: 3;
 
@@ -402,6 +400,7 @@ $zen-auto-include-item-base: false;
           content:"";
         }
     }
+  }
 }
 
   #logo, #logoImage{
