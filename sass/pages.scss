@@ -163,7 +163,15 @@ body {
 
 #main {
    padding: .625em;
-   background: url("../images/contentbg.png") repeat-x ;
+   //In case nothing is supported.
+   background-color: #ffffff;
+   //filter gradient for IE6-8
+   @include filter-gradient(rgba(255,255,255,1), rgba(233,233,233,1), vertical);
+   //SVG for IE 9 and Opera
+   $experimental-support-for-svg: true;
+   //Standard Gradients for all other browsers
+   @include background-image(
+    linear-gradient(top, rgba(255,255,255,1),rgba(233,233,233,1) 80%));
 }
 
 /*
@@ -540,4 +548,5 @@ span.field-label { /* The inline field label used by the Fences module */
  */
 
 .region-bottom { /* Wrapper for any blocks placed in the page bottom region */
+
 }

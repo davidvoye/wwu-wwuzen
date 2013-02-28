@@ -123,6 +123,7 @@ Drupal.behaviors.resizeHeader = {
                                 });
                 //END RESIZE COLLEGE HEADER CODE 
                 }
+
 }
 
 

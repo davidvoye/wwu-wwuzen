@@ -174,6 +174,8 @@ function wwuzen_preprocess_page(&$variables, $hook) {
   //Render the search box variable so we can place it in the header.
   $search_box = drupal_get_form('search_block_form');
   $variables['search_box'] = drupal_render($search_box);
+  //Add ui.position utility for mobile menu
+  drupal_add_library('system','ui.position');
 }
 // */
 
