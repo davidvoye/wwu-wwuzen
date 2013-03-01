@@ -15,26 +15,38 @@
 
 // Place your code here.
 
-//$("#site-name:contains('and')").wrapInner("<span class="site-name-and"></div>");
-
 Drupal.behaviors.siteNameTypography = {
 		attach: function () {
+		// Gets the text content of #site-name, which is inside an <a> and <span>.
+		// Possible college name patterns
+		// COLLEGE OF __ AND __ (__)
+		// __ COLLEGE OF __ (__)
+		// __ School
+		// DEPARTMENT OF __
+		// There is never simply: College of __
+		
+		// Longest department names:
+		// Advanced Materials Science and Engineering Center
+		// Physical Education Heatlh and Recreation
+
+		// Gets copy from site name (ultimately inside a span: #site-name a span)
 		var siteName = $("#site-name").text();
-		var titleAnd = $("#site-name:contains('and')").text().replace("and", "<span class=\"site-name-and\">and</span>");
-		var test = siteName.replace(siteName, titleAnd);
+
+		// If the site name copy contains 'and', wrap (by replacing) it with a span and class.
+		var typographyAnd = $("#site-name:contains('and')").text().replace("and", "<span class=\"diminutive-type site-name-and\">and</span>");
+		var typographyCollegeOf = $("#site-name:contains('College of')").text().replace("College of", "<span class=\"diminutive-type site-name-college-of\">College of</span>");
+
+		// Actually replace the site name copy with the new wrapped copy.
+		var test = siteName.replace(siteName, typographyAnd);
 		$('#site-name a span').replaceWith(test);
 
 		//var titleCollegeOf = $("#site-name:contains('College of')").text().replace("College of", "<span class=\"site-name-college-of\">College of</span>");
 		//var siteName = $("#site-name").text();
 		//var test = siteName.replace(siteName, titleCollegeOf);
 		//$('#site-name a span').replaceWith(test);
-		
+
 		//var pattern = /and/i;
 		//alert(test);
-
-		//var titleAnd = $("#site-name a span:contains('and')").text()
-		//.filter(titleAnd).wrap("<b/>");
-		//$("#site-name a span:contains('and')").contents().filter(function(){ return this.nodeType != 1; }).wrap("<em/>");
 	}
 }
 
