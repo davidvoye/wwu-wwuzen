@@ -549,3 +549,17 @@ span.field-label { /* The inline field label used by the Fences module */
 
 .region-bottom { /* Wrapper for any blocks placed in the page bottom region */
 }
+
+#site-name {
+  position:absolute;
+  z-index:99;
+  bottom:50px;
+  left:30px;
+  span {
+    color:white;
+    font-size:1.25em;
+    font-weight:bold;
+    text-decoration:none;
+    text-transform:uppercase;
+  }
+}

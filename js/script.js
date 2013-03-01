@@ -15,6 +15,29 @@
 
 // Place your code here.
 
+//$("#site-name:contains('and')").wrapInner("<span class="site-name-and"></div>");
+
+Drupal.behaviors.siteNameTypography = {
+		attach: function () {
+		var siteName = $("#site-name").text();
+		var titleAnd = $("#site-name:contains('and')").text().replace("and", "<span class=\"site-name-and\">and</span>");
+		var test = siteName.replace(siteName, titleAnd);
+		$('#site-name a span').replaceWith(test);
+
+		//var titleCollegeOf = $("#site-name:contains('College of')").text().replace("College of", "<span class=\"site-name-college-of\">College of</span>");
+		//var siteName = $("#site-name").text();
+		//var test = siteName.replace(siteName, titleCollegeOf);
+		//$('#site-name a span').replaceWith(test);
+		
+		//var pattern = /and/i;
+		//alert(test);
+
+		//var titleAnd = $("#site-name a span:contains('and')").text()
+		//.filter(titleAnd).wrap("<b/>");
+		//$("#site-name a span:contains('and')").contents().filter(function(){ return this.nodeType != 1; }).wrap("<em/>");
+	}
+}
+
 	Drupal.behaviors.searchSlider = {
 		attach: function () {
 
