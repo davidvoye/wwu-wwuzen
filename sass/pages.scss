@@ -58,32 +58,61 @@ body {
   }
   .form-submit {
     background-color:$wwuLtblue;
+    font-family:$muli;
     color:#fff;
     margin:0;
+    padding:0 1em;
     border:none;
-    float:right;
-    height:3em;
+    height:3.75em;
+    position:absolute;
+    top:0;
+    right:-1px;
   }
 
   .form-type-checkbox {
-    float:left;
+    display:block;
     margin:0;
+    margin-left:.75em;
     #edit-seach-block-form {
-      float:left;
+      
     }
-    label { float:left; }
+    label {
+      color:gray;
+      font-size:.7em;
+      font-weight:normal;
+    }
+  }
+
+  input[type='checkbox'] {
+    height:12px;
+    width:12px;
+  }
+
+  #edit-search-block-form--2 {
+    font-family:$muli;
+    font-size:.85em;
+    border: {
+      width:0 0 1px 0;
+      style:solid;
+      color:$wwuLime;
+    }
+    margin:.5em .25em .25em .75em;
+    padding:.25em 0 .1em 0;
+    &:focus {
+      outline:none;
+    }
   }
   
   #search {
-    //height:2em;
     font-family:$muli;
     background:#fff;
     padding:0;
     display:block;
     overflow:hidden;
     z-index:200;
-    height:3em;
-    @include box-shadow(#333 0 0 6px);
+    height:3.75em;
+    width:18.25em;
+    @include box-shadow(#333 0 0 8px);
 
     a {
       color:#999;
@@ -99,13 +128,6 @@ body {
     a:hover {
       color:#666;
     }
-
-    label {
-      display:block;
-      font-size:.8em;
-      font-weight:normal;
-    }
-
  
   }
 }
