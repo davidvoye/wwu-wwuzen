@@ -161,7 +161,7 @@ function wwuzen_form_alter(&$form, &$form_state, $form_id) {
     $form['seach_block_form'] = array(
       '#type' => 'checkbox',
       '#title' => t('Search WWU'),
-      '#prefix' => '<br/><br/>',
+      //'#prefix' => '<br/><br/>',
       );
 
   }
