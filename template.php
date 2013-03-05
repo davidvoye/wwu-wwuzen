@@ -157,6 +157,13 @@ function wwuzen_form_alter(&$form, &$form_state, $form_id) {
 
     // Alternative (HTML5) placeholder attribute instead of using the javascript
     $form['search_block_form']['#attributes']['placeholder'] = t('Search this site.');
+    // Add a checkbox allowing users to search the entire WWU collection if need be.
+    $form['seach_block_form'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Search WWU'),
+      '#prefix' => '<br/><br/>',
+      );
+
   }
 } 
 
