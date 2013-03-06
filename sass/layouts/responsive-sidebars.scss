@@ -635,14 +635,13 @@ $zen-auto-include-item-base: false;
 
     aside.wwusearch {
       @include zen-grid-item(1,12);
-      margin-top:-.313em;
       width:2.750em;
     }
     #search {
       width:17.15em;
       position:absolute;
-      top:4em;
-      right:7.4em;
+      top:44px;
+      right:8%;
     }
     #mobileWWUmenu {
       display:none;
@@ -671,7 +670,7 @@ $zen-auto-include-item-base: false;
 }
 
 #site-name { /* The name of the website */
-  display:none; //college name is shown as part of image on banner
+ //display:none;
   a:link,
   a:visited {
     color: #000;
