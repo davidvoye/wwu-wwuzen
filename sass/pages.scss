@@ -551,11 +551,7 @@ span.field-label { /* The inline field label used by the Fences module */
 }
 
 #site-name {
-  position:absolute;
   z-index:99;
-  bottom:40px;
-  right:10px;
-  background-color:rgba($wwuLtblue, .8);
   min-width:200px;
   max-width:250px;
   min-height:25px;
