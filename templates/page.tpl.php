@@ -96,11 +96,12 @@
           <li class="wwulinks"><a href="http://www.wwu.edu/campusmaps">Map</a></li>    
           <li class="wwulinks"><a href="http://mywestern.wwu.edu">myWestern</a></li>
         </ul> 
-       <aside class="wwusearch"><a id="s-toggle" href="#"><img src="<?php print $wwuMobileSearchIcon;?>" alt="Click here to search." width="44px" height="44px"/></a></aside>
+       <aside class="wwusearch"><a id="s-toggle" href="#"><img src="<?php print $wwuMobileSearchIcon;?>" alt="Click here to search." width="44px" height="44px"/></a>
         <div id="search" style="display:none;">
           <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
           <?php print $search_box; ?>
         </div>
+      </aside>
        
   
       </div><!-- wwuheader -->
