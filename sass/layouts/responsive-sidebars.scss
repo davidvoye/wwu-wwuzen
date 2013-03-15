@@ -636,12 +636,13 @@ $zen-auto-include-item-base: false;
     aside.wwusearch {
       @include zen-grid-item(1,12);
       width:2.750em;
+      position:relative;
     }
     #search {
       width:17.15em;
       position:absolute;
-      top:44px;
-      right:8%;
+      //top:44px;
+      right:0;
     }
     #mobileWWUmenu {
       display:none;
