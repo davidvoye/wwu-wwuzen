@@ -99,7 +99,7 @@ $zen-auto-include-item-base: false;
     .wwusearch {
       @include zen-clear(right);
       @include zen-grid-item(1,1,right);
-      position: relative;
+      position: absolute;
       z-index: 20;
       background-color:rgb(75, 104, 156);  
       width:2.75em;  
