@@ -159,7 +159,8 @@ li a.active {
 
 
   &:hover {
-    background-color:#dddddd;
+    color:$wwuLime;
+    @include transition(.2s);
   }
 
   span.accordion-link {
@@ -168,7 +169,8 @@ li a.active {
     padding:0.5em 0 0.5em 2.2em;
 
     &:hover {
-      color:$wwuBlue;
+      color:$wwuLime;
+      @include transition(.2s);
     }
   }
 
@@ -177,7 +179,8 @@ li a.active {
     display:block;
 
   &:hover {
-    color:$wwuBlue;
+    color:$wwuLime;
+    @include transition(.2s);
   }
 
   }
@@ -198,6 +201,7 @@ li a.active {
 
 //style the interior accordion content
   .ui-accordion .ui-accordion-content {
+    font-family:$muli;
     margin-top:0px;
     top:0px;
     border:none;
@@ -228,8 +232,8 @@ li a.active {
       }
 
       &:hover {
-        background-color:#dddddd;
-        color:$wwuBlue;
+        color:$wwuLime;
+        @include transition(.2s);
       }
 
     }
@@ -237,13 +241,14 @@ li a.active {
       margin:0px;
     }
     a.active{
-    background-color:$wwuLtblue;
+    background-color:tint($wwuGrayBlue, 20%);
+    color:$wwuBlue;
     display:block;
   }
   }
 
 .block-accordion-menu h3.active, span.active-trail, .block-accordion-menu h3.active-trail {
-  background-color:$wwuBlue;
+  background-color:$wwuGrayBlue;
   display:block;
 
   a.active, span.active-trail {
