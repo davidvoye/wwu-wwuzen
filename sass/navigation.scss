@@ -152,7 +152,7 @@ li a.active {
 
 //Accordion Menus
 .block-accordion-menu .ui-accordion-header {
-  background-color:$wwuLtblue;
+  background-color:$wwuOceanBlue;
   background-image:none;
   border:none;
   margin-bottom:0em;
@@ -214,8 +214,9 @@ li a.active {
   }
 
   .ui-accordion-content ul.menu {
-    margin:0;
-    padding:0;
+    margin:0em;
+    padding:0em;
+    font-size:1em;
 
     li a{
       background-color:$wwuGrayBlue;
@@ -224,7 +225,7 @@ li a.active {
       display:block;
       margin:2px 0 0;
       padding: 0.2em 0 0.2em 2.6em;
-      width:82.9%;
+      width:81.9%;
 
       .active {
        background-color:$wwuBlue;
@@ -242,11 +243,13 @@ li a.active {
     }
     a.active{
     background-color:tint($wwuGrayBlue, 20%);
-    color:$wwuBlue;
+    color:#ffffff;
     display:block;
   }
   }
-
+  .ui-accordion-content ul.menu ul.menu li a {
+    margin:2px 0 0;
+  }
 .block-accordion-menu h3.active, span.active-trail, .block-accordion-menu h3.active-trail {
   background-color:$wwuGrayBlue;
   display:block;

@@ -11,7 +11,9 @@ A Drupal Zen Sub-Theme.
     - Appearance -> Settings for WWU Zen -> Toggle Display -> Main Menu
 2. Disable the secondary menu in the theme appearance settings.
     - Appearance -> Settings for WWU Zen -> Toggle Display -> Secondary Menu
-3. Add a main menu block 
+3. Disable the breadcrumbs in the theme appearace settings.
+    - Appearance -> Settings for WWU Zen -> Breadcrumb settings -> Display breadcrumb -> No.
+4. Add a main menu block
     - Structure, Blocks -> Add Menu Block (Near the top of the screen) - Configure as follows:
         - Block Title &lt;none&gt;
         - Menu -> Main Menu

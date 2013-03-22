@@ -40,7 +40,7 @@ $legacy-support-for-ie8: true;
 $base-font-size:   16px; // The font size set on the root html element.
 $base-line-height: 24px; // This line-height determines the basic unit of vertical rhythm.
 
-$h1-font-size: 1.4 * $base-font-size;
+$h1-font-size: 1.85 * $base-font-size;
 $h2-font-size: 1.75 * $base-font-size;
 $h3-font-size: 1.4 * $base-font-size;
 $h4-font-size: 1.17 * $base-font-size;
@@ -100,6 +100,8 @@ $wwuLime: #bad80a;
 $wwuGreen: #006b3f;
 
 $wwuGrayBlue: #4B689C;
+//Vetted for accessibility via contrast
+$wwuOceanBlue: #0070b6;
 
 // The amount lists, blockquotes and comments are indented.
 $indent-amount: 30px;
