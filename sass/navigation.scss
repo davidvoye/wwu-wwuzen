@@ -120,16 +120,16 @@ li a.active {
       display:table-cell;
       float:none;
       text-align: center;
-      
+
         &:hover {
-          background-color: #dddddd; 
+          background-color: #dddddd;
           color: $wwuBlue;
-          cursor:pointer; 
+          cursor:pointer;
 
           a {
             color:$wwuBlue;
             } //ul.links li:hover a
-        } 
+        }
 
         a {
           color:#ffffff;
@@ -139,11 +139,11 @@ li a.active {
 
          &:last-child { border:none; }
 
-        } //ul.links li    
+        } //ul.links li
 
     li.active {
         background-color:#dddddd;
-        .active { 
+        .active {
           color:$wwuBlue;
         }//ul.links li.active a.active
       }//ul.links li.active
@@ -152,32 +152,37 @@ li a.active {
 
 //Accordion Menus
 .block-accordion-menu .ui-accordion-header {
-  background-color:$wwuBlue;
+  background-color:$wwuOceanBlue;
   background-image:none;
   border:none;
-  margin-bottom:.313em;
-  padding:.2em;
+  margin-bottom:0em;
+
 
   &:hover {
-    background-color:#dddddd;
+    color:$wwuLime;
+    @include transition(.2s);
   }
 
   span.accordion-link {
     color:#ffffff;
+    display:block;
+    padding:0.5em 0 0.5em 2.2em;
 
     &:hover {
-      color:$wwuBlue;
+      color:$wwuLime;
+      @include transition(.2s);
     }
   }
 
  a {
     color: #ffffff;
-    display:inline;
-  
+    display:block;
+
   &:hover {
-    color:$wwuBlue;
+    color:$wwuLime;
+    @include transition(.2s);
   }
- 
+
   }
 
 }
@@ -196,40 +201,60 @@ li a.active {
 
 //style the interior accordion content
   .ui-accordion .ui-accordion-content {
+    font-family:$muli;
     margin-top:0px;
-    padding-left:1.1em;
     top:0px;
     border:none;
+    padding:0.1em 0 0em 0;
+    width:100%;
   }
 
   .ui-widget-content {
       background:none;
-  } 
-  
+  }
+
   .ui-accordion-content ul.menu {
-    margin:0;
-    padding:0;
+    margin:0em;
+    padding:0em;
+    font-size:1em;
 
     li a{
-      background-color:#dddddd;
-      color:$wwuBlue;
+      background-color:$wwuGrayBlue;
+      color:#ffffff;
       text-decoration:none;
       display:block;
-      margin-bottom:.18em;
-      padding: 0.2em 0 0.2em 2.688em;
-      width:95%;
+      margin:2px 0 0;
+      padding: 0.2em 0 0.2em 2.6em;
+      width:81.9%;
 
       .active {
        background-color:$wwuBlue;
        color:#ffffff;
       }
-    }
-  }
 
+      &:hover {
+        color:$wwuLime;
+        @include transition(.2s);
+      }
+
+    }
+    li.first a {
+      margin:0px;
+    }
+    a.active{
+    background-color:tint($wwuGrayBlue, 20%);
+    color:#ffffff;
+    display:block;
+  }
+  }
+  .ui-accordion-content ul.menu ul.menu li a {
+    margin:2px 0 0;
+  }
 .block-accordion-menu h3.active, span.active-trail, .block-accordion-menu h3.active-trail {
-  background-color:#dddddd;
+  background-color:$wwuGrayBlue;
+  display:block;
 
   a.active, span.active-trail {
-    color:$wwuBlue;
+    color:#ffffff;
   }
   }
