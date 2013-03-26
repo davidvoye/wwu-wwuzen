@@ -109,7 +109,7 @@ $zen-auto-include-item-base: false;
       @include zen-clear(right);
       @include zen-grid-item(1,1,right);
       position: relative;
-
+      margin-top:-.313em;
       width: 19em;
       }
     }
@@ -330,7 +330,7 @@ $zen-auto-include-item-base: false;
         width:5px;
         background-image:url("../../images/drop-shadow.png");
         background-repeat: repeat-y;
-        height:50px;
+        height:49px;
         position:absolute;
         right:44px;
       }
@@ -361,16 +361,15 @@ $zen-auto-include-item-base: false;
       @include zen-clear(right);
       float:right;
       position: relative;
-      z-index: 20;
+      z-index: 200;
       background-color:rgb(75, 104, 156);
       width:2.75em;
       top:0%;
     }
     #search {
+      @include zen-grid-item(2,1,right);
       position: relative;
-      right: 0;
-      top: 2.5em;
-      width: 18.55em;
+      width: 18em;
     }
     ul#wwumenu {
       font-size: 1em;
@@ -710,7 +709,7 @@ $zen-auto-include-item-base: false;
 }
 
 #site-name { /* The name of the website */
- //display:none;
+ display:none;
   a:link,
   a:visited {
     color: #000;
