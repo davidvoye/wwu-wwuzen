@@ -52,27 +52,17 @@ body {
 
 #wwuheader {
 
-
-  #edit-search-block-form--2{
-    float:left;
-  }
-  .form-submit {
-    background-color:$wwuLime;
-    border:1px solid transparent;
-    color:$wwuBlue;
-    margin-left:.5em;
-    height:1.75em;
-  }
-
   #search {
-    height:2em;
-    background:$wwuBlue;
-    padding:0.5em 0 0.5em 0.5em;
+    font-family:$muli;
+    background:#fff;
+    padding:0;
     display:block;
-    float:right;
     overflow:hidden;
-    border-top:4px solid $wwuLtblue;
     z-index:200;
+    height:4em;
+    width:18.25em;
+    margin-top:-.31em;
+    @include box-shadow(#333 0 0 8px);
 
     a {
       color:#999;
@@ -89,14 +79,48 @@ body {
       color:#666;
     }
 
-    label {
-      display:block;
-      font-size:.8em;
-      font-weight:normal;
-      padding-left:6%;
+    input {
+      font-family:$muli;
+      font-size:.85em;
+      border: {
+        width:0 0 1px 0;
+        style:solid;
+        color:$wwuLime;
+      }
+      margin:.5em .25em .25em .75em;
+      padding:.25em 0 .1em 0;
+      &:focus {
+        outline:none;
+      }
+    }
+    .form-submit {
+      background-color:$wwuLtblue;
+      font-family:$muli;
+      color:#fff;
+      margin:0;
+      padding:0 1em;
+      border:none;
+      height:4.75em;
+      position:absolute;
+      top:0;
+      right:-1px;
     }
 
+  .form-type-checkbox {
+    display:block;
+    margin:0;
+    label {
+      color:gray;
+      font-size:.7em;
+      font-weight:normal;
+    }
+  }
 
+
+  input[type='checkbox'] {
+    height:12px;
+    width:12px;
+  }
   }
 }
   ul#wwumenu {
@@ -550,7 +574,21 @@ span.field-label { /* The inline field label used by the Fences module */
 .region-bottom { /* Wrapper for any blocks placed in the page bottom region */
 }
 
+
 //Miscellaneous Page Elements
 html.js input.form-autocomplete {
   background-position:100% 5px;
+}
+
+#site-name {
+  position:absolute;
+  z-index:99;
+
+  span {
+    color:white;
+    font-size:.91em;
+    //font-weight:bold;
+    text-decoration:none;
+    text-transform:uppercase;
+  }
 }

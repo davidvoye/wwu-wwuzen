@@ -16,7 +16,7 @@
 // We are going to create a 980px wide, 5 column grid with 20px gutters between
 // columns (applied as 10px of left/right padding on each column).
 $zen-column-count:  12; // was 5
-$zen-gutter-width:  30px; // was 20px 
+$zen-gutter-width:  30px; // was 20px
 
 
 // IE6-7 don't support box-sizing: border-box. We can fix this in 1 of 3 ways:
@@ -97,20 +97,22 @@ $zen-auto-include-item-base: false;
       width:2.75em;
       height:100%;
     }
-    .wwusearch {
+
+    aside.wwusearch {
+      @include zen-clear(right);
+      @include zen-grid-item(1,1,right);
+      z-index: 200;
+      background-color:rgb(75, 104, 156);
+      width:2.75em;
+      top:0%;
+
+    #search {
       @include zen-clear(right);
       @include zen-grid-item(1,1,right);
       position: relative;
-      z-index: 20;
-      background-color:rgb(75, 104, 156);  
-      width:2.75em;  
-      top:0%;
-    }
-    #search {
-      position: relative;
-      right: 0;
-      top: 2.5em;
-      width: 18.55em;
+      margin-top:-.313em;
+      width: 19em;
+      }
     }
     ul#wwumenu {
       font-size: 1em;
@@ -120,11 +122,12 @@ $zen-auto-include-item-base: false;
       background-color:$wwuBlue;
       display:block;
       list-style-type:none;
-      top: 62px;
+      top: 74px;
       width: 100%;
       display:none;
-      height:16.7em;
-        
+      height:17.7em;
+      z-index: -1;
+
         li {
           display:block;
           background-color:$wwuBlue;
@@ -145,7 +148,7 @@ $zen-auto-include-item-base: false;
        .wwulinks:not(:first-child):before {
           content:"";
         }
-    }   
+    }
 }
 
   #logo, #logoImage{
@@ -153,7 +156,8 @@ $zen-auto-include-item-base: false;
   }
   #collegeheader {
     @include zen-clear();
-    position:relative;
+    //position:relative;
+    z-index:-10;
     @include background(linear-gradient(top, lighten($wwuLtblue, 10%), $wwuLtblue));
     #name-and-slogan {
       @include zen-grid-item(1,1);
@@ -180,7 +184,7 @@ $zen-auto-include-item-base: false;
     }
     #navigation {
       padding:0;
-      height:0;
+      height:100%;
     #main-menu ul.menu {
       display:none;
       background-color:#E9E9E9;
@@ -199,7 +203,7 @@ $zen-auto-include-item-base: false;
             }
         li {
           width: 100%;
-          text-align: left; 
+          text-align: left;
           display:block;
           background-color:$wwuBlue;
           margin-bottom:1px;
@@ -225,7 +229,7 @@ $zen-auto-include-item-base: false;
                     }
                   }
                 }
-              }          
+              }
           }
 
           li.expanded ul.menu li { display: none; }
@@ -259,7 +263,7 @@ $zen-auto-include-item-base: false;
         }
       }
     }
-  //End college header 
+  //End college header
 
   #main {
     @include zen-clear();
@@ -314,7 +318,7 @@ $zen-auto-include-item-base: false;
     margin-left:1em;
   }
 
-  //Override of normalize.scss for the comment subject input area 
+  //Override of normalize.scss for the comment subject input area
   #edit-subject {
     width: 100%;
   }
@@ -327,7 +331,7 @@ $zen-auto-include-item-base: false;
         width:5px;
         background-image:url("../../images/drop-shadow.png");
         background-repeat: repeat-y;
-        height:50px;
+        height:49px;
         position:absolute;
         right:44px;
       }
@@ -358,16 +362,15 @@ $zen-auto-include-item-base: false;
       @include zen-clear(right);
       float:right;
       position: relative;
-      z-index: 20;
-      background-color:rgb(75, 104, 156);  
-      width:2.75em;  
+      z-index: 200;
+      background-color:rgb(75, 104, 156);
+      width:2.75em;
       top:0%;
     }
     #search {
+      @include zen-grid-item(2,1,right);
       position: relative;
-      right: 0;
-      top: 2.5em;
-      width: 18.55em;
+      width: 18em;
     }
     ul#wwumenu {
       font-size: 1em;
@@ -382,7 +385,7 @@ $zen-auto-include-item-base: false;
       width: 100%;
       display:none;
       height:16.7em;
-        
+
         li {
           display:block;
           background-color:$wwuBlue;
@@ -411,7 +414,7 @@ $zen-auto-include-item-base: false;
   #collegeheader {
     @include zen-clear();
     @include background(linear-gradient(top, #319bde, $wwuLtblue));
-    
+
     #name-and-slogan {
       @include zen-grid-item(2,1);
       font-family:$muli;
@@ -436,50 +439,85 @@ $zen-auto-include-item-base: false;
     }
     #navigation {
       padding:0;
-      height:0;
+      height:100%;
     #main-menu ul.menu {
       display:none;
-      background-color:$wwuBlue;
-      text-transform:uppercase;
+      background-color:#E9E9E9;
       list-style-type:none;
         a {
           text-decoration:none;
           color:#fff;
+          padding: .7em 0 .65em 1em;
+          display:block;
+          width:83%;
           @include transition(1s);
             &:hover {
-              color:$wwuYellow;
+              color:$wwuLime;
               @include transition(.2s);
               }
             }
         li {
           width: 100%;
-          text-align: left; 
+          text-align: left;
           display:block;
           background-color:$wwuBlue;
-          padding: .5em 0em;
-          border-bottom:solid 1px #E9E9E9;
-          a {
-            padding: .5em;
-          }
-
+          margin-bottom:1px;
+          border:none;
+          text-transform:none;
+          font-size:.9em;
+          padding-top:0;
+          padding-bottom:0;
+          @include transition(.25s);
           ul {
-                width: 98%;
-                padding-left: 2%;
-                li {
-                  background-color: $wwuGrayBlue;
-                  border-bottom: solid 1px #E9E9E9;
-                }
+                padding-left:0;
                 position: relative;
+                background-color:#E9E9E9;
+                li {
+                  background-color:$wwuGrayBlue;
+                  margin-bottom:1px;
+                  border:none;
+                  font-size:1em;
+                  ul li {
+                    background-color:tint($wwuGrayBlue, 20%);
+                    ul li {
+                      background-color:tint($wwuGrayBlue, 40%);
+                    }
+                  }
+                }
               }
-                      
           }
 
-          li.expanded ul.menu li {
-                display: none;
+          li.expanded ul.menu li { display: none; }
+        }
+      }
+
+  @mixin nav-icons($fileName) {
+    background-image:url("../../images/icons/#{$fileName}.png");
+  }
+
+  .expanded { @include nav-icons(expandable-parent); }
+    .opened { @include nav-icons(opened-parent); }
+
+  .expanded, .opened {
+    background-repeat: no-repeat;
+    background-position:right top;
+    background-size:44px 44px;
+    @include transition(11s);
+
+      .expanded { @include nav-icons(expandable-first-child); }
+      .opened { @include nav-icons(opened-first-child); }
+
+      .expanded, .opened {
+        .expanded { @include nav-icons(expandable-grandchild); }
+        .opened { @include nav-icons(opened-grandchild); }
+
+        .expanded, .opened {
+          .expanded { @include nav-icons(expandable-great-grandchild); }
+          .opened { @include nav-icons(opened-great-grandchild); }
           }
         }
       }
-    } //End college header 
+    } //End college header
 
 
 
@@ -505,7 +543,7 @@ $zen-auto-include-item-base: false;
   }
   #footer {
     @include zen-clear(both);
-  }  
+  }
   #footer-left {
     display:none;
   }
@@ -535,7 +573,7 @@ $zen-auto-include-item-base: false;
     margin-top:0em;
     margin-left:1em;
   }
-  //Override of normalize.scss for the comment subject input area 
+  //Override of normalize.scss for the comment subject input area
   #edit-subject {
     width: 100%;
   }
@@ -567,7 +605,7 @@ $zen-auto-include-item-base: false;
     width:66.6667%;
     float:none;
   }
-  
+
 }
 
 @media all and (min-width:640px) and (max-width: 800px) {
@@ -578,7 +616,7 @@ $zen-auto-include-item-base: false;
  }
   #footer {
     @include zen-clear(both);
-  } 
+  }
   #footer-left {
     display:none;
 
@@ -636,14 +674,14 @@ $zen-auto-include-item-base: false;
 
     aside.wwusearch {
       @include zen-grid-item(1,12);
-      margin-top:-.313em;
       width:2.750em;
+      position:relative;
     }
     #search {
       width:17.15em;
       position:absolute;
-      top:4em;
-      right:7.4em;
+      //top:44px;
+      right:0;
     }
     #mobileWWUmenu {
       display:none;
@@ -657,7 +695,7 @@ $zen-auto-include-item-base: false;
     @include zen-clear();
     @include zen-grid-item(12,1);
     width:98%;
-    
+
     #collegeheader {
     @include zen-grid-item(12,1);
     position:relative;
@@ -672,7 +710,7 @@ $zen-auto-include-item-base: false;
 }
 
 #site-name { /* The name of the website */
-  display:none; //college name is shown as part of image on banner
+ display:none;
   a:link,
   a:visited {
     color: #000;
@@ -695,7 +733,7 @@ $zen-auto-include-item-base: false;
       border-bottom:solid 3px #E9E9E9;
     }
   }
-  
+
   /*
    * The layout when there is only one sidebar, the left one.
    */

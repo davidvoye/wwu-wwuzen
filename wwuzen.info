@@ -6,9 +6,9 @@
 ; lines in this file, you MUST refresh Drupal 7's cache by simply visiting the
 ; Appearance page at admin/appearance.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Copyright Statement 
+; Copyright Statement
 ; Copyright 2013 Western Washington University Web Technologies Group Licensed
-; under the Educational Community License, Version 2.0 (the "License"); 
+; under the Educational Community License, Version 2.0 (the "License");
 ; you may not use this file except in compliance with the License. You may
 ; obtain a copy of the License at http://www.osedu.org/licenses/ECL-2.0
 ;
@@ -68,7 +68,7 @@ stylesheets[all][] = css/comments.css
 stylesheets[all][] = css/forms.css
 stylesheets[all][] = css/fields.css
 stylesheets[all][] = css/print.css
-
+stylesheets[all][] = css/responsive-tables.css
 
 ; Built-in conditional stylesheet support has been removed from Zen 7.x-5.x.
 ; Instead, Zen now adds conditional-comment-included classes to the html
@@ -85,7 +85,7 @@ stylesheets[all][] = css/print.css
 ; Optionally add some JavaScripts to your theme.
 
 scripts[] = js/script.js
-
+scripts[] = js/responsive-tables.js
 
 
 ; This section lists the regions defined in Zen's default page.tpl.php and
