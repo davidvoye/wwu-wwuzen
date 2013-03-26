@@ -286,8 +286,8 @@ h2 { margin-top:.5em; }
 
 #content {
   p, ul, ol, blockquote {
-    font-size:.875em;
-    line-height:1.563em;
+   // font-size:.875em;
+   // line-height:1.563em;
     font-family:$muli;
   }
   .code, code {
@@ -313,7 +313,7 @@ h2 { margin-top:.5em; }
 
 #content ul, #content ol {
   margin:0;
-  padding-left:1.5em;
+  //padding-left:1.5em;
 }
 
 // Table styles
