@@ -41,9 +41,9 @@
 		$('#mobileWWUmenu').click(function () {
 			var search = $('#wwumenu');
 			if (search.is(':visible')) {
-				search.slideToggle();
+				search.hide();
 			} else {
-				search.slideToggle(400);
+				search.show();
 		}
 	});
 	// END SEARCH TOGGLE CODE
