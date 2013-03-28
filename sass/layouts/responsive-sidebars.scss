@@ -704,6 +704,9 @@ $zen-auto-include-item-base: false;
     #navigation ul li ul {
       display:none;
     }
+    #navigation #main-menu ul li {
+      float:none;
+    }
 }
 
 #site-name { /* The name of the website */
