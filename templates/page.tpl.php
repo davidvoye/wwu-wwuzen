@@ -76,10 +76,10 @@
     //Desktops get this image
       $wwuLogo = base_path().path_to_theme() . '/images/wwu.png';
     //Mobile devices get these images
-      $wwuHorizontalLogo = base_path().path_to_theme() . '/images/wwuhorizlogo.png'; 
+      $wwuHorizontalLogo = base_path().path_to_theme() . '/images/wwuhorizlogo.png';
       $wwuMobileMenuIcon = base_path().path_to_theme() . '/images/icons/toolbar-links.png';
       $wwuMobileSearchIcon = base_path().path_to_theme() . '/images/icons/search.png';
-      $wwuMobileMainMenuIcon = base_path().path_to_theme() . '/images/icons/main-menu.png';  
+      $wwuMobileMainMenuIcon = base_path().path_to_theme() . '/images/icons/main-menu.png';
     ?>
     <div id="wwuheader">
         <a href="http://www.wwu.edu" class="desktop">
@@ -91,20 +91,18 @@
        <nav id="mobileWWUmenu" role="navigation"><img src="<?php print $wwuMobileMenuIcon;?>" alt="Click here for quick links." width="44px" height="44px"/></nav>
         <ul id="wwumenu">
           <li class="wwulinks"><a href="http://www.wwu.edu/academic_calendar">Calendar</a></li>
-          <li class="wwulinks"><a href="http://www.wwu.edu/directory">Directory</a></li>    
-          <li class="wwulinks"><a href="http://www.wwu.edu/index">Index</a></li>    
-          <li class="wwulinks"><a href="http://www.wwu.edu/campusmaps">Map</a></li>    
+          <li class="wwulinks"><a href="http://www.wwu.edu/directory">Directory</a></li>
+          <li class="wwulinks"><a href="http://www.wwu.edu/index">Index</a></li>
+          <li class="wwulinks"><a href="http://www.wwu.edu/campusmaps">Map</a></li>
           <li class="wwulinks"><a href="http://mywestern.wwu.edu">myWestern</a></li>
-        </ul> 
+        </ul>
        <aside class="wwusearch"><a id="s-toggle" href="#"><img src="<?php print $wwuMobileSearchIcon;?>" alt="Click here to search." width="44px" height="44px"/></a>
         <div id="search" style="display:none;">
           <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
           <?php print $search_box; ?>
         </div>
       </aside>
-       
-  
-      </div><!-- wwuheader -->
+    </div><!-- wwuheader -->
   <header id="header" role="banner">
     <div id="collegeheader">
     <!-- Group Logo (banner) and Site Name and Main Menu for Group -->
@@ -112,7 +110,7 @@
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
       <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" id="logoImage"/></a>
     <?php endif; ?>
-  
+
     <?php if ($site_name || $site_slogan): ?>
       <hgroup id="name-and-slogan">
         <?php if ($site_name): ?>
@@ -129,7 +127,7 @@
     <aside id="mobileNavTrigger"><img src="<?php print $wwuMobileMainMenuIcon;?>" alt="Click here for the main menu links." width="44px" height="44px"/></a></aside>
     <div id="navigation">
       <nav id="main-menu" role="navigation">
-            <?php print render($page['navigation']); ?>  
+            <?php print render($page['navigation']); ?>
       </nav>
     </div><!-- /#navigation -->
     <?php print render($page['header']); ?>
@@ -145,7 +143,7 @@
     </header>
     <div id="content" class="column" role="main">
       <?php print render($page['highlighted']); ?>
-      
+
       <a id="main-content"></a>
 
       <?php print render($title_suffix); ?>
@@ -203,7 +201,7 @@
       </div>
       <div id="footer-right">
         <!-- //Retrieve our icon images -->
-        <?php 
+        <?php
           $addressIcon = base_path().path_to_theme() . '/images/AddressIcon.png';
           $phoneIcon = base_path().path_to_theme() . '/images/PhoneIcon.png';
           $emailIcon = base_path().path_to_theme() . '/images/EmailIcon.png';
