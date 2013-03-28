@@ -109,7 +109,7 @@ Drupal.behaviors.resizeHeader = {
     var totalHeightSansMenu = divHeight + nameAndSlogan;
     //Testing for a condition forces the height to be calculated.
       if (totalHeightSansMenu <= 61) {
-        totalHeightSansMenu = totalHeightSansMenu + 77;
+        totalHeightSansMenu = totalHeightSansMenu + 76;
         $('#collegeheader').css({'height': totalHeightSansMenu + "px"});
       } else if (totalHeightSansMenu <= 84) {
         totalHeightSansMenu = totalHeightSansMenu + 1;
