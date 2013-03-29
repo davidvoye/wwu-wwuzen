@@ -5,6 +5,7 @@ A Drupal Zen Sub-Theme.
   * [Zen 5.x](http://drupal.org/project/zen)
   * [Menu Block](http://drupal.org/project/menu_block)
   * [Accordion Menu](http://drupal.org/project/accordion_menu)
+  * [jQuery Update] (http://drupal.org/project/jquery_update)
 
 ##Configuration##
 1. Disable the main menu in the theme appearance settings.
@@ -24,6 +25,11 @@ A Drupal Zen Sub-Theme.
         - Fixed Parent item -> Main Menu
     - Region Settings:
         - WWUZen -> Navigation bar
+5. Enable jQuery update and select jQuery version 1.7 as the library to use.
+    - Configuration -> Development -> jQuery update
+        - jQuery Version -> 1.7
+        - jQuery compression level -> Production (minified)
+        - jQuery and jQuery UI CDN -> Google
 
 
 ###Copyright Statement###
