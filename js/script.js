@@ -15,21 +15,6 @@
 
 // Place your code here.
 
-Drupal.behaviors.siteNameTypography = {
-		attach: function () {
-
-		// Gets copy from site name (ultimately inside a span: #site-name a span)
-		var siteName = $("#site-name").text();
-
-		// If the site name copy contains 'and', wrap (by replacing) it with a span and class.
-		var typographyAnd = $("#site-name:contains('and')").text().replace("and", "<span class=\"diminutive-type site-name-and\">and</span>");
-		var typographyCollegeOf = $("#site-name:contains('College of')").text().replace("College of", "<span class=\"diminutive-type site-name-college-of\">College of</span>");
-
-		// Actually replace the site name copy with the new wrapped copy.
-		var test = siteName.replace(siteName, typographyAnd);
-		$('#site-name a span').replaceWith(test);
-	}
-}
 
 	Drupal.behaviors.searchSlider = {
 		attach: function () {
@@ -47,7 +32,7 @@ Drupal.behaviors.siteNameTypography = {
 	// END SEARCH TOGGLE CODE
 	}
 }
-	
+
 	Drupal.behaviors.mobileWwuMenu = {
 		attach: function () {
 
@@ -56,9 +41,9 @@ Drupal.behaviors.siteNameTypography = {
 		$('#mobileWWUmenu').click(function () {
 			var search = $('#wwumenu');
 			if (search.is(':visible')) {
-				search.slideToggle();
+				search.hide();
 			} else {
-				search.slideToggle(400);
+				search.show();
 		}
 	});
 	// END SEARCH TOGGLE CODE
@@ -105,41 +90,36 @@ Drupal.behaviors.siteNameTypography = {
 	   	}
 		  e.stopPropagation();
 		});
-	
+
 	// END MENU EXPANSION CODE
 	}
 }
 
 
 Drupal.behaviors.resizeHeader = {
-                attach: function () {
-                //START RESIZE COLLEGE HEADER AND SET HEIGHT CODE
-
-                $(window).resize(function () {
-                                var divHeight = $("#collegeheader").children().outerHeight(true);
-                                var menuHeight = $("#main-menu").outerHeight(true);
-                                //For the mobile views we need another container to use since main menu is collapsed
-                                var nameAndSlogan = $("#name-and-slogan").outerHeight(true);
-
-                                //add the two heights and 10 more pixels to compensate for space beneath the main menu
-                                var totalHeightWithMenu = divHeight + menuHeight + 10;
-                                var totalHeightSansMenu = divHeight + nameAndSlogan;
-                                //Testing for a condition forces the height to be calculated. 
-                                if (totalHeightSansMenu <= 61) { 
-                                                totalHeightSansMenu = totalHeightSansMenu + 19;
-                                                $('#collegeheader').css({'height': totalHeightSansMenu + "px"});
-                                } else if (totalHeightSansMenu <= 84) { 
-                                                totalHeightSansMenu = totalHeightSansMenu + 1;
-                                                $('#collegeheader').css({'height': totalHeightSansMenu + "px"});
-                                } else {
-                                                $('#collegeheader').css({'height': totalHeightWithMenu + "px"});
-                                }
-
-
-                                });
-                //END RESIZE COLLEGE HEADER CODE 
-                }
-
+  attach: function () {
+  //START RESIZE COLLEGE HEADER AND SET HEIGHT CODE
+  $(window).resize(function () {
+    var divHeight = $("#collegeheader").children().outerHeight(true);
+    var menuHeight = $("#main-menu").outerHeight(true);
+    //For the mobile views we need another container to use since main menu is collapsed
+    var nameAndSlogan = $("#name-and-slogan").outerHeight(true);
+    //add the two heights and 10 more pixels to compensate for space beneath the main menu
+    var totalHeightWithMenu = divHeight + menuHeight + 10;
+    var totalHeightSansMenu = divHeight + nameAndSlogan;
+    //Testing for a condition forces the height to be calculated.
+      if (totalHeightSansMenu <= 61) {
+        totalHeightSansMenu = totalHeightSansMenu + 76;
+        $('#collegeheader').css({'height': totalHeightSansMenu + "px"});
+      } else if (totalHeightSansMenu <= 84) {
+        totalHeightSansMenu = totalHeightSansMenu + 1;
+        $('#collegeheader').css({'height': totalHeightSansMenu + "px"});
+        } else {
+          $('#collegeheader').css({'height': totalHeightWithMenu + "px"});
+          }
+    });
+    //END RESIZE COLLEGE HEADER CODE
+  }
 }
 
 
