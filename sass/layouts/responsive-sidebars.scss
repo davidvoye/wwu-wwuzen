@@ -355,18 +355,26 @@ $zen-auto-include-item-base: false;
     }
     .wwusearch {
       @include zen-clear(right);
-      float:right;
+      display:block;
+      //float:right;
       position: relative;
       z-index: 20;
       background-color:rgb(75, 104, 156);  
-      width:2.75em;  
+      //width:2.75em;  
       top:0%;
+      #s-toggle { float:right; position:relative; }
     }
     #search {
-      position: relative;
-      right: 0;
-      top: 2.5em;
-      width: 18.55em;
+      //position: relative;
+      //right: 0;
+      //top: 2.5em;
+      //width: 18.55em;
+      float:right;
+      clear:right;
+      .form-submit {
+        top: 3.1em;
+        //right: 0;
+      }
     }
     ul#wwumenu {
       font-size: 1em;
