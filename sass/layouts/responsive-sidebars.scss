@@ -80,7 +80,6 @@ $zen-auto-include-item-base: false;
 
 @media all and (max-width:360px) { 
   $zen-column-count: 1;
-
 #wwuheader {
     a.wwuLogo h1 {
       @include zen-grid-item(1,1,left);
@@ -94,6 +93,17 @@ $zen-auto-include-item-base: false;
       background-color:rgb(75, 104, 156);
       width:2.75em;
       height:100%;
+    }
+    #menu-icons {
+      padding:0;
+      margin:0;
+      width:44px;
+      height:44 * 3px;
+      z-index:995;
+      position:absolute;
+      top:0;
+      right:0;
+      @include box-shadow(-5px 0 15px -5px #333);
     }
     .quick-links img { top:0; }
     .icon-size {
@@ -164,10 +174,10 @@ $zen-auto-include-item-base: false;
     //position:relative;
     z-index:-10;
     @include background(linear-gradient(top, lighten($wwuLtblue, 10%), $wwuLtblue));
-    height:76px;
+    //height:76px;
     #name-and-slogan {
       @include zen-grid-item(1,1);
-      padding: 0 0 0 1.25em;
+      padding: 0 0 .5em 1.25em;
       font-family:$muli;
 
         h1 {
@@ -177,8 +187,11 @@ $zen-auto-include-item-base: false;
 
     #site-name { /* The name of the website */
       display:block; //college name is shown as part of image on banner
-      width:70%; //Prevents the name from sliding under the mobile nav at 360px wide
-      a:link,
+      width:80%; //Prevents the name from sliding under the mobile nav at 360px wide
+      font-size:1.25em;
+      text-align:left;
+      padding:0;
+        a:link,
         a:visited {
           color: #fff;
           text-decoration: none;
@@ -412,13 +425,16 @@ $zen-auto-include-item-base: false;
     #name-and-slogan {
       @include zen-grid-item(2,1);
       font-family:$muli;
-      padding:0 0 0 1.25em;
+      padding:0 0 .5em 1.25em;
     }
 
     #site-name { /* The name of the website */
       display:block; //college name is shown as part of image on banner
       width:80%; //Prevents the name from sliding under the mobile nav at 360px wide
-      a:link,
+      font-size:1.5em;
+      text-align:left;
+      padding:0;
+        a:link,
         a:visited {
           color: #fff;
           text-decoration: none;
@@ -599,12 +615,13 @@ $zen-auto-include-item-base: false;
     width:66.6667%;
     float:none;
   }
-
 }
 
 @media all and (min-width:640px) and (max-width: 800px) {
   $zen-column-count: 3;
-
+#site-name {
+  position:static;
+}
  #footer-wrapper {
   @include zen-grid-item(3,1);
  }
@@ -700,17 +717,10 @@ $zen-auto-include-item-base: false;
 }
 
 #site-name { /* The name of the website */
- display:none;
-  a:link,
-  a:visited {
-    color: #000;
-    text-decoration: none;
-  }
-
-  a:hover,
-  a:focus {
-    text-decoration: underline;
-    }
+  background-color:rgba($wwuLtblue, .8);
+  position:absolute;
+  bottom:40px;
+  right:10px;
   }
 }
   #main {

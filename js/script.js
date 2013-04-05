@@ -15,6 +15,18 @@
 
 // Place your code here.
 
+Drupal.behaviors.siteNameTypography = {
+		attach: function () {
+
+		// Gets copy from site name (ultimately inside a span: #site-name a span)
+		var siteName = $("#site-name").text();
+		
+		var typographyAnd = siteName.replace("and", "<span class=\"diminutive-type site-name-and\">and</span>");
+		var typographyCollegeOf = typographyAnd.replace("College of", "<span class=\"diminutive-type site-name-college-of\">College of</span>");
+		
+		$('#site-name a span').replaceWith(typographyCollegeOf);
+	}
+}
 
 	Drupal.behaviors.searchSlider = {
 		attach: function () {
