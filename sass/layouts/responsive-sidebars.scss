@@ -91,18 +91,19 @@ $zen-auto-include-item-base: false;
     #mobileWWUmenu {
       @include zen-grid-item(1,1,right);
       background-color:rgb(75, 104, 156);
-      width:2.75em;
+      //width:2.75em;
       height:100%;
     }
+    .quick-links { width:100%; }
     #menu-icons {
       padding:0;
       margin:0;
       width:44px;
       height:44 * 3px;
-      z-index:995;
       position:absolute;
       top:0;
       right:0;
+      z-index:200;
       @include box-shadow(-5px 0 15px -5px #333);
     }
     .quick-links img { top:0; }
@@ -364,7 +365,7 @@ $zen-auto-include-item-base: false;
     #mobileWWUmenu {
       float:right;
       background-color:rgb(75, 104, 156);
-      width:2.75em;
+      //width:2.75em;
       height:100%;
     }
     .wwusearch {

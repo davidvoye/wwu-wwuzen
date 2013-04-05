@@ -85,8 +85,8 @@
     <header id="wwuheader">
       <a href="http://www.wwu.edu" class="wwuLogo"><h1>Western Washington University</h1></a>
 
-      <nav id="menu-icons">
-        <div class="quick-links">
+      <div id="menu-icons">&nbsp;</div>
+        <div class="quick-links" id="mobileWWUmenu">
           <img src="<?php print $wwuMobileMenuIcon;?>" alt="Quick links" class="quick-links-toggle icon-size">
 
           <ul id="wwumenu">
@@ -99,7 +99,7 @@
         </div>
 
         <div class="wwusearch">
-          <div class="icon-size">Search</div>
+          <div class="icon-size" id="s-toggle">Search</div>
 
             <div id="search" style="display:none;">
               <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
@@ -110,7 +110,7 @@
         <div class="main-navigation" id="mobileNavTrigger">
           <img src="<?php print $wwuMobileMainMenuIcon;?>" alt="Main menu links" class="main-menu-toggle icon-size">
         </div>
-      </nav>
+      
 
   </nav>
 
