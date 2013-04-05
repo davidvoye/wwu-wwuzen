@@ -69,11 +69,25 @@ body {
     width: 240px;
     height: 145px;
   }
+  #menu-icons {
+    padding:0;
+    margin:0;
+    width:44px;
+    height:44 * 3px;
+    z-index:995;
+    position:absolute;
+    top:0;
+    right:0;
+    @include box-shadow(-2px 0 10px 0 #333);
+  }
   .wwusearch .icon-size {
     top:44px;
     background:url('../images/icons/search.png') no-repeat;
     background-size:cover;
     @include hide-text-bg-img;
+    @media all and (max-width:360px) {
+      background-image:url('../images/icons/search-gray.png');
+    }
   }
   #search {
     background:#fff;
