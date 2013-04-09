@@ -85,7 +85,7 @@
     <header id="wwuheader">
       <a href="http://www.wwu.edu" class="wwuLogo"><h1>Western Washington University</h1></a>
 
-      <div id="menu-icons">&nbsp;</div>
+      <div id="menu-icons">
         <div class="quick-links" id="mobileWWUmenu">
           <img src="<?php print $wwuMobileMenuIcon;?>" alt="Quick links" class="quick-links-toggle icon-size">
 
@@ -110,7 +110,7 @@
         <div class="main-navigation" id="mobileNavTrigger">
           <img src="<?php print $wwuMobileMainMenuIcon;?>" alt="Main menu links" class="main-menu-toggle icon-size">
         </div>
-      
+      </div>
 
   </nav>
 
