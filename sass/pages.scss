@@ -270,8 +270,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight:normal;
 }
 
-h5, h6 { color:$wwuGreen; }
-
 // I don't think this worked after all... how to fix it?
 //@for $h from 1 through 6 {
 // h#{$h} { font-size:$h#{$h}-font-size; }
@@ -319,7 +317,7 @@ h2 { margin-top:.5em; font-size:$h1-font-size; }
     background:#ddd;
     padding:1em 1.5em;
     margin:.5em 0;
-    max-width:65%;
+    max-width:75%;
     min-width:45%;
     p:last-child { margin-bottom:0; }
   }
