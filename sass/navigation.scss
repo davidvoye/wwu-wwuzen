@@ -144,8 +144,8 @@ li a.active {
   background-color:#eee;
   background-image:none;
   border:none;
+  border-bottom:solid 1px #fff;
   margin:0;
-  padding-left:2em;
   .active, .active-trail { background-color:#ddd; }
   span.accordion-link { padding:0.5em 0; }
   a, span.accordion-link {
@@ -179,7 +179,7 @@ li a.active {
   margin:0;
   top:0;
   border:none;
-  padding:0 0 0 2em;
+  padding:0;
 }
 
 .ui-widget-content { background:none; }
@@ -191,22 +191,19 @@ li a.active {
     padding:0;
     li {
       display:block;
-      padding-left:1.25em;
+      //padding-left:1.25em;
       a {
         text-decoration:none;
         display:block;
         margin:0;
         padding: 0.5em 0;
+        border-bottom:solid 1px #fff;
         &.first a { margin:0; }
-        .active {
-          background:#fff;
-          display:block;
-        }
       }
     }
   }
   & > ul.menu li {
-    padding-left:2em;
+    padding-left:0;
     & > li { padding-left:0; }
   }
 }
