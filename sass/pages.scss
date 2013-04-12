@@ -49,9 +49,9 @@ body {
 /*
  * Header
  */
- 
+
 #wwuheader {
-   
+
   #search {
     font-family:$muli;
     background:#fff;
@@ -59,9 +59,13 @@ body {
     display:block;
     overflow:hidden;
     z-index:200;
-    height:3.75em;
+    height:4em;
     width:18.25em;
+    margin-top:-.31em;
     @include box-shadow(#333 0 0 8px);
+    .form-item .form-text {
+      &:focus, &:active { @include box-shadow(none); }
+    }
 
     a {
       color:#999;
@@ -73,12 +77,12 @@ body {
       text-align:center;
       text-decoration:none;
     }
-   
+
     a:hover {
       color:#666;
     }
-    
-    .form-item-search-block-form input {
+
+    input {
       font-family:$muli;
       font-size:.85em;
       border: {
@@ -99,25 +103,22 @@ body {
       margin:0;
       padding:0 1em;
       border:none;
-      height:3.75em;
+      height:4.75em;
       position:absolute;
       top:0;
       right:-1px;
-      @media all and (min-width: 361px) and (max-width: 800px) {
-        top:3.1em;
-      }
     }
 
   .form-type-checkbox {
     display:block;
     margin:0;
-    margin-left:.75em;
     label {
       color:gray;
       font-size:.7em;
       font-weight:normal;
     }
   }
+
 
   input[type='checkbox'] {
     height:12px;
@@ -126,24 +127,16 @@ body {
   }
 }
   ul#wwumenu {
-   
     font-size: .8em;
-    position:relative;
-    margin: 7px 20px 2px 0;
+    margin:0;
     li  {
       display:inline;
       font-family: $muli;
       padding-left: .5em;
-
-      
-      img {margin-top: -1px;}
     }
     li.wwulinks {
       padding-left: 5px;
-      //background: url("../images/menu-leaf.png") no-repeat left center;
-      
       &:not(:first-child):before{content: "\00B7 \0020 ";}
-      //&:before:first-child {content: " ";}
       a {
         text-decoration: none;
         padding-left: 6px;
@@ -165,7 +158,7 @@ body {
   padding: 0;
   width: 100%;
   img {
-    
+
     vertical-align: bottom;
   }
 }
@@ -270,7 +263,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @for $h from 1 through 6 {
   h#{$h} { font-size:$h#{$h}-font-size; }
-} 
+}
 
 h1.title { display:inline-block; }
 
@@ -288,8 +281,8 @@ h2 { margin-top:.5em; }
 
 #content {
   p, ul, ol, blockquote {
-    font-size:.875em;
-    line-height:1.563em;
+   // font-size:.875em;
+   // line-height:1.563em;
     font-family:$muli;
   }
   .code, code {
@@ -315,12 +308,12 @@ h2 { margin-top:.5em; }
 
 #content ul, #content ol {
   margin:0;
-  padding-left:1.5em;
+  //padding-left:1.5em;
 }
 
 // Table styles
 
-table { 
+table {
   border-collapse:collapse;
   font-size:.85em;
   font-family:$muli;
@@ -334,9 +327,9 @@ th {
   background-color:#ddd;
 }
 
-td, th { 
-  padding:.5em;  
-  text-align:left; 
+td, th {
+  padding:.5em;
+  text-align:left;
 }
 
 tr { border-bottom:1px solid #fff; }
@@ -509,7 +502,7 @@ span.field-label { /* The inline field label used by the Fences module */
       }
 
       &:hover {
-        color:$wwuLime; 
+        color:$wwuLime;
           }
         }
       }
@@ -554,10 +547,10 @@ span.field-label { /* The inline field label used by the Fences module */
 
       p {
         margin-bottom:0;
-        margin-top:0; 
+        margin-top:0;
       }
       p.second-address-line {
-        padding-left:2em; 
+        padding-left:2em;
         margin-top:-.825em
         }
       a {
@@ -576,15 +569,20 @@ span.field-label { /* The inline field label used by the Fences module */
 .region-bottom { /* Wrapper for any blocks placed in the page bottom region */
 }
 
+
+//Miscellaneous Page Elements
+html.js input.form-autocomplete {
+  background-position:100% 5px;
+}
+
 #site-name {
   position:absolute;
   z-index:99;
-  bottom:50px;
-  left:30px;
+
   span {
     color:white;
-    font-size:1.25em;
-    font-weight:bold;
+    font-size:.6em;
+    //font-weight:bold;
     text-decoration:none;
     text-transform:uppercase;
   }

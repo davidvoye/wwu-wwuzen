@@ -656,8 +656,9 @@ $zen-auto-include-item-base: false;
       display:none;
     }
     #wwumenu {
-      @include zen-grid-item(5,7);
+      @include zen-grid-item(4,7.75);
       display: block;
+      margin-top:1em;
     }
   }
   #header {
