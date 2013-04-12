@@ -360,12 +360,14 @@ $zen-auto-include-item-base: false;
     }
     .wwusearch {
       @include zen-clear(right);
-      float:right;
+      display:block;
+      //float:right;
       position: relative;
       z-index: 200;
       background-color:rgb(75, 104, 156);
       width:2.75em;
       top:0%;
+      #s-toggle { float:right; position:relative; }
     }
     #search {
       @include zen-grid-item(2,1,right);
@@ -690,8 +692,9 @@ $zen-auto-include-item-base: false;
       display:none;
     }
     #wwumenu {
-      @include zen-grid-item(5,7);
+      @include zen-grid-item(4,7.75);
       display: block;
+      margin-top:1em;
     }
   }
   #header {
