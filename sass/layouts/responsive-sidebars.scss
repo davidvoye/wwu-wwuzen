@@ -762,13 +762,13 @@ $zen-auto-include-item-base: false;
   }
 
   #footer-left {
-    @include zen-grid-item(3,1);
+    @include zen-grid-item(3,1.5);
     padding: .688em 0em 1.25em 1.25em;
 
   }
   #footer-center {
     position:relative;
-    @include zen-grid-item(3,5);
+    @include zen-grid-item(3,4.75);
       padding: 0px 0px 0px 0px;
       margin-right:0;
 
@@ -776,9 +776,9 @@ $zen-auto-include-item-base: false;
         padding: 0px 0px 0px 15px;
 
         li {
-          font-size:1.6em; //We have to go bigger because the base font size for the footer is .625
+          font-size:.8750em;
           display: block;
-          padding: 0.5em 0.6em;
+          padding: 0.5em 0em 0em 0em;
         }
       }
     }

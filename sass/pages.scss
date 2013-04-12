@@ -246,7 +246,7 @@ a {
   &:hover {text-decoration: underline;}
 }
 
-#secondary-menu { }
+#secondary-menu { font-family:$muli; }
 
 h1.title, /* The title of the page */
 h2.node-title, /* Title of a piece of content when it is given in a list of content */
@@ -262,17 +262,26 @@ h1, h2, h3, h4, h5, h6 {
   margin:1.17em 0 .55em 0;
   line-height:1;
   color:$wwuBlue;
+  font-weight:normal;
 }
 
-@for $h from 1 through 6 {
-  h#{$h} { font-size:$h#{$h}-font-size; }
-}
+// I don't think this worked after all... how to fix it?
+//@for $h from 1 through 6 {
+// h#{$h} { font-size:$h#{$h}-font-size; }
+//}
+
+h1 { font-size:$h1-font-size; }
+h2 { font-size:$h2-font-size; }
+h3 { font-size:$h3-font-size; }
+h4 { font-size:$h4-font-size; }
+h5 { font-size:$h5-font-size; }
+h6 { font-size:$h6-font-size; }
 
 h1.title { display:inline-block; }
 
-h2 { margin-top:.5em; }
+h2 { margin-top:.5em; font-size:$h1-font-size; }
 
-.block-title { font-size:1em ;}
+.block-title { font-size:1em; }
 
 #footer-wrapper h2.block-title { color: #fff; }
 
@@ -284,8 +293,7 @@ h2 { margin-top:.5em; }
 
 #content {
   p, ul, ol, blockquote {
-   // font-size:.875em;
-   // line-height:1.563em;
+    font-size:.925em;
     font-family:$muli;
   }
   .code, code {
@@ -303,8 +311,9 @@ h2 { margin-top:.5em; }
   blockquote {
     background:#ddd;
     padding:1em 1.5em;
-    color:$wwuBlue;
     margin:.5em 0;
+    max-width:75%;
+    min-width:45%;
     p:last-child { margin-bottom:0; }
   }
 }
@@ -348,27 +357,32 @@ dl {
   dd { margin-left: 1.5em; }
 }
 
-.right { float:right; margin:1em 0 1em 1em; }
 
-.left { float:left; margin:1em 1em 1em 0; }
 
 // Figures and figcaptions
 
 figure {
   background-color:#fff;
   padding:.75em;
-  @include box-shadow(#ccc 0 0 3px 1px);
+  margin:.75em;
+  @include box-shadow(0 0 4px 2px #ddd);
   display:inline-block;
   img { margin:0 auto; }
-  figcaption { margin-top:.75em; }
+  figcaption {
+    margin-top:.5em;
+    font-size:.85em;
+    line-height:1.5;
+    font-style:italic;
+    color:#555;
+  }
 }
 
-.float-left {
+.float-left, .left {
   float:left;
   margin:1em 1em 1em 0;
 }
 
-.float-right {
+.float-right, .right {
   float:right;
   margin:1em 0 1em 1em;
 }
@@ -469,7 +483,6 @@ span.field-label { /* The inline field label used by the Fences module */
 #footer {
   background-color: $wwuBlue;
   color: white;
-  font-size:.625em;
   border-top:.8em solid #ffffff;
   padding-bottom:3.813em;
   font-family:$muli;
@@ -514,7 +527,7 @@ span.field-label { /* The inline field label used by the Fences module */
 
 #footer-right {
 
-    min-width: 28.50em;
+    min-width: 20.625em;
     @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
     font-family:$muli;
 
@@ -522,11 +535,11 @@ span.field-label { /* The inline field label used by the Fences module */
   #footer-right-heading {
     background-color: #ffffff;
     width:100%;
-    height:3.586em;
+    height:2.520em;
     @include box-shadow(#555 0 0 7px);
 
   h3 {
-    font-size: 1.4em;
+    font-size:1em;
     color:$wwuBlue;
     margin:0;
     padding-left: 1em;
@@ -540,7 +553,7 @@ span.field-label { /* The inline field label used by the Fences module */
   #footer-right-contact-info {
     padding-left:1.25em;
     margin-top:1.500em;
-    font-size:1.15em;
+    font-size:.750em;
     img {
       float:left;
       padding-right:.625em;
@@ -553,8 +566,8 @@ span.field-label { /* The inline field label used by the Fences module */
         margin-top:0;
       }
       p.second-address-line {
-        padding-left:2em;
-        margin-top:-.825em
+        padding-left:1.5em;
+        margin-top:-.6em;
         }
       a {
         color:#ffffff;
