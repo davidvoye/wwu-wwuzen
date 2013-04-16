@@ -474,7 +474,6 @@ span.field-label { /* The inline field label used by the Fences module */
 #footer {
   background-color: $wwuBlue;
   color: white;
-  font-size:.625em;
   border-top:.8em solid #ffffff;
   padding-bottom:3.813em;
   font-family:$muli;
@@ -519,7 +518,7 @@ span.field-label { /* The inline field label used by the Fences module */
 
 #footer-right {
 
-    min-width: 28.50em;
+    min-width: 20.625em;
     @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
     font-family:$muli;
 
@@ -527,11 +526,11 @@ span.field-label { /* The inline field label used by the Fences module */
   #footer-right-heading {
     background-color: #ffffff;
     width:100%;
-    height:3.586em;
+    height:2.520em;
     @include box-shadow(#555 0 0 7px);
 
   h3 {
-    font-size: 1.4em;
+    font-size:1em;
     color:$wwuBlue;
     margin:0;
     padding-left: 1em;
@@ -545,7 +544,7 @@ span.field-label { /* The inline field label used by the Fences module */
   #footer-right-contact-info {
     padding-left:1.25em;
     margin-top:1.500em;
-    font-size:1.15em;
+    font-size:.750em;
     img {
       float:left;
       padding-right:.625em;
@@ -558,8 +557,8 @@ span.field-label { /* The inline field label used by the Fences module */
         margin-top:0;
       }
       p.second-address-line {
-        padding-left:2em;
-        margin-top:-.825em
+        padding-left:1.5em;
+        margin-top:-.6em;
         }
       a {
         color:#ffffff;
