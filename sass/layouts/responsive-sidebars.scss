@@ -136,18 +136,16 @@ $zen-auto-include-item-base: false;
       @include zen-grid-item(1,1,right);
       z-index: 200;
       background-color:rgb(75, 104, 156);
-      width:2.75em;
-      top:0%;
+      top:0;
       #search {
         @include zen-clear(right);
-        @include zen-grid-item(1,1,right);
-        position: absolute;
-        top:66px;
+        display:none;
+        position: fixed;
+        top:68px;
         right:44px;
-        margin-top:-.313em;
-        width:17em;
-        //@include box-shadow(none);
-        //border-bottom:solid 1px #eee;
+        z-index:100;
+        width:18em;
+        margin-top:0;
       }
     }
     #wwumenu {

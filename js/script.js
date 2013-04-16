@@ -36,9 +36,9 @@ Drupal.behaviors.siteNameTypography = {
 		$('#s-toggle').click(function () {
 			var search = $('#search');
 			if (search.is(':visible')) {
-				search.slideToggle();
+				search.hide("slide", { direction: "right" }, 400);
 			} else {
-				search.slideToggle(400);
+				search.show("slide", { direction: "right" }, 200);
 		}
 	});
 	// END SEARCH TOGGLE CODE
@@ -53,7 +53,7 @@ Drupal.behaviors.siteNameTypography = {
 		$('#mobileWWUmenu').click(function () {
 			var quicklinks = $('#wwumenu');
 			if (quicklinks.is(':visible')) {
-				quicklinks.hide("slide", { direction: "right" }, 200);
+				quicklinks.hide("slide", { direction: "right" }, 400);
 			} else {
 				quicklinks.show("slide", { direction: "right" }, 200);
 		}
