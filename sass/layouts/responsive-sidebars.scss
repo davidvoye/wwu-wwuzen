@@ -152,16 +152,16 @@ $zen-auto-include-item-base: false;
     }
     #wwumenu {
       margin: 0;
-      padding: .5em;
+      padding:.5em;
       background-color:#fff;
       list-style-type:none;
       position:fixed;
-      height:60px;
+      height:55px;
       right:44px;
-      top:0px;
-      z-index:200;
+      top:0;
+      z-index:100;
       display:none;
-      @include transition(.2s);
+      overflow:hidden;
       @include box-shadow(#333 0 0 8px);
       li {
         text-align:center;

@@ -48,17 +48,17 @@ Drupal.behaviors.siteNameTypography = {
 	Drupal.behaviors.mobileWwuMenu = {
 		attach: function () {
 
-	// START SEARCH TOGGLE CODE
+	// START QUICK LINKS TOGGLE CODE
 
 		$('#mobileWWUmenu').click(function () {
-			var search = $('#wwumenu');
-			if (search.is(':visible')) {
-				search.hide();
+			var quicklinks = $('#wwumenu');
+			if (quicklinks.is(':visible')) {
+				quicklinks.animate({width: 'toggle'});
 			} else {
-				search.show();
+				quicklinks.animate({width: 'toggle'});
 		}
 	});
-	// END SEARCH TOGGLE CODE
+	// END QUICK LINKS TOGGLE CODE
     }
  }
 
