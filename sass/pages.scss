@@ -63,6 +63,9 @@ body {
     width:18.25em;
     margin-top:-.31em;
     @include box-shadow(#333 0 0 8px);
+    .form-item .form-text {
+      &:focus, &:active { @include box-shadow(none); }
+    }
 
     a {
       color:#999;
