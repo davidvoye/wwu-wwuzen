@@ -1,4 +1,3 @@
-
 /**
  * @file
  * Positioning for responsive layout .
@@ -92,6 +91,7 @@ $zen-auto-include-item-base: false;
     a.mobile {
       @include zen-grid-item(1,1,left);
       margin-bottom:-.375em;
+      background-color:rgb(75, 104, 156);
     }
     .desktop {
       display:none;
@@ -102,32 +102,33 @@ $zen-auto-include-item-base: false;
       width:2.75em;
       height:100%;
     }
-
-    aside.wwusearch {
+    .wwusearch {
       @include zen-clear(right);
       @include zen-grid-item(1,1,right);
-      z-index: 200;
+      position: absolute;
+      z-index: 20;
       background-color:rgb(75, 104, 156);
       width:2.75em;
       top:0%;
-
+    }
     #search {
-      @include zen-clear(right);
-      @include zen-grid-item(1,1,right);
       position: relative;
-      margin-top:-.313em;
-      width: 19em;
-      }
+      right: 0;
+      top: 2.5em;
+      width: 18.55em;
     }
     ul#wwumenu {
       font-size: 1em;
       margin: 0;
-      padding: 79px 0 0;
+      padding: 0;
+      position: relative;
       background-color:$wwuBlue;
+      display:block;
       list-style-type:none;
+      top: 62px;
       width: 100%;
       display:none;
-      height:13em;
+      height:16.7em;
 
         li {
           display:block;
@@ -157,22 +158,18 @@ $zen-auto-include-item-base: false;
   }
   #collegeheader {
     @include zen-clear();
-    //position:relative;
-    z-index:-10;
+    position:relative;
     @include background(linear-gradient(top, lighten($wwuLtblue, 10%), $wwuLtblue));
     #name-and-slogan {
       @include zen-grid-item(1,1);
       padding: 0 0 0 1.25em;
       font-family:$muli;
-
-        h1 {
-          margin:0.4em 0 0 0;
-        }
+      width:93%;
     }
 
     #site-name { /* The name of the website */
       display:block; //college name is shown as part of image on banner
-      width:70%; //Prevents the name from sliding under the mobile nav at 360px wide
+      width:80%; //Prevents the name from sliding under the mobile nav at 360px wide
       a:link,
         a:visited {
           color: #fff;
@@ -188,7 +185,7 @@ $zen-auto-include-item-base: false;
     }
     #navigation {
       padding:0;
-      height:100%;
+      height:0;
     #main-menu ul.menu {
       display:none;
       background-color:#E9E9E9;
@@ -289,12 +286,14 @@ $zen-auto-include-item-base: false;
     @include zen-clear(both);
   }
   #footer-left {
+    font-size: .675em;
     position: relative;
     @include zen-clear();
     width: 98%; 
   }
 
   #footer-center {
+      font-size: .675em;
       position: relative;
       @include zen-clear();
       margin-left:-.5em;
@@ -333,7 +332,7 @@ $zen-auto-include-item-base: false;
         width:5px;
         background-image:url("../../images/drop-shadow.png");
         background-repeat: repeat-y;
-        height:49px;
+        height:50px;
         position:absolute;
         right:44px;
       }
@@ -362,30 +361,33 @@ $zen-auto-include-item-base: false;
     }
     .wwusearch {
       @include zen-clear(right);
-      float:right;
+      display:block;
       position: relative;
-      z-index: 200;
+      z-index: 20;
       background-color:rgb(75, 104, 156);
-      width:2.75em;
       top:0%;
+      #s-toggle { float:right; position:relative; }
     }
     #search {
-      @include zen-grid-item(2,1,right);
-      position: relative;
-      width: 18em;
+      float:right;
+      clear:right;
+      .form-submit {
+        top: 3.1em;
+      }
     }
     ul#wwumenu {
       font-size: 1em;
       margin: 0;
-      padding: 79px 0 0 0;
-      //position: relative;
+      padding: 0;
+      position: relative;
       background-color:$wwuBlue;
       text-transform:uppercase;
       display:block;
       list-style-type:none;
+      top: 62px;
       width: 100%;
       display:none;
-      height:12.7em;
+      height:16.7em;
 
         li {
           display:block;
@@ -398,7 +400,7 @@ $zen-auto-include-item-base: false;
           color:#fff;
           @include transition(1s);
             &:hover {
-              color:$wwuLime;
+              color:$wwuYellow;
               @include transition(.2s);
               }
           }
@@ -440,20 +442,18 @@ $zen-auto-include-item-base: false;
     }
     #navigation {
       padding:0;
-      height:100%;
+      height:0;
     #main-menu ul.menu {
       display:none;
-      background-color:#E9E9E9;
+      background-color:$wwuBlue;
+      text-transform:uppercase;
       list-style-type:none;
         a {
           text-decoration:none;
           color:#fff;
-          padding: .7em 0 .65em 1em;
-          display:block;
-          width:83%;
           @include transition(1s);
             &:hover {
-              color:$wwuLime;
+              color:$wwuYellow;
               @include transition(.2s);
               }
             }
@@ -462,31 +462,21 @@ $zen-auto-include-item-base: false;
           text-align: left;
           display:block;
           background-color:$wwuBlue;
-          margin-bottom:1px;
-          border:none;
-          text-transform:none;
-          font-size:.9em;
-          padding-top:0;
-          padding-bottom:0;
-          @include transition(.25s);
-          ul {
-                padding-left:0;
-                position: relative;
-                background-color:#E9E9E9;
-                li {
-                  background-color:$wwuGrayBlue;
-                  margin-bottom:1px;
-                  border:none;
-                  font-size:1em;
-                  ul li {
-                    background-color:tint($wwuGrayBlue, 20%);
-                    ul li {
-                      background-color:tint($wwuGrayBlue, 40%);
-                    }
-                  }
-                }
-              }
+          padding: .5em 0em;
+          border-bottom:solid 1px #E9E9E9;
+          a {
+            padding: .5em;
           }
+
+          ul {
+                width: 98%;
+                padding-left: 2%;
+                li {
+                  background-color: $wwuGrayBlue;
+                  border-bottom: solid 1px #E9E9E9;
+                }
+                position: relative;
+              }
 
           li.expanded ul.menu li { display: none; }
         }
@@ -508,9 +498,9 @@ $zen-auto-include-item-base: false;
         .expanded { @include nav-icons(expandable-grandchild); }
         .opened { @include nav-icons(opened-grandchild); }
 
-        .expanded, .opened {
-          .expanded { @include nav-icons(expandable-great-grandchild); }
-          .opened { @include nav-icons(opened-great-grandchild); }
+          }
+          li.expanded ul.menu li {
+                display: none;
           }
         }
       }
@@ -584,10 +574,12 @@ $zen-auto-include-item-base: false;
   }
 
   #footer-left {
+    font-size: .675em;
     position: relative;
     width: 67%; 
   }
   #footer-center {
+    font-size: .675em;
     margin-left:auto;
     margin-right:auto;
     position:relative;
@@ -617,12 +609,14 @@ $zen-auto-include-item-base: false;
   @include zen-grid-item(3,1);
   }
   #footer-left {
+    font-size: .675em;
     position: relative;
     @include zen-grid-item(1,1,left);
     width: 25%; 
 
   }
   #footer-center {
+    font-size: .675em;
     position: relative;
     margin-left: 26%;
     width:25%;
@@ -706,13 +700,10 @@ $zen-auto-include-item-base: false;
     #navigation ul li ul {
       display:none;
     }
-    #navigation #main-menu ul li {
-      float:none;
-    }
 }
 
 #site-name { /* The name of the website */
- display:none;
+ //display:none;
   a:link,
   a:visited {
     color: #000;
@@ -762,13 +753,13 @@ $zen-auto-include-item-base: false;
   }
 
   #footer-left {
-    @include zen-grid-item(3,1);
+    @include zen-grid-item(3,1.5);
     padding: .688em 0em 1.25em 1.25em;
 
   }
   #footer-center {
     position:relative;
-    @include zen-grid-item(3,5);
+    @include zen-grid-item(3,4.75);
       padding: 0px 0px 0px 0px;
       margin-right:0;
 
@@ -776,9 +767,9 @@ $zen-auto-include-item-base: false;
         padding: 0px 0px 0px 15px;
 
         li {
-          font-size:1.6em; //We have to go bigger because the base font size for the footer is .625
+          font-size:.8750em;
           display: block;
-          padding: 0.5em 0.6em;
+          padding: 0.5em 0em 0em 0em;
         }
       }
     }

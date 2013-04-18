@@ -5,28 +5,38 @@
 
 @import "base";
 
-
 .form-item { /* Wrapper for a form element (or group of form elements) and its label */
   margin: 1.5em 0;
+  font-family:$muli;
+
+  .form-text {
+    font-family:$muli;
+    padding:.25em;
+    background:#fff;
+    border-width:1px;
+    border-color:gray;
+    border-radius:1px;
+    &:focus, &:active { outline:none; @include box-shadow(0 0 4px 0 $wwuLtblue); }
+  }
 
   input.error,
   textarea.error,
   select.error { /* Highlight the form elements that caused a form submission error */
     border: 1px solid #c00;
+    color:$wwuRed;
   }
 
   label { /* The label for a form element */
     display: block;
-    font-weight: bold;
+    font-weight:normal;
   }
 
   label.option { /* The label for a radio button or checkbox */
     display: inline;
-    font-weight: normal;
   }
 
   .form-required { /* The part of the label that indicates a required field */
-    color: #c00;
+    color: $wwuLtblue;
   }
 
   .description { /* The descriptive help text (separate from the label) */
@@ -40,6 +50,13 @@
 }
 
 .form-submit { /* The submit button */
+  font-family:$muli;
+  padding:.25em .75em;
+  background:#fff;
+  border:solid 1px #ddd;
+  border-radius:3px;
+  @include box-shadow(0 0 2px #ddd);
+  &:hover, &:active { @include box-shadow(0 0 2px $wwuLime); }
 }
 
 .container-inline {
@@ -70,7 +87,19 @@ a.button { /* Buttons used by contrib modules like Media */
  */
 
 #block-search-form { /* Wrapper for the search form */
+  input[type=submit] {
+    font-family:$muli;
+    padding:.25em .75em;
+    background:#fff;
+    border:solid 1px #ddd;
+    border-radius:3px;
+    margin-left:.75em;
+    @include box-shadow(0 0 2px #ddd);
+    &:hover, &:active { @include box-shadow(0 0 2px $wwuLime); }
+  }
 }
+
+#search-form .form-item-keys label { display:block; }
 
 /*
  * Drupal's default login form block
@@ -87,7 +116,10 @@ a.button { /* Buttons used by contrib modules like Media */
    */
 
   ul { /* OpenID creates a new ul above the login form's links. */
-    margin-bottom: 0; /* Position OpenID's ul next to the rest of the links. */
+    padding:0;
+    list-style-type:none;
+    font-size:.75em;
+    margin:0;
   }
 
   html.js & li.openid-link,
@@ -102,7 +134,7 @@ a.button { /* Buttons used by contrib modules like Media */
 }
 
 #user-login ul {
-  margin: 1.5em 0;
+  //margin: 1.5em 0;
 }
 
 /*
