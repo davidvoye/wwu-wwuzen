@@ -286,14 +286,14 @@ $zen-auto-include-item-base: false;
     @include zen-clear(both);
   }
   #footer-left {
-    font-size: .675em;
+    font-size: .875em;
     position: relative;
     @include zen-clear();
-    width: 98%; 
+    width: 98%;
+    margin-left:2em;
   }
 
   #footer-center {
-      font-size: .675em;
       position: relative;
       @include zen-clear();
       margin-left:-.5em;
@@ -304,9 +304,10 @@ $zen-auto-include-item-base: false;
         padding: 0px 0px 0px 15px;
 
         li {
-          font-size:1.6em; //We have to go bigger because the base font size for the footer is .625
+          font-size:.875em;
           display: block;
           padding: 0.5em 0.6em;
+          margin-left:1em;
         }
       }
     }
@@ -547,7 +548,7 @@ $zen-auto-include-item-base: false;
         padding: 0px 0px 0px 15px;
 
         li {
-          font-size:1.6em; //We have to go bigger because the base font size for the footer is .625
+          font-size:.875em;
           display: block;
           padding: 0.5em 0.6em;
         }
@@ -574,12 +575,11 @@ $zen-auto-include-item-base: false;
   }
 
   #footer-left {
-    font-size: .675em;
+    font-size: .875em;
     position: relative;
-    width: 67%; 
+    width: 67%;
   }
   #footer-center {
-    font-size: .675em;
     margin-left:auto;
     margin-right:auto;
     position:relative;
@@ -609,17 +609,16 @@ $zen-auto-include-item-base: false;
   @include zen-grid-item(3,1);
   }
   #footer-left {
-    font-size: .675em;
+    font-size: .875em;
     position: relative;
     @include zen-grid-item(1,1,left);
-    width: 25%; 
+    margin-left:1em;
 
   }
   #footer-center {
-    font-size: .675em;
+    @include zen-grid-item(1,2,left);
     position: relative;
-    margin-left: 26%;
-    width:25%;
+    margin-left:26%;
     margin-right:0%;
   }
   #footer-right {
