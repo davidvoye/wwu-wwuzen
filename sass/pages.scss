@@ -521,7 +521,7 @@ span.field-label { /* The inline field label used by the Fences module */
 
 #footer-right {
 
-    min-width: 20.625em;
+    min-width: 19em;
     @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
     font-family:$muli;
 
@@ -536,9 +536,7 @@ span.field-label { /* The inline field label used by the Fences module */
     font-size:1em;
     color:$wwuBlue;
     margin:0;
-    padding-left: 1em;
     padding-top: 0.8em;
-    padding-right:1em;
     border: none;
     text-transform:uppercase;
     }
