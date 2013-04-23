@@ -646,12 +646,14 @@ $zen-auto-include-item-base: false;
 
     #footer-right-contact-info {
       @include zen-clear(both);
-      @include zen-grid-item(1,1,left);
+      @include zen-grid-item(1.5,1,left);
     }
 
     #footer-right-social-media-icons {
-      @include zen-grid-item(1.5,2,left);
-      width: 85px;
+      @include zen-grid-item(1,2.5,left);
+      padding-left: 15px;
+      padding-top: 3.3em;
+      position: relative;
     }
   }
 
