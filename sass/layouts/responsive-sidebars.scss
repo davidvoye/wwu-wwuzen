@@ -35,6 +35,12 @@ $zen-gutter-width:  30px; // was 20px
 $zen-auto-include-item-base: false;
 // $zen-auto-include-flow-item-base: false;
 
+// Receiving errors about mixins not at the root of the document, so I moved these --SC
+
+  @mixin nav-icons($fileName) {
+    background-image:url("../../images/icons/#{$fileName}.png");
+  }
+
 /*
  * Center the page.
  */
@@ -231,10 +237,6 @@ $zen-auto-include-item-base: false;
         }
       }
 
-  @mixin nav-icons($fileName) {
-    background-image:url("../../images/icons/#{$fileName}.png");
-  }
-
   .expanded { @include nav-icons(expandable-parent); }
     .opened { @include nav-icons(opened-parent); }
 
@@ -284,10 +286,14 @@ $zen-auto-include-item-base: false;
     @include zen-clear(both);
   }
   #footer-left {
-    display:none;
+    font-size: .675em;
+    position: relative;
+    @include zen-clear();
+    width: 98%; 
   }
 
   #footer-center {
+      font-size: .675em;
       position: relative;
       @include zen-clear();
       margin-left:-.5em;
@@ -472,8 +478,27 @@ $zen-auto-include-item-base: false;
                 position: relative;
               }
 
-          }
+          li.expanded ul.menu li { display: none; }
+        }
+      }
 
+  .expanded { @include nav-icons(expandable-parent); }
+    .opened { @include nav-icons(opened-parent); }
+
+  .expanded, .opened {
+    background-repeat: no-repeat;
+    background-position:right top;
+    background-size:44px 44px;
+    @include transition(11s);
+
+      .expanded { @include nav-icons(expandable-first-child); }
+      .opened { @include nav-icons(opened-first-child); }
+
+      .expanded, .opened {
+        .expanded { @include nav-icons(expandable-grandchild); }
+        .opened { @include nav-icons(opened-grandchild); }
+
+          }
           li.expanded ul.menu li {
                 display: none;
           }
@@ -507,12 +532,13 @@ $zen-auto-include-item-base: false;
     @include zen-clear(both);
   }
   #footer-left {
-    display:none;
+    @include zen-clear();
+    @include zen-grid-item(1, 1)
   }
 
   #footer-center {
       position: relative;
-      @include zen-clear();
+      @include zen-grid-item(1,2);
       margin-left:-.5em;
       padding: 0px 0px 0px 0px;
       width:69%;
@@ -530,8 +556,8 @@ $zen-auto-include-item-base: false;
 
 
   #footer-right {
-    @include zen-clear();
-    @include zen-grid-item(2,1);
+    @include zen-grid-item(1,3, right);
+    margin-right: auto;
     margin-top:0em;
     margin-left:1em;
   }
@@ -548,9 +574,12 @@ $zen-auto-include-item-base: false;
   }
 
   #footer-left {
-    display:none;
+    font-size: .675em;
+    position: relative;
+    width: 67%; 
   }
   #footer-center {
+    font-size: .675em;
     margin-left:auto;
     margin-right:auto;
     position:relative;
@@ -574,25 +603,27 @@ $zen-auto-include-item-base: false;
   $zen-column-count: 3;
 
  #footer-wrapper {
-  @include zen-grid-item(3,1);
+    @include zen-clear(both);
  }
   #footer {
-    @include zen-clear(both);
+  @include zen-grid-item(3,1);
   }
   #footer-left {
-    display:none;
+    font-size: .675em;
+    position: relative;
+    @include zen-grid-item(1,1,left);
+    width: 25%; 
 
   }
   #footer-center {
+    font-size: .675em;
     position: relative;
-    @include zen-grid-item(1,1,left);
-    width:45%;
+    margin-left: 26%;
+    width:25%;
     margin-right:0%;
   }
   #footer-right {
-    @include zen-clear(none);
-    float:none;
-    @include zen-grid-item(1,2);
+    @include zen-grid-item(1,3,left);
       margin-top:-1.813em;
       margin-left:7.333%;
   }
