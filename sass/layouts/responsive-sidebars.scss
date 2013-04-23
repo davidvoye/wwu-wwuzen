@@ -676,7 +676,7 @@ $zen-auto-include-item-base: false;
 
   }
   #footer-center {
-    @include zen-grid-item(1,1.6,left);
+    @include zen-grid-item(.6,2,left);
     position: relative;
   }
   #footer-right {
