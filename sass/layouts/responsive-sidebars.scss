@@ -628,7 +628,7 @@ $zen-auto-include-item-base: false;
   #footer-left {
     font-size: .875em;
     position: relative;
-    @include zen-grid-item(2,1,left);
+    @include zen-grid-item(1.5,1,left);
     margin-left:1em;
 
   }
@@ -642,6 +642,15 @@ $zen-auto-include-item-base: false;
 
     h3 {
       padding-left:1em;
+    }
+
+    #footer-right-contact-info {
+      @include zen-clear(both);
+      @include zen-grid-item(1,1,left);
+    }
+
+    #footer-right-social-media-icons {
+      @include zen-grid-item(1.5,2,left);
     }
   }
 
