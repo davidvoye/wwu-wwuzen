@@ -691,7 +691,7 @@ $zen-auto-include-item-base: false;
   #footer-left {
     font-size: .875em;
     position: relative;
-    @include zen-grid-item(1.1,1,left);
+    @include zen-grid-item(.6,1,left);
     margin-left:1em;
 
   }
@@ -720,7 +720,7 @@ $zen-auto-include-item-base: false;
 
 @media all and (min-width: 800px) {
 #footer-right {
-  width:20.4em;
+  width:20.7em;
   }
 }
 
