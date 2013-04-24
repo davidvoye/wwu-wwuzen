@@ -320,6 +320,10 @@ $zen-auto-include-item-base: false;
       padding-left:.4em;
       padding-right:.4em;
     }
+
+    #footer-right-social-media-icons {
+      padding-left:.5em;
+    }
   }
 
   //Override of normalize.scss for the comment subject input area
@@ -564,6 +568,8 @@ $zen-auto-include-item-base: false;
     margin-top:0em;
     margin-left:1em;
   }
+
+
   //Override of normalize.scss for the comment subject input area
   #edit-subject {
     width: 100%;
@@ -573,10 +579,14 @@ $zen-auto-include-item-base: false;
 
 @media all and (min-width:360px) and (max-width:480px) {
 
-#footer-center h3 {
-      padding-left:1em;
-      padding-right:1em;
-    }
+  #footer-center h3 {
+    padding-left:1em;
+    padding-right:1em;
+  }
+
+  #footer-right-social-media-icons {
+    padding-left:1em;
+  }
 }
 
 @media all and (min-width:480px) and (max-width: 639px) {
@@ -612,11 +622,22 @@ $zen-auto-include-item-base: false;
       padding-left:1em;
       padding-right:1em;
     }
+
+    #footer-right-contact-info {
+      @include zen-clear(both);
+      @include zen-grid-item(1.5,1,left);
+    }
+
+    #footer-right-social-media-icons {
+      @include zen-grid-item(.7,2.5,left);
+      padding-left: 15px;
+      position: relative;
+    }
   }
 
 }
 
-@media all and (min-width:640px) and (max-width: 800px) {
+@media all and (min-width:640px) and (max-width: 767px) {
   $zen-column-count: 3;
 
  #footer-wrapper {
@@ -652,7 +673,6 @@ $zen-auto-include-item-base: false;
     #footer-right-social-media-icons {
       @include zen-grid-item(1,2.5,left);
       padding-left: 15px;
-      padding-top: 3.3em;
       position: relative;
     }
   }
@@ -671,29 +691,38 @@ $zen-auto-include-item-base: false;
   #footer-left {
     font-size: .875em;
     position: relative;
-    @include zen-grid-item(1,1,left);
+    @include zen-grid-item(1.1,1,left);
     margin-left:1em;
 
   }
   #footer-center {
-    @include zen-grid-item(.6,2,left);
+    @include zen-grid-item(.9,1.7,left);
     position: relative;
   }
   #footer-right {
     @include zen-clear(none);
-    @include zen-grid-item(1,2.7, left);
+    @include zen-grid-item(1.5,2.7, left);
+    margin-top:-1.813em;
     position: relative;
-    width:20.4em;
+    width:19.5em;
 
     h3 {
-      padding-left:1em;
-      padding-right:1em;
+      padding-left:.5em;
+      padding-right:.5em;
+    }
+
+    #footer-right-social-media-icons {
+    padding-left:.5em;
     }
   }
 
 }
 
-
+@media all and (min-width: 800px) {
+#footer-right {
+  width:20.4em;
+  }
+}
 
 @media all and (min-width: 801px) {
   /*
@@ -845,7 +874,9 @@ $zen-auto-include-item-base: false;
       padding-left:1em;
       padding-right:1em;
     }
-
+    #footer-right-social-media-icons {
+      padding-left:1em;
+    }
   }
 
   #mobileNavTrigger {
