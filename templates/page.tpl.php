@@ -219,7 +219,8 @@
             <img src="<?php print $addressIcon;?>" width="14px" height="12px" /><p>516 High Street</p><p class="second-address-line">Bellingham, WA 98225</p>
             <img src="<?php print $phoneIcon;?>" width="12px" height="11px"/><p>(360) 650-3000</p>
             <img src="<?php print $emailIcon;?>" width="12px" height="8px" /><p><a href="http://www.wwu.edu/wwucontact/">Contact Western</a></p>
-            <div id="footer-right-social-media-icons">
+          </div>
+          <div id="footer-right-social-media-icons">
               <a href="http://www.facebook.com/westernwashingtonuniversity"><img src="<?php print $facebookIcon;?>" width="24px" height="24px" /></a>
               <a href="http://www.flickr.com/wwu"><img src="<?php print $flickrIcon;?>" width="24px" height="24px" /></a>
               <a href="https://twitter.com/#!/WWU"><img src="<?php print $twitterIcon;?>" width="24px" height="24px" /></a>
@@ -227,7 +228,6 @@
               <a href="https://plus.google.com/+wwu/posts"><img src="<?php print $googlePlusIcon;?>" width="24px" height="24px" /></a>
               <a href="http://news.wwu.edu/go/feed/1538/ru/atom/"><img src="<?php print $rssIcon;?>" width="24px" height="24px" /></a>
             </div>
-          </div>
 
         <?php print render($page['footer_right']); ?>
       </div>
