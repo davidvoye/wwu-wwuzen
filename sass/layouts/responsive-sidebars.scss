@@ -89,6 +89,10 @@ $zen-auto-include-item-base: false;
 **************************************************** */
 @media all and (max-width: 800px) {
 #wwuheader {
+  background-color:$wwuBlue;
+  width:100%;
+  display:block;
+  height:74px;
   a.wwuLogo h1 {
     @include zen-grid-item(1,1,left);
     margin-bottom:-.375em;
@@ -354,220 +358,7 @@ $zen-auto-include-item-base: false;
 
   $zen-column-count: 3;
 
-#wwuheader {
-  a.wwuLogo h1 {
-      @include zen-grid-item(1,1,left);
-      margin-bottom:-.375em;
-      background: url('../../images/wwuhorizlogo.png') no-repeat;
-      width: 320px;
-      height: 74px;
-    }
-    a.mobile {
-      @include zen-grid-item(3,1);
-      margin-bottom:-.375em;
-      //background-color:rgb(75, 104, 156);
-      background-color:$wwuBlue;
-    }
-    .desktop {
-      display:none;
-    }
-    #mobileWWUmenu {
-      float:right;
-      background-color:rgb(75, 104, 156);
-      //width:2.75em;
-      height:100%;
-    }
-    .wwusearch {
-      @include zen-clear(right);
-      display:block;
-      //float:right;
-      position: relative;
-      z-index: 200;
-      background-color:rgb(75, 104, 156);
-      width:2.75em;
-      top:0%;
-      #s-toggle { float:right; position:relative; }
-    }
-    #search {
-      @include zen-grid-item(2,1,right);
-      position: relative;
-      width: 18em;
-    }
-    ul#wwumenu {
-      font-size: 1em;
-      margin: 0;
-      padding: 79px 0 0 0;
-      //position: relative;
-      background-color:$wwuBlue;
-      text-transform:uppercase;
-      display:block;
-      list-style-type:none;
-      width: 100%;
-      display:none;
-      height:12.7em;
-
-        li {
-          display:block;
-          background-color:$wwuBlue;
-          border-bottom:solid 1px #E9E9E9;
-          padding:.5em .6em;
-          &:not(:first-child):before { content:""; }
-          a {
-          text-decoration:none;
-          color:#fff;
-          @include transition(1s);
-            &:hover {
-              color:$wwuLime;
-              @include transition(.2s);
-              }
-          }
-        }
-    }
-}
-
-  #logo, #logoImage{
-    display:none;
-  }
-  #collegeheader {
-    @include zen-clear();
-    @include background(linear-gradient(top, #319bde, $wwuLtblue));
-
-    #name-and-slogan {
-      @include zen-grid-item(2,1);
-      font-family:$muli;
-      padding:0 0 .5em 1.25em;
-    }
-
-    #site-name { /* The name of the website */
-      display:block; //college name is shown as part of image on banner
-      width:80%; //Prevents the name from sliding under the mobile nav at 360px wide
-      font-size:1.5em;
-      text-align:left;
-      padding:0;
-        a:link,
-        a:visited {
-          color: #fff;
-          text-decoration: none;
-        }
-    }
-
-    #mobileNavTrigger{
-      @include zen-clear(right);
-      float:right;
-      background-color:rgb(75, 104, 156);
-      width:2.75em;
-    }
-    #navigation {
-      padding:0;
-      height:100%;
-    #main-menu ul.menu {
-      display:none;
-      background-color:#E9E9E9;
-      list-style-type:none;
-        a {
-          text-decoration:none;
-          color:#fff;
-          padding: .7em 0 .65em 1em;
-          display:block;
-          width:83%;
-          @include transition(1s);
-            &:hover {
-              color:$wwuLime;
-              @include transition(.2s);
-              }
-            }
-        li {
-          width: 100%;
-          text-align: left;
-          display:block;
-          background-color:$wwuBlue;
-          margin-bottom:1px;
-          border:none;
-          text-transform:none;
-          font-size:.9em;
-          padding-top:0;
-          padding-bottom:0;
-          @include transition(.25s);
-          ul {
-                padding-left:0;
-                position: relative;
-                background-color:#E9E9E9;
-                li {
-                  background-color:$wwuGrayBlue;
-                  margin-bottom:1px;
-                  border:none;
-                  font-size:1em;
-                  ul li {
-                    background-color:tint($wwuGrayBlue, 20%);
-                    ul li {
-                      background-color:tint($wwuGrayBlue, 40%);
-                    }
-                  }
-                }
-              }
-          }
-
-          li.expanded ul.menu li { display: none; }
-        }
-      }
-
-  @mixin nav-icons($fileName) {
-    background-image:url("../../images/icons/#{$fileName}.png");
-  }
-
-  .expanded { @include nav-icons(expandable-parent); }
-    .opened { @include nav-icons(opened-parent); }
-
-  .expanded, .opened {
-    background-repeat: no-repeat;
-    background-position:right top;
-    background-size:44px 44px;
-    @include transition(11s);
-
-      .expanded { @include nav-icons(expandable-first-child); }
-      .opened { @include nav-icons(opened-first-child); }
-
-      .expanded, .opened {
-        .expanded { @include nav-icons(expandable-grandchild); }
-        .opened { @include nav-icons(opened-grandchild); }
-
-        .expanded, .opened {
-          .expanded { @include nav-icons(expandable-great-grandchild); }
-          .opened { @include nav-icons(opened-great-grandchild); }
-          }
-        }
-      }
-    } //End college header
-
-
-
-
-  #main {
-    @include zen-clear();
-    @include zen-grid-item(3,1);
-    margin-top:0em;
-
-    header#department {
-      border-bottom:none;
-      padding:.9em 0 1em 0;
-      margin-bottom:0em;
-    }
-    .breadcrumb {
-      display: none;
-    }
-
-  }
 //Hide the navigation that moves to the bottom of the page.
-  #block-accordion-menu-1 {
-    display:none;
-  }
-  #footer {
-    @include zen-clear(both);
-  }
-  #footer-left {
-    display:none;
-  }
-
   #footer-center {
       position: relative;
       @include zen-clear();
@@ -586,18 +377,12 @@ $zen-auto-include-item-base: false;
       }
     }
 
-
   #footer-right {
     @include zen-clear();
     @include zen-grid-item(2,1);
     margin-top:0em;
     margin-left:1em;
   }
-  //Override of normalize.scss for the comment subject input area
-  #edit-subject {
-    width: 100%;
-  }
-
 }
 
 /* ****************************************************
