@@ -147,6 +147,7 @@ $zen-auto-include-item-base: false;
       right:44px;
       z-index:100;
       margin-top:0;
+      @include transition(.25s);
     }
   } // End .wwusearch
   #wwumenu {
@@ -346,6 +347,7 @@ $zen-auto-include-item-base: false;
   $zen-column-count: 1;
   #wwuheader .wwusearch #search {
     width:15.75em;
+    @include transition(.25s);
     .form-submit { border-left: solid 1.75em white; }
   }
 }
@@ -430,6 +432,7 @@ $zen-auto-include-item-base: false;
   }
   #wwuheader {
     @include zen-grid-item(12,1);
+    width:240px;
     margin-bottom:.563em;
     #menu-icons {
       width:50%;
@@ -437,22 +440,30 @@ $zen-auto-include-item-base: false;
       top:0;
       right:0;
       @include transition(.5s);
+      z-index:999;
       .quick-links {
         position:absolute;
-        top:10px;
+        top:15px;
         left:2em;
       }
       .wwusearch {
         position:absolute;
         left:26.5em;
         top:5px;
+        #s-toggle {
+          height:44px;
+          width:44px;
+          cursor:pointer;
+        }
+        #search {
+          position:absolute;
+          top:44px;
+          right:0;
+          margin-top:0;
+        }
       }
       .quick-links-toggle, #mobileNavTrigger { display:none; }
       #wwumenu, #search { display:block; }
-      #s-toggle {
-        height:44px;
-        width:44px;
-      }
     }
   } // End #wwuheader
   #header {
