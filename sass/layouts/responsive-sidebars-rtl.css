@@ -1,28 +1,20 @@
 /*
-Syntax error: File to import not found or unreadable: zen.
+Syntax error: File to import not found or unreadable: base.
               Load paths:
-                /Applications/MAMP/htdocs/wwuzen/sites/all/themes/wwuzen/sass
+                /Applications/MAMP/htdocs/wwuzen/sites/all/themes/wwuzen/sass/layouts
                 /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets
                 /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets
                 Compass::SpriteImporter
-        on line 117 of /Applications/MAMP/htdocs/wwuzen/sites/all/themes/wwuzen/sass/_base.scss
-        from line 12 of /Applications/MAMP/htdocs/wwuzen/sites/all/themes/wwuzen/sass/layouts/responsive-sidebars.scss
+        on line 12 of /Applications/MAMP/htdocs/wwuzen/sites/all/themes/wwuzen/sass/layouts/responsive-sidebars.scss
         from line 11 of /Applications/MAMP/htdocs/wwuzen/sites/all/themes/wwuzen/sass/layouts/responsive-sidebars-rtl.scss
 
 Backtrace:
-/Applications/MAMP/htdocs/wwuzen/sites/all/themes/wwuzen/sass/_base.scss:117
 /Applications/MAMP/htdocs/wwuzen/sites/all/themes/wwuzen/sass/layouts/responsive-sidebars.scss:12
 /Applications/MAMP/htdocs/wwuzen/sites/all/themes/wwuzen/sass/layouts/responsive-sidebars-rtl.scss:11
 /Library/Ruby/Gems/1.8/gems/sass-3.2.5/lib/sass/../sass/tree/import_node.rb:67:in `import'
 /Library/Ruby/Gems/1.8/gems/sass-3.2.5/lib/sass/../sass/tree/import_node.rb:28:in `imported_file'
 /Library/Ruby/Gems/1.8/gems/sass-3.2.5/lib/sass/../sass/tree/import_node.rb:37:in `css_import?'
 /Library/Ruby/Gems/1.8/gems/sass-3.2.5/lib/sass/../sass/tree/visitors/perform.rb:215:in `visit_import'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.5/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.5/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.5/lib/sass/../sass/tree/visitors/perform.rb:98:in `visit'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.5/lib/sass/../sass/tree/visitors/perform.rb:225:in `visit_import'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.5/lib/sass/../sass/tree/visitors/perform.rb:225:in `map'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.5/lib/sass/../sass/tree/visitors/perform.rb:225:in `visit_import'
 /Library/Ruby/Gems/1.8/gems/sass-3.2.5/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
 /Library/Ruby/Gems/1.8/gems/sass-3.2.5/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
 /Library/Ruby/Gems/1.8/gems/sass-3.2.5/lib/sass/../sass/tree/visitors/perform.rb:98:in `visit'
@@ -73,4 +65,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: zen.\A               Load paths:\A                 /Applications/MAMP/htdocs/wwuzen/sites/all/themes/wwuzen/sass\A                 /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets\A                 /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets\A                 Compass::SpriteImporter\A         on line 117 of /Applications/MAMP/htdocs/wwuzen/sites/all/themes/wwuzen/sass/_base.scss\A         from line 12 of /Applications/MAMP/htdocs/wwuzen/sites/all/themes/wwuzen/sass/layouts/responsive-sidebars.scss\A         from line 11 of /Applications/MAMP/htdocs/wwuzen/sites/all/themes/wwuzen/sass/layouts/responsive-sidebars-rtl.scss"; }
+  content: "Syntax error: File to import not found or unreadable: base.\A               Load paths:\A                 /Applications/MAMP/htdocs/wwuzen/sites/all/themes/wwuzen/sass/layouts\A                 /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/blueprint/stylesheets\A                 /Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets\A                 Compass::SpriteImporter\A         on line 12 of /Applications/MAMP/htdocs/wwuzen/sites/all/themes/wwuzen/sass/layouts/responsive-sidebars.scss\A         from line 11 of /Applications/MAMP/htdocs/wwuzen/sites/all/themes/wwuzen/sass/layouts/responsive-sidebars-rtl.scss"; }
