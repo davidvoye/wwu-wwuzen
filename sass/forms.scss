@@ -6,7 +6,7 @@
 @import "base";
 
 .form-item { /* Wrapper for a form element (or group of form elements) and its label */
-  margin: 1.5em 0;
+  margin: 1.25em 0;
   font-family:$muli;
 
   .form-text {
@@ -51,6 +51,7 @@
 
 .form-submit { /* The submit button */
   font-family:$muli;
+  font-size:.925em;
   padding:.25em .75em;
   background:#fff;
   border:solid 1px #ddd;
@@ -131,11 +132,10 @@ a.button { /* Buttons used by contrib modules like Media */
   li.user-link { /* The "Cancel OpenID login" link. */
     margin-top: 1.5em;
   }
+  .item-list ul { font-family:$muli; }
 }
 
-#user-login ul {
-  //margin: 1.5em 0;
-}
+
 
 /*
  * Drupal admin tables

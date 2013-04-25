@@ -75,34 +75,48 @@
     <?php
     //Desktops get this image
       $wwuLogo = base_path().path_to_theme() . '/images/wwu.png';
+      $wwuSearchIcon = base_path().path_to_theme() . '/images/icons/search.png';
     //Mobile devices get these images
       $wwuHorizontalLogo = base_path().path_to_theme() . '/images/wwuhorizlogo.png';
       $wwuMobileMenuIcon = base_path().path_to_theme() . '/images/icons/toolbar-links.png';
-      $wwuMobileSearchIcon = base_path().path_to_theme() . '/images/icons/search.png';
+      $wwuMobileSearchIcon = base_path().path_to_theme() . '/images/icons/search-gray.png';
       $wwuMobileMainMenuIcon = base_path().path_to_theme() . '/images/icons/main-menu.png';
     ?>
-    <div id="wwuheader">
-        <a href="http://www.wwu.edu" class="desktop">
-          <img class="wwuLogo" src="<?php print $wwuLogo;?>" alt="Western Washington University" width="240px" height="145px" />
-        </a>
-        <a href="http://www.wwu.edu" class="mobile">
-          <img class="wwuLogo" src="<?php print $wwuHorizontalLogo;?>" alt="Western Washington University" />
-        </a>
-       <nav id="mobileWWUmenu" role="navigation"><img src="<?php print $wwuMobileMenuIcon;?>" alt="Click here for quick links." width="44px" height="44px"/></nav>
-        <ul id="wwumenu">
-          <li class="wwulinks"><a href="http://www.wwu.edu/academic_calendar">Calendar</a></li>
-          <li class="wwulinks"><a href="http://www.wwu.edu/directory">Directory</a></li>
-          <li class="wwulinks"><a href="http://www.wwu.edu/index">Index</a></li>
-          <li class="wwulinks"><a href="http://www.wwu.edu/campusmaps">Map</a></li>
-          <li class="wwulinks"><a href="http://mywestern.wwu.edu">myWestern</a></li>
-        </ul>
-       <aside class="wwusearch"><a id="s-toggle" href="#"><img src="<?php print $wwuMobileSearchIcon;?>" alt="Click here to search." width="44px" height="44px"/></a>
-        <div id="search" style="display:none;">
-          <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
-          <?php print $search_box; ?>
+    <header id="wwuheader">
+      <a href="http://www.wwu.edu" class="wwuLogo"><h1>Western Washington University</h1></a>
+
+      <div id="menu-icons">
+        <div class="quick-links" id="mobileWWUmenu">
+          <img src="<?php print $wwuMobileMenuIcon;?>" alt="Quick links" class="quick-links-toggle icon-size">
+
+          <ul id="wwumenu">
+            <li><a href="http://www.wwu.edu/academic_calendar" title="Calendar"><span aria-hidden="true">c</span> <span>Calendar</span></a></li>
+            <li><a href="http://www.wwu.edu/directory" title="Directory"><span aria-hidden="true">d</span> <span>Directory</span></a></li>    
+            <li><a href="http://www.wwu.edu/index" title="Index"><span aria-hidden="true">i</span> <span>Index</span></a></li>    
+            <li><a href="http://www.wwu.edu/campusmaps" title="Map"><span aria-hidden="true">l</span> <span>Map</span></a></li>    
+            <li><a href="http://mywestern.wwu.edu" title="myWestern"><span aria-hidden="true">w</span> <span>myWestern</span></a></li>
+          </ul>
         </div>
-      </aside>
-    </div><!-- wwuheader -->
+
+        <div class="wwusearch">
+          <div class="icon-size" id="s-toggle">Search</div>
+
+            <div id="search" style="display:none;">
+              <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
+              <?php print $search_box; ?>
+            </div>
+        </div>
+
+        <div class="main-navigation" id="mobileNavTrigger">
+          <img src="<?php print $wwuMobileMainMenuIcon;?>" alt="Main menu links" class="main-menu-toggle icon-size">
+        </div>
+      </div>
+
+  </nav>
+
+
+    </header> <!-- end #wwuheader -->
+
   <header id="header" role="banner">
     <div id="collegeheader">
     <!-- Group Logo (banner) and Site Name and Main Menu for Group -->
@@ -124,7 +138,6 @@
         <?php endif; ?>
       </hgroup><!-- /#name-and-slogan -->
     <?php endif; ?>
-    <aside id="mobileNavTrigger"><img src="<?php print $wwuMobileMainMenuIcon;?>" alt="Click here for the main menu links." width="44px" height="44px"/></a></aside>
     <div id="navigation">
       <nav id="main-menu" role="navigation">
             <?php print render($page['navigation']); ?>
