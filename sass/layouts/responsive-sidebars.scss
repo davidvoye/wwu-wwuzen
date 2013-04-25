@@ -90,7 +90,7 @@ $zen-auto-include-item-base: false;
 @media all and (max-width: 800px) {
 #wwuheader {
   background-color:$wwuBlue;
-  height:74px;
+  height:68px;
   a.wwuLogo h1 {
     @include zen-grid-item(1,1,left);
     margin-bottom:-.375em;
@@ -101,7 +101,6 @@ $zen-auto-include-item-base: false;
   #mobileWWUmenu {
     float:right;
     background-color:rgb(75, 104, 156);
-    //width:2.75em;
     height:100%;
   }
   #menu-icons {
@@ -147,7 +146,6 @@ $zen-auto-include-item-base: false;
       top:68px;
       right:44px;
       z-index:100;
-      width:15em;
       margin-top:0;
     }
   } // End .wwusearch
@@ -346,6 +344,10 @@ $zen-auto-include-item-base: false;
 
 @media all and (max-width:360px) { 
   $zen-column-count: 1;
+  #wwuheader .wwusearch #search {
+    width:15.75em;
+    .form-submit { border-left: solid 1.75em white; }
+  }
 }
 
 /* ****************************************************
@@ -357,30 +359,8 @@ $zen-auto-include-item-base: false;
   $zen-column-count: 3;
 
 //Hide the navigation that moves to the bottom of the page.
-  #footer-center {
-      position: relative;
-      @include zen-clear();
-      margin-left:-.5em;
-      padding: 0px 0px 0px 0px;
-      width:69%;
-
-      ul.menu {
-        padding: 0px 0px 0px 15px;
-
-        li {
-          font-size:1.6em; //We have to go bigger because the base font size for the footer is .625
-          display: block;
-          padding: 0.5em 0.6em;
-        }
-      }
-    }
-
-  #footer-right {
-    @include zen-clear();
-    @include zen-grid-item(2,1);
-    margin-top:0em;
-    margin-left:1em;
-  }
+  #footer-center { width:69%; }
+  #footer-right { @include zen-grid-item(2,1); }
 }
 
 /* ****************************************************

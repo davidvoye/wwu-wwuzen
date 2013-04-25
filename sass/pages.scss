@@ -90,6 +90,7 @@ body {
     @include box-shadow(#333 0 0 8px);
     input {
       font-size:.85em;
+      font-family:$muli;
       border: {
         width:0 0 1px 0;
         style:solid;
@@ -109,16 +110,13 @@ body {
       position:absolute;
       top:0;
       right:-1px;
-      @media all and (min-width: 361px) and (max-width: 800px) {
-        top:3.1em;
-      }
     }
     .form-type-checkbox {
       display:block;
       margin:0;
       label {
         color:gray;
-        font-size:.7em;
+        font-size:.625em;
         font-weight:normal;
       }
     }
