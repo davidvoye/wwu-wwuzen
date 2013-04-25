@@ -36,9 +36,9 @@ Drupal.behaviors.siteNameTypography = {
 		$('#s-toggle').click(function () {
 			var search = $('#search');
 			if (search.is(':visible')) {
-				search.slideToggle();
+				search.hide("slide", { direction: "right" }, 400);
 			} else {
-				search.slideToggle(400);
+				search.show("slide", { direction: "right" }, 200);
 		}
 	});
 	// END SEARCH TOGGLE CODE
@@ -48,17 +48,17 @@ Drupal.behaviors.siteNameTypography = {
 	Drupal.behaviors.mobileWwuMenu = {
 		attach: function () {
 
-	// START SEARCH TOGGLE CODE
+	// START QUICK LINKS TOGGLE CODE
 
 		$('#mobileWWUmenu').click(function () {
-			var search = $('#wwumenu');
-			if (search.is(':visible')) {
-				search.hide();
+			var quicklinks = $('#wwumenu');
+			if (quicklinks.is(':visible')) {
+				quicklinks.hide("slide", { direction: "right" }, 400);
 			} else {
-				search.show();
+				quicklinks.show("slide", { direction: "right" }, 200);
 		}
 	});
-	// END SEARCH TOGGLE CODE
+	// END QUICK LINKS TOGGLE CODE
     }
  }
 

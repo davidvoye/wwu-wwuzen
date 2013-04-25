@@ -14,6 +14,14 @@
 @import "base";
 @import "compass/css3/box-shadow";
 @import "compass/css3/images";
+
+@mixin hide-text-bg-img {
+  border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+}
+// @include hide-text-bg-img;
 /*
  * Body
  */
@@ -51,9 +59,26 @@ body {
  */
 
 #wwuheader {
-
+  font-family:$muli;
+  .wwuLogo h1 {
+    z-index: 200;
+    margin: -6px 0 0 20px;
+    position:relative;
+    @include hide-text-bg-img;
+    background: url('../images/wwu.png') no-repeat;
+    width: 240px;
+    height: 145px;
+  }
+  .wwusearch .icon-size {
+    top:44px;
+    background:url('../images/icons/search.png') no-repeat;
+    background-size:cover;
+    @include hide-text-bg-img;
+    @media all and (max-width:360px) {
+      background-image:url('../images/icons/search-gray.png');
+    }
+  }
   #search {
-    font-family:$muli;
     background:#fff;
     padding:0;
     display:block;
@@ -81,9 +106,7 @@ body {
     a:hover {
       color:#666;
     }
-
     input {
-      font-family:$muli;
       font-size:.85em;
       border: {
         width:0 0 1px 0;
@@ -92,13 +115,10 @@ body {
       }
       margin:.5em .25em .25em .75em;
       padding:.25em 0 .1em 0;
-      &:focus {
-        outline:none;
-      }
+      &:focus { outline:none; }
     }
     .form-submit {
       background-color:$wwuLtblue;
-      font-family:$muli;
       color:#fff;
       margin:0;
       padding:0 1em;
@@ -108,25 +128,22 @@ body {
       top:0;
       right:-1px;
     }
-
-  .form-type-checkbox {
-    display:block;
-    margin:0;
-    label {
-      color:gray;
-      font-size:.7em;
-      font-weight:normal;
+    .form-type-checkbox {
+      display:block;
+      margin:0;
+      label {
+        color:gray;
+        font-size:.7em;
+        font-weight:normal;
+      }
+    }
+    input[type='checkbox'] {
+      height:12px;
+      width:12px;
     }
   }
-
-
-  input[type='checkbox'] {
-    height:12px;
-    width:12px;
-  }
-  }
 }
-  ul#wwumenu {
+  #wwumenu {
     font-size: .8em;
     //position:relative;
     margin: 7px 20px 2px 0;
@@ -135,19 +152,20 @@ body {
       font-family: $muli;
       padding-left: .5em;
       img {margin-top: -1px;}
-    }
-    li.wwulinks {
-      padding-left: 5px;
-      //background: url("../images/menu-leaf.png") no-repeat left center;
-      &:not(:first-child):before{content: "\00B7 \0020 ";}
+      &:not(:first-child):before { content: "\00B7 \0020 "; }
       a {
         text-decoration: none;
         padding-left: 6px;
         color: $wwuBlue;
-        &:hover{ color:$wwuLtblue; text-decoration:underline;}
+        span:first-child { display:none; }
+        &:hover {
+          color:$wwuLtblue;
+          text-decoration:underline;
+        }
       }
     }
   }
+
 #searchwrapper {
   // position:absolute; left:307px; top:39px; width:650px; height:38px;
 }

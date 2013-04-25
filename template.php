@@ -152,6 +152,8 @@ function wwuzen_preprocess_page(&$variables, $hook) {
   //Render the search box variable so we can place it in the header.
   $search_box = drupal_get_form('google_appliance_block_form');
   $variables['search_box'] = drupal_render($search_box);
+  //Add the slide effect for our search box
+  drupal_add_library('system','effects.slide');
 }
 // */
 
