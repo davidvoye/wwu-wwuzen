@@ -15,6 +15,18 @@
 
 // Place your code here.
 
+Drupal.behaviors.siteNameTypography = {
+		attach: function () {
+
+		// Gets copy from site name (ultimately inside a span: #site-name a span)
+		var siteName = $("#site-name").text();
+		
+		var typographyAnd = siteName.replace("and", "<span class=\"diminutive-type site-name-and\">and</span>");
+		var typographyCollegeOf = typographyAnd.replace("College of", "<span class=\"diminutive-type site-name-college-of\">College of</span>");
+		
+		$('#site-name a span').replaceWith(typographyCollegeOf);
+	}
+}
 
 	Drupal.behaviors.searchSlider = {
 		attach: function () {
@@ -24,9 +36,9 @@
 		$('#s-toggle').click(function () {
 			var search = $('#search');
 			if (search.is(':visible')) {
-				search.slideToggle();
+				search.hide("slide", { direction: "right" }, 400);
 			} else {
-				search.slideToggle(400);
+				search.show("slide", { direction: "right" }, 200);
 		}
 	});
 	// END SEARCH TOGGLE CODE
@@ -36,17 +48,17 @@
 	Drupal.behaviors.mobileWwuMenu = {
 		attach: function () {
 
-	// START SEARCH TOGGLE CODE
+	// START QUICK LINKS TOGGLE CODE
 
 		$('#mobileWWUmenu').click(function () {
-			var search = $('#wwumenu');
-			if (search.is(':visible')) {
-				search.hide();
+			var quicklinks = $('#wwumenu');
+			if (quicklinks.is(':visible')) {
+				quicklinks.hide("slide", { direction: "right" }, 400);
 			} else {
-				search.show();
+				quicklinks.show("slide", { direction: "right" }, 200);
 		}
 	});
-	// END SEARCH TOGGLE CODE
+	// END QUICK LINKS TOGGLE CODE
     }
  }
 

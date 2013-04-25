@@ -14,6 +14,14 @@
 @import "base";
 @import "compass/css3/box-shadow";
 @import "compass/css3/images";
+
+@mixin hide-text-bg-img {
+  border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+}
+// @include hide-text-bg-img;
 /*
  * Body
  */
@@ -51,9 +59,26 @@ body {
  */
 
 #wwuheader {
-
+  font-family:$muli;
+  .wwuLogo h1 {
+    z-index: 200;
+    margin: -6px 0 0 20px;
+    position:relative;
+    @include hide-text-bg-img;
+    background: url('../images/wwu.png') no-repeat;
+    width: 240px;
+    height: 145px;
+  }
+  .wwusearch .icon-size {
+    top:44px;
+    background:url('../images/icons/search.png') no-repeat;
+    background-size:cover;
+    @include hide-text-bg-img;
+    @media all and (max-width:800px) {
+      background-image:url('../images/icons/search-gray.png');
+    }
+  }
   #search {
-    font-family:$muli;
     background:#fff;
     padding:0;
     display:block;
@@ -81,10 +106,9 @@ body {
     a:hover {
       color:#666;
     }
-
     input {
-      font-family:$muli;
       font-size:.85em;
+      font-family:$muli;
       border: {
         width:0 0 1px 0;
         style:solid;
@@ -92,13 +116,10 @@ body {
       }
       margin:.5em .25em .25em .75em;
       padding:.25em 0 .1em 0;
-      &:focus {
-        outline:none;
-      }
+      &:focus { outline:none; }
     }
     .form-submit {
       background-color:$wwuLtblue;
-      font-family:$muli;
       color:#fff;
       margin:0;
       padding:0 1em;
@@ -107,55 +128,45 @@ body {
       position:absolute;
       top:0;
       right:-1px;
-      @media all and (min-width: 361px) and (max-width: 800px) {
-        top:3.1em;
+    }
+    .form-type-checkbox {
+      display:block;
+      margin:0;
+      label {
+        color:gray;
+        font-size:.625em;
+        font-weight:normal;
       }
     }
-
-  .form-type-checkbox {
-    display:block;
-    margin:0;
-    label {
-      color:gray;
-      font-size:.7em;
-      font-weight:normal;
+    input[type='checkbox'] {
+      height:12px;
+      width:12px;
     }
   }
-
-
-  input[type='checkbox'] {
-    height:12px;
-    width:12px;
-  }
-  }
 }
-  ul#wwumenu {
-
+  #wwumenu {
     font-size: .8em;
-    //position:relative;
-    margin: 7px 20px 2px 0;
+    margin:0;
+    padding:0;
     li  {
       display:inline;
       font-family: $muli;
       padding-left: .5em;
-
-
       img {margin-top: -1px;}
-    }
-    li.wwulinks {
-      padding-left: 5px;
-      //background: url("../images/menu-leaf.png") no-repeat left center;
-
-      &:not(:first-child):before{content: "\00B7 \0020 ";}
-      //&:before:first-child {content: " ";}
+      &:not(:first-child):before { content: "\00B7 \0020 "; }
       a {
         text-decoration: none;
         padding-left: 6px;
         color: $wwuBlue;
-        &:hover{ color:$wwuLtblue; text-decoration:underline;}
+        span:first-child { display:none; }
+        &:hover {
+          color:$wwuLtblue;
+          text-decoration:underline;
+        }
       }
     }
   }
+
 #searchwrapper {
   // position:absolute; left:307px; top:39px; width:650px; height:38px;
 }
@@ -254,7 +265,7 @@ a {
   &:hover {text-decoration: underline;}
 }
 
-#secondary-menu { }
+#secondary-menu { font-family:$muli; }
 
 h1.title, /* The title of the page */
 h2.node-title, /* Title of a piece of content when it is given in a list of content */
@@ -270,17 +281,26 @@ h1, h2, h3, h4, h5, h6 {
   margin:1.17em 0 .55em 0;
   line-height:1;
   color:$wwuBlue;
+  font-weight:normal;
 }
 
-@for $h from 1 through 6 {
-  h#{$h} { font-size:$h#{$h}-font-size; }
-}
+// I don't think this worked after all... how to fix it?
+//@for $h from 1 through 6 {
+// h#{$h} { font-size:$h#{$h}-font-size; }
+//}
+
+h1 { font-size:$h1-font-size; }
+h2 { font-size:$h2-font-size; }
+h3 { font-size:$h3-font-size; }
+h4 { font-size:$h4-font-size; }
+h5 { font-size:$h5-font-size; }
+h6 { font-size:$h6-font-size; }
 
 h1.title { display:inline-block; }
 
-h2 { margin-top:.5em; }
+h2 { margin-top:.5em; font-size:$h1-font-size; }
 
-.block-title { font-size:1em ;}
+.block-title { font-size:1em; }
 
 #footer-wrapper h2.block-title { color: #fff; }
 
@@ -292,8 +312,7 @@ h2 { margin-top:.5em; }
 
 #content {
   p, ul, ol, blockquote {
-   // font-size:.875em;
-   // line-height:1.563em;
+    font-size:.925em;
     font-family:$muli;
   }
   .code, code {
@@ -311,8 +330,9 @@ h2 { margin-top:.5em; }
   blockquote {
     background:#ddd;
     padding:1em 1.5em;
-    color:$wwuBlue;
     margin:.5em 0;
+    max-width:75%;
+    min-width:45%;
     p:last-child { margin-bottom:0; }
   }
 }
@@ -356,27 +376,32 @@ dl {
   dd { margin-left: 1.5em; }
 }
 
-.right { float:right; margin:1em 0 1em 1em; }
 
-.left { float:left; margin:1em 1em 1em 0; }
 
 // Figures and figcaptions
 
 figure {
   background-color:#fff;
   padding:.75em;
-  @include box-shadow(#ccc 0 0 3px 1px);
+  margin:.75em;
+  @include box-shadow(0 0 4px 2px #ddd);
   display:inline-block;
   img { margin:0 auto; }
-  figcaption { margin-top:.75em; }
+  figcaption {
+    margin-top:.5em;
+    font-size:.85em;
+    line-height:1.5;
+    font-style:italic;
+    color:#555;
+  }
 }
 
-.float-left {
+.float-left, .left {
   float:left;
   margin:1em 1em 1em 0;
 }
 
-.float-right {
+.float-right, .right {
   float:right;
   margin:1em 0 1em 1em;
 }
@@ -478,7 +503,7 @@ span.field-label { /* The inline field label used by the Fences module */
   background-color: $wwuBlue;
   color: white;
   border-top:.8em solid #ffffff;
-  padding-bottom:3.813em;
+  padding-bottom:1em;
   font-family:$muli;
 }
 
@@ -521,7 +546,7 @@ span.field-label { /* The inline field label used by the Fences module */
 
 #footer-right {
 
-    min-width: 20.625em;
+    min-width: 19em;
     @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
     font-family:$muli;
 
@@ -536,9 +561,7 @@ span.field-label { /* The inline field label used by the Fences module */
     font-size:1em;
     color:$wwuBlue;
     margin:0;
-    padding-left: 1em;
     padding-top: 0.8em;
-    padding-right:1em;
     border: none;
     text-transform:uppercase;
     }
@@ -586,14 +609,23 @@ html.js input.form-autocomplete {
 }
 
 #site-name {
-  position:absolute;
   z-index:99;
-
-  span {
-    color:white;
-    font-size:.6em;
-    //font-weight:bold;
-    text-decoration:none;
-    text-transform:uppercase;
+  min-width:200px;
+  max-width:250px;
+  min-height:25px;
+  font-size:1.5em;
+  text-transform:uppercase;
+  text-align:right;
+  padding:.75em 1.25em .75em .75em;
+  line-height:1.1;
+  a { text-decoration:none; color:#fff; }
+  .diminutive-type {
+    font-size:1em;
+    font-style:italic;
+    font-weight:normal;
+    text-transform:none;
+    font-family:serif;
   }
+  .site-name-and {}
+  .site-name-college-of {}
 }
