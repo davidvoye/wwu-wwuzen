@@ -96,133 +96,124 @@ $zen-auto-include-item-base: false;
 @media all and (max-width: 800px) {
 #wwuheader {
   a.wwuLogo h1 {
-      @include zen-grid-item(1,1,left);
-      margin-bottom:-.375em;
-      background: url('../../images/wwuhorizlogo.png') no-repeat;
-      width: 320px;
-      height: 74px;
-    }
-    #mobileWWUmenu {
-      float:right;
-      background-color:rgb(75, 104, 156);
-      //width:2.75em;
-      height:100%;
-    }
-    #menu-icons {
-      padding:0;
-      margin:0;
-      width:44px;
-      height:44 * 3px;
-      position:absolute;
-      top:0;
-      right:0;
-      z-index:200;
-      @include box-shadow(-5px 0 15px -5px #333);
-    }
-    .quick-links {
-      width:100%;
-      img { top:0; }
-    }
-    .icon-size {
-      height:44px;
-      width:44px;
-      position:absolute;
-      right:0;
-      z-index:200;
-      cursor:pointer;
-    }
-    #mobileNavTrigger{
-      @include zen-clear(right);
-      @include zen-grid-item(1,1,right);
-      background-color:rgb(75, 104, 156);
-      width:2.75em;
-      img { top:88px; }
-    }
-    .wwusearch {
-      @include zen-clear(right);
-      @include zen-grid-item(1,1,right);
-      z-index: 200;
-      background-color:rgb(75, 104, 156);
-      top:0;
-      #search {
-        @include zen-clear(right);
-        display:none;
-        position: fixed;
-        top:68px;
-        right:44px;
-        z-index:100;
-        width:15em;
-        margin-top:0;
-      }
-    }
-    #wwumenu {
-      margin: 0;
-      padding:.5em;
-      background-color:#fff;
-      list-style-type:none;
-      position:fixed;
-      height:55px;
-      right:44px;
-      top:0;
-      display:none;
-      overflow:hidden;
-      @include box-shadow(#333 0 0 8px);
-      li {
-        text-align:center;
-        display:inline-block;
-        padding:.17em .25em 0 .25em;
-        &:not(:first-child):before { content:""; }
-        //&:nth-child(4) { padding:.17em .5em 0 .5em; }
-        a {
-          text-decoration:none;
-          text-transform:none;
-          @include transition(1s);
-          padding:0;
-          span:first-child {
-            font-size:1.825em;
-            font-family: 'fontello';
-            font-style: normal;
-            font-weight: normal;
-            speak: none;
-            display: inline-block;
-            text-decoration: inherit;
-            padding:0;
-            font-variant: normal;
-            text-transform: none;
-            line-height: 1em;
-          }
-          span:last-child {
-            display:block;
-            font-size:.75em;
-          }
-          &:hover {
-            color:$wwuLime;
-            @include transition(.2s);
-          }
-        }
-      }
-    }
+    @include zen-grid-item(1,1,left);
+    margin-bottom:-.375em;
+    background: url('../../images/wwuhorizlogo.png') no-repeat;
+    width: 320px;
+    height: 74px;
   }
-
-/* ****************************************************
-                Mobile-size -> 360px
-**************************************************** */
-
-@media all and (max-width:360px) {
-  $zen-column-count: 1;
+  #mobileWWUmenu {
+    float:right;
+    background-color:rgb(75, 104, 156);
+    //width:2.75em;
+    height:100%;
+  }
+  #menu-icons {
+    padding:0;
+    margin:0;
+    width:44px;
+    height:44 * 3px;
+    position:absolute;
+    top:0;
+    right:0;
+    z-index:200;
+    @include box-shadow(-5px 0 15px -5px #333);
+  }
+  .quick-links {
+    width:100%;
+    img { top:0; }
+  }
+  .icon-size {
+    height:44px;
+    width:44px;
+    position:absolute;
+    right:0;
+    z-index:200;
+    cursor:pointer;
+  }
+  #mobileNavTrigger{
+    @include zen-clear(right);
+    @include zen-grid-item(1,1,right);
+    background-color:rgb(75, 104, 156);
+    width:2.75em;
+    img { top:88px; }
+  }
+  .wwusearch {
+    @include zen-clear(right);
+    @include zen-grid-item(1,1,right);
+    z-index: 200;
+    background-color:rgb(75, 104, 156);
+    top:0;
+    #search {
+      @include zen-clear(right);
+      display:none;
+      position: fixed;
+      top:68px;
+      right:44px;
+      z-index:100;
+      width:15em;
+      margin-top:0;
+    }
+  } // End .wwusearch
+  #wwumenu {
+    margin: 0;
+    padding:.5em;
+    background-color:#fff;
+    list-style-type:none;
+    position:fixed;
+    height:55px;
+    right:44px;
+    top:0;
+    display:none;
+    overflow:hidden;
+    @include box-shadow(#333 0 0 8px);
+    li {
+      text-align:center;
+      display:inline-block;
+      padding:.17em .25em 0 .25em;
+      &:not(:first-child):before { content:""; }
+      //&:nth-child(4) { padding:.17em .5em 0 .5em; }
+      a {
+        text-decoration:none;
+        text-transform:none;
+        @include transition(1s);
+        padding:0;
+        span:first-child {
+          font-size:1.825em;
+          font-family: 'fontello';
+          font-style: normal;
+          font-weight: normal;
+          speak: none;
+          display: inline-block;
+          text-decoration: inherit;
+          padding:0;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1em;
+        }
+        span:last-child {
+          display:block;
+          font-size:.75em;
+        }
+        &:hover {
+          color:$wwuLime;
+          @include transition(.2s);
+        }
+      } // End a
+    } // End li
+  } // End #wwumenu
+} // End #wwuheader
   #logo, #logoImage { display:none; }
   #collegeheader {
     @include zen-clear();
-    position:relative;
+    z-index:-10;
     @include background(linear-gradient(top, lighten($wwuLtblue, 10%), $wwuLtblue));
-    //height:76px;
     #name-and-slogan {
       @include zen-grid-item(1,1);
       padding: 0 0 .5em 1.25em;
       font-family:$muli;
-      width:93%;
+      h1 { margin:0.4em 0 0 0; }
     }
-
     #site-name { /* The name of the website */
       display:block; //college name is shown as part of image on banner
       width:80%; //Prevents the name from sliding under the mobile nav at 360px wide
@@ -234,14 +225,14 @@ $zen-auto-include-item-base: false;
           color: #fff;
           text-decoration: none;
         }
-    }
+    } // End #site-name
     #navigation {
       padding:0;
-      height:0;
-    #main-menu ul.menu {
-      display:none;
-      background-color:#E9E9E9;
-      list-style-type:none;
+      height:100%;
+      #main-menu ul.menu {
+        display:none;
+        background-color:#E9E9E9;
+        list-style-type:none;
         a {
           text-decoration:none;
           color:#fff;
@@ -249,11 +240,11 @@ $zen-auto-include-item-base: false;
           display:block;
           width:83%;
           @include transition(1s);
-            &:hover {
-              color:$wwuLime;
-              @include transition(.2s);
-              }
-            }
+          &:hover {
+            color:$wwuLime;
+            @include transition(.2s);
+          }
+        }
         li {
           width: 100%;
           text-align: left;
@@ -267,27 +258,28 @@ $zen-auto-include-item-base: false;
           padding-bottom:0;
           @include transition(.25s);
           ul {
-                padding-left:0;
-                position: relative;
-                background-color:#E9E9E9;
-                li {
-                  background-color:$wwuGrayBlue;
-                  margin-bottom:1px;
-                  border:none;
-                  font-size:1em;
-                  ul li {
-                    background-color:tint($wwuGrayBlue, 20%);
-                    ul li {
-                      background-color:tint($wwuGrayBlue, 40%);
-                    }
-                  }
+            padding-left:0;
+            position: relative;
+            background-color:#E9E9E9;
+            li {
+              background-color:$wwuGrayBlue;
+              margin-bottom:1px;
+              border:none;
+              font-size:1em;
+              ul li {
+                background-color:tint($wwuGrayBlue, 20%);
+                ul li {
+                  background-color:tint($wwuGrayBlue, 40%);
                 }
               }
-          }
+            } // End li
+          } // End ul
+        } // End li
+        li.expanded ul.menu li { display: none; }
+      } // End #main-menu ul.menu
+    } // End #navigation
 
-          li.expanded ul.menu li { display: none; }
-        }
-      }
+  @mixin nav-icons($fileName) { background-image:url("../../images/icons/#{$fileName}.png"); }
 
   .expanded { @include nav-icons(expandable-parent); }
     .opened { @include nav-icons(opened-parent); }
@@ -310,61 +302,37 @@ $zen-auto-include-item-base: false;
           .opened { @include nav-icons(opened-great-grandchild); }
           }
         }
-      }
-    }
-  }
-  //End college header
+      } // End .expanded, .opened
+    } //End college header
 
   #main {
     @include zen-clear();
-    @include zen-grid-item(1,1, right);
+    //@include zen-grid-item(1,1, right);
     margin-top:0em;
-
     header#department {
       border-bottom:none;
       padding:.9em 0 1em 0;
       margin-bottom:0em;
     }
-    .breadcrumb {
-      display: none;
-    }
-
-  }
+    .breadcrumb { display: none; }
+  } // End #main
 
 //Hide the navigation that moves to the bottom of the page.
-  #block-accordion-menu-1 {
-    display:none;
-  }
-  #footer {
-    @include zen-clear(both);
-  }
-  #footer-left {
-    font-size: .875em;
-    position: relative;
-    @include zen-clear();
-    margin-left:2em;
-  }
-
+  #block-accordion-menu-1 { display:none; }
+  #footer { @include zen-clear(both); }
   #footer-center {
-      position: relative;
-      @include zen-clear();
-      margin-left:-.5em;
-      padding: 0px 0px 0px 0px;
-      width:98%;
-
-      ul.menu {
-        padding: 0px 0px 0px 15px;
-
-        li {
-          font-size:.875em;
-          display: block;
-          padding: 0.5em 0.6em;
-          margin-left:1em;
-        }
+    position: relative;
+    margin-left:-.5em;
+    padding: 0px 0px 0px 0px;
+    width:98%;
+    ul.menu {
+      padding: 0px 0px 0px 15px;
+      li {
+        display: block;
+        padding: 0.5em 0em;
       }
     }
-
-
+  } // End #footer-center
   #footer-right {
     @include zen-clear();
     margin-top:0em;
@@ -378,13 +346,48 @@ $zen-auto-include-item-base: false;
       padding-left:.5em;
     }
   }
-
-  //Override of normalize.scss for the comment subject input area
-  #edit-subject {
-    width: 100%;
-  }
+  #edit-subject { width: 100%; } // Override of normalize.scss for the comment subject input area
 }
 
+/* ****************************************************
+                Mobile-size -> 360px
+**************************************************** */
+
+@media all and (max-width:360px) {
+  $zen-column-count: 1;
+
+  #block-accordion-menu-1 {
+    display:none;
+  }
+  #footer {
+    @include zen-clear(both);
+  }
+  #footer-left {
+    font-size: .875em;
+    position: relative;
+    @include zen-clear();
+    margin-left:1em;
+  }
+
+  #footer-center {
+      position: relative;
+      @include zen-clear();
+      margin-left:-1em;
+      padding: 0px 0px 0px 0px;
+      width:98%;
+
+      ul.menu {
+        padding: 0px 0px 0px 15px;
+
+        li {
+          font-size:.875em;
+          display: block;
+          padding: 0.5em 0em;
+          margin-left:1em;
+        }
+    }
+  }
+}
 /* ****************************************************
               Tablet-size 361px <--> 800px
 **************************************************** */
