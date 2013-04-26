@@ -89,6 +89,14 @@ $zen-auto-include-item-base: false;
   padding-right:0px;
 }
 
+/* ****************************************************
+                Navigation -> 800px
+**************************************************** */
+@media all and (max-width: 800px) {}
+
+/* ****************************************************
+                Mobile-size -> 360px
+**************************************************** */
 
 @media all and (max-width:360px) {
   $zen-column-count: 1;
@@ -378,6 +386,10 @@ $zen-auto-include-item-base: false;
   }
 }
 
+/* ****************************************************
+              Tablet-size 361px <--> 800px
+**************************************************** */
+
 @media all and (min-width: 361px) and (max-width: 800px) {
 
   $zen-column-count: 3;
@@ -615,6 +627,10 @@ $zen-auto-include-item-base: false;
 
 }
 
+/* ****************************************************
+     Footer breakpoint (smaller) 360px <--> 480px
+**************************************************** */
+
 @media all and (min-width:360px) and (max-width:480px) {
 
   #footer-center h3 {
@@ -626,6 +642,10 @@ $zen-auto-include-item-base: false;
     padding-left:1em;
   }
 }
+
+/* ****************************************************
+     Footer breakpoint (smaller) 480px <--> 639px
+**************************************************** */
 
 @media all and (min-width:480px) and (max-width: 639px) {
   #footer {
@@ -674,7 +694,14 @@ $zen-auto-include-item-base: false;
   }
 }
 
+
+
+/* ****************************************************
+     Footer breakpoint (larger) 640px <--> 767px
+**************************************************** */
+
 @media all and (min-width:640px) and (max-width: 767px) {
+
   $zen-column-count: 3;
 #site-name {
   position:static;
@@ -718,6 +745,10 @@ $zen-auto-include-item-base: false;
 
 }
 
+/* ****************************************************
+     Footer breakpoint (larger) 768px <--> 800px
+**************************************************** */
+
 @media all and (min-width:768px) and (max-width: 800px) {
   $zen-column-count: 3;
 
@@ -757,16 +788,23 @@ $zen-auto-include-item-base: false;
 
 }
 
+/* ****************************************************
+      Footer breakpoint (Over-size) 800px ->
+**************************************************** */
+
 @media all and (min-width: 800px) {
 #footer-right {
   width:20.7em;
   }
 }
 
+/* ****************************************************
+                Over-size 801px ->
+**************************************************** */
+
+
 @media all and (min-width: 801px) {
-  /*
-   * Use 12 grid columns for larger screens.
-   */
+  // Use 12 grid columns for larger screens.
   $zen-column-count: 12;
 
 
