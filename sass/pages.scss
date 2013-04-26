@@ -88,7 +88,25 @@ body {
     width:18.25em;
     margin-top:-.31em;
     @include box-shadow(#333 0 0 8px);
+    .form-item .form-text {
+      &:focus, &:active { @include box-shadow(none); }
+    }
 
+    a {
+      color:#999;
+      line-height: 31px;
+      background:#E4E4E4;
+      height:2.063em;
+      float:left;
+      width:12px;
+      text-align:center;
+      text-decoration:none;
+    }
+
+    a:hover {
+      color:#666;
+    }
+>>>>>>> a983261e0be6aa8890b31baecc70a81a41f8c48b
     input {
       font-size:.85em;
       font-family:$muli;
@@ -127,7 +145,6 @@ body {
     }
   }
 }
-
   #wwumenu {
     font-size: .8em;
     margin:0;
