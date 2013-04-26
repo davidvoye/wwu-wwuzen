@@ -140,6 +140,7 @@ body {
         text-decoration: none;
         padding-left: 6px;
         color: $wwuBlue;
+        span:first-child { display:none; }
         &:hover {
           color:$wwuLtblue;
           text-decoration:underline;

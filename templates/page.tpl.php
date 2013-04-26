@@ -90,11 +90,11 @@
           <img src="<?php print $wwuMobileMenuIcon;?>" alt="Quick links" class="quick-links-toggle icon-size">
 
           <ul id="wwumenu">
-            <li><a href="http://www.wwu.edu/academic_calendar">Calendar</a></li>
-            <li><a href="http://www.wwu.edu/directory">Directory</a></li>    
-            <li><a href="http://www.wwu.edu/index">Index</a></li>    
-            <li><a href="http://www.wwu.edu/campusmaps">Map</a></li>    
-            <li><a href="http://mywestern.wwu.edu">myWestern</a></li>
+            <li><a href="http://www.wwu.edu/academic_calendar" title="Calendar"><span aria-hidden="true">c</span> <span>Calendar</span></a></li>
+            <li><a href="http://www.wwu.edu/directory" title="Directory"><span aria-hidden="true">d</span> <span>Directory</span></a></li>    
+            <li><a href="http://www.wwu.edu/index" title="Index"><span aria-hidden="true">i</span> <span>Index</span></a></li>    
+            <li><a href="http://www.wwu.edu/campusmaps" title="Map"><span aria-hidden="true">l</span> <span>Map</span></a></li>    
+            <li><a href="http://mywestern.wwu.edu" title="myWestern"><span aria-hidden="true">w</span> <span>myWestern</span></a></li>
           </ul>
         </div>
 

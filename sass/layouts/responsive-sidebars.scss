@@ -11,6 +11,13 @@
 
 @import "base";
 
+@font-face {
+  font-family: 'fontello';
+  src: url("../../font/fontello.eot?84055489");
+  src: url("../../font/fontello.eot?84055489#iefix") format('embedded-opentype'), url("../../font/fontello.woff?84055489") format('woff'), url("../../font/fontello.ttf?84055489") format('truetype'), url("../../font/fontello.svg?84055489#fontello") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 // We are going to create a 980px wide, 5 column grid with 20px gutters between
 // columns (applied as 10px of left/right padding on each column).
@@ -149,34 +156,49 @@ $zen-auto-include-item-base: false;
       }
     }
     #wwumenu {
-      font-size: 1em;
       margin: 0;
-      padding: 0;
-      position: relative;
-      background-color:$wwuBlue;
-      display:block;
+      padding: .5em;
+      background-color:#fff;
       list-style-type:none;
-      top: 62px;
-      width: 100%;
+      position:fixed;
+      height:60px;
+      right:44px;
+      top:0px;
+      z-index:200;
       display:none;
-
-      height:13em;
+      @include transition(.2s);
+      @include box-shadow(#333 0 0 8px);
       li {
-        display:block;
-        background-color:$wwuBlue;
-        border-bottom:solid 1px #E9E9E9;
-        padding:.5em .6em;
+        text-align:center;
+        display:inline-block;
+        padding:.17em .25em 0 .25em;
         &:not(:first-child):before { content:""; }
+        //&:nth-child(4) { padding:.17em .5em 0 .5em; }
         a {
           text-decoration:none;
-          color:#fff;
-          font-size:.9em;
           text-transform:none;
           @include transition(1s);
+          padding:0;
+          span:first-child {
+            font-size:1.825em;
+            font-family: 'fontello';
+            font-style: normal;
+            font-weight: normal;
+            speak: none;
+            display: inline-block;
+            text-decoration: inherit;
+            padding:0;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1em;
+          }
+          span:last-child {
+            display:block;
+            font-size:.75em;
+          }
           &:hover {
             color:$wwuLime;
             @include transition(.2s);
-
           }
         }
       }
