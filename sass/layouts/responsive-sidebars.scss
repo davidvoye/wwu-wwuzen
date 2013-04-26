@@ -99,8 +99,6 @@ $zen-auto-include-item-base: false;
       //width:2.75em;
       height:100%;
     }
-
-    .quick-links { width:100%; }
     #menu-icons {
       padding:0;
       margin:0;
@@ -112,8 +110,10 @@ $zen-auto-include-item-base: false;
       z-index:200;
       @include box-shadow(-5px 0 15px -5px #333);
     }
-
-    .quick-links img { top:0; }
+    .quick-links {
+      width:100%;
+      img { top:0; }
+    }
     .icon-size {
       height:44px;
       width:44px;
@@ -139,9 +139,13 @@ $zen-auto-include-item-base: false;
       #search {
         @include zen-clear(right);
         @include zen-grid-item(1,1,right);
-        position: relative;
+        position: absolute;
+        top:66px;
+        right:44px;
         margin-top:-.313em;
-        width: 19em;
+        width:17em;
+        //@include box-shadow(none);
+        //border-bottom:solid 1px #eee;
       }
     }
     #wwumenu {
