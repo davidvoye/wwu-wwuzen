@@ -53,9 +53,9 @@ Drupal.behaviors.siteNameTypography = {
 		$('#mobileWWUmenu').click(function () {
 			var quicklinks = $('#wwumenu');
 			if (quicklinks.is(':visible')) {
-				quicklinks.animate({width: 'toggle'});
+				quicklinks.hide("slide", { direction: "right" }, 200);
 			} else {
-				quicklinks.animate({width: 'toggle'});
+				quicklinks.show("slide", { direction: "right" }, 200);
 		}
 	});
 	// END QUICK LINKS TOGGLE CODE
