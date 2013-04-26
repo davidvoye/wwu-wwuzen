@@ -95,6 +95,8 @@ $zen-auto-include-item-base: false;
 
 @media all and (max-width: 800px) {
 #wwuheader {
+  background-color:$wwuBlue;
+  height:74px;
   a.wwuLogo h1 {
     @include zen-grid-item(1,1,left);
     margin-bottom:-.375em;
@@ -613,20 +615,12 @@ $zen-auto-include-item-base: false;
       }
     }
 
-
   #footer-right {
     @include zen-grid-item(1,3, right);
     margin-right: auto;
     margin-top:0em;
     margin-left:1em;
   }
-
-
-  //Override of normalize.scss for the comment subject input area
-  #edit-subject {
-    width: 100%;
-  }
-
 }
 
 /* ****************************************************

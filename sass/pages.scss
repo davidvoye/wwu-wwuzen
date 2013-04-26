@@ -74,7 +74,7 @@ body {
     background:url('../images/icons/search.png') no-repeat;
     background-size:cover;
     @include hide-text-bg-img;
-    @media all and (max-width:360px) {
+    @media all and (max-width:800px) {
       background-image:url('../images/icons/search-gray.png');
     }
   }
