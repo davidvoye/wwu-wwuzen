@@ -85,30 +85,33 @@
     <header id="wwuheader">
       <a href="http://www.wwu.edu" class="wwuLogo"><h1>Western Washington University</h1></a>
 
-      <div class="quick-links">
-      <img src="<?php print $wwuMobileMenuIcon;?>" alt="Quick links" class="quick-links-toggle icon-size">
+      <nav id="menu-icons">
+        <div class="quick-links">
+          <img src="<?php print $wwuMobileMenuIcon;?>" alt="Quick links" class="quick-links-toggle icon-size">
 
-      <ul id="wwumenu">
-        <li><a href="http://www.wwu.edu/academic_calendar">Calendar</a></li>
-              <li><a href="http://www.wwu.edu/directory">Directory</a></li>    
-              <li><a href="http://www.wwu.edu/index">Index</a></li>    
-              <li><a href="http://www.wwu.edu/campusmaps">Map</a></li>    
-              <li><a href="http://mywestern.wwu.edu">myWestern</a></li>
+          <ul id="wwumenu">
+            <li><a href="http://www.wwu.edu/academic_calendar">Calendar</a></li>
+            <li><a href="http://www.wwu.edu/directory">Directory</a></li>    
+            <li><a href="http://www.wwu.edu/index">Index</a></li>    
+            <li><a href="http://www.wwu.edu/campusmaps">Map</a></li>    
+            <li><a href="http://mywestern.wwu.edu">myWestern</a></li>
           </ul>
-      </div>
+        </div>
 
-      <div class="wwusearch">
-        <div class="icon-size">Search</div>
+        <div class="wwusearch">
+          <div class="icon-size">Search</div>
 
-          <div id="search" style="display:none;">
-            <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
-            <?php print $search_box; ?>
-          </div>
-      </div>
+            <div id="search" style="display:none;">
+              <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
+              <?php print $search_box; ?>
+            </div>
+        </div>
 
-      <div class="main-navigation" id="mobileNavTrigger">
-        <img src="<?php print $wwuMobileMainMenuIcon;?>" alt="Main menu links" class="main-menu-toggle icon-size">
-    </div>
+        <div class="main-navigation" id="mobileNavTrigger">
+          <img src="<?php print $wwuMobileMainMenuIcon;?>" alt="Main menu links" class="main-menu-toggle icon-size">
+        </div>
+      </nav>
+
   </nav>
 
 
