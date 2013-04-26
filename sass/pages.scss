@@ -51,9 +51,20 @@ body {
  */
 
 #wwuheader {
-
+  font-family:$muli;
+  .wwuLogo h1 {
+    z-index: 200;
+    margin: -6px 0 0 20px;
+    position:relative;
+    border: 0;
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+    background: url('../images/wwu.png') no-repeat;
+    width: 240px;
+    height: 145px;
+  }
   #search {
-    font-family:$muli;
     background:#fff;
     padding:0;
     display:block;
@@ -63,27 +74,8 @@ body {
     width:18.25em;
     margin-top:-.31em;
     @include box-shadow(#333 0 0 8px);
-    .form-item .form-text {
-      &:focus, &:active { @include box-shadow(none); }
-    }
-
-    a {
-      color:#999;
-      line-height: 31px;
-      background:#E4E4E4;
-      height:2.063em;
-      float:left;
-      width:12px;
-      text-align:center;
-      text-decoration:none;
-    }
-
-    a:hover {
-      color:#666;
-    }
 
     input {
-      font-family:$muli;
       font-size:.85em;
       border: {
         width:0 0 1px 0;
@@ -92,13 +84,10 @@ body {
       }
       margin:.5em .25em .25em .75em;
       padding:.25em 0 .1em 0;
-      &:focus {
-        outline:none;
-      }
+      &:focus { outline:none; }
     }
     .form-submit {
       background-color:$wwuLtblue;
-      font-family:$muli;
       color:#fff;
       margin:0;
       padding:0 1em;
@@ -108,45 +97,43 @@ body {
       top:0;
       right:-1px;
     }
-
-  .form-type-checkbox {
-    display:block;
-    margin:0;
-    label {
-      color:gray;
-      font-size:.7em;
-      font-weight:normal;
+    .form-type-checkbox {
+      display:block;
+      margin:0;
+      label {
+        color:gray;
+        font-size:.7em;
+        font-weight:normal;
+      }
+    }
+    input[type='checkbox'] {
+      height:12px;
+      width:12px;
     }
   }
-
-
-  input[type='checkbox'] {
-    height:12px;
-    width:12px;
-  }
-  }
 }
-  ul#wwumenu {
+
+  #wwumenu {
     font-size: .8em;
     margin: 7px 20px 2px 0;
     li  {
       display:inline;
       font-family: $muli;
       padding-left: .5em;
-
       img {margin-top: -1px;}
-    }
-    li.wwulinks {
-      padding-left: 5px;
-      &:not(:first-child):before{content: "\00B7 \0020 ";}
+      &:not(:first-child):before { content: "\00B7 \0020 "; }
       a {
         text-decoration: none;
         padding-left: 6px;
         color: $wwuBlue;
-        &:hover{ color:$wwuLtblue; text-decoration:underline;}
+        &:hover {
+          color:$wwuLtblue;
+          text-decoration:underline;
+        }
       }
     }
   }
+
 #searchwrapper {
   // position:absolute; left:307px; top:39px; width:650px; height:38px;
 }
