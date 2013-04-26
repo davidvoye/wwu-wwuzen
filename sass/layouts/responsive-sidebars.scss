@@ -100,11 +100,7 @@ $zen-auto-include-item-base: false;
       height:100%;
     }
 
-    .quick-links {
-      img {
-        top:0;
-      }
-    }
+    .quick-links img { top:0; }
     .icon-size {
       height:44px;
       width:44px;
@@ -127,8 +123,8 @@ $zen-auto-include-item-base: false;
       background-color:rgb(75, 104, 156);
       width:2.75em;
       top:0%;
-      img {
-        top:44px;
+      .icon-size {
+        background-image:url('../../images/icons/search-gray.png');
       }
       #search {
         @include zen-clear(right);

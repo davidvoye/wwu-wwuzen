@@ -75,10 +75,11 @@
     <?php
     //Desktops get this image
       $wwuLogo = base_path().path_to_theme() . '/images/wwu.png';
+      $wwuSearchIcon = base_path().path_to_theme() . '/images/icons/search.png';
     //Mobile devices get these images
       $wwuHorizontalLogo = base_path().path_to_theme() . '/images/wwuhorizlogo.png';
       $wwuMobileMenuIcon = base_path().path_to_theme() . '/images/icons/toolbar-links.png';
-      $wwuMobileSearchIcon = base_path().path_to_theme() . '/images/icons/search.png';
+      $wwuMobileSearchIcon = base_path().path_to_theme() . '/images/icons/search-gray.png';
       $wwuMobileMainMenuIcon = base_path().path_to_theme() . '/images/icons/main-menu.png';
     ?>
     <header id="wwuheader">
@@ -97,7 +98,7 @@
       </div>
 
       <div class="wwusearch">
-        <img src="<?php print $wwuMobileSearchIcon;?>" alt="Search" id="s-toggle" class="icon-size">
+        <div class="icon-size">Search</div>
 
           <div id="search" style="display:none;">
             <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
