@@ -244,7 +244,7 @@ a {
   &:hover {text-decoration: underline;}
 }
 
-#secondary-menu { }
+#secondary-menu { font-family:$muli; }
 
 h1.title, /* The title of the page */
 h2.node-title, /* Title of a piece of content when it is given in a list of content */
@@ -270,7 +270,8 @@ h1.title { display:inline-block; }
 
 h2 { margin-top:.5em; }
 
-.block-title { font-size:1em ;}
+.node-title { font-size:$h1-font-size; }
+.block-title { font-size:1em; }
 
 #footer-wrapper h2.block-title { color: #fff; }
 
@@ -282,8 +283,7 @@ h2 { margin-top:.5em; }
 
 #content {
   p, ul, ol, blockquote {
-   // font-size:.875em;
-   // line-height:1.563em;
+   font-size:.925em;
     font-family:$muli;
   }
   .code, code {
@@ -299,10 +299,11 @@ h2 { margin-top:.5em; }
     code { margin-left:0; }
   }
   blockquote {
-    background:#ddd;
+    background:#eee;
     padding:1em 1.5em;
-    color:$wwuBlue;
     margin:.5em 0;
+    max-width:65%;
+    min-width:45%;
     p:last-child { margin-bottom:0; }
   }
 }
@@ -346,27 +347,26 @@ dl {
   dd { margin-left: 1.5em; }
 }
 
-.right { float:right; margin:1em 0 1em 1em; }
 
-.left { float:left; margin:1em 1em 1em 0; }
 
 // Figures and figcaptions
 
 figure {
   background-color:#fff;
   padding:.75em;
+  margin:.75em;
   @include box-shadow(#ccc 0 0 3px 1px);
   display:inline-block;
   img { margin:0 auto; }
-  figcaption { margin-top:.75em; }
+  figcaption { margin-top:.75em; font-size:.825em; }
 }
 
-.float-left {
+.float-left, .left {
   float:left;
   margin:1em 1em 1em 0;
 }
 
-.float-right {
+.float-right, .right {
   float:right;
   margin:1em 0 1em 1em;
 }
