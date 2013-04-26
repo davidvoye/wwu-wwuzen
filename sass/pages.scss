@@ -128,12 +128,13 @@ body {
 }
   ul#wwumenu {
     font-size: .8em;
-    margin:0;
-
+    margin: 7px 20px 2px 0;
     li  {
       display:inline;
       font-family: $muli;
       padding-left: .5em;
+
+      img {margin-top: -1px;}
     }
     li.wwulinks {
       padding-left: 5px;
@@ -607,13 +608,4 @@ html.js input.form-autocomplete {
   }
   .site-name-and {}
   .site-name-college-of {}
-
-  span {
-    color:white;
-    font-size:.6em;
-    //font-weight:bold;
-    text-decoration:none;
-    text-transform:uppercase;
-  }
-
 }

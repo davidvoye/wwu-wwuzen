@@ -372,17 +372,16 @@ $zen-auto-include-item-base: false;
       @include zen-clear(right);
       display:block;
       position: relative;
-      z-index: 20;
+      z-index: 200;
       background-color:rgb(75, 104, 156);
+      width:2.75em;
       top:0%;
       #s-toggle { float:right; position:relative; }
     }
     #search {
-      float:right;
-      clear:right;
-      .form-submit {
-        top: 3.1em;
-      }
+      @include zen-grid-item(2,1,right);
+      position: relative;
+      width: 18em;
     }
     ul#wwumenu {
       font-size: 1em;
