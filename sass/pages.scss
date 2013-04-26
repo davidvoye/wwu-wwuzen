@@ -584,14 +584,23 @@ html.js input.form-autocomplete {
 }
 
 #site-name {
-  position:absolute;
   z-index:99;
-
-  span {
-    color:white;
-    font-size:.6em;
-    //font-weight:bold;
-    text-decoration:none;
-    text-transform:uppercase;
+  min-width:200px;
+  max-width:250px;
+  min-height:25px;
+  font-size:1.5em;
+  text-transform:uppercase;
+  text-align:right;
+  padding:.75em 1.25em .75em .75em;
+  line-height:1.1;
+  a { text-decoration:none; color:#fff; }
+  .diminutive-type {
+    font-size:1em;
+    font-style:italic;
+    font-weight:normal;
+    text-transform:none;
+    font-family:serif;
   }
+  .site-name-and {}
+  .site-name-college-of {}
 }

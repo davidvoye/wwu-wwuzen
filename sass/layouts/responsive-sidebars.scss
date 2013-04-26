@@ -85,7 +85,6 @@ $zen-auto-include-item-base: false;
 
 @media all and (max-width:360px) {
   $zen-column-count: 1;
-
 #wwuheader {
 
     a.mobile {
@@ -170,7 +169,10 @@ $zen-auto-include-item-base: false;
     #site-name { /* The name of the website */
       display:block; //college name is shown as part of image on banner
       width:80%; //Prevents the name from sliding under the mobile nav at 360px wide
-      a:link,
+      font-size:1.25em;
+      text-align:left;
+      padding:0;
+        a:link,
         a:visited {
           color: #fff;
           text-decoration: none;
@@ -434,7 +436,10 @@ $zen-auto-include-item-base: false;
     #site-name { /* The name of the website */
       display:block; //college name is shown as part of image on banner
       width:80%; //Prevents the name from sliding under the mobile nav at 360px wide
-      a:link,
+      font-size:1.5em;
+      text-align:left;
+      padding:0;
+        a:link,
         a:visited {
           color: #fff;
           text-decoration: none;
@@ -634,12 +639,13 @@ $zen-auto-include-item-base: false;
       position: relative;
     }
   }
-
 }
 
 @media all and (min-width:640px) and (max-width: 767px) {
   $zen-column-count: 3;
-
+#site-name {
+  position:static;
+}
  #footer-wrapper {
     @include zen-clear(both);
  }
@@ -794,17 +800,10 @@ $zen-auto-include-item-base: false;
 }
 
 #site-name { /* The name of the website */
- //display:none;
-  a:link,
-  a:visited {
-    color: #000;
-    text-decoration: none;
-  }
-
-  a:hover,
-  a:focus {
-    text-decoration: underline;
-    }
+  background-color:rgba($wwuLtblue, .8);
+  position:absolute;
+  bottom:40px;
+  right:10px;
   }
 }
   #main {
