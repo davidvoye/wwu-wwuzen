@@ -96,7 +96,7 @@ $zen-auto-include-item-base: false;
 @media all and (max-width: 800px) {
 #wwuheader {
   background-color:$wwuBlue;
-  height:74px;
+  height:68px;
   a.wwuLogo h1 {
     @include zen-grid-item(1,1,left);
     margin-bottom:-.375em;
@@ -107,7 +107,6 @@ $zen-auto-include-item-base: false;
   #mobileWWUmenu {
     float:right;
     background-color:rgb(75, 104, 156);
-    //width:2.75em;
     height:100%;
   }
   #menu-icons {
@@ -153,7 +152,6 @@ $zen-auto-include-item-base: false;
       top:68px;
       right:44px;
       z-index:100;
-      width:15em;
       margin-top:0;
     }
   } // End .wwusearch
@@ -357,6 +355,10 @@ $zen-auto-include-item-base: false;
 
 @media all and (max-width:360px) {
   $zen-column-count: 1;
+  #wwuheader .wwusearch #search {
+    width:15.75em;
+    .form-submit { border-left: solid 1.75em white; }
+  }
 
   #block-accordion-menu-1 {
     display:none;
