@@ -92,16 +92,10 @@ $zen-auto-include-item-base: false;
 /* ****************************************************
                 Navigation -> 800px
 **************************************************** */
-@media all and (max-width: 800px) {}
 
-/* ****************************************************
-                Mobile-size -> 360px
-**************************************************** */
-
-@media all and (max-width:360px) {
-  $zen-column-count: 1;
+@media all and (max-width: 800px) {
 #wwuheader {
-    a.wwuLogo h1 {
+  a.wwuLogo h1 {
       @include zen-grid-item(1,1,left);
       margin-bottom:-.375em;
       background: url('../../images/wwuhorizlogo.png') no-repeat;
@@ -109,7 +103,7 @@ $zen-auto-include-item-base: false;
       height: 74px;
     }
     #mobileWWUmenu {
-      @include zen-grid-item(1,1,right);
+      float:right;
       background-color:rgb(75, 104, 156);
       //width:2.75em;
       height:100%;
@@ -208,11 +202,15 @@ $zen-auto-include-item-base: false;
         }
       }
     }
-}
-
-  #logo, #logoImage{
-    display:none;
   }
+
+/* ****************************************************
+                Mobile-size -> 360px
+**************************************************** */
+
+@media all and (max-width:360px) {
+  $zen-column-count: 1;
+  #logo, #logoImage { display:none; }
   #collegeheader {
     @include zen-clear();
     position:relative;
@@ -314,6 +312,7 @@ $zen-auto-include-item-base: false;
         }
       }
     }
+  }
   //End college header
 
   #main {
