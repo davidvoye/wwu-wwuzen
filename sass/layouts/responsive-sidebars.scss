@@ -569,9 +569,6 @@ $zen-auto-include-item-base: false;
       }
     } //End college header
 
-
-
-
   #main {
     @include zen-clear();
     @include zen-grid-item(3,1);
@@ -588,6 +585,7 @@ $zen-auto-include-item-base: false;
 
   }
 //Hide the navigation that moves to the bottom of the page.
+
   #block-accordion-menu-1 {
     display:none;
   }
@@ -663,6 +661,7 @@ $zen-auto-include-item-base: false;
     margin-left:auto;
     margin-right:auto;
     position:relative;
+
     margin-left: 1em;
 
     ul.menu {
@@ -692,8 +691,6 @@ $zen-auto-include-item-base: false;
   }
 }
 
-
-
 /* ****************************************************
      Footer breakpoint (larger) 640px <--> 767px
 **************************************************** */
@@ -710,12 +707,12 @@ $zen-auto-include-item-base: false;
   #footer {
   @include zen-grid-item(3,1);
   }
+
   #footer-left {
     font-size: .875em;
     position: relative;
     @include zen-grid-item(1.5,1,left);
     margin-left:1em;
-
   }
   #footer-center {
     @include zen-grid-item(1,2.5,left);
@@ -724,16 +721,11 @@ $zen-auto-include-item-base: false;
   #footer-right {
     @include zen-clear(both);
     @include zen-grid-item(3,1);
-
-    h3 {
-      padding-left:1em;
-    }
-
+    h3 { padding-left:1em; }
     #footer-right-contact-info {
       @include zen-clear(both);
       @include zen-grid-item(1.5,1,left);
     }
-
     #footer-right-social-media-icons {
       @include zen-grid-item(1,2.5,left);
       padding-left: 15px;
@@ -750,18 +742,13 @@ $zen-auto-include-item-base: false;
 @media all and (min-width:768px) and (max-width: 800px) {
   $zen-column-count: 3;
 
- #footer-wrapper {
-    @include zen-clear(both);
- }
-  #footer {
-  @include zen-grid-item(3,1);
-  }
+  #footer-wrapper { @include zen-clear(both); }
+  #footer { @include zen-grid-item(3,1); }
   #footer-left {
     font-size: .875em;
     position: relative;
     @include zen-grid-item(.6,1,left);
     margin-left:1em;
-
   }
 
   #site-name { position:static; }
@@ -776,7 +763,6 @@ $zen-auto-include-item-base: false;
     margin-top:-1.813em;
     position: relative;
     width:19.5em;
-
     h3 {
       padding-left:.5em;
       padding-right:.5em;
@@ -785,11 +771,8 @@ $zen-auto-include-item-base: false;
     #footer-right-social-media-icons {
     padding-left:.5em;
     }
-
   }
-
 }
-
 /* ****************************************************
       Footer breakpoint (Over-size) 800px ->
 **************************************************** */
@@ -803,7 +786,6 @@ $zen-auto-include-item-base: false;
 /* ****************************************************
                 Over-size 801px ->
 **************************************************** */
-
 
 @media all and (min-width: 801px) {
   // Use 12 grid columns for larger screens.
@@ -915,7 +897,6 @@ $zen-auto-include-item-base: false;
     float:right;
     margin-top:-1.813em;
     margin-right:2em;
-
     h3 {
       padding-left:1em;
       padding-right:1em;
