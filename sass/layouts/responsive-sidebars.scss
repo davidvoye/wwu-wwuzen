@@ -821,25 +821,26 @@ $zen-auto-include-item-base: false;
     @include zen-grid-item(12,1);
     margin-bottom:.563em;
     #menu-icons {
+      width:50%;
       position:absolute;
-      top:.5em;
-      right:8em;
+      top:0;
+      right:0;
+      @include transition(.5s);
       .quick-links {
         position:absolute;
         top:10px;
-        right:50px;
-        width:25em;
+        left:2em;
+      }
+      .wwusearch {
+        position:absolute;
+        left:26.5em;
+        top:5px;
       }
       .quick-links-toggle, #mobileNavTrigger { display:none; }
       #wwumenu, #search { display:block; }
       #s-toggle {
         height:44px;
         width:44px;
-      }
-      .wwusearch {
-        position:absolute;
-        top:-5px;
-        right:1em;
       }
     }
   } // End #wwuheader
@@ -916,16 +917,12 @@ $zen-auto-include-item-base: false;
   }
 }
 /* ****************************************************
-                Oversize 1300px ->
+                Oversize 1000px ->
 **************************************************** */
 
-/*
-@media all and (min-width: 1300px) {
+
+@media all and (min-width: 801px) and (max-width: 1000px) {
   // Use 12 grid columns for larger screens.
   $zen-column-count: 12;
-  #wwuheader #menu-icons {
-    @include zen-grid-item(7.5,6.75);
-    .wwusearch { @include zen-grid-item(1,7); }
-  } // End #wwuheader
+  #wwuheader #menu-icons { width:62%; @include transition(.5s); }
 }
-*/
