@@ -541,6 +541,7 @@ $zen-auto-include-item-base: false;
   // Use 12 grid columns for larger screens.
   $zen-column-count: 12;
 
+#navigation #main-menu ul li { float:none; }
   #top-stripe {
     @include zen-grid-item(12,1);
     height: .375em;
