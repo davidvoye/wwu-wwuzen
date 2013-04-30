@@ -148,11 +148,13 @@ $zen-auto-include-item-base: false;
     #search {
       @include zen-clear(right);
       display:none;
-      position: fixed;
+      position:absolute;
+      width:19em;
       top:68px;
       right:44px;
       z-index:100;
       margin-top:0;
+      @include transition(width .25s);
     }
   } // End .wwusearch
   #wwumenu {
@@ -160,7 +162,8 @@ $zen-auto-include-item-base: false;
     padding:.5em;
     background-color:#fff;
     list-style-type:none;
-    position:fixed;
+    position:absolute;
+    width:19em;
     height:55px;
     right:44px;
     top:0;
@@ -355,7 +358,8 @@ $zen-auto-include-item-base: false;
 @media all and (max-width:360px) {
   $zen-column-count: 1;
   #wwuheader .wwusearch #search {
-    width:15.75em;
+    width:16em;
+    @include transition(width .25s);
     .form-submit { border-left: solid 1.75em white; box-shadow:none; }
   }
 
