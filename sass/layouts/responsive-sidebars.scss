@@ -534,7 +534,7 @@ $zen-auto-include-item-base: false;
 }
 
 /* ****************************************************
-                Over-size 801px ->
+                Screens 801px ->
 **************************************************** */
 
 @media all and (min-width: 801px) {
@@ -629,16 +629,16 @@ $zen-auto-include-item-base: false;
   #footer-center {
     position:relative;
     @include zen-grid-item(3,4.75);
-      padding: 0px 0px 0px 0px;
+      padding: 0;
       margin-right:0;
 
       ul.menu {
-        padding: 0px 0px 0px 15px;
+        padding: 0 0 0 15px;
 
         li {
           font-size:.8750em;
           display: block;
-          padding: 0.5em 0em 0em 0em;
+          padding: 0.5em 0 0 0;
         }
       }
     }
@@ -651,9 +651,7 @@ $zen-auto-include-item-base: false;
       padding-left:1em;
       padding-right:1em;
     }
-    #footer-right-social-media-icons {
-      padding-left:1em;
-    }
+    #footer-right-social-media-icons { padding-left:1em; }
   }
 }
 /* ****************************************************
