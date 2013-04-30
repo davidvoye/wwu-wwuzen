@@ -66,8 +66,6 @@ Drupal.behaviors.siteNameTypography = {
 	Drupal.behaviors.mobileWwuMainMenu = {
 		attach: function () {
 
-	// START SEARCH TOGGLE CODE
-
 		$('#mobileNavTrigger').click(function () {
 			var mainMenu = $('#main-menu ul.menu');
 			if (mainMenu.is(':visible')) {
