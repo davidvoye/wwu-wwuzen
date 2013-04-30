@@ -74,13 +74,13 @@
       <!--Retrieve our images for use in the header -->
     <?php
     //Desktops get this image
-      $wwuLogo = base_path().path_to_theme() . '/images/wwu.png';
-      $wwuSearchIcon = base_path().path_to_theme() . '/images/icons/search.png';
+      $wwuLogo = drupal_get_path('theme', 'wwuzen') . '/images/wwu.png';
+      $wwuSearchIcon = drupal_get_path('theme', 'wwuzen') . '/images/icons/search.png';
     //Mobile devices get these images
-      $wwuHorizontalLogo = base_path().path_to_theme() . '/images/wwuhorizlogo.png';
-      $wwuMobileMenuIcon = base_path().path_to_theme() . '/images/icons/toolbar-links.png';
-      $wwuMobileSearchIcon = base_path().path_to_theme() . '/images/icons/search-gray.png';
-      $wwuMobileMainMenuIcon = base_path().path_to_theme() . '/images/icons/main-menu.png';
+      $wwuHorizontalLogo = drupal_get_path('theme', 'wwuzen') . '/images/wwuhorizlogo.png';
+      $wwuMobileMenuIcon = drupal_get_path('theme', 'wwuzen') . '/images/icons/toolbar-links.png';
+      $wwuMobileSearchIcon = drupal_get_path('theme', 'wwuzen') . '/images/icons/search-gray.png';
+      $wwuMobileMainMenuIcon = drupal_get_path('theme', 'wwuzen') . '/images/icons/main-menu.png';
     ?>
     <header id="wwuheader">
       <a href="http://www.wwu.edu" class="wwuLogo"><h1>Western Washington University</h1></a>
@@ -91,9 +91,9 @@
 
           <ul id="wwumenu">
             <li><a href="http://www.wwu.edu/academic_calendar" title="Calendar"><span aria-hidden="true">c</span> <span>Calendar</span></a></li>
-            <li><a href="http://www.wwu.edu/directory" title="Directory"><span aria-hidden="true">d</span> <span>Directory</span></a></li>    
-            <li><a href="http://www.wwu.edu/index" title="Index"><span aria-hidden="true">i</span> <span>Index</span></a></li>    
-            <li><a href="http://www.wwu.edu/campusmaps" title="Map"><span aria-hidden="true">l</span> <span>Map</span></a></li>    
+            <li><a href="http://www.wwu.edu/directory" title="Directory"><span aria-hidden="true">d</span> <span>Directory</span></a></li>
+            <li><a href="http://www.wwu.edu/index" title="Index"><span aria-hidden="true">i</span> <span>Index</span></a></li>
+            <li><a href="http://www.wwu.edu/campusmaps" title="Map"><span aria-hidden="true">l</span> <span>Map</span></a></li>
             <li><a href="http://mywestern.wwu.edu" title="myWestern"><span aria-hidden="true">w</span> <span>myWestern</span></a></li>
           </ul>
         </div>
@@ -215,15 +215,15 @@
       <div id="footer-right">
         <!-- //Retrieve our icon images -->
         <?php
-          $addressIcon = base_path().path_to_theme() . '/images/AddressIcon.png';
-          $phoneIcon = base_path().path_to_theme() . '/images/PhoneIcon.png';
-          $emailIcon = base_path().path_to_theme() . '/images/EmailIcon.png';
-          $facebookIcon = base_path().path_to_theme() . '/images/FacebookIcon.png';
-          $flickrIcon = base_path().path_to_theme() . '/images/FlickrIcon.png';
-          $twitterIcon = base_path().path_to_theme() . '/images/TwitterIcon.png';
-          $youTubeIcon = base_path().path_to_theme() . '/images/YouTubeIcon.png';
-          $googlePlusIcon = base_path().path_to_theme() . '/images/GooglePlusIcon.png';
-          $rssIcon = base_path().path_to_theme() . '/images/RSSicon.png';
+          $addressIcon = drupal_get_path('theme', 'wwuzen') . '/images/AddressIcon.png';
+          $phoneIcon = drupal_get_path('theme', 'wwuzen') . '/images/PhoneIcon.png';
+          $emailIcon = drupal_get_path('theme', 'wwuzen') . '/images/EmailIcon.png';
+          $facebookIcon = drupal_get_path('theme', 'wwuzen') . '/images/FacebookIcon.png';
+          $flickrIcon = drupal_get_path('theme', 'wwuzen') . '/images/FlickrIcon.png';
+          $twitterIcon = drupal_get_path('theme', 'wwuzen') . '/images/TwitterIcon.png';
+          $youTubeIcon = drupal_get_path('theme', 'wwuzen') . '/images/YouTubeIcon.png';
+          $googlePlusIcon = drupal_get_path('theme', 'wwuzen') . '/images/GooglePlusIcon.png';
+          $rssIcon = drupal_get_path('theme', 'wwuzen') . '/images/RSSicon.png';
          ?>
           <div id="footer-right-heading">
             <h3>Western Washington University</h3>
