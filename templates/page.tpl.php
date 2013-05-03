@@ -105,15 +105,12 @@
               <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
               <?php print $search_box; ?>
             </div>
+          </div>
+
+          <div class="main-navigation" id="mobileNavTrigger">
+            <img src="<?php print $wwuMobileMainMenuIcon;?>" alt="Main menu links" class="main-menu-toggle icon-size">
+          </div>
         </div>
-
-        <div class="main-navigation" id="mobileNavTrigger">
-          <img src="<?php print $wwuMobileMainMenuIcon;?>" alt="Main menu links" class="main-menu-toggle icon-size">
-        </div>
-      </div>
-
-  </nav>
-
 
     </header> <!-- end #wwuheader -->
 
