@@ -128,9 +128,9 @@ function wwuzen_preprocess_maintenance_page(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("html" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function wwuzen_preprocess_html(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+  //Add the slide effect for our search box and wwumenu
+  drupal_add_library('system','ui');
 
   // The body tag's classes are controlled by the $classes_array variable. To
   // remove a class from $classes_array, use array_diff().
@@ -152,8 +152,6 @@ function wwuzen_preprocess_page(&$variables, $hook) {
   //Render the search box variable so we can place it in the header.
   $search_box = drupal_get_form('google_appliance_block_form');
   $variables['search_box'] = drupal_render($search_box);
-  //Add the slide effect for our search box
-  drupal_add_library('system','effects.slide');
 }
 // */
 
