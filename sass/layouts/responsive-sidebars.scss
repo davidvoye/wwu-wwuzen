@@ -101,7 +101,7 @@ $zen-auto-include-item-base: false;
     @include zen-grid-item(1,1,left);
     margin-bottom:-.375em;
     background: url('../../images/wwuhorizlogo.png') no-repeat;
-    width: 320px;
+    width: 100%;
     height: 74px;
   }
   #mobileWWUmenu {
