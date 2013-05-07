@@ -378,6 +378,17 @@ $zen-auto-include-item-base: false;
       margin-left:1em;
     }
   }
+  #content article {
+    figure {
+      margin:0 auto;
+      float:none !important;
+      display:block;
+    }
+    blockquote {
+      max-width:100%;
+      margin:.5em;
+    }
+  }
 }
 /* ****************************************************
               Tablet-size 361px <--> 800px
@@ -564,7 +575,7 @@ $zen-auto-include-item-base: false;
       top:0;
       right:0;
       @include transition(.5s);
-      z-index:999;
+      z-index:555;
       .quick-links {
         position:absolute;
         top:15px;
