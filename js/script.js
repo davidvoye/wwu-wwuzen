@@ -28,6 +28,8 @@ Drupal.behaviors.siteNameTypography = {
 	}
 }
 
+
+
 	Drupal.behaviors.searchSlider = {
 		attach: function () {
 
