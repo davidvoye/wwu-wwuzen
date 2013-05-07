@@ -575,7 +575,7 @@ $zen-auto-include-item-base: false;
       top:0;
       right:0;
       @include transition(.5s);
-      z-index:999;
+      z-index:555;
       .quick-links {
         position:absolute;
         top:15px;
