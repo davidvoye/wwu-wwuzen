@@ -28,6 +28,13 @@ Drupal.behaviors.siteNameTypography = {
 	}
 }
 
+Drupal.behaviors.uiIconStuff = {
+		attach: function () {
+
+		$('.accordion-link').wrapInner('<a href="http://google.com" />');
+	}
+}
+
 	Drupal.behaviors.searchSlider = {
 		attach: function () {
 

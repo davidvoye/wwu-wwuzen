@@ -161,7 +161,6 @@ li a.active {
     &:hover { color:$wwuLtblue; @include transition(.3s); }
   }
 }
-
 .block-accordion-menu .ui-accordion-header {
   @include background-image(linear-gradient(left, #eee 0%,#eee 84%,#fff 84%,#ddd 85%,#ddd 100%));
   .ui-icon {
@@ -170,8 +169,14 @@ li a.active {
     top:auto;
     margin:.5em 0;
   }
-  .accordion-link { margin-right:2em; }
+  .accordion-link { margin-right:2.5em; }
 }
+
+.ui-accordion .ui-accordion-header .accordion-link a {
+  padding: 0;
+  margin: 0;
+}
+
 
 .block-accordion-menu .no-children {
   background-image:none;
