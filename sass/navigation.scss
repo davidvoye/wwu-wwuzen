@@ -117,22 +117,27 @@ li a.active {
       text-transform:uppercase;
       display:table-cell;
       text-align: center;
+      @include transition(.5s);
       &:hover {
         background-color: #ddd;
         color: $wwuBlue;
         cursor:pointer;
-        a { color:$wwuBlue; }
+        @include transition(.1s);
+        a { color:$wwuBlue; @include transition(.1s);}
       }
       a {
         color:#fff;
         text-decoration:none;
         display:block;
+        @include transition(.5s);
       }
       &:last-child { border:none; }
     }
 
     li.active {
       background-color:#ddd;
+      @include transition(.5s);
+      &:hover { background-color:#eee; @include transition(.1s); }
       .active { color:$wwuBlue; }//ul.links li.active a.active
     }//ul.links li.active
   }//ul.links
