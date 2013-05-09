@@ -116,24 +116,28 @@ li a.active {
       padding:5px 0px;
       text-transform:uppercase;
       display:table-cell;
-      float:none;
       text-align: center;
+      @include transition(.5s);
       &:hover {
         background-color: #ddd;
         color: $wwuBlue;
         cursor:pointer;
-        a { color:$wwuBlue; }
+        @include transition(.1s);
+        a { color:$wwuBlue; @include transition(.1s);}
       }
       a {
         color:#fff;
         text-decoration:none;
         display:block;
+        @include transition(.5s);
       }
       &:last-child { border:none; }
     }
 
     li.active {
       background-color:#ddd;
+      @include transition(.5s);
+      &:hover { background-color:#eee; @include transition(.1s); }
       .active { color:$wwuBlue; }//ul.links li.active a.active
     }//ul.links li.active
   }//ul.links
@@ -157,16 +161,35 @@ li a.active {
     color: #222;
     display:block;
     font-size:.925em;
-    padding-left:2em;
+    padding-left:1em;
     @include transition(.5s);
     &:hover { color:$wwuLtblue; @include transition(.3s); }
   }
 }
+.block-accordion-menu .ui-accordion-header {
+  @include background-image(linear-gradient(left, #eee 0%,#eee 84%,#fff 84%,#ddd 85%,#ddd 100%));
+  .ui-icon {
+    right:.75em;
+    left:auto;
+    top:auto;
+    margin:.5em 0;
+  }
+  .accordion-link { margin-right:2.5em; }
+}
+
+.ui-accordion .ui-accordion-header .accordion-link a {
+  padding: 0;
+  margin: 0;
+}
+
 
 .block-accordion-menu .no-children {
-  a { padding-left:2em; }
+  background-image:none;
+  a { padding-left:1em; }
   .ui-icon { display:none; }
 }
+
+
 
 //Get rid of the default border radii
 .ui-corner-all { border-radius:0; }
@@ -199,22 +222,22 @@ li a.active {
         text-decoration:none;
         display:block;
         margin:0;
-        padding: .5em 0 .5em 3.5em;
+        padding: .5em 0 .5em 2em;
         border-bottom:solid 1px #fff;
         &.first a { margin:0; }
       }
       li {
         //background-color:#ccc;
-        a { padding-left:5em; }
+        a { padding-left:3.5em; }
         li {
           //background-color:#bbb;
-          a { padding-left:6.5em; }
+          a { padding-left:5em; }
           li {
             //background-color:#aaa;
-            a { padding-left:8em; }
+            a { padding-left:6.5em; }
             li {
               //background-color:#999;
-              a { padding-left:9.5em; }
+              a { padding-left:8em; }
             }
           }
         }

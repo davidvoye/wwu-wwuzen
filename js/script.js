@@ -28,6 +28,8 @@ Drupal.behaviors.siteNameTypography = {
 	}
 }
 
+
+
 	Drupal.behaviors.searchSlider = {
 		attach: function () {
 
@@ -65,8 +67,6 @@ Drupal.behaviors.siteNameTypography = {
 	// START MAIN MENU TOGGLE CODE
 	Drupal.behaviors.mobileWwuMainMenu = {
 		attach: function () {
-
-	// START SEARCH TOGGLE CODE
 
 		$('#mobileNavTrigger').click(function () {
 			var mainMenu = $('#main-menu ul.menu');

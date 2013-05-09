@@ -22,9 +22,10 @@
   color: transparent;
 }
 // @include hide-text-bg-img;
-/*
- * Body
- */
+
+/* ****************************************************
+                        Body
+**************************************************** */
 
 body {
   margin: 0;
@@ -32,8 +33,7 @@ body {
   background-color: #e9e9e9;
 }
 
-#page {
-}
+#page {}
 
 /*
  * The skip-link link will be completely hidden until a user tabs to the link.
@@ -42,7 +42,6 @@ body {
 
 #skip-link {
   margin: 0;
-
   a,
   a:visited {
     display: block;
@@ -54,9 +53,9 @@ body {
   }
 }
 
-/*
- * Header
- */
+/* ****************************************************
+                       Header
+**************************************************** */
 
 #wwuheader {
   font-family:$muli;
@@ -101,12 +100,8 @@ body {
       width:12px;
       text-align:center;
       text-decoration:none;
+      &:hover { color:#666; }
     }
-
-    a:hover {
-      color:#666;
-    }
->>>>>>> a983261e0be6aa8890b31baecc70a81a41f8c48b
     input {
       font-size:.85em;
       font-family:$muli;
@@ -129,6 +124,7 @@ body {
       position:absolute;
       top:0;
       right:-1px;
+      border-radius:0;
     }
     .form-type-checkbox {
       display:block;
@@ -168,26 +164,11 @@ body {
     }
   }
 
-#searchwrapper {
-  // position:absolute; left:307px; top:39px; width:650px; height:38px;
-}
-#iconbox {
-  // position:absolute; left:957px; top:38px; width:41px; height:39px;text-align:center;background-color:#FFF;overflow:hidden;
-}
-
-
 #logo { /* Wrapping link for college banner = logo */
   float: left; /* LTR */
   padding: 0;
   width: 100%;
-  img {
-
-    vertical-align: bottom;
-  }
-}
-
-#name-and-slogan { /* Wrapper for website name and slogan */
-  //float: left;
+  img { vertical-align: bottom; }
 }
 
 #site-slogan { /* The slogan (or tagline) of a website */
@@ -199,30 +180,20 @@ body {
   clear: both; /* Clear the logo */
 }
 
-/*
- * Main (container for everything else)
- */
+/* ****************************************************
+          Main (container for everything)
+**************************************************** */
 
 #main {
-   padding: .625em;
-   //In case nothing is supported.
-   background-color: #ffffff;
-   //filter gradient for IE6-8
-   @include filter-gradient(rgba(255,255,255,1), rgba(233,233,233,1), vertical);
-   //SVG for IE 9 and Opera
-   $experimental-support-for-svg: true;
-   //Standard Gradients for all other browsers
-   @include background-image(
-    linear-gradient(top, rgba(255,255,255,1),rgba(233,233,233,1) 80%));
+  padding: .625em;
+  @include background-image(linear-gradient(rgba(255,255,255,1), rgba(233,233,233,1)));
 }
 
-/*
- * Content
- */
+/* ****************************************************
+                        Content
+**************************************************** */
 
-#content {
-  clear:both;
-}
+#content { clear:both; }
 
 header#department {
   border-bottom:solid 3px #E9E9E9;
@@ -230,8 +201,7 @@ header#department {
   margin-bottom:1em;
 }
 
-.region-highlighted {
-}
+.region-highlighted {}
 
 .breadcrumb { /* The path to the current page in the form of a list of links */
   float:right;
@@ -258,7 +228,9 @@ header#department {
   }
 }
 
-/* link styling */
+/* ****************************************************
+                        Links
+**************************************************** */
 
 a {
   text-decoration: none;
@@ -338,12 +310,7 @@ h2 { margin-top:.5em; font-size:$h1-font-size; }
   }
 }
 
-#content ul, #content ol {
-  margin:0;
-  //padding-left:1.5em;
-}
-
-// Table styles
+#content ul, #content ol { margin:0; }
 
 table {
   border-collapse:collapse;
@@ -351,8 +318,7 @@ table {
   font-family:$muli;
 }
 
-// Zebra striping
-tr:nth-of-type(odd) { background:#eee; }
+tr:nth-of-type(odd) { background:#eee; } // Zebra striping
 
 th {
   font-weight:normal;
@@ -367,19 +333,12 @@ td, th {
 tr { border-bottom:1px solid #fff; }
 td, th { border-right:1px solid #fff; }
 
-
-// Definition lists
-
 dl {
   @extend p;
   margin-left: 1.5em;
   dt { @extend h4; }
   dd { margin-left: 1.5em; }
 }
-
-
-
-// Figures and figcaptions
 
 figure {
   background-color:#fff;
@@ -409,7 +368,6 @@ figure {
 
 div.messages { /* Important messages (status, warning, and error) for the user. See also the declarations in messages.css. */
   margin: 1.5em 0; /* Drupal core uses "6px 0" margin */
-
   ul {
     margin-top: 0;
     margin-bottom: 0;
@@ -496,14 +454,14 @@ span.field-label { /* The inline field label used by the Fences module */
 .region-sidebar-second {
 }
 
-/*
- * Footer
- */
+/* ****************************************************
+                       Footer
+**************************************************** */
 
 #footer {
   background-color: $wwuBlue;
   color: white;
-  border-top:.8em solid #ffffff;
+  border-top:.8em solid #fff;
   padding-bottom:1em;
   font-family:$muli;
 }
@@ -518,55 +476,44 @@ span.field-label { /* The inline field label used by the Fences module */
 
 #footer-center {
   li {
-    border-bottom:1px solid #ffffff;
+    border-bottom:1px solid #fff;
     list-style: none;
-
     a {
-      color:#ffffff;
+      color:#fff;
       text-decoration:none;
       padding-left:.15em;
       text-transform:capitalize;
-
       &:after {
-          content: "\00A0";
-          &:hover {
-            border-bottom:1px solid $wwuYellow;
-          }
-          width:100%;
-          position: absolute;
-          left:0;
+        content: "\00A0";
+        &:hover { border-bottom:1px solid $wwuYellow; }
+        width:100%;
+        position: absolute;
+        left:0;
       }
-
-      &:hover {
-        color:$wwuLime;
-          }
-        }
-      }
+      &:hover { color:$wwuLime; }
     }
+  }
+}
 
 
 #footer-right {
-
-    min-width: 19em;
-    @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
-    font-family:$muli;
-
-
+  min-width: 19em;
+  @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
+  font-family:$muli;
   #footer-right-heading {
-    background-color: #ffffff;
+    background-color: #fff;
     width:100%;
     height:2.520em;
     @include box-shadow(#555 0 0 7px);
-
-  h3 {
-    font-size:1em;
-    color:$wwuBlue;
-    margin:0;
-    padding-top: 0.8em;
-    border: none;
-    text-transform:uppercase;
+    h3 {
+      font-size:1em;
+      color:$wwuBlue;
+      margin:0;
+      padding-top: 0.8em;
+      border: none;
+      text-transform:uppercase;
+      }
     }
-  }
 
   #footer-right-contact-info {
     padding-left:1.25em;
@@ -576,35 +523,34 @@ span.field-label { /* The inline field label used by the Fences module */
       float:left;
       padding-right:.625em;
       margin-top:.5em;
-
     }
-
-      p {
-        margin-bottom:0;
-        margin-top:0;
-      }
-      p.second-address-line {
-        padding-left:1.5em;
-        margin-top:-.6em;
-        }
-      a {
-        color:#ffffff;
-      }
+    p {
+      margin-bottom:0;
+      margin-top:0;
     }
-    #footer-right-social-media-icons {
-      position:relative;
-      margin-top:1.438em;
+    p.second-address-line {
+      padding-left:1.5em;
+      margin-top:-.6em;
     }
+    a { color:#fff; }
   }
-/*
- * Page bottom
- */
+  #footer-right-social-media-icons {
+    position:relative;
+    margin-top:1.438em;
+  }
+}
+/* ****************************************************
+                      Page Bottom
+**************************************************** */
 
 .region-bottom { /* Wrapper for any blocks placed in the page bottom region */
 }
 
 
-//Miscellaneous Page Elements
+/* ****************************************************
+                    Miscellaneous
+**************************************************** */
+
 html.js input.form-autocomplete {
   background-position:100% 5px;
 }
