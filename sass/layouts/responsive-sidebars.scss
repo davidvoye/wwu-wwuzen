@@ -210,6 +210,7 @@ $zen-auto-include-item-base: false;
   #collegeheader {
     @include zen-clear();
     z-index:-10;
+    background-color:$wwuLtblue;
     @include background(linear-gradient(top, lighten($wwuLtblue, 10%), $wwuLtblue));
     #name-and-slogan {
       @include zen-grid-item(1,1);
@@ -617,6 +618,7 @@ $zen-auto-include-item-base: false;
     } // End #collegeheader
 
   #site-name { /* The name of the website */
+    background-color:($wwuLtblue); /* Fallback for older browsers */
     background-color:rgba($wwuLtblue, .8);
     position:absolute;
     top:76px;
