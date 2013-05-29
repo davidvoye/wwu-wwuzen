@@ -611,18 +611,21 @@ $zen-auto-include-item-base: false;
       position:relative;
       padding: 10px;
       background-color: #fff;
-      height: 222px; //extend white background below menu
+      height: 228px; //extend white background below menu
       margin-top: -90px; //slide college logo (banner) right under wwu logo
       #navigation ul li ul { display:none; }
       #navigation #main-menu ul li { float:none; }
     } // End #collegeheader
 
+  #name-and-slogan {
+    position: absolute;
+    right: 10px;
+    bottom:41px;
+  }
+
   #site-name { /* The name of the website */
     background-color:($wwuLtblue); /* Fallback for older browsers */
     background-color:rgba($wwuLtblue, .8);
-    position:absolute;
-    top:76px;
-    right:10px;
     }
   } // End #header
   #main {
