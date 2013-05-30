@@ -107,11 +107,12 @@ Drupal.behaviors.siteNameTypography = {
 	}
 }
 
+//These next two behaviors do the exact same thing, on onLoad and one on resize
 
-
-Drupal.behaviors.resizeHeader = {
+Drupal.behaviors.resizeHeaderOnLoad = {
   attach: function () {
-    function resizeHeader() {
+  //START RESIZE COLLEGE HEADER AND SET HEIGHT CODE
+  $(window).ready(function () {
     var divHeight = $("#collegeheader").children().outerHeight(true);
     var menuHeight = $("#main-menu").outerHeight(true);
     //For the mobile views we need another container to use since main menu is collapsed
@@ -129,10 +130,33 @@ Drupal.behaviors.resizeHeader = {
         } else {
           $('#collegeheader').css({'height': totalHeightWithMenu + "px"});
           }
-    }
+    });
+    //END RESIZE COLLEGE HEADER CODE
+  }
+}
+
+Drupal.behaviors.resizeHeaderOnResize = {
+  attach: function () {
   //START RESIZE COLLEGE HEADER AND SET HEIGHT CODE
-  $(window).resize(resizeHeader ());
-  $(window).load(resizeHeader());
+  $(window).resize(function () {
+    var divHeight = $("#collegeheader").children().outerHeight(true);
+    var menuHeight = $("#main-menu").outerHeight(true);
+    //For the mobile views we need another container to use since main menu is collapsed
+    var nameAndSlogan = $("#name-and-slogan").outerHeight(true);
+    //add the two heights and 10 more pixels to compensate for space beneath the main menu
+    var totalHeightWithMenu = divHeight + menuHeight + 10;
+    var totalHeightSansMenu = divHeight + nameAndSlogan;
+    //Testing for a condition forces the height to be calculated.
+      if (totalHeightSansMenu <= 61) {
+        totalHeightSansMenu = totalHeightSansMenu + 76;
+        $('#collegeheader').css({'height': totalHeightSansMenu + "px"});
+      } else if (totalHeightSansMenu <= 84) {
+        totalHeightSansMenu = totalHeightSansMenu + 1;
+        $('#collegeheader').css({'height': totalHeightSansMenu + "px"});
+        } else {
+          $('#collegeheader').css({'height': totalHeightWithMenu + "px"});
+          }
+    });
     //END RESIZE COLLEGE HEADER CODE
   }
 }
