@@ -112,7 +112,7 @@ Drupal.behaviors.siteNameTypography = {
 Drupal.behaviors.resizeHeaderOnLoad = {
   attach: function () {
   //START RESIZE COLLEGE HEADER AND SET HEIGHT CODE
-  $(window).ready(function () {
+  $(window).load(function () {
     var divHeight = $("#collegeheader").children().outerHeight(true);
     var menuHeight = $("#main-menu").outerHeight(true);
     //For the mobile views we need another container to use since main menu is collapsed
