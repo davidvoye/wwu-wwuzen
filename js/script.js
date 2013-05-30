@@ -20,10 +20,10 @@ Drupal.behaviors.siteNameTypography = {
 
 		// Gets copy from site name (ultimately inside a span: #site-name a span)
 		var siteName = $("#site-name").text();
-		
+
 		var typographyAnd = siteName.replace("and", "<span class=\"diminutive-type site-name-and\">and</span>");
 		var typographyCollegeOf = typographyAnd.replace("College of", "<span class=\"diminutive-type site-name-college-of\">College of</span>");
-		
+
 		$('#site-name a span').replaceWith(typographyCollegeOf);
 	}
 }
@@ -108,10 +108,10 @@ Drupal.behaviors.siteNameTypography = {
 }
 
 
+
 Drupal.behaviors.resizeHeader = {
   attach: function () {
-  //START RESIZE COLLEGE HEADER AND SET HEIGHT CODE
-  $(window).resize(function () {
+    function resizeHeader() {
     var divHeight = $("#collegeheader").children().outerHeight(true);
     var menuHeight = $("#main-menu").outerHeight(true);
     //For the mobile views we need another container to use since main menu is collapsed
@@ -129,7 +129,10 @@ Drupal.behaviors.resizeHeader = {
         } else {
           $('#collegeheader').css({'height': totalHeightWithMenu + "px"});
           }
-    });
+    }
+  //START RESIZE COLLEGE HEADER AND SET HEIGHT CODE
+  $(window).resize(resizeHeader ());
+  $(window).load(resizeHeader());
     //END RESIZE COLLEGE HEADER CODE
   }
 }
