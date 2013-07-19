@@ -160,21 +160,20 @@ li a.active {
   a, span.accordion-link {
     color: #222;
     display:block;
-    font-size:.925em;
     padding-left:1em;
     @include transition(.5s);
     &:hover { color:$wwuLtblue; @include transition(.3s); }
   }
 }
 .block-accordion-menu .ui-accordion-header {
-  @include background-image(linear-gradient(left, #eee 0%,#eee 84%,#fff 84%,#ddd 85%,#ddd 100%));
+  @include background-image(linear-gradient(left, #eee 0%,#eee 79%,#fff 79%,#ddd 100%,#ddd 100%));
   .ui-icon {
-    right:.75em;
+    right:.8em;
     left:auto;
-    top:auto;
+    top:10%;
     margin:.5em 0;
   }
-  .accordion-link { margin-right:2.5em; }
+  .accordion-link { margin-right:2.75em; }
 }
 
 .ui-accordion .ui-accordion-header .accordion-link a {
@@ -202,7 +201,6 @@ li a.active {
 //style the interior accordion content
 .ui-accordion .ui-accordion-content {
   font-family:$muli;
-  font-size:.925em;
   margin:0;
   top:0;
   border:none;

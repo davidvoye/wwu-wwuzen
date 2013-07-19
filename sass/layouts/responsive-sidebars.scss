@@ -352,6 +352,7 @@ $zen-auto-include-item-base: false;
   #edit-subject { width: 100%; } // Override of normalize.scss for the comment subject input area
 }
 
+
 /* ****************************************************
                 Mobile-size -> 360px
 **************************************************** */
@@ -390,6 +391,7 @@ $zen-auto-include-item-base: false;
       margin:.5em;
     }
   }
+    //The left column in layouts needs to float above the main content. These classes are applied in panels.
 }
 /* ****************************************************
               Tablet-size 361px <--> 800px
@@ -412,6 +414,21 @@ $zen-auto-include-item-base: false;
     margin-right: auto;
     margin-top:0em;
     margin-left:1em;
+  }
+}
+
+/* ****************************************************
+            Phone and tablet size 0px <--> 800px
+**************************************************** */
+@media all and (max-width:800px) {
+  //The left column in layouts needs to float above the main content. These classes are applied in panels.
+  .left-column {
+    float:left;
+    width: 100%;
+  }
+  .right-column {
+    clear:left;
+    width:100%;
   }
 }
 
