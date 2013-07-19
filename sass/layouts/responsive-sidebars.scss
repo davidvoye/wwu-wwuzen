@@ -352,7 +352,6 @@ $zen-auto-include-item-base: false;
   #edit-subject { width: 100%; } // Override of normalize.scss for the comment subject input area
 }
 
-
 /* ****************************************************
                 Mobile-size -> 360px
 **************************************************** */
@@ -391,7 +390,6 @@ $zen-auto-include-item-base: false;
       margin:.5em;
     }
   }
-    //The left column in layouts needs to float above the main content. These classes are applied in panels.
 }
 /* ****************************************************
               Tablet-size 361px <--> 800px
