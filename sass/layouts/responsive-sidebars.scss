@@ -416,6 +416,21 @@ $zen-auto-include-item-base: false;
 }
 
 /* ****************************************************
+            Phone and tablet size 0px <--> 800px
+**************************************************** */
+@media all and (max-width:800px) {
+  //The left column in layouts needs to float above the main content. These classes are applied in panels.
+  .left-column {
+    float:left;
+    width: 100%;
+  }
+  .right-column {
+    clear:left;
+    width:100%;
+  }
+}
+
+/* ****************************************************
      Footer breakpoint (smaller) 360px <--> 480px
 **************************************************** */
 
