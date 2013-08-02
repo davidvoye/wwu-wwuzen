@@ -162,4 +162,19 @@ Drupal.behaviors.resizeHeaderOnResize = {
 }
 
 
+// Tooltips for the staff and faculty directories
+Drupal.behaviors.userModuleIcons = {
+  attach: function () {
+    $('.user-module div').click(function(){
+          if($(this).hasClass('tooltip')){
+              $(this).removeClass('tooltip');
+          } else {
+              $(this).addClass('tooltip').siblings().removeClass('tooltip');
+          }
+      });
+    }
+  }
+
+
+
 })(jQuery, Drupal, this, this.document);
