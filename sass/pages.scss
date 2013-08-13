@@ -59,7 +59,8 @@ body {
 
 #wwuheader {
   font-family:$muli;
-  .wwuLogo h1 {
+  .wwuLogo a {
+    display:block;
     z-index: 200;
     margin: -6px 0 0 20px;
     position:relative;

@@ -82,11 +82,11 @@
       $wwuMobileSearchIcon = base_path().path_to_theme() . '/images/icons/search-gray.png';
       $wwuMobileMainMenuIcon = base_path().path_to_theme() . '/images/icons/main-menu.png';
     ?>
-    <header id="wwuheader">
-      <a href="http://www.wwu.edu" class="wwuLogo"><h1>Western Washington University</h1></a>
+    <header id="wwuheader" role="banner" aria-label="Western banner">
+      <span class="wwuLogo"><a href="http://www.wwu.edu">Western Washington University</a></span>
 
       <div id="menu-icons">
-        <div class="quick-links" id="mobileWWUmenu">
+        <div class="quick-links" id="mobileWWUmenu" role="navigation" aria-label="Western quick links">
           <img src="<?php print $wwuMobileMenuIcon;?>" alt="Quick links" class="quick-links-toggle icon-size">
 
           <ul id="wwumenu">
@@ -114,7 +114,7 @@
 
     </header> <!-- end #wwuheader -->
 
-  <header id="header" role="banner">
+  <header id="header" role="banner" aria-label="Site banner">
     <div id="collegeheader">
     <!-- Group Logo (banner) and Site Name and Main Menu for Group -->
     <?php if ($logo): ?>
