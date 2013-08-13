@@ -57,7 +57,7 @@
   border:solid 1px #ddd;
   border-radius:3px;
   @include box-shadow(0 0 2px #ddd);
-  &:hover, &:active { @include box-shadow(0 0 2px $wwuLime); }
+  &:hover, &:focus, &:active { @include box-shadow(0 0 2px $wwuLime); }
 }
 
 .container-inline {
@@ -96,7 +96,7 @@ a.button { /* Buttons used by contrib modules like Media */
     border-radius:3px;
     margin-left:.75em;
     @include box-shadow(0 0 2px #ddd);
-    &:hover, &:active { @include box-shadow(0 0 2px $wwuLime); }
+    &:hover, &:focus, &:active { @include box-shadow(0 0 2px $wwuLime); }
   }
 }
 
