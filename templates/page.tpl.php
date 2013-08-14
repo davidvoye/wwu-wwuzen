@@ -82,8 +82,8 @@
       $wwuMobileSearchIcon = base_path().path_to_theme() . '/images/icons/search-gray.png';
       $wwuMobileMainMenuIcon = base_path().path_to_theme() . '/images/icons/main-menu.png';
     ?>
-    <header id="wwuheader" role="banner" aria-label="Western banner">
-      <span class="wwuLogo"><a href="http://www.wwu.edu">Western Washington University</a></span>
+    <div id="wwuheader" role="banner" aria-label="Western banner">
+      <span class="wwuLogo wwuLink"><a href="http://www.wwu.edu">Western Washington University</a></span>
 
       <div id="menu-icons">
         <div class="quick-links" id="mobileWWUmenu" role="navigation" aria-label="Western quick links">
@@ -112,9 +112,9 @@
           </div>
         </div>
 
-    </header> <!-- end #wwuheader -->
+    </div> <!-- end #wwuheader -->
 
-  <header id="header" role="banner" aria-label="Site banner">
+  <div id="header" role="banner" aria-label="Site banner">
     <div id="collegeheader">
     <!-- Group Logo (banner) and Site Name and Main Menu for Group -->
     <?php if ($logo): ?>
@@ -123,7 +123,7 @@
     <?php endif; ?>
 
     <?php if ($site_name || $site_slogan): ?>
-      <hgroup id="name-and-slogan">
+      <div id="name-and-slogan">
         <?php if ($site_name): ?>
           <h1 id="site-name">
             <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
@@ -133,7 +133,7 @@
         <?php if ($site_slogan): ?>
           <h2 id="site-slogan"><?php print $site_slogan; ?></h2>
         <?php endif; ?>
-      </hgroup><!-- /#name-and-slogan -->
+      </div><!-- /#name-and-slogan -->
     <?php endif; ?>
     <div id="navigation">
       <nav id="main-menu" role="navigation">
@@ -141,9 +141,9 @@
       </nav>
     </div><!-- /#navigation -->
     <?php print render($page['header']); ?>
-  </header>
+  </div>
 
-  <div id="main">
+  <main id="main" role="main">
     <header id="department">
     <?php print render($title_prefix); ?>
       <?php if ($title): ?>
@@ -151,7 +151,7 @@
       <?php endif; ?>
     <?php print $breadcrumb; ?>
     </header>
-    <div id="content" class="column" role="main">
+    <div id="content" class="column">
       <?php print render($page['highlighted']); ?>
 
       <a id="main-content"></a>
@@ -199,7 +199,7 @@
       </aside><!-- /.sidebars -->
     <?php endif; ?>
 
-  </div><!-- /#main -->
+  </main><!-- /main#main -->
   </div><!-- /#max-wrapper  -->
     <div id="footer">
       <div id="footer-wrapper">
@@ -209,7 +209,7 @@
       <div id="footer-center">
         <?php print render($page['footer_center']); ?>
       </div>
-      <div id="footer-right">
+      <div id="footer-right" role="complementary">
         <!-- //Retrieve our icon images -->
         <?php
           $addressIcon = base_path().path_to_theme() . '/images/AddressIcon.png';
