@@ -16,7 +16,7 @@
     border-width:1px;
     border-color:gray;
     border-radius:1px;
-    &:focus, &:active { outline:none; @include box-shadow(0 0 4px 0 $wwuLtblue); }
+    &:focus, &:active { outline:none; @include box-shadow(0 0 4px 0 $wwuOceanBlue); }
   }
 
   input.error,
@@ -36,7 +36,7 @@
   }
 
   .form-required { /* The part of the label that indicates a required field */
-    color: $wwuLtblue;
+    color: $wwuOceanBlue;
   }
 
   .description { /* The descriptive help text (separate from the label) */

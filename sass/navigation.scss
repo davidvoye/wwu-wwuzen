@@ -162,7 +162,7 @@ li a.active {
     display:block;
     padding-left:1em;
     @include transition(.5s);
-    &:hover, &:focus { color:$wwuLtblue; @include transition(.3s); }
+    &:hover, &:focus { color:$wwuOceanBlue; @include transition(.3s); }
   }
 }
 .block-accordion-menu .ui-accordion-header {

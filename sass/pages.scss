@@ -118,7 +118,7 @@ body {
       &:focus { outline:none; }
     }
     .form-submit {
-      background-color:$wwuLtblue;
+      background-color:$wwuOceanBlue;
       color:#fff;
       margin:0;
       padding:0 1em;
@@ -160,7 +160,7 @@ body {
         color: $wwuBlue;
         span:first-child { display:none; }
         &:hover, &:focus {
-          color:$wwuLtblue;
+          color:$wwuOceanBlue;
           text-decoration:underline;
         }
       }
@@ -226,7 +226,7 @@ header#department {
     padding: 0;
     color: gray;
     a {
-      color:$wwuLtblue;
+      color:$wwuOceanBlue;
       text-decoration:none;
       &.active { color:$wwuRed; }
       &:hover, &:focus {text-decoration: underline;}
@@ -240,7 +240,7 @@ header#department {
 
 a {
   text-decoration: none;
-  color: $wwuLtblue;
+  color: $wwuOceanBlue; // Changed from Light Blue to "Ocean Blue" for color contrast
   &:hover, &:focus {text-decoration: underline;}
 }
 

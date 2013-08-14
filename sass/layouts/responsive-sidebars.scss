@@ -193,14 +193,16 @@ $zen-auto-include-item-base: false;
           font-variant: normal;
           text-transform: none;
           line-height: 1em;
+          @include transition(.2s);
         }
         span:last-child {
           display:block;
           font-size:.75em;
         }
-        &:hover {
-          color:$wwuLime;
+        &:hover, &:focus {
+          color:$wwuGreen;
           @include transition(.2s);
+          span:first-child { color:$wwuLime; }
         }
       } // End a
     } // End li
@@ -210,8 +212,8 @@ $zen-auto-include-item-base: false;
   #collegeheader {
     @include zen-clear();
     z-index:-10;
-    background-color:$wwuLtblue;
-    @include background(linear-gradient(top, lighten($wwuLtblue, 10%), $wwuLtblue));
+    background-color:$wwuOceanBlue;
+    @include background(linear-gradient(top, lighten($wwuOceanBlue, 10%), $wwuOceanBlue));
     #name-and-slogan {
       @include zen-grid-item(1,1);
       padding: 0 0 .5em 1.25em;
@@ -244,7 +246,7 @@ $zen-auto-include-item-base: false;
           display:block;
           width:83%;
           @include transition(1s);
-          &:hover {
+          &:hover, &:focus {
             color:$wwuLime;
             @include transition(.2s);
           }
@@ -639,8 +641,8 @@ $zen-auto-include-item-base: false;
   }
 
   #site-name { /* The name of the website */
-    background-color:($wwuLtblue); /* Fallback for older browsers */
-    background-color:rgba($wwuLtblue, .8);
+    background-color:($wwuOceanBlue); /* Fallback for older browsers */
+    background-color:rgba($wwuOceanBlue, .8);
     }
   } // End #header
   #main {
