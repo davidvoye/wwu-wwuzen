@@ -99,7 +99,7 @@
         </div>
 
         <div class="wwusearch">
-          <div class="icon-size" id="s-toggle">Search</div>
+          <div class="icon-size" id="s-toggle" aria-label="Search"><a>Open Search</a></div>
 
             <div id="search" style="display:none;" role="search">
               <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->

@@ -97,7 +97,7 @@ $zen-auto-include-item-base: false;
 #wwuheader {
   background-color:$wwuBlue;
   height:68px;
-  span.wwuLogo a.wwuLink {
+  span.wwuLogo.wwuLink a.wwuLink {
     @include zen-grid-item(1,1,left);
     margin-bottom:-.375em;
     background: url('../../images/wwuhorizlogo.png') no-repeat;
