@@ -82,14 +82,14 @@
       $wwuMobileSearchIcon = base_path().path_to_theme() . '/images/icons/search-gray.png';
       $wwuMobileMainMenuIcon = base_path().path_to_theme() . '/images/icons/main-menu.png';
     ?>
-    <div id="wwuheader" role="banner" aria-label="Western banner">
-      <span class="wwuLogo wwuLink"><a href="http://www.wwu.edu">Western Washington University</a></span>
+    <header id="wwuheader" role="banner" aria-label="Western banner">
+      <span class="wwuLogo wwuLink"><a href="http://www.wwu.edu" class="wwuLink">Western Washington University</a></span>
 
       <div id="menu-icons">
-        <div class="quick-links" id="mobileWWUmenu" role="navigation" aria-label="Western quick links">
+        <div class="quick-links" id="mobileWWUmenu">
           <img src="<?php print $wwuMobileMenuIcon;?>" alt="Quick links" class="quick-links-toggle icon-size">
 
-          <ul id="wwumenu">
+          <ul id="wwumenu" role="navigation" aria-label="Western quick links">
             <li><a href="http://www.wwu.edu/academic_calendar" title="Calendar"><span aria-hidden="true">c</span> <span>Calendar</span></a></li>
             <li><a href="http://www.wwu.edu/directory" title="Directory"><span aria-hidden="true">d</span> <span>Directory</span></a></li>
             <li><a href="http://www.wwu.edu/index" title="Index"><span aria-hidden="true">i</span> <span>Index</span></a></li>
@@ -101,7 +101,7 @@
         <div class="wwusearch">
           <div class="icon-size" id="s-toggle">Search</div>
 
-            <div id="search" style="display:none;">
+            <div id="search" style="display:none;" role="search">
               <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
               <?php print $search_box; ?>
             </div>
@@ -112,9 +112,9 @@
           </div>
         </div>
 
-    </div> <!-- end #wwuheader -->
+    </header> <!-- end #wwuheader -->
 
-  <div id="header" role="banner" aria-label="Site banner">
+  <header id="header" role="banner" aria-label="Site banner">
     <div id="collegeheader">
     <!-- Group Logo (banner) and Site Name and Main Menu for Group -->
     <?php if ($logo): ?>
@@ -136,20 +136,20 @@
       </div><!-- /#name-and-slogan -->
     <?php endif; ?>
     <div id="navigation">
-      <nav id="main-menu" role="navigation">
+      <nav id="main-menu" role="navigation" aria-label="Main or top-level navigation">
             <?php print render($page['navigation']); ?>
       </nav>
     </div><!-- /#navigation -->
     <?php print render($page['header']); ?>
-  </div>
+  </header>
 
   <main id="main" role="main">
     <header id="department">
-    <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1 class="title" id="page-title"><?php print $title; ?></h1>
-      <?php endif; ?>
-    <?php print $breadcrumb; ?>
+      <?php print render($title_prefix); ?>
+        <?php if ($title): ?>
+          <h1 class="title" id="page-title"><?php print $title; ?></h1>
+        <?php endif; ?>
+      <?php print $breadcrumb; ?>
     </header>
     <div id="content" class="column">
       <?php print render($page['highlighted']); ?>
@@ -167,17 +167,17 @@
       <?php print $feed_icons; ?>
     </div><!-- /#content -->
 <!--add in secondary menu here in first sidebar -->
-        <?php if ($secondary_menu ): ?>
-        <nav id="secondary-menu" role="navigation">
-          <?php print theme('links__system_secondary_menu', array(
-            'links' => $secondary_menu,
-            'attributes' => array(
-              'class' => array('links', 'inline', 'clearfix'),
-            ),
-          'heading' => array(
-            'text' => $secondary_menu_heading,
-            'level' => 'h2',
-            'class' => array('element-invisible'),
+    <?php if ($secondary_menu ): ?>
+      <nav id="secondary-menu" role="navigation" aria-role="Secondary navigation">
+        <?php print theme('links__system_secondary_menu', array(
+          'links' => $secondary_menu,
+          'attributes' => array(
+            'class' => array('links', 'inline', 'clearfix'),
+          ),
+        'heading' => array(
+          'text' => $secondary_menu_heading,
+          'level' => 'h2',
+          'class' => array('element-invisible'),
           ),
         )); ?>
       </nav>
@@ -200,9 +200,9 @@
     <?php endif; ?>
 
   </main><!-- /main#main -->
-  </div><!-- /#max-wrapper  -->
-    <div id="footer">
-      <div id="footer-wrapper">
+
+  <footer id="footer" role="contentinfo">
+    <div id="footer-wrapper">
       <div id="footer-left">
         <?php print render($page['footer_left']); ?>
       </div>
@@ -231,21 +231,18 @@
             <img src="<?php print $emailIcon;?>" width="12px" height="8px" /><p><a href="http://www.wwu.edu/wwucontact/">Contact Western</a></p>
           </div>
           <div id="footer-right-social-media-icons">
-              <a href="http://www.facebook.com/westernwashingtonuniversity"><img src="<?php print $facebookIcon;?>" width="24px" height="24px" /></a>
-              <a href="http://www.flickr.com/wwu"><img src="<?php print $flickrIcon;?>" width="24px" height="24px" /></a>
-              <a href="https://twitter.com/#!/WWU"><img src="<?php print $twitterIcon;?>" width="24px" height="24px" /></a>
-              <a href="http://www.youtube.com/wwu"><img src="<?php print $youTubeIcon;?>" width="24px" height="24px" /></a>
-              <a href="https://plus.google.com/+wwu/posts"><img src="<?php print $googlePlusIcon;?>" width="24px" height="24px" /></a>
-              <a href="http://news.wwu.edu/go/feed/1538/ru/atom/"><img src="<?php print $rssIcon;?>" width="24px" height="24px" /></a>
-            </div>
+            <a href="http://www.facebook.com/westernwashingtonuniversity"><img src="<?php print $facebookIcon;?>" width="24px" height="24px" /></a>
+            <a href="http://www.flickr.com/wwu"><img src="<?php print $flickrIcon;?>" width="24px" height="24px" /></a>
+            <a href="https://twitter.com/#!/WWU"><img src="<?php print $twitterIcon;?>" width="24px" height="24px" /></a>
+            <a href="http://www.youtube.com/wwu"><img src="<?php print $youTubeIcon;?>" width="24px" height="24px" /></a>
+            <a href="https://plus.google.com/+wwu/posts"><img src="<?php print $googlePlusIcon;?>" width="24px" height="24px" /></a>
+            <a href="http://news.wwu.edu/go/feed/1538/ru/atom/"><img src="<?php print $rssIcon;?>" width="24px" height="24px" /></a>
+          </div>
 
         <?php print render($page['footer_right']); ?>
       </div>
-      <!-- <div id="wwufooter">
-        <p>WWU Footer</p>
-      </div> -->
     </div><!-- /#footer-wrapper -->
-  </div><!-- /#footer -->
+  </footer><!-- /#footer -->
 
 </div><!-- /#page -->
 
