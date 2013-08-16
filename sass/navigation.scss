@@ -166,7 +166,7 @@ li a.active {
   }
 }
 .block-accordion-menu .ui-accordion-header {
-  @include background-image(linear-gradient(left, #eee 0%,#eee 79%,#fff 79%,#ddd 100%,#ddd 100%));
+  @include background-image(linear-gradient(left, #eee 0%,#eee 83.5%,#fff 83.5%,#fff 84%, #ddd 84%,#ddd 100%));
   .ui-icon {
     right:.8em;
     left:auto;
@@ -209,13 +209,14 @@ li a.active {
 
 .ui-widget-content { background:none; }
 
+.ui-widget { font-size:1em; } // Changed from 1.1em
+
 .ui-accordion-content {
   ul.menu {
     margin:0;
     padding:0;
     li {
       display:block;
-      //background-color:#ddd;
       a {
         text-decoration:none;
         display:block;
@@ -225,16 +226,12 @@ li a.active {
         &.first a { margin:0; }
       }
       li {
-        //background-color:#ccc;
         a { padding-left:3.5em; }
         li {
-          //background-color:#bbb;
           a { padding-left:5em; }
           li {
-            //background-color:#aaa;
             a { padding-left:6.5em; }
             li {
-              //background-color:#999;
               a { padding-left:8em; }
             }
           }
