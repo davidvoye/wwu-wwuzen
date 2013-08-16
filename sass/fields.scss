@@ -113,13 +113,6 @@
   vertical-align:top;
   margin-left:2em;
 
-  p {
-    background:no-repeat left;
-    background-size:25px;
-    font-size:1.25em;
-    padding-left:2em;
-    margin-top:1em;
-  }
   .year, .phone, .location, .email {
     margin-bottom:1.17em;
   }
@@ -133,8 +126,11 @@
     margin-top:.75em;
   }
   .field-academic-title {
-    background-image:url('http://myweb.wwu.edu/browna44/work/user-light-blue.png');
+    background-image:url('../images/userprofiles/user-light-blue.png');
     background-position:.17em;
+    background-repeat: no-repeat;
+    background-size: 25px auto;
+    padding-left: 2em;
   }
   .field-year-started, .field-department-program {
     font-style:italic;
@@ -143,28 +139,37 @@
 
   }
   .field-location {
-    background-image:url('http://myweb.wwu.edu/browna44/work/location-green.png');
+    background-image:url('../images/userprofiles/location-green.png');
     background-position:.25em 0;
-    background-size:.8em;
+    background-repeat: no-repeat;
+    background-size: 25px auto;
+    padding-left: 2em;
   }
   .field-office-hours {
     font-size:.625em;
-    background-image:url('http://myweb.wwu.edu/browna44/work/office-hours-green.png');
-    background-size:1.25em;
+    background-image:url('../images/userprofiles/office-hours-green.png');
     line-height:1.625;
+    background-repeat: no-repeat;
+    background-size: 24px auto;
+    padding-left: 2em;
   }
   .field-phone-number {
-    background-image:url('http://myweb.wwu.edu/browna44/work/phone-lime.png');
+    background-image:url('../images/userprofiles/phone-lime.png');
     background-position:.17em;
+    background-repeat: no-repeat;
+    background-size: 25px auto;
+    padding-left: 2em;
   }
   .field-e-mail-address {
-    background-image:url('http://myweb.wwu.edu/browna44/work/email-yellow.png');
-    background-size:1.25em;
+    background-image:url('../images/userprofiles/email-yellow.png');
+    background-repeat: no-repeat;
+    background-size: 25px auto;
+    padding-left: 2em;
   }
   /*
    * Not currently a field
    * .education {
-   * background-image:url('http://myweb.wwu.edu/browna44/work/education-red.png');
+   * background-image:url('../images/userprofiles/education-red.png');
    * }
   */
 
