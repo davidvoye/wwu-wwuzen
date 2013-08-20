@@ -30,7 +30,7 @@
   h3 {
     font-size:1.17em;
     line-height:1.17;
-    color:$wwuLtblue;
+    color:$wwuOceanBlue;
     margin-bottom:.33em;
     margin-top:0;
     text-align:left;
@@ -81,21 +81,21 @@
   &.tooltip .contact-icon { @include transition(.3s); }
   &.location {
     .contact-icon:before { content:'\E724'; }
-    &:hover .contact-icon:before, &.tooltip .contact-icon:before { color:$wwuGreen; }
+    &:hover .contact-icon:before, &:focus .contact-icon:before, &.tooltip .contact-icon:before { color:$wwuGreen; }
     .contact-icon-value { margin-left:-2.5em; }
   }
   &.phone {
     .contact-icon:before { content:'\01F4DE'; }
-    &:hover .contact-icon:before, &.tooltip .contact-icon:before { color:$wwuLime; }
+    &:hover .contact-icon:before, &:focus .contact-icon:before, &.tooltip .contact-icon:before { color:$wwuLime; }
     .contact-icon-value { margin-left:-3.5em; }
   }
   &.email {
     margin-right:0;
     .contact-icon:before { content:'\2709'; }
-    &:hover .contact-icon:before, &.tooltip .contact-icon:before { color:$wwuYellow; }
+    &:hover .contact-icon:before, &:focus .contact-icon:before, &.tooltip .contact-icon:before { color:$wwuYellow; }
     .contact-icon-value { margin-left:-5em; }
   }
-  &.tooltip:hover .contact-icon:before { opacity:.7; @include transition(.1s); }
+  &.tooltip:hover .contact-icon:before, &.tooltip:focus .contact-icon:before { opacity:.7; @include transition(.1s); }
 }
 
 

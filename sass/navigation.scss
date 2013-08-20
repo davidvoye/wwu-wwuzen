@@ -118,7 +118,7 @@ li a.active {
       display:table-cell;
       text-align: center;
       @include transition(.5s);
-      &:hover {
+      &:hover, &:focus {
         background-color: #ddd;
         color: $wwuBlue;
         cursor:pointer;
@@ -137,7 +137,7 @@ li a.active {
     li.active {
       background-color:#ddd;
       @include transition(.5s);
-      &:hover { background-color:#eee; @include transition(.1s); }
+      &:hover, &:focus { background-color:#eee; @include transition(.1s); }
       .active { color:$wwuBlue; }//ul.links li.active a.active
     }//ul.links li.active
   }//ul.links
@@ -154,7 +154,7 @@ li a.active {
   .active-trail { background-color:#ddd; }
   .active {
     background-color:$wwuLime;
-    &:hover { color:$wwuGreen; @include transition(.3s); }
+    &:hover, &:focus { color:$wwuGreen; @include transition(.3s); }
   }
   span.accordion-link { padding:0.5em 0; }
   a, span.accordion-link {
@@ -164,7 +164,7 @@ li a.active {
     padding-top:.66em;
     padding-bottom:.66em;
     @include transition(.5s);
-    &:hover { color:$wwuLtblue; @include transition(.3s); }
+    &:hover, &:focus { color:$wwuOceanBlue; @include transition(.3s); }
   }
 }
 .block-accordion-menu .ui-accordion-header {
