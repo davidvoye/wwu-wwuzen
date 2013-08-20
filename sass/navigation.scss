@@ -161,6 +161,8 @@ li a.active {
     color: #222;
     display:block;
     padding-left:1em;
+    padding-top:.66em;
+    padding-bottom:.66em;
     @include transition(.5s);
     &:hover { color:$wwuLtblue; @include transition(.3s); }
   }
@@ -221,7 +223,7 @@ li a.active {
         text-decoration:none;
         display:block;
         margin:0;
-        padding: .5em 0 .5em 2em;
+        padding-left: 2em;
         border-bottom:solid 1px #fff;
         &.first a { margin:0; }
       }
