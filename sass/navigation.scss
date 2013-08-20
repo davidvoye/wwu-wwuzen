@@ -224,6 +224,8 @@ li a.active {
         display:block;
         margin:0;
         padding-left: 2em;
+        padding-top:.66em;
+        padding-bottom:.66em;
         border-bottom:solid 1px #fff;
         &.first a { margin:0; }
       }
