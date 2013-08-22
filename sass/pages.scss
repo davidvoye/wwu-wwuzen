@@ -59,7 +59,8 @@ body {
 
 #wwuheader {
   font-family:$muli;
-  .wwuLogo h1 {
+  span.wwuLogo a.wwuLink {
+    display:block;
     z-index: 200;
     margin: -6px 0 0 20px;
     position:relative;
@@ -102,7 +103,7 @@ body {
       width:12px;
       text-align:center;
       text-decoration:none;
-      &:hover { color:#666; }
+      &:hover, &:focus { color:#666; }
     }
     input {
       font-size:.85em;
@@ -117,7 +118,7 @@ body {
       &:focus { outline:none; }
     }
     .form-submit {
-      background-color:$wwuLtblue;
+      background-color:$wwuOceanBlue;
       color:#fff;
       margin:0;
       padding:0 1em;
@@ -158,8 +159,8 @@ body {
         padding-left: 6px;
         color: $wwuBlue;
         span:first-child { display:none; }
-        &:hover {
-          color:$wwuLtblue;
+        &:hover, &:focus {
+          color:$wwuOceanBlue;
           text-decoration:underline;
         }
       }
@@ -225,10 +226,10 @@ header#department {
     padding: 0;
     color: gray;
     a {
-      color:$wwuLtblue;
+      color:$wwuOceanBlue;
       text-decoration:none;
       &.active { color:$wwuRed; }
-      &:hover {text-decoration: underline;}
+      &:hover, &:focus {text-decoration: underline;}
     }
   }
 }
@@ -239,8 +240,8 @@ header#department {
 
 a {
   text-decoration: none;
-  color: $wwuLtblue;
-  &:hover {text-decoration: underline;}
+  color: $wwuOceanBlue; // Changed from Light Blue to "Ocean Blue" for color contrast
+  &:hover, &:focus {text-decoration: underline;}
 }
 
 #secondary-menu { font-family:$muli; }
@@ -490,12 +491,12 @@ span.field-label { /* The inline field label used by the Fences module */
       text-transform:capitalize;
       &:after {
         content: "\00A0";
-        &:hover { border-bottom:1px solid $wwuYellow; }
+        &:hover, &:focus { border-bottom:1px solid $wwuYellow; }
         width:100%;
         position: absolute;
         left:0;
       }
-      &:hover { color:$wwuLime; }
+      &:hover, &:focus { color:$wwuLime; }
     }
   }
 }
@@ -542,6 +543,11 @@ span.field-label { /* The inline field label used by the Fences module */
   #footer-right-social-media-icons {
     position:relative;
     margin-top:1.438em;
+     a {
+      &:focus {
+        border-bottom:3px solid $wwuLime;
+      }
+    }
   }
 }
 /* ****************************************************
