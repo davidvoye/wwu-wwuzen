@@ -162,12 +162,14 @@ li a.active {
     color: #222;
     display:block;
     padding-left:1em;
+    padding-top:.66em;
+    padding-bottom:.66em;
     @include transition(.5s);
     &:hover, &:focus { color:$wwuOceanBlue; @include transition(.3s); }
   }
 }
 .block-accordion-menu .ui-accordion-header {
-  @include background-image(linear-gradient(left, #eee 0%,#eee 79%,#fff 79%,#ddd 100%,#ddd 100%));
+  @include background-image(linear-gradient(left, #eee 0%,#eee 83.5%,#fff 83.5%,#fff 84%, #ddd 84%,#ddd 100%));
   .ui-icon {
     right:.8em;
     left:auto;
@@ -210,32 +212,31 @@ li a.active {
 
 .ui-widget-content { background:none; }
 
+.ui-widget { font-size:1em; } // Changed from 1.1em
+
 .ui-accordion-content {
   ul.menu {
     margin:0;
     padding:0;
     li {
       display:block;
-      //background-color:#ddd;
       a {
         text-decoration:none;
         display:block;
         margin:0;
-        padding: .5em 0 .5em 2em;
+        padding-left: 2em;
+        padding-top:.66em;
+        padding-bottom:.66em;
         border-bottom:solid 1px #fff;
         &.first a { margin:0; }
       }
       li {
-        //background-color:#ccc;
         a { padding-left:3.5em; }
         li {
-          //background-color:#bbb;
           a { padding-left:5em; }
           li {
-            //background-color:#aaa;
             a { padding-left:6.5em; }
             li {
-              //background-color:#999;
               a { padding-left:8em; }
             }
           }
