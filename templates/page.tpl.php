@@ -71,76 +71,75 @@
 ?>
 <div id="top-stripe"></div> <!-- stripe goes full browser page width -->
 <div id="page">
-      <!--Retrieve our images for use in the header -->
-    <?php
-    //Desktops get this image
-      $wwuLogo = base_path().path_to_theme() . '/images/wwu.png';
-      $wwuSearchIcon = base_path().path_to_theme() . '/images/icons/search.png';
-    //Mobile devices get these images
-      $wwuHorizontalLogo = base_path().path_to_theme() . '/images/wwuhorizlogo.png';
-      $wwuMobileMenuIcon = base_path().path_to_theme() . '/images/icons/toolbar-links.png';
-      $wwuMobileSearchIcon = base_path().path_to_theme() . '/images/icons/search-gray.png';
-      $wwuMobileMainMenuIcon = base_path().path_to_theme() . '/images/icons/main-menu.png';
-    ?>
-    <header id="wwuheader" role="banner" aria-label="Western banner">
-      <span class="wwuLogo wwuLink"><a href="http://www.wwu.edu" class="wwuLink">Western Washington University</a></span>
+  <!--Retrieve our images for use in the header -->
+  <?php
+    // Desktops get this image
+    $wwuLogo = base_path().path_to_theme() . '/images/wwu.png';
+    $wwuSearchIcon = base_path().path_to_theme() . '/images/icons/search.png';
+    // Mobile devices get these images
+    $wwuHorizontalLogo = base_path().path_to_theme() . '/images/wwuhorizlogo.png';
+    $wwuMobileMenuIcon = base_path().path_to_theme() . '/images/icons/toolbar-links.png';
+    $wwuMobileSearchIcon = base_path().path_to_theme() . '/images/icons/search-gray.png';
+    $wwuMobileMainMenuIcon = base_path().path_to_theme() . '/images/icons/main-menu.png';
+  ?>
+  <header id="wwuheader" role="banner" aria-label="Western banner">
+    <span class="wwuLogo wwuLink"><a href="http://www.wwu.edu" class="wwuLink">Western Washington University</a></span>
 
-      <div id="menu-icons">
-        <div class="quick-links" id="mobileWWUmenu">
-          <img src="<?php print $wwuMobileMenuIcon;?>" alt="Quick links" class="quick-links-toggle icon-size">
+    <div id="menu-icons">
+      <div class="quick-links" id="mobileWWUmenu">
+        <img src="<?php print $wwuMobileMenuIcon;?>" alt="Quick links" class="quick-links-toggle icon-size">
 
-          <ul id="wwumenu" role="navigation" aria-label="Western quick links">
-            <li><a href="http://www.wwu.edu/academic_calendar" title="Calendar"><span aria-hidden="true">c</span> <span>Calendar</span></a></li>
-            <li><a href="http://www.wwu.edu/directory" title="Directory"><span aria-hidden="true">d</span> <span>Directory</span></a></li>
-            <li><a href="http://www.wwu.edu/index" title="Index"><span aria-hidden="true">i</span> <span>Index</span></a></li>
-            <li><a href="http://www.wwu.edu/campusmaps" title="Map"><span aria-hidden="true">l</span> <span>Map</span></a></li>
-            <li><a href="http://mywestern.wwu.edu" title="myWestern"><span aria-hidden="true">w</span> <span>myWestern</span></a></li>
-          </ul>
+        <ul id="wwumenu" role="navigation" aria-label="Western quick links">
+          <li><a href="http://www.wwu.edu/academic_calendar" title="Calendar"><span aria-hidden="true">c</span> <span>Calendar</span></a></li>
+          <li><a href="http://www.wwu.edu/directory" title="Directory"><span aria-hidden="true">d</span> <span>Directory</span></a></li>
+          <li><a href="http://www.wwu.edu/index" title="Index"><span aria-hidden="true">i</span> <span>Index</span></a></li>
+          <li><a href="http://www.wwu.edu/campusmaps" title="Map"><span aria-hidden="true">l</span> <span>Map</span></a></li>
+          <li><a href="http://mywestern.wwu.edu" title="myWestern"><span aria-hidden="true">w</span> <span>myWestern</span></a></li>
+        </ul>
+      </div> <!-- end div.quick-links -->
+
+      <div class="wwusearch">
+        <div class="icon-size" id="s-toggle" aria-label="Search"><a>Open Search</a></div> <!-- end div.icon-size -->
+        <div id="search" style="display:none;" role="search">
+          <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
+          <?php print $search_box; ?>
         </div>
-
-        <div class="wwusearch">
-          <div class="icon-size" id="s-toggle" aria-label="Search"><a>Open Search</a></div>
-
-            <div id="search" style="display:none;" role="search">
-              <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
-              <?php print $search_box; ?>
-            </div>
-          </div>
-
-          <div class="main-navigation" id="mobileNavTrigger">
-            <img src="<?php print $wwuMobileMainMenuIcon;?>" alt="Main menu links" class="main-menu-toggle icon-size">
-          </div>
+        <div class="main-navigation" id="mobileNavTrigger">
+          <img src="<?php print $wwuMobileMainMenuIcon;?>" alt="Main menu links" class="main-menu-toggle icon-size">
         </div>
+      </div> <!-- end div.wwusearch -->
+    </div> <!-- end div#menu-icons -->
 
-    </header> <!-- end #wwuheader -->
+  </header> <!-- end #wwuheader -->
 
   <header id="header" role="banner" aria-label="Site banner">
     <div id="collegeheader">
-    <!-- Group Logo (banner) and Site Name and Main Menu for Group -->
-    <?php if ($logo): ?>
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-      <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" id="logoImage"/></a>
-    <?php endif; ?>
+      <!-- Group Logo (banner) and Site Name and Main Menu for Group -->
+      <?php if ($logo): ?>
+        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" id="logoImage"/></a>
+      <?php endif; ?>
 
-    <?php if ($site_name || $site_slogan): ?>
-      <div id="name-and-slogan">
-        <?php if ($site_name): ?>
-          <h1 id="site-name">
-            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-          </h1>
-        <?php endif; ?>
+      <?php if ($site_name || $site_slogan): ?>
+        <div id="name-and-slogan">
+          <?php if ($site_name): ?>
+            <h1 id="site-name">
+              <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+            </h1>
+          <?php endif; ?>
 
-        <?php if ($site_slogan): ?>
-          <h2 id="site-slogan"><?php print $site_slogan; ?></h2>
-        <?php endif; ?>
-      </div><!-- /#name-and-slogan -->
-    <?php endif; ?>
-    <div id="navigation">
-      <nav id="main-menu" role="navigation" aria-label="Main or top-level navigation">
-            <?php print render($page['navigation']); ?>
-      </nav>
-    </div><!-- /#navigation -->
-    <?php print render($page['header']); ?>
+          <?php if ($site_slogan): ?>
+            <h2 id="site-slogan"><?php print $site_slogan; ?></h2>
+          <?php endif; ?>
+        </div> <!-- /#name-and-slogan -->
+      <?php endif; ?>
+        <div id="navigation">
+          <nav id="main-menu" role="navigation" aria-label="Main or top-level navigation">
+                <?php print render($page['navigation']); ?>
+          </nav>
+        </div> <!-- /#navigation -->
+      <?php print render($page['header']); ?>
+    </div> <!-- end div#collegeheader -->
   </header>
 
   <main id="main" role="main">
@@ -165,8 +164,8 @@
       <?php endif; ?>
       <?php print render($page['content']); ?>
       <?php print $feed_icons; ?>
-    </div><!-- /#content -->
-<!--add in secondary menu here in first sidebar -->
+    </div> <!-- /#content -->
+    <!--add in secondary menu here in first sidebar -->
     <?php if ($secondary_menu ): ?>
       <nav id="secondary-menu" role="navigation" aria-role="Secondary navigation">
         <?php print theme('links__system_secondary_menu', array(
@@ -182,7 +181,7 @@
         )); ?>
       </nav>
     <?php endif; ?>
-<!-- end of secondary menu -->
+    <!-- end of secondary menu -->
 
 
     <?php
@@ -196,10 +195,11 @@
 
         <?php print $sidebar_first; ?>
         <?php print $sidebar_second; ?>
-      </aside><!-- /.sidebars -->
+      </aside> <!-- /.sidebars -->
     <?php endif; ?>
 
-  </main><!-- /main#main -->
+  </main> <!-- /main#main -->
+</div> <!-- /#page -->
 
   <footer id="footer" role="contentinfo">
     <div id="footer-wrapper">
@@ -241,9 +241,7 @@
 
         <?php print render($page['footer_right']); ?>
       </div>
-    </div><!-- /#footer-wrapper -->
-  </footer><!-- /#footer -->
-
-</div><!-- /#page -->
+    </div> <!-- /#footer-wrapper -->
+  </footer> <!-- /#footer -->
 
 <?php print render($page['bottom']); ?>
