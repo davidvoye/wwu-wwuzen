@@ -57,6 +57,7 @@
     font-size:1.625em;
   }
   .contact-icon-value {
+    font-family:$muli;
     opacity:0;
     height:0;
     width:0;
@@ -65,12 +66,13 @@
     background:#fff;
     color:#222;
     margin-top:0;
-    padding:.17em .75em;
-    font-size:.85em;
+    padding:.25em .75em;
+    font-size:.925em;
+    text-align:center;
     @include transition(.5s position);
-    @include box-shadow(#aaa 0 0 4px 1px);
+    @include box-shadow(#777 0 0 4px 1px);
   }
-  &.tooltip .contact-icon-value {
+  &.tooltip .contact-icon-value, .contact-icon-value:focus {
     opacity:1;
     height:auto;
     width:auto;
@@ -81,18 +83,18 @@
   &.location {
     .contact-icon:before { content:'\E724'; }
     &:hover .contact-icon:before, &:focus .contact-icon:before, &.tooltip .contact-icon:before { color:$wwuGreen; }
-    .contact-icon-value { margin-left:-2.5em; }
+    .contact-icon-value { margin-left:-5%; }
   }
   &.phone {
     .contact-icon:before { content:'\01F4DE'; }
     &:hover .contact-icon:before, &:focus .contact-icon:before, &.tooltip .contact-icon:before { color:$wwuLime; }
-    .contact-icon-value { margin-left:-3.5em; }
+    .contact-icon-value { margin-left:-5%; }
   }
   &.email {
     margin-right:0;
     .contact-icon:before { content:'\2709'; }
     &:hover .contact-icon:before, &:focus .contact-icon:before, &.tooltip .contact-icon:before { color:$wwuYellow; }
-    .contact-icon-value { margin-left:-5em; }
+    .contact-icon-value { margin-left:-5%; }
   }
   &.tooltip:hover .contact-icon:before, &.tooltip:focus .contact-icon:before { opacity:.7; @include transition(.1s); }
 }
@@ -108,19 +110,31 @@
   width:55%;
   margin: 0 0 1em 1.5em;
 }
+
+#content .user-individual-profile p { font-size:1em; }
+
 .user-individual-profile {
   vertical-align:top;
   margin-left:2em;
 
-  p {
+  p, .field-tr-location:nth-of-type(1) {
     background:no-repeat left;
     background-size:25px;
-    font-size:1.25em;
-    padding-left:2em;
+    //padding-left:2em;
     margin-top:1em;
   }
-  .year, .phone, .location, .email {
-    margin-bottom:1.17em;
+
+  .field-year-started,
+  .field-department-program,
+  .field-office-hours,
+  .field-location,
+  .field-phone-number,
+  .field-academic-title,
+  .field-e-mail-address,
+  .field-tr-location {
+    margin-bottom:2em;
+    font-size:1.25em;
+    padding-left:2em;
   }
 
   .field-your-photo > img {
@@ -134,6 +148,7 @@
   .field-academic-title {
     background-image:url('http://myweb.wwu.edu/browna44/work/user-light-blue.png');
     background-position:.17em;
+
   }
   .field-year-started, .field-department-program {
     font-style:italic;
@@ -141,13 +156,17 @@
     margin-top:0;
 
   }
-  .field-location {
+  .field-tr-location:nth-of-type(1) {
     background-image:url('http://myweb.wwu.edu/browna44/work/location-green.png');
     background-position:.25em 0;
     background-size:.8em;
   }
+  .field-tr-location:nth-of-type(2) {
+    padding-left:0;
+  }
+
   .field-office-hours {
-    font-size:.625em;
+    //font-size:.625em;
     background-image:url('http://myweb.wwu.edu/browna44/work/office-hours-green.png');
     background-size:1.25em;
     line-height:1.625;
