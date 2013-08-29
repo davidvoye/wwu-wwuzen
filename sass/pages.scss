@@ -290,9 +290,10 @@ h2 { margin-top:.5em; font-size:$h1-font-size; }
 }
 
 main {
-  p, blockquote {
+  p, blockquote, ul, ol, span {
     font-size:.925em;
     font-family:$muli;
+    li { font-size:1em; }
   }
   .code, code {
     font-family:"Courier New", Courier, monospace;
@@ -316,7 +317,15 @@ main {
   }
 }
 
-main ul, main ol { margin:0; }
+main ul, main ol {
+  margin:0;
+  /*
+  The next two properties prevent floating issues
+  See: http://perishablepress.com/margin-list-floated-image/
+  */
+  width:auto;
+  overflow:hidden;
+}
 
 table {
   border-collapse:collapse;
