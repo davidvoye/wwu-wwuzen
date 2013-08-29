@@ -20,7 +20,7 @@
 .user-module {
   background:#fff;
   //@include box-shadow(#ddd 0 0 7px 3px);
-  border:solid 1px #eee;
+  border:solid 1px #eee; // Remove border if using box-shadow
   padding:10px;
   display:inline-block;
   margin:1em .5em 0 1em;
@@ -38,7 +38,7 @@
   img { display:block; margin:0 auto; }
 }
 
-main p.user-title {
+#main p.user-title {
   color:#222;
   line-height:1.25;
   font-size:1em;
@@ -46,7 +46,7 @@ main p.user-title {
   margin-top:.5em;
 }
 
-.user-module div {
+#main .user-module div {
   display:inline-block;
   cursor:pointer;
   color:#bbb;
@@ -107,7 +107,7 @@ main p.user-title {
 */
 
 
-.user-individual-profile main {
+html .user-individual-profile #main {
   .panels-flexible-column-staff_profile-1 {
     width:auto;
   }
