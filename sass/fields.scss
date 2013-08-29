@@ -19,7 +19,8 @@
 
 .user-module {
   background:#fff;
-  @include box-shadow(#ddd 0 0 7px 3px);
+  //@include box-shadow(#ddd 0 0 7px 3px);
+  border:solid 1px #eee;
   padding:10px;
   display:inline-block;
   margin:1em .5em 0 1em;
@@ -42,7 +43,7 @@ main p.user-title {
   line-height:1.25;
   font-size:1em;
   text-align:left;
-  margin-top:.25em;
+  margin-top:.5em;
 }
 
 .user-module div {
@@ -88,13 +89,14 @@ main p.user-title {
   &.phone {
     .contact-icon:before { content:'\01F4DE'; }
     &:hover .contact-icon:before, &:focus .contact-icon:before, &.tooltip .contact-icon:before { color:$wwuLime; }
-    .contact-icon-value { margin-left:-5%; }
+    .contact-icon-value { margin-left:-4%; }
   }
   &.email {
     margin-right:0;
+    p { margin:0; }
     .contact-icon:before { content:'\2709'; }
     &:hover .contact-icon:before, &:focus .contact-icon:before, &.tooltip .contact-icon:before { color:$wwuYellow; }
-    .contact-icon-value { margin-left:-5%; }
+    .contact-icon-value { margin-left:-6%; }
   }
   &.tooltip:hover .contact-icon:before, &.tooltip:focus .contact-icon:before { opacity:.7; @include transition(.1s); }
 }

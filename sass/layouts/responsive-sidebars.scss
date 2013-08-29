@@ -392,8 +392,22 @@ $zen-auto-include-item-base: false;
       margin:.5em;
     }
   }
-  div.user-module { margin:1em auto; display:block; }
 }
+
+/* ****************************************************
+              Faculty/Staff Profiles --> 639px
+**************************************************** */
+
+@media all and (max-width: 639px) {
+  div.user-module {
+    margin:1em auto;
+    display:block;
+    border:solid 1px #ddd;
+    box-shadow:none;
+  }
+}
+
+
 /* ****************************************************
               Tablet-size 361px <--> 800px
 **************************************************** */
@@ -447,7 +461,6 @@ $zen-auto-include-item-base: false;
   #footer-right-social-media-icons {
     padding-left:1em;
   }
-  div.user-module { margin:1em auto; display:block; }
 }
 
 /* ****************************************************
