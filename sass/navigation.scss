@@ -118,18 +118,19 @@ li a.active {
       display:table-cell;
       text-align: center;
       @include transition(.5s);
-      &:hover, &:focus {
+      &:hover, &:focus, &:active {
         background-color: #ddd;
         color: $wwuBlue;
         cursor:pointer;
         @include transition(.1s);
-        a { color:$wwuBlue; @include transition(.1s);}
+        a { color:$wwuBlue;}
       }
       a {
         color:#fff;
         text-decoration:none;
         display:block;
         @include transition(.5s);
+        &:focus { background-color: #dddddd; color:$wwuBlue;}
       }
       &:last-child { border:none; }
     }
