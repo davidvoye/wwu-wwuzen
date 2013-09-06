@@ -1,0 +1,9 @@
+diff a/sass/pages.scss b/sass/pages.scss	(rejected hunks)
+@@ -21,6 +21,7 @@
+ +    }
+ +
+ +=======
+++>>>>>>> browna44/header-template
+      input {
+        font-size:.85em;
+        border: {

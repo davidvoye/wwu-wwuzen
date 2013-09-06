@@ -28,7 +28,7 @@
 
   .open > a {
     @include border-radius(7px 7px 0 0);
-    &:hover {
+    &:hover, &:focus {
       color: #333;
     }
   }

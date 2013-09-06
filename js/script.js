@@ -20,10 +20,10 @@ Drupal.behaviors.siteNameTypography = {
 
 		// Gets copy from site name (ultimately inside a span: #site-name a span)
 		var siteName = $("#site-name").text();
-		
+
 		var typographyAnd = siteName.replace("and", "<span class=\"diminutive-type site-name-and\">and</span>");
 		var typographyCollegeOf = typographyAnd.replace("College of", "<span class=\"diminutive-type site-name-college-of\">College of</span>");
-		
+
 		$('#site-name a span').replaceWith(typographyCollegeOf);
 	}
 }
@@ -107,8 +107,35 @@ Drupal.behaviors.siteNameTypography = {
 	}
 }
 
+//These next two behaviors do the exact same thing, on onLoad and one on resize
 
-Drupal.behaviors.resizeHeader = {
+Drupal.behaviors.resizeHeaderOnLoad = {
+  attach: function () {
+  //START RESIZE COLLEGE HEADER AND SET HEIGHT CODE
+  $(window).load(function () {
+    var divHeight = $("#collegeheader").children().outerHeight(true);
+    var menuHeight = $("#main-menu").outerHeight(true);
+    //For the mobile views we need another container to use since main menu is collapsed
+    var nameAndSlogan = $("#name-and-slogan").outerHeight(true);
+    //add the two heights and 10 more pixels to compensate for space beneath the main menu
+    var totalHeightWithMenu = divHeight + menuHeight + 10;
+    var totalHeightSansMenu = divHeight + nameAndSlogan;
+    //Testing for a condition forces the height to be calculated.
+      if (totalHeightSansMenu <= 61) {
+        totalHeightSansMenu = totalHeightSansMenu + 76;
+        $('#collegeheader').css({'height': totalHeightSansMenu + "px"});
+      } else if (totalHeightSansMenu <= 84) {
+        totalHeightSansMenu = totalHeightSansMenu + 1;
+        $('#collegeheader').css({'height': totalHeightSansMenu + "px"});
+        } else {
+          $('#collegeheader').css({'height': totalHeightWithMenu + "px"});
+          }
+    });
+    //END RESIZE COLLEGE HEADER CODE
+  }
+}
+
+Drupal.behaviors.resizeHeaderOnResize = {
   attach: function () {
   //START RESIZE COLLEGE HEADER AND SET HEIGHT CODE
   $(window).resize(function () {
@@ -133,6 +160,21 @@ Drupal.behaviors.resizeHeader = {
     //END RESIZE COLLEGE HEADER CODE
   }
 }
+
+
+// Tooltips for the staff and faculty directories
+Drupal.behaviors.userModuleIcons = {
+  attach: function () {
+    $('.user-module div').click(function(){
+          if($(this).hasClass('tooltip')){
+              $(this).removeClass('tooltip');
+          } else {
+              $(this).addClass('tooltip').siblings().removeClass('tooltip');
+          }
+      });
+    }
+  }
+
 
 
 })(jQuery, Drupal, this, this.document);

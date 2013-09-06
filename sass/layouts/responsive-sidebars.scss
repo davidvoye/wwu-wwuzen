@@ -97,11 +97,11 @@ $zen-auto-include-item-base: false;
 #wwuheader {
   background-color:$wwuBlue;
   height:68px;
-  a.wwuLogo h1 {
+  span.wwuLogo.wwuLink a.wwuLink {
     @include zen-grid-item(1,1,left);
     margin-bottom:-.375em;
     background: url('../../images/wwuhorizlogo.png') no-repeat;
-    width: 320px;
+    width: 100%;
     height: 74px;
   }
   #mobileWWUmenu {
@@ -193,14 +193,16 @@ $zen-auto-include-item-base: false;
           font-variant: normal;
           text-transform: none;
           line-height: 1em;
+          @include transition(.2s);
         }
         span:last-child {
           display:block;
           font-size:.75em;
         }
-        &:hover {
-          color:$wwuLime;
+        &:hover, &:focus {
+          color:$wwuGreen;
           @include transition(.2s);
+          span:first-child { color:$wwuLime; }
         }
       } // End a
     } // End li
@@ -210,7 +212,8 @@ $zen-auto-include-item-base: false;
   #collegeheader {
     @include zen-clear();
     z-index:-10;
-    @include background(linear-gradient(top, lighten($wwuLtblue, 10%), $wwuLtblue));
+    background-color:$wwuOceanBlue;
+    @include background(linear-gradient(top, lighten($wwuOceanBlue, 10%), $wwuOceanBlue));
     #name-and-slogan {
       @include zen-grid-item(1,1);
       padding: 0 0 .5em 1.25em;
@@ -243,7 +246,7 @@ $zen-auto-include-item-base: false;
           display:block;
           width:83%;
           @include transition(1s);
-          &:hover {
+          &:hover, &:focus {
             color:$wwuLime;
             @include transition(.2s);
           }
@@ -411,6 +414,21 @@ $zen-auto-include-item-base: false;
     margin-right: auto;
     margin-top:0em;
     margin-left:1em;
+  }
+}
+
+/* ****************************************************
+            Phone and tablet size 0px <--> 800px
+**************************************************** */
+@media all and (max-width:800px) {
+  //The left column in layouts needs to float above the main content. These classes are applied in panels.
+  .left-column {
+    float:left;
+    width: 100%;
+  }
+  .right-column {
+    clear:left;
+    width:100%;
   }
 }
 
@@ -610,17 +628,21 @@ $zen-auto-include-item-base: false;
       position:relative;
       padding: 10px;
       background-color: #fff;
-      height: 222px; //extend white background below menu
+      height: 228px; //extend white background below menu
       margin-top: -90px; //slide college logo (banner) right under wwu logo
       #navigation ul li ul { display:none; }
       #navigation #main-menu ul li { float:none; }
     } // End #collegeheader
 
+  #name-and-slogan {
+    position: absolute;
+    right: 10px;
+    bottom:41px;
+  }
+
   #site-name { /* The name of the website */
-    background-color:rgba($wwuLtblue, .8);
-    position:absolute;
-    bottom:40px;
-    right:10px;
+    background-color:($wwuOceanBlue); /* Fallback for older browsers */
+    background-color:rgba($wwuOceanBlue, .8);
     }
   } // End #header
   #main {
