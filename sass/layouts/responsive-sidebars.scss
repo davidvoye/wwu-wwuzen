@@ -101,7 +101,7 @@ $zen-auto-include-item-base: false;
     @include zen-grid-item(1,1,left);
     margin-bottom:-.375em;
     background: url('../../images/wwuhorizlogo.png') no-repeat;
-    width: 320px;
+    width: 100%;
     height: 74px;
   }
   #mobileWWUmenu {
@@ -210,6 +210,7 @@ $zen-auto-include-item-base: false;
   #collegeheader {
     @include zen-clear();
     z-index:-10;
+    background-color:$wwuLtblue;
     @include background(linear-gradient(top, lighten($wwuLtblue, 10%), $wwuLtblue));
     #name-and-slogan {
       @include zen-grid-item(1,1);
@@ -378,6 +379,17 @@ $zen-auto-include-item-base: false;
       margin-left:1em;
     }
   }
+  #content article {
+    figure {
+      margin:0 auto;
+      float:none !important;
+      display:block;
+    }
+    blockquote {
+      max-width:100%;
+      margin:.5em;
+    }
+  }
 }
 /* ****************************************************
               Tablet-size 361px <--> 800px
@@ -400,6 +412,21 @@ $zen-auto-include-item-base: false;
     margin-right: auto;
     margin-top:0em;
     margin-left:1em;
+  }
+}
+
+/* ****************************************************
+            Phone and tablet size 0px <--> 800px
+**************************************************** */
+@media all and (max-width:800px) {
+  //The left column in layouts needs to float above the main content. These classes are applied in panels.
+  .left-column {
+    float:left;
+    width: 100%;
+  }
+  .right-column {
+    clear:left;
+    width:100%;
   }
 }
 
@@ -564,7 +591,7 @@ $zen-auto-include-item-base: false;
       top:0;
       right:0;
       @include transition(.5s);
-      z-index:999;
+      z-index:555;
       .quick-links {
         position:absolute;
         top:15px;
@@ -599,17 +626,21 @@ $zen-auto-include-item-base: false;
       position:relative;
       padding: 10px;
       background-color: #fff;
-      height: 222px; //extend white background below menu
+      height: 228px; //extend white background below menu
       margin-top: -90px; //slide college logo (banner) right under wwu logo
       #navigation ul li ul { display:none; }
       #navigation #main-menu ul li { float:none; }
     } // End #collegeheader
 
+  #name-and-slogan {
+    position: absolute;
+    right: 10px;
+    bottom:41px;
+  }
+
   #site-name { /* The name of the website */
+    background-color:($wwuLtblue); /* Fallback for older browsers */
     background-color:rgba($wwuLtblue, .8);
-    position:absolute;
-    bottom:40px;
-    right:10px;
     }
   } // End #header
   #main {
