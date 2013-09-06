@@ -58,7 +58,7 @@
     font-size:1.625em;
   }
   .contact-icon-value {
-    opacity:0;
+    @include opacity(0);
     height:0;
     width:0;
     display:block;
@@ -72,7 +72,7 @@
     @include box-shadow(#aaa 0 0 4px 1px);
   }
   &.tooltip .contact-icon-value {
-    opacity:1;
+    @include opacity(1);
     height:auto;
     width:auto;
     margin-top:-5em;
@@ -95,7 +95,7 @@
     &:hover .contact-icon:before, &:focus .contact-icon:before, &.tooltip .contact-icon:before { color:$wwuYellow; }
     .contact-icon-value { margin-left:-5em; }
   }
-  &.tooltip:hover .contact-icon:before, &.tooltip:focus .contact-icon:before { opacity:.7; @include transition(.1s); }
+  &.tooltip:hover .contact-icon:before, &.tooltip:focus .contact-icon:before { @include opacity(.7); @include transition(.1s); }
 }
 
 
