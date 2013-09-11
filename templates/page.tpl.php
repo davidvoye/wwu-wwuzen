@@ -83,9 +83,10 @@
     $wwuMobileMainMenuIcon = base_path().path_to_theme() . '/images/icons/main-menu.png';
   ?>
     <header id="wwuheader" role="banner" aria-label="Western banner">
-      <a class="wwuLogo" href="http://www.wwu.edu">
-          <h1>Western Washington University</h1>
-      </a>
+      <span class="wwuLogo wwuLink">
+        <a class="wwuLink" href="http://www.wwu.edu">Western Washington University</a>
+      </span>
+
     <div id="menu-icons">
       <div class="quick-links" id="mobileWWUmenu">
         <img src="<?php print $wwuMobileMenuIcon;?>" alt="Quick links" class="quick-links-toggle icon-size">
