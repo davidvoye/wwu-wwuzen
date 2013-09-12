@@ -15,6 +15,31 @@
 
 // Place your code here.
 
+Drupal.behaviors.imgAttributes = {
+    attach: function () {
+
+    //Loop through each image on page and remove inline style width and height
+    $('img').each(
+      function(){
+        var imgWidth = $(this).css( "width");
+        var removeWidth = $(this).css( "width", "" );
+        var imgHeight = $(this).css( "height" );
+        var removeHeight = $(this).css( "height", "");
+
+        $(this).attr("width",imgWidth);
+        $(this).attr("height", imgHeight);
+    });
+
+        $('figure').each(
+      function(){
+        var removeFigureHeight = $(this).css( "height", "");
+    });
+
+  }
+}
+
+
+
 Drupal.behaviors.siteNameTypography = {
 		attach: function () {
 
