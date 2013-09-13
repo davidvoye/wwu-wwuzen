@@ -82,8 +82,10 @@
     $wwuMobileSearchIcon = base_path().path_to_theme() . '/images/icons/search-gray.png';
     $wwuMobileMainMenuIcon = base_path().path_to_theme() . '/images/icons/main-menu.png';
   ?>
-  <header id="wwuheader" role="banner" aria-label="Western banner">
-    <span class="wwuLogo wwuLink"><a href="http://www.wwu.edu" class="wwuLink">Western Washington University</a></span>
+    <header id="wwuheader" role="banner" aria-label="Western banner">
+      <span class="wwuLogo wwuLink">
+        <a class="wwuLink" href="http://www.wwu.edu">Western Washington University</a>
+      </span>
 
     <div id="menu-icons">
       <div class="quick-links" id="mobileWWUmenu">

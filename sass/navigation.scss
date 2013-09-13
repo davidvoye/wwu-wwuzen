@@ -119,11 +119,11 @@ li a.active {
       text-align: center;
       @include transition(.5s);
       &:hover, &:focus, &:active {
-        background-color: #dddddd;
+        background-color: #ddd;
         color: $wwuBlue;
         cursor:pointer;
         @include transition(.1s);
-        a {color:$wwuBlue;}
+        a { color:$wwuBlue;}
       }
       a {
         color:#fff;
