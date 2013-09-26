@@ -118,18 +118,19 @@ li a.active {
       display:table-cell;
       text-align: center;
       @include transition(.5s);
-      &:hover {
+      &:hover, &:focus, &:active {
         background-color: #ddd;
         color: $wwuBlue;
         cursor:pointer;
         @include transition(.1s);
-        a { color:$wwuBlue; @include transition(.1s);}
+        a { color:$wwuBlue;}
       }
       a {
         color:#fff;
         text-decoration:none;
         display:block;
         @include transition(.5s);
+        &:focus { background-color: #dddddd; color:$wwuBlue;}
       }
       &:last-child { border:none; }
     }
@@ -137,7 +138,7 @@ li a.active {
     li.active {
       background-color:#ddd;
       @include transition(.5s);
-      &:hover { background-color:#eee; @include transition(.1s); }
+      &:hover, &:focus { background-color:#eee; @include transition(.1s); }
       .active { color:$wwuBlue; }//ul.links li.active a.active
     }//ul.links li.active
   }//ul.links
@@ -154,19 +155,21 @@ li a.active {
   .active-trail { background-color:#ddd; }
   .active {
     background-color:$wwuLime;
-    &:hover { color:$wwuGreen; @include transition(.3s); }
+    &:hover, &:focus { color:$wwuGreen; @include transition(.3s); }
   }
   span.accordion-link { padding:0.5em 0; }
   a, span.accordion-link {
     color: #222;
     display:block;
     padding-left:1em;
+    padding-top:.66em;
+    padding-bottom:.66em;
     @include transition(.5s);
-    &:hover { color:$wwuLtblue; @include transition(.3s); }
+    &:hover, &:focus { color:$wwuOceanBlue; @include transition(.3s); }
   }
 }
 .block-accordion-menu .ui-accordion-header {
-  @include background-image(linear-gradient(left, #eee 0%,#eee 79%,#fff 79%,#ddd 100%,#ddd 100%));
+  @include background-image(linear-gradient(left, #eee 0%,#eee 83.5%,#fff 83.5%,#fff 84%, #ddd 84%,#ddd 100%));
   .ui-icon {
     right:.8em;
     left:auto;
@@ -209,32 +212,31 @@ li a.active {
 
 .ui-widget-content { background:none; }
 
+.ui-widget { font-size:1em; } // Changed from 1.1em
+
 .ui-accordion-content {
   ul.menu {
     margin:0;
     padding:0;
     li {
       display:block;
-      //background-color:#ddd;
       a {
         text-decoration:none;
         display:block;
         margin:0;
-        padding: .5em 0 .5em 2em;
+        padding-left: 2em;
+        padding-top:.66em;
+        padding-bottom:.66em;
         border-bottom:solid 1px #fff;
         &.first a { margin:0; }
       }
       li {
-        //background-color:#ccc;
         a { padding-left:3.5em; }
         li {
-          //background-color:#bbb;
           a { padding-left:5em; }
           li {
-            //background-color:#aaa;
             a { padding-left:6.5em; }
             li {
-              //background-color:#999;
               a { padding-left:8em; }
             }
           }
