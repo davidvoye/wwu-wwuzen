@@ -94,7 +94,7 @@ $zen-auto-include-item-base: false;
 **************************************************** */
 
 @media all and (max-width: 800px) {
-#wwuheader {
+html #wwuheader {
   background-color:$wwuBlue;
   height:68px;
   span.wwuLogo.wwuLink a.wwuLink {
@@ -393,6 +393,35 @@ $zen-auto-include-item-base: false;
     }
   }
 }
+
+/* ****************************************************
+              Faculty/Staff Profiles --> 639px
+**************************************************** */
+
+@media all and (max-width: 639px) {
+  div.user-module {
+    margin:1em auto;
+    display:block;
+    border:solid 1px #ddd;
+    box-shadow:none;
+  }
+  .user-individual-profile main#main .panels-flexible-column-staff_profile-1 {
+    width:100%;
+    display:block;
+    margin:0 auto;
+  }
+  .user-individual-profile main#main .field-your-photo > img {
+    display:block;
+    margin:0 auto;
+  }
+  .user-individual-profile main#main .panels-flexible-column-staff_profile-main.panels-flexible-column {
+    width:100%;
+    display:block;
+    margin:0 auto;
+  }
+}
+
+
 /* ****************************************************
               Tablet-size 361px <--> 800px
 **************************************************** */

@@ -19,34 +19,34 @@
 
 .user-module {
   background:#fff;
-  @include box-shadow(#ddd 0 0 7px 3px);
+  //@include box-shadow(#ddd 0 0 7px 3px);
+  border:solid 1px #eee; // Remove border if using box-shadow
   padding:10px;
   display:inline-block;
-  margin-left:.75em;
-  margin-top:.75em;
-  width:180px;
+  margin:1em .5em 0 1em;
+  width:210px;
   vertical-align:top;
   text-align:center;
   h3 {
     font-size:1.17em;
     line-height:1.17;
-    color:$wwuOceanBlue;
-    margin-bottom:.33em;
-    margin-top:0;
+    color:$wwuLtblue;
+    margin-bottom:.5em;
+    margin-top:.25em;
     text-align:left;
   }
   img { display:block; margin:0 auto; }
 }
 
-#content p.user-title {
+#main p.user-title {
   color:#222;
   line-height:1.25;
   font-size:1em;
   text-align:left;
-  margin-top:.25em;
+  margin-top:.5em;
 }
 
-.user-module div {
+#main .user-module div {
   display:inline-block;
   cursor:pointer;
   color:#bbb;
@@ -66,12 +66,13 @@
     background:#fff;
     color:#222;
     margin-top:0;
-    padding:.17em .75em;
-    font-size:.85em;
+    padding:.25em .75em;
+    font-size:.925em;
+    text-align:center;
     @include transition(.5s position);
-    @include box-shadow(#aaa 0 0 4px 1px);
+    @include box-shadow(#777 0 0 4px 1px);
   }
-  &.tooltip .contact-icon-value {
+  &.tooltip .contact-icon-value, .contact-icon-value:focus {
     @include opacity(1);
     height:auto;
     width:auto;
@@ -82,18 +83,19 @@
   &.location {
     .contact-icon:before { content:'\E724'; }
     &:hover .contact-icon:before, &:focus .contact-icon:before, &.tooltip .contact-icon:before { color:$wwuGreen; }
-    .contact-icon-value { margin-left:-2.5em; }
+    .contact-icon-value { margin-left:-5%; }
   }
   &.phone {
     .contact-icon:before { content:'\01F4DE'; }
     &:hover .contact-icon:before, &:focus .contact-icon:before, &.tooltip .contact-icon:before { color:$wwuLime; }
-    .contact-icon-value { margin-left:-3.5em; }
+    .contact-icon-value { margin-left:-4%; }
   }
   &.email {
     margin-right:0;
+    p { margin:0; }
     .contact-icon:before { content:'\2709'; }
     &:hover .contact-icon:before, &:focus .contact-icon:before, &.tooltip .contact-icon:before { color:$wwuYellow; }
-    .contact-icon-value { margin-left:-5em; }
+    .contact-icon-value { margin-left:-6%; }
   }
   &.tooltip:hover .contact-icon:before, &.tooltip:focus .contact-icon:before { @include opacity(.7); @include transition(.1s); }
 }
@@ -102,19 +104,34 @@
 /*
  * User Profile Styles
 */
-.panels-flexible-column-staff_profile-1 {
-  width:auto;
-}
-.panels-flexible-column-staff_profile-main {
-  width:55%;
-  margin: 0 0 1em 1.5em;
-}
-.user-individual-profile {
-  vertical-align:top;
-  margin-left:2em;
 
-  .year, .phone, .location, .email {
-    margin-bottom:1.17em;
+
+html .user-individual-profile #main {
+  .panels-flexible-column-staff_profile-1 {
+    width:auto;
+  }
+  .panels-flexible-column-staff_profile-main {
+    width:55%;
+    margin: 0 0 1em 1.5em;
+  }
+
+  p, .location-container {
+    background:no-repeat left;
+    background-size:25px;
+    margin:.75em 0;
+  }
+
+  .field-year-started,
+  .field-department-program,
+  //.field-office-hours,
+  .field-location,
+  .field-phone-number,
+  .field-academic-title,
+  .field-e-mail-address,
+  .field-tr-location,
+  .field-about {
+    font-size:1.17em;
+    padding-left:2em;
   }
 
   .field-your-photo > img {
@@ -126,50 +143,59 @@
     margin-top:.75em;
   }
   .field-academic-title {
-    background-image:url('../images/userprofiles/user-light-blue.png');
-    background-position:.17em;
-    background-repeat: no-repeat;
-    background-size: 25px auto;
-    padding-left: 2em;
+    background-image:url('http://myweb.wwu.edu/browna44/work/user-light-blue.png');
   }
-  .field-year-started, .field-department-program {
-    font-style:italic;
+  .field-department-program {
     font-size:.925em;
     margin-top:0;
+  }
+  p.field-year-started {
+    margin-top:-1em;
+    margin-left:.25em;
+    font-size:1em;
+    span {
+      margin-top:0;
+      font-size:.925em;
+      &:before { content:'Since '; }
+    }
+  }
 
+  .location-container {
+    background-image:url('http://myweb.wwu.edu/browna44/work/location-green.png');
+    background-position:.33em;
+    background-size:.925em;
   }
-  .field-location {
-    background-image:url('../images/userprofiles/location-green.png');
-    background-position:.25em 0;
-    background-repeat: no-repeat;
-    background-size: 25px auto;
-    padding-left: 2em;
+  .field-tr-location {
+    display:inline;
   }
+  .field-tr-location:nth-of-type(even) {
+    padding-left:0;
+    background:none;
+    display:inline;
+  }
+
   .field-office-hours {
-    font-size:.625em;
-    background-image:url('../images/userprofiles/office-hours-green.png');
-    line-height:1.625;
-    background-repeat: no-repeat;
-    background-size: 24px auto;
-    padding-left: 2em;
+    font-size:.925em;
+    background-image:url('http://myweb.wwu.edu/browna44/work/office-hours-green.png');
+    background-size:1.17em;
+    background-position:0 .17em;
+    margin-top:-.75em;
+    padding-left:2em;
+    margin-left:2.5em;
+    &:before { content:'Office Hours: '; }
   }
   .field-phone-number {
-    background-image:url('../images/userprofiles/phone-lime.png');
-    background-position:.17em;
-    background-repeat: no-repeat;
-    background-size: 25px auto;
-    padding-left: 2em;
+    background-image:url('http://myweb.wwu.edu/browna44/work/phone-lime.png');
+    background-size:1.25em;
   }
   .field-e-mail-address {
-    background-image:url('../images/userprofiles/email-yellow.png');
-    background-repeat: no-repeat;
-    background-size: 25px auto;
-    padding-left: 2em;
+    background-image:url('http://myweb.wwu.edu/browna44/work/email-yellow.png');
+    background-size:1.25em;
   }
   /*
    * Not currently a field
    * .education {
-   * background-image:url('../images/userprofiles/education-red.png');
+   * background-image:url('http://myweb.wwu.edu/browna44/work/education-red.png');
    * }
   */
 
