@@ -655,7 +655,7 @@ $zen-auto-include-item-base: false;
 
   #navigation{ @include zen-grid-item(12,1); } //The layout when there is only one sidebar, the left one.
   .sidebar-first {
-    #content { @include zen-grid-item(8, 5); } // Span 4 columns, starting in 2nd column from left.
+    #content { @include zen-grid-item(8.75, 4.25); } // Span 4 columns, starting in 2nd column from left.
     #block-accordion-menu-1{ display:block; } //Show the sidebar navigation
     .region-sidebar-first {  @include zen-grid-item(3, 1); } // Span 1 column, starting in 1st column from left.
   } // End .sidebar-first
