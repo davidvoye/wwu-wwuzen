@@ -13,7 +13,9 @@
 (function ($, Drupal, window, document, undefined) {
 
 
-// Place your code here.
+/**
+* Place your code here.
+*/
 
 Drupal.behaviors.imgAttributes = {
     attach: function () {
