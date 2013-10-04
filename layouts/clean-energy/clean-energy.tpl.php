@@ -14,7 +14,7 @@
  *   - $content['right']: Content in the right column.
  */
 ?>
-<div class="clean-energy-top-row">
+<div class="clean-energy-top-row clearfix">
   <div class="clean-energy-top-left-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
   	<?php print $content['top_left']; ?>
   </div>
@@ -24,7 +24,7 @@
   </div>
 </div>
 
-<div class="clean-energy-bottom-row">
+<div class="clean-energy-bottom-row clearfix">
   <div class="clean-energy-bottom-left-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
     <?php print $content['bottom_left']; ?>
   </div>
