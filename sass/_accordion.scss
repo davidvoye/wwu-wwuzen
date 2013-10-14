@@ -1,0 +1,50 @@
+// jQuery Accordion Styles
+@import "base";
+
+.ui-helper-reset {
+  line-height: 1.5;
+}
+
+//Accordion Item/Entry = Row
+
+.ui-accordion .accordion-row {
+
+// Active/Open Accordion Header/Title
+  .ui-state-active,
+  .ui-widget-content .ui-state-active,
+  .ui-widget-header .ui-state-active {
+    border:none;
+    border-bottom:solid 3px white;
+    background:#e9e9e9;
+  }
+
+// Default/Closed Accordion Header/Title
+  .ui-state-default,
+  .ui-widget-content .ui-state-default,
+  .ui-widget-header .ui-state-default {
+    border:none;
+    background:none;
+  }
+
+// Accordion Body
+  .block-accordion-menu .ui-accordion-header,
+  .ui-accordion-content.ui-accordion-content-active,
+  .ui-accordion-content {
+    background-color:#e9e9e9;
+    border:none;
+    padding:1em;
+  }
+
+// Accordion Header/Title Link/H2
+  .ui-accordion-header a {
+    padding:.625em 0 .625em 2.2em;
+    h2 {
+      font-size:1.17rem;
+      margin:0;
+    }
+  }
+}
+
+#content .ui-accordion .accordion-row p:last-child { margin-bottom:0; }
+
+#content .ui-accordion ~ .item-list ul.pager { margin-top:.5em; }
