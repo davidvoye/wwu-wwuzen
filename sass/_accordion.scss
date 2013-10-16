@@ -48,3 +48,5 @@
 #content .ui-accordion .accordion-row p:last-child { margin-bottom:0; }
 
 #content .ui-accordion ~ .item-list ul.pager { margin-top:.5em; }
+
+#content .ui-accordion-content a { display:inline; padding-left: 0; color:$wwuRed; }
