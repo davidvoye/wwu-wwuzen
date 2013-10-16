@@ -289,10 +289,11 @@ h2 { margin-top:.5em; font-size:$h1-font-size; }
   padding-bottom:.25em;
 }
 
-#content {
-  p, blockquote {
+main {
+  p, blockquote, ul, ol, span {
     font-size:.925em;
     font-family:$muli;
+    li { font-size:1em; }
   }
   .code, code {
     font-family:"Courier New", Courier, monospace;
@@ -316,7 +317,15 @@ h2 { margin-top:.5em; font-size:$h1-font-size; }
   }
 }
 
-#content ul, #content ol { margin:0; }
+main ul, main ol {
+  margin:0;
+  /*
+  The next two properties prevent floating issues
+  See: http://perishablepress.com/margin-list-floated-image/
+  */
+  width:auto;
+  overflow:hidden;
+}
 
 table {
   border-collapse:collapse;
@@ -355,7 +364,8 @@ figure {
   img { margin:0 auto; }
   figcaption {
     margin-top:.5em;
-    font-size:.85em;
+    font-size:.85rem;
+    font-size:13px;
     line-height:1.5;
     font-style:italic;
     color:#555;

@@ -1,0 +1,85 @@
+/**
+* These are the layout styles for the clean-energy panel.
+*/
+
+@import "base";
+@import "compass";
+@import "zen";
+
+$box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
+
+@import url(http://fonts.googleapis.com/css?family=Muli:400,400italic);
+$muli: Muli, Tahoma, Verdana, "DejaVu Sans", sans-serif;
+
+$zen-column-count:  12;
+$zen-gutter-width:  30px;
+
+
+/**
+* Small display sizes (Mobile First)
+*/
+
+
+  $zen-column-count:1;
+
+  .clean-energy-top-left-column {
+    @include zen-grid-item(1,1);
+  }
+  .clean-energy-top-right-column {
+    @include zen-clear(both);
+    @include zen-grid-item(1,1);
+  }
+  .clean-energy-bottom-left-column {
+    @include zen-grid-item(1,1);
+    @include zen-clear(left);
+    margin:1em 0 1em 0;
+  }
+  .clean-energy-bottom-right-column  {
+    @include zen-grid-item(1,1);
+    @include zen-clear(left);
+    margin: 0 0 1em 0;
+  }
+
+
+#edit-buttons {
+  clear:both;
+}
+
+/**
+* Larger display sizes
+*/
+@media all and (min-width:801px) {
+  $zen-column-count:  12;
+
+  .clean-energy-top-row  {
+    width:100%;
+
+    .clean-energy-top-left-column {
+      @include zen-float(left);
+      @include zen-grid-item(6,1);
+    }
+
+    .clean-energy-top-right-column {
+      @include zen-clear(right);
+      @include zen-grid-item(6,7)
+    }
+
+  }
+
+  .clean-energy-bottom-row {
+    clear:both;
+    width:100%;
+
+    .clean-energy-bottom-left-column {
+      @include zen-float(left);
+      @include zen-grid-item(4,1);
+    }
+
+
+    .clean-energy-bottom-right-column {
+      @include zen-clear(right);
+      @include zen-grid-item(8,5);
+    }
+
+  }
+}
