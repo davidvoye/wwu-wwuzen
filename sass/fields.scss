@@ -12,6 +12,18 @@
  */
 
 @import "base";
+@font-face {
+    font-family: 'entyporegular';
+    src: url('../font/entyporegular/Entypo-webfont.eot');
+    src: url('../font/entyporegular/Entypo-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/entyporegular/Entypo-webfont.woff') format('woff'),
+         url('../font/entyporegular/Entypo-webfont.ttf') format('truetype'),
+         url('../font/entyporegular/Entypo-webfont.svg#entypo') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 
 /* ****************************************************
        Staff/User Listing & Individual Profiles
@@ -54,8 +66,8 @@
   margin-right:12.5%;
   @include transition(.5s);
   .contact-icon {
-    font-family:entypo, sans-serif;
-    font-size:1.625em;
+    font-family:entyporegular, sans-serif;
+    font-size:2.5em;
   }
   .contact-icon-value {
     @include opacity(0);
@@ -81,19 +93,19 @@
   }
   &.tooltip .contact-icon { @include transition(.3s); }
   &.location {
-    .contact-icon:before { content:'\E724'; }
+    .contact-icon:before { content:'\0030'; }
     &:hover .contact-icon:before, &:focus .contact-icon:before, &.tooltip .contact-icon:before { color:$wwuGreen; }
     .contact-icon-value { margin-left:-5%; }
   }
   &.phone {
-    .contact-icon:before { content:'\01F4DE'; }
+    .contact-icon:before { content:'\0021'; }
     &:hover .contact-icon:before, &:focus .contact-icon:before, &.tooltip .contact-icon:before { color:$wwuLime; }
     .contact-icon-value { margin-left:-4%; }
   }
   &.email {
     margin-right:0;
     p { margin:0; }
-    .contact-icon:before { content:'\2709'; }
+    .contact-icon:before { content:'\0025'; }
     &:hover .contact-icon:before, &:focus .contact-icon:before, &.tooltip .contact-icon:before { color:$wwuYellow; }
     .contact-icon-value { margin-left:-6%; }
   }
@@ -143,7 +155,7 @@ html .user-individual-profile #main {
     margin-top:.75em;
   }
   .field-academic-title {
-    background-image:url('http://myweb.wwu.edu/browna44/work/user-light-blue.png');
+    background-image:url('../images/userprofiles/user-light-blue.png');
   }
   .field-department-program {
     font-size:.925em;
@@ -161,7 +173,7 @@ html .user-individual-profile #main {
   }
 
   .location-container {
-    background-image:url('http://myweb.wwu.edu/browna44/work/location-green.png');
+    background-image:url('../images/userprofiles/location-green.png');
     background-position:.33em;
     background-size:.925em;
   }
@@ -176,7 +188,7 @@ html .user-individual-profile #main {
 
   .field-office-hours {
     font-size:.925em;
-    background-image:url('http://myweb.wwu.edu/browna44/work/office-hours-green.png');
+    background-image:url('../images/userprofiles/office-hours-green.png');
     background-size:1.17em;
     background-position:0 .17em;
     margin-top:-.75em;
@@ -185,17 +197,17 @@ html .user-individual-profile #main {
     &:before { content:'Office Hours: '; }
   }
   .field-phone-number {
-    background-image:url('http://myweb.wwu.edu/browna44/work/phone-lime.png');
+    background-image:url('../images/userprofiles/phone-lime.png');
     background-size:1.25em;
   }
   .field-e-mail-address {
-    background-image:url('http://myweb.wwu.edu/browna44/work/email-yellow.png');
+    background-image:url('../images/userprofiles/email-yellow.png');
     background-size:1.25em;
   }
   /*
    * Not currently a field
    * .education {
-   * background-image:url('http://myweb.wwu.edu/browna44/work/education-red.png');
+   * background-image:url('../images/userprofiles/education-red.png');
    * }
   */
 

@@ -14,6 +14,7 @@
 @import "base";
 @import "compass/css3/box-shadow";
 @import "compass/css3/images";
+// Import _accordion.scss at bottom of file.
 
 @mixin hide-text-bg-img {
   border: 0;
@@ -289,11 +290,10 @@ h2 { margin-top:.5em; font-size:$h1-font-size; }
   padding-bottom:.25em;
 }
 
-main {
-  p, blockquote, ul, ol, span {
+#content {
+  p, blockquote {
     font-size:.925em;
     font-family:$muli;
-    li { font-size:1em; }
   }
   .code, code {
     font-family:"Courier New", Courier, monospace;
@@ -317,15 +317,7 @@ main {
   }
 }
 
-main ul, main ol {
-  margin:0;
-  /*
-  The next two properties prevent floating issues
-  See: http://perishablepress.com/margin-list-floated-image/
-  */
-  width:auto;
-  overflow:hidden;
-}
+#content ul, #content ol { margin:0; }
 
 table {
   border-collapse:collapse;
@@ -597,3 +589,11 @@ html.js input.form-autocomplete {
   .site-name-and {}
   .site-name-college-of {}
 }
+
+
+/* ****************************************************
+                  Partial Files Import
+**************************************************** */
+
+
+@import "accordion"; // jQuery Accordion
