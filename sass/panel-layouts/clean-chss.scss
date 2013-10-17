@@ -27,6 +27,8 @@ $zen-gutter-width:  30px;
 
 .clean-chss-bottom-right {}
 
+
+
 /*@media all and (max-width: 360px) {
 
 }
@@ -34,3 +36,45 @@ $zen-gutter-width:  30px;
 @media all and (min-width:361px) and (max-width: 800px) {
 
 }*/
+
+// /////////////////////////////////////////////
+//        Styling for panel editor view
+
+#page-manager-edit {
+  .clean-chss-top-left,
+.clean-chss-top-right,
+.clean-chss-middle-left,
+.clean-chss-middle-center,
+.clean-chss-middle-right,
+.clean-chss-bottom-left,
+.clean-chss-bottom-right {
+  display:inline-block;
+}
+  .clean-chss-top-left {
+    width:65%;
+  }
+
+  .clean-chss-top-right {
+    width:32%;
+  }
+
+  .clean-chss-middle-left {
+    width:32%;
+  }
+
+  .clean-chss-middle-center {
+    width:32%;
+  }
+
+  .clean-chss-middle-right {
+    width:32%;
+  }
+
+  .clean-chss-bottom-left {
+    width:48%;
+  }
+
+  .clean-chss-bottom-right {
+    width:48%;
+  }
+}

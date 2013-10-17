@@ -14,11 +14,7 @@
 ?>
 
 
-<!--
-  Initial Content Designations
-  Top row:
-  Introductory blurb/p (left two-thirds) and Support CHSS banner (right third)
--->
+<!-- Top row: Introductory blurb/p (left two-thirds) and Support CHSS banner (right third) -->
 
 <div class="clean-chss-top-left" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
 	<?php print $content['top_left']; ?>
@@ -29,11 +25,7 @@
 </div>
 
 
-<!--
-  Initial Content Designations
-  Middle row:
-  Dean's Lecture Series (left thirds), Slideshow (center third) and About the College banner (right third)
--->
+<!-- Middle row: Dean's Lecture Series (left thirds), Slideshow (center third) and About the College banner (right third) -->
 
 <div class="clean-chss-middle-left" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
   <?php print $content['middle_left']; ?>
@@ -48,11 +40,7 @@
 </div>
 
 
-<!--
-  Initial Content Designations
-  Bottom row:
-  News (left half) and Events (right half)
--->
+<!-- Bottom row: News (left half) and Events (right half) -->
 
 <div class="clean-chss-bottom-left" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
   <?php print $content['bottom_left']; ?>
