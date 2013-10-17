@@ -1,0 +1,36 @@
+/**
+* These are the layout styles for the clean-chss panel.
+*/
+@import "base";
+@import "compass";
+@import "zen";
+
+$box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
+
+@import url(http://fonts.googleapis.com/css?family=Muli:400,400italic);
+$muli: Muli, Tahoma, Verdana, "DejaVu Sans", sans-serif;
+
+$zen-column-count:  12;
+$zen-gutter-width:  30px;
+
+.clean-chss-top-left {}
+
+.clean-chss-top-right {}
+
+.clean-chss-middle-left {}
+
+.clean-chss-middle-center {}
+
+.clean-chss-middle-right {}
+
+.clean-chss-bottom-left {}
+
+.clean-chss-bottom-right {}
+
+/*@media all and (max-width: 360px) {
+
+}
+
+@media all and (min-width:361px) and (max-width: 800px) {
+
+}*/
