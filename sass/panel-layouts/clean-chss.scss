@@ -11,11 +11,14 @@ $box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
 $muli: Muli, Tahoma, Verdana, "DejaVu Sans", sans-serif;
 
 $zen-column-count:  12;
-$zen-gutter-width:  30px;
+$zen-gutter-width:  1.25em;
+$zen-auto-include-item-base: false;
+
+$gray: rgba(151,151,151,1);
 
 .front header#department { display:none; }
 
-/*.chss-clean-middle-column {
+/*.clean-chss-middle-column {
     background-color: #FFFFFF;
     height: 16.4em;
     margin-bottom: 1em;
@@ -27,7 +30,7 @@ $zen-gutter-width:  30px;
   font-size:1.25em;
 }
 
-.chss-clean-bottom-left h2, .chss-clean-bottom-right h2 {
+.clean-chss-bottom-left h2, .clean-chss-bottom-right h2 {
   border-bottom:3px solid #D2D4D5;
   padding-bottom:.25em;
 }
@@ -72,13 +75,13 @@ $zen-gutter-width:  30px;
 @media all and (max-width:800px) {
   $zen-column-count: 1;
 
-  .chss-clean-top-left, // Intro text
-  .chss-clean-top-right, // How to Support CHSS
-  .chss-clean-middle-left, // Dean's Lecture Series
-  .chss-clean-middle-center, // Slideshow
-  .chss-clean-middle-right, // About the college
-  .chss-clean-bottom-left, // News
-  .chss-clean-bottom-right { // Events
+  .clean-chss-top-left, // Intro text
+  .clean-chss-top-right, // How to Support CHSS
+  .clean-chss-middle-left, // Dean's Lecture Series
+  .clean-chss-middle-center, // Slideshow
+  .clean-chss-middle-right, // About the college
+  .clean-chss-bottom-left, // News
+  .clean-chss-bottom-right { // Events
     @include zen-grid-item(1,1);
     @include zen-clear();
     margin:0 auto;
@@ -86,10 +89,10 @@ $zen-gutter-width:  30px;
   }
 
   // Center aligns images until they are turned into straight CSS
-  .chss-clean-top-right, // How to Support CHSS
-  .chss-clean-middle-left, // Dean's Lecture Series
-  .chss-clean-middle-center, // Slideshow
-  .chss-clean-middle-right { // About the college
+  .clean-chss-top-right, // How to Support CHSS
+  .clean-chss-middle-left, // Dean's Lecture Series
+  .clean-chss-middle-center, // Slideshow
+  .clean-chss-middle-right { // About the college
       text-align:center;
   }
 }
@@ -101,27 +104,28 @@ $zen-gutter-width:  30px;
 @media all and (min-width:801px) {
   $zen-column-count: 12;
 
-  .chss-clean-top-left { // Intro text
+  .clean-chss-top-left { // Intro text
     @include zen-grid-item(8,1);
   }
-  .chss-clean-top-right { // How to Support CHSS
+  .clean-chss-top-right { // How to Support CHSS
     @include zen-grid-item(4,9);
   }
-  .chss-clean-middle-left { // Dean's Lecture Series
+  .clean-chss-middle-left { // Dean's Lecture Series
     @include zen-grid-item(4,1);
-    @include zen-clear();
+    @include zen-clear(both);
   }
-  .chss-clean-middle-center { // Slideshow
+  .clean-chss-middle-center { // Slideshow
     @include zen-grid-item(4,5);
   }
-  .chss-clean-middle-right { // About the college
+  .clean-chss-middle-right { // About the college
     @include zen-grid-item(4,9);
   }
-  .chss-clean-bottom-left { // News
+  .clean-chss-bottom-left { // News
     @include zen-grid-item(6,1);
+    @include zen-clear(both);
   }
-  .chss-clean-bottom-right { // Events
-    @include zen-grid-item(5.9,7.1);
+  .clean-chss-bottom-right { // Events
+    @include zen-grid-item(5.9,7.1); // Compensate for lack of gutter
   }
 }
 
