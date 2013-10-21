@@ -14,6 +14,7 @@
 @import "base";
 @import "compass/css3/box-shadow";
 @import "compass/css3/images";
+// Import _accordion.scss at bottom of file.
 
 @mixin hide-text-bg-img {
   border: 0;
@@ -293,6 +294,7 @@ h2 { margin-top:.5em; font-size:$h1-font-size; }
   p, blockquote {
     font-size:.925em;
     font-family:$muli;
+    -webkit-text-stroke:.2px;
   }
   .code, code {
     font-family:"Courier New", Courier, monospace;
@@ -588,3 +590,11 @@ html.js input.form-autocomplete {
   .site-name-and {}
   .site-name-college-of {}
 }
+
+
+/* ****************************************************
+                  Partial Files Import
+**************************************************** */
+
+
+@import "accordion"; // jQuery Accordion

@@ -45,8 +45,11 @@
   }
 }
 
-// Remove bottom-margin on last paragraphs in accordion drawers/bodies
-#content .ui-accordion .accordion-row p:last-child { margin-bottom:0; }
+#content .accordion-row .ui-accordion .accordion-row p:last-child { margin-bottom:0; }
 
-// Add top-margin to pager/pagination
-#content .ui-accordion ~ .item-list ul.pager { margin-top:.5em; }
+#content .accordion-row .ui-accordion ~ .item-list ul.pager { margin-top:.5em; }
+
+#content .accordion-row .ui-accordion-content a {
+  display:inline;
+  padding-left: 0;
+}

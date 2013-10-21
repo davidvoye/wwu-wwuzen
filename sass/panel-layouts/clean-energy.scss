@@ -3,13 +3,9 @@
 */
 
 @import "base";
-@import "compass";
-@import "zen";
 
 $box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
 
-@import url(http://fonts.googleapis.com/css?family=Muli:400,400italic);
-$muli: Muli, Tahoma, Verdana, "DejaVu Sans", sans-serif;
 
 $zen-column-count:  12;
 $zen-gutter-width:  30px;
@@ -32,7 +28,7 @@ $zen-gutter-width:  30px;
   .clean-energy-bottom-left-column {
     @include zen-grid-item(1,1);
     @include zen-clear(left);
-    margin:1em 0 1em 0;
+    margin:1em 0 2em 0;
   }
   .clean-energy-bottom-right-column  {
     @include zen-grid-item(1,1);
