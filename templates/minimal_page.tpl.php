@@ -69,8 +69,8 @@
  * @see template_process()
  */
 ?>
-<div id="top-stripe"></div> <!-- stripe goes full browser page width -->
-<div id="page">
+<!-- Removed (because can be replaced by body {border-top...}): <div id="top-stripe"></div> -->
+<div class="page"> <!-- Replaced #page with .page -->
   <!--Retrieve our images for use in the header -->
   <?php
     // Desktops get this image
@@ -82,42 +82,45 @@
     $wwuMobileSearchIcon = base_path().path_to_theme() . '/images/icons/search-gray.png';
     $wwuMobileMainMenuIcon = base_path().path_to_theme() . '/images/icons/main-menu.png';
   ?>
-  <header>
+  <header role="banner">
 
-    <section id="wwuheader">
+    <section class="western-header" aria-role="University Links, Search, and Navigation"> <!-- Replace #wwuheader with .western-header -->
 
-      <span class="wwuLogo wwuLink"><a href="http://www.wwu.edu" class="wwuLink">Western Washington University</a></span>
+      <span class="western-logo"><a href="http://www.wwu.edu">Western Washington University</a></span> <!-- Remove a.wwuLink class. Replace span.wwuLogo and span.wwuLink with span.western-logo -->
 
-      <div id="menu-icons">
-        <div class="quick-links" id="mobileWWUmenu">
-          <img src="<?php print $wwuMobileMenuIcon;?>" alt="Quick links" class="quick-links-toggle icon-size">
+      <nav class="western-mobile-icons" role="navigation" aria-label="University related navigation.">
+        <div class="western-quick-links" aria-label="Western Quick Links"> <!-- Replaced div#menu-icons with div.western-quick-links-->
+          <!-- Removed: <div class="quick-links" id="mobileWWUmenu"> -->
+          <button class="quick-links-toggle icon-size">Toggle Quick Links</button> <!-- Changed "<img src="<?php print $wwuMobileMenuIcon;?>"" to a <button> -->
 
-          <ul id="wwumenu" role="navigation" aria-label="Western quick links">
+          <ul> <!-- Removed ul#wwumenu -->
             <li><a href="http://www.wwu.edu/academic_calendar" title="Calendar"><span aria-hidden="true">c</span> <span>Calendar</span></a></li>
             <li><a href="http://www.wwu.edu/directory" title="Directory"><span aria-hidden="true">d</span> <span>Directory</span></a></li>
             <li><a href="http://www.wwu.edu/index" title="Index"><span aria-hidden="true">i</span> <span>Index</span></a></li>
             <li><a href="http://www.wwu.edu/campusmaps" title="Map"><span aria-hidden="true">l</span> <span>Map</span></a></li>
             <li><a href="http://mywestern.wwu.edu" title="myWestern"><span aria-hidden="true">w</span> <span>myWestern</span></a></li>
           </ul>
-        </div> <!-- end div.quick-links -->
+        </div> <!-- div.western-quick-links -->
 
-        <div class="wwusearch">
-          <div class="icon-size" id="s-toggle" aria-label="Search"><a>Open Search</a></div> <!-- end div.icon-size -->
-          <div id="search" style="display:none;" role="search">
+        <div class="western-search" role="search" aria-label="University and Site Search">> <!-- change div.wwusearch to .western-search -->
+          <buttonOpen Search</button> <!-- Removed div#s-toggle and div.icon-size and <a>. Changed to <button> -->
+          
+          <div class="western-search-widget hide"> <!-- Replace div#search with .western-search-widget. Replaced style="display:none;" with div.hide class. -->
+
             <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
             <?php print $search_box; ?>
-          </div>
-          <div class="main-navigation" id="mobileNavTrigger">
-            <img src="<?php print $wwuMobileMainMenuIcon;?>" alt="Main menu links" class="main-menu-toggle icon-size">
-          </div>
-        </div> <!-- end div.wwusearch -->
-      </div> <!-- end div#menu-icons -->
+          </div> <!-- end div.western-search-widget -->
+        </div> <!-- end div.western-search -->
+
+        <button class="mobile-main-nav" aria-label="Open Mobile Main Navigation">Open Main Navigation</button> <!-- Replaced: <div class="main-navigation" id="mobileNavTrigger">
+          <img src="<?php print $wwuMobileMainMenuIcon;?>" alt="Main menu links" class="main-menu-toggle icon-size">
+        </div> -->
 
     </section> <!-- end section#wwuheader -->
 
 
 
-    <section id="header">
+    <section class="college-header" aria-role="College Header"> <!-- Replace #header with .college-header -->
 
       <div id="collegeheader">
         <!-- Group Logo (banner) and Site Name and Main Menu for Group -->
@@ -151,19 +154,17 @@
 
   </header>
 
-  <main id="main" role="main">
-    <header id="department">
+  <main role="main"> <!-- Removed #main... so redundant woo! -->
+    <header> <!-- Removed #department. Target with direct descendant selector: main > header -->
       <?php print render($title_prefix); ?>
         <?php if ($title): ?>
           <h1 class="title" id="page-title"><?php print $title; ?></h1>
         <?php endif; ?>
       <?php print $breadcrumb; ?>
     </header>
-    <div id="content" class="column">
+    <section class="content" id="main-content" class="column"> <!-- Replaced div with section element and replaced #content with .content. Added in #main-content for Skip to Content. -->
       <?php print render($page['highlighted']); ?>
-
-      <a id="main-content"></a>
-
+      <!-- Removed: <a id="main-content"></a> -->
       <?php print render($title_suffix); ?>
       <?php print $messages; ?>
       <?php print render($tabs); ?>
@@ -173,10 +174,11 @@
       <?php endif; ?>
       <?php print render($page['content']); ?>
       <?php print $feed_icons; ?>
-    </div> <!-- /#content -->
-    <!--add in secondary menu here in first sidebar -->
+    </section> <!-- section.content -->
+
+    <!-- Add secondary nav in first sidebar -->
     <?php if ($secondary_menu ): ?>
-      <nav id="secondary-menu" role="navigation" aria-role="Secondary navigation">
+      <nav class="secondary-nav" role="navigation" aria-role="Secondary navigation"> <!-- Replaced #secondary-menu with .secondary-nav -->
         <?php print theme('links__system_secondary_menu', array(
           'links' => $secondary_menu,
           'attributes' => array(
@@ -190,8 +192,7 @@
         )); ?>
       </nav>
     <?php endif; ?>
-    <!-- end of secondary menu -->
-
+    <!-- end of secondary nav -->
 
     <?php
       // Render the sidebars to see if there's anything in them.
@@ -200,14 +201,15 @@
     ?>
 
     <?php if ($sidebar_first || $sidebar_second): ?>
-      <aside class="sidebars">
+      <aside class="content-sidebar"> <!-- Replaced .sidebars with .content-sidebar -->
 
         <?php print $sidebar_first; ?>
         <?php print $sidebar_second; ?>
-      </aside> <!-- /.sidebars -->
+      </aside> <!-- aside.content-sidebar -->
     <?php endif; ?>
 
-  </main> <!-- /main#main -->
+  </main>
+
 </div> <!-- /#page -->
 
   <footer id="footer" role="contentinfo">
