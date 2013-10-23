@@ -112,10 +112,9 @@
         <button class="mobile-main-nav" aria-label="Open Mobile Main Navigation">Open Main Navigation</button> <!-- Replaced: <div class="main-navigation" id="mobileNavTrigger">
           <img src="<?php print $wwuMobileMainMenuIcon;?>" alt="Main menu links" class="main-menu-toggle icon-size">
         </div> -->
+      </nav> <!-- end nav.western-mobile-icons -->
 
     </section> <!-- end section#wwuheader -->
-
-
 
     <section class="college-header current-site" aria-role="College Header"> <!-- Replace #header with .college-header -->
 
