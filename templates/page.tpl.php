@@ -119,7 +119,7 @@
 
     <section id="header">
 
-      <div id="collegeheader">
+      <div id="collegeheader" class="college-header current-site">
         <!-- Group Logo (banner) and Site Name and Main Menu for Group -->
         <?php if ($logo): ?>
           <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">

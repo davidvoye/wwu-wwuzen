@@ -117,9 +117,9 @@
 
 
 
-    <section class="college-header" aria-role="College Header"> <!-- Replace #header with .college-header -->
+    <section class="college-header current-site" aria-role="College Header"> <!-- Replace #header with .college-header -->
 
-     <!-- <div id="collegeheader">
+     <!-- <div id="collegeheader"> -->
         <!-- Group Logo (banner) and Site Name and Main Menu for Group -->
         <?php if ($logo): ?>
           <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="college-banner"> <!-- Replaced #logo with .college-banner -->
