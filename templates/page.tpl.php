@@ -99,7 +99,7 @@
           </ul>
         </div> <!-- div.western-quick-links -->
 
-        <div class="western-search" role="search" aria-label="University and Site Search">> <!-- change div.wwusearch to .western-search -->
+        <div class="western-search" role="search" aria-label="University and Site Search"> <!-- change div.wwusearch to .western-search -->
           <button>Open Search</button> <!-- Removed div#s-toggle and div.icon-size and <a>. Changed to <button> -->
           
           <div class="western-search-widget hide"> <!-- Replace div#search with .western-search-widget. Replaced style="display:none;" with div.hide class. -->
@@ -120,22 +120,21 @@
 
      <!-- <div id="collegeheader"> -->
         <!-- Group Logo (banner) and Site Name and Main Menu for Group -->
-        <?php if ($logo): ?>
-          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="college-banner"> <!-- Replaced #logo with .college-banner -->
-          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>"></a> <!-- Removed #logoImage -->
-        <?php endif; ?>
+        <?php if ($logo): ?> <!-- Do we need this anymore? -->
+          <div class="college-banner">
+            <p><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"> <!-- Replaced #logo with .college-banner -->
+            Western Washington University</a></p>
+          </div> <!-- Removed #logoImage and replaced <img> with <div> and text element-->
+        <?php endif; ?> <!-- Do we need this anymore? -->
 
         <?php if ($site_name || $site_slogan): ?>
           <div class="college-name"> <!-- Replace #name-and-slogan with .college-name -->
             <?php if ($site_name): ?>
               <!-- Removed: <h1 id="site-name"> -->
-                <span><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a></span> <!-- Moved <span> to surround <a> -->
-            <?php endif; ?>
-
-            <?php if ($site_slogan): ?>
-              <p class="site-slogan"><?php print $site_slogan; ?></p> <!-- Changed h2#site-slogan to p.site-slogan -->
+                <p><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a></p> <!-- Moved <p> to surround <a> -->
             <?php endif; ?>
           </div> <!-- div.college-name -->
+          <!-- Removed site-slogan -->
 
     </section> <!-- end section.college-header -->
 
@@ -149,10 +148,10 @@
   </header>
 
   <main role="main"> <!-- Removed #main... so redundant woo! -->
-    <header> <!-- Removed #department. Target with direct descendant selector: main > header -->
+    <header class="page-title"> <!-- Removed #department. Added .page-title from h1 -->
       <?php print render($title_prefix); ?>
         <?php if ($title): ?>
-          <h1 class="page-title"><?php print $title; ?></h1> <!-- Removed #page-title and replaced .title with .page-title -->
+          <h1><?php print $title; ?></h1> <!-- Removed #page-title and replaced .title with .page-title in the <header> element above -->
         <?php endif; ?>
       <?php print $breadcrumb; ?>
     </header>
