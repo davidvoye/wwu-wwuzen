@@ -69,98 +69,101 @@
  * @see template_process()
  */
 ?>
-<!-- Removed (because can be replaced by body {border-top...}): <div id="top-stripe"></div> -->
-<div class="page"> <!-- Replaced #page with .page -->
+<div id="top-stripe"></div> <!-- stripe goes full browser page width -->
+<div id="page">
+  <!--Retrieve our images for use in the header -->
+  <?php
+    // Desktops get this image
+    $wwuLogo = base_path().path_to_theme() . '/images/wwu.png';
+    $wwuSearchIcon = base_path().path_to_theme() . '/images/icons/search.png';
+    // Mobile devices get these images
+    $wwuHorizontalLogo = base_path().path_to_theme() . '/images/wwuhorizlogo.png';
+    $wwuMobileMenuIcon = base_path().path_to_theme() . '/images/icons/toolbar-links.png';
+    $wwuMobileSearchIcon = base_path().path_to_theme() . '/images/icons/search-gray.png';
+    $wwuMobileMainMenuIcon = base_path().path_to_theme() . '/images/icons/main-menu.png';
+  ?>
+  <header>
 
-<!-- WWUZEN Changes
+    <section id="wwuheader">
 
-- Removed the unused images declared in php lines ~75-84 and ~224
-- To Do: style: body { border-top:solid 5px $wwuLtBlue; }
-- To do: Replace images in Right Footer with :before pseudo-elements. Social Media icons should be background-images.
--->
+      <span class="wwuLogo wwuLink"><a href="http://www.wwu.edu" class="wwuLink">Western Washington University</a></span>
 
-  <header role="banner">
+      <div id="menu-icons">
+        <div class="quick-links" id="mobileWWUmenu">
+          <img src="<?php print $wwuMobileMenuIcon;?>" alt="Quick links" class="quick-links-toggle icon-size">
 
-    <section class="western-header" aria-role="University Links, Search, and Navigation"> <!-- Replace #wwuheader with .western-header -->
-
-      <span class="western-logo"><a href="http://www.wwu.edu">Western Washington University</a></span> <!-- Remove a.wwuLink class. Replace span.wwuLogo and span.wwuLink with span.western-logo -->
-
-      <nav class="western-mobile-icons" role="navigation" aria-label="University related navigation.">
-        <div class="western-quick-links" aria-label="Western Quick Links"> <!-- Replaced div#menu-icons with div.western-quick-links-->
-          <!-- Removed: <div class="quick-links" id="mobileWWUmenu"> -->
-          <button class="quick-links-toggle icon-size">Toggle Quick Links</button> <!-- Changed "<img src="<?php print $wwuMobileMenuIcon;?>"" to a <button> -->
-
-          <ul> <!-- Removed ul#wwumenu -->
+          <ul id="wwumenu" role="navigation" aria-label="Western quick links">
             <li><a href="http://www.wwu.edu/academic_calendar" title="Calendar"><span aria-hidden="true">c</span> <span>Calendar</span></a></li>
             <li><a href="http://www.wwu.edu/directory" title="Directory"><span aria-hidden="true">d</span> <span>Directory</span></a></li>
             <li><a href="http://www.wwu.edu/index" title="Index"><span aria-hidden="true">i</span> <span>Index</span></a></li>
             <li><a href="http://www.wwu.edu/campusmaps" title="Map"><span aria-hidden="true">l</span> <span>Map</span></a></li>
             <li><a href="http://mywestern.wwu.edu" title="myWestern"><span aria-hidden="true">w</span> <span>myWestern</span></a></li>
           </ul>
-        </div> <!-- div.western-quick-links -->
+        </div> <!-- end div.quick-links -->
 
-        <div class="western-search" role="search" aria-label="University and Site Search">> <!-- change div.wwusearch to .western-search -->
-          <button>Open Search</button> <!-- Removed div#s-toggle and div.icon-size and <a>. Changed to <button> -->
-          
-          <div class="western-search-widget hide"> <!-- Replace div#search with .western-search-widget. Replaced style="display:none;" with div.hide class. -->
-
+        <div class="wwusearch">
+          <div class="icon-size" id="s-toggle" aria-label="Search"><a>Open Search</a></div> <!-- end div.icon-size -->
+          <div id="search" style="display:none;" role="search">
             <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
             <?php print $search_box; ?>
-          </div> <!-- end div.western-search-widget -->
-        </div> <!-- end div.western-search -->
-
-        <button class="mobile-main-nav" aria-label="Open Mobile Main Navigation">Open Main Navigation</button> <!-- Replaced: <div class="main-navigation" id="mobileNavTrigger">
-          <img src="<?php print $wwuMobileMainMenuIcon;?>" alt="Main menu links" class="main-menu-toggle icon-size">
-        </div> -->
+          </div>
+          <div class="main-navigation" id="mobileNavTrigger">
+            <img src="<?php print $wwuMobileMainMenuIcon;?>" alt="Main menu links" class="main-menu-toggle icon-size">
+          </div>
+        </div> <!-- end div.wwusearch -->
+      </div> <!-- end div#menu-icons -->
 
     </section> <!-- end section#wwuheader -->
 
 
 
-    <section class="college-header current-site" aria-role="College Header"> <!-- Replace #header with .college-header -->
+    <section id="header">
 
-     <!-- <div id="collegeheader"> -->
+      <div id="collegeheader" class="college-header current-site">
         <!-- Group Logo (banner) and Site Name and Main Menu for Group -->
         <?php if ($logo): ?>
-          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="college-banner"> <!-- Replaced #logo with .college-banner -->
-          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>"></a> <!-- Removed #logoImage -->
+          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" id="logoImage"/></a>
         <?php endif; ?>
 
         <?php if ($site_name || $site_slogan): ?>
-          <div class="college-name"> <!-- Replace #name-and-slogan with .college-name -->
+          <div id="name-and-slogan">
             <?php if ($site_name): ?>
-              <!-- Removed: <h1 id="site-name"> -->
-                <span><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a></span> <!-- Moved <span> to surround <a> -->
+              <h1 id="site-name">
+                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+              </h1>
             <?php endif; ?>
 
             <?php if ($site_slogan): ?>
-              <p class="site-slogan"><?php print $site_slogan; ?></p> <!-- Changed h2#site-slogan to p.site-slogan -->
+              <h2 id="site-slogan"><?php print $site_slogan; ?></h2>
             <?php endif; ?>
-          </div> <!-- div.college-name -->
+          </div> <!-- /#name-and-slogan -->
+        <?php endif; ?>
+          <div id="navigation">
+            <nav id="main-menu" role="navigation" aria-label="Main or top-level navigation">
+                  <?php print render($page['navigation']); ?>
+            </nav>
+          </div> <!-- /#navigation -->
+        <?php print render($page['header']); ?>
+      </div> <!-- end div#collegeheader -->
 
-    </section> <!-- end section.college-header -->
-
-    <?php endif; ?>
-      <!-- Remove: <div id="navigation"> -->
-      <nav class="main-nav" role="navigation" aria-label="Main navigation"> <!-- Replaced #main-menu with .main-nav -->
-        <?php print render($page['navigation']); ?>
-      </nav>
-    <?php print render($page['header']); ?>
+    </section> <!-- end section#header -->
 
   </header>
 
-  <main role="main"> <!-- Removed #main... so redundant woo! -->
-    <header> <!-- Removed #department. Target with direct descendant selector: main > header -->
+  <main id="main" role="main">
+    <header id="department">
       <?php print render($title_prefix); ?>
         <?php if ($title): ?>
-          <h1 class="page-title"><?php print $title; ?></h1> <!-- Removed #page-title and replaced .title with .page-title -->
+          <h1 class="title" id="page-title"><?php print $title; ?></h1>
         <?php endif; ?>
       <?php print $breadcrumb; ?>
     </header>
-
-    <section class="content" id="main-content" class="column"> <!-- Replaced div with section element and replaced #content with .content. Added in #main-content for Skip to Content. -->
+    <div id="content" class="column">
       <?php print render($page['highlighted']); ?>
-      <!-- Removed: <a id="main-content"></a> -->
+
+      <a id="main-content"></a>
+
       <?php print render($title_suffix); ?>
       <?php print $messages; ?>
       <?php print render($tabs); ?>
@@ -170,11 +173,10 @@
       <?php endif; ?>
       <?php print render($page['content']); ?>
       <?php print $feed_icons; ?>
-    </section> <!-- section.content -->
-
-    <!-- Add secondary nav in first sidebar -->
+    </div> <!-- /#content -->
+    <!--add in secondary menu here in first sidebar -->
     <?php if ($secondary_menu ): ?>
-      <nav class="secondary-nav" role="navigation" aria-role="Secondary navigation"> <!-- Replaced #secondary-menu with .secondary-nav -->
+      <nav id="secondary-menu" role="navigation" aria-role="Secondary navigation">
         <?php print theme('links__system_secondary_menu', array(
           'links' => $secondary_menu,
           'attributes' => array(
@@ -188,7 +190,8 @@
         )); ?>
       </nav>
     <?php endif; ?>
-    <!-- end of secondary nav -->
+    <!-- end of secondary menu -->
+
 
     <?php
       // Render the sidebars to see if there's anything in them.
@@ -197,49 +200,57 @@
     ?>
 
     <?php if ($sidebar_first || $sidebar_second): ?>
-      <aside class="content-sidebar"> <!-- Replaced .sidebars with .content-sidebar -->
+      <aside class="sidebars">
 
         <?php print $sidebar_first; ?>
         <?php print $sidebar_second; ?>
-      </aside> <!-- aside.content-sidebar -->
+      </aside> <!-- /.sidebars -->
     <?php endif; ?>
 
-  </main>
+  </main> <!-- /main#main -->
+</div> <!-- /#page -->
 
-</div> <!-- div.page -->
-
-  <footer role="contentinfo"> <!-- removed #footer -->
-    <!-- Removed: <div id="footer-wrapper"> -->
-      <div class="footer-left"> <!-- Replaced #footer-left with .footer-left -->
+  <footer id="footer" role="contentinfo">
+    <div id="footer-wrapper">
+      <div id="footer-left">
         <?php print render($page['footer_left']); ?>
       </div>
-
-      <div class="footer-center"> <!-- Replaced #footer-center with .footer-center -->
+      <div id="footer-center">
         <?php print render($page['footer_center']); ?>
       </div>
-
-      <div class="footer-right" role="complementary"> <!-- Replaced #footer-right with .footer-right -->
-          <!-- Removed: <div id="footer-right-heading"> -->
-        <h1>Western Washington University</h1> <!-- Replaced <h3> with <h1> -->
-          <div class="western-contact-info"> <!-- Replaced #footer-right-contact-info with .western-contact-info -->
-            <!-- Replaced all <img>s with classes on <p>s so they can be made :before pseudo elements -->
-            <p>516 High Street<br>
-              Bellingham, WA 98225</p> <!-- Replaced with a <br>: <p class="second-address-line"> -->
-            <p><a href="tel:3606503000">(360) 650-3000</a></p>
-            <p><a href="http://www.wwu.edu/wwucontact/">Contact Western</a></p>
+      <div id="footer-right" role="complementary">
+        <!-- //Retrieve our icon images -->
+        <?php
+          $addressIcon = base_path().path_to_theme() . '/images/AddressIcon.png';
+          $phoneIcon = base_path().path_to_theme() . '/images/PhoneIcon.png';
+          $emailIcon = base_path().path_to_theme() . '/images/EmailIcon.png';
+          $facebookIcon = base_path().path_to_theme() . '/images/FacebookIcon.png';
+          $flickrIcon = base_path().path_to_theme() . '/images/FlickrIcon.png';
+          $twitterIcon = base_path().path_to_theme() . '/images/TwitterIcon.png';
+          $youTubeIcon = base_path().path_to_theme() . '/images/YouTubeIcon.png';
+          $googlePlusIcon = base_path().path_to_theme() . '/images/GooglePlusIcon.png';
+          $rssIcon = base_path().path_to_theme() . '/images/RSSicon.png';
+         ?>
+          <div id="footer-right-heading">
+            <h3>Western Washington University</h3>
           </div>
-
-          <div class="western-social-media"> <!-- Replaced #footer-right-social-media-icons with .western-social-media -->
-            <a href="http://www.facebook.com/westernwashingtonuniversity">Facebook</a>
-            <a href="http://www.flickr.com/wwu">Flickr</a>
-            <a href="https://twitter.com/#!/WWU">Twitter</a>
-            <a href="http://www.youtube.com/wwu">Youtube</a>
-            <a href="https://plus.google.com/+wwu/posts">Google Plus</a>
-            <a href="http://news.wwu.edu/go/feed/1538/ru/atom/">RSS</a>
+          <div id="footer-right-contact-info">
+            <img src="<?php print $addressIcon;?>" width="14px" height="12px" /><p>516 High Street</p><p class="second-address-line">Bellingham, WA 98225</p>
+            <img src="<?php print $phoneIcon;?>" width="12px" height="11px"/><p>(360) 650-3000</p>
+            <img src="<?php print $emailIcon;?>" width="12px" height="8px" /><p><a href="http://www.wwu.edu/wwucontact/">Contact Western</a></p>
+          </div>
+          <div id="footer-right-social-media-icons">
+            <a href="http://www.facebook.com/westernwashingtonuniversity"><img src="<?php print $facebookIcon;?>" width="24px" height="24px" /></a>
+            <a href="http://www.flickr.com/wwu"><img src="<?php print $flickrIcon;?>" width="24px" height="24px" /></a>
+            <a href="https://twitter.com/#!/WWU"><img src="<?php print $twitterIcon;?>" width="24px" height="24px" /></a>
+            <a href="http://www.youtube.com/wwu"><img src="<?php print $youTubeIcon;?>" width="24px" height="24px" /></a>
+            <a href="https://plus.google.com/+wwu/posts"><img src="<?php print $googlePlusIcon;?>" width="24px" height="24px" /></a>
+            <a href="http://news.wwu.edu/go/feed/1538/ru/atom/"><img src="<?php print $rssIcon;?>" width="24px" height="24px" /></a>
           </div>
 
         <?php print render($page['footer_right']); ?>
       </div>
-  </footer> <!-- end footer -->
+    </div> <!-- /#footer-wrapper -->
+  </footer> <!-- /#footer -->
 
 <?php print render($page['bottom']); ?>
