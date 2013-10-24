@@ -114,7 +114,7 @@
         </div> -->
       </nav> <!-- end nav.western-mobile-icons -->
 
-    </section> <!-- end section#wwuheader -->
+    </section> <!-- end section.western-header -->
 
     <section class="college-header current-site" aria-role="College Header"> <!-- Replace #header with .college-header -->
 
@@ -124,7 +124,7 @@
           <div class="college-banner">
             <p><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"> <!-- Replaced #logo with .college-banner -->
             Western Washington University</a></p>
-          </div> <!-- Removed #logoImage and replaced <img> with <div> and text element-->
+          </div> <!-- end div.college-banner --> <!-- Removed #logoImage and replaced <img> with <div> and text element-->
         <?php endif; ?> <!-- Do we need this anymore? -->
 
         <?php if ($site_name || $site_slogan): ?>
@@ -136,11 +136,11 @@
           </div> <!-- div.college-name -->
           <!-- Removed site-slogan -->
 
-    </section> <!-- end section.college-header -->
+    </section> <!-- end section.college-header.current-site -->
 
     <?php endif; ?>
       <!-- Remove: <div id="navigation"> -->
-      <nav class="main-nav" role="navigation" aria-label="Main navigation"> <!-- Replaced #main-menu with .main-nav -->
+      <nav class="main-nav" id="main-menu" role="navigation" aria-label="Main navigation"> <!-- Added .main-nav -->
         <?php print render($page['navigation']); ?>
       </nav>
     <?php print render($page['header']); ?>
@@ -156,7 +156,7 @@
       <?php print $breadcrumb; ?>
     </header>
 
-    <section class="content" id="main-content" class="column"> <!-- Replaced div with section element and replaced #content with .content. Added in #main-content for Skip to Content. -->
+    <section class="content" class="column"> <!-- Replaced div with section element and replaced #content with .content. Do we need #main-content for Skip to Content? -->
       <?php print render($page['highlighted']); ?>
       <!-- Removed: <a id="main-content"></a> -->
       <?php print render($title_suffix); ?>
