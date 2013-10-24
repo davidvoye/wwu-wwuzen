@@ -81,9 +81,9 @@
 
   <header role="banner">
 
-    <section class="western-header" aria-role="University Links, Search, and Navigation"> <!-- Replace #wwuheader with .western-header -->
+    <section class="western-header" aria-label="University Links, Search, and Navigation"> <!-- Replace #wwuheader with .western-header -->
 
-      <span class="western-logo"><a href="http://www.wwu.edu">Western Washington University</a></span> <!-- Remove a.wwuLink class. Replace span.wwuLogo and span.wwuLink with span.western-logo -->
+      <p class="western-logo"><a href="http://www.wwu.edu">Western Washington University</a></p> <!-- Remove a.wwuLink class. Replace span.wwuLogo and span.wwuLink with p.western-logo -->
 
       <nav class="western-mobile-icons" role="navigation" aria-label="University related navigation.">
         <div class="western-quick-links" aria-label="Western Quick Links"> <!-- Replaced div#menu-icons with div.western-quick-links-->
@@ -116,33 +116,30 @@
 
     </section> <!-- end section.western-header -->
 
-    <section class="college-header current-site" aria-role="College Header"> <!-- Replace #header with .college-header -->
+    <section class="college-header current-site" aria-label="College Header"> <!-- Replace #header with .college-header -->
 
      <!-- <div id="collegeheader"> -->
         <!-- Group Logo (banner) and Site Name and Main Menu for Group -->
         <?php if ($logo): ?> <!-- Do we need this anymore? -->
           <div class="college-banner">
-            <p><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"> <!-- Replaced #logo with .college-banner -->
-            Western Washington University</a></p>
+            <p><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"> <!-- Replaced #logo with .college-banner --></a></p>
           </div> <!-- end div.college-banner --> <!-- Removed #logoImage and replaced <img> with <div> and text element-->
         <?php endif; ?> <!-- Do we need this anymore? -->
 
-        <?php if ($site_name || $site_slogan): ?>
-          <div class="college-name"> <!-- Replace #name-and-slogan with .college-name -->
-            <?php if ($site_name): ?>
-              <!-- Removed: <h1 id="site-name"> -->
-                <p><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a></p> <!-- Moved <p> to surround <a> -->
-            <?php endif; ?>
-          </div> <!-- div.college-name -->
-          <!-- Removed site-slogan -->
+        <div class="college-name"> <!-- Replace #name-and-slogan with .college-name -->
+          <?php if ($site_name): ?>
+            <!-- Removed: <h1 id="site-name"> -->
+              <p><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a></p> <!-- Moved <p> to surround <a> -->
+          <?php endif; ?>
+        </div> <!-- div.college-name -->
+        <!-- Removed site-slogan -->
 
     </section> <!-- end section.college-header.current-site -->
 
-    <?php endif; ?>
-      <!-- Remove: <div id="navigation"> -->
-      <nav class="main-nav" id="main-menu" role="navigation" aria-label="Main navigation"> <!-- Added .main-nav -->
-        <?php print render($page['navigation']); ?>
-      </nav>
+    <!-- Remove: <div id="navigation"> -->
+    <nav class="main-nav" id="main-menu" role="navigation" aria-label="Main navigation"> <!-- Added .main-nav -->
+      <?php print render($page['navigation']); ?>
+    </nav>
     <?php print render($page['header']); ?>
 
   </header>
@@ -156,7 +153,7 @@
       <?php print $breadcrumb; ?>
     </header>
 
-    <section class="content" class="column"> <!-- Replaced div with section element and replaced #content with .content. Do we need #main-content for Skip to Content? -->
+    <section class="content column"> <!-- Replaced div with section element and replaced #content with .content. Do we need #main-content for Skip to Content? -->
       <?php print render($page['highlighted']); ?>
       <!-- Removed: <a id="main-content"></a> -->
       <?php print render($title_suffix); ?>
