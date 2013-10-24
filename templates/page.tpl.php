@@ -88,7 +88,7 @@
       <nav class="western-mobile-icons" role="navigation" aria-label="University related navigation.">
         <div class="western-quick-links" aria-label="Western Quick Links"> <!-- Replaced div#menu-icons with div.western-quick-links-->
           <!-- Removed: <div class="quick-links" id="mobileWWUmenu"> -->
-          <button class="quick-links-toggle icon-size">Toggle Quick Links</button> <!-- Changed "<img src="<?php print $wwuMobileMenuIcon;?>"" to a <button> -->
+          <button class="quick-links-toggle icon-size" role="button" aria-pressed="false" aria-label="Toggle Quick Links">Toggle Quick Links</button> <!-- Changed "<img src="<?php print $wwuMobileMenuIcon;?>"" to a <button> -->
 
           <ul> <!-- Removed ul#wwumenu -->
             <li><a href="http://www.wwu.edu/academic_calendar" title="Calendar"><span aria-hidden="true">c</span> <span>Calendar</span></a></li>
@@ -100,8 +100,8 @@
         </div> <!-- div.western-quick-links -->
 
         <div class="western-search" role="search" aria-label="University and Site Search"> <!-- change div.wwusearch to .western-search -->
-          <button>Open Search</button> <!-- Removed div#s-toggle and div.icon-size and <a>. Changed to <button> -->
-          
+          <button role="button" aria-pressed="false" aria-label="Open the search box">Open Search</button> <!-- Removed div#s-toggle and div.icon-size and <a>. Changed to <button> -->
+
           <div class="western-search-widget hide"> <!-- Replace div#search with .western-search-widget. Replaced style="display:none;" with div.hide class. -->
 
             <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
@@ -109,7 +109,7 @@
           </div> <!-- end div.western-search-widget -->
         </div> <!-- end div.western-search -->
 
-        <button class="mobile-main-nav" aria-label="Open Mobile Main Navigation">Open Main Navigation</button> <!-- Replaced: <div class="main-navigation" id="mobileNavTrigger">
+        <button class="mobile-main-nav" role="button" aria-pressed="false" aria-label="Open Mobile Main Navigation">Open Main Navigation</button> <!-- Replaced: <div class="main-navigation" id="mobileNavTrigger">
           <img src="<?php print $wwuMobileMainMenuIcon;?>" alt="Main menu links" class="main-menu-toggle icon-size">
         </div> -->
       </nav> <!-- end nav.western-mobile-icons -->
@@ -119,7 +119,7 @@
     <section class="college-header current-site" aria-label="College Header"> <!-- Replace #header with .college-header -->
 
      <!-- <div id="collegeheader"> -->
-        <!-- Group Logo (banner) and Site Name and Main Menu for Group -->
+        <!-- College Logo (banner) and Site Name and Main Menu for College -->
         <?php if ($logo): ?> <!-- Do we need this anymore? -->
           <div class="college-banner">
             <p><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"> <!-- Replaced #logo with .college-banner --></a></p>
