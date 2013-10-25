@@ -44,7 +44,7 @@ li a.active {
  * Navigation bar
  */
 
-#navigation {
+.main-nav {
   /* overflow: hidden; */ /* Sometimes you want to prevent overlapping with main div. */
   padding-top: 10px;
   .block {
@@ -80,10 +80,10 @@ li a.active {
  * Main menu and Secondary menu links
  */
 
-#main-menu {
+.main-menu {
 }
 
-#secondary-menu {
+.secondary-menu {
   float: right; /* LTR */
 }
 
@@ -97,13 +97,10 @@ li a.active {
 .block-menu-block {
 }
   /* W W U   S T Y L E S */
-#navigation {
+.main-menu {
   padding:10px 0 0 0;
   height: 24px;
-  width:100%
-}
-
-#navigation #main-menu {
+  width:100%;
   font-family: $muli;
   ul {
     width:100%;
