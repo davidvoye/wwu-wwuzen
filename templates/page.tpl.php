@@ -215,7 +215,7 @@
 
       <div class="footer-right" role="complementary"> <!-- Replaced #footer-right with .footer-right -->
           <!-- Removed: <div id="footer-right-heading"> -->
-        <h1>Western Washington University</h1> <!-- Replaced <h3> with <h1> -->
+        <h1><span>Western Washington University</span></h1> <!-- Replaced <h3> with <h1> -->
           <div class="western-contact-info"> <!-- Replaced #footer-right-contact-info with .western-contact-info -->
             <!-- Replaced all <img>s with classes on <p>s so they can be made :before pseudo elements -->
             <p>516 High Street<br>

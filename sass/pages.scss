@@ -34,7 +34,7 @@ body {
   background-color: #e9e9e9;
 }
 
-#page {}
+.page {}
 
 /*
  * The skip-link link will be completely hidden until a user tabs to the link.
@@ -58,7 +58,7 @@ body {
                        Header
 **************************************************** */
 
-#wwuheader {
+.western-header {
   font-family:$muli;
   span.wwuLogo a.wwuLink {
     display:block;
@@ -81,7 +81,7 @@ body {
       background-image:url('../images/icons/search-gray.png');
     }
   }
-  #search {
+  .western-search-widget {
     background:#fff;
     padding:0;
     display:block;
@@ -91,6 +91,7 @@ body {
     width:18.25em;
     margin-top:-.31em;
     @include box-shadow(#333 0 0 8px);
+    &.hide { display:none; }
     .form-item .form-text {
       &:focus, &:active { @include box-shadow(none); }
     }
@@ -145,7 +146,7 @@ body {
     }
   }
 }
-  #wwumenu {
+  .western-quick-links ul {
     font-size: .8em;
     margin:0;
     padding:0;
@@ -168,19 +169,13 @@ body {
     }
   }
 
-#logo { /* Wrapping link for college banner = logo */
-  float: left; /* LTR */
+.college-banner {
+  /* float: left;
   padding: 0;
-  width: 100%;
-  img { vertical-align: bottom; }
+  width: 100%; */
 }
 
-#site-slogan { /* The slogan (or tagline) of a website */
-  margin: 0;
-  font-size: 1em;
-}
-
-.region-header, #navigation { /* Wrapper for any blocks placed in the header region */
+.region-header, .main-nav { /* Wrapper for any blocks placed in the header region */
   clear: both; /* Clear the logo */
 }
 
@@ -188,7 +183,7 @@ body {
           Main (container for everything)
 **************************************************** */
 
-#main {
+main {
   padding: .625em;
   //Create a white to gray vertical gradient
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e9e9e9',GradientType=0 ); /* IE6-8 */
@@ -200,9 +195,9 @@ body {
                         Content
 **************************************************** */
 
-#content { clear:both; }
+.content { clear:both; }
 
-header#department {
+.page-title {
   border-bottom:solid 3px #E9E9E9;
   padding:0 1em .5em 1em;
   margin-bottom:1em;
@@ -245,7 +240,7 @@ a {
   &:hover, &:focus {text-decoration: underline;}
 }
 
-#secondary-menu { font-family:$muli; }
+.secondary-nav { font-family:$muli; }
 
 h1.title, /* The title of the page */
 h2.node-title, /* Title of a piece of content when it is given in a list of content */
@@ -282,7 +277,7 @@ h2 { margin-top:.5em; font-size:$h1-font-size; }
 
 .block-title { font-size:1em; }
 
-#footer-wrapper h2.block-title { color: #fff; }
+footer h2.block-title { color: #fff; }
 
 // To be used (on headers) in Drupal WYSIWYG Styles Dropdown
 .title-underline {
@@ -290,7 +285,7 @@ h2 { margin-top:.5em; font-size:$h1-font-size; }
   padding-bottom:.25em;
 }
 
-#content {
+.content {
   p, blockquote {
     font-size:.925em;
     font-family:$muli;
@@ -318,7 +313,7 @@ h2 { margin-top:.5em; font-size:$h1-font-size; }
   }
 }
 
-#content ul, #content ol { margin:0; }
+main ul, main ol { margin:0; }
 
 table {
   border-collapse:collapse;
@@ -467,23 +462,20 @@ span.field-label { /* The inline field label used by the Fences module */
                        Footer
 **************************************************** */
 
-#footer {
+footer {
   background-color: $wwuBlue;
   color: white;
   border-top:.8em solid #fff;
   padding-bottom:1em;
   font-family:$muli;
-}
-
-#footer-wrapper {
   max-width:1080px;
   margin-left: auto;
   margin-right: auto;
 }
 
-#footer-left {}
+.footer-left {}
 
-#footer-center {
+.footer-center {
   li {
     border-bottom:1px solid #fff;
     list-style: none;
@@ -505,26 +497,26 @@ span.field-label { /* The inline field label used by the Fences module */
 }
 
 
-#footer-right {
+.footer-right {
   min-width: 19em;
   @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
   font-family:$muli;
-  #footer-right-heading {
+  h1 {
     background-color: #fff;
     width:100%;
     height:2.520em;
+    font-size:1em;
+    color:$wwuBlue;
+    text-transform:uppercase;
     @include box-shadow(#555 0 0 7px);
-    h3 {
-      font-size:1em;
-      color:$wwuBlue;
+    span {
       margin:0;
       padding-top: 0.8em;
       border: none;
-      text-transform:uppercase;
       }
     }
 
-  #footer-right-contact-info {
+  .western-contact-info {
     padding-left:1.25em;
     margin-top:1.500em;
     font-size:.750em;
@@ -543,7 +535,7 @@ span.field-label { /* The inline field label used by the Fences module */
     }
     a { color:#fff; }
   }
-  #footer-right-social-media-icons {
+  .western-social-media {
     position:relative;
     margin-top:1.438em;
     a {
@@ -569,7 +561,7 @@ html.js input.form-autocomplete {
   background-position:100% 5px;
 }
 
-#site-name {
+.college-name {
   z-index:99;
   min-width:200px;
   max-width:250px;
