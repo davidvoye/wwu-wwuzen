@@ -122,7 +122,7 @@
         <div class="college-name"> <!-- Replace #name-and-slogan with .college-name -->
           <?php if ($site_name): ?>
             <!-- Removed: <h1 id="site-name"> -->
-              <p><<?php print $site_name; ?></p> <!-- Moved <p> to surround <a> -->
+              <p><?php print $site_name; ?></p> <!-- Moved <p> to surround <a> -->
           <?php endif; ?>
         </div> <!-- div.college-name -->
         <!-- Removed site-slogan -->
