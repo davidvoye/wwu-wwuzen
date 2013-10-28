@@ -16,14 +16,6 @@
 @import "compass/css3/images";
 // Import _accordion.scss at bottom of file.
 
-@mixin hide-text-bg-img {
-  border: 0;
-  font: 0/0 a;
-  text-shadow: none;
-  color: transparent;
-}
-// @include hide-text-bg-img;
-
 /* ****************************************************
                         Body
 **************************************************** */
@@ -60,32 +52,6 @@ body {
 
 .western-header {
   //font-family:$muli;
-  .western-logo {
-    margin:0;
-    a {
-      display:block;
-      z-index:200;
-      margin: -6px 0 0 20px;
-      position:relative;
-      @include hide-text-bg-img;
-      background: url('../images/wwu.png') no-repeat;
-      width: 240px;
-      height: 145px;
-    }
-  }
-  .western-search {
-    > button {
-      top:44px;
-      background:url('../images/icons/search.png') no-repeat;
-      background-size:cover;
-      filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='/sites/all/themes/wwuzen/images/icons/search.png', sizingMethod='scale');
-      -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader( src='/sites/all/themes/wwuzen/images/icons/search.png', sizingMethod='scale')";
-      @include hide-text-bg-img;
-      @media all and (max-width:800px) {
-        background-image:url('../images/icons/search-gray.png');
-      }
-    }
-  }
   .western-search-widget {
     background:#fff;
     padding:0;

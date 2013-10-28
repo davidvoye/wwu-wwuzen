@@ -96,7 +96,7 @@ footer {
 @media all and (max-width: 800px) {
 .western-header {
   background-color:$wwuBlue;
-  height:68px;
+  //height:68px;
   .western-logo a {
     @include zen-grid-item(1,1,left);
     margin-bottom:-.375em;
@@ -117,6 +117,7 @@ footer {
     right:0;
     z-index:200;
     @include box-shadow(-5px 0 15px -5px #333);
+    button { display:none; }
   }
   .western-search {
     @include zen-clear(right);
@@ -124,6 +125,7 @@ footer {
     z-index: 200;
     background-color:rgb(75, 104, 156);
     top:0;
+    > button { background-image:url('../images/icons/search-gray.png'); }
     .western-search-widget {
       @include zen-clear(right);
       display:none;
@@ -136,11 +138,7 @@ footer {
       @include transition(width .25s);
     }
   } // End .wwusearch
-  .quick-links-toggle {
-    width:100%;
-    img { top:0; }
-  }
-  .icon-size {
+  %icon-size { // Use for @extends
     height:44px;
     width:44px;
     position:absolute;
@@ -151,9 +149,8 @@ footer {
   .mobile-main-nav {
     @include zen-clear(right);
     @include zen-grid-item(1,1,right);
-    background-color:rgb(75, 104, 156);
+    background-color:$wwuOceanBlue;
     width:2.75em;
-    img { top:88px; }
   }
   ul {
     margin: 0;
@@ -570,33 +567,53 @@ footer {
   $zen-column-count: 12;
 
   .main-nav ul li { float:none; }
-  body { border-top:solid 5px $wwuLtblue; }
+  body { border-top:solid 6px $wwuLtblue; }
+  header[role="banner"] {
+    height: 247px; //extend white background below menu
+    border:solid 10px #fff;
+    position:relative;
+    @include box-sizing(border-box);
+    margin-top: 50px; //slide college logo (banner) right under wwu logo
+  }
   .western-header {
     @include zen-grid-item(12,1);
     width:240px;
     margin-bottom:.563em;
-    .western-quick-links {
-      width:50%;
-      display:block;
-      position:absolute;
-      top:0;
-      right:0;
-      @include transition(.5s);
-      z-index:555;
-      ul {
-        position:absolute;
-        top:15px;
-        left:2em;
+    margin-top: -131px;
+    .western-logo {
+      margin:0;
+      a {
+        display:block;
+        z-index:200;
+        margin: 65px 0 0 20px;
+        position:relative;
+        @include hide-text-bg-img;
+        background: url('../../images/wwu.png') no-repeat;
+        width: 240px;
+        height: 145px;
       }
     }
+    nav {
+      position: absolute;
+      top: -70px;
+      right:4.5em;
+      width: 100%;
+    }
     .western-search {
-      position:absolute;
-      left:26.5em;
-      top:5px;
+      top: 7px;
+      display: block;
+      position: absolute;
+      right: 0;
       > button {
+        top:44px;
         height:44px;
         width:44px;
         cursor:pointer;
+        background:url('../../images/icons/search.png') no-repeat;
+        background-size:cover;
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='/sites/all/themes/wwuzen/images/icons/search.png', sizingMethod='scale');
+        -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader( src='/sites/all/themes/wwuzen/images/icons/search.png', sizingMethod='scale')";
+        @include hide-text-bg-img;
       }
       .western-search-widget {
         position:absolute;
@@ -606,18 +623,24 @@ footer {
         display:block;
       }
     }
-    .quick-links-toggle, .mobile-main-nav { display:none; }
+    .western-quick-links {
+      width:inherit;
+      display:block;
+      z-index:555;
+      ul {
+        @include transition(.5s);
+        position:relative;
+        top:1.5em;
+        left:60%;
+      }
+      > button { display:none; }
+    }
+    .mobile-main-nav { display:none; }
   } // End .western-header
   .college-header {
     @include zen-clear();
     @include zen-grid-item(12,1);
-    //width:98%;
-    position:relative;
-    border:solid 10px #fff;
-    background-color: $wwuGreen;
-    //@include box-sizing(border-box);
-    height: 228px; //extend white background below menu
-    margin-top: -90px; //slide college logo (banner) right under wwu logo
+    //margin-top: -113px;
     > a {
       display:block;
       width:100%;
@@ -688,5 +711,10 @@ footer {
 @media all and (min-width: 801px) and (max-width: 1000px) {
   // Use 12 grid columns for larger screens.
   $zen-column-count: 12;
-  .western-header .western-quick-links { width:62%; @include transition(.5s); }
+  .western-header .western-quick-links { 
+    ul {
+      left: 45%;
+      @include transition(.5s);
+    }
+  }
 }

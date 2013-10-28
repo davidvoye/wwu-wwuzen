@@ -21,12 +21,12 @@ Drupal.behaviors.siteNameTypography = {
 		attach: function () {
 
 		// Gets copy from site name (ultimately inside a span: #site-name a span)
-		var siteName = $(".college-name").text();
+		var siteName = $(".college-name p").text();
 
 		var typographyAnd = siteName.replace("and", "<span class=\"diminutive-type site-name-and\">and</span>");
 		var typographyCollegeOf = typographyAnd.replace("College of", "<span class=\"diminutive-type site-name-college-of\">College of</span>");
 
-		$('.college-name p span').replaceWith(typographyCollegeOf);
+		$('.college-name p').replaceWith(typographyCollegeOf);
 	}
 }
 
