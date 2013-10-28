@@ -110,32 +110,34 @@
 
     </section> <!-- end section.western-header -->
 
-    <section class="college-header current-site" aria-label="College Header"> <!-- Replace #header with .college-header -->
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
-     <!-- <div id="collegeheader"> -->
+    <div>
+      <section class="college-header current-site" aria-label="College Header"> <!-- Replace #header with .college-header -->
+        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
+       <!-- <div id="collegeheader"> -->
 
-        <!-- College Logo (banner) and Site Name and Main Menu for College -->
-        <?php if ($logo): ?>
-          <div class="college-banner">
-            <img src="<?php print $logo;?>">
-          </div> <!-- end div.college-banner --> <!-- Removed #logoImage and replaced <img> with <div> and text element-->
-        <?php endif; ?>
-
-        <div class="college-name"> <!-- Replace #name-and-slogan with .college-name -->
-          <?php if ($site_name): ?>
-            <!-- Removed: <h1 id="site-name"> -->
-              <p><span><?php print $site_name; ?></span></p> <!-- Moved <p> to surround <a> -->
+          <!-- College Logo (banner) and Site Name and Main Menu for College -->
+          <?php if ($logo): ?>
+            <div class="college-banner">
+              <img src="<?php print $logo;?>">
+            </div> <!-- end div.college-banner --> <!-- Removed #logoImage and replaced <img> with <div> and text element-->
           <?php endif; ?>
-        </div> <!-- div.college-name -->
-        <!-- Removed site-slogan -->
-      </a>
-    </section> <!-- end section.college-header.current-site -->
 
-    <!-- Remove: <div id="navigation"> -->
-    <nav class="main-nav" id="main-menu" role="navigation" aria-label="Main navigation"> <!-- Added .main-nav -->
-      <?php print render($page['navigation']); ?>
-    </nav>
-    <?php print render($page['header']); ?>
+          <div class="college-name"> <!-- Replace #name-and-slogan with .college-name -->
+            <?php if ($site_name): ?>
+              <!-- Removed: <h1 id="site-name"> -->
+                <p><span><?php print $site_name; ?></span></p> <!-- Moved <p> to surround <a> -->
+            <?php endif; ?>
+          </div> <!-- div.college-name -->
+          <!-- Removed site-slogan -->
+        </a>
+      </section> <!-- end section.college-header.current-site -->
+
+      <!-- Remove: <div id="navigation"> -->
+      <nav class="main-nav" id="main-menu" role="navigation" aria-label="Main navigation"> <!-- Added .main-nav -->
+        <?php print render($page['navigation']); ?>
+      </nav>
+      <?php print render($page['header']); ?>
+    </div>
 
   </header>
 

@@ -568,8 +568,9 @@ footer {
 
   .main-nav ul li { float:none; }
   body { border-top:solid 6px $wwuLtblue; }
-  header[role="banner"] {
-    height: 247px; //extend white background below menu
+  header[role="banner"] > div {
+    max-height: 247px;
+    overflow:auto;
     border:solid 10px #fff;
     position:relative;
     background:#fff;
@@ -638,10 +639,8 @@ footer {
     .mobile-main-nav { display:none; }
   } // End .western-header
   .college-header {
-    @include zen-clear();
-    @include zen-grid-item(12,1);
-    position:absolute;
-    top:0;
+    @include zen-clear(both);
+    @include zen-float(left);
     > a {
       display:block;
       width:100%;
@@ -666,7 +665,7 @@ footer {
     .page-title { border-bottom:solid 3px #E9E9E9; }
   } // End #main
 
-  .main-nav { @include zen-grid-item(12,1); } //The layout when there is only one sidebar, the left one.
+  //.main-nav { @include zen-grid-item(12,1); } //The layout when there is only one sidebar, the left one.
   .sidebar-first {
     .content { @include zen-grid-item(8.75, 4.25); } // Span 4 columns, starting in 2nd column from left.
     #block-accordion-menu-1{ display:block; } //Show the sidebar navigation
