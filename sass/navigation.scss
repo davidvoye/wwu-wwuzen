@@ -57,8 +57,8 @@ li a.active {
     @include element-invisible();
   }
 
-  ul.links, /* Main menu and secondary menu links */
-  ul.menu { /* Menu block links */
+  .links, /* Main menu and secondary menu links */
+  .menu { /* Menu block links */
     margin: 0;
     padding: 0;
     text-align: left; /* LTR */
@@ -80,7 +80,7 @@ li a.active {
  * Main menu and Secondary menu links
  */
 
-.main-menu {
+.main-nav {
 }
 
 .secondary-menu {
@@ -97,12 +97,13 @@ li a.active {
 .block-menu-block {
 }
   /* W W U   S T Y L E S */
-.main-menu {
+.main-nav {
   padding:10px 0 0 0;
-  height: 24px;
+  position:absolute;
+  bottom:0;
   width:100%;
   font-family: $muli;
-  ul {
+  .menu {
     width:100%;
     display:table;
     li {
@@ -212,7 +213,7 @@ li a.active {
 .ui-widget { font-size:1em; } // Changed from 1.1em
 
 .ui-accordion-content {
-  ul.menu {
+  .menu {
     margin:0;
     padding:0;
     li {
@@ -240,7 +241,7 @@ li a.active {
         }
       }
     }
-    & > ul.menu li {
+    & > .menu li {
       padding-left:0;
       & > li { padding-left:0; }
     }

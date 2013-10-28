@@ -95,7 +95,7 @@
         <div class="western-search" role="search" aria-label="University and Site Search"> <!-- change div.wwusearch to .western-search -->
           <button>Open Search</button> <!-- Removed div#s-toggle and div.icon-size and <a>. Changed to <button> -->
           
-          <div class="western-search-widget" style="display:none;"> <!-- Replace div#search with .western-search-widget. Replaced style="display:none;" with div.hide class. -->
+          <div class="western-search-widget"> <!-- Replace div#search with .western-search-widget. Replaced style="display:none;" with div.hide class. -->
 
             <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
             <?php print $search_box; ?>
@@ -122,7 +122,7 @@
         <div class="college-name"> <!-- Replace #name-and-slogan with .college-name -->
           <?php if ($site_name): ?>
             <!-- Removed: <h1 id="site-name"> -->
-              <p><?php print $site_name; ?></p> <!-- Moved <p> to surround <a> -->
+              <p><span><?php print $site_name; ?></span></p> <!-- Moved <p> to surround <a> -->
           <?php endif; ?>
         </div> <!-- div.college-name -->
         <!-- Removed site-slogan -->

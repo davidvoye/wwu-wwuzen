@@ -1,5 +1,5 @@
 //Hide the darn contextual link of the main menu when the page loads for admins
-#navigation #main-menu div.contextual-links-wrapper ul.contextual-links {
+.main-menu div.contextual-links-wrapper ul.contextual-links {
   display:none;
 }
 /**

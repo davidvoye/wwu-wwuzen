@@ -275,7 +275,7 @@ footer {
             } // End li
           } // End ul
         } // End li
-        li.expanded ul.menu li { display: none; }
+        li.expanded .menu li { display: none; }
       } // End .menu
     } // End .main-nav
 
@@ -572,12 +572,12 @@ footer {
     height: 247px; //extend white background below menu
     border:solid 10px #fff;
     position:relative;
+    background:#fff;
     @include box-sizing(border-box);
-    margin-top: 50px; //slide college logo (banner) right under wwu logo
+    margin-top: 50px;
   }
   .western-header {
     @include zen-grid-item(12,1);
-    width:240px;
     margin-bottom:.563em;
     margin-top: -131px;
     .western-logo {
@@ -585,12 +585,12 @@ footer {
       a {
         display:block;
         z-index:200;
-        margin: 65px 0 0 20px;
+        margin: 60px 0 0 10px;
         position:relative;
         @include hide-text-bg-img;
         background: url('../../images/wwu.png') no-repeat;
         width: 240px;
-        height: 145px;
+        height: 135px;
       }
     }
     nav {
@@ -620,7 +620,7 @@ footer {
         top:44px;
         right:0;
         margin-top:0;
-        display:block;
+        display:none;
       }
     }
     .western-quick-links {
@@ -640,7 +640,8 @@ footer {
   .college-header {
     @include zen-clear();
     @include zen-grid-item(12,1);
-    //margin-top: -113px;
+    position:absolute;
+    top:0;
     > a {
       display:block;
       width:100%;
@@ -649,14 +650,14 @@ footer {
     .college-name {
       position: absolute;
       right: 0;
-      bottom:0;
-      background-color:($wwuOceanBlue); /* Fallback for older browsers */
+      bottom: 7px;
+      background-color:$wwuOceanBlue; /* Fallback for older browsers */
       background-color:rgba($wwuOceanBlue, .8);
       p { margin:0; }
     }
   } // End #header
-  .main-nav ul li ul { display:none; }
-  .main-nav ul li { float:none; }
+  .main-nav div div .menu li ul { display:none; }
+  .main-nav div div .menu li { float:none; }
   main {
     @include zen-clear();
     @include zen-grid-item(12,1);
@@ -665,7 +666,7 @@ footer {
     .page-title { border-bottom:solid 3px #E9E9E9; }
   } // End #main
 
-  .main-nav{ @include zen-grid-item(12,1); } //The layout when there is only one sidebar, the left one.
+  .main-nav { @include zen-grid-item(12,1); } //The layout when there is only one sidebar, the left one.
   .sidebar-first {
     .content { @include zen-grid-item(8.75, 4.25); } // Span 4 columns, starting in 2nd column from left.
     #block-accordion-menu-1{ display:block; } //Show the sidebar navigation

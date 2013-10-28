@@ -26,7 +26,7 @@ Drupal.behaviors.siteNameTypography = {
 		var typographyAnd = siteName.replace("and", "<span class=\"diminutive-type site-name-and\">and</span>");
 		var typographyCollegeOf = typographyAnd.replace("College of", "<span class=\"diminutive-type site-name-college-of\">College of</span>");
 
-		$('.college-name p').replaceWith(typographyCollegeOf);
+		$('.college-name p span').replaceWith(typographyCollegeOf);
 	}
 }
 
