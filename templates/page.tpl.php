@@ -72,13 +72,6 @@
 <!-- Removed (because can be replaced by body {border-top...}): <div id="top-stripe"></div> -->
 <div class="page"> <!-- Replaced #page with .page -->
 
-<!-- WWUZEN Changes
-
-- Removed the unused images declared in php lines ~75-84 and ~224
-- To Do: style: body { border-top:solid 5px $wwuLtBlue; }
-- To do: Replace images in Right Footer with :before pseudo-elements. Social Media icons should be background-images.
--->
-
   <header role="banner">
 
     <section class="western-header" aria-label="University Links, Search, and Navigation"> <!-- Replace #wwuheader with .western-header -->
@@ -110,28 +103,30 @@
         </div> <!-- end div.western-search -->
 
         <button class="mobile-main-nav" aria-label="Open Mobile Main Navigation">Open Main Navigation</button> <!-- Replaced: <div class="main-navigation" id="mobileNavTrigger">
-          wwuMobileMainMenuIcon;?>" alt="Main menu links" class="main-menu-toggle icon-size">
+          $wwuMobileMainMenuIcon;?>" alt="Main menu links" class="main-menu-toggle icon-size">
         </div> -->
       </nav> <!-- end nav.western-mobile-icons -->
 
     </section> <!-- end section.western-header -->
 
     <section class="college-header current-site" aria-label="College Header"> <!-- Replace #header with .college-header -->
-
+      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
      <!-- <div id="collegeheader"> -->
         <!-- Group Logo (banner) and Site Name and Main Menu for Group -->
+        <?php if ($logo): ?>
           <div class="college-banner">
-            <p><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"> <!-- Replaced #logo with .college-banner --></a></p>
+            <img src="<?php print $logo;?>">
           </div> <!-- end div.college-banner --> <!-- Removed #logoImage and replaced <img> with <div> and text element-->
+        <?php endif; ?>
 
         <div class="college-name"> <!-- Replace #name-and-slogan with .college-name -->
           <?php if ($site_name): ?>
             <!-- Removed: <h1 id="site-name"> -->
-              <p><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a></p> <!-- Moved <p> to surround <a> -->
+              <p><<?php print $site_name; ?></p> <!-- Moved <p> to surround <a> -->
           <?php endif; ?>
         </div> <!-- div.college-name -->
         <!-- Removed site-slogan -->
-
+      </a>
     </section> <!-- end section.college-header.current-site -->
 
     <!-- Remove: <div id="navigation"> -->

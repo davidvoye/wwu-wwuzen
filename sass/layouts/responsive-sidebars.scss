@@ -206,7 +206,6 @@ footer {
     } // End li
   }
 } // End .western-header
-  .college-banner { display:none; }
   .college-name {
     background-image:none;
     @include zen-clear();
@@ -618,25 +617,29 @@ footer {
   .college-header {
     @include zen-clear();
     @include zen-grid-item(12,1);
-    width:98%;
+    //width:98%;
     position:relative;
-    padding: 10px;
-    background-color: #fff;
+    border:solid 10px #fff;
+    background-color: $wwuGreen;
+    //@include box-sizing(border-box);
     height: 228px; //extend white background below menu
     margin-top: -90px; //slide college logo (banner) right under wwu logo
-    .main-nav ul li ul { display:none; }
-    .main-nav ul li { float:none; }
-
-  .college-name {
-    position: absolute;
-    right: 10px;
-    bottom:41px;
-    p { /* The name of the website */
+    > a {
+      display:block;
+      width:100%;
+      height:100%;
+    }
+    .college-name {
+      position: absolute;
+      right: 0;
+      bottom:0;
       background-color:($wwuOceanBlue); /* Fallback for older browsers */
       background-color:rgba($wwuOceanBlue, .8);
-      }
+      p { margin:0; }
     }
   } // End #header
+  .main-nav ul li ul { display:none; }
+  .main-nav ul li { float:none; }
   main {
     @include zen-clear();
     @include zen-grid-item(12,1);

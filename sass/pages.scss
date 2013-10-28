@@ -60,7 +60,7 @@ body {
 
 .western-header {
   font-family:$muli;
-  span.wwuLogo a.wwuLink {
+  .western-logo a {
     display:block;
     z-index: 200;
     margin: -6px 0 0 20px;
@@ -70,7 +70,7 @@ body {
     width: 240px;
     height: 145px;
   }
-  .wwusearch .icon-size {
+  .western-search button {
     top:44px;
     background:url('../images/icons/search.png') no-repeat;
     background-size:cover;
@@ -169,15 +169,6 @@ body {
     }
   }
 
-.college-banner {
-  /* float: left;
-  padding: 0;
-  width: 100%; */
-}
-
-.region-header, .main-nav { /* Wrapper for any blocks placed in the header region */
-  clear: both; /* Clear the logo */
-}
 
 /* ****************************************************
           Main (container for everything)
@@ -195,7 +186,9 @@ main {
                         Content
 **************************************************** */
 
-.content { clear:both; }
+.region-header, .main-nav, .content {
+  @include zen-clear(both);
+}
 
 .page-title {
   border-bottom:solid 3px #E9E9E9;
@@ -569,9 +562,9 @@ html.js input.form-autocomplete {
   font-size:1.5em;
   text-transform:uppercase;
   text-align:right;
-  padding:.75em 1.25em .75em .75em;
+  padding:.75em 1em;
   line-height:1.1;
-  a { text-decoration:none; color:#fff; }
+  p { text-decoration:none; color:#fff; }
   .diminutive-type {
     font-size:1em;
     font-style:italic;
