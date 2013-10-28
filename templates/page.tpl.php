@@ -88,7 +88,7 @@
       <nav class="western-mobile-icons" role="navigation" aria-label="University related navigation.">
         <div class="western-quick-links" aria-label="Western Quick Links"> <!-- Replaced div#menu-icons with div.western-quick-links-->
           <!-- Removed: <div class="quick-links" id="mobileWWUmenu"> -->
-          <button class="quick-links-toggle icon-size">Toggle Quick Links</button> <!-- Changed "<img src="<?php print $wwuMobileMenuIcon;?>"" to a <button> -->
+          <button class="quick-links-toggle icon-size">Toggle Quick Links</button> <!-- Changed "wwuMobileMenuIcon;?>"" to a <button> -->
 
           <ul> <!-- Removed ul#wwumenu -->
             <li><a href="http://www.wwu.edu/academic_calendar" title="Calendar"><span aria-hidden="true">c</span> <span>Calendar</span></a></li>
@@ -110,7 +110,7 @@
         </div> <!-- end div.western-search -->
 
         <button class="mobile-main-nav" aria-label="Open Mobile Main Navigation">Open Main Navigation</button> <!-- Replaced: <div class="main-navigation" id="mobileNavTrigger">
-          <img src="<?php print $wwuMobileMainMenuIcon;?>" alt="Main menu links" class="main-menu-toggle icon-size">
+          wwuMobileMainMenuIcon;?>" alt="Main menu links" class="main-menu-toggle icon-size">
         </div> -->
       </nav> <!-- end nav.western-mobile-icons -->
 
@@ -120,11 +120,9 @@
 
      <!-- <div id="collegeheader"> -->
         <!-- Group Logo (banner) and Site Name and Main Menu for Group -->
-        <?php if ($logo): ?> <!-- Do we need this anymore? -->
           <div class="college-banner">
             <p><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"> <!-- Replaced #logo with .college-banner --></a></p>
           </div> <!-- end div.college-banner --> <!-- Removed #logoImage and replaced <img> with <div> and text element-->
-        <?php endif; ?> <!-- Do we need this anymore? -->
 
         <div class="college-name"> <!-- Replace #name-and-slogan with .college-name -->
           <?php if ($site_name): ?>

@@ -52,7 +52,7 @@ $zen-auto-include-item-base: false;
  * Center the page.
  */
 
-#page,
+.page,
 .region-bottom {
   /* For screen sizes larger than 1200px, prevent excessively long lines of text
      by setting a max-width. */
@@ -65,8 +65,8 @@ $zen-auto-include-item-base: false;
  * Containers for grid items and flow items.
  */
 
-#page,
-#footer {
+.page,
+footer {
   @include zen-grid-container();
 }
 
@@ -75,15 +75,15 @@ $zen-auto-include-item-base: false;
  */
 // See the note about $zen-auto-include-item-base above.
 
-#page,
-#wwuheader,
-#header,
-#main,
-#content,
-#navigation,
+.page,
+.western-header,
+.college-header,
+main,
+.content,
+.main-nav,
 .region-sidebar-first,
 .region-sidebar-second,
-#footer {
+footer {
   @include zen-grid-item-base();
   padding-left:0px;
   padding-right:0px;
@@ -94,22 +94,20 @@ $zen-auto-include-item-base: false;
 **************************************************** */
 
 @media all and (max-width: 800px) {
-#wwuheader {
+.western-header {
   background-color:$wwuBlue;
   height:68px;
-  span.wwuLogo.wwuLink a.wwuLink {
+  .western-logo a {
     @include zen-grid-item(1,1,left);
     margin-bottom:-.375em;
     background: url('../../images/wwuhorizlogo.png') no-repeat;
     width: 100%;
     height: 74px;
   }
-  #mobileWWUmenu {
+  .western-quick-links {
     float:right;
     background-color:rgb(75, 104, 156);
     height:100%;
-  }
-  #menu-icons {
     padding:0;
     margin:0;
     width:44px;
@@ -120,7 +118,7 @@ $zen-auto-include-item-base: false;
     z-index:200;
     @include box-shadow(-5px 0 15px -5px #333);
   }
-  .quick-links {
+  .quick-links-toggle {
     width:100%;
     img { top:0; }
   }
@@ -132,20 +130,20 @@ $zen-auto-include-item-base: false;
     z-index:200;
     cursor:pointer;
   }
-  #mobileNavTrigger{
+  .mobile-main-nav {
     @include zen-clear(right);
     @include zen-grid-item(1,1,right);
     background-color:rgb(75, 104, 156);
     width:2.75em;
     img { top:88px; }
   }
-  .wwusearch {
+  .western-search {
     @include zen-clear(right);
     @include zen-grid-item(1,1,right);
     z-index: 200;
     background-color:rgb(75, 104, 156);
     top:0;
-    #search {
+    .western-search-widget {
       @include zen-clear(right);
       display:none;
       position:absolute;
@@ -157,7 +155,7 @@ $zen-auto-include-item-base: false;
       @include transition(width .25s);
     }
   } // End .wwusearch
-  #wwumenu {
+  .western-quick-links ul {
     margin: 0;
     padding:.5em;
     background-color:#fff;
@@ -206,21 +204,20 @@ $zen-auto-include-item-base: false;
         }
       } // End a
     } // End li
-  } // End #wwumenu
-} // End #wwuheader
-  #logo, #logoImage { display:none; }
-  #collegeheader {
+  }
+} // End .western-header
+  .college-banner { display:none; }
+  .college-name {
+    background-image:none;
     @include zen-clear();
     z-index:-10;
     background-color:$wwuOceanBlue;
     @include background(linear-gradient(top, lighten($wwuOceanBlue, 10%), $wwuOceanBlue));
-    #name-and-slogan {
-      @include zen-grid-item(1,1);
-      padding: 0 0 .5em 1.25em;
-      font-family:$muli;
-      h1 { margin:0.4em 0 0 0; }
-    }
-    #site-name { /* The name of the website */
+    @include zen-grid-item(1,1);
+    padding: 0 0 .5em 1.25em;
+    font-family:$muli;
+    p {
+      margin:0.4em 0 0 0;
       display:block; //college name is shown as part of image on banner
       width:80%; //Prevents the name from sliding under the mobile nav at 360px wide
       font-size:1.25em;
@@ -231,11 +228,11 @@ $zen-auto-include-item-base: false;
           color: #fff;
           text-decoration: none;
         }
-    } // End #site-name
-    #navigation {
+    }
+    .main-nav {
       padding:0;
       height:100%;
-      #main-menu ul.menu {
+      .menu {
         display:none;
         background-color:#E9E9E9;
         list-style-type:none;
@@ -282,8 +279,8 @@ $zen-auto-include-item-base: false;
           } // End ul
         } // End li
         li.expanded ul.menu li { display: none; }
-      } // End #main-menu ul.menu
-    } // End #navigation
+      } // End .menu
+    } // End .main-nav
 
   @mixin nav-icons($fileName) { background-image:url("../../images/icons/#{$fileName}.png"); }
 
@@ -310,11 +307,11 @@ $zen-auto-include-item-base: false;
       } // End .expanded, .opened
     } //End college header
 
-  #main {
+  main {
     @include zen-clear();
     //@include zen-grid-item(1,1, right);
     margin-top:0em;
-    header#department {
+    .page-title {
       border-bottom:none;
       padding:.9em 0 1em 0;
       margin-bottom:0em;
@@ -324,13 +321,13 @@ $zen-auto-include-item-base: false;
 
 //Hide the navigation that moves to the bottom of the page.
   #block-accordion-menu-1 { display:none; }
-  #footer { @include zen-clear(both); }
-  #footer-left { @include zen-clear(); }
-  #footer-center {
+  footer { @include zen-clear(both); }
+  .footer-left { @include zen-clear(); }
+  .footer-center {
     position: relative;
     margin-left:-.5em;
     padding: 0;
-    ul.menu {
+    .menu {
       padding: 0 0 0 15px;
       li {
         font-size:.875em;
@@ -338,16 +335,17 @@ $zen-auto-include-item-base: false;
       }
     }
   }
-  #footer-right {
+  .footer-right {
     @include zen-clear();
     margin-top:0em;
 
-    h3 {
+    h1 {
       padding-left:.4em;
       padding-right:.4em;
+      span {}
     }
 
-    #footer-right-social-media-icons {
+    .western-social-media {
       padding-left:.5em;
     }
   }
@@ -360,28 +358,28 @@ $zen-auto-include-item-base: false;
 
 @media all and (max-width:360px) {
   $zen-column-count: 1;
-  #wwuheader .wwusearch #search {
+  .western-header .western-search .western-search-widget {
     width:16em;
     @include transition(width .25s);
     .form-submit { border-left: solid 1.75em white; box-shadow:none; }
   }
 
-  #footer-left {
+  .footer-left {
     font-size: .875em;
     position: relative;
     margin-left:1em;
   }
 
-  #footer-center {
+  .footer-center {
     @include zen-clear();
     margin-left:-1em;
     width:98%;
-    ul.menu li {
+    .menu li {
       padding: 0.5em 0em;
       margin-left:1em;
     }
   }
-  #content article {
+  .content article {
     figure {
       margin:0 auto;
       float:none !important;
@@ -401,15 +399,15 @@ $zen-auto-include-item-base: false;
 
   $zen-column-count: 3;
 
-  #footer-left { @include zen-grid-item(1, 1) }
+  .footer-left { @include zen-grid-item(1, 1) }
 
-  #footer-center {
+  .footer-center {
     @include zen-grid-item(1,2);
     width:69%;
-    ul.menu li { margin-top:.5em; }
+    .menu li { margin-top:.5em; }
   }
 
-  #footer-right {
+  .footer-right {
     @include zen-grid-item(1,3, right);
     margin-right: auto;
     margin-top:0em;
@@ -438,12 +436,12 @@ $zen-auto-include-item-base: false;
 
 @media all and (min-width:360px) and (max-width:480px) {
 
-  #footer-center h3 {
+  .footer-center h1 {
     padding-left:1em;
     padding-right:1em;
   }
 
-  #footer-right-social-media-icons {
+  .western-social-media {
     padding-left:1em;
   }
 }
@@ -454,38 +452,38 @@ $zen-auto-include-item-base: false;
 
 @media all and (min-width:480px) and (max-width: 639px) {
 
-  #footer-left {
+  .footer-left {
     @include zen-grid-item(2,1, left);
     font-size: .875em;
     position: relative;
     margin-left: 1em;
 
   }
-  #footer-center {
+  .footer-center {
     @include zen-clear(left);
     @include zen-grid-item(2,1, left);
     margin-left:auto;
     margin-right:auto;
     position:relative;
     margin-left: 1em;
-    ul.menu { padding:0; }
+    .menu { padding:0; }
   }
-  #footer-right {
+  .footer-right {
     @include zen-clear(both);
     @include zen-grid-item(3,1);
     position:relative;
 
-    h3 {
+    h1 {
       padding-left:1em;
       padding-right:1em;
     }
 
-    #footer-right-contact-info {
+    .western-contact-info {
       @include zen-clear(both);
       @include zen-grid-item(1.5,1,left);
     }
 
-    #footer-right-social-media-icons {
+    .western-social-media{
       @include zen-grid-item(.7,2.5,left);
       padding-left: 15px;
       position: relative;
@@ -500,25 +498,27 @@ $zen-auto-include-item-base: false;
 @media all and (min-width:640px) and (max-width: 767px) {
 
   $zen-column-count: 3;
-  #site-name { position:static; }
-  #footer-wrapper { @include zen-clear(both); }
-  #footer { @include zen-grid-item(3,1); }
-  #footer-left {
+  .college-name p { position:static; }
+  footer {
+    @include zen-grid-item(3,1);
+    @include zen-clear(both);
+  }
+  .footer-left {
     font-size: .875em;
     position: relative;
     @include zen-grid-item(1.5,1,left);
     margin-left:1em;
   }
-  #footer-center { @include zen-grid-item(1,2.5,left); }
-  #footer-right {
+  .footer-center { @include zen-grid-item(1,2.5,left); }
+  .footer-right {
     @include zen-clear(both);
     @include zen-grid-item(3,1);
-    h3 { padding-left:1em; }
-    #footer-right-contact-info {
+    h1 { padding-left:1em; }
+    .western-contact-info {
       @include zen-clear(both);
       @include zen-grid-item(1.5,1,left);
     }
-    #footer-right-social-media-icons {
+    .western-social-media {
       @include zen-grid-item(1,2.5,left);
       padding-left: 15px;
       position: relative;
@@ -533,29 +533,31 @@ $zen-auto-include-item-base: false;
 @media all and (min-width:768px) and (max-width: 800px) {
   $zen-column-count: 3;
 
-  #footer-wrapper { @include zen-clear(both); }
-  #footer { @include zen-grid-item(3,1); }
-  #footer-left {
+  footer {
+    @include zen-grid-item(3,1);
+    @include zen-clear(both);
+  }
+  .footer-left {
     font-size: .875em;
     position: relative;
     @include zen-grid-item(.6,1,left);
     margin-left:1em;
   }
 
-  #site-name { position:static; }
+  .college-name p { position:static; }
 
-  #footer-center { @include zen-grid-item(.9,1.7,left); }
-  #footer-right {
+  .footer-center { @include zen-grid-item(.9,1.7,left); }
+  .footer-right {
     @include zen-clear(none);
     @include zen-grid-item(1.5,2.7, left);
     margin-top:-1.813em;
     position: relative;
     width:19.5em;
-    h3 {
+    h1 {
       padding-left:.5em;
       padding-right:.5em;
     }
-    #footer-right-social-media-icons { padding-left:.5em; }
+    .western-social-media { padding-left:.5em; }
   }
 }
 /* ****************************************************
@@ -563,7 +565,7 @@ $zen-auto-include-item-base: false;
 **************************************************** */
 
 @media all and (min-width: 800px) {
-  #footer-right { width:20.7em; }
+  .footer-right { width:20.7em; }
 }
 
 /* ****************************************************
@@ -574,105 +576,93 @@ $zen-auto-include-item-base: false;
   // Use 12 grid columns for larger screens.
   $zen-column-count: 12;
 
-#navigation #main-menu ul li { float:none; }
-  #top-stripe {
-    @include zen-grid-item(12,1);
-    height: .375em;
-    top: 0;
-    z-index: 90;
-    background-color:$wwuLtblue;
-    #top-stripe-left, #top-stripe-center, #top-stripe-right { display: none; }
-  }
-  #wwuheader {
+  .main-nav ul li { float:none; }
+  body { border-top:solid 5px $wwuLtBlue; }
+  .western-header {
     @include zen-grid-item(12,1);
     width:240px;
     margin-bottom:.563em;
-    #menu-icons {
+    .western-quick-links {
       width:50%;
+      display:block;
       position:absolute;
       top:0;
       right:0;
       @include transition(.5s);
       z-index:555;
-      .quick-links {
+      ul {
         position:absolute;
         top:15px;
         left:2em;
       }
-      .wwusearch {
+      .western-search {
         position:absolute;
         left:26.5em;
         top:5px;
-        #s-toggle {
+        button {
           height:44px;
           width:44px;
           cursor:pointer;
         }
-        #search {
+        .western-search-widget {
           position:absolute;
           top:44px;
           right:0;
           margin-top:0;
+          display:block;
         }
       }
-      .quick-links-toggle, #mobileNavTrigger { display:none; }
-      #wwumenu, #search { display:block; }
     }
-  } // End #wwuheader
-  #header {
+    .quick-links-toggle, .mobile-main-nav { display:none; }
+  } // End .western-header
+  .college-header {
     @include zen-clear();
     @include zen-grid-item(12,1);
     width:98%;
-    #collegeheader {
-      @include zen-grid-item(12,1);
-      position:relative;
-      padding: 10px;
-      background-color: #fff;
-      height: 228px; //extend white background below menu
-      margin-top: -90px; //slide college logo (banner) right under wwu logo
-      #navigation ul li ul { display:none; }
-      #navigation #main-menu ul li { float:none; }
-    } // End #collegeheader
+    position:relative;
+    padding: 10px;
+    background-color: #fff;
+    height: 228px; //extend white background below menu
+    margin-top: -90px; //slide college logo (banner) right under wwu logo
+    .main-nav ul li ul { display:none; }
+    .main-nav ul li { float:none; }
 
-  #name-and-slogan {
+  .college-name {
     position: absolute;
     right: 10px;
     bottom:41px;
-  }
-
-  #site-name { /* The name of the website */
-    background-color:($wwuOceanBlue); /* Fallback for older browsers */
-    background-color:rgba($wwuOceanBlue, .8);
+    p { /* The name of the website */
+      background-color:($wwuOceanBlue); /* Fallback for older browsers */
+      background-color:rgba($wwuOceanBlue, .8);
+      }
     }
   } // End #header
-  #main {
+  main {
     @include zen-clear();
     @include zen-grid-item(12,1);
     width:100%;
     margin: 0.5em 0em 4.250em 0em;
-    header#department { border-bottom:solid 3px #E9E9E9; }
+    .page-title { border-bottom:solid 3px #E9E9E9; }
   } // End #main
 
-  #navigation{ @include zen-grid-item(12,1); } //The layout when there is only one sidebar, the left one.
+  .main-nav{ @include zen-grid-item(12,1); } //The layout when there is only one sidebar, the left one.
   .sidebar-first {
-    #content { @include zen-grid-item(8.75, 4.25); } // Span 4 columns, starting in 2nd column from left.
+    .content { @include zen-grid-item(8.75, 4.25); } // Span 4 columns, starting in 2nd column from left.
     #block-accordion-menu-1{ display:block; } //Show the sidebar navigation
     .region-sidebar-first {  @include zen-grid-item(3, 1); } // Span 1 column, starting in 1st column from left.
   } // End .sidebar-first
-  #footer { @include zen-clear(both); }
-  #footer-left {
+  footer { @include zen-clear(both); }
+  .footer-left {
     @include zen-grid-item(3,1.5);
     padding: .688em 0em 1.25em 1.25em;
   }
-  #footer-center {
+  .footer-center {
     position:relative;
     @include zen-grid-item(3,4.75);
       padding: 0;
       margin-right:0;
-
-      ul.menu {
+      .menu {
         padding: 0 0 0 15px;
-
         li {
           font-size:.8750em;
           display: block;
@@ -680,16 +670,16 @@ $zen-auto-include-item-base: false;
         }
       }
     }
-   // End #footer-center
-  #footer-right {
+   // End .footer-center
+  .footer-right {
     float:right;
     margin-top:-1.813em;
     margin-right:2em;
-    h3 {
+    h1 {
       padding-left:1em;
       padding-right:1em;
     }
-    #footer-right-social-media-icons { padding-left:1em; }
+    .western-social-media { padding-left:1em; }
   }
 }
 /* ****************************************************
@@ -700,5 +690,5 @@ $zen-auto-include-item-base: false;
 @media all and (min-width: 801px) and (max-width: 1000px) {
   // Use 12 grid columns for larger screens.
   $zen-column-count: 12;
-  #wwuheader #menu-icons { width:62%; @include transition(.5s); }
+  .western-header .western-quick-links { width:62%; @include transition(.5s); }
 }
