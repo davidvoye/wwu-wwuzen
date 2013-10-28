@@ -81,7 +81,7 @@
       <nav class="western-mobile-icons" role="navigation" aria-label="University related navigation.">
         <div class="western-quick-links" aria-label="Western Quick Links"> <!-- Replaced div#menu-icons with div.western-quick-links-->
           <!-- Removed: <div class="quick-links" id="mobileWWUmenu"> -->
-          <button class="quick-links-toggle icon-size">Toggle Quick Links</button> <!-- Changed "wwuMobileMenuIcon;?>"" to a <button> -->
+          <button>Toggle Quick Links</button> <!-- Changed "wwuMobileMenuIcon;?>"" to a <button> -->
 
           <ul> <!-- Removed ul#wwumenu -->
             <li><a href="http://www.wwu.edu/academic_calendar" title="Calendar"><span aria-hidden="true">c</span> <span>Calendar</span></a></li>
@@ -95,7 +95,7 @@
         <div class="western-search" role="search" aria-label="University and Site Search"> <!-- change div.wwusearch to .western-search -->
           <button>Open Search</button> <!-- Removed div#s-toggle and div.icon-size and <a>. Changed to <button> -->
           
-          <div class="western-search-widget hide"> <!-- Replace div#search with .western-search-widget. Replaced style="display:none;" with div.hide class. -->
+          <div class="western-search-widget"> <!-- Replace div#search with .western-search-widget. Replaced style="display:none;" with div.hide class. -->
 
             <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
             <?php print $search_box; ?>
