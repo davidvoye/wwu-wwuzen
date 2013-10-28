@@ -577,7 +577,7 @@ footer {
   $zen-column-count: 12;
 
   .main-nav ul li { float:none; }
-  body { border-top:solid 5px $wwuLtBlue; }
+  body { border-top:solid 5px $wwuLtblue; }
   .western-header {
     @include zen-grid-item(12,1);
     width:240px;
