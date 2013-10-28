@@ -37,7 +37,7 @@ Drupal.behaviors.siteNameTypography = {
 
 	// START SEARCH TOGGLE CODE
 
-		$('.western-search button').click(function () {
+		$('.western-search > button').click(function () {
 			var search = $('.western-search-widget');
 			if (search.is(':visible')) {
 				search.hide("slide", { direction: "right" }, 400);
@@ -111,7 +111,7 @@ Drupal.behaviors.siteNameTypography = {
 
 //These next two behaviors do the exact same thing, on onLoad and one on resize
 
-Drupal.behaviors.resizeHeaderOnLoad = {
+/*Drupal.behaviors.resizeHeaderOnLoad = {
   attach: function () {
   //START RESIZE COLLEGE HEADER AND SET HEIGHT CODE
   $(window).load(function () {
@@ -161,7 +161,7 @@ Drupal.behaviors.resizeHeaderOnResize = {
     });
     //END RESIZE COLLEGE HEADER CODE
   }
-}
+}*/
 
 
 // Tooltips for the staff and faculty directories

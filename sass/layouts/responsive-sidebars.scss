@@ -118,6 +118,24 @@ footer {
     z-index:200;
     @include box-shadow(-5px 0 15px -5px #333);
   }
+  .western-search {
+    @include zen-clear(right);
+    @include zen-grid-item(1,1,right);
+    z-index: 200;
+    background-color:rgb(75, 104, 156);
+    top:0;
+    .western-search-widget {
+      @include zen-clear(right);
+      display:none;
+      position:absolute;
+      width:19em;
+      top:68px;
+      right:44px;
+      z-index:100;
+      margin-top:0;
+      @include transition(width .25s);
+    }
+  } // End .wwusearch
   .quick-links-toggle {
     width:100%;
     img { top:0; }
@@ -137,25 +155,7 @@ footer {
     width:2.75em;
     img { top:88px; }
   }
-  .western-search {
-    @include zen-clear(right);
-    @include zen-grid-item(1,1,right);
-    z-index: 200;
-    background-color:rgb(75, 104, 156);
-    top:0;
-    .western-search-widget {
-      @include zen-clear(right);
-      display:none;
-      position:absolute;
-      width:19em;
-      top:68px;
-      right:44px;
-      z-index:100;
-      margin-top:0;
-      @include transition(width .25s);
-    }
-  } // End .wwusearch
-  .western-quick-links ul {
+  ul {
     margin: 0;
     padding:.5em;
     background-color:#fff;
@@ -204,8 +204,9 @@ footer {
         }
       } // End a
     } // End li
-  }
+  } // End ul
 } // End .western-header
+  .college-banner { display:none; }
   .college-name {
     background-image:none;
     @include zen-clear();
@@ -594,22 +595,22 @@ footer {
         top:15px;
         left:2em;
       }
-      .western-search {
+    }
+    .western-search {
+      position:absolute;
+      left:26.5em;
+      top:5px;
+      > button {
+        height:44px;
+        width:44px;
+        cursor:pointer;
+      }
+      .western-search-widget {
         position:absolute;
-        left:26.5em;
-        top:5px;
-        button {
-          height:44px;
-          width:44px;
-          cursor:pointer;
-        }
-        .western-search-widget {
-          position:absolute;
-          top:44px;
-          right:0;
-          margin-top:0;
-          display:block;
-        }
+        top:44px;
+        right:0;
+        margin-top:0;
+        display:block;
       }
     }
     .quick-links-toggle, .mobile-main-nav { display:none; }
