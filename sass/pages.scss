@@ -457,6 +457,7 @@ footer {
   color: white;
   border-top:10px solid #fff;
   padding-bottom:1em;
+  a:hover, a:focus, a:active { color:$wwuLime; }
 }
 
 .footer-wrapper {
@@ -503,16 +504,22 @@ footer {
     background-color: #fff;
     width:100%;
     height:2.520em;
-    font-size:1em;
-    color:$wwuBlue;
+    text-align:center;
+    font-size:1rem;
+    box-sizing: border-box;
+    margin: 0;
+    padding: .75em 0 0 0;
     text-transform:uppercase;
     @include box-shadow(#555 0 0 7px);
-    span {
+    a {
       margin:0;
       padding-top: 0.8em;
       border: none;
-      }
+      text-decoration:none;
+      color:$wwuBlue;
+      &:hover, &:active, &:focus { color:$wwuOceanBlue; }
     }
+  }
 
   .western-contact-info {
     padding-left:1.25em;
