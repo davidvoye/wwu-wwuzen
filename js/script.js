@@ -18,23 +18,30 @@
 */
 
 Drupal.behaviors.menuHeight = {
-		attach: function () {
+	attach: function () {
+	
 		$(window).resize(function () {
-			if ($('.main-nav div div > .menu').height() > 34) {
+			// If main nav bar is not 34px tall
+			// Ideally would be "if greater than 34", but that operator causes the element to shift/bounce
+			if ($('.main-nav div div > .menu').height() != 34) {
 				$('.college-header .college-name').css({bottom: "68px" });
 			}
 			if ($('.main-nav div div > .menu').height() == 34) {
 				$('.college-header .college-name').css({bottom: "44px" });
 			}
-		});
+		}).resize();
 	}
 }
 
+/*if(window.screen.width >= 800) {
+			$(window).resize(function() || $(window).load(function () {
+
+*/
 
 Drupal.behaviors.siteNameTypography = {
 		attach: function () {
 
-		// Gets copy from site name (ultimately inside a span: #site-name a span)
+		// Gets copy from site name
 		var siteName = $(".college-name p").text();
 
 		var typographyAnd = siteName.replace("and", "<span class=\"diminutive-type site-name-and\">and</span>");
