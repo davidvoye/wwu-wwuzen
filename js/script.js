@@ -25,32 +25,13 @@ Drupal.behaviors.menuHeight = {
 			if ($('.main-nav div div > .menu').height() != 34) {
 				$('.college-header .college-name').css({bottom: "68px" });
 			}
-			if ($('.main-nav div div > .menu').height() == 34) {
-				$('.college-header .college-name').css({bottom: "" });
-			}
-			if ($(window).width() < 800) {
+			if (($('.main-nav div div > .menu').height() == 34) || ($(window).width() < 800)) {
+				// Could use: .removeAttr('style') instead of .css()
 				$('.college-header .college-name').css({bottom: "" });
 			}
 		}).resize();
 	}
 }
-
-/*Drupal.behaviors.menuHeight = {
-	attach: function () {
-		if ($(window).width() >= 800) {
-			$(window).resize(function () {
-				// If main nav bar is not 34px tall
-				// Ideally would be "if greater than 34", but that operator causes the element to shift/bounce
-				if ($('.main-nav div div > .menu').height() != 34) {
-					$('.college-header .college-name').css({bottom: "68px" });
-				}
-				if ($('.main-nav div div > .menu').height() == 34) {
-					$('.college-header .college-name').css({bottom: "44px" });
-				}
-			}).resize();
-		}
-	}
-}*/
 
 Drupal.behaviors.siteNameTypography = {
 		attach: function () {
