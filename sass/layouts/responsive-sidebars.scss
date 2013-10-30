@@ -570,7 +570,7 @@ footer {
   body { border-top:solid 6px $wwuLtblue; }
   header[role="banner"] > div {
     max-height: 247px;
-    overflow:auto;
+    overflow:hidden;
     border:solid 10px #fff;
     position:relative;
     background:#fff;
@@ -586,7 +586,7 @@ footer {
       a {
         display:block;
         z-index:200;
-        margin: 60px 0 0 10px;
+        margin: 69px 0 0 20px;
         position:relative;
         @include hide-text-bg-img;
         background: url('../../images/wwu.png') no-repeat;
@@ -595,16 +595,15 @@ footer {
       }
     }
     nav {
-      position: absolute;
-      top: -70px;
-      right:4.5em;
+      position: relative;
+      top: -7.1em;
       width: 100%;
     }
     .western-search {
-      top: 7px;
+      top: -.7em;
       display: block;
       position: absolute;
-      right: 0;
+      right: 6.6%;
       > button {
         top:44px;
         height:44px;
@@ -625,14 +624,11 @@ footer {
       }
     }
     .western-quick-links {
-      width:inherit;
-      display:block;
-      z-index:555;
+        position:absolute;
+        top:-.1em;
+        right:15.4%;
       ul {
         @include transition(.5s);
-        position:relative;
-        top:1.5em;
-        left:60%;
       }
       > button { display:none; }
     }
@@ -648,8 +644,8 @@ footer {
     }
     .college-name {
       position: absolute;
-      right: 0;
-      bottom: 7px;
+      right: -2px;
+      bottom: 44px;
       background-color:$wwuOceanBlue; /* Fallback for older browsers */
       background-color:rgba($wwuOceanBlue, .8);
       p { margin:0; }
@@ -701,20 +697,5 @@ footer {
       padding-right:1em;
     }
     .western-social-media { padding-left:1em; }
-  }
-}
-/* ****************************************************
-                Oversize 1000px ->
-**************************************************** */
-
-
-@media all and (min-width: 801px) and (max-width: 1000px) {
-  // Use 12 grid columns for larger screens.
-  $zen-column-count: 12;
-  .western-header .western-quick-links { 
-    ul {
-      left: 45%;
-      @include transition(.5s);
-    }
   }
 }
