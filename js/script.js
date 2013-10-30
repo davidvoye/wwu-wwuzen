@@ -19,6 +19,24 @@
 
 Drupal.behaviors.menuHeight = {
 	attach: function () {
+		$(window).resize(function () {
+			// If main nav bar is not 34px tall
+			// Ideally would be "if greater than 34", but that operator causes the element to shift/bounce
+			if ($('.main-nav div div > .menu').height() != 34) {
+				$('.college-header .college-name').css({bottom: "68px" });
+			}
+			if ($('.main-nav div div > .menu').height() == 34) {
+				$('.college-header .college-name').css({bottom: "" });
+			}
+			if ($(window).width() < 800) {
+				$('.college-header .college-name').css({bottom: "" });
+			}
+		}).resize();
+	}
+}
+
+/*Drupal.behaviors.menuHeight = {
+	attach: function () {
 		if ($(window).width() >= 800) {
 			$(window).resize(function () {
 				// If main nav bar is not 34px tall
@@ -32,7 +50,7 @@ Drupal.behaviors.menuHeight = {
 			}).resize();
 		}
 	}
-}
+}*/
 
 Drupal.behaviors.siteNameTypography = {
 		attach: function () {
