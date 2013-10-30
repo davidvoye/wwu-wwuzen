@@ -222,12 +222,14 @@
           </div>
 
           <div class="western-social-media"> <!-- Replaced #footer-right-social-media-icons with .western-social-media -->
-            <a href="http://www.facebook.com/westernwashingtonuniversity">Facebook</a>
-            <a href="http://www.flickr.com/wwu">Flickr</a>
-            <a href="https://twitter.com/#!/WWU">Twitter</a>
-            <a href="http://www.youtube.com/wwu">Youtube</a>
-            <a href="https://plus.google.com/+wwu/posts">Google Plus</a>
-            <a href="http://news.wwu.edu/go/feed/1538/ru/atom/">RSS</a>
+            <ul>
+              <li><a class="westernIcons-FacebookIcon" href="http://www.facebook.com/westernwashingtonuniversity">Facebook</a></li>
+              <li><a class="westernIcons-FlickrIcon" href="http://www.flickr.com/wwu">Flickr</a></li>
+              <li><a class="westernIcons-TwitterIcon" href="https://twitter.com/#!/WWU">Twitter</a></li>
+              <li><a class="westernIcons-YouTubeIcon" href="http://www.youtube.com/wwu">Youtube</a></li>
+              <li><a class="westernIcons-GooglePlusIcon" href="https://plus.google.com/+wwu/posts">Google Plus</a></li>
+              <li><a class="westernIcons-RSSicon" href="http://news.wwu.edu/go/feed/1538/ru/atom/">RSS</a></li>
+            </ul>
           </div>
 
         <?php print render($page['footer_right']); ?>

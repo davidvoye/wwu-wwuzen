@@ -696,6 +696,16 @@ footer {
       padding-left:1em;
       padding-right:1em;
     }
-    .western-social-media { padding-left:1em; }
+    @import "../images/westernIcons/*.png";
+    @include all-westernIcons-sprites;
+    .western-social-media { padding-left:1em;
+      li { list-style: none; display:inline-block;}
+      a {
+        width:24px;
+        height:24px;
+        display: block;
+        text-indent: -999em;
+      }
+    }
   }
 }
