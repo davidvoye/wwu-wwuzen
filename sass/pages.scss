@@ -50,6 +50,10 @@ body {
                        Header
 **************************************************** */
 
+header[role="banner"] button {
+  outline:none;
+}
+
 .western-header {
   //font-family:$muli;
   .western-search-widget {
