@@ -121,28 +121,42 @@ header[role="banner"] button {
     }
   }
 }
-  .western-quick-links ul {
-    font-size: .8em;
-    margin:0;
-    padding:0;
-    li  {
-      display:inline;
-      font-family: $muli;
-      padding-left: .5em;
-      img {margin-top: -1px;}
-      &:not(:first-child):before { content: "\00B7 \0020 "; }
-      a {
-        text-decoration: none;
-        padding-left: 6px;
-        color: $wwuBlue;
-        span:first-child { display:none; }
-        &:hover, &:focus {
-          color:$wwuOceanBlue;
-          text-decoration:underline;
-        }
+
+.western-quick-links ul {
+  font-size: .8em;
+  margin:0;
+  padding:0;
+  li  {
+    display:inline;
+    font-family: $muli;
+    padding-left: .5em;
+    img {margin-top: -1px;}
+    &:not(:first-child):before { content: "\00B7 \0020 "; }
+    a {
+      text-decoration: none;
+      padding-left: 6px;
+      color: $wwuBlue;
+      span:first-child { display:none; }
+      &:hover, &:focus {
+        color:$wwuOceanBlue;
+        text-decoration:underline;
       }
     }
   }
+}
+
+.college-name {
+  z-index:99;
+  min-width:200px;
+  max-width:250px;
+  min-height:25px;
+  font-size:1.5em;
+  text-transform:uppercase;
+  text-align:right;
+  padding:.75em 1em;
+  line-height:1.1;
+  p { text-decoration:none; color:#fff; }
+}
 
 
 /* ****************************************************
@@ -282,6 +296,14 @@ footer h2.block-title { color: #fff; }
 }
 
 main ul, main ol { margin:0; }
+
+.diminutive-type {
+  font-size:1em;
+  font-style:italic;
+  font-weight:normal;
+  text-transform:none;
+  font-family:serif;
+}
 
 table {
   border-collapse:collapse;
@@ -529,29 +551,6 @@ footer {
 html.js input.form-autocomplete {
   background-position:100% 5px;
 }
-
-.college-name {
-  z-index:99;
-  min-width:200px;
-  max-width:250px;
-  min-height:25px;
-  font-size:1.5em;
-  text-transform:uppercase;
-  text-align:right;
-  padding:.75em 1em;
-  line-height:1.1;
-  p { text-decoration:none; color:#fff; }
-  .diminutive-type {
-    font-size:1em;
-    font-style:italic;
-    font-weight:normal;
-    text-transform:none;
-    font-family:serif;
-  }
-  .site-name-and {}
-  .site-name-college-of {}
-}
-
 
 /* ****************************************************
                   Partial Files Import
