@@ -23,7 +23,7 @@ Drupal.behaviors.menuHeight = {
 			if ($('.main-nav div div > .menu').height() > 34) {
 				$('.college-header .college-name').css({bottom: "68px" });
 			}
-			if ($('.main-nav div div > .menu').height() < 35) {
+			if ($('.main-nav div div > .menu').height() = 34) {
 				$('.college-header .college-name').css({bottom: "44px" });
 			}
 		});
