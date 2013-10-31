@@ -17,6 +17,19 @@
 * Place your code here.
 */
 
+Drupal.behaviors.menuHeight = {
+	attach: function () {
+		$(window).resize(function () {
+			if ($('.main-nav div div > .menu').height() == 34) {
+				$('.college-header .college-name').css({bottom: "" });
+			}
+      else {
+        $('.college-header .college-name').css({bottom: "68px" });
+      }
+		}).resize();
+	}
+}
+
 Drupal.behaviors.siteNameTypography = {
 		attach: function () {
 
