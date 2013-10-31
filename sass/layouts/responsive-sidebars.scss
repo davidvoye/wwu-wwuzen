@@ -693,8 +693,11 @@ footer {
     margin-top:-1.813em;
     margin-right:2em;
     h1 {
+      position: relative;
+      top: -1.2em;
       padding-left:1em;
       padding-right:1em;
+      padding-top: 0.8em;
     }
     @import "../images/westernIcons/*.png";
     @include all-westernIcons-sprites;

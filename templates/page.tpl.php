@@ -201,7 +201,7 @@
 </div> <!-- div.page -->
 
   <footer role="contentinfo"> <!-- removed #footer -->
-    <!-- Removed: <div id="footer-wrapper"> -->
+     <div class="footer-wrapper">
       <div class="footer-left"> <!-- Replaced #footer-left with .footer-left -->
         <?php print render($page['footer_left']); ?>
       </div>
@@ -234,6 +234,7 @@
 
         <?php print render($page['footer_right']); ?>
       </div>
+    </div>
   </footer> <!-- end footer -->
 
 <?php print render($page['bottom']); ?>
