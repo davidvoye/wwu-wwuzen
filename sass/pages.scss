@@ -474,7 +474,7 @@ footer {
   font-family:$muli;
   h1 {
     background-color: #fff;
-    width:90.5%;
+    width:90.2%;
     height:1.520em;
     font-size:1em;
     color:$wwuBlue;
@@ -489,7 +489,6 @@ footer {
 
   .western-contact-info {
     padding-left:1.25em;
-    margin-top:1.500em;
     font-size:.750em;
     img {
       float:left;
@@ -507,8 +506,8 @@ footer {
     a { color:#fff; }
   }
   .western-social-media {
-    position:relative;
-    margin-top:1.438em;
+    position: relative;
+    left: -1em;
     a {
       &:focus {
         border-bottom:3px solid $wwuLime;

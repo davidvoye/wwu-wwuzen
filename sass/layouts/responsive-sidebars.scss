@@ -699,15 +699,50 @@ footer {
       padding-right:1em;
       padding-top: 0.8em;
     }
+
+    //Create and import our sprite sheet for the icons used in the right footer block
     @import "../images/westernIcons/*.png";
     @include all-westernIcons-sprites;
-    .western-social-media { padding-left:1em;
+
+    .western-social-media {
       li { list-style: none; display:inline-block;}
       a {
         width:24px;
         height:24px;
         display: block;
         text-indent: -999em;
+      }
+    }
+    //Set the default styles for the p content in the right footer block
+     p {
+      position:relative;
+      padding-left:2em;
+      &:before{
+        position:absolute;
+        top:0.5em;
+        left:0;
+        content:" ";
+      }
+     }
+     p.western-address{
+      &:before{
+        @extend .westernIcons-AddressIcon;
+        width:14px;
+        height:12px;
+      }
+    }
+     p.western-telephone{
+      &:before{
+        @extend .westernIcons-PhoneIcon;
+        width:12px;
+        height:10px;
+      }
+    }
+     p.western-contact{
+      &:before{
+        @extend .westernIcons-EmailIcon;
+        width:10px;
+        height:11px;
       }
     }
   }

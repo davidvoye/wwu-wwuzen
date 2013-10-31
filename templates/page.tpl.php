@@ -210,15 +210,14 @@
         <?php print render($page['footer_center']); ?>
       </div>
 
-      <div class="footer-right" role="complementary"> <!-- Replaced #footer-right with .footer-right -->
-          <!-- Removed: <div id="footer-right-heading"> -->
-        <h1><span>Western Washington University</span></h1> <!-- Replaced <h3> with <h1> -->
-          <div class="western-contact-info"> <!-- Replaced #footer-right-contact-info with .western-contact-info -->
+      <div class="footer-right" role="complementary">
+        <h1><span>Western Washington University</span></h1>
+          <div class="western-contact-info">
             <!-- Replaced all <img>s with classes on <p>s so they can be made :before pseudo elements -->
-            <p>516 High Street<br>
+            <p class="western-address">516 High Street<br>
               Bellingham, WA 98225</p> <!-- Replaced with a <br>: <p class="second-address-line"> -->
-            <p><a href="tel:3606503000">(360) 650-3000</a></p>
-            <p><a href="http://www.wwu.edu/wwucontact/">Contact Western</a></p>
+            <p class="western-telephone"><a href="tel:3606503000">(360) 650-3000</a></p>
+            <p class="western-contact"><a href="http://www.wwu.edu/wwucontact/">Contact Western</a></p>
           </div>
 
           <div class="western-social-media"> <!-- Replaced #footer-right-social-media-icons with .western-social-media -->
