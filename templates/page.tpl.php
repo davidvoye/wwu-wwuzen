@@ -216,19 +216,21 @@
         <h1><a href="http://www.wwu.edu">Western Washington University</a></h1> <!-- Replaced <h3> with <h1> -->
           <div class="western-contact-info"> <!-- Replaced #footer-right-contact-info with .western-contact-info -->
             <!-- Replaced all <img>s with classes on <p>s so they can be made :before pseudo elements -->
-            <p>516 High Street<br>
+            <p class="western-address">516 High Street<br>
               Bellingham, WA 98225</p> <!-- Replaced with a <br>: <p class="second-address-line"> -->
-            <p><a href="tel:3606503000">(360) 650-3000</a></p>
-            <p><a href="http://www.wwu.edu/wwucontact/">Contact Western</a></p>
+            <p class="western-telephone"><a href="tel:3606503000">(360) 650-3000</a></p>
+            <p class="western-contact"><a href="http://www.wwu.edu/wwucontact/">Contact Western</a></p>
           </div>
 
           <div class="western-social-media"> <!-- Replaced #footer-right-social-media-icons with .western-social-media -->
-            <a href="http://www.facebook.com/westernwashingtonuniversity">Facebook</a>
-            <a href="http://www.flickr.com/wwu">Flickr</a>
-            <a href="https://twitter.com/#!/WWU">Twitter</a>
-            <a href="http://www.youtube.com/wwu">Youtube</a>
-            <a href="https://plus.google.com/+wwu/posts">Google Plus</a>
-            <a href="http://news.wwu.edu/go/feed/1538/ru/atom/">RSS</a>
+            <ul>
+              <li><a class="westernIcons-FacebookIcon" href="http://www.facebook.com/westernwashingtonuniversity">Facebook</a></li>
+              <li><a class="westernIcons-FlickrIcon" href="http://www.flickr.com/wwu">Flickr</a></li>
+              <li><a class="westernIcons-TwitterIcon" href="https://twitter.com/#!/WWU">Twitter</a></li>
+              <li><a class="westernIcons-YouTubeIcon" href="http://www.youtube.com/wwu">Youtube</a></li>
+              <li><a class="westernIcons-GooglePlusIcon" href="https://plus.google.com/+wwu/posts">Google Plus</a></li>
+              <li><a class="westernIcons-RSSicon" href="http://news.wwu.edu/go/feed/1538/ru/atom/">RSS</a></li>
+            </ul>
           </div>
 
         <?php print render($page['footer_right']); ?>

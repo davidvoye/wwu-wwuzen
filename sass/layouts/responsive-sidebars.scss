@@ -693,6 +693,62 @@ footer { @include zen-clear(both); }
   .footer-right {
     @include zen-grid-item(3.75,9);
     margin-top:-1.813em;
-    //.western-social-media { padding-left:1em; }
+    margin-right:2em;
+    h1 {
+      position: relative;
+      top: -1.2em;
+      padding-left:1em;
+      padding-right:1em;
+      padding-top: 0.8em;
+    }
+
+    //Create and import our sprite sheet for the icons used in the right footer block
+    @import "../images/westernIcons/*.png";
+    @include all-westernIcons-sprites;
+
+    .western-social-media {
+      li { list-style: none; display:inline-block;}
+      a {
+        width:24px;
+        height:24px;
+        display: block;
+        text-indent: -999em;
+      }
+    }
+    //Set the default styles for the p content in the right footer block
+     p {
+      position:relative;
+      padding-left:2em;
+      &:before{
+        position:absolute;
+        top:0.5em;
+        left:0;
+        content:" ";
+      }
+    }
+    .western-address {
+      &:before {
+        @extend .westernIcons-AddressIcon;
+        width:14px;
+        height:12px;
+        margin-top:-1px;
+      }
+    }
+    .western-telephone {
+      &:before {
+        @extend .westernIcons-PhoneIcon;
+        width:12px;
+        height:10px;
+      }
+    }
+    .western-contact {
+      &:before {
+        @extend .westernIcons-EmailIcon;
+        width:11px;
+        height:8px;
+        margin-left:1px;
+        margin-top:2px;
+      }
+    }
   }
 }

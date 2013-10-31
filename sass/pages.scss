@@ -14,6 +14,7 @@
 @import "base";
 @import "compass/css3/box-shadow";
 @import "compass/css3/images";
+
 // Import _accordion.scss at bottom of file.
 
 /* ****************************************************
@@ -523,7 +524,6 @@ footer {
 
   .western-contact-info {
     padding-left:1.25em;
-    margin-top:1.500em;
     font-size:.750em;
     img {
       float:left;
@@ -541,8 +541,8 @@ footer {
     a { color:#fff; }
   }
   .western-social-media {
-    position:relative;
-    margin-top:1.438em;
+    position: relative;
+    left: -1em;
     a {
       &:focus {
         border-bottom:3px solid $wwuLime;

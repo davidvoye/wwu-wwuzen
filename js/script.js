@@ -20,15 +20,12 @@
 Drupal.behaviors.menuHeight = {
 	attach: function () {
 		$(window).resize(function () {
-			// If main nav bar is not 34px tall
-			// Ideally would be "if greater than 34", but that operator causes the element to shift/bounce
-			if ($('.main-nav div div > .menu').height() != 34) {
-				$('.college-header .college-name').css({bottom: "68px" });
-			}
-			if (($('.main-nav div div > .menu').height() == 34) || ($(window).width() < 800)) {
-				// Could use: .removeAttr('style') instead of .css()
+			if ($('.main-nav div div > .menu').height() == 34) {
 				$('.college-header .college-name').css({bottom: "" });
 			}
+      else {
+        $('.college-header .college-name').css({bottom: "68px" });
+      }
 		}).resize();
 	}
 }
