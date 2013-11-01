@@ -69,22 +69,20 @@
  * @see template_process()
  */
 ?>
-<!-- Removed (because can be replaced by body {border-top...}): <div id="top-stripe"></div> -->
+
 <div class="page"> <!-- Replaced #page with .page -->
 
   <header role="banner">
 
-    <section class="western-header" aria-label="University Links, Search, and Navigation"> <!-- Replace #wwuheader with .western-header -->
-
-      <span class="western-logo"><a href="http://www.wwu.edu">Western Washington University</a></span> <!-- Remove a.wwuLink class. Replace span.wwuLogo and span.wwuLink with p.western-logo -->
+    <section class="western-header" aria-label="University Links, Search, and Navigation">
+      <span class="western-logo"><a href="http://www.wwu.edu">Western Washington University</a></span>
 
       <nav role="navigation" aria-label="University related navigation.">
-        <div class="western-quick-links" aria-label="Western Quick Links"> <!-- Replaced div#menu-icons with div.western-quick-links-->
-          <!-- Removed: <div class="quick-links" id="mobileWWUmenu"> -->
-          <button role="button" aria-pressed="false" aria-label="Toggle Quick Links">Toggle Quick Links</button> <!-- Changed "wwuMobileMenuIcon;?>"" to a <button> -->
+        <div class="western-quick-links" aria-label="Western Quick Links">
+          <button role="button" aria-pressed="false" aria-label="Toggle Quick Links">Toggle Quick Links</button>
 
 
-          <ul> <!-- Removed ul#wwumenu -->
+          <ul>
             <li><a href="http://www.wwu.edu/academic_calendar" title="Calendar"><span aria-hidden="true">c</span> <span>Calendar</span></a></li>
             <li><a href="http://www.wwu.edu/directory" title="Directory"><span aria-hidden="true">d</span> <span>Directory</span></a></li>
             <li><a href="http://www.wwu.edu/index" title="Index"><span aria-hidden="true">i</span> <span>Index</span></a></li>
