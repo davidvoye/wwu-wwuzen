@@ -96,8 +96,11 @@ footer {
 @media all and (max-width: 800px) {
 
 //Create and import our sprite sheet for the icons used in the mobile menu system
-@import "../images/icons/*.png";
-@include all-icons-sprites;
+@import "../images/icons/standard/*.png";
+@include all-standard-sprites;
+//Retina icons
+@import "../images/icons/hidef/*.png";
+@include all-hidef-sprites;
 
 .western-header {
   background-color:$wwuBlue;
@@ -116,7 +119,7 @@ footer {
     //@include box-shadow(-5px 0 15px -5px #333);
     width:44px;
     button {
-      @extend .icons-toolbar-links;
+      @extend .standard-toolbar-links;
       width:44px;
       height:44px;
       text-indent:-999em;
@@ -129,7 +132,18 @@ footer {
     top:0;
     width:44px;
     > button {
-      @extend .icons-search-gray;
+      @extend .standard-search-gray;
+      //Maybe the correct way to include retina icons from the sprite. Maybe we need a mixin.
+      @media
+        only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (   min--moz-device-pixel-ratio: 2),
+        only screen and (     -o-min-device-pixel-ratio: 2/1),
+        only screen and (        min-device-pixel-ratio: 2),
+        only screen and (                min-resolution: 192dpi),
+        only screen and (                min-resolution: 2dppx) {
+          background: url('../../images/../images/icons/hidef-s0fb977ac75.png') no-repeat;
+          background-position: 0 -264px
+        }
       width:44px;
       height:44px;
       text-indent:-999em;
@@ -158,7 +172,7 @@ footer {
     @include zen-clear(right);
     @include zen-grid-item(1,1,right);
     background-color:$wwuOceanBlue;
-    @extend .icons-main-menu;
+    @extend .standard-main-menu;
     width:44px;
     height:44px;
     text-indent:-999em;
