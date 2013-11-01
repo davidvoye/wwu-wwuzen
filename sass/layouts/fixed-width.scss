@@ -39,7 +39,7 @@ $zen-auto-include-item-base: false;
  * Center the page.
  */
 
-#page,
+.page,
 .region-bottom {
   /* If you want to make the page a fixed width and centered in the viewport,
    * this is the standards-compliant way to do that. */
@@ -53,12 +53,12 @@ $zen-auto-include-item-base: false;
  */
 // See the note about $zen-auto-include-item-base above.
 
-#header,
-#content,
-#navigation,
+.college-header,
+.content,
+.main-nav,
 .region-sidebar-first,
 .region-sidebar-second,
-#footer {
+footer {
   @include zen-grid-item-base();
 }
 
@@ -66,9 +66,9 @@ $zen-auto-include-item-base: false;
  * Containers for grid items and flow items.
  */
 
-#header,
-#main,
-#footer {
+.college-header,
+main,
+footer {
   @include zen-grid-container();
 }
 
@@ -76,11 +76,11 @@ $zen-auto-include-item-base: false;
  * Navigation bar
  */
 
-#main {
+main {
   padding-top: 3em; /* Move all the children of #main down to make room. */
   position: relative;
 }
-#navigation {
+.main-nav {
   position: absolute;
   top: 0; /* Move the navbar up inside #main's padding. */
   height: 3em;
@@ -92,7 +92,7 @@ $zen-auto-include-item-base: false;
  */
 
 .sidebar-first {
-  #content { /* Span 4 columns, starting in 2nd column from left. */
+  .content { /* Span 4 columns, starting in 2nd column from left. */
     @include zen-grid-item(9, 4); //span,start
   }
 
@@ -106,7 +106,7 @@ $zen-auto-include-item-base: false;
  */
 
 .sidebar-second {
-  #content { /* Span 4 columns, starting in 1st column from left. */
+  .content { /* Span 4 columns, starting in 1st column from left. */
     @include zen-grid-item(9, 1);  //span,start
   }
 
@@ -120,7 +120,7 @@ $zen-auto-include-item-base: false;
  */
 
 .two-sidebars {
-  #content { /* Span 3 columns, starting in 2nd column from left. */
+  .content { /* Span 3 columns, starting in 2nd column from left. */
     @include zen-grid-item(6, 4);
   }
 
