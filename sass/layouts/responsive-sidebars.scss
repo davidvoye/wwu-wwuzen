@@ -185,8 +185,9 @@ footer {
   }
   nav {
     @include box-shadow();
+    background:$wwuGrayBlue;
     width:44px;
-    height: 44px * 3;
+    height: 64px + 74px;
     position:absolute;
     top:0;
     right:0;
@@ -199,6 +200,7 @@ footer {
       height:44px;
       text-indent:-999em;
       border:none;
+      margin-bottom:3px;
     }
     ul {
       margin: 0;
@@ -264,7 +266,6 @@ footer {
 
 
   .western-search {
-    background-color:rgb(75, 104, 156);
     top:0;
     width:44px;
     > button {
@@ -284,30 +285,22 @@ footer {
       height:44px;
       text-indent:-999em;
       border:none;
+      margin-bottom:3px;
       }
     .western-search-widget {
       @include zen-clear(right);
       display:none;
       position:absolute;
       width:19em;
-      top:68px;
+      top:74px;
       right:44px;
       z-index:100;
       margin-top:0;
       @include transition(width .25s);
     }
   } // End .wwusearch
-  %icon-size { // Use for @extends
-    height:44px;
-    width:44px;
-    position:absolute;
-    right:0;
-    z-index:200;
-    cursor:pointer;
-  }
   .mobile-main-nav {
     @extend .standard-main-menu;
-    background-color:$wwuOceanBlue;
     width:44px;
     height:44px;
     text-indent:-999em;
@@ -317,6 +310,7 @@ footer {
 
 #main-menu.main-nav {
     padding:0;
+    margin-top:0;
     height:100%;
     .menu {
       display:none;
@@ -400,12 +394,12 @@ footer {
   @include background(linear-gradient(top, lighten($wwuOceanBlue, 10%), $wwuOceanBlue));
   padding: 0 0 .5em 1.25em;
   font-family:$muli;
-  width:100%;
   font-size:1em;
   text-transform:uppercase;
   text-align:right;
   padding:.75em 1em;
   line-height:1.55;
+  min-height:46px;
   p {
     text-decoration:none;
     color:#fff;
