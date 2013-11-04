@@ -158,6 +158,25 @@ footer {
       margin:.5em;
     }
   }
+
+  footer { @include zen-clear(both); }
+
+  .footer-left {
+    @include zen-clear();
+    padding-left:1em;
+  }
+  .footer-center {
+    @include zen-clear();
+    position: relative;
+    padding: 0;
+    .menu {
+      padding: 0 0 0 15px;
+      li {
+        font-size:.875em;
+        display: block;
+      }
+    }
+  }
 }
 
 /* ****************************************************
@@ -251,20 +270,6 @@ footer {
       } // End li
     } // End ul
   }
-
-  /* .western-quick-links {
-        position:absolute;
-        top:-.1em;
-        right:15.4%;
-      ul {
-        @include transition(.5s);
-        li:not(:first-child):before { content: "\00B7 \0020 "; }
-        a span:first-child { display:none; }
-      }
-      > button { display:none; }
-    } */
-
-
   .western-search {
     top:0;
     width:44px;
@@ -417,57 +422,33 @@ footer {
     }
   } //End .college-name
 
-main {
-  @include zen-clear();
-  //@include zen-grid-item(1,1, right);
-  margin-top:0em;
-  .page-title {
-    border-bottom:none;
-    padding:.9em 0 1em 0;
-    margin-bottom:0em;
-  }
-  .breadcrumb { display: none; }
-} // End #main
-
-//Hide the navigation that moves to the bottom of the page.
-#block-accordion-menu-1 { display:none; }
-footer { @include zen-clear(both); }
-
-.footer-left {
-  @include zen-clear();
-  padding-left:1em;
-}
-.footer-center {
-  @include zen-clear();
-  position: relative;
-  padding: 0;
-  .menu {
-    padding: 0 0 0 15px;
-    li {
-      font-size:.875em;
-      display: block;
+  main {
+    @include zen-clear();
+    //@include zen-grid-item(1,1, right);
+    margin-top:0em;
+    .page-title {
+      border-bottom:none;
+      padding:.9em 0 1em 0;
+      margin-bottom:0em;
     }
-  }
-}
-.footer-right {
-  @include zen-clear();
-  margin-top:0em;
-  h1 {
-    text-align:left;
-    a { padding-left:1em; }
-  }
-  .western-contact-info { padding-top:1em; }
-  .western-social-media { padding-left:.5em; }
-}
+    .breadcrumb { display: none; }
+  } // End #main
+
+  //Hide the navigation that moves to the bottom of the page.
+  #block-accordion-menu-1 { display:none; }
 
   #edit-subject { width: 100%; } // Override of normalize.scss for the comment subject input area
-}
 
-
-/* ****************************************************
-            Phone and tablet size 0px <--> 800px
-**************************************************** */
-@media all and (max-width:800px) {
+  .footer-right {
+    @include zen-clear();
+    margin-top:0em;
+    h1 {
+      text-align:left;
+      a { padding-left:1em; }
+    }
+    .western-contact-info { padding-top:1em; }
+    .western-social-media { padding-left:.5em; }
+  }
   //The left column in layouts needs to float above the main content. These classes are applied in panels.
   .left-column {
     float:left;
