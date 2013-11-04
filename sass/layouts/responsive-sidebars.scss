@@ -213,7 +213,7 @@ footer {
         only screen and (                min-resolution: 192dpi),
         only screen and (                min-resolution: 2dppx) {
           background: url('../../images/../images/icons/hidef-s0fb977ac75.png') no-repeat;
-          background-position: 0 -264px
+          background-position: 0 -264px;
         }
       width:44px;
       height:44px;
@@ -427,14 +427,10 @@ footer { @include zen-clear(both); }
 .footer-left {
   @include zen-clear();
   padding-left:1em;
-  p:first-child, .footer-site-name {
-    text-align:center;
-  }
 }
 .footer-center {
   @include zen-clear();
   position: relative;
-  //margin-left:-.5em;
   padding: 0;
   .menu {
     padding: 0 0 0 15px;
@@ -448,17 +444,11 @@ footer { @include zen-clear(both); }
   @include zen-clear();
   margin-top:0em;
   h1 {
-        text-align:left;
-    a {
-    padding-left:1em;
-    }
+    text-align:left;
+    a { padding-left:1em; }
   }
-  .western-contact-info {
-    padding-top:1em;
-  }
-  .western-social-media {
-    padding-left:.5em;
-  }
+  .western-contact-info { padding-top:1em; }
+  .western-social-media { padding-left:.5em; }
 }
 
   #edit-subject { width: 100%; } // Override of normalize.scss for the comment subject input area
