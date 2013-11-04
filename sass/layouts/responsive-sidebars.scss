@@ -94,38 +94,60 @@ footer {
 **************************************************** */
 
 @media all and (max-width: 800px) {
+
+//Create and import our sprite sheet for the icons used in the mobile menu system
+@import "../images/icons/standard/*.png";
+@include all-standard-sprites;
+//Retina icons
+@import "../images/icons/hidef/*.png";
+@include all-hidef-sprites;
+
 .western-header {
   background-color:$wwuBlue;
-  //height:68px;
   .western-logo a {
     @include zen-grid-item(1,1,left);
     margin-bottom:-.375em;
     background: url('../../images/wwuhorizlogo.png') no-repeat;
+    background-color:$wwuBlue;
     width: 100%;
     height: 74px;
+    text-indent:-999em;
   }
   .western-quick-links {
-    float:right;
-    background-color:rgb(75, 104, 156);
-    height:100%;
-    padding:0;
-    margin:0;
+    @include zen-clear(right);
+    @include zen-grid-item(1,1,right);
+    //@include box-shadow(-5px 0 15px -5px #333);
     width:44px;
-    height:44 * 3px;
-    position:absolute;
-    top:0;
-    right:0;
-    z-index:200;
-    @include box-shadow(-5px 0 15px -5px #333);
-    button { display:none; }
+    button {
+      @extend .standard-toolbar-links;
+      width:44px;
+      height:44px;
+      text-indent:-999em;
+      }
   }
   .western-search {
     @include zen-clear(right);
     @include zen-grid-item(1,1,right);
-    z-index: 200;
     background-color:rgb(75, 104, 156);
     top:0;
-    > button { background-image:url('../images/icons/search-gray.png'); }
+    width:44px;
+    > button {
+      @extend .standard-search-gray;
+      //Maybe the correct way to include retina icons from the sprite. Maybe we need a mixin.
+      @media
+        only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (   min--moz-device-pixel-ratio: 2),
+        only screen and (     -o-min-device-pixel-ratio: 2/1),
+        only screen and (        min-device-pixel-ratio: 2),
+        only screen and (                min-resolution: 192dpi),
+        only screen and (                min-resolution: 2dppx) {
+          background: url('../../images/../images/icons/hidef-s0fb977ac75.png') no-repeat;
+          background-position: 0 -264px
+        }
+      width:44px;
+      height:44px;
+      text-indent:-999em;
+      }
     .western-search-widget {
       @include zen-clear(right);
       display:none;
@@ -150,7 +172,10 @@ footer {
     @include zen-clear(right);
     @include zen-grid-item(1,1,right);
     background-color:$wwuOceanBlue;
-    width:2.75em;
+    @extend .standard-main-menu;
+    width:44px;
+    height:44px;
+    text-indent:-999em;
   }
   ul {
     margin: 0;
@@ -158,7 +183,7 @@ footer {
     background-color:#fff;
     list-style-type:none;
     position:absolute;
-    width:19em;
+    width:20em;
     height:55px;
     right:44px;
     top:0;
@@ -203,30 +228,8 @@ footer {
     } // End li
   } // End ul
 } // End .western-header
-.college-banner { display:none; }
-.college-name {
-  background-image:none;
-  @include zen-clear();
-  z-index:-10;
-  background-color:$wwuOceanBlue;
-  @include background(linear-gradient(top, lighten($wwuOceanBlue, 10%), $wwuOceanBlue));
-  @include zen-grid-item(1,1);
-  padding: 0 0 .5em 1.25em;
-  font-family:$muli;
-  p {
-    margin:0.4em 0 0 0;
-    display:block; //college name is shown as part of image on banner
-    width:80%; //Prevents the name from sliding under the mobile nav at 360px wide
-    font-size:1.25em;
-    text-align:left;
-    padding:0;
-      a:link,
-      a:visited {
-        color: #fff;
-        text-decoration: none;
-      }
-  }
-  .main-nav {
+
+#main-menu.main-nav {
     padding:0;
     height:100%;
     .menu {
@@ -278,7 +281,6 @@ footer {
       li.expanded .menu li { display: none; }
     } // End .menu
   } // End .main-nav
-
 @mixin nav-icons($fileName) { background-image:url("../../images/icons/#{$fileName}.png"); }
 
 .expanded { @include nav-icons(expandable-parent); }
@@ -302,7 +304,38 @@ footer {
         }
       }
     } // End .expanded, .opened
-  } //End college header
+
+.college-banner { display:none; }
+.college-name {
+  background-image:none;
+  @include zen-clear();
+  z-index:-10;
+  background-color:$wwuOceanBlue;
+  @include background(linear-gradient(top, lighten($wwuOceanBlue, 10%), $wwuOceanBlue));
+  padding: 0 0 .5em 1.25em;
+  font-family:$muli;
+  width:100%;
+  font-size:1em;
+  text-transform:uppercase;
+  text-align:right;
+  padding:.75em 1em;
+  line-height:1.55;
+  p {
+    text-decoration:none;
+    color:#fff;
+    margin:0.4em 0 0 0;
+    display:block; //college name is shown as part of image on banner
+    width:80%; //Prevents the name from sliding under the mobile nav at 360px wide
+    font-size:1.25em;
+    text-align:left;
+    padding:0;
+      a:link,
+      a:visited {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  } //End .college-name
 
 main {
   @include zen-clear();

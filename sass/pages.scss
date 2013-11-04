@@ -128,37 +128,39 @@ header[role="banner"] button {
   margin:0;
   padding:0;
   li  {
-    display:inline;
+    display:inline-block;
     font-family: $muli;
     padding-left: .5em;
     img {margin-top: -1px;}
-    &:not(:first-child):before { content: "\00B7 \0020 "; }
+//    &:not(:first-child):before { content: "\00B7 \0020 "; }
     a {
       text-decoration: none;
       padding-left: 6px;
       color: $wwuBlue;
-      span:first-child { display:none; }
+//      span:first-child { display:none; }
       &:hover, &:focus {
         color:$wwuOceanBlue;
-        text-decoration:underline;
+  //      text-decoration:underline;
       }
     }
   }
 }
 
-.college-name {
-  z-index:99;
-  min-width:200px;
-  max-width:250px;
-  min-height:25px;
-  font-size:1.5em;
-  text-transform:uppercase;
-  text-align:right;
-  padding:.75em 1em;
-  line-height:1.1;
-  p { text-decoration:none; color:#fff; }
+//Media Query for the name
+@media all and (min-width: 801px) {
+  .college-name {
+    z-index:99;
+    min-width:200px;
+    max-width:250px;
+    min-height:25px;
+    font-size:1.5em;
+    text-transform:uppercase;
+    text-align:right;
+    padding:.75em 1em;
+    line-height:1.1;
+    p { text-decoration:none; color:#fff; }
+  }
 }
-
 
 /* ****************************************************
           Main (container for everything)
