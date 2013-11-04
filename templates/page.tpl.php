@@ -198,29 +198,28 @@
 
 </div> <!-- div.page -->
 
-  <footer role="contentinfo"> <!-- removed #footer -->
-    <!-- Removed:  -->
+  <footer role="contentinfo">
     <div class="footer-wrapper">
-      <div class="footer-left"> <!-- Replaced #footer-left with .footer-left -->
+
+      <div class="footer-left">
         <?php print render($page['footer_left']); ?>
       </div>
 
-      <div class="footer-center"> <!-- Replaced #footer-center with .footer-center -->
+      <div class="footer-center">
         <?php print render($page['footer_center']); ?>
       </div>
 
-      <div class="footer-right" role="complementary"> <!-- Replaced #footer-right with .footer-right -->
-          <!-- Removed: <div id="footer-right-heading"> -->
-        <h1><a href="http://www.wwu.edu">Western Washington University</a></h1> <!-- Replaced <h3> with <h1> -->
-          <div class="western-contact-info"> <!-- Replaced #footer-right-contact-info with .western-contact-info -->
-            <!-- Replaced all <img>s with classes on <p>s so they can be made :before pseudo elements -->
+      <div class="footer-right" role="complementary">
+        <h1><a href="http://www.wwu.edu">Western Washington University</a></h1>
+
+          <div class="western-contact-info">
             <p class="western-address">516 High Street<br>
-              Bellingham, WA 98225</p> <!-- Replaced with a <br>: <p class="second-address-line"> -->
+              Bellingham, WA 98225</p>
             <p class="western-telephone"><a href="tel:3606503000">(360) 650-3000</a></p>
             <p class="western-contact"><a href="http://www.wwu.edu/wwucontact/">Contact Western</a></p>
           </div>
 
-          <div class="western-social-media"> <!-- Replaced #footer-right-social-media-icons with .western-social-media -->
+          <div class="western-social-media">
             <ul>
               <li><a class="westernIcons-FacebookIcon" href="http://www.facebook.com/westernwashingtonuniversity">Facebook</a></li>
               <li><a class="westernIcons-FlickrIcon" href="http://www.flickr.com/wwu">Flickr</a></li>
