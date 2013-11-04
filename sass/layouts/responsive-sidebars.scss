@@ -174,7 +174,6 @@ footer {
 @include all-hidef-sprites;
 
 .western-header {
-  background-color:$wwuBlue;
   .western-logo a {
     @include zen-grid-item(1,1,left);
     margin-bottom:-.375em;
@@ -187,15 +186,78 @@ footer {
   .western-quick-links {
     @include zen-clear(right);
     @include zen-grid-item(1,1,right);
-    //@include box-shadow(-5px 0 15px -5px #333);
     width:44px;
     button {
       @extend .standard-toolbar-links;
       width:44px;
       height:44px;
       text-indent:-999em;
-      }
+      border:none;
+    }
+    ul {
+      margin: 0;
+      padding:1.1em .33em .625em .625em;
+      background-color:#fff;
+      list-style-type:none;
+      position:absolute;
+      width:19em;
+      right:44px;
+      top:0;
+      display:none;
+      overflow:hidden;
+      @include box-shadow(#333 0 0 8px);
+      li {
+        text-align:center;
+        display:inline-block;
+        padding:.17em .25em 0 .25em;
+        &:not(:first-child):before { content:""; }
+        //&:nth-child(4) { padding:.17em .5em 0 .5em; }
+        a {
+          text-decoration:none;
+          text-transform:none;
+          @include transition(1s);
+          padding:0;
+          span:first-child {
+            font-size:1.825em;
+            font-family: 'fontello';
+            font-style: normal;
+            font-weight: normal;
+            speak: none;
+            display: inline-block;
+            text-decoration: inherit;
+            padding:0;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1em;
+            @include transition(.2s);
+          }
+          span:last-child {
+            display:block;
+            font-size:.75em;
+          }
+          &:hover, &:focus {
+            color:$wwuGreen;
+            @include transition(.2s);
+            span:first-child { color:$wwuLime; }
+          }
+        } // End a
+      } // End li
+    } // End ul
   }
+
+  /* .western-quick-links {
+        position:absolute;
+        top:-.1em;
+        right:15.4%;
+      ul {
+        @include transition(.5s);
+        li:not(:first-child):before { content: "\00B7 \0020 "; }
+        a span:first-child { display:none; }
+      }
+      > button { display:none; }
+    } */
+
+
   .western-search {
     @include zen-clear(right);
     @include zen-grid-item(1,1,right);
@@ -218,6 +280,7 @@ footer {
       width:44px;
       height:44px;
       text-indent:-999em;
+      border:none;
       }
     .western-search-widget {
       @include zen-clear(right);
@@ -242,62 +305,13 @@ footer {
   .mobile-main-nav {
     @include zen-clear(right);
     @include zen-grid-item(1,1,right);
-    background-color:$wwuOceanBlue;
     @extend .standard-main-menu;
+    background-color:$wwuOceanBlue;
     width:44px;
     height:44px;
     text-indent:-999em;
+    border:none;
   }
-  ul {
-    margin: 0;
-    padding:.5em;
-    background-color:#fff;
-    list-style-type:none;
-    position:absolute;
-    width:20em;
-    height:55px;
-    right:44px;
-    top:0;
-    display:none;
-    overflow:hidden;
-    @include box-shadow(#333 0 0 8px);
-    li {
-      text-align:center;
-      display:inline-block;
-      padding:.17em .25em 0 .25em;
-      &:not(:first-child):before { content:""; }
-      //&:nth-child(4) { padding:.17em .5em 0 .5em; }
-      a {
-        text-decoration:none;
-        text-transform:none;
-        @include transition(1s);
-        padding:0;
-        span:first-child {
-          font-size:1.825em;
-          font-family: 'fontello';
-          font-style: normal;
-          font-weight: normal;
-          speak: none;
-          display: inline-block;
-          text-decoration: inherit;
-          padding:0;
-          font-variant: normal;
-          text-transform: none;
-          line-height: 1em;
-          @include transition(.2s);
-        }
-        span:last-child {
-          display:block;
-          font-size:.75em;
-        }
-        &:hover, &:focus {
-          color:$wwuGreen;
-          @include transition(.2s);
-          span:first-child { color:$wwuLime; }
-        }
-      } // End a
-    } // End li
-  } // End ul
 } // End .western-header
 
 #main-menu.main-nav {
@@ -542,6 +556,10 @@ footer { @include zen-clear(both); }
         right:15.4%;
       ul {
         @include transition(.5s);
+        margin:0;
+        padding:0;
+        li:not(:first-child):before { content: "\00B7 \0020 "; }
+        a span:first-child { display:none; }
       }
       > button { display:none; }
     }

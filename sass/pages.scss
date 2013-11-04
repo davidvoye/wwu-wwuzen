@@ -125,22 +125,17 @@ header[role="banner"] button {
 
 .western-quick-links ul {
   font-size: .8em;
-  margin:0;
-  padding:0;
   li  {
     display:inline-block;
     font-family: $muli;
     padding-left: .5em;
     img {margin-top: -1px;}
-//    &:not(:first-child):before { content: "\00B7 \0020 "; }
     a {
       text-decoration: none;
       padding-left: 6px;
       color: $wwuBlue;
-//      span:first-child { display:none; }
       &:hover, &:focus {
         color:$wwuOceanBlue;
-  //      text-decoration:underline;
       }
     }
   }
