@@ -183,9 +183,15 @@ footer {
     height: 74px;
     text-indent:-999em;
   }
+  nav {
+    @include box-shadow();
+    width:44px;
+    height: 44px * 3;
+    position:absolute;
+    top:0;
+    right:0;
+  }
   .western-quick-links {
-    @include zen-clear(right);
-    @include zen-grid-item(1,1,right);
     width:44px;
     button {
       @extend .standard-toolbar-links;
@@ -211,7 +217,6 @@ footer {
         display:inline-block;
         padding:.17em .25em 0 .25em;
         &:not(:first-child):before { content:""; }
-        //&:nth-child(4) { padding:.17em .5em 0 .5em; }
         a {
           text-decoration:none;
           text-transform:none;
@@ -259,8 +264,6 @@ footer {
 
 
   .western-search {
-    @include zen-clear(right);
-    @include zen-grid-item(1,1,right);
     background-color:rgb(75, 104, 156);
     top:0;
     width:44px;
@@ -303,8 +306,6 @@ footer {
     cursor:pointer;
   }
   .mobile-main-nav {
-    @include zen-clear(right);
-    @include zen-grid-item(1,1,right);
     @extend .standard-main-menu;
     background-color:$wwuOceanBlue;
     width:44px;
