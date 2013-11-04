@@ -184,7 +184,6 @@ main {
 
 .page-title {
   border-bottom:solid 3px #E9E9E9;
-  padding:0 1em .5em 1em;
   margin-bottom:1em;
 }
 
@@ -253,8 +252,8 @@ h1, h2, h3, h4, h5, h6 {
 // h#{$h} { font-size:$h#{$h}-font-size; }
 //}
 
-h1 { font-size:$h1-font-size; &.title { display:inline-block; } }
-h2 { margin-top:.5em; font-size:$h1-font-size; }
+h1 { font-size:$h1-font-size; margin:.17em 0 .4em .5em; }
+h2 { font-size:$h2-font-size; }
 h3 { font-size:$h3-font-size; }
 h4 { font-size:$h4-font-size; }
 h5 { font-size:$h5-font-size; }
