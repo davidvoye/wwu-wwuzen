@@ -1,0 +1,209 @@
+/**
+* These are the layout styles for the clean-chss panel.
+*/
+@import "base";
+@import "compass";
+@import "zen";
+
+$box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
+
+@import url(http://fonts.googleapis.com/css?family=Muli:400,400italic);
+$muli: Muli, Tahoma, Verdana, "DejaVu Sans", sans-serif;
+
+$zen-column-count:  12;
+$zen-gutter-width:  1.25em;
+$zen-auto-include-item-base: false;
+
+$gray: rgba(151,151,151,1);
+
+.front header#department { display:none; }
+
+/*.clean-chss-middle-column {
+    background-color: #FFFFFF;
+    height: 16.4em;
+    margin-bottom: 1em;
+    padding-top: 1em;
+  }*/
+
+#content p.callOut {
+  color:$wwuLtblue;
+  font-size:1.25em;
+}
+
+.clean-chss-bottom-left h2, .clean-chss-bottom-right h2 {
+  border-bottom:3px solid #D2D4D5;
+  padding-bottom:.25em;
+}
+
+/**
+* Slideshow styles
+*/
+.front {
+  .flex-flexslider {
+    background-color:$gray;
+    border-top: 2px solid $gray;
+    border-left: 2px solid $gray;
+    border-right: 2px solid $gray;
+    border-bottom: 0px solid $gray;
+    border-radius: 0px 0px 0px 0px;
+    margin-top:1.5em;
+    @include box-shadow(-5 -5 5px #888888);
+  }
+  .flex-caption {
+    background-color:#222222;
+    @include opacity(.5);
+    color:#ffffff;
+    padding:.5em;
+  }
+
+  .flex-control-paging li a.flex-active {
+    background: none repeat scroll 0 0 rgba(204, 45, 48, 1.0);
+    cursor: default;
+  }
+
+  .flex-control-paging li a {
+    background: none repeat scroll 0 0 $gray;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3) inset;
+  }
+}
+
+/* ****************************************************
+                Small-size -> 550px
+**************************************************** */
+
+@media all and (max-width:550px) {
+  $zen-column-count: 1;
+
+  .clean-chss-top-left, // Intro text
+  .clean-chss-top-right, // How to Support CHSS
+  .clean-chss-middle-left, // Dean's Lecture Series
+  .clean-chss-middle-center, // Slideshow
+  .clean-chss-middle-right, // About the college
+  .clean-chss-bottom-left, // News
+  .clean-chss-bottom-right { // Events
+    @include zen-grid-item(1,1);
+    @include zen-clear();
+    margin:0 auto;
+    display:block;
+  }
+
+  // Center aligns images until they are turned into straight CSS
+  .clean-chss-top-right, // How to Support CHSS
+  .clean-chss-middle-left, // Dean's Lecture Series
+  .clean-chss-middle-center, // Slideshow
+  .clean-chss-middle-right { // About the college
+      text-align:center;
+  }
+}
+
+
+/* ****************************************************
+            Medium-size 551px <-> 800px
+**************************************************** */
+
+@media all and (min-width: 551px) and (max-width: 800px) {
+  $zen-column-count: 3;
+
+  .clean-chss-top-left { // Intro text
+    @include zen-grid-item(3,1);
+  }
+
+  .clean-chss-top-right { // How to Support CHSS
+    @include zen-grid-item(1.5,1);
+    @include zen-clear(both);
+    img { padding-top:3em; }
+  }
+  .clean-chss-middle-left { // Dean's Lecture Series
+    @include zen-grid-item(1.5,2.5);
+  }
+
+  .clean-chss-middle-center { // Slideshow
+    @include zen-grid-item(1.5,1);
+    @include zen-clear(both);
+  }
+  .clean-chss-middle-right { // About the college
+    @include zen-grid-item(1.5,2.5);
+  }
+
+  .clean-chss-bottom-left, .clean-chss-bottom-right { // News and Events
+    @include zen-grid-item(3,1);
+    @include zen-clear(both);
+  }
+}
+
+/* ****************************************************
+                Screen 801px ->
+**************************************************** */
+
+@media all and (min-width:801px) {
+  $zen-column-count: 12;
+
+  .clean-chss-top-left { // Intro text
+    @include zen-grid-item(8,1);
+  }
+  .clean-chss-top-right { // How to Support CHSS
+    @include zen-grid-item(4,9);
+    img { display:block; margin:0 auto; }
+  }
+  .clean-chss-middle-left { // Dean's Lecture Series
+    @include zen-grid-item(4,1);
+    @include zen-clear(both);
+  }
+  .clean-chss-middle-center { // Slideshow
+    @include zen-grid-item(4,5);
+  }
+  .clean-chss-middle-right { // About the college
+    @include zen-grid-item(4,9);
+  }
+  .clean-chss-bottom-left { // News
+    @include zen-grid-item(6,1);
+    @include zen-clear(both);
+  }
+  .clean-chss-bottom-right { // Events
+    @include zen-grid-item(5.9,7.1); // Compensate for lack of gutter
+  }
+}
+
+// /////////////////////////////////////////////
+//        Styling for panel editor view
+
+#page-manager-edit {
+  .clean-chss-top-left,
+  .clean-chss-top-right,
+  .clean-chss-middle-left,
+  .clean-chss-middle-center,
+  .clean-chss-middle-right,
+  .clean-chss-bottom-left,
+  .clean-chss-bottom-right {
+    display:inline-block;
+  }
+  .clean-chss-top-left {
+    width:65%;
+  }
+
+  .clean-chss-top-right {
+    width:32%;
+  }
+
+  .clean-chss-middle-left {
+    width:32%;
+  }
+
+  .clean-chss-middle-center {
+    width:32%;
+  }
+
+  .clean-chss-middle-right {
+    width:32%;
+  }
+
+  .clean-chss-bottom-left {
+    width:48%;
+  }
+
+  .clean-chss-bottom-right {
+    width:48%;
+  }
+}
+#edit-buttons {clear:both; width:97.35%;}
