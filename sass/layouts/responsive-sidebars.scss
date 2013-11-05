@@ -641,6 +641,7 @@ footer { @include zen-clear(both); }
   .college-header {
     @include zen-clear(both);
     @include zen-float(left);
+    line-height: 0;
     position: relative;
     > a {
       display:block;
@@ -650,7 +651,7 @@ footer { @include zen-clear(both); }
     .college-name {
       position: absolute;
       right:0;
-      bottom: 7px;
+      bottom: 0;
       background-color:$wwuOceanBlue; /* Fallback for older browsers */
       background-color:rgba($wwuOceanBlue, .8);
       p { margin:0; }
