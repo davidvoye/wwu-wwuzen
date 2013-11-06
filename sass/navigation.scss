@@ -104,16 +104,11 @@ li a.active {
   font-family: $muli;
   .menu {
     width:100%;
-    display:table;
     li {
       background-color: $wwuBlue;
       border-style: solid;
       border-color: white;
       border-width: 0 3px 0 0;
-      padding:5px 0px;
-      text-transform:uppercase;
-      display:table-cell;
-      text-align: center;
       @include transition(.5s);
       &:hover, &:focus, &:active {
         background-color: #ddd;

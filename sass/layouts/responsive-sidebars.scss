@@ -158,6 +158,13 @@ footer {
       margin:.5em;
     }
   }
+}
+
+/* ****************************************************
+              Footer 2 rows (2 col; 1 col)
+**************************************************** */
+
+@media all and (max-width: 800px) {
 
   footer { @include zen-clear(both); }
 
@@ -179,6 +186,7 @@ footer {
   }
 }
 
+
 /* ****************************************************
                 Smaller Screens 0px --> 800px
 **************************************************** */
@@ -192,228 +200,228 @@ footer {
 @import "../images/icons/hidef/*.png";
 @include all-hidef-sprites;
 
-.western-header {
-  .western-logo a {
-    @include zen-grid-item(1,1,left);
-    margin-bottom:-.375em;
-    background: url('../../images/wwuhorizlogo.png') no-repeat;
-    background-color:$wwuBlue;
-    width: 100%;
-    height: 74px;
-    text-indent:-999em;
-  }
-  nav {
-    @include box-shadow();
-    background:$wwuGrayBlue;
-    width:44px;
-    height: 64px + 74px;
-    position:absolute;
-    top:0;
-    right:0;
-  }
-  .western-quick-links {
-    width:44px;
-    button {
-      @extend .standard-toolbar-links;
-      width:44px;
-      height:44px;
+  .western-header {
+    .western-logo a {
+      @include zen-grid-item(1,1,left);
+      margin-bottom:-.375em;
+      background: url('../../images/wwuhorizlogo.png') no-repeat;
+      background-color:$wwuBlue;
+      width: 100%;
+      height: 74px;
       text-indent:-999em;
-      border:none;
-      margin-bottom:3px;
     }
-    ul {
-      margin: 0;
-      padding:1.1em .33em .625em .625em;
-      background-color:#fff;
-      list-style-type:none;
+    nav {
+      @include box-shadow();
+      background:$wwuGrayBlue;
+      width:44px;
+      height: 64px + 74px;
       position:absolute;
-      width:19em;
-      right:44px;
       top:0;
-      display:none;
-      overflow:hidden;
-      @include box-shadow(#333 0 0 8px);
-      li {
-        text-align:center;
-        display:inline-block;
-        padding:.17em .25em 0 .25em;
-        &:not(:first-child):before { content:""; }
-        a {
-          text-decoration:none;
-          text-transform:none;
-          @include transition(1s);
-          padding:0;
-          span:first-child {
-            font-size:1.825em;
-            font-family: 'fontello';
-            font-style: normal;
-            font-weight: normal;
-            speak: none;
-            display: inline-block;
-            text-decoration: inherit;
+      right:0;
+    }
+    .western-quick-links {
+      width:44px;
+      button {
+        @extend .standard-toolbar-links;
+        width:44px;
+        height:44px;
+        text-indent:-999em;
+        border:none;
+        margin-bottom:3px;
+      }
+      ul {
+        margin: 0;
+        padding:1.1em .33em .625em .625em;
+        background-color:#fff;
+        list-style-type:none;
+        position:absolute;
+        width:19em;
+        right:44px;
+        top:0;
+        display:none;
+        overflow:hidden;
+        @include box-shadow(#333 0 0 8px);
+        li {
+          text-align:center;
+          display:inline-block;
+          padding:.17em .25em 0 .25em;
+          &:not(:first-child):before { content:""; }
+          a {
+            text-decoration:none;
+            text-transform:none;
+            @include transition(1s);
             padding:0;
-            font-variant: normal;
-            text-transform: none;
-            line-height: 1em;
-            @include transition(.2s);
+            span:first-child {
+              font-size:1.825em;
+              font-family: 'fontello';
+              font-style: normal;
+              font-weight: normal;
+              speak: none;
+              display: inline-block;
+              text-decoration: inherit;
+              padding:0;
+              font-variant: normal;
+              text-transform: none;
+              line-height: 1em;
+              @include transition(.2s);
+            }
+            span:last-child {
+              display:block;
+              font-size:.75em;
+            }
+            &:hover, &:focus {
+              color:$wwuGreen;
+              @include transition(.2s);
+              span:first-child { color:$wwuLime; }
+            }
+          } // End a
+        } // End li
+      } // End ul
+    }
+    .western-search {
+      top:0;
+      width:44px;
+      > button {
+        @extend .standard-search-gray;
+        //Maybe the correct way to include retina icons from the sprite. Maybe we need a mixin.
+        @media
+          only screen and (-webkit-min-device-pixel-ratio: 2),
+          only screen and (   min--moz-device-pixel-ratio: 2),
+          only screen and (     -o-min-device-pixel-ratio: 2/1),
+          only screen and (        min-device-pixel-ratio: 2),
+          only screen and (                min-resolution: 192dpi),
+          only screen and (                min-resolution: 2dppx) {
+            background: url('../../images/../images/icons/hidef-s0fb977ac75.png') no-repeat;
+            background-position: 0 -264px;
           }
-          span:last-child {
-            display:block;
-            font-size:.75em;
-          }
-          &:hover, &:focus {
-            color:$wwuGreen;
-            @include transition(.2s);
-            span:first-child { color:$wwuLime; }
-          }
-        } // End a
-      } // End li
-    } // End ul
-  }
-  .western-search {
-    top:0;
-    width:44px;
-    > button {
-      @extend .standard-search-gray;
-      //Maybe the correct way to include retina icons from the sprite. Maybe we need a mixin.
-      @media
-        only screen and (-webkit-min-device-pixel-ratio: 2),
-        only screen and (   min--moz-device-pixel-ratio: 2),
-        only screen and (     -o-min-device-pixel-ratio: 2/1),
-        only screen and (        min-device-pixel-ratio: 2),
-        only screen and (                min-resolution: 192dpi),
-        only screen and (                min-resolution: 2dppx) {
-          background: url('../../images/../images/icons/hidef-s0fb977ac75.png') no-repeat;
-          background-position: 0 -264px;
+        width:44px;
+        height:44px;
+        text-indent:-999em;
+        border:none;
+        margin-bottom:3px;
         }
+      .western-search-widget {
+        @include zen-clear(right);
+        display:none;
+        position:absolute;
+        width:19em;
+        top:74px;
+        right:44px;
+        z-index:100;
+        margin-top:0;
+        @include transition(width .25s);
+      }
+    } // End .wwusearch
+    .mobile-main-nav {
+      @extend .standard-main-menu;
       width:44px;
       height:44px;
       text-indent:-999em;
       border:none;
-      margin-bottom:3px;
-      }
-    .western-search-widget {
-      @include zen-clear(right);
-      display:none;
-      position:absolute;
-      width:19em;
-      top:74px;
-      right:44px;
-      z-index:100;
-      margin-top:0;
-      @include transition(width .25s);
     }
-  } // End .wwusearch
-  .mobile-main-nav {
-    @extend .standard-main-menu;
-    width:44px;
-    height:44px;
-    text-indent:-999em;
-    border:none;
-  }
-} // End .western-header
+  } // End .western-header
 
-#main-menu.main-nav {
-    padding:0;
-    margin-top:0;
-    height:100%;
-    .menu {
-      display:none;
-      background-color:#E9E9E9;
-      list-style-type:none;
-      a {
-        text-decoration:none;
-        color:#fff;
-        padding: .7em 0 .65em 1em;
-        display:block;
-        width:83%;
-        @include transition(1s);
-        &:hover, &:focus {
-          color:$wwuLime;
-          @include transition(.2s);
-        }
-      }
-      li {
-        width: 100%;
-        text-align: left;
-        display:block;
-        background-color:$wwuBlue;
-        margin-bottom:1px;
-        border:none;
-        text-transform:none;
-        font-size:.9em;
-        padding-top:0;
-        padding-bottom:0;
-        @include transition(.25s);
-        ul {
-          padding-left:0;
-          position: relative;
-          background-color:#E9E9E9;
-          li {
-            background-color:$wwuGrayBlue;
-            margin-bottom:1px;
-            border:none;
-            font-size:1em;
-            ul li {
-              background-color:tint($wwuGrayBlue, 20%);
-              ul li {
-                background-color:tint($wwuGrayBlue, 40%);
-              }
+  .main-nav {
+      padding:0;
+      margin-top:0;
+      height:100%;
+      div div .menu {
+        display:none;
+        background-color:#E9E9E9;
+        list-style-type:none;
+        li {
+          width: 100%;
+          text-align: left;
+          display:block;
+          background-color:$wwuBlue;
+          margin-bottom:1px;
+          border:none;
+          text-transform:none;
+          font-size:.9em;
+          padding-top:0;
+          padding-bottom:0;
+          @include transition(.25s);
+          a {
+            text-decoration:none;
+            color:#fff;
+            padding: .7em 0 .65em 1em;
+            display:block;
+            width:83%;
+            @include transition(1s);
+            &:hover, &:focus {
+              color:$wwuLime;
+              @include transition(.2s);
             }
-          } // End li
-        } // End ul
-      } // End li
-      li.expanded .menu li { display: none; }
-    } // End .menu
-  } // End .main-nav
-@mixin nav-icons($fileName) { background-image:url("../../images/icons/#{$fileName}.png"); }
+          }
+          ul {
+            padding-left:0;
+            position: relative;
+            background-color:#E9E9E9;
+            li {
+              background-color:$wwuGrayBlue;
+              margin-bottom:1px;
+              border:none;
+              font-size:1em;
+              ul li {
+                background-color:tint($wwuGrayBlue, 20%);
+                ul li {
+                  background-color:tint($wwuGrayBlue, 40%);
+                }
+              }
+            } // End li
+          } // End ul
+        } // End li
+        li.expanded .menu li { display: none; }
+      } // End .menu
+    } // End .main-nav
+  @mixin nav-icons($fileName) { background-image:url("../../images/icons/#{$fileName}.png"); }
 
-.expanded { @include nav-icons(expandable-parent); }
-  .opened { @include nav-icons(opened-parent); }
+  .expanded { @include nav-icons(expandable-parent); }
+    .opened { @include nav-icons(opened-parent); }
 
-.expanded, .opened {
-  background-repeat: no-repeat;
-  background-position:right top;
-  background-size:44px 44px;
+  .expanded, .opened {
+    background-repeat: no-repeat;
+    background-position:right top;
+    background-size:44px 44px;
 
-    .expanded { @include nav-icons(expandable-first-child); }
-    .opened { @include nav-icons(opened-first-child); }
-
-    .expanded, .opened {
-      .expanded { @include nav-icons(expandable-grandchild); }
-      .opened { @include nav-icons(opened-grandchild); }
+      .expanded { @include nav-icons(expandable-first-child); }
+      .opened { @include nav-icons(opened-first-child); }
 
       .expanded, .opened {
-        .expanded { @include nav-icons(expandable-great-grandchild); }
-        .opened { @include nav-icons(opened-great-grandchild); }
-        }
-      }
-    } // End .expanded, .opened
+        .expanded { @include nav-icons(expandable-grandchild); }
+        .opened { @include nav-icons(opened-grandchild); }
 
-.college-banner { display:none; }
-.college-name {
-  background-image:none;
-  @include zen-clear();
-  z-index:-10;
-  background-color:$wwuOceanBlue;
-  @include background(linear-gradient(top, lighten($wwuOceanBlue, 10%), $wwuOceanBlue));
-  padding: 0 0 .5em 1.25em;
-  font-family:$muli;
-  font-size:1em;
-  text-transform:uppercase;
-  text-align:right;
-  padding:.75em 1em;
-  line-height:1.55;
-  min-height:46px;
-  p {
-    text-decoration:none;
-    color:#fff;
-    margin:0.4em 0 0 0;
-    display:block; //college name is shown as part of image on banner
-    width:80%; //Prevents the name from sliding under the mobile nav at 360px wide
-    font-size:1.25em;
-    text-align:left;
-    padding:0;
+        .expanded, .opened {
+          .expanded { @include nav-icons(expandable-great-grandchild); }
+          .opened { @include nav-icons(opened-great-grandchild); }
+          }
+        }
+      } // End .expanded, .opened
+
+  .college-banner { display:none; }
+  .college-name {
+    background-image:none;
+    @include zen-clear();
+    z-index:-10;
+    background-color:$wwuOceanBlue;
+    @include background(linear-gradient(top, lighten($wwuOceanBlue, 10%), $wwuOceanBlue));
+    padding: 0 0 .5em 1.25em;
+    font-family:$muli;
+    font-size:1em;
+    text-transform:uppercase;
+    text-align:right;
+    padding:.75em 1em;
+    line-height:1.55;
+    min-height:46px;
+    p {
+      text-decoration:none;
+      color:#fff;
+      margin:0.4em 0 0 0;
+      display:block; //college name is shown as part of image on banner
+      width:80%; //Prevents the name from sliding under the mobile nav at 360px wide
+      font-size:1.25em;
+      text-align:left;
+      padding:0;
       a:link,
       a:visited {
         color: #fff;
@@ -439,16 +447,7 @@ footer {
 
   #edit-subject { width: 100%; } // Override of normalize.scss for the comment subject input area
 
-  .footer-right {
-    @include zen-clear();
-    margin-top:0em;
-    h1 {
-      text-align:left;
-      a { padding-left:1em; }
-    }
-    .western-contact-info { padding-top:1em; }
-    .western-social-media { padding-left:.5em; }
-  }
+  
   //The left column in layouts needs to float above the main content. These classes are applied in panels.
   .left-column {
     float:left;
@@ -469,7 +468,19 @@ footer {
   // Use 12 grid columns for larger screens.
   $zen-column-count: 12;
 
-  .main-nav ul li { float:none; }
+  .main-nav {
+    div div .menu {
+      display:table;
+      li {
+        padding:5px 0px;
+        text-align: center;
+        display:table-cell;
+        float:none;
+        text-transform:uppercase;
+        ul { display:none; }
+      }
+    }
+  }
   body { border-top:solid 6px $wwuLtblue; }
   header[role="banner"] > div {
     max-height: 247px;
@@ -558,8 +569,6 @@ footer {
       p { margin:0; }
     }
   } // End #header
-  .main-nav div div .menu li ul { display:none; }
-  .main-nav div div .menu li { float:none; }
   main {
     @include zen-clear();
     @include zen-grid-item(12,1);
