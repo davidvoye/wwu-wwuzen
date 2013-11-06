@@ -11,10 +11,6 @@
 
 @import "base";
 
-//Create and import our sprite sheet for the icons used in the right footer block
-@import "../images/westernIcons/*.png";
-@include all-westernIcons-sprites;
-
 @mixin nav-icons($fileName) {
     background-image:url("../../images/icons/#{$fileName}.png");
 }
@@ -88,53 +84,6 @@ footer {
   padding-right:0px;
 }
 
-.footer-right {
-  .western-social-media {
-    li { list-style: none; display:inline-block;}
-      a {
-        width:24px;
-        height:24px;
-        display: block;
-        text-indent: -999em;
-      }
-  }
-    //Set the default styles for the p content in the right footer block
-    p {
-      position:relative;
-      padding-left:2em;
-      &:before{
-        position:absolute;
-        top:0.5em;
-        left:0;
-        content:" ";
-      }
-    }
-    .western-address {
-      &:before {
-        @extend .westernIcons-AddressIcon;
-        width:14px;
-        height:12px;
-        margin-top:-1px;
-      }
-    }
-    .western-telephone {
-      &:before {
-        @extend .westernIcons-PhoneIcon;
-        width:12px;
-        height:10px;
-      }
-    }
-    .western-contact {
-      &:before {
-        @extend .westernIcons-EmailIcon;
-        width:11px;
-        height:8px;
-        margin-left:1px;
-        margin-top:2px;
-      }
-    }
-}
-
 /* ****************************************************
                 Mobile-size -> 360px
 **************************************************** */
@@ -199,10 +148,6 @@ footer {
 //Retina icons
 @import "../images/icons/hidef/*.png";
 @include all-hidef-sprites;
-
-@mixin mobile-nav-hover {
-
-}
 
   .western-header {
     .western-logo a {

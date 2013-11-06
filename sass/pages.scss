@@ -15,6 +15,10 @@
 @import "compass/css3/box-shadow";
 @import "compass/css3/images";
 
+// Create and import our sprite sheet for the icons used in the right footer block
+@import "../images/westernIcons/*.png";
+@include all-westernIcons-sprites;
+
 // Import _accordion.scss at bottom of file.
 
 /* ****************************************************
@@ -515,7 +519,6 @@ footer {
       &:hover, &:active, &:focus { color:$wwuOceanBlue; }
     }
   }
-
   .western-contact-info {
     padding-left:1.25em;
     font-size:.750em;
@@ -524,18 +527,50 @@ footer {
       padding-right:.625em;
       margin-top:.5em;
     }
+    a { color:#fff; }
+    // Set the default styles for the p content in the right footer block
     p {
+      position:relative;
+      padding-left:2em;
       margin-bottom:.75em;
       margin-top:0;
       line-height:1.5em;
       &:last-child { margin-bottom:1.25em; }
+      &:before {
+        position:absolute;
+        top:0.5em;
+        left:0;
+        content:" ";
+      }
     }
-    a { color:#fff; }
+    .western-address:before {
+      @extend .westernIcons-AddressIcon;
+      width:14px;
+      height:12px;
+      margin-top:-1px;
+    }
+    .western-telephone:before {
+      @extend .westernIcons-PhoneIcon;
+      width:12px;
+      height:10px;
+    }
+    .western-contact:before {
+      @extend .westernIcons-EmailIcon;
+      width:11px;
+      height:8px;
+      margin-left:1px;
+      margin-top:2px;
+    }
   }
   .western-social-media {
     position: relative;
     left: -1em;
+    li { list-style: none; display:inline-block; }
     a {
+      width:24px;
+      height:24px;
+      display: block;
+      text-indent: -999em;
       &:focus {
         border-bottom:3px solid $wwuLime;
       }
