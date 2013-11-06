@@ -200,6 +200,10 @@ footer {
 @import "../images/icons/hidef/*.png";
 @include all-hidef-sprites;
 
+@mixin mobile-nav-hover {
+
+}
+
   .western-header {
     .western-logo a {
       @include zen-grid-item(1,1,left);
@@ -330,37 +334,36 @@ footer {
         background-color:#E9E9E9;
         list-style-type:none;
         li {
+          @include transition(.25s);
           width: 100%;
           text-align: left;
           display:block;
-          background-color:$wwuBlue;
-          margin-bottom:1px;
-          border:none;
+          border-top:solid 1px white;
           text-transform:none;
           font-size:.9em;
           padding-top:0;
           padding-bottom:0;
-          @include transition(.25s);
           a {
+            @include transition(1s);
             text-decoration:none;
             color:#fff;
             padding: .7em 0 .65em 1em;
             display:block;
-            width:83%;
-            @include transition(1s);
-            &:hover, &:focus {
-              color:$wwuLime;
+            cursor:pointer;
+            width:100%;
+            /* &:hover, &:focus, &:active {
               @include transition(.2s);
-            }
+            } */
           }
+          &.is-expanded { cursor:s-resize; }
+          &.is-expanded > a { width: calc(100% - 58px); }
+          &.is-expanded.opened { cursor:n-resize; }
           ul {
             padding-left:0;
             position: relative;
             background-color:#E9E9E9;
             li {
               background-color:$wwuGrayBlue;
-              margin-bottom:1px;
-              border:none;
               font-size:1em;
               ul li {
                 background-color:tint($wwuGrayBlue, 20%);
@@ -469,14 +472,29 @@ footer {
   $zen-column-count: 12;
 
   .main-nav {
+    padding-top: 10px;
     div div .menu {
       display:table;
       li {
+        @include transition(.5s);
         padding:5px 0px;
         text-align: center;
         display:table-cell;
         float:none;
+        border-style: solid;
+        border-color: white;
+        border-width: 0 3px 0 0;
         text-transform:uppercase;
+        &:last-child { border:none; }
+        /* &:hover, &:focus, &:active {
+          @include transition(.1s);
+          background-color: #ddd;
+        }
+        a {
+          @include transition(.5s);
+          color:#fff;
+        }
+        li, a { &:focus, &:hover, &:active { color:$wwuBlue; } } */
         ul { display:none; }
       }
     }

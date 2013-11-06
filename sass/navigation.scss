@@ -100,36 +100,27 @@ li a.active {
   float:left;
   width:100%;
   font-family: $muli;
-  padding-top: 10px;
   .menu {
     width:100%;
     li {
       background-color: $wwuBlue;
-      border-style: solid;
-      border-color: white;
-      border-width: 0 3px 0 0;
-      @include transition(.5s);
-      &:hover, &:focus, &:active {
-        background-color: #ddd;
-        color: $wwuBlue;
-        cursor:pointer;
-        @include transition(.1s);
-        a { color:$wwuBlue;}
-      }
+      cursor:pointer;
       a {
+        @include transition(.5s);
         color:#fff;
         text-decoration:none;
         display:block;
-        @include transition(.5s);
-        &:focus { background-color: #dddddd; color:$wwuBlue;}
       }
-      &:last-child { border:none; }
+      &:hover, &:focus, &:active {
+        @include transition(.1s);
+        background-color: #ddd;
+        &, > a { color:$wwuBlue; }
+      }
     }
-
     li.active {
       background-color:#ddd;
       @include transition(.5s);
-      &:hover, &:focus { background-color:#eee; @include transition(.1s); }
+      &:hover, &:focus, &:active { background-color:#eee; @include transition(.1s); }
       .active { color:$wwuBlue; }//ul.links li.active a.active
     }//ul.links li.active
   }//ul.links
