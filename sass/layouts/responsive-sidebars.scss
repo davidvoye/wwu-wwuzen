@@ -555,15 +555,22 @@ footer {
   .college-header {
     @include zen-clear(both);
     @include zen-float(left);
+    line-height: 0;
+    position: relative;
     > a {
       display:block;
       width:100%;
       height:100%;
     }
+    .college-banner {
+    	img {
+    		width: 100%;
+    	}
+    }
     .college-name {
       position: absolute;
-      right: -2px;
-      bottom: 44px;
+      right:0;
+      bottom: 0;
       background-color:$wwuOceanBlue; /* Fallback for older browsers */
       background-color:rgba($wwuOceanBlue, .8);
       p { margin:0; }
