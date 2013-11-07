@@ -457,13 +457,8 @@ footer {
   background-color: $wwuBlue;
   color: white;
   border-top:10px solid #fff;
-  padding-bottom:1em;
+  padding-bottom:.5em;
   a:hover, a:focus, a:active { color:$wwuLime; }
-}
-
-.footer-wrapper {
-  max-width:1080px;
-  margin:0 auto;
 }
 
 .footer-left {
@@ -471,26 +466,21 @@ footer {
     font-size: 1.33em;
     text-transform: uppercase;
     line-height: 1.1;
-    margin: 1em 0;
   }
 }
 
 .footer-center {
-  li {
+  ul.menu li {
     border-bottom:1px solid #fff;
-    list-style: none;
+    list-style-image: none;
+    list-style-type: none;
+    font-size: .875em;
+    padding-top:.5em;
     a {
       color:#fff;
       text-decoration:none;
       padding-left:.15em;
       text-transform:capitalize;
-      &:after {
-        content: "\00A0";
-        &:hover, &:focus { border-bottom:1px solid $wwuYellow; }
-        width:100%;
-        position: absolute;
-        left:0;
-      }
       &:hover, &:focus { color:$wwuLime; }
     }
   }
@@ -502,14 +492,15 @@ footer {
   @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
   font-family:$muli;
   h1 {
+    @include box-shadow(#555 0 0 7px);
+    padding: .75em 0;
+    font-weight:normal;
+    text-align:center;
     background-color: #fff;
     width:100%;
     font-size:1rem;
     box-sizing: border-box;
-    margin: 0;
-    padding: .75em 0;
     text-transform:uppercase;
-    @include box-shadow(#555 0 0 7px);
     a {
       margin:0;
       padding-top: 0.8em;
@@ -520,13 +511,7 @@ footer {
     }
   }
   .western-contact-info {
-    padding-left:1.25em;
     font-size:.750em;
-    img {
-      float:left;
-      padding-right:.625em;
-      margin-top:.5em;
-    }
     a { color:#fff; }
     // Set the default styles for the p content in the right footer block
     p {
@@ -564,7 +549,6 @@ footer {
   }
   .western-social-media {
     position: relative;
-    left: -1em;
     li { list-style: none; display:inline-block; }
     a {
       width:24px;
