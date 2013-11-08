@@ -21,12 +21,12 @@ Drupal.behaviors.siteNameTypography = {
 		attach: function () {
 
 		// Gets copy from site name (ultimately inside a span: #site-name a span)
-		var siteName = $(".college-name p").text();
+		var siteName = $(".site-name p").text();
 
 		var typographyAnd = siteName.replace("and", "<span class=\"diminutive-type site-name-and\">and</span>");
 		var typographyCollegeOf = typographyAnd.replace("College of", "<span class=\"diminutive-type site-name-college-of\">College of</span>");
 
-		$('.college-name p span').replaceWith(typographyCollegeOf);
+		$('.site-name p span').replaceWith(typographyCollegeOf);
 	}
 }
 
@@ -115,22 +115,22 @@ Drupal.behaviors.siteNameTypography = {
   attach: function () {
   //START RESIZE COLLEGE HEADER AND SET HEIGHT CODE
   $(window).load(function () {
-    var divHeight = $(".college-header").children().outerHeight(true);
+    var divHeight = $(".site-header").children().outerHeight(true);
     var menuHeight = $(".main-nav").outerHeight(true);
     //For the mobile views we need another container to use since main menu is collapsed
-    var nameAndSlogan = $(".college-name").outerHeight(true);
+    var nameAndSlogan = $(".site-name").outerHeight(true);
     //add the two heights and 10 more pixels to compensate for space beneath the main menu
     var totalHeightWithMenu = divHeight + menuHeight + 10;
     var totalHeightSansMenu = divHeight + nameAndSlogan;
     //Testing for a condition forces the height to be calculated.
       if (totalHeightSansMenu <= 61) {
         totalHeightSansMenu = totalHeightSansMenu + 76;
-        $('.college-header').css({'height': totalHeightSansMenu + "px"});
+        $('.site-header').css({'height': totalHeightSansMenu + "px"});
       } else if (totalHeightSansMenu <= 84) {
         totalHeightSansMenu = totalHeightSansMenu + 1;
-        $('.college-header').css({'height': totalHeightSansMenu + "px"});
+        $('.site-header').css({'height': totalHeightSansMenu + "px"});
         } else {
-          $('.college-header').css({'height': totalHeightWithMenu + "px"});
+          $('.site-header').css({'height': totalHeightWithMenu + "px"});
           }
     });
     //END RESIZE COLLEGE HEADER CODE
@@ -141,22 +141,22 @@ Drupal.behaviors.resizeHeaderOnResize = {
   attach: function () {
   //START RESIZE COLLEGE HEADER AND SET HEIGHT CODE
   $(window).resize(function () {
-    var divHeight = $(".college-header").children().outerHeight(true);
+    var divHeight = $(".site-header").children().outerHeight(true);
     var menuHeight = $(".main-nav").outerHeight(true);
     //For the mobile views we need another container to use since main menu is collapsed
-    var nameAndSlogan = $(".college-name").outerHeight(true);
+    var nameAndSlogan = $(".site-name").outerHeight(true);
     //add the two heights and 10 more pixels to compensate for space beneath the main menu
     var totalHeightWithMenu = divHeight + menuHeight + 10;
     var totalHeightSansMenu = divHeight + nameAndSlogan;
     //Testing for a condition forces the height to be calculated.
       if (totalHeightSansMenu <= 61) {
         totalHeightSansMenu = totalHeightSansMenu + 76;
-        $('.college-header').css({'height': totalHeightSansMenu + "px"});
+        $('.site-header').css({'height': totalHeightSansMenu + "px"});
       } else if (totalHeightSansMenu <= 84) {
         totalHeightSansMenu = totalHeightSansMenu + 1;
-        $('.college-header').css({'height': totalHeightSansMenu + "px"});
+        $('.site-header').css({'height': totalHeightSansMenu + "px"});
         } else {
-          $('.college-header').css({'height': totalHeightWithMenu + "px"});
+          $('.site-header').css({'height': totalHeightWithMenu + "px"});
           }
     });
     //END RESIZE COLLEGE HEADER CODE

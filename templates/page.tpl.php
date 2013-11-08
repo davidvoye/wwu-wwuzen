@@ -104,12 +104,12 @@
     </section>
 
     <div>
-      <section class="college-header current-site" aria-label="College Header">
+      <section class="site-header" aria-label="Site Header">
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
           <?php if ($logo): ?>
-            <div class="college-banner"><img src="<?php print $logo;?>"></div>
+            <div class="site-banner"><img src="<?php print $logo;?>"></div>
           <?php endif; ?>
-          <div class="college-name">
+          <div class="site-name">
             <?php if ($site_name): ?>
               <p><span><?php print $site_name; ?></span></p>
             <?php endif; ?>

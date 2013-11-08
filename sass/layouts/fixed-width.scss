@@ -53,7 +53,7 @@ $zen-auto-include-item-base: false;
  */
 // See the note about $zen-auto-include-item-base above.
 
-.college-header,
+.site-header,
 .content,
 .main-nav,
 .region-sidebar-first,
@@ -66,7 +66,7 @@ footer {
  * Containers for grid items and flow items.
  */
 
-.college-header,
+.site-header,
 main,
 footer {
   @include zen-grid-container();

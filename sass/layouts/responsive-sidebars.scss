@@ -76,7 +76,7 @@ footer {
  */
 // See the note about $zen-auto-include-item-base above.
 
-.page, .western-header, .college-header,
+.page, .western-header, .site-header,
 main, .content, .main-nav, .region-sidebar-first, .region-sidebar-second,
 footer {
   @include zen-grid-item-base();
@@ -376,8 +376,8 @@ footer {
         }
       } // End .expanded, .opened
 
-  .college-banner { display:none; }
-  .college-name {
+  .site-banner { display:none; }
+  .site-name {
     background-image:none;
     @include zen-clear();
     z-index:-10;
@@ -406,7 +406,7 @@ footer {
         text-decoration: none;
       }
     }
-  } //End .college-name
+  } //End .site-name
 
   main {
     @include zen-clear();
@@ -555,7 +555,7 @@ footer {
     }
     .mobile-main-nav { display:none; }
   } // End .western-header
-  .college-header {
+  .site-header {
     @include zen-clear(both);
     @include zen-float(left);
     line-height: 0;
@@ -565,12 +565,12 @@ footer {
       width:100%;
       height:100%;
     }
-    .college-banner {
+    .site-banner {
     	img {
     		width: 100%;
     	}
     }
-    .college-name {
+    .site-name {
       position: absolute;
       right:0;
       bottom: 0;
