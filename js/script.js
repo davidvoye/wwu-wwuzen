@@ -23,12 +23,12 @@ Drupal.behaviors.siteNameTypography = {
 		// Gets copy from site name (ultimately inside a span: #site-name a span)
 		var siteName = $(".site-name p").text();
 
-		var typographyAnd = siteName.replace("and", "<span class=\"diminutive-type site-name-and\">and</span>");
+		var typographyAnd = siteName.replace("and", "<span class=\"diminutive-type\">and</span>");
 		
-		var typographyCollegeOf = typographyAnd.replace("College of", "<span class=\"diminutive-type site-name-college-of\">College of</span>");
-		var typographyDepartmentOf = typographyAnd.replace("Department of", "<span class=\"diminutive-type site-name-college-of\">Department of</span>");
-		var typographyDivisionOf = typographyAnd.replace("Division of", "<span class=\"diminutive-type site-name-college-of\">Division of</span>");
-		var typographyOfficeOf = typographyAnd.replace("Office of", "<span class=\"diminutive-type site-name-college-of\">Office of</span>");
+		var typographyCollegeOf = typographyAnd.replace("College of", "<span class=\"diminutive-type\">College of</span>");
+		var typographyDepartmentOf = typographyAnd.replace("Department of", "<span class=\"diminutive-type\">Department of</span>");
+		var typographyDivisionOf = typographyAnd.replace("Division of", "<span class=\"diminutive-type\">Division of</span>");
+		var typographyOfficeOf = typographyAnd.replace("Office of", "<span class=\"diminutive-type\">Office of</span>");
 
 		$('.site-name p span:contains(College of)').replaceWith(typographyCollegeOf);
 		$('.site-name p span:contains(Department of)').replaceWith(typographyDepartmentOf);
