@@ -24,9 +24,16 @@ Drupal.behaviors.siteNameTypography = {
 		var siteName = $(".site-name p").text();
 
 		var typographyAnd = siteName.replace("and", "<span class=\"diminutive-type site-name-and\">and</span>");
+		
 		var typographyCollegeOf = typographyAnd.replace("College of", "<span class=\"diminutive-type site-name-college-of\">College of</span>");
+		var typographyDepartmentOf = typographyAnd.replace("Department of", "<span class=\"diminutive-type site-name-college-of\">Department of</span>");
+		var typographyDivisionOf = typographyAnd.replace("Division of", "<span class=\"diminutive-type site-name-college-of\">Division of</span>");
+		var typographyOfficeOf = typographyAnd.replace("Office of", "<span class=\"diminutive-type site-name-college-of\">Office of</span>");
 
-		$('.site-name p span').replaceWith(typographyCollegeOf);
+		$('.site-name p span:contains(College of)').replaceWith(typographyCollegeOf);
+		$('.site-name p span:contains(Department of)').replaceWith(typographyDepartmentOf);
+		$('.site-name p span:contains(Division of)').replaceWith(typographyDivisionOf);
+		$('.site-name p span:contains(Office of)').replaceWith(typographyOfficeOf);
 	}
 }
 
