@@ -377,6 +377,12 @@ footer {
       } // End .expanded, .opened
 
   .site-banner { display:none; }
+  .site-header {
+    a:link, a:visited, a:hover, a:active, a:focus {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
   .site-name {
     background-image:none;
     @include zen-clear();
@@ -400,11 +406,6 @@ footer {
       font-size:1.25em;
       text-align:left;
       padding:0;
-      a:link,
-      a:visited {
-        color: #fff;
-        text-decoration: none;
-      }
     }
   } //End .site-name
 
