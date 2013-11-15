@@ -126,7 +126,7 @@ Drupal.behaviors.siteNameTypography = {
 	// START ON WINDOW RESIZE EVENT
 	Drupal.behaviors.windowResize = {
 		attach: function () {
-			var mainMenu = $('.main-nav .menu');
+			var mainMenu = $('.main-nav > .menu');
 			
 			$(window).resize(function() {
 				if ($(window).width() > 800 && !mainMenu.is(':visible')) {
