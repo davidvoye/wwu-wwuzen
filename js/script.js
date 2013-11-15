@@ -77,17 +77,24 @@ Drupal.behaviors.siteNameTypography = {
 	Drupal.behaviors.mobileWwuMainMenu = {
 		attach: function () {
 
-		$('.mobile-main-nav').click(function () {
-			var mainMenu = $('.main-nav .menu');
-			if (mainMenu.is(':visible')) {
-				mainMenu.slideToggle();
-			} else {
-				mainMenu.slideToggle(400);
+			$('.mobile-main-nav').click(function () {
+				var mainMenu = $('.main-nav .menu');
+				
+				if (mainMenu.is(':visible')) {
+					mainMenu.slideToggle();
+				} else {
+					mainMenu.slideToggle(400, function() {
+						if (mainMenu.is(':visible')) {
+							mainMenu.css('display', 'table');
+						}
+					});
+				}
+			});
+			
 		}
-	});
-	// END MAIN MENU TOGGLE CODE
 	}
-}
+	//END MAIN MENU TOGGLE CODE
+
 	// START MENU EXPANSION CODE
 	Drupal.behaviors.menuExpansion = {
 		attach: function () {
