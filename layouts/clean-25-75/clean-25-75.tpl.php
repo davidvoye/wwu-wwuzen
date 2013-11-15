@@ -14,10 +14,10 @@
  *   - $content['right']: Content in the right column.
  */
 ?>
-<div class="25-percent-left-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+<div class="wwu-25-percent-left-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
 	<?php print $content['left']; ?>
 </div>
 
-<div class="75-percent-right-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+<div class="wwu-75-percent-right-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
 	<?php print $content['right']; ?>
 </div>
