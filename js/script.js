@@ -17,6 +17,34 @@
 * Place your code here.
 */
 
+Drupal.behaviors.imgAttributes = {
+    attach: function () {
+
+    //First check to see if an image is on the page, if not, do nothing
+    if ( $( 'img').length > 0 ) {
+      //Loop through each image found and retrieve the width and height.
+      //Then remove the width and height from the inline css.
+      //Finally write the width and height as attributes to the html img tag.
+      $('#main img').each(
+        function(){
+          var imgWidth = $(this).css( "width");
+          var removeWidth = $(this).css( "width", "" );
+          var imgHeight = $(this).css( "height" );
+          var removeHeight = $(this).css( "height", "");
+
+          $(this).attr("width",imgWidth);
+          $(this).attr("height", imgHeight);
+      });
+      //The figure wraps our images and if a height is set, it will not wrap
+      //around the text, only the image. This is basically height:auto.
+      $('#main figure').each(
+        function(){
+          var removeFigureHeight = $(this).css( "height", "");
+      });
+    }
+  }
+}
+
 Drupal.behaviors.siteNameTypography = {
 		attach: function () {
 
@@ -24,7 +52,7 @@ Drupal.behaviors.siteNameTypography = {
 		var siteName = $(".site-name p").text();
 
 		var typographyAnd = siteName.replace("and", "<span class=\"diminutive-type\">and</span>");
-		
+
 		var typographyCollegeOf = typographyAnd.replace("College of", "<span class=\"diminutive-type\">College of</span>");
 		var typographyDepartmentOf = typographyAnd.replace("Department of", "<span class=\"diminutive-type\">Department of</span>");
 		var typographyDivisionOf = typographyAnd.replace("Division of", "<span class=\"diminutive-type\">Division of</span>");
@@ -115,60 +143,6 @@ Drupal.behaviors.siteNameTypography = {
 	// END MENU EXPANSION CODE
 	}
 }
-
-//These next two behaviors do the exact same thing, on onLoad and one on resize
-
-/*Drupal.behaviors.resizeHeaderOnLoad = {
-  attach: function () {
-  //START RESIZE COLLEGE HEADER AND SET HEIGHT CODE
-  $(window).load(function () {
-    var divHeight = $(".site-header").children().outerHeight(true);
-    var menuHeight = $(".main-nav").outerHeight(true);
-    //For the mobile views we need another container to use since main menu is collapsed
-    var nameAndSlogan = $(".site-name").outerHeight(true);
-    //add the two heights and 10 more pixels to compensate for space beneath the main menu
-    var totalHeightWithMenu = divHeight + menuHeight + 10;
-    var totalHeightSansMenu = divHeight + nameAndSlogan;
-    //Testing for a condition forces the height to be calculated.
-      if (totalHeightSansMenu <= 61) {
-        totalHeightSansMenu = totalHeightSansMenu + 76;
-        $('.site-header').css({'height': totalHeightSansMenu + "px"});
-      } else if (totalHeightSansMenu <= 84) {
-        totalHeightSansMenu = totalHeightSansMenu + 1;
-        $('.site-header').css({'height': totalHeightSansMenu + "px"});
-        } else {
-          $('.site-header').css({'height': totalHeightWithMenu + "px"});
-          }
-    });
-    //END RESIZE COLLEGE HEADER CODE
-  }
-}
-
-Drupal.behaviors.resizeHeaderOnResize = {
-  attach: function () {
-  //START RESIZE COLLEGE HEADER AND SET HEIGHT CODE
-  $(window).resize(function () {
-    var divHeight = $(".site-header").children().outerHeight(true);
-    var menuHeight = $(".main-nav").outerHeight(true);
-    //For the mobile views we need another container to use since main menu is collapsed
-    var nameAndSlogan = $(".site-name").outerHeight(true);
-    //add the two heights and 10 more pixels to compensate for space beneath the main menu
-    var totalHeightWithMenu = divHeight + menuHeight + 10;
-    var totalHeightSansMenu = divHeight + nameAndSlogan;
-    //Testing for a condition forces the height to be calculated.
-      if (totalHeightSansMenu <= 61) {
-        totalHeightSansMenu = totalHeightSansMenu + 76;
-        $('.site-header').css({'height': totalHeightSansMenu + "px"});
-      } else if (totalHeightSansMenu <= 84) {
-        totalHeightSansMenu = totalHeightSansMenu + 1;
-        $('.site-header').css({'height': totalHeightSansMenu + "px"});
-        } else {
-          $('.site-header').css({'height': totalHeightWithMenu + "px"});
-          }
-    });
-    //END RESIZE COLLEGE HEADER CODE
-  }
-}*/
 
 
 // Tooltips for the staff and faculty directories
