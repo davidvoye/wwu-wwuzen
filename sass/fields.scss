@@ -50,7 +50,7 @@
   img { display:block; margin:0 auto; }
 }
 
-#main p.user-title {
+main p.user-title {
   color:#222;
   line-height:1.25;
   font-size:1em;
@@ -58,7 +58,7 @@
   margin-top:.5em;
 }
 
-#main .user-module div {
+main .user-module div {
   display:inline-block;
   cursor:pointer;
   color:#bbb;
@@ -118,7 +118,7 @@
 */
 
 
-html .user-individual-profile #main {
+.user-individual-profile main {
   .panels-flexible-column-staff_profile-1 {
     width:auto;
   }

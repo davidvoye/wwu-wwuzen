@@ -69,94 +69,73 @@
  * @see template_process()
  */
 ?>
-<div id="top-stripe"></div> <!-- stripe goes full browser page width -->
-<div id="page">
-  <!--Retrieve our images for use in the header -->
-  <?php
-    // Desktops get this image
-    $wwuLogo = base_path().path_to_theme() . '/images/wwu.png';
-    $wwuSearchIcon = base_path().path_to_theme() . '/images/icons/search.png';
-    // Mobile devices get these images
-    $wwuHorizontalLogo = base_path().path_to_theme() . '/images/wwuhorizlogo.png';
-    $wwuMobileMenuIcon = base_path().path_to_theme() . '/images/icons/toolbar-links.png';
-    $wwuMobileSearchIcon = base_path().path_to_theme() . '/images/icons/search-gray.png';
-    $wwuMobileMainMenuIcon = base_path().path_to_theme() . '/images/icons/main-menu.png';
-  ?>
-    <header id="wwuheader" role="banner" aria-label="Western banner">
-      <span class="wwuLogo wwuLink">
-        <a class="wwuLink" href="http://www.wwu.edu">Western Washington University</a>
-      </span>
 
-    <div id="menu-icons">
-      <div class="quick-links" id="mobileWWUmenu">
-        <img src="<?php print $wwuMobileMenuIcon;?>" alt="Quick links" class="quick-links-toggle icon-size">
+<div class="page">
 
-        <ul id="wwumenu" role="navigation" aria-label="Western quick links">
-          <li><a href="http://www.wwu.edu/academic_calendar" title="Calendar"><span aria-hidden="true">c</span> <span>Calendar</span></a></li>
-          <li><a href="http://www.wwu.edu/directory" title="Directory"><span aria-hidden="true">d</span> <span>Directory</span></a></li>
-          <li><a href="http://www.wwu.edu/index" title="Index"><span aria-hidden="true">i</span> <span>Index</span></a></li>
-          <li><a href="http://www.wwu.edu/campusmaps" title="Map"><span aria-hidden="true">l</span> <span>Map</span></a></li>
-          <li><a href="http://mywestern.wwu.edu" title="myWestern"><span aria-hidden="true">w</span> <span>myWestern</span></a></li>
-        </ul>
-      </div> <!-- end div.quick-links -->
+  <header role="banner">
 
-      <div class="wwusearch">
-        <div class="icon-size" id="s-toggle" aria-label="Search"><a>Open Search</a></div> <!-- end div.icon-size -->
-        <div id="search" style="display:none;" role="search">
-          <!-- Display the search box as rendered in template.php wwuzen_preprocess_page() -->
-          <?php print $search_box; ?>
+    <section class="western-header" aria-label="University Links, Search, and Navigation">
+      <span class="western-logo"><a href="http://www.wwu.edu">Western Washington University</a></span>
+
+      <nav role="navigation" aria-label="University related navigation.">
+
+        <div class="western-quick-links" aria-label="Western Quick Links">
+          <button role="button" aria-pressed="false" aria-label="Toggle Quick Links">Toggle Quick Links</button>
+          <ul>
+            <li><a href="http://www.wwu.edu/academic_calendar" title="Calendar"><span aria-hidden="true">c</span> <span>Calendar</span></a></li>
+            <li><a href="http://www.wwu.edu/directory" title="Directory"><span aria-hidden="true">d</span> <span>Directory</span></a></li>
+            <li><a href="http://www.wwu.edu/index" title="Index"><span aria-hidden="true">i</span> <span>Index</span></a></li>
+            <li><a href="http://www.wwu.edu/campusmaps" title="Map"><span aria-hidden="true">l</span> <span>Map</span></a></li>
+            <li><a href="http://mywestern.wwu.edu" title="myWestern"><span aria-hidden="true">w</span> <span>myWestern</span></a></li>
+          </ul>
         </div>
-        <div class="main-navigation" id="mobileNavTrigger">
-          <img src="<?php print $wwuMobileMainMenuIcon;?>" alt="Main menu links" class="main-menu-toggle icon-size">
+
+        <div class="western-search" role="search" aria-label="University and Site Search">
+          <button role="button" aria-pressed="false" aria-label="Open the search box">Open Search</button>
+
+          <div class="western-search-widget">
+            <?php print $search_box; ?>
+          </div>
         </div>
-      </div> <!-- end div.wwusearch -->
-    </div> <!-- end div#menu-icons -->
 
-  </header> <!-- end #wwuheader -->
+        <button class="mobile-main-nav" role="button" aria-pressed="false" aria-label="Open Mobile Main Navigation">Open Main Navigation</button>
+      </nav>
 
-  <header id="header" role="banner" aria-label="Site banner">
-    <div id="collegeheader">
-      <!-- Group Logo (banner) and Site Name and Main Menu for Group -->
-      <?php if ($logo): ?>
-        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" id="logoImage"/></a>
-      <?php endif; ?>
+    </section>
 
-      <?php if ($site_name || $site_slogan): ?>
-        <div id="name-and-slogan">
-          <?php if ($site_name): ?>
-            <h1 id="site-name">
-              <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-            </h1>
+    <div>
+      <section class="site-header" aria-label="Site Header">
+        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
+          <?php if ($logo): ?>
+            <div class="site-banner"><img src="<?php print $logo;?>"></div>
           <?php endif; ?>
+          <div class="site-name">
+            <?php if ($site_name): ?>
+              <p><span><?php print $site_name; ?></span></p>
+            <?php endif; ?>
+          </div>
+        </a>
+      </section>
 
-          <?php if ($site_slogan): ?>
-            <h2 id="site-slogan"><?php print $site_slogan; ?></h2>
-          <?php endif; ?>
-        </div> <!-- /#name-and-slogan -->
-      <?php endif; ?>
-        <div id="navigation">
-          <nav id="main-menu" role="navigation" aria-label="Main or top-level navigation">
-                <?php print render($page['navigation']); ?>
-          </nav>
-        </div> <!-- /#navigation -->
+      <nav class="main-nav" id="main-menu" role="navigation" aria-label="Main navigation">
+        <?php print render($page['navigation']); ?>
+      </nav>
       <?php print render($page['header']); ?>
-    </div> <!-- end div#collegeheader -->
+    </div>
+
   </header>
 
-  <main id="main" role="main">
-    <header id="department">
+  <main role="main">
+    <header class="page-title">
       <?php print render($title_prefix); ?>
         <?php if ($title): ?>
-          <h1 class="title" id="page-title"><?php print $title; ?></h1>
+          <h1><?php print $title; ?></h1>
         <?php endif; ?>
       <?php print $breadcrumb; ?>
     </header>
-    <div id="content" class="column">
+
+    <section class="content column">
       <?php print render($page['highlighted']); ?>
-
-      <a id="main-content"></a>
-
       <?php print render($title_suffix); ?>
       <?php print $messages; ?>
       <?php print render($tabs); ?>
@@ -166,10 +145,10 @@
       <?php endif; ?>
       <?php print render($page['content']); ?>
       <?php print $feed_icons; ?>
-    </div> <!-- /#content -->
-    <!--add in secondary menu here in first sidebar -->
+    </section>
+
     <?php if ($secondary_menu ): ?>
-      <nav id="secondary-menu" role="navigation" aria-role="Secondary navigation">
+      <nav class="secondary-nav" role="navigation" aria-role="Secondary navigation">
         <?php print theme('links__system_secondary_menu', array(
           'links' => $secondary_menu,
           'attributes' => array(
@@ -183,67 +162,58 @@
         )); ?>
       </nav>
     <?php endif; ?>
-    <!-- end of secondary menu -->
-
 
     <?php
-      // Render the sidebars to see if there's anything in them.
       $sidebar_first  = render($page['sidebar_first']);
       $sidebar_second = render($page['sidebar_second']);
     ?>
 
     <?php if ($sidebar_first || $sidebar_second): ?>
-      <aside class="sidebars">
-
+      <aside class="content-sidebar">
         <?php print $sidebar_first; ?>
         <?php print $sidebar_second; ?>
-      </aside> <!-- /.sidebars -->
+      </aside>
     <?php endif; ?>
 
-  </main> <!-- /main#main -->
-</div> <!-- /#page -->
+  </main>
 
-  <footer id="footer" role="contentinfo">
-    <div id="footer-wrapper">
-      <div id="footer-left">
+</div> <!-- end div.page -->
+
+  <footer role="contentinfo">
+    <div class="footer-wrapper">
+
+      <div class="footer-left">
         <?php print render($page['footer_left']); ?>
       </div>
-      <div id="footer-center">
+
+      <div class="footer-center">
         <?php print render($page['footer_center']); ?>
       </div>
-      <div id="footer-right" role="complementary">
-        <!-- //Retrieve our icon images -->
-        <?php
-          $addressIcon = base_path().path_to_theme() . '/images/AddressIcon.png';
-          $phoneIcon = base_path().path_to_theme() . '/images/PhoneIcon.png';
-          $emailIcon = base_path().path_to_theme() . '/images/EmailIcon.png';
-          $facebookIcon = base_path().path_to_theme() . '/images/FacebookIcon.png';
-          $flickrIcon = base_path().path_to_theme() . '/images/FlickrIcon.png';
-          $twitterIcon = base_path().path_to_theme() . '/images/TwitterIcon.png';
-          $youTubeIcon = base_path().path_to_theme() . '/images/YouTubeIcon.png';
-          $googlePlusIcon = base_path().path_to_theme() . '/images/GooglePlusIcon.png';
-          $rssIcon = base_path().path_to_theme() . '/images/RSSicon.png';
-         ?>
-          <div id="footer-right-heading">
-            <h3>Western Washington University</h3>
+
+      <div class="footer-right" role="complementary">
+        <h1><a href="http://www.wwu.edu">Western Washington University</a></h1>
+
+          <div class="western-contact-info">
+            <p class="western-address">516 High Street<br>
+              Bellingham, WA 98225</p>
+            <p class="western-telephone"><a href="tel:3606503000">(360) 650-3000</a></p>
+            <p class="western-contact"><a href="http://www.wwu.edu/wwucontact/">Contact Western</a></p>
           </div>
-          <div id="footer-right-contact-info">
-            <img src="<?php print $addressIcon;?>" width="14px" height="12px" /><p>516 High Street</p><p class="second-address-line">Bellingham, WA 98225</p>
-            <img src="<?php print $phoneIcon;?>" width="12px" height="11px"/><p>(360) 650-3000</p>
-            <img src="<?php print $emailIcon;?>" width="12px" height="8px" /><p><a href="http://www.wwu.edu/wwucontact/">Contact Western</a></p>
-          </div>
-          <div id="footer-right-social-media-icons">
-            <a href="http://www.facebook.com/westernwashingtonuniversity"><img src="<?php print $facebookIcon;?>" width="24px" height="24px" /></a>
-            <a href="http://www.flickr.com/wwu"><img src="<?php print $flickrIcon;?>" width="24px" height="24px" /></a>
-            <a href="https://twitter.com/#!/WWU"><img src="<?php print $twitterIcon;?>" width="24px" height="24px" /></a>
-            <a href="http://www.youtube.com/wwu"><img src="<?php print $youTubeIcon;?>" width="24px" height="24px" /></a>
-            <a href="https://plus.google.com/+wwu/posts"><img src="<?php print $googlePlusIcon;?>" width="24px" height="24px" /></a>
-            <a href="http://news.wwu.edu/go/feed/1538/ru/atom/"><img src="<?php print $rssIcon;?>" width="24px" height="24px" /></a>
+
+          <div class="western-social-media">
+            <ul>
+              <li><a class="westernIcons-FacebookIcon" href="http://www.facebook.com/westernwashingtonuniversity">Facebook</a></li>
+              <li><a class="westernIcons-FlickrIcon" href="http://www.flickr.com/wwu">Flickr</a></li>
+              <li><a class="westernIcons-TwitterIcon" href="https://twitter.com/#!/WWU">Twitter</a></li>
+              <li><a class="westernIcons-YouTubeIcon" href="http://www.youtube.com/wwu">Youtube</a></li>
+              <li><a class="westernIcons-GooglePlusIcon" href="https://plus.google.com/+wwu/posts">Google Plus</a></li>
+              <li><a class="westernIcons-RSSicon" href="http://news.wwu.edu/go/feed/1538/ru/atom/">RSS</a></li>
+            </ul>
           </div>
 
         <?php print render($page['footer_right']); ?>
       </div>
-    </div> <!-- /#footer-wrapper -->
-  </footer> <!-- /#footer -->
+    </div> <!-- end div.footer-wrapper -->
+  </footer>
 
 <?php print render($page['bottom']); ?>

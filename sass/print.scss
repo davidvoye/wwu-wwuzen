@@ -19,7 +19,7 @@
     }
   }
 
-  #content {
+  .content {
     a[href]:after { /* Add visible URL after links. */
       content: " (" attr(href) ")";
       font-weight: normal;
@@ -36,7 +36,7 @@
     }
   }
 
-  #content { /* Un-float the content */
+  .content { /* Un-float the content */
     float: none !important;
     width: 100% !important;
     margin: 0 !important;
@@ -44,9 +44,9 @@
   }
 
   body,
-  #page,
-  #main,
-  #content { /* Turn off any background colors or images */
+  .page,
+  main,
+  .content { /* Turn off any background colors or images */
     color: #000;
     background-color: transparent !important;
     background-image: none !important;
@@ -54,10 +54,10 @@
 
   #skip-link,
   #toolbar,
-  #navigation,
+  .main-nav,
   .region-sidebar-first,
   .region-sidebar-second,
-  #footer,
+  footer,
   .breadcrumb,
   .tabs,
   .action-links,

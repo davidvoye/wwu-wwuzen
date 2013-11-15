@@ -44,9 +44,8 @@ li a.active {
  * Navigation bar
  */
 
-#navigation {
+.main-nav {
   /* overflow: hidden; */ /* Sometimes you want to prevent overlapping with main div. */
-  padding-top: 10px;
   .block {
     margin-bottom: 0;
     width: 100%;
@@ -57,8 +56,8 @@ li a.active {
     @include element-invisible();
   }
 
-  ul.links, /* Main menu and secondary menu links */
-  ul.menu { /* Menu block links */
+  .links, /* Main menu and secondary menu links */
+  .menu { /* Menu block links */
     margin: 0;
     padding: 0;
     text-align: left; /* LTR */
@@ -80,10 +79,10 @@ li a.active {
  * Main menu and Secondary menu links
  */
 
-#main-menu {
+.main-nav {
 }
 
-#secondary-menu {
+.secondary-menu {
   float: right; /* LTR */
 }
 
@@ -97,48 +96,31 @@ li a.active {
 .block-menu-block {
 }
   /* W W U   S T Y L E S */
-#navigation {
-  padding:10px 0 0 0;
-  height: 24px;
-  width:100%
-}
-
-#navigation #main-menu {
+.main-nav {
+  float:left;
+  width:100%;
   font-family: $muli;
-  ul {
+  .menu {
     width:100%;
-    display:table;
     li {
       background-color: $wwuBlue;
-      border-style: solid;
-      border-color: white;
-      border-width: 0 3px 0 0;
-      padding:5px 0px;
-      text-transform:uppercase;
-      display:table-cell;
-      text-align: center;
-      @include transition(.5s);
-      &:hover, &:focus, &:active {
-        background-color: #ddd;
-        color: $wwuBlue;
-        cursor:pointer;
-        @include transition(.1s);
-        a { color:$wwuBlue;}
-      }
+      cursor:pointer;
       a {
+        @include transition(.5s);
         color:#fff;
         text-decoration:none;
         display:block;
-        @include transition(.5s);
-        &:focus { background-color: #dddddd; color:$wwuBlue;}
       }
-      &:last-child { border:none; }
+      &:hover, &:focus, &:active {
+        @include transition(.1s);
+        background-color: #ddd;
+        &, > a { color:$wwuBlue; }
+      }
     }
-
     li.active {
       background-color:#ddd;
       @include transition(.5s);
-      &:hover, &:focus { background-color:#eee; @include transition(.1s); }
+      &:hover, &:focus, &:active { background-color:#eee; @include transition(.1s); }
       .active { color:$wwuBlue; }//ul.links li.active a.active
     }//ul.links li.active
   }//ul.links
@@ -215,7 +197,7 @@ li a.active {
 .ui-widget { font-size:1em; } // Changed from 1.1em
 
 .ui-accordion-content {
-  ul.menu {
+  .menu {
     margin:0;
     padding:0;
     li {
@@ -243,7 +225,7 @@ li a.active {
         }
       }
     }
-    & > ul.menu li {
+    & > .menu li {
       padding-left:0;
       & > li { padding-left:0; }
     }
