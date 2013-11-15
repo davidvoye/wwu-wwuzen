@@ -9,11 +9,11 @@ $box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
 $zen-column-count:  12;
 $zen-gutter-width:  30px;
 
-.huxley-homepage #content .huxley-homepage-left-column {
+.huxley-homepage .huxley-homepage-left-column {
   @include zen-grid-item(6.5,1);
 }
 
-.huxley-homepage #content .huxley-homepage-right-column {
+.huxley-homepage .huxley-homepage-right-column {
   @include zen-grid-item(5.5,7.5);
   .huxley-homepage-people-and-places {
     @include zen-grid-item(11,1);
@@ -21,7 +21,7 @@ $zen-gutter-width:  30px;
 }
 
 @media all and (max-width: 360px) {
-  .huxley-homepage #content {
+  .huxley-homepage {
     .huxley-homepage-left-column {
       $zen-column-count:1;
       @include zen-clear(left);
@@ -39,7 +39,7 @@ $zen-gutter-width:  30px;
 }
 
 @media all and (min-width:361px) and (max-width: 800px) {
-  .huxley-homepage #content {
+  .huxley-homepage {
     .huxley-homepage-left-column {
       $zen-column-count:3;
       @include zen-clear(left);
