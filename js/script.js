@@ -123,20 +123,23 @@ Drupal.behaviors.siteNameTypography = {
 	}
 }
 
-	// START ON WINDOW RESIZE EVENT
-	Drupal.behaviors.windowResize = {
+	// START MENU TOGGLE ON RESIZE EVENT
+	Drupal.behaviors.toggleMenuOnResize = {
 		attach: function () {
-			var mainMenu = $('.main-nav > .menu');
+			var mainMenu = $('.main-nav div > .menu');
+			var subMenus = $('.main-nav .menu .menu');
 			
 			$(window).resize(function() {
-				if ($(window).width() > 800 && !mainMenu.is(':visible')) {
-					mainMenu.css('display', 'table');
+				if ($(window).width() > 800) {
+					// Reset the display property for the main menu and child menus.
+					mainMenu.css('display', '');
+					subMenus.css('display', '');
 				}
 			});
 			
 		}
 	}
-	// END ON WINDOW RESIZE EVENT
+	// END MENU TOGGLE ON RESIZE EVENT
 
 //These next two behaviors do the exact same thing, on onLoad and one on resize
 
