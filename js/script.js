@@ -137,12 +137,7 @@ Drupal.behaviors.siteNameTypography = {
 					subMenus.css('display', '');
 					subMenuItems.css('display', '');
 					// Remove the "opened" class from child menu items.
-					var openMenuItems = subMenuItems.hasClass("opened");
-					
-					while (openMenuItems > 0) {
-						openMenuItems.removeClass("opened");
-						openMenuItems = $('.main-nav .menu .menu li').hasClass("opened");
-					}
+					$('.main-nav li').removeClass("opened");
 				}
 			});
 			
