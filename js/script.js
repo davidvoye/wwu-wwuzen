@@ -128,12 +128,14 @@ Drupal.behaviors.siteNameTypography = {
 		attach: function () {
 			var mainMenu = $('.main-nav div > .menu');
 			var subMenus = $('.main-nav .menu .menu');
+			var subMenuItems = $('.main-nav .menu .menu li');
 			
 			$(window).resize(function() {
 				if ($(window).width() > 800) {
-					// Reset the display property for the main menu and child menus.
+					// Reset the display property for the main menu, child menus, and child menu items.
 					mainMenu.css('display', '');
 					subMenus.css('display', '');
+					subMenuItems.css('display', '');
 				}
 			});
 			
