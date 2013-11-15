@@ -123,6 +123,21 @@ Drupal.behaviors.siteNameTypography = {
 	}
 }
 
+	// START ON WINDOW RESIZE EVENT
+	Drupal.behaviors.windowResize = {
+		attach: function () {
+			var mainMenu = $('.main-nav .menu');
+			
+			$(window).resize(function() {
+				if ($(window).width() > 800 && !mainMenu.is(':visible')) {
+					mainMenu.css('display', 'table');
+				}
+			});
+			
+		}
+	}
+	// END ON WINDOW RESIZE EVENT
+
 //These next two behaviors do the exact same thing, on onLoad and one on resize
 
 /*Drupal.behaviors.resizeHeaderOnLoad = {
