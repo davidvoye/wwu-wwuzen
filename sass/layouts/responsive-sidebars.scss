@@ -131,6 +131,7 @@ footer {
   }
   .footer-right {
     .western-contact-info, .western-social-media ul {
+      padding-left:24px; //IE8 fallback
       padding-left: 1.5rem;
     }
   }
@@ -156,7 +157,9 @@ footer {
     @include zen-clear();
     .western-contact-info {
       @include zen-grid-item(1.5,1);
-      p { margin-left:1.5rem; }
+      p {
+        margin-left:24px; //IE 8 fallback
+        margin-left:1.5rem; }
     }
     .western-social-media {
       @include zen-grid-item(1.5,2.5);
@@ -438,6 +441,7 @@ footer {
   }
   .footer-left {
     .footer-site-name, p:first-child {
+      padding-left:24px; //IE8 fallback
       padding-left:1.5rem;
       margin-bottom:0;
     }
@@ -617,6 +621,7 @@ footer {
       margin:0;
     }
     .western-contact-info, .western-social-media ul {
+      padding-left:16px;
       padding-left:1rem;
     }
   }
