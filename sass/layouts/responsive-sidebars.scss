@@ -122,6 +122,9 @@ footer {
     @include zen-clear();
     @include zen-grid-item(1,1);
   }
+  .footer-left {
+    margin-left:1.5em;
+  }
 
   .footer-center {
     ul.menu {
@@ -145,9 +148,12 @@ footer {
 
   $zen-column-count: 3;
 
-  .footer-left { @include zen-grid-item(1.5,1); }
+  .footer-left {
+    @include zen-grid-item(1.5,1);
+    padding-left:1em;
+     }
   .footer-center {
-    @include zen-grid-item(1.5,2.5);
+    @include zen-grid-item(1.5,2.4);
     ul.menu {
       padding:0 2em 0 0;
       margin:.5em 0;
