@@ -426,7 +426,7 @@ footer {
 
   #edit-subject { width: 100%; } // Override of normalize.scss for the comment subject input area
 
-  
+
   //The left column in layouts needs to float above the main content. These classes are applied in panels.
   .left-column {
     float:left;
@@ -569,6 +569,7 @@ footer {
     .site-banner {
     	img {
     		width: 100%;
+        max-width:none; //Solely to make IE8 display the banner. http://believeinmiraclesx.wordpress.com/2012/08/16/ie8-images-disappear-when-placed-inside-a-floatleft-container/
     	}
     }
     .site-name {
