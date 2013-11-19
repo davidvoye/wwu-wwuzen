@@ -77,17 +77,24 @@ Drupal.behaviors.siteNameTypography = {
 	Drupal.behaviors.mobileWwuMainMenu = {
 		attach: function () {
 
-		$('.mobile-main-nav').click(function () {
-			var mainMenu = $('.main-nav .menu');
-			if (mainMenu.is(':visible')) {
-				mainMenu.slideToggle();
-			} else {
-				mainMenu.slideToggle(400);
+			$('.mobile-main-nav').click(function () {
+				var mainMenu = $('.main-nav .menu');
+				
+				if (mainMenu.is(':visible')) {
+					mainMenu.slideToggle();
+				} else {
+					mainMenu.slideToggle(400, function() {
+						if (mainMenu.is(':visible')) {
+							mainMenu.css('display', 'table');
+						}
+					});
+				}
+			});
+			
 		}
-	});
-	// END MAIN MENU TOGGLE CODE
 	}
-}
+	//END MAIN MENU TOGGLE CODE
+
 	// START MENU EXPANSION CODE
 	Drupal.behaviors.menuExpansion = {
 		attach: function () {
@@ -115,6 +122,28 @@ Drupal.behaviors.siteNameTypography = {
 	// END MENU EXPANSION CODE
 	}
 }
+
+	// START MENU TOGGLE ON RESIZE EVENT
+	Drupal.behaviors.toggleMenuOnResize = {
+		attach: function () {
+			var mainMenu = $('.main-nav div > .menu');
+			var subMenus = $('.main-nav .menu .menu');
+			var subMenuItems = $('.main-nav .menu .menu li');
+			
+			$(window).resize(function() {
+				if ($(window).width() > 800) {
+					// Reset the display property for the main menu, child menus, and child menu items.
+					mainMenu.css('display', '');
+					subMenus.css('display', '');
+					subMenuItems.css('display', '');
+					// Remove the "opened" class from child menu items.
+					$('.main-nav li').removeClass("opened");
+				}
+			});
+			
+		}
+	}
+	// END MENU TOGGLE ON RESIZE EVENT
 
 //These next two behaviors do the exact same thing, on onLoad and one on resize
 
