@@ -188,6 +188,9 @@
 
       <div class="footer-center">
         <?php print render($page['footer_center']); ?>
+          <div class="western-privacy-statement">
+            <a href="http://www.wwu.edu/privacy/">Website Privacy Statement</a>
+          </div>
       </div>
 
       <div class="footer-right" role="complementary">
@@ -210,6 +213,7 @@
               <li><a class="westernIcons-RSSicon" href="http://news.wwu.edu/go/feed/1538/ru/atom/">RSS</a></li>
             </ul>
           </div>
+
 
         <?php print render($page['footer_right']); ?>
       </div>

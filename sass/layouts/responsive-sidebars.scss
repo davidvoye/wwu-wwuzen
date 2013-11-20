@@ -84,6 +84,13 @@ footer {
   padding-right:0px;
 }
 
+.western-privacy-statement {
+  a {
+    color:#ffffff;
+    font-size:.85em;
+  }
+}
+
 /* ****************************************************
                 Mobile-size -> 360px
 **************************************************** */
@@ -131,6 +138,11 @@ footer {
       padding:0;
       margin:.5em 1.5em;
     }
+    .western-privacy-statement {
+      margin-left:1.7em;
+      margin-top:-.5em;
+      margin-bottom:.5em;
+      }
   }
   .footer-right {
     .western-contact-info, .western-social-media ul {
@@ -158,7 +170,11 @@ footer {
       padding:0 2em 0 0;
       margin:.5em 0;
     }
-  }
+    .western-privacy-statement {
+      margin-top:-.5em;
+      margin-bottom:.5em;
+      }
+    }
   .footer-right {
     @include zen-clear();
     .western-contact-info {
@@ -616,6 +632,10 @@ footer {
   }
   .footer-center {
     @include zen-grid-item(3.5,4.75);
+    .western-privacy-statement {
+      margin-left:1.8em;
+      margin-top:-.5em;
+      }
   }
   .footer-right {
     @include zen-grid-item(3.75,8.5);
