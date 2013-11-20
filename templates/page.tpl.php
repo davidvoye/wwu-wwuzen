@@ -107,7 +107,7 @@
       <section class="site-header" aria-label="Site Header">
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
           <?php if ($logo): ?>
-            <div class="site-banner"><img src="<?php print $logo;?>"></div>
+            <div class="site-banner"><img src="<?php print $logo;?>" alt=""></div>
           <?php endif; ?>
           <div class="site-name">
             <?php if ($site_name): ?>
