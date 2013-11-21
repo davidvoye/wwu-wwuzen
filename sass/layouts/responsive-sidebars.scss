@@ -396,7 +396,7 @@ footer {
 			margin-left: -44px;
 		 }
 	}
-	li.expanded .menu li.is-expanded a {
+	li.expanded .menu li.is-expanded > a {
 		position: static;
 		margin-left: 0;
 	}
