@@ -336,6 +336,7 @@ footer {
         li {
           @include transition(.25s);
           width: 100%;
+	  float: none;
           text-align: left;
           display:block;
           border-top:solid 1px white;
