@@ -11,6 +11,8 @@ $zen-gutter-width:  30px;
 
 .wwu-25-percent-left-column {
   @include zen-grid-item(3,1);
+  padding-left:0;
+  padding-right:0;
 }
 
 .wwu-75-percent-right-column {
@@ -22,6 +24,8 @@ $zen-gutter-width:  30px;
     $zen-column-count:1;
     @include zen-clear(left);
     @include zen-grid-item(1,1);
+    padding-left:0;
+    padding-right:0;
   }
   .wwu-75-percent-right-column {
     $zen-column-count:1;
