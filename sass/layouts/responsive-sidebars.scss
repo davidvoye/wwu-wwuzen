@@ -446,6 +446,8 @@ footer {
     .breadcrumb { display: none; }
   } // End #main
 
+  html.ie9 main { float:left; } //Fix for issue WWUZEN-69
+
   //Hide the navigation that moves to the bottom of the page.
   #block-accordion-menu-1 { display:none; }
 
