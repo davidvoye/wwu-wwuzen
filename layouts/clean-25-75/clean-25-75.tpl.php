@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Template for a 2 column Clean Chemistry panel layout.
+ * Template for a layout with a 25% column on the left and a 75% column on the left.
  *
  * This template provides a two column panel display layout with minimal markup.
  * Edited by Amy Brown November 2013

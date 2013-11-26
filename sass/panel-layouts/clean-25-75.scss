@@ -33,3 +33,7 @@ $zen-gutter-width:  30px;
     @include zen-grid-item(1,1);
   }
 }
+
+#edit-buttons {
+  clear:both;
+}
