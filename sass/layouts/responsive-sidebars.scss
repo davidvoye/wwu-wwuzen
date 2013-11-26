@@ -282,22 +282,23 @@ footer {
         } // End li
       } // End ul
     }
+    @media
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      .western-quick-links {
+        button {
+          //http://miekd.com/articles/using-css-sprites-to-optimize-your-website-for-retina-displays/
+          background: url('../../images/icons/hidef-s0fb977ac75.png') no-repeat;
+          background-position: 0 -132px;
+          background-size:44px 528px;
+        }
+      } // End .western-quick-links
+    }
     .western-search {
       top:0;
       width:44px;
       > button {
         @extend .standard-search-gray;
-        //Maybe the correct way to include retina icons from the sprite. Maybe we need a mixin.
-        @media
-          only screen and (-webkit-min-device-pixel-ratio: 2),
-          only screen and (   min--moz-device-pixel-ratio: 2),
-          only screen and (     -o-min-device-pixel-ratio: 2/1),
-          only screen and (        min-device-pixel-ratio: 2),
-          only screen and (                min-resolution: 192dpi),
-          only screen and (                min-resolution: 2dppx) {
-            background: url('../../images/../images/icons/hidef-s0fb977ac75.png') no-repeat;
-            background-position: 0 -264px;
-          }
         width:44px;
         height:44px;
         text-indent:-999em;
@@ -316,12 +317,34 @@ footer {
         @include transition(width .25s);
       }
     } // End .wwusearch
+    @media
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      .western-search {
+        > button {
+          //http://miekd.com/articles/using-css-sprites-to-optimize-your-website-for-retina-displays/
+          background: url('../../images/icons/hidef-s0fb977ac75.png') no-repeat;
+          background-position: 0 -44px;
+          background-size:44px 528px;
+        }
+      } // End .wwusearch
+    }
     .mobile-main-nav {
       @extend .standard-main-menu;
       width:44px;
       height:44px;
       text-indent:-999em;
       border:none;
+    }
+     @media
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      .mobile-main-nav {
+        //http://miekd.com/articles/using-css-sprites-to-optimize-your-website-for-retina-displays/
+        background: url('../../images/icons/hidef-s0fb977ac75.png') no-repeat;
+        background-position: 0 -88px;
+        background-size:44px 528px;
+      }
     }
   } // End .western-header
 
