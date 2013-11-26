@@ -336,6 +336,7 @@ footer {
         li {
           @include transition(.25s);
           width: 100%;
+	  float: none;
           text-align: left;
           display:block;
           border-top:solid 1px white;
@@ -347,16 +348,28 @@ footer {
             @include transition(1s);
             text-decoration:none;
             color:#fff;
-            padding: .7em 0 .65em 1em;
+            padding: .7em 1em .65em 1em;
             display:block;
             cursor:pointer;
-            width:100%;
+            width: auto;
             /* &:hover, &:focus, &:active {
               @include transition(.2s);
             } */
           }
-          &.is-expanded { cursor:s-resize; }
-          &.is-expanded > a { width: calc(100% - 58px); }
+          &.is-expanded {
+		 cursor:s-resize;
+		 -moz-box-sizing: border-box;
+		 box-sizing: border-box;
+		 padding-right: 44px;
+	  	.is-expanded {
+			-moz-box-sizing: content-box;
+			box-sizing: content-box;			
+		}
+	  }
+          &.is-expanded > a {
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	  }
           &.is-expanded.opened { cursor:n-resize; }
           ul {
             padding-left:0;
@@ -374,7 +387,19 @@ footer {
             } // End li
           } // End ul
         } // End li
-        li.expanded .menu li { display: none; }
+        li.expanded .menu li {
+		 display: none;
+		 padding-right: 44px;
+		 a {
+			position: relative;
+			right: -44px;
+			margin-left: -44px;
+		 }
+	}
+	li.expanded .menu li.is-expanded > a {
+		position: static;
+		margin-left: 0;
+	}
       } // End .menu
     } // End .main-nav
   @mixin nav-icons($fileName) { background-image:url("../../images/icons/#{$fileName}.png"); }
