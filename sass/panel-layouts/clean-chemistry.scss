@@ -1,5 +1,5 @@
 /**
-* These are the layout styles for the clean-huxley panel.
+* These are the layout styles for the clean-chemistry panel.
 */
 @import "base";
 
@@ -9,45 +9,40 @@ $box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
 $zen-column-count:  12;
 $zen-gutter-width:  30px;
 
-.huxley-homepage-left-column {
+.chemistry-homepage-left-column {
   @include zen-grid-item(6.5,1);
 }
 
-.huxley-homepage-right-column {
+.chemistry-homepage-right-column {
   @include zen-grid-item(5.5,7.5);
-  .huxley-homepage-people-and-places {
-    @include zen-grid-item(11,1);
-  }
 }
 
 @media all and (max-width: 360px) {
-  .huxley-homepage-left-column {
+  .chemistry-homepage-left-column {
     $zen-column-count:1;
     @include zen-clear(left);
     @include zen-grid-item(1,1);
   }
-  .huxley-homepage-right-column {
+  .chemistry-homepage-right-column {
     $zen-column-count:1;
     @include zen-clear(left);
     @include zen-grid-item(1,1);
-    .huxley-homepage-people-and-places {
-      @include zen-grid-item(1,1);
-    }
   }
 }
 
 @media all and (min-width:361px) and (max-width: 800px) {
-  .huxley-homepage-left-column {
+  .chemistry-homepage-left-column {
     $zen-column-count:3;
     @include zen-clear(left);
     @include zen-grid-item(3,1);
   }
-  .huxley-homepage-right-column {
+  .chemistry-homepage-right-column {
     $zen-column-count:3;
     @include zen-clear(left);
     @include zen-grid-item(3,1);
-    .huxley-homepage-people-and-places {
-      @include zen-grid-item(3,1);
-    }
   }
+}
+
+#edit-buttons {
+  clear:both;
 }
