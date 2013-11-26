@@ -78,14 +78,18 @@ Drupal.behaviors.siteNameTypography = {
 		attach: function () {
 
 			$('.mobile-main-nav').click(function () {
-				var mainMenu = $('.main-nav .menu');
+				// target all unordered lists in .main-nav
+				var mainMenu = $('.main-nav div > ul');
+				var subMenus = $('.main-nav div > ul ul');
 
 				if (mainMenu.is(':visible')) {
+					mainMenu.css('display', 'block');
 					mainMenu.slideToggle();
 				} else {
 					mainMenu.slideToggle(400, function() {
 						if (mainMenu.is(':visible')) {
 							mainMenu.css('display', 'table');
+							subMenus.css('display', 'table');
 						}
 					});
 				}
@@ -98,25 +102,29 @@ Drupal.behaviors.siteNameTypography = {
 	// START MENU EXPANSION CODE
 	Drupal.behaviors.menuExpansion = {
 		attach: function () {
+		
 		$(".expanded").click(function(e) {
-		  if ($(this).hasClass("opened")) {
-		    $(this).children().children().hide();
-		    //$(this).parent().children().show();
-		    $(this).removeClass("opened");
-		    // Close all children as well
-		    var x = $(this).children().children("li");
-		    while (x.size() > 0) {
-	      	x.removeClass("opened");
-	      	x.children().children().hide();
-	      	x = x.children().children("li");
-	    	}
-	   	} else {
-	     	$(this).children().children().show();
-	     	$(this).parent().children().not(this).removeClass("opened");
-	     	$(this).parent().children().not(this).children().children().hide();
-	     	$(this).addClass("opened");
-	   	}
-		  e.stopPropagation();
+			if ($(this).hasClass("opened")) {
+				$(this).children().children().hide();
+				$(this).removeClass("opened");
+
+				// Close all children as well
+				var x = $(this).children().children("li");
+		    
+				while (x.size() > 0) {
+	      				x.removeClass("opened");
+	      				x.children().children().hide();
+	      				x = x.children().children("li");
+	    			}
+
+	   		} else {
+	     			$(this).children().children().show();
+	     			$(this).parent().children().not(this).removeClass("opened");
+	     			$(this).parent().children().not(this).children().children().hide();
+	     			$(this).addClass("opened");
+	   		}
+		  
+			e.stopPropagation();
 		});
 
 	// END MENU EXPANSION CODE
