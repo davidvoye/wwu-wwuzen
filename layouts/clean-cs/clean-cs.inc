@@ -3,7 +3,7 @@
 // Plugin definition
 $plugin = array(
   'title' => t('Clean CS'),
-  'category' => t('WWU'),
+  'category' => t('Western'),
   'icon' => 'clean-cs.png',
   'theme' => 'clean-cs',
   'css' => '../../css/panel-layouts/clean-cs.css',
