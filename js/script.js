@@ -25,7 +25,7 @@ Drupal.behaviors.imgAttributes = {
       //Loop through each image found and retrieve the width and height.
       //Then remove the width and height from the inline css.
       //Finally write the width and height as attributes to the html img tag.
-      $('#main img').each(
+      $('main img').each(
         function(){
           var imgWidth = $(this).css( "width");
           var removeWidth = $(this).css( "width", "" );
@@ -37,7 +37,7 @@ Drupal.behaviors.imgAttributes = {
       });
       //The figure wraps our images and if a height is set, it will not wrap
       //around the text, only the image. This is basically height:auto.
-      $('#main figure').each(
+      $('main figure').each(
         function(){
           var removeFigureHeight = $(this).css( "height", "");
       });
