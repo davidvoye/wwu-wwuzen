@@ -25,7 +25,7 @@ Drupal.behaviors.imgAttributes = {
       //Loop through each image found and retrieve the width and height.
       //Then remove the width and height from the inline css.
       //Finally write the width and height as attributes to the html img tag.
-      $('#main img').each(
+      $('main img').each(
         function(){
           var imgWidth = $(this).css( "width");
           var removeWidth = $(this).css( "width", "" );
@@ -37,7 +37,7 @@ Drupal.behaviors.imgAttributes = {
       });
       //The figure wraps our images and if a height is set, it will not wrap
       //around the text, only the image. This is basically height:auto.
-      $('#main figure').each(
+      $('main figure').each(
         function(){
           var removeFigureHeight = $(this).css( "height", "");
       });
@@ -105,44 +105,81 @@ Drupal.behaviors.siteNameTypography = {
 	Drupal.behaviors.mobileWwuMainMenu = {
 		attach: function () {
 
-		$('.mobile-main-nav').click(function () {
-			var mainMenu = $('.main-nav .menu');
-			if (mainMenu.is(':visible')) {
-				mainMenu.slideToggle();
-			} else {
-				mainMenu.slideToggle(400);
+			$('.mobile-main-nav').click(function () {
+				// target all unordered lists in .main-nav
+				var mainMenu = $('.main-nav div > ul');
+				var subMenus = $('.main-nav div > ul ul');
+
+				if (mainMenu.is(':visible')) {
+					mainMenu.css('display', 'block');
+					mainMenu.slideToggle();
+				} else {
+					mainMenu.slideToggle(400, function() {
+						if (mainMenu.is(':visible')) {
+							mainMenu.css('display', 'table');
+							subMenus.css('display', 'table');
+						}
+					});
+				}
+			});
+
 		}
-	});
-	// END MAIN MENU TOGGLE CODE
 	}
-}
+	//END MAIN MENU TOGGLE CODE
+
 	// START MENU EXPANSION CODE
 	Drupal.behaviors.menuExpansion = {
 		attach: function () {
+
 		$(".expanded").click(function(e) {
-		  if ($(this).hasClass("opened")) {
-		    $(this).children().children().hide();
-		    //$(this).parent().children().show();
-		    $(this).removeClass("opened");
-		    // Close all children as well
-		    var x = $(this).children().children("li");
-		    while (x.size() > 0) {
-	      	x.removeClass("opened");
-	      	x.children().children().hide();
-	      	x = x.children().children("li");
-	    	}
-	   	} else {
-	     	$(this).children().children().show();
-	     	$(this).parent().children().not(this).removeClass("opened");
-	     	$(this).parent().children().not(this).children().children().hide();
-	     	$(this).addClass("opened");
-	   	}
-		  e.stopPropagation();
+			if ($(this).hasClass("opened")) {
+				$(this).children().children().hide();
+				$(this).removeClass("opened");
+
+				// Close all children as well
+				var x = $(this).children().children("li");
+
+				while (x.size() > 0) {
+	      				x.removeClass("opened");
+	      				x.children().children().hide();
+	      				x = x.children().children("li");
+	    			}
+
+	   		} else {
+	     			$(this).children().children().show();
+	     			$(this).parent().children().not(this).removeClass("opened");
+	     			$(this).parent().children().not(this).children().children().hide();
+	     			$(this).addClass("opened");
+	   		}
+
+			e.stopPropagation();
 		});
 
 	// END MENU EXPANSION CODE
 	}
 }
+
+	// START MENU TOGGLE ON RESIZE EVENT
+	Drupal.behaviors.toggleMenuOnResize = {
+		attach: function () {
+			var mainMenu = $('.main-nav div > .menu');
+			var subMenus = $('.main-nav .menu .menu');
+			var subMenuItems = $('.main-nav .menu .menu li');
+
+			$(window).resize(function() {
+				if ($(window).width() > 800) {
+					// Reset the display property for the main menu, child menus, and child menu items.
+					mainMenu.css('display', '');
+					subMenus.css('display', '');
+					subMenuItems.css('display', '');
+					// Remove the "opened" class from child menu items.
+					$('.main-nav li').removeClass("opened");
+				}
+			});
+
+		}
+	}
+	// END MENU TOGGLE ON RESIZE EVENT
 
 
 // Tooltips for the staff and faculty directories

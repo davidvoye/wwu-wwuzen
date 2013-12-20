@@ -84,6 +84,13 @@ footer {
   padding-right:0px;
 }
 
+.western-privacy-statement {
+  a {
+    color:#ffffff;
+    font-size:.85em;
+  }
+}
+
 /* ****************************************************
                 Mobile-size -> 360px
 **************************************************** */
@@ -122,15 +129,24 @@ footer {
     @include zen-clear();
     @include zen-grid-item(1,1);
   }
+  .footer-left {
+    margin-left:1.5em;
+  }
 
   .footer-center {
     ul.menu {
       padding:0;
       margin:.5em 1.5em;
     }
+    .western-privacy-statement {
+      margin-left:1.7em;
+      margin-top:-.5em;
+      margin-bottom:.5em;
+      }
   }
   .footer-right {
     .western-contact-info, .western-social-media ul {
+      padding-left:24px; //IE8 fallback
       padding-left: 1.5rem;
     }
   }
@@ -144,19 +160,28 @@ footer {
 
   $zen-column-count: 3;
 
-  .footer-left { @include zen-grid-item(1.5,1); }
+  .footer-left {
+    @include zen-grid-item(1.5,1);
+    padding-left:1em;
+     }
   .footer-center {
-    @include zen-grid-item(1.5,2.5);
+    @include zen-grid-item(1.5,2.4);
     ul.menu {
       padding:0 2em 0 0;
       margin:.5em 0;
     }
-  }
+    .western-privacy-statement {
+      margin-top:-.5em;
+      margin-bottom:.5em;
+      }
+    }
   .footer-right {
     @include zen-clear();
     .western-contact-info {
       @include zen-grid-item(1.5,1);
-      p { margin-left:1.5rem; }
+      p {
+        margin-left:24px; //IE 8 fallback
+        margin-left:1.5rem; }
     }
     .western-social-media {
       @include zen-grid-item(1.5,2.5);
@@ -257,22 +282,23 @@ footer {
         } // End li
       } // End ul
     }
+    @media
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      .western-quick-links {
+        button {
+          //http://miekd.com/articles/using-css-sprites-to-optimize-your-website-for-retina-displays/
+          background: url('../../images/icons/hidef-s0fb977ac75.png') no-repeat;
+          background-position: 0 -132px;
+          background-size:44px 528px;
+        }
+      } // End .western-quick-links
+    }
     .western-search {
       top:0;
       width:44px;
       > button {
         @extend .standard-search-gray;
-        //Maybe the correct way to include retina icons from the sprite. Maybe we need a mixin.
-        @media
-          only screen and (-webkit-min-device-pixel-ratio: 2),
-          only screen and (   min--moz-device-pixel-ratio: 2),
-          only screen and (     -o-min-device-pixel-ratio: 2/1),
-          only screen and (        min-device-pixel-ratio: 2),
-          only screen and (                min-resolution: 192dpi),
-          only screen and (                min-resolution: 2dppx) {
-            background: url('../../images/../images/icons/hidef-s0fb977ac75.png') no-repeat;
-            background-position: 0 -264px;
-          }
         width:44px;
         height:44px;
         text-indent:-999em;
@@ -291,12 +317,34 @@ footer {
         @include transition(width .25s);
       }
     } // End .wwusearch
+    @media
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      .western-search {
+        > button {
+          //http://miekd.com/articles/using-css-sprites-to-optimize-your-website-for-retina-displays/
+          background: url('../../images/icons/hidef-s0fb977ac75.png') no-repeat;
+          background-position: 0 -44px;
+          background-size:44px 528px;
+        }
+      } // End .wwusearch
+    }
     .mobile-main-nav {
       @extend .standard-main-menu;
       width:44px;
       height:44px;
       text-indent:-999em;
       border:none;
+    }
+     @media
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      .mobile-main-nav {
+        //http://miekd.com/articles/using-css-sprites-to-optimize-your-website-for-retina-displays/
+        background: url('../../images/icons/hidef-s0fb977ac75.png') no-repeat;
+        background-position: 0 -88px;
+        background-size:44px 528px;
+      }
     }
   } // End .western-header
 
@@ -311,6 +359,7 @@ footer {
         li {
           @include transition(.25s);
           width: 100%;
+	  float: none;
           text-align: left;
           display:block;
           border-top:solid 1px white;
@@ -322,16 +371,28 @@ footer {
             @include transition(1s);
             text-decoration:none;
             color:#fff;
-            padding: .7em 0 .65em 1em;
+            padding: .7em 1em .65em 1em;
             display:block;
             cursor:pointer;
-            width:100%;
+            width: auto;
             /* &:hover, &:focus, &:active {
               @include transition(.2s);
             } */
           }
-          &.is-expanded { cursor:s-resize; }
-          &.is-expanded > a { width: calc(100% - 58px); }
+          &.is-expanded {
+		 cursor:s-resize;
+		 -moz-box-sizing: border-box;
+		 box-sizing: border-box;
+		 padding-right: 44px;
+	  	.is-expanded {
+			-moz-box-sizing: content-box;
+			box-sizing: content-box;			
+		}
+	  }
+          &.is-expanded > a {
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	  }
           &.is-expanded.opened { cursor:n-resize; }
           ul {
             padding-left:0;
@@ -349,7 +410,19 @@ footer {
             } // End li
           } // End ul
         } // End li
-        li.expanded .menu li { display: none; }
+        li.expanded .menu li {
+		 display: none;
+		 padding-right: 44px;
+		 a {
+			position: relative;
+			right: -44px;
+			margin-left: -44px;
+		 }
+	}
+	li.expanded .menu li.is-expanded > a {
+		position: static;
+		margin-left: 0;
+	}
       } // End .menu
     } // End .main-nav
   @mixin nav-icons($fileName) { background-image:url("../../images/icons/#{$fileName}.png"); }
@@ -421,12 +494,14 @@ footer {
     .breadcrumb { display: none; }
   } // End #main
 
+  html.ie9 main { float:left; } //Fix for issue WWUZEN-69
+
   //Hide the navigation that moves to the bottom of the page.
   #block-accordion-menu-1 { display:none; }
 
   #edit-subject { width: 100%; } // Override of normalize.scss for the comment subject input area
 
-  
+
   //The left column in layouts needs to float above the main content. These classes are applied in panels.
   .left-column {
     float:left;
@@ -438,6 +513,7 @@ footer {
   }
   .footer-left {
     .footer-site-name, p:first-child {
+      padding-left:24px; //IE8 fallback
       padding-left:1.5rem;
       margin-bottom:0;
     }
@@ -569,6 +645,7 @@ footer {
     .site-banner {
     	img {
     		width: 100%;
+        max-width:none; //Solely to make IE8 display the banner. http://believeinmiraclesx.wordpress.com/2012/08/16/ie8-images-disappear-when-placed-inside-a-floatleft-container/
     	}
     }
     .site-name {
@@ -605,6 +682,10 @@ footer {
   }
   .footer-center {
     @include zen-grid-item(3.5,4.75);
+    .western-privacy-statement {
+      margin-left:1.8em;
+      margin-top:-.5em;
+      }
   }
   .footer-right {
     @include zen-grid-item(3.75,8.5);
@@ -616,6 +697,7 @@ footer {
       margin:0;
     }
     .western-contact-info, .western-social-media ul {
+      padding-left:16px;
       padding-left:1rem;
     }
   }

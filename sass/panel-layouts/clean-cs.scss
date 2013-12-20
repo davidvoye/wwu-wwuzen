@@ -1,0 +1,144 @@
+/**
+* These are the layout styles for the clean-energy panel.
+*/
+
+@import "base";
+
+$box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
+
+
+$zen-column-count:  12;
+$zen-gutter-width:  30px;
+
+
+/**
+* Small display sizes (Mobile First)
+*/
+
+
+  $zen-column-count:1;
+
+  .cs-homepage-top {
+    .cs-homepage-top-left-column {
+      @include zen-grid-item(1,1);
+    }
+    .cs-homepage-top-right-column {
+      @include zen-clear(both);
+      @include zen-grid-item(1,1);
+    }
+  }
+
+  .cs-homepage-upper-middle {
+      @include zen-clear(both);
+
+    .cs-homepage-upper-middle-left-column {
+      @include zen-grid-item(1,1);
+    }
+    .cs-homepage-upper-middle-right-column {
+      @include zen-clear(both);
+      @include zen-grid-item(1,1);
+    }
+  }
+
+ .cs-homepage-lower-middle {
+      @include zen-clear(both);
+
+    .cs-homepage-lower-middle-left-column {
+      @include zen-grid-item(1,1);
+    }
+    .cs-homepage-lower-middle-right-column {
+      @include zen-clear(both);
+      @include zen-grid-item(1,1);
+    }
+  }
+
+ .cs-homepage-bottom {
+      @include zen-clear(both);
+
+    .cs-homepage-bottom-left-column {
+      @include zen-grid-item(1,1);
+      @include zen-clear(left);
+      margin:1em 0 2em 0;
+    }
+    .cs-homepage-bottom-right-column  {
+      @include zen-grid-item(1,1);
+      @include zen-clear(left);
+      margin: 0 0 1em 0;
+    }
+  }
+
+#edit-buttons {
+  clear:both;
+}
+
+/**
+* Larger display sizes
+*/
+@media all and (min-width:801px) {
+  $zen-column-count:  12;
+
+  .cs-homepage-top  {
+    width:100%;
+
+    .cs-homepage-top-left-column {
+      @include zen-float(left);
+      @include zen-grid-item(8,1);
+    }
+
+    .cs-homepage-top-right-column {
+      @include zen-clear(right);
+      @include zen-grid-item(4,9);
+    }
+
+  }
+
+ 
+  .cs-homepage-upper-middle  {
+    width:100%;
+    @include zen-clear(both);
+
+    .cs-homepage-upper-middle-left-column {
+      @include zen-float(left);
+      @include zen-grid-item(6,1);
+    }
+
+    .cs-homepage-upper-middle-right-column {
+      @include zen-clear(right);
+      @include zen-grid-item(6,7);
+    }
+
+  }
+
+  .cs-homepage-lower-middle  {
+    width:100%;
+    @include zen-clear(both);
+
+    .cs-homepage-lower-middle-left-column {
+      @include zen-float(left);
+      @include zen-grid-item(8,1);
+    }
+
+    .cs-homepage-lower-middle-right-column {
+      @include zen-clear(right);
+      @include zen-grid-item(4,9);
+    }
+
+  }
+
+  .cs-homepage-bottom {
+    width:100%;
+    @include zen-clear(both);
+
+    .cs-homepage-bottom-left-column {
+      @include zen-float(left);
+      @include zen-grid-item(4,1);
+    }
+
+
+    .cs-homepage-bottom-right-column {
+      @include zen-clear(right);
+      @include zen-grid-item(8,5);
+    }
+
+  }
+}
