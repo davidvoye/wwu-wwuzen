@@ -48,8 +48,8 @@ Drupal.behaviors.imgAttributes = {
 
 
 Drupal.behaviors.siteNameTypography = {
-		attach: function () {
-
+		attach: function (context) {
+		if (context == document) {
 		// Gets copy from site name (ultimately inside a span: #site-name a span)
 		var siteName = $("#site-name").text();
 
@@ -57,6 +57,7 @@ Drupal.behaviors.siteNameTypography = {
 		var typographyCollegeOf = typographyAnd.replace("College of", "<span class=\"diminutive-type site-name-college-of\">College of</span>");
 
 		$('#site-name a span').replaceWith(typographyCollegeOf);
+		}
 	}
 }
 
