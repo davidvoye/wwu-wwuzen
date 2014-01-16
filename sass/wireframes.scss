@@ -9,13 +9,13 @@
 
 
 .with-wireframes {
-  #header,
-  #main,
-  #content,
-  #navigation,
+  .site-header,
+  main,
+  .content,
+  .main-nav,
   .region-sidebar-first,
   .region-sidebar-second,
-  #footer,
+  footer,
   .region-bottom {
     outline: 1px solid #ccc;
 

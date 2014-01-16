@@ -80,7 +80,7 @@ $font-body:        $verdana;
 $font-monospace:   $courier;
 
 /* Basic CSS for WWU Styles */
-@import url(http://fonts.googleapis.com/css?family=Muli:400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Muli:400,400italic);
 $muli:			  Muli, Tahoma, Verdana, "DejaVu Sans", sans-serif;
 h1, h2, h3, h4, h5, h6 {
 	font-family: $muli;
@@ -104,6 +104,16 @@ $wwuOceanBlue: #0070b6;
 // The amount lists, blockquotes and comments are indented.
 $indent-amount: 30px;
 
+// Mixins
+
+@mixin hide-text-bg-img {
+  border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+}
+// @include hide-text-bg-img;
+
 
 //
 // Partials to be shared with all .scss files.
@@ -117,3 +127,4 @@ $indent-amount: 30px;
 @import "zen";              // Add the Zen Grids responsive layout mixins.
 
 @import "custom";           // Import our custom mixins last.
+

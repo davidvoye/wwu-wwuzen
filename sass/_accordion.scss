@@ -45,11 +45,11 @@
   }
 }
 
-#content .accordion-row .ui-accordion .accordion-row p:last-child { margin-bottom:0; }
+.accordion-row .ui-accordion .accordion-row p:last-child { margin-bottom:0; }
 
-#content .accordion-row .ui-accordion ~ .item-list ul.pager { margin-top:.5em; }
+.accordion-row .ui-accordion ~ .item-list ul.pager { margin-top:.5em; }
 
-#content .accordion-row .ui-accordion-content a {
+.accordion-row .ui-accordion-content a {
   display:inline;
   padding-left: 0;
 }

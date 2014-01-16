@@ -16,7 +16,7 @@ $zen-auto-include-item-base: false;
 
 $gray: rgba(151,151,151,1);
 
-.front header#department { display:none; }
+.front .page-title { display:none; }
 
 /*.clean-chss-middle-column {
     background-color: #FFFFFF;
@@ -25,7 +25,7 @@ $gray: rgba(151,151,151,1);
     padding-top: 1em;
   }*/
 
-#content p.callOut {
+main p.callOut {
   color:$wwuLtblue;
   font-size:1.25em;
 }
