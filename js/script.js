@@ -48,21 +48,22 @@ Drupal.behaviors.imgAttributes = {
 Drupal.behaviors.siteNameTypography = {
 		attach: function (context) {
 		if (context == document) {
-		// Gets copy from site name (ultimately inside a span: #site-name a span)
-		var siteName = $(".site-name p").text();
+  		// Gets copy from site name (ultimately inside a span: #site-name a span)
+  		var siteName = $(".site-name p").text();
 
-		var typographyAnd = siteName.replace("and", "<span class=\"diminutive-type\">and</span>");
+  		var typographyAnd = siteName.replace("and", "<span class=\"diminutive-type\">and</span>");
 
-		var typographyCollegeOf = typographyAnd.replace("College of", "<span class=\"diminutive-type\">College of</span>");
-		var typographyDepartmentOf = typographyAnd.replace("Department of", "<span class=\"diminutive-type\">Department of</span>");
-		var typographyDivisionOf = typographyAnd.replace("Division of", "<span class=\"diminutive-type\">Division of</span>");
-		var typographyOfficeOf = typographyAnd.replace("Office of", "<span class=\"diminutive-type\">Office of</span>");
+  		var typographyCollegeOf = typographyAnd.replace("College of", "<span class=\"diminutive-type\">College of</span>");
+  		var typographyDepartmentOf = typographyAnd.replace("Department of", "<span class=\"diminutive-type\">Department of</span>");
+  		var typographyDivisionOf = typographyAnd.replace("Division of", "<span class=\"diminutive-type\">Division of</span>");
+  		var typographyOfficeOf = typographyAnd.replace("Office of", "<span class=\"diminutive-type\">Office of</span>");
 
 
-		$('.site-name p span:contains(College of)').replaceWith(typographyCollegeOf);
-		$('.site-name p span:contains(Department of)').replaceWith(typographyDepartmentOf);
-		$('.site-name p span:contains(Division of)').replaceWith(typographyDivisionOf);
-		$('.site-name p span:contains(Office of)').replaceWith(typographyOfficeOf);
+  		$('.site-name p span:contains(College of)').replaceWith(typographyCollegeOf);
+  		$('.site-name p span:contains(Department of)').replaceWith(typographyDepartmentOf);
+  		$('.site-name p span:contains(Division of)').replaceWith(typographyDivisionOf);
+  		$('.site-name p span:contains(Office of)').replaceWith(typographyOfficeOf);
+    }
 	}
 }
 
