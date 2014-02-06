@@ -19,6 +19,9 @@
 @import "../images/westernIcons/*.png";
 @include all-westernIcons-sprites;
 
+// Import Muli typeface from partial
+@import "fonts";
+
 // Import _accordion.scss at bottom of file.
 
 /* ****************************************************
