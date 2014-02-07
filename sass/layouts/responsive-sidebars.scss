@@ -10,6 +10,7 @@
  */
 
 @import "base";
+@import "fonts";
 
 @mixin nav-icons($fileName) {
   background-image:url("../../images/icons/#{$fileName}.png");
