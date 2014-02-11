@@ -25,6 +25,8 @@ $display-large: 800px;
 
 		.cfpa-bottom-left {
 			@include zen-grid-item(1, 1);
+			padding-left: 0;
+			padding-right: 0;
 		}
 
 		.cfpa-bottom-right {
@@ -94,6 +96,7 @@ $display-large: 800px;
 		
 		.cfpa-bottom-left {
 			@include zen-grid-item(2, 1);
+			padding-left: 0;
 		}
 
 		.cfpa-bottom-right {
@@ -104,11 +107,13 @@ $display-large: 800px;
 			
 			.cfpa-bottom-right-top {
 				@include zen-grid-item(1, 1);
+				padding-right: 0;
 			}
 
 			.cfpa-bottom-right-bottom {
 				@include zen-grid-item(1, 1);
 				@include zen-clear();
+				padding-right: 0;
 			}
 		}
 	}
