@@ -58,19 +58,18 @@ main p.callOut {
 
   .clean-cst-top {
     @include zen-grid-item(3,1);
+    @include zen-float(none);
   }
 
   .clean-cst-middle-left { // Dean's Lecture Series
-    @include zen-grid-item(1,1);
+    @include zen-grid-item(.9,1);
   }
 
   .clean-cst-middle-center { // Slideshow
-    @include zen-grid-item(1,2);
-    @include zen-clear(both);
+    @include zen-grid-item(.9,2);
   }
   .clean-cst-middle-right { // About the college
-    @include zen-grid-item(1,3);
-    @include zen-clear(both);
+    @include zen-grid-item(.9,3);
   }
 
 }
@@ -86,14 +85,14 @@ main p.callOut {
     @include zen-grid-item(12,1);
   }
   .clean-cst-middle-left { // Dean's Lecture Series
-    @include zen-grid-item(4,1);
+    @include zen-grid-item(3.7,1);
     @include zen-clear(both);
   }
   .clean-cst-middle-center { // Slideshow
-    @include zen-grid-item(4,5);
+    @include zen-grid-item(3.7,5);
   }
   .clean-cst-middle-right { // About the college
-    @include zen-grid-item(4,9);
+    @include zen-grid-item(3.7,9);
   }
 }
 
