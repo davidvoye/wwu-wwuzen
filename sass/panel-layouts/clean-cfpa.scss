@@ -5,23 +5,17 @@
 @import "base";
 
 $box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
-
-$gutter: 10px;
 $display-small: 320px;
 $display-medium: 600px;
-$display-large: 800px;
+$display-large: 900px;
 
 @media all and (min-width: 0) {
-
-	@include zen-grid-item-base($gutter);
-
-	.cfpa-top {
-	}
 
 	.cfpa-bottom {
 		@include zen-clear();
 		@include zen-grid-container();
 		$zen-column-count: 1;
+		$zen-gutter-width: 24px;
 
 		.cfpa-bottom-left {
 			@include zen-grid-item(1, 1);
@@ -34,6 +28,7 @@ $display-large: 800px;
 			@include zen-clear();
 			@include zen-nested-container();
 			$zen-column-count: 1;
+			$zen-gutter-width: 24px;
 
 			.cfpa-bottom-right-top {
 				@include zen-grid-item(1, 1);				
@@ -59,18 +54,14 @@ $display-large: 800px;
 @media all and (min-width: $display-medium) {
 
 	.cfpa-top {
+		margin-bottom: 32px;
 	}
 
 	.cfpa-bottom {
-
-		.cfpa-bottom-left {
-
-			.clean-cfpa {
-			}
-		}
-
+		
 		.cfpa-bottom-right {
 			$zen-column-count: 2;
+			$zen-gutter-width: 24px;
 
 			.cfpa-bottom-right-top {
 				@include zen-grid-item(1, 1);
@@ -89,10 +80,12 @@ $display-large: 800px;
 @media all and (min-width: $display-large) {
 
 	.cfpa-top {
+		margin-bottom: 32px;
 	}
 
 	.cfpa-bottom {
 		$zen-column-count: 3;
+		$zen-gutter-width: 24px;
 		
 		.cfpa-bottom-left {
 			@include zen-grid-item(2, 1);
@@ -104,6 +97,7 @@ $display-large: 800px;
 			@include zen-clear(none);
 			@include zen-nested-container();
 			$zen-column-count: 1;
+			$zen-gutter-width: 24px;
 			
 			.cfpa-bottom-right-top {
 				@include zen-grid-item(1, 1);
@@ -119,6 +113,6 @@ $display-large: 800px;
 	}
 }
 
-.clean-cfpa {
+.clean-cfpa .clean-cfpa {
 	margin-bottom: 10px;
 }
