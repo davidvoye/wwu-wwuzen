@@ -6,39 +6,90 @@
 
 $box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
 
+$gutter: 10px;
+$display-small: 320px;
 $display-medium: 600px;
 $display-large: 800px;
 
-@media all and (min-width: $display-medium) {
+@media all and (min-width: 0) {
+
+	@include zen-grid-item-base($gutter);
+
+	.cfpa-top {
+	}
 
 	.cfpa-bottom {
+		@include zen-clear();
 		@include zen-grid-container();
-		$zen-column-count: 2;
+		$zen-column-count: 1;
+
+		.cfpa-bottom-left {
+			@include zen-grid-item(1, 1);
+		}
 
 		.cfpa-bottom-right {
+			@include zen-grid-item(1, 1);
+			@include zen-clear();
+			@include zen-nested-container();
+			$zen-column-count: 1;
+
+			.cfpa-bottom-right-top {
+				@include zen-grid-item(1, 1);				
+			}
+	
+			.cfpa-bottom-right-bottom {
+				@include zen-grid-item(1, 1);
+				@include zen-clear();
+			}
+
+			.clean-cfpa {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+@media all and (min-width: $display-small) {
+
+}
+
+@media all and (min-width: $display-medium) {
+
+	.cfpa-top {
+	}
+
+	.cfpa-bottom {
+
+		.cfpa-bottom-left {
+
+			.clean-cfpa {
+			}
+		}
+
+		.cfpa-bottom-right {
+			$zen-column-count: 2;
 
 			.cfpa-bottom-right-top {
 				@include zen-grid-item(1, 1);
+				padding-left: 0;
 			}
 
 			.cfpa-bottom-right-bottom {
 				@include zen-grid-item(1, 2);
+				@include zen-clear(none);
+				padding-right: 0;
 			}
-
 		}
 	}
-
 }
 
 @media all and (min-width: $display-large) {
 
 	.cfpa-top {
-		@include zen-grid-container();
 	}
 
 	.cfpa-bottom {
-		@include zen-grid-container();
-		@include zen-clear();
 		$zen-column-count: 3;
 		
 		.cfpa-bottom-left {
@@ -47,13 +98,12 @@ $display-large: 800px;
 
 		.cfpa-bottom-right {
 			@include zen-grid-item(1, 3);
-			$context: grid-item;
-			@include zen-grid-container();
+			@include zen-clear(none);
+			@include zen-nested-container();
 			$zen-column-count: 1;
 			
 			.cfpa-bottom-right-top {
 				@include zen-grid-item(1, 1);
-				@include zen-clear();
 			}
 
 			.cfpa-bottom-right-bottom {
@@ -61,8 +111,9 @@ $display-large: 800px;
 				@include zen-clear();
 			}
 		}
-
 	}
-
 }
 
+.clean-cfpa {
+	margin-bottom: 10px;
+}
