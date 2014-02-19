@@ -85,14 +85,14 @@ main p.callOut {
     @include zen-grid-item(12,1);
   }
   .clean-cst-middle-left { // Dean's Lecture Series
-    @include zen-grid-item(3.7,1);
+    @include zen-grid-item(3.8,1);
     @include zen-clear(both);
   }
   .clean-cst-middle-center { // Slideshow
-    @include zen-grid-item(3.7,5);
+    @include zen-grid-item(3.8,5);
   }
   .clean-cst-middle-right { // About the college
-    @include zen-grid-item(3.7,9);
+    @include zen-grid-item(3.9,9);
   }
 }
 
