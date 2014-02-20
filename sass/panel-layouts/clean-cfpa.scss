@@ -1,0 +1,118 @@
+/**
+* These are the layout styles for the clean-energy panel.
+*/
+
+@import "base";
+
+$box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
+$display-small: 320px;
+$display-medium: 600px;
+$display-large: 900px;
+
+@media all and (min-width: 0) {
+
+	.cfpa-bottom {
+		@include zen-clear();
+		@include zen-grid-container();
+		$zen-column-count: 1;
+		$zen-gutter-width: 24px;
+
+		.cfpa-bottom-left {
+			@include zen-grid-item(1, 1);
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		.cfpa-bottom-right {
+			@include zen-grid-item(1, 1);
+			@include zen-clear();
+			@include zen-nested-container();
+			$zen-column-count: 1;
+			$zen-gutter-width: 24px;
+
+			.cfpa-bottom-right-top {
+				@include zen-grid-item(1, 1);				
+			}
+	
+			.cfpa-bottom-right-bottom {
+				@include zen-grid-item(1, 1);
+				@include zen-clear();
+			}
+
+			.clean-cfpa {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+@media all and (min-width: $display-small) {
+
+}
+
+@media all and (min-width: $display-medium) {
+
+	.cfpa-top {
+		margin-bottom: 32px;
+	}
+
+	.cfpa-bottom {
+		
+		.cfpa-bottom-right {
+			$zen-column-count: 2;
+			$zen-gutter-width: 24px;
+
+			.cfpa-bottom-right-top {
+				@include zen-grid-item(1, 1);
+				padding-left: 0;
+			}
+
+			.cfpa-bottom-right-bottom {
+				@include zen-grid-item(1, 2);
+				@include zen-clear(none);
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+@media all and (min-width: $display-large) {
+
+	.cfpa-top {
+		margin-bottom: 32px;
+	}
+
+	.cfpa-bottom {
+		$zen-column-count: 3;
+		$zen-gutter-width: 24px;
+		
+		.cfpa-bottom-left {
+			@include zen-grid-item(2, 1);
+			padding-left: 0;
+		}
+
+		.cfpa-bottom-right {
+			@include zen-grid-item(1, 3);
+			@include zen-clear(none);
+			@include zen-nested-container();
+			$zen-column-count: 1;
+			$zen-gutter-width: 24px;
+			
+			.cfpa-bottom-right-top {
+				@include zen-grid-item(1, 1);
+				padding-right: 0;
+			}
+
+			.cfpa-bottom-right-bottom {
+				@include zen-grid-item(1, 1);
+				@include zen-clear();
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+.clean-cfpa .clean-cfpa {
+	margin-bottom: 10px;
+}
