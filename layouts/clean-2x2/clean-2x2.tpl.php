@@ -4,7 +4,7 @@
  * Template for a layout with two stacked sections, each with two columns.
  *
  * This template provides a two column panel display layout with minimal markup.
- * Concieved by Nigel Packer in 2014
+ * Conceived by Nigel Packer in 2014
  *
  */
 ?>
