@@ -1,0 +1,39 @@
+/**
+* These are the layout styles for the clean-75-25 panel
+*/
+@import "base";
+
+$box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
+
+
+$zen-column-count:  12;
+$zen-gutter-width:  30px;
+
+.wwu-75-percent-left-column {
+  @include zen-grid-item(9,1);
+  padding-left:0;
+  padding-right:0;
+}
+
+.wwu-25-percent-right-column {
+  @include zen-grid-item(3,10);
+}
+
+@media all and (max-width: 800px) {
+  .wwu-75-percent-left-column {
+    $zen-column-count:1;
+    @include zen-clear(left);
+    @include zen-grid-item(1,1);
+    padding-left:0;
+    padding-right:0;
+  }
+  .wwu-25-percent-right-column {
+    $zen-column-count:1;
+    @include zen-clear(left);
+    @include zen-grid-item(1,1);
+  }
+}
+
+#edit-buttons {
+  clear:both;
+}
