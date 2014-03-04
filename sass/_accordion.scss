@@ -1,6 +1,10 @@
 // jQuery Accordion Styles
 @import "base";
 
+/**
+* Start accordion style for our navigation menus.
+*/
+
 .ui-helper-reset {
   line-height: 1.5;
 }
@@ -53,3 +57,20 @@
   display:inline;
   padding-left: 0;
 }
+
+/**
+* End accordion style for our navigation menus.
+*/
+
+/**
+* Start accordion style for accordion views.
+*/
+.ui-accordion-content .field-body a {
+    display: inline;
+    padding-left: 0;
+}
+/**
+* End accordion style for accordion views.
+*/
+
+
