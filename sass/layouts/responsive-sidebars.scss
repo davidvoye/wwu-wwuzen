@@ -162,10 +162,9 @@ footer {
 
   .footer-left {
     @include zen-grid-item(1.5,1);
-    padding-left:1em;
      }
   .footer-center {
-    @include zen-grid-item(1.5,2.4);
+    @include zen-grid-item(1.5,2.5);
     ul.menu {
       padding:0 2em 0 0;
       margin:.5em 0;
