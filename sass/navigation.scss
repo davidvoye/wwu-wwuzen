@@ -146,7 +146,6 @@ li a.active {
     padding-left:1em;
     padding-top:.66em;
     padding-bottom:.66em;
-    @include transition(.5s);
     &:hover, &:focus { color:$wwuOceanBlue; @include transition(.3s); }
   }
 }
