@@ -17,6 +17,16 @@
 * Place your code here.
 */
 
+//This is to stop Chrome from flashing styles to the screen on page load
+//http://css-tricks.com/transitions-only-after-page-load/
+Drupal.behaviors.noTransitionFlash = {
+    attach: function () {
+    $("window").load(function() {
+    $("body").removeClass("preload");
+    });
+  }
+}
+
 Drupal.behaviors.imgAttributes = {
     attach: function () {
 
