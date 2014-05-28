@@ -1,0 +1,42 @@
+/**
+* These are the layout styles for the clean-chemistry panel.
+*/
+@import "base";
+
+$box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
+$display-large: 801px;
+
+@media all and (min-width: 0) {
+  .wwu-33-67-container {
+    @include zen-grid-container();  
+    $zen-column-count: 1;
+    
+    .wwu-33-percent-left-column {
+      @include zen-grid-item(1, 1);
+      @include zen-clear();
+    }
+    
+    .wwu-67-percent-right-column {
+      @include zen-grid-item(1, 1);
+      @include zen-clear();
+    }    
+  }
+    
+}
+
+@media all and (min-width: $display-large) {
+  .wwu-33-67-container {
+    @include zen-grid-container();  
+    $zen-column-count: 3;
+    
+    .wwu-33-percent-left-column {
+      @include zen-grid-item(1, 1);
+      @include zen-clear(none);
+    }
+    
+    .wwu-67-percent-right-column {
+      @include zen-grid-item(2, 2);
+      @include zen-clear(none);
+    }    
+  }
+}
