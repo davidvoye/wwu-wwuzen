@@ -17,31 +17,13 @@
 * Place your code here.
 */
 
-Drupal.behaviors.imgAttributes = {
+/**This is to stop Chrome from flashing styles to the screen on page load
+* http://www.learningjquery.com/2008/10/1-way-to-avoid-the-flash-of-unstyled-content/
+* The following code runs after the body loads which then allows the menu to appear.
+*/
+Drupal.behaviors.noTransitionFlash = {
     attach: function () {
-
-    //First check to see if an image is on the page, if not, do nothing
-    if ( $( 'img').length > 0 ) {
-      //Loop through each image found and retrieve the width and height.
-      //Then remove the width and height from the inline css.
-      //Finally write the width and height as attributes to the html img tag.
-      $('main img').each(
-        function(){
-          var imgWidth = $(this).css( "width");
-          var removeWidth = $(this).css( "width", "" );
-          var imgHeight = $(this).css( "height" );
-          var removeHeight = $(this).css( "height", "");
-
-          $(this).attr("width",imgWidth);
-          $(this).attr("height", imgHeight);
-      });
-      //The figure wraps our images and if a height is set, it will not wrap
-      //around the text, only the image. This is basically height:auto.
-      $('main figure').each(
-        function(){
-          var removeFigureHeight = $(this).css( "height", "");
-      });
-    }
+   $('html').removeClass('preload');
   }
 }
 
