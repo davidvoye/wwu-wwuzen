@@ -17,6 +17,16 @@
 * Place your code here.
 */
 
+/**This is to stop Chrome from flashing styles to the screen on page load
+* http://www.learningjquery.com/2008/10/1-way-to-avoid-the-flash-of-unstyled-content/
+* The following code runs after the body loads which then allows the menu to appear.
+*/
+Drupal.behaviors.noTransitionFlash = {
+    attach: function () {
+   $('html').removeClass('preload');
+  }
+}
+
 Drupal.behaviors.imgAttributes = {
     attach: function () {
 
