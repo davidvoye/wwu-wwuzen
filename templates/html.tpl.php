@@ -97,8 +97,12 @@
     <script src="<?php print $base_path . $path_to_zen; ?>/js/html5.js"></script>
     <![endif]-->
   <?php endif; ?>
+  <!--Stop the FOUC in Chrome http://www.learningjquery.com/2008/10/1-way-to-avoid-the-flash-of-unstyled-content/ -->
+     <script type="text/javascript">
+      document.documentElement.className = 'preload';
+    </script>
 </head>
-<body class="<?php print $classes; ?> preload" <?php print $attributes;?>>
+<body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <?php if ($skip_link_text && $skip_link_anchor): ?>
     <p id="skip-link">
       <a href="#<?php print $skip_link_anchor; ?>" class="element-invisible element-focusable"><?php print $skip_link_text; ?></a>
