@@ -1,17 +1,19 @@
 <?php
 /**
  * @file
- * Template for a layout with a 25% column on the left and a 75% column on the left.
+ * Template for a layout with a 100% width column on the top, 50% column on the left a 50% column on the right, and a 100% width column on the bottom.
  *
- * This template provides a two column panel display layout with minimal markup.
- * Edited by Amy Brown November 2013
+ * This template provides a one / two column / one panel display layout with minimal markup.
+ * Edited by Gregory Sobotka 2014
  *
  * Variables:
  * - $id: An optional CSS id to use for the layout.
  * - $content: An array of content, each item in the array is keyed to one
  *   panel of the layout. This layout supports the following sections:
+ *	 - $content['top']: Content in the top column.
  *   - $content['left']: Content in the left column.
  *   - $content['right']: Content in the right column.
+ *	 - $content['bottom']: Content in the bottom column.
  */
 ?>
 <div class="panel-header clearfix">
