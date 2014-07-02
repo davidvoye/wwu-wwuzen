@@ -9,14 +9,14 @@ $box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
 $zen-auto-include-item-base: false;
 
 $display-small: 320px;
-$display-medium: 700px;
+$display-medium: 600px;
 $display-large: 850px;
 
 /**
  * Small screens
  */
 
-@media all and (max-width: $display-small) {
+@media all and (max-width: $display-medium) {
 
 $zen-column-count: 1;
 
@@ -50,11 +50,12 @@ $zen-column-count: 1;
     }
 }
 
+
 /**
  * Medium Screens
  */
 
-@media all and (max-width: $display-medium) and (min-width: $display-small) {
+@media all and (min-width: $display-medium) and (max-width: $display-large) {
 
 $zen-column-count: 2;
 
@@ -140,4 +141,7 @@ $zen-column-count: 3;
 }
 
 //fixes edit buttons overlapping bottom row
-#edit-buttons {clear:both; width:97.35%}
+.edit-buttons {clear:both;
+width:97.35%;
+color: red;
+}
