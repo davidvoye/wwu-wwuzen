@@ -2,72 +2,68 @@
  * @file
  * Print styling
  *
- * We provide some sane print styling for Drupal using Zen's layout method.
+ * We provide some print styling for Drupal using Zen's layout method.
  */
 
 @import "base";
 
+/* First, we hide some unnecessary elements of the page to avoid wasting paper */
 
-@media print {
+.site-banner {
+  display: none;
+}
 
-  a:link,
-  a:visited { /* underline all links */
-    text-decoration: underline !important;
+.western-logo {
+  display: none;
+}
 
-    #site-name & { /* Don't underline header */
-      text-decoration: none !important;
-    }
-  }
+header {
+  display: none;
+}
 
-  .content {
-    a[href]:after { /* Add visible URL after links. */
-      content: " (" attr(href) ")";
-      font-weight: normal;
-      font-size: $base-font-size;
-    }
+footer {
+  display: none;
+}
 
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after { /* Only display useful links. */
-      content: "";
-    }
+.tabs-primary {
+  display: none;
+}
 
-    abbr[title]:after { /* Add visible title after abbreviations. */
-      content: " (" attr(title) ")";
-    }
-  }
+.messages--status {
+  display: none;
+}
 
-  .content { /* Un-float the content */
-    float: none !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
+.messages--warning {
+  display: none;
+}
 
-  body,
-  .page,
-  main,
-  .content { /* Turn off any background colors or images */
-    color: #000;
-    background-color: transparent !important;
-    background-image: none !important;
-  }
+.accordion-menu-wrapper {
+  display: none;
+}
 
-  #skip-link,
-  #toolbar,
-  .main-nav,
-  .region-sidebar-first,
-  .region-sidebar-second,
-  footer,
-  .breadcrumb,
-  .tabs,
-  .action-links,
-  .links,
-  .book-navigation,
-  .forum-topic-navigation,
-  .pager,
-  .feed-icons { /* Hide sidebars and nav elements */
-    visibility: hidden;
-    display: none;
-  }
+/* We need to un-hide the title of the page */
 
-} /* End @media print */
+.page-title {
+  display: block;
+}
+
+/* Apply some styles to enhance print formatting see http://www.smashingmagazine.com/2013/03/08/tips-and-tricks-for-print-style-sheets/ */
+
+body {
+  width: 100%
+}
+
+//avoids images bleeding over edge of page
+img {
+  max-width: 100% !important;
+}
+
+//avoids images being split over multiple pages
+ul, img {
+  page-break-inside: avoid;
+}
+
+@page {
+  margin: 2cm;
+}
+
