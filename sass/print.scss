@@ -2,13 +2,72 @@
  * @file
  * Print styling
  *
- * We provide some sane print styling for Drupal using Zen's layout method.
+ * We provide some print styling for Drupal using Zen's layout method.
  */
 
 @import "base";
 
+/* First, we hide some unnecessary elements of the page to avoid wasting paper */
 
-@media print {
+.site-banner {
+  display: none;
+}
+
+.western-logo {
+  display: none;
+}
+
+header {
+  display: none;
+}
+
+footer {
+  display: none;
+}
+
+.tabs-primary {
+  display: none;
+}
+
+.messages--status {
+  display: none;
+}
+
+.messages--warning {
+  display: none;
+}
+
+.accordion-menu-wrapper {
+  display: none;
+}
+
+/* We need to un-hide the title of the page */
+
+.page-title {
+  display: block;
+}
+
+/* Apply some styles to enhance print formatting see http://www.smashingmagazine.com/2013/03/08/tips-and-tricks-for-print-style-sheets/ */
+
+body {
+  width: 100%
+}
+
+//avoids images bleeding over edge of page
+img {
+  max-width: 100% !important;
+}
+
+//avoids images being split over multiple pages
+ul, img {
+  page-break-inside: avoid;
+}
+
+@page {
+  margin: 2cm;
+}
+
+/* Apply base Zen print styles */
 
   a:link,
   a:visited { /* underline all links */
@@ -69,5 +128,3 @@
     visibility: hidden;
     display: none;
   }
-
-} /* End @media print */
