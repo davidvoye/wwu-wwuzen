@@ -1,0 +1,87 @@
+/**
+ * These are the layout styles for the 25-37-37 panel layout
+ */
+@import "base";
+
+$box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
+$display-small: 320px;
+$display-medium: 700px;
+$display-large: 850px;
+
+@media all and (min-width: 0) {
+  .container-25-37-37 {
+    @include zen-grid-container();
+    $zen-column-count: 1;
+    $zen-gutter-width: 1.5em;
+  }
+
+  .layout-25-37-37 {
+    @include zen-grid-item(1, 1);
+    @include zen-clear();
+  }
+
+  .right-col-group-25-37-37 {
+    @include zen-grid-container();
+    $zen-column-count: 1;
+    $zen-gutter-width: 0;
+  }
+}
+
+@media all and (min-width: $display-small) {
+
+}
+
+@media all and (min-width: $display-medium) {
+  .container-25-37-37 {
+    $zen-column-count: 3;
+    $zen-gutter-width: 1.5em;
+  }
+
+  .layout-25-37-37 {
+    @include zen-clear(none);
+  }
+
+  .left-column-25-37-37 {
+    @include zen-grid-item(1, 1);
+  }
+
+  .right-col-group-25-37-37 {
+    @include zen-grid-item(2, 2);
+    $zen-column-count: 1;
+    $zen-gutter-width: 0;
+  }
+
+  .middle-column-25-37-37 {
+    @include zen-grid-item(1, 1);
+  }
+
+  .right-column-25-37-37 {
+    @include zen-grid-item(1, 1);
+    @include zen-clear();
+  }
+}
+
+@media all and (min-width: $display-large) {
+  .container-25-37-37 {
+    $zen-column-count: 4;
+  }
+
+  .left-column-25-37-37 {
+    @include zen-grid-item(1, 1); 
+  }
+
+  .right-col-group-25-37-37 {
+    @include zen-grid-item(3, 2);
+    $zen-column-count: 2;
+    $zen-gutter-width: 1.5em;
+  }
+
+  .middle-column-25-37-37 {
+    @include zen-grid-item(1, 1);
+  }
+
+  .right-column-25-37-37 {
+    @include zen-grid-item(1, 2);
+    @include zen-clear(none);
+  }
+}
