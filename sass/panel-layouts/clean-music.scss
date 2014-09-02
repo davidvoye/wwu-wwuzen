@@ -2,10 +2,8 @@
  * These are the layout styles for the clean-music
  * panel.
  */
-@import "base";
-@import "panels";
 
-$box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
+@import "panels";
 
 $zen-auto-include-item-base: false;
 

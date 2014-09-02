@@ -1,12 +1,8 @@
 /**
 * These are the layout styles for the clean-cst panel.
 */
-@import "base";
-@import "compass";
-@import "zen";
-@import "panels";
 
-$box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
+@import "panels";
 
 $zen-column-count:  12;
 $zen-gutter-width:  1.25em;
