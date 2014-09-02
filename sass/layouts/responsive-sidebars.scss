@@ -12,7 +12,7 @@
 @import "base";
 
 @mixin nav-icons($fileName) {
-    background-image:url("../../images/icons/#{$fileName}.png");
+  background-image:url("../../images/icons/#{$fileName}.png");
 }
 
 @font-face {
@@ -33,7 +33,7 @@ $zen-gutter-width:  30px;
 // - (Preferred) Install the box-sizing polyfill and set the variable below to
 //   the absolute path URL to the boxsizing.htc file.
 //   @see https://github.com/Schepp/box-sizing-polyfill
-     $box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
+$box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
 // - Use the same CSS unit for grid width and gutter width (use px for both or
 //   use % for both, etc.) and set the box-sizing variable to content-box.
 //   $zen-box-sizing: content-box;
@@ -46,8 +46,8 @@ $zen-auto-include-item-base: false;
 
 
 /* ****************************************************
-        Generic Styles regardless of screen size
-**************************************************** */
+Generic Styles regardless of screen size
+ **************************************************** */
 
 /*
  * Center the page.
@@ -56,10 +56,10 @@ $zen-auto-include-item-base: false;
 .page,
 .region-bottom {
   /* For screen sizes larger than 1200px, prevent excessively long lines of text
-     by setting a max-width. */
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1080px;
+  by setting a max-width. */
+margin-left: auto;
+margin-right: auto;
+max-width: 1080px;
 }
 
 /*
@@ -92,8 +92,8 @@ footer {
 }
 
 /* ****************************************************
-                Mobile-size -> 360px
-**************************************************** */
+Mobile-size -> 360px
+ **************************************************** */
 
 @media all and (max-width:360px) {
   $zen-column-count: 1;
@@ -117,8 +117,8 @@ footer {
 }
 
 /* ****************************************************
-              Footer (1 col)
-**************************************************** */
+Footer (1 col)
+ **************************************************** */
 
 @media all and (max-width: 550px) {
 
@@ -142,7 +142,7 @@ footer {
       margin-left:1.7em;
       margin-top:-.5em;
       margin-bottom:.5em;
-      }
+    }
   }
   .footer-right {
     .western-contact-info, .western-social-media ul {
@@ -153,8 +153,8 @@ footer {
 }
 
 /* ****************************************************
-              Footer 2 rows (2 col; 1 col)
-**************************************************** */
+Footer 2 rows (2 col; 1 col)
+ **************************************************** */
 
 @media all and (min-width:551px) and (max-width: 800px) {
 
@@ -162,7 +162,7 @@ footer {
 
   .footer-left {
     @include zen-grid-item(1.5,1);
-     }
+  }
   .footer-center {
     @include zen-grid-item(1.5,2.5);
     ul.menu {
@@ -172,15 +172,15 @@ footer {
     .western-privacy-statement {
       margin-top:-.5em;
       margin-bottom:.5em;
-      }
     }
+  }
   .footer-right {
     @include zen-clear();
     .western-contact-info {
       @include zen-grid-item(1.5,1);
       p {
         margin-left:24px; //IE 8 fallback
-        margin-left:1.5rem; }
+      margin-left:1.5rem; }
     }
     .western-social-media {
       @include zen-grid-item(1.5,2.5);
@@ -191,17 +191,17 @@ footer {
 }
 
 /* ****************************************************
-                Smaller Screens 0px --> 800px
-**************************************************** */
+Smaller Screens 0px --> 800px
+ **************************************************** */
 
 @media all and (max-width: 800px) {
 
-//Create and import our sprite sheet for the icons used in the mobile menu system
-@import "../images/icons/standard/*.png";
-@include all-standard-sprites;
-//Retina icons
-@import "../images/icons/hidef/*.png";
-@include all-hidef-sprites;
+  //Create and import our sprite sheet for the icons used in the mobile menu system
+  @import "../images/icons/standard/*.png";
+  @include all-standard-sprites;
+  //Retina icons
+  @import "../images/icons/hidef/*.png";
+  @include all-hidef-sprites;
 
   .western-header {
     .western-logo a {
@@ -303,7 +303,7 @@ footer {
         text-indent:-999em;
         border:none;
         margin-bottom:3px;
-        }
+      }
       .western-search-widget {
         @include zen-clear(right);
         display:none;
@@ -335,7 +335,7 @@ footer {
       text-indent:-999em;
       border:none;
     }
-     @media
+    @media
     (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 192dpi) {
       .mobile-main-nav {
@@ -348,105 +348,102 @@ footer {
   } // End .western-header
 
   .main-nav {
-      padding:0;
-      margin-top:0;
-      height:100%;
-      div div .menu {
-        display:none;
-        background-color:#E9E9E9;
-        list-style-type:none;
-        li {
-          @include transition(.25s);
-          width: 100%;
-	  float: none;
-          text-align: left;
+    padding:0;
+    margin-top:0;
+    height:100%;
+    div div .menu {
+      display:none;
+      background-color:#E9E9E9;
+      list-style-type:none;
+      li {
+        @include transition(.25s);
+        width: 100%;
+        float: none;
+        text-align: left;
+        display:block;
+        border-top:solid 1px white;
+        text-transform:none;
+        font-size:.9em;
+        padding:0;
+        a {
+          @include transition(1s);
+          text-decoration:none;
+          color:#fff;
+          padding: .7em 1em .65em 1em;
+          margin-right: 44px;
           display:block;
-          border-top:solid 1px white;
-          text-transform:none;
-          font-size:.9em;
-          padding-top:0;
-          padding-bottom:0;
-          a {
-            @include transition(1s);
-            text-decoration:none;
-            color:#fff;
-            padding: .7em 1em .65em 1em;
-            display:block;
-            cursor:pointer;
-            width: auto;
-            /* &:hover, &:focus, &:active {
-              @include transition(.2s);
-            } */
+          cursor:pointer;
+          width:auto;
+        }
+        &.is-expanded {
+          cursor:s-resize;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          .is-expanded {
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;			
           }
-          &.is-expanded {
-		 cursor:s-resize;
-		 -moz-box-sizing: border-box;
-		 box-sizing: border-box;
-		 padding-right: 44px;
-	  	.is-expanded {
-			-moz-box-sizing: content-box;
-			box-sizing: content-box;			
-		}
-	  }
-          &.is-expanded > a {
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
-	  }
-          &.is-expanded.opened { cursor:n-resize; }
-          ul {
-            padding-left:0;
-            position: relative;
-            background-color:#E9E9E9;
-            li {
-              background-color:$wwuGrayBlue;
-              font-size:1em;
+        }
+        &.is-expanded > a {
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+        }
+        &.is-expanded.opened { cursor:n-resize; }
+        ul {
+          padding-left:0;
+          position: relative;
+          background-color:#E9E9E9;
+          li {
+            background-color:$wwuGrayBlue;
+            font-size:1em;
+            ul li {
+              background-color:tint($wwuGrayBlue, 20%);
               ul li {
-                background-color:tint($wwuGrayBlue, 20%);
-                ul li {
-                  background-color:tint($wwuGrayBlue, 40%);
-                }
+                background-color:tint($wwuGrayBlue, 40%);
               }
-            } // End li
-          } // End ul
-        } // End li
-        li.expanded .menu li {
-		 display: none;
-		 padding-right: 44px;
-		 a {
-			position: relative;
-			right: -44px;
-			margin-left: -44px;
-		 }
-	}
-	li.expanded .menu li.is-expanded > a {
-		position: static;
-		margin-left: 0;
-	}
-      } // End .menu
-    } // End .main-nav
+            }
+          } // End li
+        } // End ul
+      } // End li
+      li.expanded .menu {
+        display: none;
+      }
+      li.expanded .menu li {
+        a {
+          position: relative;
+          right: -44px;
+          margin-left: -44px;
+        }
+      }
+      li.expanded .menu li.is-expanded > a {
+        position: static;
+        margin-left: 0;
+      }
+    } // End .menu
+  } // End .main-nav
   @mixin nav-icons($fileName) { background-image:url("../../images/icons/#{$fileName}.png"); }
 
   .expanded { @include nav-icons(expandable-parent); }
-    .opened { @include nav-icons(opened-parent); }
+  .opened { @include nav-icons(opened-parent); }
 
   .expanded, .opened {
     background-repeat: no-repeat;
     background-position:right top;
     background-size:44px 44px;
 
-      .expanded { @include nav-icons(expandable-first-child); }
-      .opened { @include nav-icons(opened-first-child); }
+    .expanded { @include nav-icons(expandable-first-child); }
+    .opened { @include nav-icons(opened-first-child); }
+
+    .expanded, .opened {
+      .expanded { @include nav-icons(expandable-grandchild); }
+      .opened { @include nav-icons(opened-grandchild); }
 
       .expanded, .opened {
-        .expanded { @include nav-icons(expandable-grandchild); }
-        .opened { @include nav-icons(opened-grandchild); }
-
-        .expanded, .opened {
-          .expanded { @include nav-icons(expandable-great-grandchild); }
-          .opened { @include nav-icons(opened-great-grandchild); }
-          }
-        }
-      } // End .expanded, .opened
+        .expanded { @include nav-icons(expandable-great-grandchild); }
+        .opened { @include nav-icons(opened-great-grandchild); }
+      }
+    }
+  } // End .expanded, .opened
 
   .site-banner { display:none; }
   .site-header {
@@ -525,8 +522,8 @@ footer {
 
 
 /* ****************************************************
-                Screens 801px ->
-**************************************************** */
+Screens 801px ->
+ **************************************************** */
 
 @media all and (min-width: 801px) {
   // Use 12 grid columns for larger screens.
@@ -556,7 +553,7 @@ footer {
           color:#fff;
         }
         li, a { &:focus, &:hover, &:active { color:$wwuBlue; } } */
-        ul { display:none; }
+ul { display:none; }
       }
     }
   }
@@ -617,9 +614,9 @@ footer {
       }
     }
     .western-quick-links {
-        position:absolute;
-        top:-.1em;
-        right:15.4%;
+      position:absolute;
+      top:-.1em;
+      right:15.4%;
       ul {
         @include transition(.5s);
         margin:0;
@@ -642,10 +639,10 @@ footer {
       height:100%;
     }
     .site-banner {
-    	img {
-    		width: 100%;
+      img {
+        width: 100%;
         max-width:none; //Solely to make IE8 display the banner. http://believeinmiraclesx.wordpress.com/2012/08/16/ie8-images-disappear-when-placed-inside-a-floatleft-container/
-    	}
+      }
     }
     .site-name {
       position: absolute;
@@ -684,7 +681,7 @@ footer {
     .western-privacy-statement {
       margin-left:1.8em;
       margin-top:-.5em;
-      }
+    }
   }
   .footer-right {
     @include zen-grid-item(3.75,8.5);
