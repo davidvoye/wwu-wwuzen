@@ -1,68 +1,64 @@
-//
-// "base" partial
-//
-// To make it easier to use all variables and mixins in any Sass file in this
-// theme, each .scss file has a @import "base" declaration. And this _base.scss
-// file is in charge of importing all the other partials needed for the theme.
-//
-// This base partial is organized in this way:
-// - First we set any shared Sass variables.
-// - Next we import Compass plug-ins (Sass mixin libraries).
-// - Last we import a _custom.scss partial that includes our custom mixins.
-//
+/**
+ * @file
+ * Base partial
+ *
+ * To make it easier to use all variables and mixins in any Sass file in this
+ * theme, each .scss file has a @import "base" declaration.
+ * 
+ * This _base.scss file is in charge of importing all the other partials needed
+ * for the theme.
+ *
+ * This base partial is organized in this way:
+ * - First we set any shared Sass variables.
+ * - Next we import Compass plug-ins (Sass mixin libraries).
+ * - Last we import a _custom.scss partial that includes our custom mixins.
+ */
 
-
-//
-// Legacy IE support
-//
-// These variables are used by many mixins to add additional CSS to support
-// specific versions of IE or specific vendor prefixes.
-//
-// To turn on support for IE6 or IE7, set those variables to true.
-//
-// Zen does not require special handling for IE8 or later. But Compass uses that
-// variable for a couple edge cases. We include it for completeness sake. See
-// the documentation at http://compass-style.org/reference/compass/support/
-$legacy-support-for-ie6: true;
-$legacy-support-for-ie7: true;
-$legacy-support-for-ie8: true;
-
-//
-// Colors, etc.
-//
-$wwuBlue: #003f87;
-$wwuLtblue: #0083d6;
-$wwuRed: #cc2d30;
-$wwuYellow: #ffc61e;
-$wwuLime: #bad80a;
-$wwuGreen: #006b3f;
-
-$wwuGrayBlue: #4B689C;
-//Vetted for accessibility via contrast
-$wwuOceanBlue: #0070b6;
+/*******************************************************************************
+ *
+ * VARIABLES
+ *
+ ******************************************************************************/
 
 // The amount lists, blockquotes and comments are indented.
 $indent-amount: 30px;
 
-// Mixins
+/*******************************************************************************
+ *
+ * PARTIALS
+ *
+ ******************************************************************************/
 
-@mixin hide-text-bg-img {
-  border: 0;
-  font: 0/0 a;
-  text-shadow: none;
-  color: transparent;
-}
-// @include hide-text-bg-img;
+// CUSTOM
 
+@import 'ie';
+@import 'typography';
+@import 'colors';
 
-//
-// Partials to be shared with all .scss files.
-//
+// SHARED
 
-@import "compass/support";  // Add Compass' IE and vendor prefix support variables.
-@import "compass/utilities/general/clearfix"; // Better than Drupal's clearfix.
-@import "compass/utilities/sprites"; // See http://compass-style.org/help/tutorials/spriting/
-@import "compass/css3";     // Use one CSS3 mixin instead of multiple vendor prefixes.
-@import "compass/typography/vertical_rhythm"; // Helps set up a vertical rhythm.
-@import "zen";              // Add the Zen Grids responsive layout mixins.
-@import "custom";           // Import our custom mixins last.
+// Add Compass IE and vendor prefix support variables.
+@import "compass/support";
+
+// Better than Drupal's clearfix.
+@import "compass/utilities/general/clearfix";
+
+// See http://compass-style.org/help/tutorials/spriting/
+@import "compass/utilities/sprites";
+
+// Use one CSS3 mixin instead of multiple vendor prefixes. 
+@import "compass/css3";
+
+// Helps set up a vertical rhythm.
+@import "compass/typography/vertical_rhythm";
+
+// Add the Zen Grids responsive layout mixins.
+@import "zen";
+
+/*******************************************************************************
+ *
+ * CUSTOM MIXINS
+ *
+ ******************************************************************************/
+
+@import "custom";
