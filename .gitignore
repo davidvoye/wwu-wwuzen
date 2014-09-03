@@ -1,0 +1,8 @@
+*.scssc
+*.css
+.sass-cache/*
+sass-extensions/*
+.DS_Store
+.buildpath
+.project
+.settings
