@@ -7,6 +7,12 @@
 // curly brackets:
 //   @include mix-in-name;
 
+@mixin hide-text-bg-img {
+  border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+}
 
 // element-invisible as defined by http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
 @mixin element-invisible {

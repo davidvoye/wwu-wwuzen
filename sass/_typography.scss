@@ -1,0 +1,37 @@
+/**
+ * @file
+ * Font stack variable declarations
+ *
+ * Font-face declarations are found in fonts.scss
+ */
+
+// BASE FONT SIZE
+$base-font-size:   16px; // The font size set on the root html element.
+$base-line-height: 24px; // This line-height determines the basic unit of vertical rhythm.
+
+// HEADING SIZES
+$h1-font-size: 1.75 * $base-font-size;
+$h2-font-size: 1.6 * $base-font-size;
+$h3-font-size: 1.5 * $base-font-size;
+$h4-font-size: 1.17 * $base-font-size;
+$h5-font-size: .925 * $base-font-size;
+$h6-font-size: .75 * $base-font-size;
+
+// FONT STACKS
+$times-new-roman:   "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
+$times:             Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
+$georgia:           Georgia, "Times New Roman", "DejaVu Serif", serif;
+$verdana:           Verdana, Tahoma, "DejaVu Sans", sans-serif;
+$tahoma:            Tahoma, Verdana, "DejaVu Sans", sans-serif;
+$helvetica:         Helvetica, Arial, "Nimbus Sans L", sans-serif;
+$arial:             Arial, Helvetica, "Nimbus Sans L", sans-serif;
+$muli:              Muli, Tahoma, Verdana, "DejaVu Sans", sans-serif;
+
+// For an explanation of why "sans-serif" is at the end of this list, see
+// http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
+$courier:           "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
+
+// SEMANTIC FONT STACKS
+$base-font-family:  $verdana; // The font family set on the html element
+$font-body:         $verdana;
+$font-monospace:    $courier;
