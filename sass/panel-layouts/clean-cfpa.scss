@@ -8,24 +8,23 @@ $display-small: 320px;
 $display-medium: 600px;
 $display-large: 900px;
 
-@media all and (min-width: 0) {
+@media all {
 
 	.cfpa-bottom {
-		@include zen-clear();
 		@include zen-grid-container();
+		@include zen-clear();
 		$zen-column-count: 1;
 		$zen-gutter-width: 24px;
 
 		.cfpa-bottom-left {
 			@include zen-grid-item(1, 1);
-			padding-left: 0;
-			padding-right: 0;
+      @include zen-nested-container();
 		}
 
 		.cfpa-bottom-right {
 			@include zen-grid-item(1, 1);
-			@include zen-clear();
 			@include zen-nested-container();
+			@include zen-clear();
 			$zen-column-count: 1;
 			$zen-gutter-width: 24px;
 
@@ -93,8 +92,8 @@ $display-large: 900px;
 
 		.cfpa-bottom-right {
 			@include zen-grid-item(1, 3);
-			@include zen-clear(none);
 			@include zen-nested-container();
+			@include zen-clear(none);
 			$zen-column-count: 1;
 			$zen-gutter-width: 24px;
 			

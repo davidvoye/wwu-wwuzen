@@ -12,9 +12,8 @@
 @import "base";
 
 $box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
-$zen-auto-include-item-base: false;
 
 #edit-buttons {
-  clear:both;
-  width:97.35%;
+  @include zen-clear();
+  padding-top: 10px;
 }

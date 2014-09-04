@@ -5,7 +5,7 @@
 
 $display-large: 801px;
 
-@media all and (min-width: 0) {
+@media all {
   .wwu-33-67-container {
     @include zen-grid-container();  
     $zen-column-count: 1;

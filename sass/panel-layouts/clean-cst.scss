@@ -4,9 +4,9 @@
 
 @import "panels";
 
+$zen-auto-include-item-base: false;
 $zen-column-count:  12;
 $zen-gutter-width:  1.25em;
-
 $gray: rgba(151,151,151,1);
 
 .front .page-title { display:none; }

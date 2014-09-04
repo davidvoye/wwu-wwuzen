@@ -1,6 +1,6 @@
 /**
-* These are the layout styles for the 25-50-25 panel layout
-*/
+ * These are the layout styles for the 25-50-25 panel layout
+ */
 
 @import "panels";
 
@@ -8,66 +8,68 @@ $display-small: 320px;
 $display-medium: 700px;
 $display-large: 900px;
 
-@media all and (min-width: 0) {
-    .container-25-50-25 {
-        @include zen-grid-container();
-        $zen-column-count: 1;
-        $zen-gutter-width: 0;
-        
-        .layout-25-50-25 {
-            @include zen-grid-item(1, 1);
-            @include zen-clear();
-        }
+@media all {
+  .container-25-50-25 {
+    @include zen-grid-container();
+    $zen-column-count: 1;
+    $zen-gutter-width: 0;
+
+    .layout-25-50-25 {
+      @include zen-grid-item(1, 1);
+      @include zen-clear();
     }
+  }
 }
 
 @media all and (min-width: $display-small) {
-   
+
 }
 
 @media all and (min-width: $display-medium) {
-    .container-25-50-25 {
-      $zen-column-count: 3;
-      $zen-gutter-width: 1.5em;
-      
-      .layout-25-50-25 {
-        @include zen-clear(none);
-      }
-      
-      .left-column-25-50-25 {
-        @include zen-grid-item(1, 1);
-      }
-      
-      .middle-column-25-50-25 {
-        @include zen-grid-item(2, 2);
-      }
-      
-      .right-column-25-50-25 {
-        @include zen-grid-item(2, 2);
-        @include zen-clear();
-      }
+  .container-25-50-25 {
+    @include zen-grid-container();
+    $zen-column-count: 3;
+    $zen-gutter-width: 1.5em;
+
+    .layout-25-50-25 {
+      @include zen-clear(none);
     }
+
+    .left-column-25-50-25 {
+      @include zen-grid-item(1, 1);
+    }
+
+    .middle-column-25-50-25 {
+      @include zen-grid-item(2, 2);
+    }
+
+    .right-column-25-50-25 {
+      @include zen-grid-item(2, 2);
+      @include zen-clear();
+    }
+  }
 }
 
 @media all and (min-width: $display-large) {
-    .container-25-50-25 {
-        $zen-column-count: 4;
-        $zen-gutter-width: 1.5em;
-        
-        .layout-25-50-25 {
-          @include zen-clear(none);
-        }
-        
-        .left-column-25-50-25 {
-            @include zen-grid-item(1, 1); 
-        }
-        
-        .middle-column-25-50-25 {
-            @include zen-grid-item(2, 2);
-        }
-        
-        .right-column-25-50-25 {
-            @include zen-grid-item(1, 4);
-        }
+  .container-25-50-25 {
+    @include zen-grid-container();
+    $zen-column-count: 4;
+    $zen-gutter-width: 1.5em;
+
+    .layout-25-50-25 {
+      @include zen-clear(none);
     }
+
+    .left-column-25-50-25 {
+      @include zen-grid-item(1, 1); 
+    }
+
+    .middle-column-25-50-25 {
+      @include zen-grid-item(2, 2);
+    }
+
+    .right-column-25-50-25 {
+      @include zen-grid-item(1, 4);
+    }
+  }
 }
