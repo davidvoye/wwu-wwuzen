@@ -1,0 +1,19 @@
+/**
+ * @file
+ * Panels base partial
+ *
+ * Import the theme base partial and declare any variables and styles tha
+ * should be available to every layout.
+ *
+ * Inlucde this partial in the .scss file for a panel:
+ * @import "panels";
+ */
+
+@import "base";
+
+$box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
+
+#edit-buttons {
+  @include zen-clear();
+  padding-top: 10px;
+}
