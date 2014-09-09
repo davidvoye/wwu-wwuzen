@@ -43,6 +43,10 @@ $display-large: 900px;
 			}
 		}
 	}
+
+  .clean-cfpa .clean-cfpa {
+    margin-bottom: 10px;
+  }
 }
 
 @media all and (min-width: $display-small) {
@@ -50,10 +54,6 @@ $display-large: 900px;
 }
 
 @media all and (min-width: $display-medium) {
-
-	.cfpa-top {
-		margin-bottom: 32px;
-	}
 
 	.cfpa-bottom {
 		
@@ -76,10 +76,6 @@ $display-large: 900px;
 }
 
 @media all and (min-width: $display-large) {
-
-	.cfpa-top {
-		margin-bottom: 32px;
-	}
 
 	.cfpa-bottom {
 		$zen-column-count: 3;
@@ -109,8 +105,4 @@ $display-large: 900px;
 			}
 		}
 	}
-}
-
-.clean-cfpa .clean-cfpa {
-	margin-bottom: 10px;
 }

@@ -1,11 +1,11 @@
 <?php
 
 $plugin = array(
-  'title' => t('Clean Music'),
+  'title' => t('CFPA Department'),
   'category' => t('Western'),
-  'icon' => 'clean-music.png',
-  'theme' => 'clean-music',
-  'css' => '../../css/panel-layouts/clean-music.css',
+  'icon' => 'cfpa-department.png',
+  'theme' => 'cfpa-department',
+  'css' => '../../css/panel-layouts/cfpa-department.css',
   'regions' => array(
     'top_left' => t('Top left'),
     'top_right' => t('Top right'),
