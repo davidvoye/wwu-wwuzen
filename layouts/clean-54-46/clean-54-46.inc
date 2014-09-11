@@ -2,11 +2,11 @@
 
 // Plugin definition
 $plugin = array(
-  'title' => t('Clean Huxley'),
+  'title' => t('Clean 54-46'),
   'category' => t('Western'),
-  'icon' => 'clean-huxley.png',
-  'theme' => 'clean-huxley',
-  'css' => '../../css/panel-layouts/clean-huxley.css',
+  'icon' => 'clean-54-46.png',
+  'theme' => 'clean-54-46',
+  'css' => '../../css/panel-layouts/clean-54-46.css',
   'regions' => array(
     'left' => t('Left side'),
     'topright' => t('Top-right'),
