@@ -1,0 +1,88 @@
+/**
+ * These are the layout styles for the 25-37-37 panel layout
+ */
+@import "panels";
+
+$display-small: 320px;
+$display-medium: 700px;
+$display-large: 850px;
+
+@media all {
+  .container-25-37-37 {
+    @include zen-grid-container();
+    $zen-column-count: 1;
+    $zen-gutter-width: 1.5em;
+
+    .right-col-group-25-37-37 {
+      @include zen-nested-container();
+      $zen-column-count: 1;
+      $zen-gutter-width: 0;
+    }
+  }
+
+  .layout-25-37-37 {
+    @include zen-grid-item(1, 1);
+    @include zen-clear();
+  }
+}
+
+@media all and (min-width: $display-small) {
+
+}
+
+@media all and (min-width: $display-medium) {
+  .container-25-37-37 {
+    $zen-column-count: 3;
+    $zen-gutter-width: 1.5em;
+
+    .left-column-25-37-37 {
+      @include zen-grid-item(1, 1);
+    }
+
+    .right-col-group-25-37-37 {
+      @include zen-grid-item(2, 2);
+      @include zen-nested-container();
+      $zen-column-count: 1;
+      $zen-gutter-width: 0;
+
+      .middle-column-25-37-37 {
+        @include zen-grid-item(1, 1);
+      }
+
+      .right-column-25-37-37 {
+        @include zen-grid-item(1, 1);
+        @include zen-clear();
+      }
+    }
+  }
+
+  .layout-25-37-37 {
+    @include zen-clear(none);
+  }
+}
+
+@media all and (min-width: $display-large) {
+  .container-25-37-37 {
+    $zen-column-count: 4;
+
+    .left-column-25-37-37 {
+      @include zen-grid-item(1, 1); 
+    }
+
+    .right-col-group-25-37-37 {
+      @include zen-grid-item(3, 2);
+      @include zen-nested-container();
+      $zen-column-count: 2;
+      $zen-gutter-width: 1.5em;
+
+      .middle-column-25-37-37 {
+        @include zen-grid-item(1, 1);
+      }
+
+      .right-column-25-37-37 {
+        @include zen-grid-item(1, 2);
+        @include zen-clear(none);
+      }
+    }
+  }
+}
