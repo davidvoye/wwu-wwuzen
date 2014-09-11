@@ -44,23 +44,6 @@ $zen-gutter-width:  30px;
 
 }
 
-
-@media all and (max-width: 360px) {
-  .huxley-homepage-left-column {
-    $zen-column-count:1;
-    @include zen-clear(left);
-    @include zen-grid-item(1,1);
-  }
-  .huxley-homepage-right-column {
-    $zen-column-count:1;
-    @include zen-clear(left);
-    @include zen-grid-item(1,1);
-    .huxley-homepage-people-and-places {
-      @include zen-grid-item(1,1);
-    }
-  }
-}
-
 @media all and (min-width:361px) and (max-width: 800px) {
   .huxley-homepage-left-column {
     $zen-column-count:3;
