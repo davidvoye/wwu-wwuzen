@@ -237,11 +237,13 @@ function wwuzen_preprocess_block(&$variables, $hook) {
  */
 function wwuzen_js_alter(&$javascript) {
   foreach ($javascript as &$value) {
-    if (strpos($value['data'], 'google-analytics.com')) {
-      $value['scope'] = 'header';
+    if (!is_array($value['data']) && strpos($value['data'], 'google-analytics.com')) {
+      $scope = 'header';
     } else {
-      $value['scope'] = 'footer';
+      $scope = 'footer';
     }
+
+    $value['scope'] = $scope;
   }
 }
 // */
