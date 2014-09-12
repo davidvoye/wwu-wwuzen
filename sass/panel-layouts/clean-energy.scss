@@ -2,21 +2,15 @@
 * These are the layout styles for the clean-energy panel.
 */
 
-@import "base";
-
-$box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
-
-
-$zen-column-count:  12;
-$zen-gutter-width:  30px;
-
+@import "panels";
 
 /**
 * Small display sizes (Mobile First)
 */
 
-
+@media all {
   $zen-column-count:1;
+  $zen-gutter-width: 30px;
 
   .clean-energy-top-left-column {
     @include zen-grid-item(1,1);
@@ -35,17 +29,13 @@ $zen-gutter-width:  30px;
     @include zen-clear(left);
     margin: 0 0 1em 0;
   }
-
-
-#edit-buttons {
-  clear:both;
 }
-
 /**
 * Larger display sizes
 */
 @media all and (min-width:801px) {
-  $zen-column-count:  12;
+  $zen-column-count: 12;
+  $zen-gutter-width: 30px;
 
   .clean-energy-top-row  {
     width:100%;

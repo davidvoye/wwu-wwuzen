@@ -1,19 +1,11 @@
 /**
 * These are the layout styles for the clean-chss panel.
 */
-@import "base";
-@import "compass";
-@import "zen";
+@import "panels";
 
-$box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
-
-@import url(http://fonts.googleapis.com/css?family=Muli:400,400italic);
-$muli: Muli, Tahoma, Verdana, "DejaVu Sans", sans-serif;
-
+$zen-auto-include-item-base: false;
 $zen-column-count:  12;
 $zen-gutter-width:  1.25em;
-$zen-auto-include-item-base: false;
-
 $gray: rgba(151,151,151,1);
 
 .front .page-title { display:none; }
@@ -206,4 +198,3 @@ main p.callOut {
     width:48%;
   }
 }
-#edit-buttons {clear:both; width:97.35%;}

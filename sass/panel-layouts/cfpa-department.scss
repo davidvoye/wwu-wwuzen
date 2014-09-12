@@ -1,0 +1,114 @@
+/**
+ * These are the layout styles for the cfpa-department
+ * panel.
+ */
+
+@import "panels";
+
+$display-small: 320px;
+$display-medium: 600px;
+$display-large: 850px;
+
+@media all {
+
+  .cfpa-department-container {
+    @include zen-grid-container();
+    $zen-column-count: 1;
+
+    .cfpa-department-top-left {
+      @include zen-grid-item(1,1);
+      @include zen-clear();
+    }
+
+    .cfpa-department-top-right{
+      @include zen-grid-item(1,1);
+      @include zen-clear();
+    }
+
+    .cfpa-department-bottom-row {
+      @include zen-clear();
+    }
+
+    .cfpa-department-bottom-left {
+      @include zen-grid-item(1,1);
+    }
+
+    .cfpa-department-bottom-middle {
+      @include zen-grid-item(1,1);
+      @include zen-clear();
+    }
+
+    .cfpa-department-bottom-right {
+      @include zen-grid-item(1,1);
+      @include zen-clear();
+    }
+  }
+
+}
+
+@media all and (min-width: $display-medium) {
+
+  .cfpa-department-container {
+    $zen-column-count: 2;
+
+    .cfpa-department-top-left {
+      @include zen-grid-item(2,1);
+      @include zen-clear();
+    }
+
+    .cfpa-department-top-right{
+      @include zen-grid-item(1,1);
+      @include zen-clear();
+    }
+
+    .cfpa-department-bottom-left {
+      @include zen-grid-item(1,2);
+    }
+
+    .cfpa-department-bottom-middle {
+      @include zen-grid-item(1,1);
+      @include zen-clear();
+      padding-bottom: 1em;
+    }
+
+    .cfpa-department-bottom-right {
+      @include zen-grid-item(1,2);
+      padding-bottom: 1em;
+    }
+  }
+
+}
+
+@media all and (min-width: $display-large) {
+
+  .cfpa-department-container {
+    $zen-column-count: 3;
+
+    .cfpa-department-top-left {
+      @include zen-grid-item(2,1);
+      @include zen-clear(none);
+    }
+
+    .cfpa-department-top-right{
+      @include zen-grid-item(1,3);
+      @include zen-clear(none);
+    }
+
+    .cfpa-department-bottom-left {
+      @include zen-grid-item(1,1);
+      @include zen-clear(none);
+    }
+
+    .cfpa-department-bottom-middle {
+      @include zen-grid-item(1,2);
+      @include zen-clear(none);
+    }
+
+    .cfpa-department-bottom-right {
+      @include zen-grid-item(1,3);
+      @include zen-clear(none);
+    }
+  }
+
+}
+

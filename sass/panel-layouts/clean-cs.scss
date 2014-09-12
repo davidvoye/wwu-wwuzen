@@ -1,24 +1,22 @@
 /**
-* These are the layout styles for the clean-energy panel.
-*/
+ * These are the layout styles for the clean-energy panel.
+ */
 
-@import "base";
+@import "panels";
 
-$box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
-
-
-$zen-column-count:  12;
-$zen-gutter-width:  30px;
 
 
 /**
-* Small display sizes (Mobile First)
-*/
+ * Small display sizes (Mobile First)
+ */
 
-
-  $zen-column-count:1;
+@media all {
 
   .cs-homepage-top {
+    $zen-gutter-width: 30px;
+    $zen-column-count: 1;
+    @include zen-nested-container();
+
     .cs-homepage-top-left-column {
       @include zen-grid-item(1,1);
     }
@@ -29,7 +27,10 @@ $zen-gutter-width:  30px;
   }
 
   .cs-homepage-upper-middle {
-      @include zen-clear(both);
+    $zen-gutter-width: 30px;
+    $zen-column-count: 1;
+    @include zen-nested-container();
+    @include zen-clear(both);
 
     .cs-homepage-upper-middle-left-column {
       @include zen-grid-item(1,1);
@@ -40,8 +41,11 @@ $zen-gutter-width:  30px;
     }
   }
 
- .cs-homepage-lower-middle {
-      @include zen-clear(both);
+  .cs-homepage-lower-middle {
+    $zen-gutter-width: 30px;
+    $zen-column-count: 1;
+    @include zen-nested-container();
+    @include zen-clear(both);
 
     .cs-homepage-lower-middle-left-column {
       @include zen-grid-item(1,1);
@@ -52,8 +56,11 @@ $zen-gutter-width:  30px;
     }
   }
 
- .cs-homepage-bottom {
-      @include zen-clear(both);
+  .cs-homepage-bottom {
+    $zen-gutter-width: 30px;
+    $zen-column-count: 1;
+    @include zen-nested-container();
+    @include zen-clear(both);
 
     .cs-homepage-bottom-left-column {
       @include zen-grid-item(1,1);
@@ -66,19 +73,17 @@ $zen-gutter-width:  30px;
       margin: 0 0 1em 0;
     }
   }
-
-#edit-buttons {
-  clear:both;
 }
 
 /**
-* Larger display sizes
-*/
+ * Larger display sizes
+ */
 @media all and (min-width:801px) {
-  $zen-column-count:  12;
-
   .cs-homepage-top  {
-    width:100%;
+    $zen-gutter-width: 30px;
+    $zen-column-count: 12;
+    @include zen-grid-item(12, 1);
+    @include zen-nested-container();
 
     .cs-homepage-top-left-column {
       @include zen-float(left);
@@ -92,9 +97,12 @@ $zen-gutter-width:  30px;
 
   }
 
- 
+
   .cs-homepage-upper-middle  {
-    width:100%;
+    $zen-gutter-width: 30px;
+    $zen-column-count: 12;
+    @include zen-grid-item(12,1);
+    @include zen-nested-container();
     @include zen-clear(both);
 
     .cs-homepage-upper-middle-left-column {
@@ -110,7 +118,10 @@ $zen-gutter-width:  30px;
   }
 
   .cs-homepage-lower-middle  {
-    width:100%;
+    $zen-gutter-width: 30px;
+    $zen-column-count: 12;
+    @include zen-grid-item(12,1);
+    @include zen-nested-container();
     @include zen-clear(both);
 
     .cs-homepage-lower-middle-left-column {
@@ -126,7 +137,10 @@ $zen-gutter-width:  30px;
   }
 
   .cs-homepage-bottom {
-    width:100%;
+    $zen-gutter-width: 30px;
+    $zen-column-count: 12;
+    @include zen-grid-item(12,1);
+    @include zen-nested-container();
     @include zen-clear(both);
 
     .cs-homepage-bottom-left-column {

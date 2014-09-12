@@ -1,52 +1,51 @@
-@import "base";
+/**
+* These are the layout styles for the clean 100-50-50-100 panel.
+*/
 
-$box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
+@import "panels";
 
+@media all {
+  .wwu-100-percent-column {
+    $zen-column-count: 1;
+    @include zen-grid-item(1,1);
+    @include zen-clear();
+    padding-left: 0;
+    padding-right: 0;
+  }
 
-$zen-column-count:  12;
-$zen-gutter-width:  30px;
+  .wwu-50-50-wrapper {
+    @include zen-grid-container();
+    @include zen-clear();
+    $zen-column-count: 2;
+    $zen-gutter-width: 30px;
+    margin: 20px 0;
 
-.wwu-50-percent-left-column {
-  @include zen-grid-item(5.8,1);
-  padding-left:0;
-  padding-right:0;
-}
+    .wwu-50-percent-left-column {
+      @include zen-grid-item(1,1);
+      padding-left: 0;
+    }
 
-.wwu-50-percent-right-column {
-  @include zen-grid-item(5.8,7.2);
-  padding-left:0;
-  padding-right:0;
-}
-
-.wwu-100-percent-column {
-  clear:both;
-  @include zen-grid-item(12,1);
-}
-
-.wwu-50-50-wrapper {
-  clear:both;
-  padding:0 15px;
-  margin:20px 0;
+    .wwu-50-percent-right-column {
+      @include zen-grid-item(1,2);
+      padding-right: 0;
+    }
+  }
 }
 
 @media all and (max-width: 800px) {
+  .wwu-50-50-wrapper {
+    $zen-column-count: 1;
 
-  .wwu-50-percent-left-column {
-    $zen-column-count:1;
-    @include zen-clear(left);
-    @include zen-grid-item(12,1);
-    padding-left:0;
-    padding-right:0;
+    .wwu-50-percent-left-column {
+      @include zen-clear(left);
+      @include zen-grid-item(1,1);
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .wwu-50-percent-right-column {
+      @include zen-clear(left);
+      @include zen-grid-item(1,1);
+      padding-left: 0;
+    }
   }
-  .wwu-50-percent-right-column {
-    $zen-column-count:1;
-    @include zen-clear(left);
-    @include zen-grid-item(12,1);
-    padding-left:0;
-  }
-
-}
-
-#edit-buttons {
-  clear:both;
 }

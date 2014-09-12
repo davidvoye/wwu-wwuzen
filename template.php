@@ -138,7 +138,6 @@ function wwuzen_preprocess_html(&$variables, $hook) {
 }
 // */
 
-
 /**
  * Override or insert variables into the page templates.
  *
@@ -227,5 +226,24 @@ function wwuzen_preprocess_block(&$variables, $hook) {
   //if ($variables['block_html_id'] == 'block-system-main') {
   //  $variables['theme_hook_suggestions'] = array_diff($variables['theme_hook_suggestions'], array('block__no_wrapper'));
   //}
+}
+// */
+
+/**
+ * Perform necessary alterations to JavaScript be it is presented on the page.
+ *
+ * @param $javascript
+ *  The array of JavaScript files that have been added to the page
+ */
+function wwuzen_js_alter(&$javascript) {
+  foreach ($javascript as &$value) {
+    if (!is_array($value['data']) && strpos($value['data'], 'google-analytics.com')) {
+      $scope = 'header';
+    } else {
+      $scope = 'footer';
+    }
+
+    $value['scope'] = $scope;
+  }
 }
 // */
