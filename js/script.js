@@ -144,7 +144,7 @@
       }
 
       $window = $(window, context);
-      $menuItems = $('#main-menu .menu-name-main-menu > .menu li', context);
+      $menuItems = $('#main-menu div > ul.menu li', context);
       $submenuParents = $menuItems.has('ul');
       $links = $menuItems.find('a');
 
@@ -185,7 +185,7 @@
         }
       }
 
-      $mainMenu = $('#main-menu .menu-name-main-menu > .menu');
+      $mainMenu = $('#main-menu div > ul.menu li');
       $subMenus = $mainMenu.find('ul');
       $window = $(window, context);
       $window.resize(bindHandlers);
