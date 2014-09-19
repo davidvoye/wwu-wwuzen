@@ -7,8 +7,25 @@
 @media all and (min-width: 0) {
 
   .wwu-25-percent-left-column {
+    $zen-column-count: 1;
+    $zen-gutter-width: 30px;
+    @include zen-grid-item(1,1);
+    @include zen-nested-container();
+  }
+
+  .wwu-75-percent-right-column {
+    $zen-column-count: 1;
+    $zen-gutter-width: 30px;
+    @include zen-grid-item(1,1);
+    @include zen-clear(left);
+  }
+}
+
+@media all and (min-width: 800px) {
+  .wwu-25-percent-left-column {
     $zen-column-count: 4;
     $zen-gutter-width: 30px;
+    @include zen-clear(left);
     @include zen-grid-item(1,1);
     @include zen-nested-container();
   }
@@ -17,22 +34,6 @@
     $zen-column-count: 4;
     $zen-gutter-width: 30px;
     @include zen-grid-item(3,2);
-  }
-}
-
-@media all and (max-width: 800px) {
-  .wwu-25-percent-left-column {
-    $zen-column-count: 1;
-    $zen-gutter-width: 30px;
-    @include zen-clear(left);
-    @include zen-grid-item(1,1);
-    @include zen-nested-container();
-  }
-
-  .wwu-75-percent-right-column {
-    $zen-column-count: 4;
-    $zen-gutter-width: 30px;
-    @include zen-clear(left);
-    @include zen-grid-item(1,1);
+    @include zen-clear(none);
   }
 }
