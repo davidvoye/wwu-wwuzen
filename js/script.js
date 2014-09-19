@@ -80,7 +80,7 @@
           $subMenus;
 
       $mobileMainNav = $('.mobile-main-nav', context);
-      $mainMenu = $('#main-menu .menu-name-main-menu > .menu');
+      $mainMenu = $('#main-menu div > ul.menu');
       $subMenus = $mainMenu.find('ul');
 
       $mobileMainNav.click(function () {
