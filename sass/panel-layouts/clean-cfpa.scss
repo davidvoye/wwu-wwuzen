@@ -10,6 +10,10 @@ $display-large: 900px;
 
 @media all {
 
+  .cfpa-top {
+    margin-bottom: 2.4em;
+  }
+
 	.cfpa-bottom {
 		@include zen-grid-container();
 		@include zen-clear();
