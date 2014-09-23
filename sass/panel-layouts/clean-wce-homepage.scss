@@ -1,0 +1,162 @@
+
+@import "panels";
+
+$display-small: 320px;
+$display-medium: 600px;
+$display-large: 900px;
+
+
+
+
+@media all and (max-width: 699px) {
+$zen-column-count: 12;
+
+.topleft {
+  @include zen-grid-item(12, 1);
+  @include zen-clear(both);
+}
+
+.top {
+  @include zen-grid-item(12, 1);
+  @include zen-clear(both);
+}
+
+.topright {
+  @include zen-grid-item(12, 1);
+  @include zen-clear(both);
+}
+
+  .middleleft{
+    @include zen-grid-item(12, 1);
+      @include zen-clear(both);
+  }
+
+  .middleright {
+    @include zen-grid-item(12, 1);
+      @include zen-clear(both);
+  }
+
+  .bottomleft {
+  @include zen-grid-item(12, 1);
+    @include zen-clear(both);
+  }
+
+  .bottomright {
+  @include zen-grid-item(12, 1);
+    @include zen-clear(both);
+  }
+}
+
+
+
+@media all and (min-width: 700px) and (max-width: 1024px) {
+$zen-column-count: 12;
+
+.top-row-wrapper {
+
+}
+
+.topleft {
+  @include zen-grid-item(12, 1);
+  @include zen-clear(both);
+}
+
+.top {
+  @include zen-grid-item(6, 1);
+  @include zen-clear(left);
+}
+
+.topright {
+  @include zen-grid-item(6, 7);
+  @include zen-clear(right);
+}
+
+.middle-row-wrapper {
+  @include zen-grid-container();
+  @include zen-clear(both);
+
+  .middleleft{
+    @include zen-grid-item(8, 1, left);
+  }
+
+  .middleright {
+    @include zen-grid-item(4, 9, right);
+    @include zen-float(right);
+  }
+
+}
+
+
+.bottom-row-wrapper {
+  @include zen-grid-container();
+  @include zen-clear(both);
+
+  .bottomleft {
+  @include zen-grid-item(6, 1);
+  }
+
+
+  .bottomright {
+  @include zen-grid-item(6, 7);
+  }
+}
+
+}
+
+
+
+/**
+ * Largest setting above 1025 px
+ */
+
+@media all and (min-width: 1025px) {
+
+$zen-column-count: 12;
+
+.top-row-wrapper {
+  @include zen-nested-container();
+  @include zen-clear(both);
+}
+
+.topleft {
+  @include zen-grid-item(4, 1);
+}
+
+.top {
+  @include zen-grid-item(4, 5);
+}
+
+.topright {
+  @include zen-grid-item(4, 9);
+}
+
+.middle-row-wrapper {
+  @include zen-grid-container();
+  @include zen-clear(both);
+
+  .middleleft{
+    @include zen-grid-item(8, 1);
+  }
+
+  .middleright {
+    @include zen-grid-item(4, 9);
+  }
+
+}
+
+
+.bottom-row-wrapper {
+  @include zen-grid-container();
+  @include zen-clear(both);
+
+  .bottomleft {
+  @include zen-grid-item(6, 1);
+  }
+
+
+  .bottomright {
+  @include zen-grid-item(6, 7);
+  }
+}
+
+}
