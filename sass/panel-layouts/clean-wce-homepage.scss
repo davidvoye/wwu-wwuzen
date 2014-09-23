@@ -52,10 +52,6 @@ $zen-column-count: 12;
 @media all and (min-width: 700px) and (max-width: 1024px) {
 $zen-column-count: 12;
 
-.top-row-wrapper {
-
-}
-
 .topleft {
   @include zen-grid-item(12, 1);
   @include zen-clear(both);
@@ -72,20 +68,16 @@ $zen-column-count: 12;
 }
 
 .middle-row-wrapper {
-  @include zen-grid-container();
   @include zen-clear(both);
+}
 
   .middleleft{
-    @include zen-grid-item(8, 1, left);
+    @include zen-grid-item(4, 1);
   }
 
   .middleright {
-    @include zen-grid-item(4, 9, right);
-    @include zen-float(right);
+    @include zen-grid-item(4, 8);
   }
-
-}
-
 
 .bottom-row-wrapper {
   @include zen-grid-container();
@@ -94,7 +86,6 @@ $zen-column-count: 12;
   .bottomleft {
   @include zen-grid-item(6, 1);
   }
-
 
   .bottomright {
   @include zen-grid-item(6, 7);
