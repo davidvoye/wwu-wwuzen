@@ -5,6 +5,28 @@
 
 @import "base";
 
+/* Search results page */
+
+.search-form .form-text {
+	width: 100%;
+	box-sizing: border-box;
+}
+.search-form .form-submit {
+	padding: 1em 1.5em;
+	margin-top: 1em;
+}
+
+@media all and (min-width:800px) {
+	.search-form .form-text {
+		width: 45%;
+	}
+	.search-form .form-submit {
+		padding: 0.25em 0.75em;
+    margin-top: 0px;
+	}
+
+}
+
 .form-item { /* Wrapper for a form element (or group of form elements) and its label */
   margin: 1.25em 0;
   font-family:$muli;
@@ -101,6 +123,7 @@ a.button { /* Buttons used by contrib modules like Media */
 }
 
 #search-form .form-item-keys label { display:block; }
+
 
 /*
  * Drupal's default login form block
