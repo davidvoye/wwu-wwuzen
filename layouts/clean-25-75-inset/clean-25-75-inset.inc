@@ -4,7 +4,7 @@
 $plugin = array(
   'title' => t('Clean 25/75 with Inset'),
   'category' => t('Western'),
-  'icon' => 'clean-25-75.png',
+  'icon' => 'clean-25-75-inset.png',
   'theme' => 'clean-25-75-inset',
   'css' => '../../css/panel-layouts/clean-25-75-inset.css',
   'regions' => array(
