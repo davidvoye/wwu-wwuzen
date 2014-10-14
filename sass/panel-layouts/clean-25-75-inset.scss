@@ -19,21 +19,33 @@
     @include zen-grid-item(1,1);
     @include zen-clear(left);
   }
+
+  .wwu-75-percent-inset {
+		float: none;
+		clear: both;
+  }
+
 }
 
 @media all and (min-width: 800px) {
+  $zen-column-count: 4;
+  $zen-gutter-width: 30px;
   .wwu-25-percent-left-column {
-    $zen-column-count: 4;
-    $zen-gutter-width: 30px;
     @include zen-clear(left);
     @include zen-grid-item(1,1);
     @include zen-nested-container();
   }
 
   .wwu-75-percent-right-column {
-    $zen-column-count: 4;
-    $zen-gutter-width: 30px;
     @include zen-grid-item(3,2);
     @include zen-clear(none);
   }
+  
+  .wwu-75-percent-inset {
+    width: 50%;
+    float: right;
+    padding-left: $zen-gutter-width/2;
+  }
+
 }
+

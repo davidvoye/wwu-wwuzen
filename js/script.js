@@ -80,7 +80,7 @@
           $subMenus;
 
       $mobileMainNav = $('.mobile-main-nav', context);
-      $mainMenu = $('#main-menu .menu-name-main-menu > .menu');
+      $mainMenu = $('#main-menu div > ul.menu');
       $subMenus = $mainMenu.find('ul');
 
       $mobileMainNav.click(function () {
@@ -144,7 +144,7 @@
       }
 
       $window = $(window, context);
-      $menuItems = $('#main-menu .menu-name-main-menu > .menu li', context);
+      $menuItems = $('#main-menu div > ul.menu li', context);
       $submenuParents = $menuItems.has('ul');
       $links = $menuItems.find('a');
 
@@ -185,7 +185,7 @@
         }
       }
 
-      $mainMenu = $('#main-menu .menu-name-main-menu > .menu');
+      $mainMenu = $('#main-menu div > ul.menu li');
       $subMenus = $mainMenu.find('ul');
       $window = $(window, context);
       $window.resize(bindHandlers);
@@ -207,5 +207,29 @@
     }
   }
   // END Tooltips for the staff and faculty directories
+
+  // START Slideshow caption
+  Drupal.behaviors.slideshowCaption = {
+    attach: function (context, settings) {
+      $('.flex-caption', context).each(function () {
+        var containerHeight,
+      height,
+      imageHeight,
+      topMargin;
+
+      $this = $(this);
+      containerHeight = $this.closest('ul').height();
+      imageHeight = $this.siblings('img').height();
+      height = $this.height();
+      topMargin = (containerHeight - height - imageHeight) / 2;
+
+      $this.css({
+        'position': 'relative',
+        'margin-top': topMargin
+      });
+      });
+    }
+  }
+  // END Slideshow caption
 
 })(jQuery, Drupal, this, this.document);

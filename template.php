@@ -236,14 +236,21 @@ function wwuzen_preprocess_block(&$variables, $hook) {
  *  The array of JavaScript files that have been added to the page
  */
 function wwuzen_js_alter(&$javascript) {
-  foreach ($javascript as &$value) {
-    if (!is_array($value['data']) && strpos($value['data'], 'google-analytics.com')) {
-      $scope = 'header';
-    } else {
-      $scope = 'footer';
+    foreach ($javascript as &$value) {
+
+        if (!is_array($value['data']) && strpos($value['data'], 'google-analytics.com')) {
+            $scope = 'header';
     }
 
+    //jQuery and imce must be in the header to make imce bridge work
+    elseif (!is_array($value['data']) && (strpos($value['data'], 'imce') || strpos($value['data'], 'jQuery'))) {
+        $scope = 'header';
+    }
+
+    else {
+        $scope = 'footer';
+    }
+    //set the scope
     $value['scope'] = $scope;
-  }
+    }
 }
-// */
