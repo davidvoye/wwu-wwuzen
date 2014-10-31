@@ -122,9 +122,6 @@ Footer (1 col)
     @include zen-clear();
     @include zen-grid-item(1,1);
   }
-  .footer-left {
-    margin-left:1.5em;
-  }
 
   .footer-center {
     ul.menu {
