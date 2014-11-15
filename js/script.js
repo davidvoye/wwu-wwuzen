@@ -97,6 +97,17 @@
           });
         }
       });
+      $(window).resize(function () {
+      	if ($(window).width() > 800) {
+      		$mainMenu.css('display', 'table');
+      		$downsized = true;
+      	} else {
+      		if ($downsized) {
+      			$mainMenu.css('display', 'none');
+      			$downsized = false;
+      		}
+      	}
+      });
     }
   }
   //END MOBILE MAIN MENU TOGGLE ON CLICK
