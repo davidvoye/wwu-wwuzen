@@ -185,7 +185,7 @@
         }
       }
 
-      $mainMenu = $('#main-menu div > ul.menu li');
+      $mainMenu = $('#main-menu div > ul.menu');
       $subMenus = $mainMenu.find('ul');
       $window = $(window, context);
       $window.resize(bindHandlers);
