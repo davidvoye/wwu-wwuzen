@@ -243,9 +243,11 @@
         $link = $this.find('.flex-caption a');
         
         if ($link.length > 0) {
-          $this.find('img').wrap($('<a/>', {
-            'href': $link.attr('href')
-          }));
+          $this.find('img')
+            .wrap($('<a/>', {
+              'href': $link.attr('href')
+            }))
+            .attr('title', $link.text());
         }
       });
     }
