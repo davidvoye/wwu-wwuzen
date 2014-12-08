@@ -51,6 +51,7 @@ div.topright {
 
   .bottomleft {
   @include zen-grid-item(6, 1);
+  padding-right:2em;
   }
 
 
@@ -99,6 +100,7 @@ $zen-column-count: 12;
 
   .bottomleft {
   @include zen-grid-item(6, 1);
+  padding-right:2em;
   }
 
   .bottomright {
@@ -144,6 +146,7 @@ $zen-column-count: 12;
 
   .bottomleft {
     @include zen-grid-item(12, 1);
+    padding-right:2em;
     @include zen-clear(both);
   }
 
