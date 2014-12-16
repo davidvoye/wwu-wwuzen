@@ -231,26 +231,25 @@ function wwuzen_preprocess_block(&$variables, $hook) {
 
 /**
  * Perform necessary alterations to JavaScript be it is presented on the page.
+ * Various scripts are excluded from the footer as they are needed globally on the page.
  *
- * @param $javascript
+ * @param $javascript 
  *  The array of JavaScript files that have been added to the page
  */
 function wwuzen_js_alter(&$javascript) {
-    foreach ($javascript as &$value) {
+  foreach ($javascript as &$value) {
+    $data = $value['data'];
 
-        if (!is_array($value['data']) && strpos($value['data'], 'google-analytics.com')) {
-            $scope = 'header';
+    if (!is_array($data)) {
+      $header = $data == 'misc/drupal.js' ||
+        strpos($data, 'google-analytics.com') ||
+        strpos($data, 'imce') ||
+        strpos($data, 'jquery');
+        // Add additional footer excludes here
+    } else {
+      $header = false;
     }
 
-    //jQuery and imce must be in the header to make imce bridge work
-    elseif (!is_array($value['data']) && (strpos($value['data'], 'imce') || strpos($value['data'], 'jQuery'))) {
-        $scope = 'header';
-    }
-
-    else {
-        $scope = 'footer';
-    }
-    //set the scope
-    $value['scope'] = $scope;
-    }
+    $value['scope'] = ($header) ? 'header' : 'footer';
+  }
 }
