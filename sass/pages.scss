@@ -489,7 +489,6 @@ footer {
 
 
 .footer-right {
-  min-width: 19em;
   @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
   font-family:$muli;
   h1 {
