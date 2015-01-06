@@ -13,21 +13,28 @@ function wwuzen_form_system_theme_settings_alter(&$form, &$form_state, $form_id 
     return;
   }
 
-  // Create the form using Forms API: http://api.drupal.org/api/7
+  if ($form_state == NULL) {
+    $form = array(
+      ''
+    );
+  }
 
-  /* -- Delete this line if you want to use this setting
-  $form['wwuzen_example'] = array(
-    '#type'          => 'checkbox',
-    '#title'         => t('wwuzen sample setting'),
-    '#default_value' => theme_get_setting('wwuzen_example'),
-    '#description'   => t("This option doesn't do anything; it's just an example."),
+  $form['theme_settings']['home_icon'] = array( 
+    '#type'          => 'checkbox', 
+    '#title'         => t('Home icon'), 
+    '#default_value' => theme_get_setting('home_icon'), 
+    '#description'   => t("Display a link to the front page as an icon instead of text."), 
+  ); 
+
+  $form['home_icon_settings'] = array(
+    '#type'  => 'fieldset',
+    '#title' => t('Home icon settings'),
   );
-  // */
 
-  // Remove some of the base theme's settings.
-  /* -- Delete this line if you want to turn off this setting.
-  unset($form['themedev']['zen_wireframes']); // We don't need to toggle wireframes on this site.
-  // */
-
-  // We are editing the $form in place, so we don't need to return anything.
+  $form['home_icon_settings']['home_path'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Home path'),
+    '#default_value' => theme_get_setting('home_path'),
+    '#description'   => t("Enter the absolute path of the menu link to be replaced. Use '&lt;front&gt;' to match the default landing page for the entire domain."),
+  );
 }
