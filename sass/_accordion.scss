@@ -71,9 +71,9 @@
 /**
 * Start accordion style for accordion views.
 */
-.ui-accordion-content .field-body a {
-    display: inline;
-    padding-left: 0;
+.view .ui-accordion .field-content {
+  display:inline;
+  padding-left:0
 }
 /**
 * End accordion style for accordion views.
