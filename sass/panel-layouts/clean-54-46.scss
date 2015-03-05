@@ -1,11 +1,10 @@
 /**
-* These are the layout styles for the clean-huxley panel.
-*/
+ * These are the layout styles for the clean-huxley panel.
+ */
 @import "panels";
 
-$zen-column-count:  12;
-$zen-gutter-width:  30px;
-
+$zen-column-count: 12 !global;
+$zen-gutter-width: 30px !global;
 
 .huxley-homepage-left-column {
   @include zen-grid-item(6.5,1);
@@ -13,52 +12,57 @@ $zen-gutter-width:  30px;
 }
 
 .huxley-homepage-right-column {
-@include zen-clear(right);
-@include zen-grid-item(5.5, 7.5);
+  @include zen-clear(right);
+  @include zen-grid-item(5.5, 7.5);
 
-.huxley-homepage-right-top {
-
-  margin-bottom: 1%;
-}
-
-.huxley-homepage-right-middle-wrapper {
-  @include zen-grid-container;
-
-  .huxley-homepage-right-mid-left {
-  @include zen-grid-item(6, 1);
-  @include zen-float(left);
-  margin-bottom: 1%;
+  .huxley-homepage-right-top {
+    margin-bottom: 1%;
   }
 
-  .huxley-homepage-right-mid-right {
-  @include zen-grid-item(6, 7);
-  margin-bottom: 1%;
+  .huxley-homepage-right-middle-wrapper {
+    @include zen-grid-container;
+
+    .huxley-homepage-right-mid-left {
+      @include zen-grid-item(6, 1);
+      @include zen-float(left);
+      margin-bottom: 1%;
+    }
+
+    .huxley-homepage-right-mid-right {
+      @include zen-grid-item(6, 7);
+      margin-bottom: 1%;
+    }
   }
-}
 
 
-.huxley-homepage-right-bottom {
-  @include zen-clear(both);
-  margin-bottom: 1%;
-}
+  .huxley-homepage-right-bottom {
+    @include zen-clear(both);
+    margin-bottom: 1%;
+  }
 
 }
 
 @media all and (max-width: 800px) {
+
   .huxley-homepage-left-column {
-    $zen-column-count:3;
+    $zen-column-count: 3 !global;
     @include zen-clear(left);
     @include zen-grid-item(3,1);
   }
+
   .huxley-homepage-right-column {
-    $zen-column-count:3;
+    $zen-column-count: 3 !global;
     @include zen-clear(left);
     @include zen-grid-item(3,1);
+
     .huxley-homepage-people-and-places {
       @include zen-grid-item(3,1);
     }
   }
+
 }
+
 #edit-buttons {
-clear:both; width:97.35%;
+  clear: both;
+  width: 97.35%;
 }

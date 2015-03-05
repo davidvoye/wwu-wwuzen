@@ -3,32 +3,34 @@
 */
 @import "panels";
 
+$zen-gutter-width: 30px !global;
+
 @media all {
+  $zen-column-count: 4 !global;
+
   .wwu-75-percent-left-column {
-    $zen-column-count: 4;
-    $zen-gutter-width: 30px;
     @include zen-grid-item(3,1);
     @include zen-nested-container();
   }
 
   .wwu-25-percent-right-column {
-    $zen-column-count: 4;
-    $zen-gutter-width: 30px;
     @include zen-grid-item(1,4);
   }
+
 }
 
 @media all and (max-width: 800px) {
+  $zen-column-count: 1 !global;
+
   .wwu-75-percent-left-column {
-    $zen-column-count:1;
     @include zen-clear(left);
     @include zen-grid-item(1,1);
     @include zen-nested-container();
   }
 
   .wwu-25-percent-right-column {
-    $zen-column-count:1;
     @include zen-clear(left);
     @include zen-grid-item(1,1);
   }
+
 }

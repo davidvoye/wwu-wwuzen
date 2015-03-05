@@ -1,115 +1,99 @@
-
 @import "panels";
 
-/*
-  CSS that always applies
- */
-
+$zen-column-count: 12 !global;
+$zen-gutter-width: 0 !global;
 
 /**
  * Largest setting above 1025 px - Desktop
  */
-
 @media all and (min-width: 1025px) {
 
-$zen-column-count: 12;
-$zen-gutter-width: 0px;
-
-.top-row-wrapper {
-  @include zen-clear(both);
-}
-
-div.topleft {
-  @include zen-grid-item(4, 1);
-}
-
-div.top {
-  @include zen-grid-item(4, 5);
-}
-
-div.topright {
-  @include zen-grid-item(4, 9);
-}
-
-.middle-row-wrapper {
-  @include zen-clear(both);
-
-  .middleleft{
-    @include zen-grid-item(8, 1);
+  .top-row-wrapper {
+    @include zen-clear(both);
   }
 
-  .middleright {
+  div.topleft {
+    @include zen-grid-item(4, 1);
+  }
+
+  div.top {
+    @include zen-grid-item(4, 5);
+  }
+
+  div.topright {
     @include zen-grid-item(4, 9);
   }
 
-}
+  .middle-row-wrapper {
+    @include zen-clear(both);
 
+    .middleleft{
+      @include zen-grid-item(8, 1);
+    }
 
-.bottom-row-wrapper {
-  @include zen-grid-container();
-  @include zen-clear(both);
-
-  .bottomleft {
-  @include zen-grid-item(6, 1);
-  padding-right:2em;
+    .middleright {
+      @include zen-grid-item(4, 9);
+    }
   }
 
+  .bottom-row-wrapper {
+    @include zen-grid-container();
+    @include zen-clear(both);
 
-  .bottomright {
-  @include zen-grid-item(6, 7);
+    .bottomleft {
+      @include zen-grid-item(6, 1);
+      padding-right:2em;
+    }
+
+    .bottomright {
+      @include zen-grid-item(6, 7);
+    }
   }
-}
-
 }
 
 /**
  * Tablet
  */
-
-
 @media all and (min-width: 700px) and (max-width: 1024px) {
-$zen-column-count: 12;
 
-.topleft {
-  @include zen-grid-item(12, 1);
-  @include zen-clear(both);
-}
-
-.top {
-  @include zen-grid-item(6, 1);
-  @include zen-clear(left);
-}
-
-.topright {
-  @include zen-grid-item(6, 7);
-  @include zen-clear(right);
-}
-
-.middleleft{
-  @include zen-grid-item(8, 1);
-  @include zen-clear(both);
-}
-
-.middleright {
-  @include zen-grid-item(3, 10);
-}
-
-.bottom-row-wrapper {
-  @include zen-grid-container();
-  @include zen-clear(both);
-
-  .bottomleft {
-  @include zen-grid-item(6, 1);
-  padding-right:2em;
+  .topleft {
+    @include zen-grid-item(12, 1);
+    @include zen-clear(both);
   }
 
-  .bottomright {
-  @include zen-grid-item(6, 7);
+  .top {
+    @include zen-grid-item(6, 1);
+    @include zen-clear(left);
+  }
+
+  .topright {
+    @include zen-grid-item(6, 7);
+    @include zen-clear(right);
+  }
+
+  .middleleft{
+    @include zen-grid-item(8, 1);
+    @include zen-clear(both);
+  }
+
+  .middleright {
+    @include zen-grid-item(3, 10);
+  }
+
+  .bottom-row-wrapper {
+    @include zen-grid-container();
+    @include zen-clear(both);
+
+    .bottomleft {
+      @include zen-grid-item(6, 1);
+      padding-right:2em;
+    }
+
+    .bottomright {
+      @include zen-grid-item(6, 7);
+    }
   }
 }
-
-}
-
 
 @media all and (max-width: 900px) {
 
@@ -122,17 +106,12 @@ $zen-column-count: 12;
     @include zen-grid-item(12, 1);
     @include zen-clear(both);
   }
-
 }
 
-
 /*
-  Mobile styles
-
+ * Mobile styles
  */
-
 @media all and (max-width: 699px) {
-  $zen-column-count: 12;
 
   .top {
     @include zen-grid-item(12, 1);
@@ -152,7 +131,6 @@ $zen-column-count: 12;
 
   .bottomright {
     @include zen-grid-item(12, 1);
-      @include zen-clear(both);
+    @include zen-clear(both);
   }
-
 }

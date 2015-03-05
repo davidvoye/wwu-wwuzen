@@ -6,3 +6,5 @@ sass-extensions/*
 .buildpath
 .project
 .settings
+Gemfile.lock
+vendor/

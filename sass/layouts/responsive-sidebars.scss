@@ -16,8 +16,8 @@
 }
 
 
-$zen-column-count:  12;
-$zen-gutter-width:  30px;
+$zen-column-count:  12 !global;
+$zen-gutter-width:  30px !global;
 
 
 // IE6-7 don't support box-sizing: border-box. We can fix this in 1 of 3 ways:
@@ -89,7 +89,7 @@ Mobile-size -> 360px
  **************************************************** */
 
 @media all and (max-width:360px) {
-  $zen-column-count: 1;
+  $zen-column-count: 1 !global;
   .western-header .western-search .western-search-widget {
     width:16em;
     @include transition(width .25s);
@@ -115,7 +115,7 @@ Footer (1 col)
 
 @media all and (max-width: 550px) {
 
-  $zen-column-count: 1;
+  $zen-column-count: 1 !global;
 
 
   .footer-left, .footer-center, .footer-right {
@@ -148,7 +148,7 @@ Footer 2 rows (2 col; 1 col)
 
 @media all and (min-width:551px) and (max-width: 800px) {
 
-  $zen-column-count: 3;
+  $zen-column-count: 3 !global;
 
   .footer-left {
     @include zen-grid-item(1.5,1);
@@ -517,7 +517,7 @@ Screens 801px ->
 
 @media all and (min-width: 801px) {
   // Use 12 grid columns for larger screens.
-  $zen-column-count: 12;
+  $zen-column-count: 12 !global;
 
   .main-nav {
     padding-top: 10px;

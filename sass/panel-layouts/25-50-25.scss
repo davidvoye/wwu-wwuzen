@@ -11,8 +11,8 @@ $display-large: 900px;
 @media all {
   .container-25-50-25 {
     @include zen-grid-container();
-    $zen-column-count: 1;
-    $zen-gutter-width: 0;
+    $zen-column-count: 1 !global;
+    $zen-gutter-width: 0 !global;
 
     .layout-25-50-25 {
       @include zen-grid-item(1, 1);
@@ -28,8 +28,8 @@ $display-large: 900px;
 @media all and (min-width: $display-medium) {
   .container-25-50-25 {
     @include zen-grid-container();
-    $zen-column-count: 3;
-    $zen-gutter-width: 1.5em;
+    $zen-column-count: 3 !global;
+    $zen-gutter-width: 1.5em !global;
 
     .layout-25-50-25 {
       @include zen-clear(none);
@@ -53,8 +53,8 @@ $display-large: 900px;
 @media all and (min-width: $display-large) {
   .container-25-50-25 {
     @include zen-grid-container();
-    $zen-column-count: 4;
-    $zen-gutter-width: 1.5em;
+    $zen-column-count: 4 !global;
+    $zen-gutter-width: 1.5em !global;
 
     .layout-25-50-25 {
       @include zen-clear(none);

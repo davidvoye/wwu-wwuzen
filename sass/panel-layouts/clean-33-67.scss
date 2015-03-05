@@ -8,7 +8,7 @@ $display-large: 801px;
 @media all {
   .wwu-33-67-container {
     @include zen-grid-container();  
-    $zen-column-count: 1;
+    $zen-column-count: 1 !global;
     
     .wwu-33-percent-left-column {
       @include zen-grid-item(1, 1);
@@ -26,7 +26,7 @@ $display-large: 801px;
 @media all and (min-width: $display-large) {
   .wwu-33-67-container {
     @include zen-grid-container();  
-    $zen-column-count: 3;
+    $zen-column-count: 3 !global;
     
     .wwu-33-percent-left-column {
       @include zen-grid-item(1, 1);

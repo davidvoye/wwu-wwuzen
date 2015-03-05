@@ -11,8 +11,8 @@ $display-large: 900px;
 @media all {
 	.clean-2x2-container {
 		@include zen-grid-container();
-		$zen-column-count: 1;
-		$zen-gutter-width: 24px;
+		$zen-column-count: 1 !global;
+		$zen-gutter-width: 24px !global;
 
 		.clean-2x2 {
 			@include zen-grid-item(1, 1);
@@ -33,7 +33,7 @@ $display-large: 900px;
 
 @media all and (min-width: $display-medium) {
 	.clean-2x2-container {
-		$zen-column-count: 2;
+		$zen-column-count: 2 !global;
 
 		.clean-2x2-left {
 			@include zen-grid-item(1, 1);

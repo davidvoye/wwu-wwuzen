@@ -4,17 +4,15 @@
 
 @import "panels";
 
-
+$zen-gutter-width: 30px !global;
 
 /**
  * Small display sizes (Mobile First)
  */
-
 @media all {
+  $zen-column-count: 1 !global;
 
   .cs-homepage-top {
-    $zen-gutter-width: 30px;
-    $zen-column-count: 1;
     @include zen-nested-container();
 
     .cs-homepage-top-left-column {
@@ -27,8 +25,6 @@
   }
 
   .cs-homepage-upper-middle {
-    $zen-gutter-width: 30px;
-    $zen-column-count: 1;
     @include zen-nested-container();
     @include zen-clear(both);
 
@@ -42,8 +38,6 @@
   }
 
   .cs-homepage-lower-middle {
-    $zen-gutter-width: 30px;
-    $zen-column-count: 1;
     @include zen-nested-container();
     @include zen-clear(both);
 
@@ -57,8 +51,6 @@
   }
 
   .cs-homepage-bottom {
-    $zen-gutter-width: 30px;
-    $zen-column-count: 1;
     @include zen-nested-container();
     @include zen-clear(both);
 
@@ -78,10 +70,10 @@
 /**
  * Larger display sizes
  */
-@media all and (min-width:801px) {
+@media all and (min-width: 801px) {
+  $zen-column-count: 12 !global;
+
   .cs-homepage-top  {
-    $zen-gutter-width: 30px;
-    $zen-column-count: 12;
     @include zen-grid-item(12, 1);
     @include zen-nested-container();
 
@@ -97,10 +89,7 @@
 
   }
 
-
   .cs-homepage-upper-middle  {
-    $zen-gutter-width: 30px;
-    $zen-column-count: 12;
     @include zen-grid-item(12,1);
     @include zen-nested-container();
     @include zen-clear(both);
@@ -118,8 +107,6 @@
   }
 
   .cs-homepage-lower-middle  {
-    $zen-gutter-width: 30px;
-    $zen-column-count: 12;
     @include zen-grid-item(12,1);
     @include zen-nested-container();
     @include zen-clear(both);
@@ -137,8 +124,6 @@
   }
 
   .cs-homepage-bottom {
-    $zen-gutter-width: 30px;
-    $zen-column-count: 12;
     @include zen-grid-item(12,1);
     @include zen-nested-container();
     @include zen-clear(both);
@@ -153,6 +138,5 @@
       @include zen-clear(right);
       @include zen-grid-item(8,5);
     }
-
   }
 }

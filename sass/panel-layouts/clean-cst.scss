@@ -4,24 +4,22 @@
 
 @import "panels";
 
-$zen-auto-include-item-base: false;
-$zen-column-count:  12;
-$zen-gutter-width:  1.25em;
+$zen-auto-include-item-base: false !global;
+$zen-column-count: 12 !global;
+$zen-gutter-width: 1.25em !global;
 $gray: rgba(151,151,151,1);
-
 
 main p.callOut {
   color:$wwuLtblue;
   font-size:1.25em;
 }
 
-
 /* ****************************************************
                 Small-size -> 550px
 **************************************************** */
 
 @media all and (max-width:550px) {
-  $zen-column-count: 1;
+  $zen-column-count: 1 !global;
 
   .clean-cst-top,
   .clean-cst-middle-left,
@@ -48,7 +46,7 @@ main p.callOut {
 **************************************************** */
 
 @media all and (min-width: 551px) and (max-width: 800px) {
-  $zen-column-count: 3;
+  $zen-column-count: 3 !global;
 
   .clean-cst-top {
     @include zen-grid-item(3,1);
@@ -65,7 +63,6 @@ main p.callOut {
   .clean-cst-middle-right { // About the college
     @include zen-grid-item(.9,3);
   }
-
 }
 
 /* ****************************************************
@@ -73,7 +70,7 @@ main p.callOut {
 **************************************************** */
 
 @media all and (min-width:801px) {
-  $zen-column-count: 12;
+  $zen-column-count: 12 !global;
 
   .clean-cst-top { // Intro text
     @include zen-grid-item(12,1);
@@ -120,5 +117,4 @@ main p.callOut {
     margin:1% 0 1% 0;
     width:33%;
   }
-
 }

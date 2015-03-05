@@ -23,6 +23,9 @@
 // The amount lists, blockquotes and comments are indented.
 $indent-amount: 30px;
 
+// List of supported legacy browsers
+$legacy_browsers: ("ie": "6" "7");
+
 /*******************************************************************************
  *
  * PARTIALS
@@ -31,7 +34,6 @@ $indent-amount: 30px;
 
 // CUSTOM
 
-@import 'ie';
 @import 'typography';
 @import 'colors';
 

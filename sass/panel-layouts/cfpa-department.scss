@@ -13,7 +13,7 @@ $display-large: 850px;
 
   .cfpa-department-container {
     @include zen-grid-container();
-    $zen-column-count: 1;
+    $zen-column-count: 1 !global;
 
     .cfpa-department-top-left {
       @include zen-grid-item(1,1);
@@ -49,7 +49,7 @@ $display-large: 850px;
 @media all and (min-width: $display-medium) {
 
   .cfpa-department-container {
-    $zen-column-count: 2;
+    $zen-column-count: 2 !global;
 
     .cfpa-department-top-left {
       @include zen-grid-item(2,1);
@@ -82,7 +82,7 @@ $display-large: 850px;
 @media all and (min-width: $display-large) {
 
   .cfpa-department-container {
-    $zen-column-count: 3;
+    $zen-column-count: 3 !global;
 
     .cfpa-department-top-left {
       @include zen-grid-item(2,1);

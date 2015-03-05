@@ -5,8 +5,9 @@
 @import "panels";
 
 @media all {
+
   .wwu-100-percent-column {
-    $zen-column-count: 1;
+    $zen-column-count: 1 !global;
     @include zen-grid-item(1,1);
     @include zen-clear();
     padding-left: 0;
@@ -16,8 +17,8 @@
   .wwu-50-50-wrapper {
     @include zen-grid-container();
     @include zen-clear();
-    $zen-column-count: 2;
-    $zen-gutter-width: 30px;
+    $zen-column-count: 2 !global;
+    $zen-gutter-width: 30px !global;
     margin: 20px 0;
 
     .wwu-50-percent-left-column {
@@ -30,11 +31,13 @@
       padding-right: 0;
     }
   }
+
 }
 
 @media all and (max-width: 800px) {
+
   .wwu-50-50-wrapper {
-    $zen-column-count: 1;
+    $zen-column-count: 1 !global;
 
     .wwu-50-percent-left-column {
       @include zen-clear(left);
@@ -42,10 +45,12 @@
       padding-left: 0;
       padding-right: 0;
     }
+
     .wwu-50-percent-right-column {
       @include zen-clear(left);
       @include zen-grid-item(1,1);
       padding-left: 0;
     }
   }
+
 }

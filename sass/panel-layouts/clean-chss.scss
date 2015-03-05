@@ -1,38 +1,41 @@
 /**
-* These are the layout styles for the clean-chss panel.
-*/
+ * These are the layout styles for the clean-chss panel.
+ */
 @import "panels";
 
-$zen-auto-include-item-base: false;
-$zen-column-count:  12;
-$zen-gutter-width:  1.25em;
+$zen-auto-include-item-base: false !global;
+$zen-column-count: 12 !global;
+$zen-gutter-width: 1.25em !global;
 $gray: rgba(151,151,151,1);
 
-.front .page-title { display:none; }
+.front .page-title {
+  display:none;
+}
 
 /*.clean-chss-middle-column {
-    background-color: #FFFFFF;
-    height: 16.4em;
-    margin-bottom: 1em;
-    padding-top: 1em;
-  }*/
+background-color: #FFFFFF;
+height: 16.4em;
+margin-bottom: 1em;
+padding-top: 1em;
+}*/
 
 main p.callOut {
-  color:$wwuLtblue;
-  font-size:1.25em;
+  color: $wwuLtblue;
+  font-size: 1.25em;
 }
 
 .clean-chss-bottom-left h2, .clean-chss-bottom-right h2 {
-  border-bottom:3px solid #D2D4D5;
-  padding-bottom:.25em;
+  border-bottom: 3px solid #D2D4D5;
+  padding-bottom: .25em;
 }
 
 /**
-* Slideshow styles
-*/
+ * Slideshow styles
+ */
 .front {
+
   .flex-flexslider {
-    background-color:$gray;
+    background-color: $gray;
     border-top: 2px solid $gray;
     border-left: 2px solid $gray;
     border-right: 2px solid $gray;
@@ -41,11 +44,12 @@ main p.callOut {
     margin-top:1.5em;
     @include box-shadow(-5 -5 5px #888888);
   }
+
   .flex-caption {
-    background-color:#222222;
+    background-color: #222222;
     @include opacity(.5);
-    color:#ffffff;
-    padding:.5em;
+    color: #ffffff;
+    padding: .5em;
   }
 
   .flex-control-paging li a.flex-active {
@@ -61,11 +65,11 @@ main p.callOut {
 }
 
 /* ****************************************************
-                Small-size -> 550px
-**************************************************** */
+Small-size -> 550px
+ **************************************************** */
 
 @media all and (max-width:550px) {
-  $zen-column-count: 1;
+  $zen-column-count: 1 !global;
 
   .clean-chss-top-left, // Intro text
   .clean-chss-top-right, // How to Support CHSS
@@ -76,8 +80,8 @@ main p.callOut {
   .clean-chss-bottom-right { // Events
     @include zen-grid-item(1,1);
     @include zen-clear();
-    margin:0 auto;
-    display:block;
+    margin: 0 auto;
+    display: block;
   }
 
   // Center aligns images until they are turned into straight CSS
@@ -85,17 +89,17 @@ main p.callOut {
   .clean-chss-middle-left, // Dean's Lecture Series
   .clean-chss-middle-center, // Slideshow
   .clean-chss-middle-right { // About the college
-      text-align:center;
+    text-align: center;
   }
 }
 
 
 /* ****************************************************
-            Medium-size 551px <-> 800px
-**************************************************** */
+Medium-size 551px <-> 800px
+ **************************************************** */
 
 @media all and (min-width: 551px) and (max-width: 800px) {
-  $zen-column-count: 3;
+  $zen-column-count: 3 !global;
 
   .clean-chss-top-left { // Intro text
     @include zen-grid-item(3,1);
@@ -106,6 +110,7 @@ main p.callOut {
     @include zen-clear(both);
     img { padding-top:3em; }
   }
+
   .clean-chss-middle-left { // Dean's Lecture Series
     @include zen-grid-item(1.5,2.5);
   }
@@ -114,6 +119,7 @@ main p.callOut {
     @include zen-grid-item(1.5,1);
     @include zen-clear(both);
   }
+
   .clean-chss-middle-right { // About the college
     @include zen-grid-item(1.5,2.5);
   }
@@ -125,33 +131,43 @@ main p.callOut {
 }
 
 /* ****************************************************
-                Screen 801px ->
-**************************************************** */
+Screen 801px ->
+ **************************************************** */
 
 @media all and (min-width:801px) {
-  $zen-column-count: 12;
+  $zen-column-count: 12 !global;
 
   .clean-chss-top-left { // Intro text
     @include zen-grid-item(8,1);
   }
+
   .clean-chss-top-right { // How to Support CHSS
     @include zen-grid-item(4,9);
-    img { display:block; margin:0 auto; }
+
+    img {
+      display:block;
+      margin:0 auto; 
+    }
   }
+
   .clean-chss-middle-left { // Dean's Lecture Series
     @include zen-grid-item(4,1);
     @include zen-clear(both);
   }
+
   .clean-chss-middle-center { // Slideshow
     @include zen-grid-item(4,5);
   }
+
   .clean-chss-middle-right { // About the college
     @include zen-grid-item(4,9);
   }
+
   .clean-chss-bottom-left { // News
     @include zen-grid-item(6,1);
     @include zen-clear(both);
   }
+
   .clean-chss-bottom-right { // Events
     @include zen-grid-item(5.9,7.1); // Compensate for lack of gutter
   }
@@ -170,6 +186,7 @@ main p.callOut {
   .clean-chss-bottom-right {
     display:inline-block;
   }
+
   .clean-chss-top-left {
     width:65%;
   }

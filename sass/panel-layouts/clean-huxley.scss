@@ -4,18 +4,17 @@
 
 @import "panels";
 
+$zen-gutter-width: 30px !global;
+
 @media all {
+  $zen-column-count: 12 !global;
 
   .huxley-homepage-left-column {
-    $zen-column-count: 12;
-    $zen-gutter-width: 30px;
     @include zen-grid-item(6.5,1);
     margin-bottom: 1%;
   }
 
   .huxley-homepage-right-column {
-    $zen-column-count: 12;
-    $zen-gutter-width: 30px;
     @include zen-grid-item(5.5,7.5);
 
     .huxley-homepage-people-and-places {
@@ -26,16 +25,14 @@
 }
 
 @media all and (max-width: 360px) {
+  $zen-column-count: 1 !global;
+
   .huxley-homepage-left-column {
-    $zen-column-count: 1;
-    $zen-gutter-width: 30px;
     @include zen-clear(left);
     @include zen-grid-item(1,1);
   }
 
   .huxley-homepage-right-column {
-    $zen-column-count: 1;
-    $zen-gutter-width: 30px;
     @include zen-clear(left);
     @include zen-grid-item(1,1);
 
@@ -46,16 +43,14 @@
 }
 
 @media all and (min-width:361px) and (max-width: 800px) {
+  $zen-column-count: 3 !global;
+
   .huxley-homepage-left-column {
-    $zen-column-count: 3;
-    $zen-gutter-width: 30px;
     @include zen-clear(left);
     @include zen-grid-item(3,1);
   }
 
   .huxley-homepage-right-column {
-    $zen-column-count: 3;
-    $zen-gutter-width: 30px;
     @include zen-clear(left);
     @include zen-grid-item(3,1);
 
