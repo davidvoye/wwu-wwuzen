@@ -15,6 +15,20 @@
   background-image:url("../../images/icons/#{$fileName}.png");
 }
 
+/* Mixin to resize hi-def sprites from: https://gist.github.com/darren131/3410875 */
+@mixin resize-sprite($map, $sprite, $percent) {
+	$spritePath: sprite-path($map);
+	$spriteWidth: image-width($spritePath);
+	$spriteHeight: image-height($spritePath);
+	$width: image-width(sprite-file($map, $sprite));
+	$height: image-height(sprite-file($map, $sprite));
+ 
+	@include background-size(ceil($spriteWidth * ($percent/100)) ceil($spriteHeight * ($percent/100)));
+	width: ceil($width*($percent/100));
+	height: ceil($height*($percent/100));
+	background-position: 0 floor(nth(sprite-position($map, $sprite), 2) * ($percent/100) );
+}
+
 
 $zen-column-count:  12;
 $zen-gutter-width:  30px;
@@ -189,9 +203,6 @@ Smaller Screens 0px --> 800px
   //Create and import our sprite sheet for the icons used in the mobile menu system
   @import "../images/icons/standard/*.png";
   @include all-standard-sprites;
-  //Retina icons
-  @import "../images/icons/hidef/*.png";
-  @include all-hidef-sprites;
 
   .western-header {
     .western-logo a {
@@ -271,18 +282,7 @@ Smaller Screens 0px --> 800px
         } // End li
       } // End ul
     }
-    @media
-    (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi) {
-      .western-quick-links {
-        button {
-          //http://miekd.com/articles/using-css-sprites-to-optimize-your-website-for-retina-displays/
-          background: url('../../images/icons/hidef-s0fb977ac75.png') no-repeat;
-          background-position: 0 -132px;
-          background-size:44px 528px;
-        }
-      } // End .western-quick-links
-    }
+    
     .western-search {
       top:0;
       width:44px;
@@ -306,18 +306,6 @@ Smaller Screens 0px --> 800px
         @include transition(width .25s);
       }
     } // End .wwusearch
-    @media
-    (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi) {
-      .western-search {
-        > button {
-          //http://miekd.com/articles/using-css-sprites-to-optimize-your-website-for-retina-displays/
-          background: url('../../images/icons/hidef-s0fb977ac75.png') no-repeat;
-          background-position: 0 -44px;
-          background-size:44px 528px;
-        }
-      } // End .wwusearch
-    }
     .mobile-main-nav {
       @extend .standard-main-menu;
       width:44px;
@@ -325,14 +313,28 @@ Smaller Screens 0px --> 800px
       text-indent:-999em;
       border:none;
     }
+    //Images for hi-res/retina displays
     @media
     (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 192dpi) {
+    	//Create a sprite map from retina icons
+    	@import "../images/icons/hidef/*.png";
+    	@include all-hidef-sprites;
+      .western-quick-links {
+        button {
+          //http://miekd.com/articles/using-css-sprites-to-optimize-your-website-for-retina-displays/
+          @include resize-sprite($hidef-sprites, toolbar-links, 50);
+        }
+      } // End .western-quick-links
+      .western-search {
+        > button {
+          //http://miekd.com/articles/using-css-sprites-to-optimize-your-website-for-retina-displays/
+          @include resize-sprite($hidef-sprites, search-gray, 50);
+        }
+      } // End .wwusearch
       .mobile-main-nav {
         //http://miekd.com/articles/using-css-sprites-to-optimize-your-website-for-retina-displays/
-        background: url('../../images/icons/hidef-s0fb977ac75.png') no-repeat;
-        background-position: 0 -88px;
-        background-size:44px 528px;
+        @include resize-sprite($hidef-sprites, main-menu, 50);
       }
     }
   } // End .western-header
