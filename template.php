@@ -253,3 +253,30 @@ function wwuzen_js_alter(&$javascript) {
     $value['scope'] = ($header) ? 'header' : 'footer';
   }
 }
+
+/**
+ * Implements theme_menu_link().
+ * Allow display of a single link in the main menu as an icon instead of text. 
+ * The option may be set in the administration page for all sub-themes of wwuzen.
+ *
+ * @param $variables
+ *  The associative array of elements in the current menu.
+ */
+function wwuzen_menu_link(array $variables) {
+  $element = $variables['element'];
+  $menu_name = $element['#original_link']['menu_name'];
+
+  if (theme_get_setting('home_icon') == 1 && theme_get_setting('home_path') == $element['#href']) {
+    $element['#localized_options']['html'] = true;
+    $element['#localized_options']['attributes']['class'][] = 'menu-link-icon';
+
+    $format = "<li%s>%s</li>\n";
+    $output = l('<span class="menu-link-text">' . $element['#title']  . '</span>', $element['#href'], $element['#localized_options']);
+
+    $link = sprintf($format, drupal_attributes($element['#attributes']), $output);
+  } else {
+    $link = theme_menu_link($variables);
+  }
+
+  return $link;
+}
