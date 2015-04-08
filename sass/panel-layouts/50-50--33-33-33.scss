@@ -7,46 +7,46 @@ main header.page-title {
 
 @media all and (min-width: 650px) {
 
-  .fifty-50--33-33-33-container {
+  .container-50-50--33-33-33 {
     @include zen-grid-container();
     $zen-column-count: 1;
 
-    .fifty-50--33-33-33-top-row {
+    .top-row-50-50--33-33-33 {
       @include zen-grid-item(1,1);
       @include zen-nested-container();
     }
 
-    .fifty-50--33-33-33-bottom-row {
+    .bottom-row-50-50--33-33-33 {
       @include zen-grid-item(1,1);
       @include zen-nested-container();
       @include zen-clear();
     }
   }
 
-  .fifty-50--33-33-33-top-row {
+  .top-row-50-50--33-33-33 {
     $zen-column-count: 1;
 
-    .fifty-50--33-33-33-top-left {
+    .top-left-50-50--33-33-33 {
       @include zen-grid-item(1,1);
     }
 
-    .fifty-50--33-33-33-top-right {
+    .top-right-50-50--33-33-33 {
       @include zen-grid-item(1,2);
     }
   }
 
-  .fifty-50--33-33-33-bottom-left {
+  .bottom-left-50-50--33-33-33 {
     $zen-column-count: 1;
     @include zen-grid-item(1,1);
   }
 
-  .fifty-50--33-33-33-bottom-center {
+  .bottom-center-50-50--33-33-33 {
     $zen-column-count: 2;
     @include zen-grid-item(1,1);
     @include zen-clear();
   }
 
-  .fifty-50--33-33-33-bottom-right {
+  .bottom-right-50-50--33-33-33 {
     $zen-column-count: 2;
     @include zen-grid-item(1,2);
     @include zen-clear(none);
@@ -56,35 +56,35 @@ main header.page-title {
 
 @media all and (min-width: 800px) {
 
-  .fifty-50--33-33-33-top-row {
+  .top-row-50-50--33-33-33 {
     $zen-column-count: 2;
 
-    .fifty-50--33-33-33-top-left {
+    .top-left-50-50--33-33-33 {
       @include zen-grid-item(1,1);
     }
 
-    .fifty-50--33-33-33-top-right {
+    .top-right-50-50--33-33-33 {
       @include zen-grid-item(1,2);
     }
 
   }
 
-  .fifty-50--33-33-33-bottom-row {
+  .bottom-row-50-50--33-33-33 {
     $zen-column-count: 3;
 
-    .fifty-50--33-33-33 {
+    div[class*="50-50--33-33-33"] {
       @include zen-clear(none);
     }
 
-    .fifty-50--33-33-33-bottom-left {
+    .bottom-left-50-50--33-33-33 {
       @include zen-grid-item(1,1);
     }
 
-    .fifty-50--33-33-33-bottom-center {
+    .bottom-center-50-50--33-33-33 {
       @include zen-grid-item(1,2);
     }
 
-    .fifty-50--33-33-33-bottom-right {
+    .bottom-right-50-50--33-33-33 {
       @include zen-grid-item(1,3);
     }
   }
