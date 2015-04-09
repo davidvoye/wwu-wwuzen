@@ -79,4 +79,12 @@
 * End accordion style for accordion views.
 */
 
+/**
+* Fix for broken arrows in non-view accordions
+*/
+
+.accordion-fix a {position: relative;
+		 left: 1.7em;
+		 }
+
 
