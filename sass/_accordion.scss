@@ -83,8 +83,6 @@
 * Fix for broken arrows in non-view accordions
 */
 
-.accordion-fix a {position: relative;
-		 left: 1.7em;
-		 }
-
+.accordion-fix-title a {position: relative; left: 1.7em; }
+.accordion-fix-body .field-body a {display: inline; padding: 0em; }
 
