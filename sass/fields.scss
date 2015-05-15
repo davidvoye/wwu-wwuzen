@@ -253,6 +253,17 @@ main .user-module div {
 		.field-about {clear: both;}
 		.field-about:before {background: none;}
 	}
+	.ps_user_sidebar {
+		background: #EDEDED;
+		padding: 15px;
+		border-bottom: 3px solid #CCC;
+		margin-bottom: 15px;
+		h2 {
+			font-size: 125%;
+			margin: 0em;
+		}
+		ul {margin-top: 10px;}
+	}
 }
 
 /*
