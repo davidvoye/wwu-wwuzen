@@ -217,7 +217,7 @@ main .user-module div {
  * To apply, give main column panel fields the class "ps_user_field" and the sidebar panel fields the class "ps_user_sidebar"
  */
  
-	.ps_user_field {
+	.rect_user_field {
 		h2 {
 			clear: both;
 			margin-bottom: 0em;
@@ -229,16 +229,16 @@ main .user-module div {
 				margin-top: 0em;
 				margin-left: 0em;
 				margin-bottom: 1.25em;
-				margin-right: 0.5em;
+				margin-right: 1.5em;
 			}
 		}
 		.field-academic-title {background: none;}
 		.field-academic-title, .field-education {color: $wwuBlue;}
 		.field-phone-number, .field-e-mail-address, .field-location, .field-office-hours {
-			background: #cce6f7;
+			background: $wwuLtblue-20-percent;
 			padding: 0.2em;
 			margin: 0.25em;
-			margin-left: 29%;
+			margin-left: 31%;
 			&:before {
 				font-family:entyporegular, sans-serif;
    		 		font-size:150%;
@@ -253,8 +253,8 @@ main .user-module div {
 		.field-about {clear: both;}
 		.field-about:before {background: none;}
 	}
-	.ps_user_sidebar {
-		background: #EDEDED;
+	.rect_user_sidebar {
+		background: $wwuLtGray;
 		padding: 15px;
 		border-bottom: 3px solid #CCC;
 		margin-bottom: 15px;
