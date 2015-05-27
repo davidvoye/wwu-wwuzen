@@ -1,8 +1,22 @@
-ENTYPO ICON INFORMATION
+WWU Entypo Icon Set
 
-This is a custom set of Entypo icons made using Fontello. Use the following codes for the icons:
-
-Home: '\E800'
-Phone: '!' or '\0021'
-Envelope: '%' or '\0025'
-Star: '\E801'
+Icon Name						| Code
+--------------------------------|---------------
+icon-mail (envelope)			| \0025 or '%'
+--------------------------------|---------------
+icon-user (person)				| \E808
+--------------------------------|---------------
+icon-graduation-cap				| \E806
+--------------------------------|---------------
+icon-star						| \E801
+--------------------------------|---------------
+icon-comment (speech bubble)	| \E803
+--------------------------------|---------------
+icon-home						| \E800
+--------------------------------|---------------
+icon-clock						| \E805
+--------------------------------|---------------
+icon-phone						| \0021 or '!'
+--------------------------------|---------------
+icon-location (map marker)		| \0030
+--------------------------------|---------------
