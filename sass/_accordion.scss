@@ -79,4 +79,10 @@
 * End accordion style for accordion views.
 */
 
+/**
+* Fix for broken arrows in non-view accordions
+*/
+
+.accordion-fix-title a {position: relative; left: 1.7em; }
+.accordion-fix-body .field-body a {display: inline; padding: 0em; color: #0070B6; }
 

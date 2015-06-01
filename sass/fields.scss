@@ -212,7 +212,60 @@ main .user-module div {
       margin:1em 0;
     }
   }
+
+/* User Profile Styles 2: Style for Political Science
+ * To apply, give main column panel fields the class "ps_user_field" and the sidebar panel fields the class "ps_user_sidebar"
+ */
+ 
+	.rect_user_field {
+		h2 {
+			clear: both;
+			margin-bottom: 0em;
+		}
+		.field-your-photo {
+			img {
+				width: 25%;
+				float: left;
+				margin-top: 0em;
+				margin-left: 0em;
+				margin-bottom: 1.25em;
+				margin-right: 1.5em;
+			}
+		}
+		.field-academic-title {background: none;}
+		.field-academic-title, .field-education {color: $wwuBlue;}
+		.field-phone-number, .field-e-mail-address, .field-location, .field-office-hours {
+			background: $wwuLtblue-20-percent;
+			padding: 0.2em;
+			margin: 0.25em;
+			margin-left: 31%;
+			&:before {
+				font-family:entyporegular, sans-serif;
+   		 		font-size:150%;
+   		 		color: $wwuLtblue;
+   		 	}
+		}
+		.field-phone-number:before { content:'\0021'; }
+		.field-e-mail-address:before { content:'\0025'; }
+		.field-location:before { content: '\e800'; }
+		.field-office-hours {font-size:1.17em;}
+		.field-office-hours:before { content:'\e805'; }
+		.field-about {clear: both;}
+		.field-about:before {background: none;}
+	}
+	.rect_user_sidebar {
+		background: $wwuLtGray;
+		padding: 15px;
+		border-bottom: 3px solid #CCC;
+		margin-bottom: 15px;
+		h2 {
+			font-size: 125%;
+			margin: 0em;
+		}
+		ul {margin-top: 10px;}
+	}
 }
+
 /*
  * Field wrappers when the Fences module is enabled.
  */

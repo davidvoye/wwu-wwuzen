@@ -43,3 +43,24 @@
     }
   }
 }
+
+/*
+ * Views Responsive Grid Styles
+ *
+ * The "responsive grid" display format needs custom styles to actually display
+ * as a grid. It will collapse into a single-column layout for narrow screens.
+ * Under settings for the responsive grid display format, give the grid the 
+ * wrapper class "views-responsive-grid" if it is not already there.
+ *
+ */
+ @media all and (min-width:551px) {
+ 	.views-responsive-grid {
+ 		.views-row {
+ 			display: table-row;
+ 			.views-column {
+ 				display: table-cell;
+ 				padding: 10px;
+ 			}
+ 		}
+ 	}
+ }

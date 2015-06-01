@@ -1,0 +1,26 @@
+.menu-link-icon:before {
+  color: #FFF;
+  content: '\E800';
+  font-family: 'entyporegular';
+  font-size: 150%;
+  vertical-align: middle;
+  line-height: 16px;
+  transition: all 0.5s ease;
+}
+
+.menu-link-icon:hover:before {
+  color: #003F87;
+}
+
+.active.menu-link-icon:before {
+  color: #003F87;
+}
+
+.menu-link-text {
+  opacity: 0;
+  height: 0px;
+  width: 0px;
+  display: block;
+  position: absolute;
+  overflow: hidden;
+}

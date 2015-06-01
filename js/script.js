@@ -253,5 +253,17 @@
     }
   }
   //END Slideshow image links
+  
+  // START Accordion menu no-children fix
+  Drupal.behaviors.accordionMenuFix = {
+    attach: function (context) {
+      $('.accordion-menu-wrapper', context).on('accordionbeforeactivate', function (event, ui) {
+        if ($(ui.newHeader).hasClass('no-children')) {
+          return false;
+        }
+      });
+    }
+  }
+  // END Accordion menu no-children fix
 
 })(jQuery, Drupal, this, this.document);
