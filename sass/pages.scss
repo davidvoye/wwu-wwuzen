@@ -352,16 +352,6 @@ figure {
   }
 }
 
-.float-left, .left {
-  float:left;
-  margin:1em 1em 1em 0;
-}
-
-.float-right, .right {
-  float:right;
-  margin:1em 0 1em 1em;
-}
-
 div.messages { /* Important messages (status, warning, and error) for the user. See also the declarations in messages.css. */
   margin: 1.5em 0; /* Drupal core uses "6px 0" margin */
   ul {
