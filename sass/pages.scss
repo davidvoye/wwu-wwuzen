@@ -15,6 +15,9 @@
 @import "../images/westernIcons/*.png";
 @include all-westernIcons-sprites;
 
+// Import helper classes for panel, views, and wysiwyg editors
+@import "helpers";
+
 // Import _accordion.scss at bottom of file.
 
 /* ****************************************************
