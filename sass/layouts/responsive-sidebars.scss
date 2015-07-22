@@ -813,7 +813,10 @@ $zen-auto-include-item-base: false;
     .region-sidebar-first { @include zen-grid-item(3, 1); } // Span 1 column, starting in 1st column from left.
   } // End .sidebar-first
 
-  footer { @include zen-clear(both); }
+  footer { 
+    @include zen-clear(both);
+    $zen-column-count: 9; 
+  }
 
   .footer-wrapper {
     max-width: 1080px;
@@ -821,26 +824,29 @@ $zen-auto-include-item-base: false;
   }
 
   .footer-left {
-    @include zen-grid-item(3.25,1.5);
-
+    @include zen-grid-item(2,1);
     .footer-site-name, p:first-child {
       margin: 1em 0;
     }
   }
 
   .footer-center {
-    @include zen-grid-item(3.5,4.75);
-
+    @include zen-grid-item(4,3);
     .western-privacy-statement {
       margin-left: 1.8em;
       margin-top: -.5em;
     }
+    .region {
+      max-width: 70%;
+      margin: 0 auto;
+    }
   }
 
   .footer-right {
-    @include zen-grid-item(3.75,8.5);
+    @include zen-grid-item(3,1,right);
+    max-width: 310px;
     margin-top: -.5em;
-    margin-right: 2em;
+    margin-right: 1em;
 
     h1 {
       position: relative;
