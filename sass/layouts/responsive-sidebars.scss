@@ -825,6 +825,9 @@ $zen-auto-include-item-base: false;
 
   .footer-left {
     @include zen-grid-item(2,1);
+    .region {
+      margin-left: 20px;
+    }
     .footer-site-name, p:first-child {
       margin: 1em 0;
     }
