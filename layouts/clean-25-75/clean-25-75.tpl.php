@@ -14,10 +14,12 @@
  *   - $content['right']: Content in the right column.
  */
 ?>
+<?php if(!empty($content['left'])) {?>
 <div class="wwu-25-percent-left-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
 	<?php print $content['left']; ?>
 </div>
+<?php } ?>
 
-<div class="wwu-75-percent-right-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+<div class="wwu-75-percent-right-column<?php if(empty($content['left'])) {print ' empty-sidebar';}?>" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
 	<?php print $content['right']; ?>
 </div>
