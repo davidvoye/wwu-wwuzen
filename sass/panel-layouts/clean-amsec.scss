@@ -1,0 +1,40 @@
+/**
+* These are the layout styles for the clean-amsec panel.
+*/
+
+@import "panels";
+
+@media all {
+  .clean-amsec-top,
+  .clean-amsec-left-column,
+  .clean-amsec-right-column {
+    $zen-column-count: 1;
+    $zen-gutter-width: 30px;
+    @include zen-clear(left);
+    @include zen-grid-item(1,1);
+  }
+}
+
+@media all and (min-width: 801px) {
+
+  .clean-amsec-top {
+    $zen-column-count: 4;
+    $zen-gutter-width: 30px;
+    @include zen-grid-item(4,1);
+    @include zen-clear();
+  }
+  .clean-amsec-left-column {
+    $zen-column-count: 4;
+    $zen-gutter-width: 30px;
+    @include zen-clear(left);
+    @include zen-grid-item(3,1);
+  }
+
+  .clean-amsec-right-column {
+    $zen-column-count: 4;
+    $zen-gutter-width: 30px;
+    @include zen-grid-item(1,4);
+    @include zen-clear(none);
+
+  }
+}
