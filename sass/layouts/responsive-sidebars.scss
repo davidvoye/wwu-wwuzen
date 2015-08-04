@@ -835,13 +835,13 @@ $zen-auto-include-item-base: false;
 
   .footer-center {
     @include zen-grid-item(4,3);
-    .western-privacy-statement {
-      margin-left: 1.8em;
-      margin-top: -.5em;
-    }
-    .region {
+
+    .region, .western-privacy-statement {
       max-width: 70%;
       margin: 0 auto;
+    }
+    .western-privacy-statement a {
+      padding-left: 30px;
     }
   }
 
