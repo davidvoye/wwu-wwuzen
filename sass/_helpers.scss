@@ -1,0 +1,46 @@
+/**
+ * @file
+ * Helper Classes
+ *
+ * Classes that can be added to elements using the Drupal GUI, allowing
+ * users/developers to control the look and/or positioning without needing
+ * to edit image styles, theme files, etc.
+ */
+
+@import "base";
+
+/* Positioning/Layout */
+
+.float-left, .left {
+  float:left;
+  margin:1em 1em 1em 0;
+}
+.float-right, .right {
+  float:right;
+  margin:1em 0 1em 1em;
+}
+
+.helper-width-25-percent {width: 25%;}
+.helper-width-33-percent {width: 33%;}
+.helper-width-50-percent {width: 50%;}
+.helper-width-66-percent {width: 66%;}
+.helper-width-75-percent {width: 75%}
+.helper-width-100-percent {width: 100%;}
+
+/* Spacing */
+
+.helper-no-margin {margin: 0;}
+.helper-no-left-margin {margin-left: 0;}
+.helper-no-right-margin {margin-right: 0;}
+
+.helper-thin-padding {padding: 0.5em;}
+.helper-medium-padding {padding: 1em;}
+.helper-thick-padding {padding: 2em;}
+
+.helper-no-padding {padding: 0;}
+.helper-no-left-padding {padding-left: 0;}
+.helper-no-right-padding {padding-right: 0;}
+
+/* Text Styling */
+
+.helper-center-content {text-align: center;}

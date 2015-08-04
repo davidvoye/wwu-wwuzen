@@ -15,6 +15,9 @@
 @import "../images/westernIcons/*.png";
 @include all-westernIcons-sprites;
 
+// Import helper classes for panel, views, and wysiwyg editors
+@import "helpers";
+
 // Import _accordion.scss at bottom of file.
 
 /* ****************************************************
@@ -350,16 +353,6 @@ figure {
     font-style:italic;
     color:#555;
   }
-}
-
-.float-left, .left {
-  float:left;
-  margin:1em 1em 1em 0;
-}
-
-.float-right, .right {
-  float:right;
-  margin:1em 0 1em 1em;
 }
 
 div.messages { /* Important messages (status, warning, and error) for the user. See also the declarations in messages.css. */

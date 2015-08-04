@@ -61,11 +61,16 @@
   Drupal.behaviors.mobileWwuMenu = {
     attach: function (context, settings) {
       $('.western-quick-links button', context).click(function () {
-        var quicklinks = $('.western-quick-links ul');
-        if (quicklinks.is(':visible')) {
-          quicklinks.hide("slide", { direction: "right" }, 400);
+        var $quicklinks = $('.western-quick-links ul');
+
+        if ($quicklinks.is(':visible')) {
+          $quicklinks.hide("slide", { direction: "right" }, 400);
         } else {
-          quicklinks.show("slide", { direction: "right" }, 200);
+          $quicklinks.show("slide", { direction: "right" }, 200, function() {
+            $quicklinks.css({
+              'display': 'table'
+            })
+          });
         }
       });
     }
