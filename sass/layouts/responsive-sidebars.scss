@@ -12,126 +12,138 @@
 @import "base";
 
 @mixin nav-icons($fileName) {
-  background-image:url("../../images/icons/#{$fileName}.png");
+  background-image: url("../../images/icons/#{$fileName}.png");
 }
 
 /* Mixin to resize hi-def sprites from: https://gist.github.com/darren131/3410875 */
 @mixin resize-sprite($map, $sprite, $percent) {
-	$spritePath: sprite-path($map);
-	$spriteWidth: image-width($spritePath);
-	$spriteHeight: image-height($spritePath);
-	$width: image-width(sprite-file($map, $sprite));
-	$height: image-height(sprite-file($map, $sprite));
- 
- 	background-image: sprite-url($map);
-	@include background-size(ceil($spriteWidth * ($percent/100)) ceil($spriteHeight * ($percent/100)));
-	width: ceil($width*($percent/100));
-	height: ceil($height*($percent/100));
-	background-position: 0 floor(nth(sprite-position($map, $sprite), 2) * ($percent/100) );
+  $spritePath: sprite-path($map);
+  $spriteWidth: image-width($spritePath);
+  $spriteHeight: image-height($spritePath);
+  $width: image-width(sprite-file($map, $sprite));
+  $height: image-height(sprite-file($map, $sprite));
+  background-image: sprite-url($map);
+  @include background-size(ceil($spriteWidth * ($percent / 100)) ceil($spriteHeight * ($percent / 100)));
+  width: ceil($width * ($percent / 100));
+  height: ceil($height * ($percent / 100));
+  background-position: 0 floor(nth(sprite-position($map, $sprite), 2) * ($percent / 100) );
 }
 
+$zen-column-count: 12;
+$zen-gutter-width: 30px;
 
-$zen-column-count:  12;
-$zen-gutter-width:  30px;
-
-
-// IE6-7 don't support box-sizing: border-box. We can fix this in 1 of 3 ways:
-// - Drop support for IE 6/7. :-) In the _base.scss, set $legacy-support-for-ie6
-//   and $legacy-support-for-ie7 to false.
-// - (Preferred) Install the box-sizing polyfill and set the variable below to
-//   the absolute path URL to the boxsizing.htc file.
-//   @see https://github.com/Schepp/box-sizing-polyfill
+/*
+ * IE6-7 don't support box-sizing: border-box. We can fix this in 1 of 3 ways:
+ * - Drop support for IE 6/7. :-) In the _base.scss, set $legacy-support-for-ie6
+ *   and $legacy-support-for-ie7 to false.  - (Preferred) Install the box-sizing
+ *   polyfill and set the variable below to the absolute path URL to the
+ *   boxsizing.htc file.  @see https://github.com/Schepp/box-sizing-polyfill
+ */
 $box-sizing-polyfill-path: "/sites/all/themes/wwuzen/js/boxsizing.htc";
-// - Use the same CSS unit for grid width and gutter width (use px for both or
-//   use % for both, etc.) and set the box-sizing variable to content-box.
-//   $zen-box-sizing: content-box;
 
+/*
+ * Use the same CSS unit for grid width and gutter width (use px for both or use
+ * % for both, etc.) and set the box-sizing variable to content-box.
+ */
+// $zen-box-sizing: content-box;
 
-// You can generate more efficient CSS if you manually apply the
-// zen-grid-item-base mixin to all grid items from within a single ruleset.
+/* You can generate more efficient CSS if you manually apply the
+ * zen-grid-item-base mixin to all grid items from within a single ruleset.
+ */
 $zen-auto-include-item-base: false;
 // $zen-auto-include-flow-item-base: false;
 
-
-/* ****************************************************
-Generic Styles regardless of screen size
- **************************************************** */
+/*******************************************************************************
+ *
+ * Resolution independant styles
+ *
+ ******************************************************************************/
 
 /*
  * Center the page.
+ *
+ * For screen sizes larger than 1200px, prevent excessively long lines of text
+ * by setting a max-width.
  */
-
 .page,
 .region-bottom {
-  /* For screen sizes larger than 1200px, prevent excessively long lines of text
-  by setting a max-width. */
-margin-left: auto;
-margin-right: auto;
-max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1080px;
 }
 
 /*
  * Containers for grid items and flow items.
  */
-
-.page,
-footer {
+.page, footer {
   @include zen-grid-container();
+}
+
+.page {
+  position: relative;
 }
 
 /*
  * Apply the shared properties of grid items in a single, efficient ruleset.
+ *
+ * See the note about $zen-auto-include-item-base above.
  */
-// See the note about $zen-auto-include-item-base above.
-
-.page, .western-header, .site-header,
-main, .content, .main-nav, .region-sidebar-first, .region-sidebar-second,
-footer {
+.page, .western-header, .site-header, main, .content, .main-nav,
+.region-sidebar-first, .region-sidebar-second, footer {
   @include zen-grid-item-base();
-  padding-left:0px;
-  padding-right:0px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
-.western-privacy-statement {
-  a {
-    color:#ffffff;
-    font-size:.85em;
-  }
+.western-privacy-statement a {
+  color: #ffffff;
+  font-size:.85em;
 }
 
-/* ****************************************************
-Mobile-size -> 360px
- **************************************************** */
+/******************************************************************************
+ *
+ * Mobile-size -> 360px
+ *
+ *****************************************************************************/
 
-@media all and (max-width:360px) {
+@media all and (max-width: 360px) {
+
   $zen-column-count: 1;
+
   .western-header .western-search .western-search-widget {
-    width:16em;
+    width: 16em;
     @include transition(width .25s);
-    .form-submit { border-left: solid 1.75em white; box-shadow:none; }
+
+    .form-submit {
+      border-left: solid 1.75em white;
+      box-shadow: none;
+    }
   }
 
   .content article {
     figure {
-      margin:0 auto;
-      float:none !important;
-      display:block;
+      margin: 0 auto;
+      float: none !important;
+      display: block;
     }
+
     blockquote {
-      max-width:100%;
-      margin:.5em;
+      max-width: 100%;
+      margin: .5em;
     }
   }
+
 }
 
-/* ****************************************************
-Footer (1 col)
- **************************************************** */
+/*******************************************************************************
+ *
+ * Footer (1 col)
+ *
+ ******************************************************************************/
 
 @media all and (max-width: 550px) {
 
   $zen-column-count: 1;
-
 
   .footer-left, .footer-center, .footer-right {
     @include zen-clear();
@@ -140,64 +152,83 @@ Footer (1 col)
 
   .footer-center {
     ul.menu {
-      padding:0;
-      margin:.5em 1.5em;
+      padding: 0;
+      margin: .5em 1.5em;
     }
+
     .western-privacy-statement {
-      margin-left:1.7em;
+      margin-left: 1.7em;
       margin-top:-.5em;
       margin-bottom:.5em;
     }
   }
+
   .footer-right {
     .western-contact-info, .western-social-media ul {
-      padding-left:24px; //IE8 fallback
+      padding-left: 24px; //IE8 fallback
       padding-left: 1.5rem;
     }
   }
+
 }
 
-/* ****************************************************
-Footer 2 rows (2 col; 1 col)
- **************************************************** */
+/*******************************************************************************
+ *
+ * Footer 2 rows (2 col; 1 col)
+ *
+ ******************************************************************************/
 
-@media all and (min-width:551px) and (max-width: 800px) {
+@media all and (min-width: 551px) and (max-width: 800px) {
 
   $zen-column-count: 3;
 
   .footer-left {
     @include zen-grid-item(1.5,1);
   }
+
   .footer-center {
     @include zen-grid-item(1.5,2.5);
+
     ul.menu {
-      padding:0 2em 0 0;
-      margin:.5em 0;
+      padding: 0 2em 0 0;
+      margin: .5em 0;
     }
+
     .western-privacy-statement {
-      margin-top:-.5em;
-      margin-bottom:.5em;
+      margin-top: -.5em;
+      margin-bottom: .5em;
     }
   }
+
   .footer-right {
     @include zen-clear();
+
     .western-contact-info {
       @include zen-grid-item(1.5,1);
+
       p {
-        margin-left:24px; //IE 8 fallback
-      margin-left:1.5rem; }
+        margin-left: 24px; //IE 8 fallback
+        margin-left: 1.5rem;
+      }
     }
+
     .western-social-media {
       @include zen-grid-item(1.5,2.5);
-      ul { padding-left:0; margin-top:0; }
+
+      ul {
+        padding-left: 0;
+        margin-top: 0;
+      }
     }
   }
 
 }
 
-/* ****************************************************
-Smaller Screens 0px --> 800px
- **************************************************** */
+/*******************************************************************************
+ *
+ * Smaller Screens 0px --> 800px
+ *
+ ******************************************************************************/
 
 @media all and (max-width: 800px) {
 
@@ -208,199 +239,236 @@ Smaller Screens 0px --> 800px
   .western-header {
     .western-logo a {
       @include zen-grid-item(1,1,left);
-      margin-bottom:-.375em;
+      margin-bottom: -.375em;
       background: url('../../images/wwuhorizlogo.png') no-repeat;
-      background-color:$wwuBlue;
+      background-color: $wwuBlue;
       width: 100%;
       height: 74px;
-      text-indent:-999em;
+      text-indent: -999em;
     }
+
     nav {
       @include box-shadow();
-      background:$wwuGrayBlue;
-      width:44px;
+      background: $wwuGrayBlue;
+      width: 44px;
       height: 64px + 74px;
-      position:absolute;
-      top:0;
-      right:0;
+      position: absolute;
+      top: 0;
+      right: 0;
     }
+
     .western-quick-links {
-      width:44px;
+      width: 44px;
+
       button {
         @extend .standard-toolbar-links;
-        width:44px;
-        height:44px;
-        text-indent:-999em;
-        border:none;
-        margin-bottom:3px;
+        width: 44px;
+        height: 44px;
+        text-indent: -999em;
+        border: none;
+        margin-bottom: 3px;
       }
+
       ul {
         margin: 0;
-        padding:1.1em .33em .625em .625em;
-        background-color:#fff;
-        list-style-type:none;
-        position:absolute;
-        width:19em;
-        right:44px;
-        top:0;
-        display:none;
-        overflow:hidden;
+        padding: 1.1em .33em .625em .625em;
+        background-color: #fff;
+        list-style-type: none;
+        position: absolute;
+        width: 19em;
+        right: 44px;
+        top: 0;
+        display: none;
+        overflow: hidden;
         @include box-shadow(#333 0 0 8px);
+
         li {
-          text-align:center;
-          display:inline-block;
-          padding:.17em .25em 0 .25em;
-          &:not(:first-child):before { content:""; }
+          text-align: center;
+          display: table-cell;
+          padding: 0.17em 0.25em 0 0.25em;
+
+          &:not(:first-child):before {
+            content: "";
+          }
+
           a {
-            text-decoration:none;
-            text-transform:none;
+            text-decoration: none;
+            text-transform: none;
             @include transition(1s);
-            padding:0;
+            padding: 0;
+
             span:first-child {
-              font-size:1.825em;
+              font-size: 1.825em;
               font-family: 'fontello';
               font-style: normal;
               font-weight: normal;
               speak: none;
               display: inline-block;
               text-decoration: inherit;
-              padding:0;
+              padding: 0;
               font-variant: normal;
               text-transform: none;
               line-height: 1em;
               @include transition(.2s);
             }
+
             span:last-child {
-              display:block;
-              font-size:.75em;
+              display: block;
+              font-size: .75em;
             }
+
             &:hover, &:focus {
-              color:$wwuGreen;
+              color: $wwuGreen;
               @include transition(.2s);
-              span:first-child { color:$wwuLime; }
+
+              span:first-child {
+                color:$wwuLime;
+              }
             }
           } // End a
         } // End li
       } // End ul
     }
-    
+
     .western-search {
-      top:0;
-      width:44px;
+      top: 0;
+      width: 44px;
+
       > button {
         @extend .standard-search-gray;
-        width:44px;
-        height:44px;
-        text-indent:-999em;
-        border:none;
-        margin-bottom:3px;
+        width: 44px;
+        height: 44px;
+        text-indent: -999em;
+        border: none;
+        margin-bottom: 3px;
       }
+
       .western-search-widget {
         @include zen-clear(right);
-        display:none;
-        position:absolute;
-        width:19em;
-        top:74px;
-        right:44px;
-        z-index:100;
-        margin-top:0;
+        display: none;
+        position: absolute;
+        width: 19em;
+        top: 74px;
+        right: 44px;
+        z-index: 100;
+        margin-top: 0;
         @include transition(width .25s);
       }
     } // End .wwusearch
+
     .mobile-main-nav {
       @extend .standard-main-menu;
-      width:44px;
-      height:44px;
-      text-indent:-999em;
-      border:none;
+      width: 44px;
+      height: 44px;
+      text-indent: -999em;
+      border: none;
     }
+
     //Images for hi-res/retina displays
-    @media
-    (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi) {
-    	//Create a sprite map from retina icons
-    	@import "../images/icons/hidef/*.png";
-    	@include all-hidef-sprites;
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+
+      //Create a sprite map from retina icons
+      @import "../images/icons/hidef/*.png";
+      @include all-hidef-sprites;
+
       .western-quick-links {
         button {
-          //http://miekd.com/articles/using-css-sprites-to-optimize-your-website-for-retina-displays/
+          // http://miekd.com/articles/using-css-sprites-to-optimize-your-website-for-retina-displays/
           @include resize-sprite($hidef-sprites, toolbar-links, 50);
         }
       } // End .western-quick-links
+
       .western-search {
         > button {
-          //http://miekd.com/articles/using-css-sprites-to-optimize-your-website-for-retina-displays/
+          // http://miekd.com/articles/using-css-sprites-to-optimize-your-website-for-retina-displays/
           @include resize-sprite($hidef-sprites, search-gray, 50);
         }
       } // End .wwusearch
+
       .mobile-main-nav {
-        //http://miekd.com/articles/using-css-sprites-to-optimize-your-website-for-retina-displays/
+        // http://miekd.com/articles/using-css-sprites-to-optimize-your-website-for-retina-displays/
         @include resize-sprite($hidef-sprites, main-menu, 50);
       }
+
     }
   } // End .western-header
 
   .main-nav {
-    padding:0;
-    margin-top:0;
-    height:100%;
+    padding: 0;
+    margin-top: 0;
+    height: 100%;
+
     div div .menu {
-      display:none;
-      background-color:#E9E9E9;
-      list-style-type:none;
+      display: none;
+      background-color: #E9E9E9;
+      list-style-type: none;
+
       li {
         @include transition(.25s);
         width: 100%;
         float: none;
         text-align: left;
-        display:block;
-        border-top:solid 1px white;
-        text-transform:none;
+        display: block;
+        border-top: solid 1px white;
+        text-transform: none;
         font-size:.9em;
-        padding:0;
+        padding: 0;
+
         a {
           @include transition(1s);
-          text-decoration:none;
-          color:#fff;
+          text-decoration: none;
+          color:  #fff;
           padding: .7em 1em .65em 1em;
           margin-right: 44px;
-          display:block;
-          cursor:pointer;
-          width:auto;
+          display: block;
+          cursor: pointer;
+          width: auto;
         }
+
         &.is-expanded {
-          cursor:s-resize;
+          cursor: s-resize;
           -moz-box-sizing: border-box;
           box-sizing: border-box;
+
           .is-expanded {
             -moz-box-sizing: content-box;
-            box-sizing: content-box;			
+            box-sizing: content-box;
           }
         }
+
         &.is-expanded > a {
           -moz-box-sizing: border-box;
           box-sizing: border-box;
         }
-        &.is-expanded.opened { cursor:n-resize; }
+
+        &.is-expanded.opened {
+          cursor: n-resize;
+        }
+
         ul {
-          padding-left:0;
+          padding-left: 0;
           position: relative;
-          background-color:#E9E9E9;
+          background-color: #E9E9E9;
+
           li {
             background-color:$wwuGrayBlue;
-            font-size:1em;
+            font-size: 1em;
+
             ul li {
-              background-color:tint($wwuGrayBlue, 20%);
+              background-color: tint($wwuGrayBlue, 20%);
+
               ul li {
-                background-color:tint($wwuGrayBlue, 40%);
+                background-color: tint($wwuGrayBlue, 40%);
               }
             }
           } // End li
         } // End ul
       } // End li
+
       li.expanded .menu {
         display: none;
       }
+
       li.expanded .menu li {
         a {
           position: relative;
@@ -408,21 +476,25 @@ Smaller Screens 0px --> 800px
           margin-left: -44px;
         }
       }
+
       li.expanded .menu li.is-expanded > a {
         position: static;
         margin-left: 0;
       }
     } // End .menu
   } // End .main-nav
-  @mixin nav-icons($fileName) { background-image:url("../../images/icons/#{$fileName}.png"); }
+
+  @mixin nav-icons($fileName) {
+    background-image: url("../../images/icons/#{$fileName}.png");
+  }
 
   .expanded { @include nav-icons(expandable-parent); }
   .opened { @include nav-icons(opened-parent); }
 
   .expanded, .opened {
     background-repeat: no-repeat;
-    background-position:right top;
-    background-size:44px 44px;
+    background-position: right top;
+    background-size: 44px 44px;
 
     .expanded { @include nav-icons(expandable-first-child); }
     .opened { @include nav-icons(opened-first-child); }
@@ -438,256 +510,356 @@ Smaller Screens 0px --> 800px
     }
   } // End .expanded, .opened
 
-  .site-banner { display:none; }
+  .site-banner {
+    display: none;
+  }
+
   .site-header {
     a:link, a:visited, a:hover, a:active, a:focus {
       color: #fff;
       text-decoration: none;
     }
   }
+
   .site-name {
-    background-image:none;
+    background-image: none;
     @include zen-clear();
     z-index:-10;
     background-color:$wwuOceanBlue;
     @include background(linear-gradient(top, lighten($wwuOceanBlue, 10%), $wwuOceanBlue));
     padding: 0 0 .5em 1.25em;
     font-family:$muli;
-    font-size:1em;
-    text-transform:uppercase;
-    text-align:right;
+    font-size: 1em;
+    text-transform: uppercase;
+    text-align: right;
     padding:.75em 1em;
-    line-height:1.55;
-    min-height:46px;
+    line-height: 1.55;
+    min-height: 46px;
+
     p {
-      text-decoration:none;
-      color:#fff;
-      margin:0.4em 0 0 0;
-      display:block; //college name is shown as part of image on banner
-      width:80%; //Prevents the name from sliding under the mobile nav at 360px wide
-      font-size:1.25em;
-      text-align:left;
-      padding:0;
+      text-decoration: none;
+      color: #fff;
+      margin: 0.4em 0 0 0;
+      display: block; //college name is shown as part of image on banner
+      width: 80%; //Prevents the name from sliding under the mobile nav at 360px wide
+      font-size: 1.25em;
+      text-align: left;
+      padding: 0;
     }
   } //End .site-name
 
   main {
     @include zen-clear();
     //@include zen-grid-item(1,1, right);
-    margin-top:0em;
+    margin-top: 0em;
+
     .page-title {
-      border-bottom:none;
+      border-bottom: none;
       padding:.9em 0 1em 0;
-      margin-bottom:0em;
+      margin-bottom: 0em;
     }
-    .breadcrumb { display: none; }
+
+    .breadcrumb {
+      display: none;
+    }
   } // End #main
 
-  html.ie9 main { float:left; } //Fix for issue WWUZEN-69
+  html.ie9 main {
+    float: left;
+  } // Fix for issue WWUZEN-69
 
-  //Hide the navigation that moves to the bottom of the page.
-  #block-accordion-menu-1 { display:none; }
+  // Hide the navigation that moves to the bottom of the page.
+  #block-accordion-menu-1 {
+    display: none;
+  }
 
-  #edit-subject { width: 100%; } // Override of normalize.scss for the comment subject input area
-
+  #edit-subject {
+    width: 100%;
+  } // Override of normalize.scss for the comment subject input area
 
   //The left column in layouts needs to float above the main content. These classes are applied in panels.
   .left-column {
-    float:left;
+    float: left;
     width: 100%;
   }
+
   .right-column {
-    clear:left;
-    width:100%;
+    clear: left;
+    width: 100%;
   }
+
   .footer-left {
     .footer-site-name, p:first-child {
-      padding-left:24px; //IE8 fallback
-      padding-left:1.5rem;
-      margin-bottom:0;
+      padding-left: 24px; //IE8 fallback
+      padding-left: 1.5rem;
+      margin-bottom: 0;
     }
-    .block { margin-bottom:0; }
+
+    .block {
+      margin-bottom: 0;
+    }
   }
+
   .footer-right {
-    h1 { margin:0 0 1.2em 0; }
+    h1 {
+      margin: 0 0 1.2em 0;
+    }
   }
+
 }
 
-
-/* ****************************************************
-Screens 801px ->
- **************************************************** */
+/*******************************************************************************
+ *
+ * Screens 801px -->
+ *
+ ******************************************************************************/
 
 @media all and (min-width: 801px) {
+
   // Use 12 grid columns for larger screens.
   $zen-column-count: 12;
 
   .main-nav {
     padding-top: 10px;
+
     div div .menu {
-      display:table;
+      display: table;
+
       li {
         @include transition(.5s);
-        padding:5px 0px;
+        padding: 5px 0px;
         text-align: center;
-        display:table-cell;
-        float:none;
+        display: table-cell;
+        float: none;
         border-style: solid;
         border-color: white;
         border-width: 0 3px 0 0;
-        text-transform:uppercase;
-        &:last-child { border:none; }
-        /* &:hover, &:focus, &:active {
-          @include transition(.1s);
-          background-color: #ddd;
+        text-transform: uppercase;
+
+        &:last-child {
+          border: none;
         }
-        a {
-          @include transition(.5s);
-          color:#fff;
+
+        ul {
+          display: none;
         }
-        li, a { &:focus, &:hover, &:active { color:$wwuBlue; } } */
-ul { display:none; }
+
+        // &:hover, &:focus, &:active {
+        // @include transition(.1s);
+        // background-color: #ddd;
+        // }
+        // a {
+        // @include transition(.5s);
+        // color:#fff;
+        // }
+        // li, a { &:focus, &:hover, &:active { color:$wwuBlue; } }
       }
     }
   }
-  body { border-top:solid 6px $wwuLtblue; }
-  header[role="banner"] > div {
-    max-height: 247px;
-    overflow:hidden;
-    border:solid 10px #fff;
-    position:relative;
-    background:#fff;
-    @include box-sizing(border-box);
-    margin-top: 50px;
+
+  body {
+    border-top: solid 6px $wwuLtblue;
   }
+
+  header[role="banner"] {
+    padding-top: 3.5em;
+  }
+
+  header[role="banner"] > div {
+    @include box-sizing(border-box);
+    max-height: 247px;
+    overflow: hidden;
+    border: solid 10px #fff;
+    position: relative;
+    background: #fff;
+  }
+
   .western-header {
-    @include zen-grid-item(12,1);
-    margin-bottom:.563em;
-    margin-top: -131px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
     .western-logo {
-      margin:0;
+      display: block;
+      float: left;
+      margin-left: 10px;
+
       a {
-        display:block;
-        z-index:200;
-        margin: 69px 0 0 20px;
-        position:relative;
+        display: block;
         @include hide-text-bg-img;
         background: url('../../images/wwu.png') no-repeat;
         width: 240px;
         height: 135px;
       }
     }
+
     nav {
-      position: relative;
-      top: -7.1em;
-      width: 100%;
-    }
-    .western-search {
-      top: -.7em;
-      display: block;
       position: absolute;
-      right: 6.6%;
+      top: 0;
+      right: 0;
+      margin-right: 10px;
+    }
+
+    .western-search, .western-quick-links {
+      float: left;
+    }
+
+    .western-search {
       > button {
-        top:44px;
-        height:44px;
-        width:44px;
-        cursor:pointer;
-        background:url('../../images/icons/search.png') no-repeat;
-        background-size:cover;
+        top: 44px;
+        height: 44px;
+        width: 44px;
+        cursor: pointer;
+        background: url('../../images/icons/search.png') no-repeat;
+        background-size: cover;
         filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='/sites/all/themes/wwuzen/images/icons/search.png', sizingMethod='scale');
         -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader( src='/sites/all/themes/wwuzen/images/icons/search.png', sizingMethod='scale')";
         @include hide-text-bg-img;
       }
+
       .western-search-widget {
-        position:absolute;
-        top:44px;
-        right:0;
-        margin-top:0;
-        display:none;
+        position: absolute;
+        top: 44px;
+        right: 0;
+        margin-top: 0;
+        display: none;
       }
     }
+
     .western-quick-links {
-      position:absolute;
-      top:-.1em;
-      right:15.4%;
+      margin-right: 1em;
+
       ul {
         @include transition(.5s);
-        margin:0;
-        padding:0;
-        li:not(:first-child):before { content: "\00B7 \0020 "; }
-        a span:first-child { display:none; }
+        margin: 0;
+        padding: 0;
+
+        li {
+          line-height: 44px;
+        }
+
+        li:not(:first-child):before {
+          content: "\00B7 \0020 ";
+        }
+
+        a span:first-child {
+          display: none;
+        }
       }
-      > button { display:none; }
+
+      > button {
+        display: none;
+      }
     }
-    .mobile-main-nav { display:none; }
+
+    .mobile-main-nav {
+      display: none;
+    }
   } // End .western-header
+
   .site-header {
     @include zen-clear(both);
     @include zen-float(left);
     line-height: 0;
     position: relative;
+
     > a {
-      display:block;
-      width:100%;
-      height:100%;
+      display: block;
+      width: 100%;
+      height: 100%;
     }
+
     .site-banner {
       img {
         width: 100%;
-        max-width:none; //Solely to make IE8 display the banner. http://believeinmiraclesx.wordpress.com/2012/08/16/ie8-images-disappear-when-placed-inside-a-floatleft-container/
+        max-width: none; //Solely to make IE8 display the banner. http://believeinmiraclesx.wordpress.com/2012/08/16/ie8-images-disappear-when-placed-inside-a-floatleft-container/
       }
     }
+
     .site-name {
       position: absolute;
-      right:0;
+      right: 0;
       bottom: 0;
       background-color:$wwuOceanBlue; /* Fallback for older browsers */
-      background-color:rgba($wwuOceanBlue, .8);
-      p { margin:0; }
+      background-color: rgba($wwuOceanBlue, .8);
+
+      p {
+        margin: 0;
+      }
     }
   } // End #header
+
   main {
     @include zen-clear();
     @include zen-grid-item(12,1);
-    width:100%;
+    width: 100%;
     margin: 0.5em 0em 4.250em 0em;
-    .page-title { border-bottom:solid 3px #E9E9E9; }
+
+    .page-title {
+      border-bottom: solid 3px #E9E9E9;
+    }
   } // End #main
 
   //.main-nav { @include zen-grid-item(12,1); } //The layout when there is only one sidebar, the left one.
   .sidebar-first {
     .content { @include zen-grid-item(8.75, 4.25); } // Span 4 columns, starting in 2nd column from left.
-    #block-accordion-menu-1{ display:block; } //Show the sidebar navigation
-    .region-sidebar-first {  @include zen-grid-item(3, 1); } // Span 1 column, starting in 1st column from left.
+
+    #block-accordion-menu-1{
+      display: block; //Show the sidebar navigation
+    }
+
+    .region-sidebar-first { @include zen-grid-item(3, 1); } // Span 1 column, starting in 1st column from left.
   } // End .sidebar-first
-  footer { @include zen-clear(both); }
+
+  footer { 
+    @include zen-clear(both);
+    $zen-column-count: 9; 
+  }
+
   .footer-wrapper {
-    max-width:1080px;
-    margin:0 auto;
+    max-width: 1080px;
+    margin: 0 auto;
   }
+
   .footer-left {
-    @include zen-grid-item(3.25,1.5);
-    .footer-site-name, p:first-child { margin: 1em 0; }
-  }
-  .footer-center {
-    @include zen-grid-item(3.5,4.75);
-    .western-privacy-statement {
-      margin-left:1.8em;
-      margin-top:-.5em;
+    @include zen-grid-item(2,1);
+    .region {
+      margin-left: 20px;
+    }
+    .footer-site-name, p:first-child {
+      margin: 1em 0;
     }
   }
+
+  .footer-center {
+    @include zen-grid-item(4,3);
+
+    .region, .western-privacy-statement {
+      max-width: 70%;
+      margin: 0 auto;
+    }
+    .western-privacy-statement a {
+      padding-left: 30px;
+    }
+  }
+
   .footer-right {
-    @include zen-grid-item(3.75,8.5);
-    margin-top:-.5em;
-    margin-right:2em;
+    @include zen-grid-item(3,1,right);
+    max-width: 310px;
+    margin-top: -.5em;
+    margin-right: 1em;
+
     h1 {
       position: relative;
       top: -1.2em;
-      margin:0;
+      margin: 0;
     }
+
     .western-contact-info, .western-social-media ul {
-      padding-left:16px;
-      padding-left:1rem;
+      padding-left: 16px;
+      padding-left: 1rem;
     }
   }
 }

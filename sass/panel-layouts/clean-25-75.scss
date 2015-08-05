@@ -36,4 +36,11 @@
     @include zen-grid-item(3,2);
     @include zen-clear(none);
   }
+  .wwu-75-percent-right-column.empty-sidebar {
+  	$zen-column-count: 1;
+  	$zen-gutter-width: 30px;
+  	@include zen-grid-item(1,1);
+    @include zen-clear(left);
+    font-size: 115%;
+  }
 }
