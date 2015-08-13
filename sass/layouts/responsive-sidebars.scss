@@ -680,11 +680,14 @@ $zen-auto-include-item-base: false;
     top: 0;
     width: 100%;
     z-index: 1;
+    height: 0;
 
     .western-logo {
       display: block;
       float: left;
       margin-left: 10px;
+      position: absolute;
+      top: -5px;
 
       a {
         display: block;
