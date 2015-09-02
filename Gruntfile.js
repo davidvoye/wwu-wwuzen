@@ -21,8 +21,8 @@ module.exports = function(grunt) {
     compass: {
       production: {
         options: {
-          config: 'config.rb'
-          // bundleExec: true
+          config: 'config.rb',
+          bundleExec: true
         }
       }
     }
