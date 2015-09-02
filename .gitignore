@@ -6,3 +6,4 @@ sass-extensions/*
 .buildpath
 .project
 .settings
+node_modules

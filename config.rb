@@ -15,17 +15,13 @@ environment = :production
 firesass = false
 #firesass = true
 
-
 # Location of the theme's resources.
 css_dir         = "css"
-sass_dir        = "sass"
-extensions_dir  = "sass-extensions"
+sass_dir        = "src/sass"
 images_dir      = "images"
-javascripts_dir = "js"
-
+javascripts_dir = "src/js"
 
 # Require any additional compass plugins installed on your system.
-#require 'ninesixty'
 require 'zen-grids'
 
 # Assuming this theme is in sites/*/themes/THEMENAME, you can add the partials
@@ -33,7 +29,6 @@ require 'zen-grids'
 #add_import_path "../../../default/modules/FOO"
 #add_import_path "../../../all/modules/FOO"
 #add_import_path "../../../../modules/FOO"
-
 
 ##
 ## You probably don't need to edit anything below this.
