@@ -1,5 +1,6 @@
 *.scssc
 *.css
+*.min.js
 .sass-cache/*
 sass-extensions/*
 .DS_Store
