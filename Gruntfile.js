@@ -3,12 +3,13 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     uglify: {
-      options: {
-        mangle: {
-          except: ['jQuery', 'Drupal', 'Western']
-        }
-      },
       production: {
+        options: {
+          compress: true,
+          mangle: {
+            except: ['jQuery', 'Drupal', 'Western']
+          }
+        },
         files: [{
           expand: true,
           cwd: 'src/js',
@@ -18,6 +19,15 @@ module.exports = function(grunt) {
         }]
       },
       development: {
+        options: {
+          mangle: false,
+          compress: false,
+          beautify: {
+            beautify: true,
+            indent_level: 2
+          },
+          preserveComments: 'all'
+        },
         files: [{
           expand: true,
           cwd: 'src/js',
@@ -28,18 +38,21 @@ module.exports = function(grunt) {
       }
     },
     compass: {
+      options: {
+        config: 'config.rb',
+        bundleExec: true
+      },
       production: {
         options: {
-          config: 'config.rb',
-          bundleExec: true,
-          environment: 'production'
+          environment: 'production',
+          outputStyle: 'compressed',
+          force: true
         }
       },
       development: {
         options: {
-          config: 'config.rb',
-          bundleExec: true,
-          environment: 'development'
+          environment: 'development',
+          outputStyle: 'expanded'
         }
       }
     }
