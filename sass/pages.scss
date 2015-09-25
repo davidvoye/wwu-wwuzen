@@ -543,8 +543,9 @@ footer {
     $social-icon-size: 25px;
     padding-left: emCalc(17);
     font-family: fontello;
-    line-height: 0;
+    overflow: visible;
     padding-top: 15px;
+    line-height: $social-icon-size;
 
     ul {
       margin: 0;
@@ -557,13 +558,12 @@ footer {
     a {
       position: relative;
       display: block;
-      text-indent: 100%;
       white-space: nowrap;
       overflow: hidden;
       width: $social-icon-size;
       height: $social-icon-size;
       top: -$social-icon-size/2;
-      padding-right: 2px;
+      margin-right: 2px;
 
       &:before {
         color: white;
