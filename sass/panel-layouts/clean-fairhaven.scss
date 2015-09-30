@@ -3,20 +3,20 @@
 */
 @import "panels";
 
-$zen-auto-include-item-base: false;
-$zen-column-count:  12;
-$zen-gutter-width:  1.25em;
-
+$zen-column-count: 12;
+$zen-gutter-width: 10px;
 
 /* ****************************************************
                 Small-size -> 550px
 **************************************************** */
 
-@media all and (max-width:550px) {
+@media all and (max-width: 550px) {
   $zen-column-count: 1;
 
   .clean-fairhaven-top-left, // Intro text
   .clean-fairhaven-top-right, // Slideshow
+  .clean-fairhaven-sub-top-left,
+  .clean-fairhaven-sub-top-right,
   .clean-fairhaven-middle-left, // Courses
   .clean-fairhaven-middle-center, // Featured Video
   .clean-fairhaven-middle-right, // Calendar
@@ -24,52 +24,59 @@ $zen-gutter-width:  1.25em;
   .clean-fairhaven-bottom-right { // Events
     @include zen-grid-item(1,1);
     @include zen-clear();
-    margin:0 auto;
-    display:block;
+
+    margin: 0 auto;
+    display: block;
   }
 
-  // Center aligns images until they are turned into straight CSS
-  /*.clean-fairhaven-top-right, //Intro text
-  .clean-fairhaven-top-right, // Slideshow
-  .clean-fairhaven-middle-left, // Featured Video
-  .clean-fairhaven-middle-center, // Slideshow
-  .clean-fairhaven-middle-right { // About the college
-      text-align:center;
-  }*/
 }
-
 
 /* ****************************************************
             Medium-size 551px <-> 800px
 **************************************************** */
 
 @media all and (min-width: 551px) and (max-width: 800px) {
-  $zen-column-count: 3;
+  $zen-column-count: 2;
 
   .clean-fairhaven-top-left { // Intro text
-    @include zen-grid-item(3,1);
+    @include zen-grid-item(2,1);
   }
 
   .clean-fairhaven-top-right { // slideshow
-    @include zen-grid-item(1.5,1);
-    @include zen-clear(both);
-    img { padding-top:3em; }
+    @include zen-grid-item(2,1);
+    @include zen-clear();
+
+    img {
+      padding-top: 3em;
+    }
   }
+
+  .clean-fairhaven-sub-top-left {
+    @include zen-grid-item(1,1);
+    @include zen-clear();
+  }
+
+  .clean-fairhaven-sub-top-right {
+    @include zen-grid-item(1,2);
+  }
+
   .clean-fairhaven-middle-left { // Courses
-    @include zen-grid-item(1.5,2.5);
+    @include zen-grid-item(2,1);
+    @include zen-clear();
   }
 
   .clean-fairhaven-middle-center { // Featured Video
-    @include zen-grid-item(1.5,1);
-    @include zen-clear(both);
+    @include zen-grid-item(1,1);
+    @include zen-clear();
   }
   .clean-fairhaven-middle-right { // Calendar
-    @include zen-grid-item(1.5,2.5);
+    @include zen-grid-item(1,2);
   }
 
-  .clean-fairhaven-bottom-left, .clean-fairhaven-bottom-right { // News and Events
-    @include zen-grid-item(3,1);
-    @include zen-clear(both);
+  .clean-fairhaven-bottom-left,
+  .clean-fairhaven-bottom-right { // News and Events
+    @include zen-grid-item(2,1);
+    @include zen-clear();
   }
 }
 
@@ -83,24 +90,43 @@ $zen-gutter-width:  1.25em;
   .clean-fairhaven-top-left { // Intro text
     @include zen-grid-item(6,1);
   }
+
   .clean-fairhaven-top-right { // Slideshow
     @include zen-grid-item(6,7);
-    img { display:block; margin:0 auto; }
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
   }
+
+  .clean-fairhaven-sub-top-left {
+    @include zen-grid-item(6,1);
+    @include zen-clear();
+  }
+
+  .clean-fairhaven-sub-top-right {
+    @include zen-grid-item(6,7);
+  }
+
   .clean-fairhaven-middle-left { // Courses
     @include zen-grid-item(3.9,1);
     @include zen-clear(both);
   }
+
   .clean-fairhaven-middle-center { // Featured video
     @include zen-grid-item(3.8,5.1);
   }
+
   .clean-fairhaven-middle-right { // Calendar
     @include zen-grid-item(3.9,9.1);
   }
+
   .clean-fairhaven-bottom-left { // News
     @include zen-grid-item(6,1);
     @include zen-clear(both);
   }
+
   .clean-fairhaven-bottom-right { // Events
     @include zen-grid-item(5.9,7.1); // Compensate for lack of gutter
   }
@@ -110,6 +136,7 @@ $zen-gutter-width:  1.25em;
 //        Styling for panel editor view
 
 #page-manager-edit {
+
   .clean-fairhaven-top-left,
   .clean-fairhaven-top-right,
   .clean-fairhaven-middle-left,
@@ -117,33 +144,34 @@ $zen-gutter-width:  1.25em;
   .clean-fairhaven-middle-right,
   .clean-fairhaven-bottom-left,
   .clean-fairhaven-bottom-right {
-    display:inline-block;
+    display: inline-block;
   }
+
   .clean-fairhaven-top-left {
-    width:48%;
+    width: 48%;
   }
 
   .clean-fairhaven-top-right {
-    width:48%;
+    width: 48%;
   }
 
   .clean-fairhaven-middle-left {
-    width:32%;
+    width: 32%;
   }
 
   .clean-fairhaven-middle-center {
-    width:32%;
+    width: 32%;
   }
 
   .clean-fairhaven-middle-right {
-    width:32%;
+    width: 32%;
   }
 
   .clean-fairhaven-bottom-left {
-    width:48%;
+    width: 48%;
   }
 
   .clean-fairhaven-bottom-right {
-    width:48%;
+    width: 48%;
   }
 }
