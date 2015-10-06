@@ -244,7 +244,8 @@ function wwuzen_js_alter(&$javascript) {
       $header = $data == 'misc/drupal.js' ||
         strpos($data, 'google-analytics.com') ||
         strpos($data, 'imce') ||
-        strpos($data, 'jquery');
+        strpos($data, 'jquery') ||
+        strpos($data, 'analytics.js');
         // Add additional footer excludes here
     } else {
       $header = false;
