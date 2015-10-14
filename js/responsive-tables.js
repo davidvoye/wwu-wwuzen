@@ -38,9 +38,13 @@ $(document).ready(function() {
 	}
 	
 	function unsplitTable(original) {
-    original.closest(".table-wrapper").find(".pinned").remove();
-    original.unwrap();
-    original.unwrap();
+      original.closest(".table-wrapper").find(".pinned").remove();
+      original.unwrap();
+      original.unwrap();
+      var tr = original.find('tr');
+      tr.each(function (index) {
+      	$(this).height('');
+      });
 	}
 
   function setCellHeights(original, copy) {
@@ -61,6 +65,9 @@ $(document).ready(function() {
     });
 
     tr_copy.each(function (index) {
+      $(this).height(heights[index]);
+    });
+    tr.each(function (index) {
       $(this).height(heights[index]);
     });
   }
