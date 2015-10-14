@@ -560,9 +560,10 @@ footer {
       display: block;
       white-space: nowrap;
       overflow: hidden;
+      text-indent: 100%;
       width: $social-icon-size;
       height: $social-icon-size;
-      top: -$social-icon-size/2;
+      top: -$social-icon-size;
       margin-right: 2px;
 
       &:before {
