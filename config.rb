@@ -1,10 +1,10 @@
 require 'zen-grids'
 
 # Location of the theme's resources.
-css_dir         = "css"
 sass_dir        = "src/sass"
+css_dir         = "css"
 images_dir      = "images"
-javascripts_dir = "src/js"
+javascripts_dir = "js"
 
 # Assuming this theme is in sites/*/themes/THEMENAME, you can add the partials
 # included with a module by uncommenting and modifying one of the lines below:

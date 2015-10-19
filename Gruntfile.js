@@ -1,7 +1,28 @@
 module.exports = function(grunt) {
 
+  var mozjpeg = require('imagemin-mozjpeg');
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    clean: {
+      js: 'js',
+      css: 'css',
+      images: 'images'
+    },
+    watch: {
+      sass: {
+        files: 'src/sass/**/*.scss',
+        tasks: [ 'newer:imagemin', 'compass:development' ]
+      },
+      js: {
+        files: 'src/js/**/*.js',
+        tasks: [ 'newer:uglify:development' ]
+      },
+      images: {
+        files: 'src/images/**/*.{png,gif,jpg,jpeg}',
+        tasks: [ 'newer:imagemin' ]
+      }
+    },
     uglify: {
       production: {
         options: {
@@ -52,7 +73,8 @@ module.exports = function(grunt) {
       development: {
         options: {
           environment: 'development',
-          outputStyle: 'expanded'
+          outputStyle: 'expanded',
+          force: false
         }
       }
     },
@@ -87,11 +109,14 @@ module.exports = function(grunt) {
     },
   });
 
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-newer');
 
-  grunt.registerTask('default', ['uglify:development', 'compass:development', 'imagemin']);
-  grunt.registerTask('build', ['uglify:production', 'compass:production', 'imagemin']);
+  grunt.registerTask('default', ['newer:uglify:development', 'newer:imagemin', 'compass:development']);
+  grunt.registerTask('build', ['newer:uglify:production', 'newer:imagemin', 'compass:production']);
 
 };
