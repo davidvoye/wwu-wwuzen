@@ -55,13 +55,43 @@ module.exports = function(grunt) {
           outputStyle: 'expanded'
         }
       }
-    }
+    },
+    imagemin: {
+      options: {
+        optimizationLevel: 3,
+        svgoPlugins: [{ removeViewBox: false }],
+        progressive: true,
+        interlaced: true,
+        use: [mozjpeg()]
+      },
+      static: {
+        files: [
+          {
+            src: 'screenshot.png',
+            dest: 'screenshot.png'
+          },
+          {
+            src: 'logo.png',
+            dest: 'logo.png'
+          },
+        ],
+      },
+      dynamic: {
+        files: [{
+          expand: true,
+          cwd: 'src/images',
+          src: ['**/*.{png,gif,jpg,jpeg}'],
+          dest: 'images',
+        }],
+      },
+    },
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-  grunt.registerTask('default', ['uglify:development', 'compass:development']);
-  grunt.registerTask('build', ['uglify:production', 'compass:production']);
+  grunt.registerTask('default', ['uglify:development', 'compass:development', 'imagemin']);
+  grunt.registerTask('build', ['uglify:production', 'compass:production', 'imagemin']);
 
 };
