@@ -13,15 +13,15 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: 'src/sass/**/*.scss',
-        tasks: [ 'newer:imagemin', 'compass:development' ]
+        tasks: ['newer:imagemin', 'compass:development']
       },
       js: {
         files: 'src/js/**/*.js',
-        tasks: [ 'newer:uglify:development' ]
+        tasks: ['newer:uglify:development', 'newer:jshint:development']
       },
       images: {
         files: 'src/images/**/*.{png,gif,jpg,jpeg}',
-        tasks: [ 'newer:imagemin' ]
+        tasks: ['newer:imagemin']
       }
     },
     uglify: {
@@ -79,10 +79,37 @@ module.exports = function(grunt) {
         }
       }
     },
+    jshint: {
+      options: {
+        curly: true,
+        freeze: true,
+        undef: true,
+        unused: true,
+        browser: true,
+        devel: true,
+        jquery: true,
+        node: true,
+        globals: {
+          jQuery: true,
+          Drupal: true,
+          Western: true
+        },
+      },
+      development: {
+        files: {
+          src: ['Gruntfile.js', 'src/js/**/*.js']
+        },
+        options: {
+          force: true
+        }
+      }
+    },
     imagemin: {
       options: {
         optimizationLevel: 3,
-        svgoPlugins: [{ removeViewBox: false }],
+        svgoPlugins: [{
+          removeViewBox: false
+        }],
         progressive: true,
         interlaced: true,
         use: [mozjpeg()]
@@ -111,13 +138,14 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-newer');
 
-  grunt.registerTask('default', ['newer:uglify:development', 'newer:imagemin', 'compass:development']);
+  grunt.registerTask('default', ['newer:jshint:development', 'newer:uglify:development', 'newer:imagemin', 'compass:development']);
   grunt.registerTask('build', ['newer:uglify:production', 'newer:imagemin', 'compass:production']);
 
 };
