@@ -7,7 +7,8 @@ module.exports = function(grunt) {
     clean: {
       js: 'js',
       css: 'css',
-      images: 'images'
+      images: 'images',
+      sass_cache: '.sass-cache'
     },
     watch: {
       sass: {
