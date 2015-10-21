@@ -17,7 +17,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: 'src/js/**/*.js',
-        tasks: ['newer:uglify:development', 'newer:jshint:development']
+        tasks: ['newer:uglify:development', 'jshint:development']
       },
       images: {
         files: 'src/images/**/*.{png,gif,jpg,jpeg}',
@@ -148,7 +148,7 @@ module.exports = function(grunt) {
     'default',
     'The development task suite.',
     [
-      'newer:jshint:development',
+      'jshint:development',
       'newer:uglify:development',
       'newer:imagemin',
       'compass:development'
