@@ -144,17 +144,25 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-newer');
 
-  grunt.registerTask('default', [
-    'newer:jshint:development',
-    'newer:uglify:development',
-    'newer:imagemin',
-    'compass:development'
-  ]);
+  grunt.registerTask(
+    'default',
+    'The development task suite.',
+    [
+      'newer:jshint:development',
+      'newer:uglify:development',
+      'newer:imagemin',
+      'compass:development'
+    ]
+  );
 
-  grunt.registerTask('build', [
-    'newer:uglify:production',
-    'newer:imagemin',
-    'compass:production'
-  ]);
+  grunt.registerTask(
+    'build',
+    'The production build task suite.',
+    [
+      'newer:uglify:production',
+      'newer:imagemin',
+      'compass:production'
+    ]
+  );
 
 };
