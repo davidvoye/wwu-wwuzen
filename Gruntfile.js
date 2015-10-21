@@ -7,7 +7,7 @@ module.exports = function(grunt) {
     clean: {
       js: 'js',
       css: 'css',
-      images: 'images',
+      images: ['images', 'screenshot.png', 'logo.png'],
       sass_cache: '.sass-cache'
     },
     watch: {
@@ -20,7 +20,7 @@ module.exports = function(grunt) {
         tasks: ['newer:copy:development', 'jshint:development']
       },
       images: {
-        files: 'src/images/**/*.{png,gif,jpg,jpeg}',
+        files: ['src/images/**/*.{png,gif,jpg,jpeg}', 'screenshot.png', 'logo.png'],
         tasks: ['newer:imagemin']
       }
     },
@@ -109,11 +109,11 @@ module.exports = function(grunt) {
       static: {
         files: [
           {
-            src: 'screenshot.png',
+            src: 'src/images/screenshot.png',
             dest: 'screenshot.png'
           },
           {
-            src: 'logo.png',
+            src: 'src/images/logo.png',
             dest: 'logo.png'
           },
         ],
