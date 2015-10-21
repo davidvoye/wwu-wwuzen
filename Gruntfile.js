@@ -153,8 +153,8 @@ module.exports = function(grunt) {
     'build',
     'The production build task suite.',
     [
-      'newer:uglify:production',
-      'newer:imagemin',
+      'uglify:production',
+      'imagemin',
       'compass:production'
     ]
   );
