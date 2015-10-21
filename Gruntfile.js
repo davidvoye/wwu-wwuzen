@@ -17,7 +17,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: 'src/js/**/*.js',
-        tasks: ['newer:uglify:development', 'jshint:development']
+        tasks: ['newer:copy:development', 'jshint:development']
       },
       images: {
         files: 'src/images/**/*.{png,gif,jpg,jpeg}',
@@ -39,17 +39,10 @@ module.exports = function(grunt) {
           dest: 'js',
           ext: '.min.js'
         }]
-      },
+      }
+    },
+    copy: {
       development: {
-        options: {
-          mangle: false,
-          compress: false,
-          beautify: {
-            beautify: true,
-            indent_level: 2
-          },
-          preserveComments: 'all'
-        },
         files: [{
           expand: true,
           cwd: 'src/js',
@@ -138,6 +131,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -149,7 +143,7 @@ module.exports = function(grunt) {
     'The development task suite.',
     [
       'jshint:development',
-      'newer:uglify:development',
+      'newer:copy:development',
       'newer:imagemin',
       'compass:development'
     ]
