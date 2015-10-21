@@ -81,14 +81,13 @@ module.exports = function(grunt) {
     },
     jshint: {
       options: {
-        curly: true,
-        freeze: true,
-        undef: true,
-        unused: true,
         browser: true,
         devel: true,
+        freeze: true,
         jquery: true,
         node: true,
+        undef: true,
+        unused: true,
         globals: {
           jQuery: true,
           Drupal: true,
