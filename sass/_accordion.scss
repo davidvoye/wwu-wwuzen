@@ -71,10 +71,11 @@
 /**
 * Start accordion style for accordion views.
 */
-.view .ui-accordion .field-content {
-  display:inline;
-  padding-left:0
+
+.ui-accordion {
+  .ui-widget-content a {color: $wwuOceanBlue;}
 }
+
 /**
 * End accordion style for accordion views.
 */
