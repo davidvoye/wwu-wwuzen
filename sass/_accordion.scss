@@ -72,8 +72,21 @@
 * Start accordion style for accordion views.
 */
 
-.ui-accordion {
-  .ui-widget-content a {color: $wwuOceanBlue;}
+.view .ui-accordion {
+  .ui-widget-content {
+    background: transparent;
+    border: none;
+    padding: 0.5em 0;
+    margin-left: 35px;
+    a {color: $wwuOceanBlue;}
+  }
+  .ui-accordion-header {
+  	background: transparent;
+  	border: none;
+  	padding: 0.5em 0;
+  	color: $wwuBlue;
+  	a {color: $wwuBlue;}
+  }
 }
 
 /**
