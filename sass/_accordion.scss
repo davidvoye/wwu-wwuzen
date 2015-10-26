@@ -85,7 +85,10 @@
   	border: none;
   	padding: 0.5em 0;
   	color: $wwuBlue;
-  	a {color: $wwuBlue;}
+  	a {
+  		color: $wwuBlue;
+  		padding-left: 35px;
+  	}
   }
 }
 
