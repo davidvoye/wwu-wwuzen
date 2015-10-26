@@ -124,7 +124,7 @@ main .user-module div {
 
   .field-year-started,
   .field-department-program,
-  //.field-office-hours,
+  .field-office-hours,
   .field-location,
   .field-phone-number,
   .field-academic-title,
@@ -176,13 +176,8 @@ main .user-module div {
   }
 
   .field-office-hours {
-    font-size:.925em;
     background-image:url('../images/userprofiles/office-hours-green.png');
-    background-size:1.17em;
-    background-position:0 .17em;
-    margin-top:-.75em;
-    padding-left:2em;
-    margin-left:2.5em;
+    background-size:1.25em;
     &:before { content:'Office Hours: '; }
   }
   .field-phone-number {
