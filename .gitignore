@@ -8,3 +8,6 @@ sass-extensions/*
 .project
 .settings
 node_modules
+images
+/logo.png
+/screenshot.png
