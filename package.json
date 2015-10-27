@@ -11,5 +11,10 @@
     "grunt-contrib-watch": "~0.6.1",
     "grunt-newer": "~1.1.1",
     "imagemin-mozjpeg": "~5.1.0"
+  },
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:wwuweb/wwuzen.git"
   }
 }
