@@ -3,7 +3,8 @@
  * @file
  * Template for the 100 50-50 33-33-33 page panel layout.
  *
- * This template provides a top row split into two equal regions and a
+ * This template provides a top row containing a single region, a middle row 
+ * split into two equal regions and a
  * bottom row split into three equal regions.
  *
  * Variables:
