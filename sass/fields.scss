@@ -17,6 +17,13 @@
        Staff/User Listing & Individual Profiles
 **************************************************** */
 
+/*
+ * User Directory Styles
+ * Note: in order for the contact icons to appear, the email and phone fields in
+ * the user directory view must have a label consisting of a single space with
+ * a wrapper class ".contact-icon".
+*/
+
 .user-module {
   background:#fff;
   //@include box-shadow(#ddd 0 0 7px 3px);
