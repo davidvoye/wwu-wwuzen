@@ -18,12 +18,8 @@ $display-large: 900px;
 			@include zen-grid-item(1, 1);
 			padding-left: 0;
 			padding-right: 0;
+			margin-right: 0;
 		}
-	}
-
-	.clean-2x2 {
-		padding-left: 0;
-		padding-right: 0;
 	}
 }
 

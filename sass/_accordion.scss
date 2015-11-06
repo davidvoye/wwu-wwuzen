@@ -71,10 +71,27 @@
 /**
 * Start accordion style for accordion views.
 */
-.view .ui-accordion .field-content {
-  display:inline;
-  padding-left:0
+
+.view .ui-accordion {
+  .ui-widget-content {
+    background: transparent;
+    border: none;
+    padding: 0.5em 0;
+    margin-left: 35px;
+    a {color: $wwuOceanBlue;}
+  }
+  .ui-accordion-header {
+  	background: transparent;
+  	border: none;
+  	padding: 0.5em 0;
+  	color: $wwuBlue;
+  	a {
+  		color: $wwuBlue;
+  		padding-left: 35px;
+  	}
+  }
 }
+
 /**
 * End accordion style for accordion views.
 */
