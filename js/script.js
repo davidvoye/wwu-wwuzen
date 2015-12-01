@@ -166,18 +166,19 @@
   }
   // END MENU EXPANSION ON CLICK
 
-  // START MOBILE MAIN MENU TOGGLE ON RESIZE
+  // START MOBILE MAIN MENU AND QUICK LINKS TOGGLE ON RESIZE
   Drupal.behaviors.toggleMenuOnResize = {
     attach: function (context, settings) {
       var $mainMenu,
           $subMenus,
           $subMenuItems,
+          $quicklinks,
           $window;
 
       function bindHandlers() {
         $window.unbind('resize', resizeWindow);
 
-        if ($window.width() <= 800) {
+        if ($window.width() <= 801) {
           $window.resize(resizeWindow);
         }
       }
@@ -187,17 +188,21 @@
           $mainMenu.removeAttr('style');
           $subMenus.removeAttr('style');
           $mainMenu.find('.opened').removeClass('opened');
+          $quicklinks.css('display','table');
+        } else {
+          $quicklinks.css('display','none');
         }
       }
 
       $mainMenu = $('#main-menu div > ul.menu');
       $subMenus = $mainMenu.find('ul');
+      $quicklinks = $('.western-quick-links ul');
       $window = $(window, context);
       $window.resize(bindHandlers);
       bindHandlers();
     }
   }
-  // END MOBILE MAIN MENU TOGGLE ON RESIZE
+  // END MOBILE MAIN MENU AND QUICK LINKS TOGGLE ON RESIZE
 
   // START Tooltips for the staff and faculty directories
   Drupal.behaviors.userModuleIcons = {
