@@ -16,12 +16,12 @@
 ?>
 <div class="wwu-33-67-container">
 
-  <div class="wwu-33-percent-left-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
-  	<?php print $content['left']; ?>
-  </div>
-
   <div class="wwu-67-percent-right-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
   	<?php print $content['right']; ?>
+  </div>
+
+  <div class="wwu-33-percent-left-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+  	<?php print $content['left']; ?>
   </div>
 
 </div>
