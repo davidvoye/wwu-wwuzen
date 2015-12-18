@@ -1,0 +1,82 @@
+@import 'compass';
+@import 'zen';
+
+$zen-box-sizing: border-box;
+$zen-gutter-width: 1em;
+$box-sizing-polyfill-path: '/sites/all/themes/wwuzen/js/boxsizing.htc';
+$zen-auto-include-item-base: false;
+$zen-auto-include-flow-item-base: false;
+
+@media screen and (min-width: 0) {
+
+  $zen-coloumn-count: 1;
+
+  .clean-cbe {
+    @include clearfix;
+  }
+
+  #panels-dnd-main {
+    @include clearfix;
+  }
+
+  .clean-cbe-container {
+    @include zen-grid-item(1,1);
+    @include zen-grid-container();
+
+    .clean-cbe {
+      @include zen-grid-item-base();
+      @include zen-grid-item(1,1);
+      @include zen-clear(both);
+    }
+
+  }
+
+}
+
+@media screen and (min-width: 360px) {
+}
+
+@media screen and (min-width: 550px) {
+
+  $zen-column-count: 2;
+
+  .clean-cbe-container {
+    @include zen-grid-item(2,1);
+
+    .clean-cbe-tabs {
+      @include zen-grid-item(1,1);
+    }
+
+    .clean-cbe-aside {
+      @include zen-grid-item(1,2);
+      @include zen-clear(none);
+    }
+
+  }
+
+}
+
+@media screen and (min-width: 800px) {
+
+  $zen-column-count: 3;
+
+  .clean-cbe-container {
+    @include zen-grid-item(3,1);
+
+    .clean-cbe-tabs {
+      @include zen-grid-item(2,1);
+      @include zen-nested-container();
+
+      .panel-pane {
+        @include zen-grid-item-base();
+      }
+
+    }
+
+    .clean-cbe-aside {
+      @include zen-grid-item(1,3);
+    }
+
+  }
+
+}
