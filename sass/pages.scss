@@ -12,8 +12,8 @@
 @import "compass/css3/images";
 
 // Create and import our sprite sheet for the icons used in the right footer block
-@import "../images/westernIcons/*.png";
-@include all-westernIcons-sprites;
+// @import "../images/westernIcons/*.png";
+// @include all-westernIcons-sprites;
 
 // Import helper classes for panel, views, and wysiwyg editors
 @import "helpers";
@@ -512,41 +512,93 @@ footer {
       &:last-child { margin-bottom:1.25em; }
       &:before {
         position:absolute;
-        top:0.5em;
         left:0;
-        content:" ";
       }
     }
+    .western-address:before,
+    .western-telephone:before,
+    .western-contact:before {
+      font-family: fontello;
+      color: $wwuYellow;
+    }
     .western-address:before {
-      @extend .westernIcons-AddressIcon;
+      content: '\e800';
       width:14px;
       height:12px;
       margin-top:-1px;
     }
     .western-telephone:before {
-      @extend .westernIcons-PhoneIcon;
+      content: '\21';
       width:12px;
       height:10px;
     }
     .western-contact:before {
-      @extend .westernIcons-EmailIcon;
+      content: '\25';
       width:11px;
       height:8px;
       margin-left:1px;
-      margin-top:2px;
     }
   }
   .western-social-media {
-    position: relative;
-    li { list-style: none; display:inline-block; }
+    $social-icon-size: 25px;
+    padding-left: emCalc(17);
+    font-family: fontello;
+    overflow: visible;
+    padding-top: 15px;
+    line-height: $social-icon-size;
+
+    ul {
+      margin: 0;
+    }
+    li {
+      display: inline-block;
+      font-size: $social-icon-size;
+      height: $social-icon-size;
+    }
     a {
-      width:24px;
-      height:24px;
+      position: relative;
       display: block;
-      text-indent: -999em;
-      &:focus {
-        border-bottom:3px solid $wwuLime;
+      white-space: nowrap;
+      overflow: hidden;
+      text-indent: 100%;
+      width: $social-icon-size;
+      height: $social-icon-size;
+      top: -$social-icon-size;
+      margin-right: 2px;
+
+      &:before {
+        color: white;
       }
+
+      &:focus {
+        border-bottom: 3px solid $wwuLime;
+      }
+    }
+
+    //Icon assignemnts until SASS 3.3 update
+    .westernIcons-FacebookIcon:before {
+      content: '\101';
+    }
+    .westernIcons-FlickrIcon:before {
+      content: '\102';
+    }
+    .westernIcons-GooglePlusIcon:before {
+      content: '\103';
+    }
+    .westernIcons-InstagramIcon:before {
+      content: '\104';
+    }
+    .westernIcons-TumblrIcon:before {
+      content: '\105';
+    }
+    .westernIcons-TwitterIcon:before {
+      content: '\106';
+    }
+    .westernIcons-RSSicon:before {
+      content: '\107';
+    }
+    .westernIcons-YouTubeIcon:before {
+      content: '\108';
     }
   }
 }

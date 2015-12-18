@@ -240,10 +240,11 @@ $zen-auto-include-item-base: false;
     .western-logo a {
       @include zen-grid-item(1,1,left);
       margin-bottom: -.375em;
-      background: url('../../images/wwuhorizlogo.png') no-repeat;
+      background: url('../../images/wwuhorizlogo.svg') no-repeat;
       background-color: $wwuBlue;
+      background-size: 270px;
       width: 100%;
-      height: 74px;
+      height: 60px;
       text-indent: -999em;
     }
 
