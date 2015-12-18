@@ -20,7 +20,7 @@ module.exports = function(grunt) {
         tasks: ['newer:copy:development', 'jshint:development']
       },
       images: {
-        files: ['src/images/**/*.{png,gif,jpg,jpeg}', 'screenshot.png', 'logo.png'],
+        files: ['src/images/**/*.{svg,png,gif,jpg,jpeg}', 'screenshot.png', 'logo.png'],
         tasks: ['newer:imagemin']
       }
     },
