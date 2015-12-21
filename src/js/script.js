@@ -17,14 +17,14 @@
    * The following code runs after the body loads which then allows the menu to appear.
    */
   Drupal.behaviors.noTransitionFlash = {
-    attach: function (context, settings) {
+    attach: function () {
       $('html').removeClass('preload');
     }
-  }
+  };
 
   // START SITE NAME TYPOGRAPHY
   Drupal.behaviors.siteNameTypography = {
-    attach: function (context, settings) {
+    attach: function (context) {
       if (context == document) {
         var siteName = $(".site-name p").text();
         var typographyAnd = siteName.replace("and", "<span class=\"diminutive-type\">and</span>");
@@ -39,12 +39,12 @@
         $('.site-name p span:contains(Office of)').replaceWith(typographyOfficeOf);
       }
     }
-  }
+  };
   // END SITE NAME TYPOGRAPHY
 
   // START SEARCH TOGGLE ON CLICK
   Drupal.behaviors.searchSlider = {
-    attach: function (context, settings) {
+    attach: function (context) {
       $('.western-search > button', context).click(function () {
         var search = $('.western-search-widget');
         if (search.is(':visible')) {
@@ -54,12 +54,12 @@
         }
       });
     }
-  }
+  };
   // END SEARCH TOGGLE ON CLICK
 
   // START QUICK LINKS TOGGLE ON CLICK
   Drupal.behaviors.mobileWwuMenu = {
-    attach: function (context, settings) {
+    attach: function (context) {
       $('.western-quick-links button', context).click(function () {
         var $quicklinks = $('.western-quick-links ul');
 
@@ -69,17 +69,17 @@
           $quicklinks.show("slide", { direction: "right" }, 200, function() {
             $quicklinks.css({
               'display': 'table'
-            })
+            });
           });
         }
       });
     }
-  }
+  };
   // END QUICK LINKS TOGGLE ON CLICK
 
   // START MOBILE MAIN MENU TOGGLE ON CLICK
   Drupal.behaviors.mobileWwuMainMenu = {
-    attach: function (context, settings) {
+    attach: function (context) {
       var $mainMenu,
           $mobileMainNav,
           $subMenus;
@@ -103,12 +103,12 @@
         }
       });
     }
-  }
+  };
   //END MOBILE MAIN MENU TOGGLE ON CLICK
 
   // START MENU EXPANSION ON CLICK
   Drupal.behaviors.menuExpansion = {
-    attach: function (context, settings) {
+    attach: function (context) {
       var $links,
           $menuItems,
           $submenuParents,
@@ -128,7 +128,7 @@
         event.stopPropagation();
       }
 
-      function clickSubmenuParent(event) {
+      function clickSubmenuParent() {
         var $opened,
             $this;
 
@@ -163,15 +163,14 @@
 
       bindHandlers();
     }
-  }
+  };
   // END MENU EXPANSION ON CLICK
 
   // START MOBILE MAIN MENU AND QUICK LINKS TOGGLE ON RESIZE
   Drupal.behaviors.toggleMenuOnResize = {
-    attach: function (context, settings) {
+    attach: function (context) {
       var $mainMenu,
           $subMenus,
-          $subMenuItems,
           $quicklinks,
           $window;
 
@@ -201,12 +200,12 @@
       $window.resize(bindHandlers);
       bindHandlers();
     }
-  }
+  };
   // END MOBILE MAIN MENU AND QUICK LINKS TOGGLE ON RESIZE
 
   // START Tooltips for the staff and faculty directories
   Drupal.behaviors.userModuleIcons = {
-    attach: function (context, settings) {
+    attach: function (context) {
       $('.user-module div', context).click(function(){
         if($(this).hasClass('tooltip')){
           $(this).removeClass('tooltip');
@@ -215,17 +214,18 @@
         }
       });
     }
-  }
+  };
   // END Tooltips for the staff and faculty directories
 
   // START Slideshow caption
   Drupal.behaviors.slideshowCaption = {
-    attach: function (context, settings) {
+    attach: function (context) {
       $('.flex-caption', context).each(function () {
         var containerHeight,
             height,
             imageHeight,
-            topMargin;
+            topMargin,
+            $this;
 
         $this = $(this);
         containerHeight = $this.closest('ul').height();
@@ -239,19 +239,19 @@
         });
       });
     }
-  }
+  };
   // END Slideshow caption
- 
+
   // START Slideshow image links
   Drupal.behaviors.slideshowImageLinks = {
-    attach: function (context, settings) {
+    attach: function () {
       $('.slides li').each(function () {
         var $this,
             $link;
 
         $this = $(this);
         $link = $this.find('.flex-caption a');
-        
+
         if ($link.length > 0) {
           $this.find('img')
             .wrap($('<a/>', {
@@ -261,9 +261,9 @@
         }
       });
     }
-  }
+  };
   //END Slideshow image links
-  
+
   // START Accordion menu no-children fix
   Drupal.behaviors.accordionMenuFix = {
     attach: function (context) {
@@ -273,7 +273,7 @@
         }
       });
     }
-  }
+  };
   // END Accordion menu no-children fix
 
 })(jQuery, Drupal, this, this.document);
