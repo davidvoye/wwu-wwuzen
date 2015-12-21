@@ -1,8 +1,13 @@
 *.scssc
 *.css
+*.min.js
 .sass-cache/*
 sass-extensions/*
 .DS_Store
 .buildpath
 .project
 .settings
+node_modules
+images
+/logo.png
+/screenshot.png

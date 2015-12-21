@@ -42,7 +42,7 @@ $(document).ready(function() {
       original.unwrap();
       original.unwrap();
       var tr = original.find('tr');
-      tr.each(function (index) {
+      tr.each(function () {
       	$(this).height('');
       });
 	}
