@@ -8,6 +8,7 @@ sass-extensions/*
 .project
 .settings
 node_modules
+vendor/gem
 images
 /logo.png
 /screenshot.png
