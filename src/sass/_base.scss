@@ -46,11 +46,14 @@ $indent-amount: 30px;
 // See http://compass-style.org/help/tutorials/spriting/
 @import "compass/utilities/sprites";
 
-// Use one CSS3 mixin instead of multiple vendor prefixes. 
+// Use one CSS3 mixin instead of multiple vendor prefixes.
 @import "compass/css3";
 
 // Helps set up a vertical rhythm.
 @import "compass/typography/vertical_rhythm";
+
+// Text replacement
+@import "compass/typography/text/replacement";
 
 // Add the Zen Grids responsive layout mixins.
 @import "zen";

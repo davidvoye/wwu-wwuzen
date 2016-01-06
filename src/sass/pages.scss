@@ -8,12 +8,6 @@
  */
 
 @import "base";
-@import "compass/css3/box-shadow";
-@import "compass/css3/images";
-
-// Create and import our sprite sheet for the icons used in the right footer block
-// @import "../images/westernIcons/*.png";
-// @include all-westernIcons-sprites;
 
 // Import helper classes for panel, views, and wysiwyg editors
 @import "helpers";
@@ -31,8 +25,6 @@ body {
   -webkit-font-smoothing: antialiased; //Make fonts in webkit not look terrible.
 }
 
-.page {}
-
 /*
  * The skip-link link will be completely hidden until a user tabs to the link.
  * See the element-focusable rule in system.base.css.
@@ -40,6 +32,7 @@ body {
 
 #skip-link {
   margin: 0;
+
   a,
   a:visited {
     display: block;
@@ -60,104 +53,135 @@ header[role="banner"] button {
 }
 
 .western-header {
+
   .western-search-widget {
-    background:#fff;
-    padding:0;
-    display:block;
-    overflow:hidden;
-    z-index:200;
-    height:4em;
-    width:18.25em;
-    margin-top:-.31em;
+    background: #fff;
+    padding: 0;
+    display: block;
+    overflow: hidden;
+    z-index: 200;
+    height: 4em;
+    width: 18.25em;
+    margin-top: -.31em;
     @include box-shadow(#333 0 0 8px);
-    &.hide { display:none; }
+
+    &.hide {
+      display: none;
+    }
+
     .form-item .form-text {
-      &:focus, &:active { @include box-shadow(none); }
+      &:focus, &:active {
+        @include box-shadow(none);
+      }
     }
 
     a {
-      color:#999;
+      color: #999;
       line-height: 31px;
-      background:#E4E4E4;
-      height:2.063em;
-      float:left;
-      width:12px;
-      text-align:center;
-      text-decoration:none;
-      &:hover, &:focus { color:#666; }
+      background: #E4E4E4;
+      height: 2.063em;
+      float: left;
+      width: 12px;
+      text-align: center;
+      text-decoration: none;
+
+      &:hover, &:focus {
+        color: #666;
+      }
     }
+
     input {
-      font-size:.85em;
-      font-family:$muli;
-      border: {
-        width:0 0 1px 0;
-        style:solid;
-        color:$wwuLime;
+      font-size: .85em;
+      font-family: $muli;
+      border:  {
+        width: 0 0 1px 0;
+        style: solid;
+        color: $wwuLime;
       }
-      margin:.5em .25em .25em .75em;
-      padding:.25em 0 .1em 0;
-      &:focus { outline:none; }
+
+      margin: 0.5em 0.25em 0.25em 0.75em;
+      padding: 0.25em 0 0.1em 0;
+
+      &:focus {
+        outline:none;
+      }
     }
+
     .form-submit {
-      background-color:$wwuOceanBlue;
-      color:#fff;
-      margin:0;
-      padding:0 1em;
-      border:none;
-      height:4.75em;
-      position:absolute;
-      top:0;
-      right:-1px;
-      border-radius:0;
+      background-color: $wwuOceanBlue;
+      color: #fff;
+      margin: 0;
+      padding: 0 1em;
+      border: none;
+      height: 4.75em;
+      position: absolute;
+      top: 0;
+      right: -1px;
+      border-radius: 0;
     }
+
     .form-type-checkbox {
-      display:block;
-      margin:0;
+      display: block;
+      margin: 0;
+
       label {
-        color:gray;
-        font-size:.625em;
-        font-weight:normal;
+        color: gray;
+        font-size: 0.625em;
+        font-weight: normal;
       }
     }
+
     input[type='checkbox'] {
-      height:12px;
-      width:12px;
+      height: 12px;
+      width: 12px;
     }
   }
 }
 
 .western-quick-links ul {
-  font-size: .8em;
+  font-size: 0.8em;
+
   li  {
-    display:inline-block;
+    display: inline-block;
     font-family: $muli;
-    padding-left: .5em;
-    img {margin-top: -1px;}
+    padding-left: 0.5em;
+
+    img {
+      margin-top: -1px;
+    }
+
     a {
       text-decoration: none;
       padding-left: 6px;
       color: $wwuBlue;
+
       &:hover, &:focus {
-        color:$wwuOceanBlue;
+        color: $wwuOceanBlue;
       }
     }
   }
 }
 
-//Media Query for the name
+// Media Query for the name
 @media all and (min-width: 801px) {
+
   .site-name {
-    z-index:99;
-    min-width:200px;
-    max-width:250px;
-    min-height:25px;
-    font-size:1.5em;
-    text-transform:uppercase;
-    text-align:right;
-    padding:.75em 1em;
-    line-height:1.1;
-    p { text-decoration:none; color:#fff; }
+    z-index: 99;
+    min-width: 200px;
+    max-width: 250px;
+    min-height: 25px;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    text-align: right;
+    padding: .75em 1em;
+    line-height: 1.1;
+
+    p {
+      text-decoration: none;
+      color: #fff;
+    }
   }
+
 }
 
 /* ****************************************************
@@ -165,7 +189,7 @@ header[role="banner"] button {
 **************************************************** */
 
 main {
-  padding: .625em;
+  padding: 0.625em;
   //Create a white to gray vertical gradient
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e9e9e9',GradientType=0 ); /* IE6-8 */
   $experimental-support-for-svg: true; //Support for IE9 and Opera Presto
@@ -181,33 +205,42 @@ main {
 }
 
 .page-title {
-  border-bottom:solid 3px #E9E9E9;
-  margin-bottom:1em;
+  border-bottom: solid 3px #E9E9E9;
+  margin-bottom: 1em;
 }
 
 .region-highlighted {}
 
 .breadcrumb { /* The path to the current page in the form of a list of links */
-  float:right;
-  font-size:.75em;
-  font-family:$muli;
-  color:gray;
-  line-height:2.17;
+  float: right;
+  font-size: 0.75em;
+  font-family: $muli;
+  color: gray;
+  line-height: 2.17;
+
   ol {
     margin: 0;
     padding: 0;
   }
+
   li {
     display: inline;
     list-style-type: none;
     margin: 0;
     padding: 0;
     color: gray;
+
     a {
       color:$wwuOceanBlue;
       text-decoration:none;
-      &.active { color:$wwuRed; }
-      &:hover, &:focus {text-decoration: underline;}
+
+      &.active {
+        color:$wwuRed;
+      }
+
+      &:hover, &:focus {
+        text-decoration: underline;
+      }
     }
   }
 }
@@ -219,6 +252,7 @@ main {
 a {
   text-decoration: none;
   color: $wwuOceanBlue; // Changed from Light Blue to "Ocean Blue" for color contrast
+
   &:hover, &:focus {text-decoration: underline;}
 }
 
@@ -226,7 +260,9 @@ a {
                     Typography
 **************************************************** */
 
-.secondary-nav { font-family:$muli; }
+.secondary-nav {
+  font-family:$muli;
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $muli;
@@ -244,153 +280,212 @@ h3.title { /* Comment title */
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin:1.17em 0 .55em 0;
-  line-height:1;
-  color:$wwuBlue;
-  font-weight:normal;
+  margin: 1.17em 0 .55em 0;
+  line-height: 1;
+  color: $wwuBlue;
+  font-weight: normal;
 }
 
-// I don't think this worked after all... how to fix it?
-//@for $h from 1 through 6 {
-// h#{$h} { font-size:$h#{$h}-font-size; }
-//}
+h1 {
+  font-size: $h1-font-size;
+  margin:.17em 0 .4em .5em;
+}
 
-h1 { font-size:$h1-font-size; margin:.17em 0 .4em .5em; }
-h2 { font-size:$h2-font-size; }
-h3 { font-size:$h3-font-size; }
-h4 { font-size:$h4-font-size; }
-h5 { font-size:$h5-font-size; }
-h6 { font-size:$h6-font-size; }
+h2 {
+  font-size: $h2-font-size;
+}
 
-.block-title { font-size:1em; }
+h3 {
+  font-size: $h3-font-size;
+}
 
-footer h2.block-title { color: #fff; }
+h4 {
+  font-size: $h4-font-size;
+}
+
+h5 {
+  font-size: $h5-font-size;
+}
+
+h6 {
+  font-size: $h6-font-size;
+}
+
+.block-title {
+  font-size:1em;
+}
+
+footer h2.block-title {
+  color: #fff;
+}
 
 // To be used (on headers) in Drupal WYSIWYG Styles Dropdown
 .title-underline {
   border-bottom: #ddd 3px solid;
-  padding-bottom:.25em;
+  padding-bottom: 0.25em;
 }
 
 .content {
   .code, code {
-    font-family:"Courier New", Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     font-weight: 700;
     color: $wwuRed;
     margin-left: 3em;
   }
+
   p {
     margin-top:0;
     margin-bottom:1em;
-    blockquote & { font-size:1em; }
-    code { margin-left:0; }
+
+    blockquote & {
+      font-size:1em;
+    }
+
+    code {
+      margin-left:0;
+    }
   }
+
   blockquote {
     background:#ddd;
     padding:1em 1.5em;
     margin:.5em 0;
     max-width:75%;
     min-width:45%;
-    p:last-child { margin-bottom:0; }
+
+    p:last-child {
+      margin-bottom:0;
+    }
   }
 }
 
-main ul, main ol { margin:0; }
+main ul, main ol {
+  margin: 0;
+}
 
 .diminutive-type {
-  font-size:1em;
-  font-style:italic;
-  font-weight:normal;
-  text-transform:none;
-  font-family:serif;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: normal;
+  text-transform: none;
+  font-family: serif;
 }
 
 table {
-  border-collapse:collapse;
-  font-size:.85em;
-  font-family:$muli;
+  border-collapse: collapse;
+  font-size: 0.85em;
+  font-family: $muli;
 }
 
-tr:nth-of-type(odd) { background:#eee; } // Zebra striping
+tr:nth-of-type(odd) {
+  background: #eee;
+}
 
 th {
   font-weight:normal;
-  background-color:#ddd;
+  background-color: #ddd;
 }
 
 td, th {
-  padding:.5em;
-  text-align:left;
+  padding: 0.5em;
+  text-align: left;
 }
 
-tr { border-bottom:1px solid #fff; }
-td, th { border-right:1px solid #fff; }
+tr {
+  border-bottom: 1px solid #fff;
+}
+
+td, th {
+  border-right: 1px solid #fff;
+}
 
 dl {
   @extend p;
   margin-left: 1.5em;
-  dt { @extend h4; }
-  dd { margin-left: 1.5em; }
-}
 
-figure {
-  background-color:#fff;
-  padding:.75em;
-  margin:.75em;
-  @include box-shadow(0 0 4px 2px #ddd);
-  display:inline-block;
-  img { margin:0 auto; }
-  figcaption {
-    margin-top:.5em;
-    font-size:13px;
-    font-size:.85rem;
-    line-height:1.5;
-    font-style:italic;
-    color:#555;
+  dt {
+    @extend h4;
+  }
+
+  dd {
+    margin-left: 1.5em;
   }
 }
 
-div.messages { /* Important messages (status, warning, and error) for the user. See also the declarations in messages.css. */
-  margin: 1.5em 0; /* Drupal core uses "6px 0" margin */
+figure {
+  background-color: #fff;
+  padding: 0.75em;
+  margin: 0.75em;
+  @include box-shadow(0 0 4px 2px #ddd);
+  display: inline-block;
+
+  img {
+    margin: 0 auto;
+  }
+
+  figcaption {
+    margin-top: 0.5em;
+    font-size: 13px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    font-style: italic;
+    color: #555;
+  }
+}
+
+/*
+ * Important messages (status, warning, and error) for the user. See also the
+ * declarations in messages.css.
+ */
+div.messages {
+  margin: 1.5em 0;
+
   ul {
     margin-top: 0;
     margin-bottom: 0;
   }
 }
 
-div.status { /* Normal priority messages */
+/* Normal priority messages */
+div.status {
 }
 
+/* Medium priority messages */
 div.warning,
-tr.warning { /* Medium priority messages */
-  /* border: 1px solid #f0c020; */ /* Drupal core uses: 1px solid #f0c020 */
+tr.warning {
 }
 
+/* High priority messages. See also the .error declaration below. */
 div.error,
-tr.error { /* High priority messages. See also the .error declaration below. */
+tr.error {
 }
 
-.error { /* Errors that are separate from div.messages status messages. */
-  /* color: #e55; */ /* Drupal core uses a #e55 background */
+/* Errors that are separate from div.messages status messages. */
+.error {
 }
 
-.warning { /* Warnings that are separate from div.messages status messages. */
-  /* color: #e09010; */ /* Drupal core uses a #e09010 background */
+/* Warnings that are separate from div.messages status messages. */
+.warning {
 }
 
-.tabs { /* See also the tabs.css file. */
+/* See also the tabs.css file. */
+.tabs {
 }
 
-.region-help { /* Help text on a page */
+/* Help text on a page */
+.region-help {
 }
 
-.more-help-link { /* Link to more help */
+/* Link to more help */
+.more-help-link {
 }
 
-.region-content { /* Wrapper for the actual page content */
+/* Wrapper for the actual page content */
+.region-content {
 }
 
-ul.inline { /* List of links generated by theme_links() */
+/* List of links generated by theme_links() */
+ul.inline {
   display: inline;
   padding: 0;
 
@@ -400,14 +495,18 @@ ul.inline { /* List of links generated by theme_links() */
     padding: 0 1em 0 0; /* LTR */
   }
 }
-span.field-label { /* The inline field label used by the Fences module */
+
+/* The inline field label used by the Fences module */
+span.field-label {
   padding: 0 1em 0 0; /* LTR */
 }
 
-.item-list .pager { /* A list of page numbers when more than 1 page of content is available */
+/* A list of page numbers when more than 1 page of content is available */
+.item-list .pager {
   padding: 0;
 
-  li { /* Each page number in the pager list */
+  /* Each page number in the pager list */
+  li {
     padding: 0 0.5em;
   }
 }
@@ -424,7 +523,6 @@ span.field-label { /* The inline field label used by the Fences module */
  * Remember to NOT add padding or margin to your .region-sidebar-first
  * (see the layout.css file.)
  */
-
 .region-sidebar-first {
 }
 
@@ -434,7 +532,6 @@ span.field-label { /* The inline field label used by the Fences module */
  * Remember to NOT add padding or margin to your .region-sidebar-second
  * (see the layout.css file.)
  */
-
 .region-sidebar-second {
 }
 
@@ -445,12 +542,16 @@ span.field-label { /* The inline field label used by the Fences module */
 footer {
   background-color: $wwuBlue;
   color: white;
-  border-top:10px solid #fff;
-  padding-bottom:.5em;
-  a:hover, a:focus, a:active { color:$wwuLime; }
+  border-top: 10px solid #fff;
+  padding-bottom: 0.5em;
+
+  a:hover, a:focus, a:active {
+    color:$wwuLime;
+  }
 }
 
 .footer-left {
+
   .footer-site-name, p:first-child {
     font-size: 1.33em;
     text-transform: uppercase;
@@ -459,49 +560,61 @@ footer {
 }
 
 .footer-center {
+
   ul.menu li {
-    border-bottom:1px solid #fff;
+    border-bottom: 1px solid #fff;
     list-style-image: none;
     list-style-type: none;
-    font-size: .875em;
-    padding-top:.5em;
+    font-size: 0.875em;
+    padding-top: 0.5em;
+
     a {
-      color:#fff;
-      text-decoration:none;
-      padding-left:.15em;
-      text-transform:capitalize;
-      &:hover, &:focus { color:$wwuLime; }
+      color: #fff;
+      text-decoration: none;
+      padding-left: 0.15em;
+      text-transform: capitalize;
+
+      &:hover, &:focus {
+        color:$wwuLime;
+      }
     }
   }
 }
 
-
 .footer-right {
   @include background(linear-gradient(top, #3A5A8F, $wwuBlue));
-  font-family:$muli;
+  font-family: $muli;
+
   h1 {
     @include box-shadow(#555 0 0 7px);
-    padding: .75em 0;
-    font-weight:normal;
-    text-align:center;
+    padding: 0.75em 0;
+    font-weight: normal;
+    text-align: center;
     background-color: #fff;
-    width:100%;
-    font-size:16px;
-    font-size:1rem;
+    width: 100%;
+    font-size: 16px;
+    font-size: 1rem;
     box-sizing: border-box;
-    text-transform:uppercase;
+    text-transform: uppercase;
+
     a {
       margin:0;
       padding-top: 0.8em;
       border: none;
       text-decoration:none;
-      color:$wwuBlue;
-      &:hover, &:active, &:focus { color:$wwuOceanBlue; }
+      color: $wwuBlue;
+
+      &:hover, &:active, &:focus {
+        color: $wwuOceanBlue;
+      }
     }
   }
   .western-contact-info {
     font-size:.750em;
-    a { color:#fff; }
+
+    a {
+      color:#fff;
+    }
     // Set the default styles for the p content in the right footer block
     p {
       position:relative;
@@ -509,29 +622,37 @@ footer {
       margin-bottom:.75em;
       margin-top:0;
       line-height:1.5em;
-      &:last-child { margin-bottom:1.25em; }
+
+      &:last-child {
+        margin-bottom:1.25em;
+      }
+
       &:before {
         position:absolute;
         left:0;
       }
     }
+
     .western-address:before,
     .western-telephone:before,
     .western-contact:before {
       font-family: fontello;
       color: $wwuYellow;
     }
+
     .western-address:before {
       content: '\e800';
       width:14px;
       height:12px;
       margin-top:-1px;
     }
+
     .western-telephone:before {
       content: '\21';
       width:12px;
       height:10px;
     }
+
     .western-contact:before {
       content: '\25';
       width:11px;
@@ -539,34 +660,39 @@ footer {
       margin-left:1px;
     }
   }
+
   .western-social-media {
+
+    /* Dimensions of social media icons */
     $social-icon-size: 25px;
+
     padding-left: emCalc(17);
-    font-family: fontello;
-    overflow: visible;
-    padding-top: 15px;
     line-height: $social-icon-size;
 
     ul {
       margin: 0;
     }
+
     li {
       display: inline-block;
+      float: left;
+      margin-right: 0.2em;
       font-size: $social-icon-size;
       height: $social-icon-size;
+      line-height: $social-icon-size;
     }
+
     a {
-      position: relative;
       display: block;
-      white-space: nowrap;
-      overflow: hidden;
-      text-indent: 100%;
       width: $social-icon-size;
       height: $social-icon-size;
-      top: -$social-icon-size;
-      margin-right: 2px;
+      overflow: hidden;
+      white-space: nowrap;
 
       &:before {
+        width: $social-icon-size;
+        height: $social-icon-size;
+        font-family: 'fontello';
         color: white;
       }
 
@@ -575,28 +701,34 @@ footer {
       }
     }
 
-    //Icon assignemnts until SASS 3.3 update
     .westernIcons-FacebookIcon:before {
       content: '\101';
     }
+
     .westernIcons-FlickrIcon:before {
       content: '\102';
     }
+
     .westernIcons-GooglePlusIcon:before {
       content: '\103';
     }
+
     .westernIcons-InstagramIcon:before {
       content: '\104';
     }
+
     .westernIcons-TumblrIcon:before {
       content: '\105';
     }
+
     .westernIcons-TwitterIcon:before {
       content: '\106';
     }
+
     .westernIcons-RSSicon:before {
       content: '\107';
     }
+
     .westernIcons-YouTubeIcon:before {
       content: '\108';
     }
@@ -615,12 +747,12 @@ footer {
 **************************************************** */
 
 html.js input.form-autocomplete {
-  background-position:100% 5px;
+  background-position: 100% 5px;
 }
 
 //Hide the darn contextual link of the main menu when the page loads for admins
 .main-menu div.contextual-links-wrapper ul.contextual-links {
-  display:none;
+  display: none;
 }
 
 //Make sure flexslider arrows are not cut off by default
@@ -631,6 +763,5 @@ html.js input.form-autocomplete {
 /* ****************************************************
                   Partial Files Import
 **************************************************** */
-
 
 @import "accordion"; // jQuery Accordion

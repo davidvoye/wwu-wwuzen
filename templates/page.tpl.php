@@ -205,15 +205,14 @@
 
           <div class="western-social-media">
             <ul>
-              <li class="westernIcons-FacebookIcon"><a href="http://www.facebook.com/westernwashingtonuniversity">Facebook</a></li>
-              <li class="westernIcons-FlickrIcon"><a href="http://www.flickr.com/wwu">Flickr</a></li>
-              <li class="westernIcons-TwitterIcon"><a href="https://twitter.com/#!/WWU">Twitter</a></li>
-              <li class="westernIcons-YouTubeIcon"><a href="http://www.youtube.com/wwu">Youtube</a></li>
-              <li class="westernIcons-GooglePlusIcon"><a href="https://plus.google.com/+wwu/posts">Google Plus</a></li>
-              <li class="westernIcons-RSSicon"><a href="http://news.wwu.edu/go/feed/1538/ru/atom/">RSS</a></li>
+              <li><a class="westernIcons-FacebookIcon" href="http://www.facebook.com/westernwashingtonuniversity">Facebook</a></li>
+              <li><a class="westernIcons-FlickrIcon" href="http://www.flickr.com/wwu">Flickr</a></li>
+              <li><a class="westernIcons-TwitterIcon" href="https://twitter.com/#!/WWU">Twitter</a></li>
+              <li><a class="westernIcons-YouTubeIcon" href="http://www.youtube.com/wwu">Youtube</a></li>
+              <li><a class="westernIcons-GooglePlusIcon" href="https://plus.google.com/+wwu/posts">Google Plus</a></li>
+              <li><a class="westernIcons-RSSicon" href="http://news.wwu.edu/go/feed/1538/ru/atom/">RSS</a></li>
             </ul>
           </div>
-
 
         <?php print render($page['footer_right']); ?>
       </div>
