@@ -3,15 +3,19 @@ $(document).ready(function() {
   var switched = false;
   var updateTables = function() {
     if (($(window).width() < 767) && !switched ){
-      switched = true;
       $("table.responsive").each(function(i, element) {
-        splitTable($(element));
+      	columns = $(element).find("tr:nth-child(1) td").length
+      	if (columns > 1) {
+      	  switched = true;
+          splitTable($(element));
+    	} else {
+    		$(element).removeClass("responsive");
+    	}
       });
-      return true;
     }
     else if (switched && ($(window).width() > 767)) {
-      switched = false;
       $("table.responsive").each(function(i, element) {
+      	switched = false;
         unsplitTable($(element));
       });
     }
@@ -42,7 +46,7 @@ $(document).ready(function() {
       original.unwrap();
       original.unwrap();
       var tr = original.find('tr');
-      tr.each(function () {
+      tr.each(function (index) {
       	$(this).height('');
       });
 	}
