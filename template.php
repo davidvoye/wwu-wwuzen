@@ -230,8 +230,35 @@ function wwuzen_preprocess_block(&$variables, $hook) {
 // */
 
 /**
+ * Alter the node render array.
+ *
+ * @param $build
+ *   An array of variables that comprise the node fields and information.
+ */
+function wwuzen_node_view_alter(&$build) {
+  if (isset($build['field_slideshow_images'])) {
+    $path = drupal_get_path('theme', 'wwuzen');
+
+    $images_loaded = array(
+      'type' => 'file',
+      'data' => $path . '/js/imagesloaded.pkgd.min.js',
+      'group' => JS_LIBRARY,
+    );
+
+    $slideshow_fix = array(
+      'type' => 'file',
+      'data' => $path . '/js/slideshow-fix.min.js',
+      'group' => JS_DEFAULT,
+    );
+
+    $build['field_slideshow_images']['#attached']['js'][] = $images_loaded;
+    $build['field_slideshow_images']['#attached']['js'][] = $slideshow_fix;
+  }
+}
+
+/**
  * Perform necessary alterations to JavaScript be it is presented on the page.
- * Various scripts are excluded from the footer as they are needed globally on the page.
+ * Variou scripts are excluded from the footer as they are needed globally on the page.
  *
  * @param $javascript 
  *  The array of JavaScript files that have been added to the page

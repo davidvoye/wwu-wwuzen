@@ -217,31 +217,6 @@
   };
   // END Tooltips for the staff and faculty directories
 
-  // START Slideshow caption
-  Drupal.behaviors.slideshowCaption = {
-    attach: function (context) {
-      $('.flex-caption', context).each(function () {
-        var containerHeight,
-            height,
-            imageHeight,
-            topMargin,
-            $this;
-
-        $this = $(this);
-        containerHeight = $this.closest('ul').height();
-        imageHeight = $this.siblings('img').height();
-        height = $this.height();
-        topMargin = (containerHeight - height - imageHeight) / 2;
-
-        $this.css({
-          'position': 'relative',
-          'margin-top': topMargin
-        });
-      });
-    }
-  };
-  // END Slideshow caption
-
   // START Slideshow image links
   Drupal.behaviors.slideshowImageLinks = {
     attach: function () {
