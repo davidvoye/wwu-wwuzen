@@ -12,3 +12,5 @@ vendor/gem
 images
 /logo.png
 /screenshot.png
+
+!imagesloaded.*
