@@ -49,29 +49,33 @@ $display-large: 850px;
 @media all and (min-width: $display-medium) {
 
   .clean-70-30-40-40-20-container {
-    $zen-column-count: 2;
+    $zen-column-count: 3;
 
     .clean-70-30-40-40-20-top-left {
-      @include zen-grid-item(2,1);
-      @include zen-clear();
+      @include zen-grid-item(3,1);
+      @include zen-clear(none);
+      float:none;
     }
 
     .clean-70-30-40-40-20-top-right{
-      @include zen-grid-item(1,1);
-      @include zen-clear();
+      @include zen-grid-item(3,1);
+      @include zen-clear(none);
     }
 
     .clean-70-30-40-40-20-bottom-left {
-      @include zen-grid-item(1,2);
+      @include zen-grid-item(1,1);
+      @include zen-clear(none);
     }
 
     .clean-70-30-40-40-20-bottom-middle {
-      @include zen-grid-item(1,1);
-      @include zen-clear();
+      @include zen-grid-item(1,2);
+      @include zen-clear(none);
     }
 
     .clean-70-30-40-40-20-bottom-right {
-      @include zen-grid-item(1,2);
+      @include zen-grid-item(1,3);
+      @include zen-clear(none);
+      padding:0px;
     }
   }
 
