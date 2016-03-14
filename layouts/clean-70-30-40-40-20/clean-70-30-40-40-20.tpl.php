@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Template for CFPA department landing page panels
+ * Template for 70-30 40-40-20 panel layout
  */
 ?>
 <div class="clean-70-30-40-40-20-container">
