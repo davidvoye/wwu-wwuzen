@@ -1,0 +1,113 @@
+/**
+ * These are the layout styles for the clean-70-30-40-40-20
+ * panel.
+ */
+
+@import "panels";
+
+$display-small: 320px;
+$display-medium: 600px;
+$display-large: 850px;
+
+@media all {
+
+  .clean-70-30-40-40-20-container {
+    @include zen-grid-container();
+    $zen-column-count: 1;
+
+    .clean-70-30-40-40-20-top-left {
+      @include zen-grid-item(1,1);
+      @include zen-clear();
+    }
+
+    .clean-70-30-40-40-20-top-right{
+      @include zen-grid-item(1,1);
+      @include zen-clear();
+    }
+
+    .clean-70-30-40-40-20-bottom-row {
+      @include zen-clear();
+    }
+
+    .clean-70-30-40-40-20-bottom-left {
+      @include zen-grid-item(1,1);
+    }
+
+    .clean-70-30-40-40-20-bottom-middle {
+      @include zen-grid-item(1,1);
+      @include zen-clear();
+    }
+
+    .clean-70-30-40-40-20-bottom-right {
+      @include zen-grid-item(1,1);
+      @include zen-clear();
+    }
+  }
+
+}
+
+@media all and (min-width: $display-medium) {
+
+  .clean-70-30-40-40-20-container {
+    $zen-column-count: 2;
+
+    .clean-70-30-40-40-20-top-left {
+      @include zen-grid-item(2,1);
+      @include zen-clear();
+    }
+
+    .clean-70-30-40-40-20-top-right{
+      @include zen-grid-item(1,1);
+      @include zen-clear();
+    }
+
+    .clean-70-30-40-40-20-bottom-left {
+      @include zen-grid-item(1,2);
+    }
+
+    .clean-70-30-40-40-20-bottom-middle {
+      @include zen-grid-item(1,1);
+      @include zen-clear();
+    }
+
+    .clean-70-30-40-40-20-bottom-right {
+      @include zen-grid-item(1,2);
+    }
+  }
+
+}
+
+@media all and (min-width: $display-large) {
+
+  .clean-70-30-40-40-20-container {
+    $zen-column-count: 10;
+
+    .clean-70-30-40-40-20-top-left {
+      @include zen-grid-item(7,1);
+      @include zen-clear(none);
+    }
+
+    .clean-70-30-40-40-20-top-right{
+      @include zen-grid-item(3,8);
+      @include zen-clear(none);
+    }
+
+    .clean-70-30-40-40-20-bottom-left {
+      @include zen-grid-item(4,1);
+      @include zen-clear(none);
+    }
+
+    .clean-70-30-40-40-20-bottom-middle {
+      @include zen-grid-item(4,5);
+      @include zen-clear(none);
+    }
+
+    .clean-70-30-40-40-20-bottom-right {
+      @include zen-grid-item(2,9);
+      @include zen-clear(none);
+      padding:0px;
+    }
+  }
+
+}
+
