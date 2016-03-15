@@ -100,41 +100,6 @@ $zen-auto-include-item-base: false;
   font-size:.85em;
 }
 
-/******************************************************************************
- *
- * Mobile-size -> 360px
- *
- *****************************************************************************/
-
-@media all and (max-width: 360px) {
-
-  $zen-column-count: 1;
-
-  .western-header .western-search .western-search-widget {
-    width: 16em;
-    @include transition(width .25s);
-
-    .form-submit {
-      border-left: solid 1.75em white;
-      box-shadow: none;
-    }
-  }
-
-  .content article {
-    figure {
-      margin: 0 auto;
-      float: none !important;
-      display: block;
-    }
-
-    blockquote {
-      max-width: 100%;
-      margin: .5em;
-    }
-  }
-
-}
-
 /*******************************************************************************
  *
  * Footer (1 col)
@@ -604,6 +569,41 @@ $zen-auto-include-item-base: false;
   .footer-right {
     h1 {
       margin: 0 0 1.2em 0;
+    }
+  }
+
+}
+
+/******************************************************************************
+ *
+ * Mobile-size -> 360px
+ *
+ *****************************************************************************/
+
+@media all and (max-width: 360px) {
+
+  $zen-column-count: 1;
+
+  .western-header .western-search .western-search-widget {
+    width: 16em;
+    @include transition(width .25s);
+
+    .form-submit {
+      border-left: solid 1.75em white;
+      box-shadow: none;
+    }
+  }
+
+  .content article {
+    figure {
+      margin: 0 auto;
+      float: none !important;
+      display: block;
+    }
+
+    blockquote {
+      max-width: 100%;
+      margin: .5em;
     }
   }
 
