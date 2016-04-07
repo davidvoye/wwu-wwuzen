@@ -69,10 +69,12 @@
 */
 
 /**
-* Start accordion style for accordion views.
+* Start accordion style for accordion views and content accordions.
 */
 
-.view .ui-accordion {
+.view .ui-accordion, .content-accordion {
+  font-family: $muli;
+  font-size: 100%;
   .ui-widget-content {
     background: transparent;
     border: none;
@@ -92,14 +94,30 @@
   }
 }
 
-/**
-* End accordion style for accordion views.
-*/
-
-/**
-* Fix for broken arrows in non-view accordions
-*/
+.ui-accordion.content-accordion {
+	.ui-accordion-header {
+		font-size: 25.6px;
+		display: block;
+		position: relative;
+		margin-top: 2px;
+		min-height: 0;
+		cursor: pointer;
+		.ui-accordion-header-icon {
+			position: absolute;
+			left: .5em;
+			top: 50%;
+			margin-top: -8px;
+		}
+	}
+	.ui-icon {
+	
+	}
+}
 
 .accordion-fix-title a {position: relative; left: 1.7em; }
 .accordion-fix-body .field-body a {display: inline; padding: 0em; color: #0070B6; }
+
+/**
+* End accordion style for accordion views and content accordions.
+*/
 
