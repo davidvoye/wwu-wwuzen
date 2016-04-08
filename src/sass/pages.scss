@@ -756,9 +756,28 @@ html.js input.form-autocomplete {
 }
 
 //Make sure flexslider arrows are not cut off by default
-.flexslider .flex-direction-nav a {
-  line-height: 40px;
+.flexslider {
+  .flex-direction-nav a {
+    line-height: 40px;
+  }
+  iframe {
+    width: 100%;
+  }
+  //Caption styles
+  ul.slides {
+  	background-color:#888;
+  	li {
+      background-color: #fff;
+	  .flex-caption {
+	    padding: 0.5em;
+	    background-color:#888;
+  	    color:#ffffff;
+	  }
+	}
+  }
+  
 }
+
 
 /* ****************************************************
                   Partial Files Import
