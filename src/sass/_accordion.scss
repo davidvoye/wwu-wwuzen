@@ -3,226 +3,319 @@
  * jQuery UI accordion styles
  */
 
-/**
-* Start accordion style for our navigation menus.
-*/
+// Accordion.
+$accordion-background-color: #eee;
+$accordion-border-color: #fff;
+$accordion-border-style: solid;
+$accordion-border-width: 1px;
+$accordion-color: #222;
+$accordion-vertical-padding: .66em;
+
+// Active Trail.
+$accordion-active-trail-background-color: #ddd;
+
+// Accordion Header Icon.
+$accordion-header-icon-background-color: #ddd;
+
+// Accordion Child.
+$accordion-child-horizontal-padding: 2;
+$accordion-child-horizontal-padding-increment: 1.5;
 
 .ui-helper-reset {
   line-height: 1.5;
 }
 
 .ui-accordion .ui-accordion-header {
-    padding: 0;
+  padding: 0;
 }
 
 .block-accordion-menu {
+
+  .accordion-link,
+  .accordion-link:link {
+    color: $accordion-color;
+    display: block;
+    padding-bottom: $accordion-vertical-padding;
+    padding-left: 1em;
+    padding-right: 0;
+    padding-top: $accordion-vertical-padding;
+  }
+
+  .accordion-link:hover,
+  .accordion-link:focus {
+    @include transition(.3s);
+    color: $wwuOceanBlue;
+  }
+
   .ui-accordion-header,
   .ui-accordion .ui-accordion-content {
-    background-color:#eee;
-    background-image:none;
-    border:none;
-    border-bottom:solid 1px #fff;
-    margin:0;
-    .active-trail { background-color:#ddd; }
-    .active {
-      background-color:$wwuLime;
-      &:hover, &:focus { color:$wwuGreen; @include transition(.3s); }
-    }
-    span.accordion-link { padding:0.5em 0; }
-    a, span.accordion-link {
-      color: #222;
-      display:block;
-      padding-left:1em;
-      padding-top:.66em;
-      padding-bottom:.66em;
-      &:hover, &:focus { color:$wwuOceanBlue; @include transition(.3s); }
-    }
-  }
-  
-  .ui-accordion-header {
-    @include background-image(linear-gradient(left, #eee 0%,#eee 83.5%,#fff 83.5%,#fff 84%, #ddd 84%,#ddd 100%));
-    &.ui-state-active, &.active-trail {
-    	@include background-image(linear-gradient(left, #ddd 0%,#ddd 83.5%,#fff 83.5%,#fff 84%, #ddd 84%,#ddd 100%));
-    }
-    .ui-icon {
-      right:.8em;
-      left:auto;
-      top:10%;
-      margin:.5em 0;
-    }
-    .accordion-link { margin-right:2.75em; }
-  }
-  
-  .ui-accordion .ui-accordion-header .accordion-link a {
-    padding: 0;
+    background-color: $accordion-background-color;
+    background-image: none;
+    border: 0;
+    border-bottom-color: $accordion-border-color;
+    border-bottom-style: $accordion-border-style;
+    border-bottom-width: $accordion-border-width;
+    color: $accordion-color;
     margin: 0;
   }
-  
+
+  .has-children {
+    @include background-image(linear-gradient(
+      left,
+      $accordion-background-color 0%,
+      $accordion-background-color 83.5%,
+      $accordion-border-color 83.5%,
+      $accordion-border-color 84%,
+      $accordion-header-icon-background-color 84%,
+      $accordion-header-icon-background-color 100%
+    ));
+
+    .accordion-link {
+      margin-right: 2.75em;
+    }
+
+    .ui-icon {
+      left: auto;
+      margin: .5em 0;
+      right: .8em;
+      top: 10%;
+    }
+  }
+
+  .has-children.ui-state-active,
+  .has-children.active-trail {
+    @include background-image(linear-gradient(
+      left,
+      $accordion-active-trail-background-color 0%,
+      $accordion-active-trail-background-color 83.5%,
+      $accordion-border-color 83.5%,
+      $accordion-border-color 84%,
+      $accordion-header-icon-background-color 84%,
+      $accordion-header-icon-background-color 100%
+    ));
+  }
+
   .no-children {
-    background-image:none;
-    a { padding-left:1em; }
-    .ui-icon { display:none; }
-    &.ui-accordion-header .accordion-link {
-      margin-right: 0;
+
+    .accordion-link {
+      color: $accordion-color;
+    }
+
+    .ui-icon {
+      display: none;
     }
   }
-  
-  //Get rid of the default border radii
-  .ui-corner-all { border-radius:0; }
-  .ui-corner-top { border-radius:0; }
+
+  .active-trail {
+    background-color: $accordion-active-trail-background-color;
+  }
+
+  .active {
+    background-color: $wwuLime;
+  }
+
+  .active:hover,
+  .active:focus {
+    @include transition(.3s);
+    color: $wwuGreen;
+  }
+
+  .ui-corner-all,
+  .ui-corner-top,
   .ui-corner-bottom {
-    border-bottom-left-radius:0;
-    border-bottom-right-radius:0;
+    border-radius: 0;
   }
-  
-  //style the interior accordion content
+
   .ui-accordion .ui-accordion-content {
-    font-family:$muli;
-    margin:0;
-    top:0;
-    border:none;
-    padding:0;
+    border: 0;
+    font-family: $muli;
+    margin: 0;
+    padding: 0;
+    top: 0;
   }
 
-  .ui-widget-content { background:none; }
+  .ui-widget-content {
+    background: none;
+  }
 
-  .ui-widget { font-size:1em; } // Changed from 1.1em
+  .ui-widget {
+    font-size: 1em;
+  }
 
+  /* ALL LEVELS */
   .ui-accordion-content {
+
     .menu {
-      margin:0;
-      padding:0;
-      li {
-        display:block;
-        a {
-          text-decoration:none;
-          display:block;
-          margin:0;
-          padding-left: 2em;
-          padding-top:.66em;
-          padding-bottom:.66em;
-          border-bottom:solid 1px #fff;
-          &.first a { margin:0; }
-        }
-        li {
-          a { padding-left:3.5em; }
-          li {
-            a { padding-left:5em; }
-            li {
-              a { padding-left:6.5em; }
-              li {
-                a { padding-left:8em; }
-              }
-            }
-          }
-        }
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: block;
+
+      a {
+        border-bottom-color: $accordion-border-color;
+        border-bottom-style: $accordion-border-style;
+        border-bottom-width: $accordion-border-width;
+        display: block;
+        margin: 0;
+        padding-bottom: $accordion-vertical-padding;
+        padding-right: 0;
+        padding-top: $accordion-vertical-padding;
+        text-decoration: none;
       }
-      & > .menu li {
-        padding-left:0;
-        & > li { padding-left:0; }
+
+      .first a {
+        margin: 0;
       }
     }
-    .ui-accordion-header a {padding-left: 2em;}
-    .menu li {
-      a { padding-left:2em; }
-      li {
-        a { padding-left:3.5em; }
-        li {
-          a { padding-left:5em; }
-          li {
-            a { padding-left:6.5em; }
-          }
-        }
-      }
-    }
-    .ui-accordion-content {
-    	.ui-accordion-header a {padding-left: 3.5em;}
-    	.menu li {
-          a { padding-left:3.5em; }
-          li {
-            a { padding-left:5em; }
-            li {
-              a { padding-left:6.5em; }
-            }
-          }
-        }
-    	.ui-accordion-content {
-    		.ui-accordion-header a {padding-left: 5em;}
-    		.menu li {
-              a { padding-left:5em; }
-              li {
-                a { padding-left:6.5em; }
-              }
-            }
-    		.ui-accordion-content {
-    			.ui-accordion-header a {padding-left: 6.5em;}
-    			.menu li {
-                  a { padding-left:6.5em; }
-                }
-    		}
-    	}
+
+    .menu > .menu li,
+    .menu > .menu li > li {
+      padding-left: 0;
     }
   }
-  
-}
 
+  /* LEVEL 1 */
+  .ui-accordion-content {
+
+    .ui-accordion-header .accordion-link {
+      padding-left: $accordion-child-horizontal-padding * 1em;
+    }
+
+    .menu {
+      li {
+        a { padding-left: $accordion-child-horizontal-padding * 1em; }
+        li {
+          a { padding-left: 1 * $accordion-child-horizontal-padding-increment + $accordion-child-horizontal-padding * 1em; }
+          li {
+            a { padding-left: 2 * $accordion-child-horizontal-padding-increment + $accordion-child-horizontal-padding * 1em; }
+            li {
+              a { padding-left: 3 * $accordion-child-horizontal-padding-increment + $accordion-child-horizontal-padding * 1em; }
+            }
+          }
+        }
+      }
+    }
+
+    /* LEVEL 2 */
+    .ui-accordion-content {
+
+      .ui-accordion-header .accordion-link {
+        padding-left: 1 * $accordion-child-horizontal-padding-increment + $accordion-child-horizontal-padding * 1em;
+      }
+
+      .menu {
+        li {
+          a { padding-left: 1 * $accordion-child-horizontal-padding-increment + $accordion-child-horizontal-padding * 1em; }
+          li {
+            a { padding-left: 2 * $accordion-child-horizontal-padding-increment + $accordion-child-horizontal-padding * 1em; }
+            li {
+              a { padding-left: 3 * $accordion-child-horizontal-padding-increment + $accordion-child-horizontal-padding * 1em; }
+            }
+          }
+        }
+      }
+
+      /* LEVEL 3 */
+      .ui-accordion-content {
+
+        .ui-accordion-header .accordion-link {
+          padding-left: 2 * $accordion-child-horizontal-padding-increment + $accordion-child-horizontal-padding * 1em;
+        }
+
+        .menu {
+          li {
+            a { padding-left: 2 * $accordion-child-horizontal-padding-increment + $accordion-child-horizontal-padding * 1em; }
+            li {
+              a { padding-left: 3 * $accordion-child-horizontal-padding-increment + $accordion-child-horizontal-padding * 1em; }
+            }
+          }
+        }
+
+        /* LEVEL 4 */
+        .ui-accordion-content {
+
+          .ui-accordion-header.accordion-link {
+            padding-left: 3 * $accordion-child-horizontal-padding-increment + $accordion-child-horizontal-padding * 1em;
+          }
+
+          .menu {
+            li {
+              a { padding-left: 3 * $accordion-child-horizontal-padding-increment + $accordion-child-horizontal-padding * 1em; }
+            }
+          }
+        }
+        /* END LEVEL 4 */
+
+      }
+      /* END LEVEL 3 */
+
+    }
+    /* END LEVEL 2 */
+
+  }
+  /* END LEVEL 1 */
+
+}
 
 @import 'menu-icons.scss';
 
-/**
-* End accordion style for our navigation menus.
-*/
-
-/**
-* Start accordion style for accordion views and content accordions.
-*/
-
-.view .ui-accordion, .content-accordion {
+.view .ui-accordion,
+.content-accordion {
   font-family: $muli;
   font-size: 100%;
+
   .ui-widget-content {
     background: transparent;
-    border: none;
-    padding: 0.5em 0;
+    border: 0;
     margin-left: 35px;
-    a {color: $wwuOceanBlue;}
+    padding: .5em 0;
+
+    a {
+      color: $wwuOceanBlue
+    }
   }
+
   .ui-accordion-header {
-  	background: transparent;
-  	border: none;
-  	padding: 0.5em 0;
-  	padding-left: 35px;
-  	color: $wwuBlue;
-  	a {
-  		color: $wwuBlue;
-  	}
+    background: transparent;
+    border: 0;
+    color: $wwuBlue;
+    padding: .5em 0;
+    padding-left: 35px;
+
+    a {
+      color: $wwuBlue;
+    }
   }
 }
 
 .ui-accordion.content-accordion {
-	.ui-accordion-header {
-		font-size: 25.6px;
-		display: block;
-		position: relative;
-		margin-top: 2px;
-		min-height: 0;
-		cursor: pointer;
-		.ui-accordion-header-icon {
-			position: absolute;
-			left: .5em;
-			top: 50%;
-			margin-top: -8px;
-		}
-	}
-	.ui-icon {
-	
-	}
+
+  .ui-accordion-header {
+    cursor: pointer;
+    display: block;
+    font-size: 25.6px;
+    margin-top: 2px;
+    min-height: 0;
+    position: relative;
+
+    .ui-accordion-header-icon {
+      left: .5em;
+      margin-top: -8px;
+      position: absolute;
+      top: 50%;
+    }
+  }
 }
 
-.accordion-fix-title a {position: relative; left: 1.7em; }
-.accordion-fix-body .field-body a {display: inline; padding: 0em; color: #0070B6; }
+.accordion-fix-title a {
+  left: 1.7em;
+  position: relative;
+}
 
-/**
-* End accordion style for accordion views and content accordions.
-*/
-
+.accordion-fix-body .field-body a {
+  color: #0070B6;
+  display: inline;
+  padding: 0;
+}
