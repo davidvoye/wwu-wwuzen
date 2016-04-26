@@ -164,9 +164,43 @@ function wwuzen_preprocess_page(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("node" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function wwuzen_preprocess_node(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+  /* 
+   * Variables for nodes embedded via Node Embed
+   * 
+   * The following Node Embed parameters are implemented:
+   *   - align: left, right, or center
+   *   - width: 25, 33, 50, 66, 75, 100 (percentages)
+   *   - display_title: if "yes", title is displayed
+   *   - title_link: if "yes", title will be displayed as a link to embedded node
+   */
+  if ($variables['view_mode'] == 'node_embed') {
+    //Remove remains of escaped ampersands from variable names
+    $ne_vars = array();
+    foreach ($variables['node_embed_parameters'] as $key => $val) {
+      $k = str_replace('amp;', '', $key);
+      $ne_vars[$k] = $val;
+    }
+    
+    $variables['ne_classes'] = "";
+    // Check to see if the align Node Embed parameter exists
+    if(isset($ne_vars['align'])) {
+      // For security, run align through the check_plain() function
+      // Add the alignment value to the classes array used in our node template
+      $variables['ne_classes'] .= ' '.check_plain($ne_vars['align']);
+    }
+    
+    // Check to see if the width Node Embed parameter exists
+    if(isset($ne_vars['width'])) {
+      // For security, run width through the check_plain() function
+      // Add the width value to the classes array used in our node template
+      $width = filter_var(check_plain($ne_vars['width']), FILTER_SANITIZE_NUMBER_INT);
+      $variables['ne_classes'] .= ' helper-width-'.$width.'-percent';
+    }
+    
+    $variables['ne_display_title'] = isset($ne_vars['display_title']) && strnatcasecmp($ne_vars['display_title'], "yes") == 0;
+    $variables['ne_title_link'] = isset($ne_vars['title_link']) && strnatcasecmp($ne_vars['title_link'], "yes") == 0;
+  }
 
   // Optionally, run node-type-specific preprocess functions, like
   // wwuzen_preprocess_node_page() or wwuzen_preprocess_node_story().
