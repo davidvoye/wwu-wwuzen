@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Returns the HTML for an embedded slideshow node.
+ * Returns the HTML for a node embedded via node embed.
  *
  */
 ?>
