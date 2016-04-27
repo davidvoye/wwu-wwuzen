@@ -31,6 +31,10 @@ $accordion-child-horizontal-padding-increment: 1.5;
 
 .block-accordion-menu {
 
+  .ui-state-default a {
+    color: $accordion-color;
+  }
+  
   .accordion-link,
   .accordion-link:link {
     color: $accordion-color;
