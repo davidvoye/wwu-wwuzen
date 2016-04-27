@@ -188,7 +188,7 @@ $accordion-child-horizontal-padding-increment: 1.5;
     #{$nested-accordion-selector} {
 
       .ui-accordion-header .accordion-link {
-        padding-left: $level * $accordion-child-horizontal-padding-increment + $accordion-child-horizontal-padding * 1em;
+        padding-left: $accordion-level * $accordion-child-horizontal-padding-increment + $accordion-child-horizontal-padding * 1em;
       }
 
       // Variable to accumulate nested list item selector.
