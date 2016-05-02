@@ -9,6 +9,7 @@ $accordion-border-color: #fff;
 $accordion-border-style: solid;
 $accordion-border-width: 1px;
 $accordion-color: #222;
+$accordion-horizontal-padding: 1em;
 $accordion-vertical-padding: .66em;
 
 // Active Trail.
@@ -34,14 +35,14 @@ $accordion-child-horizontal-padding-increment: 1.5;
   .ui-state-default a {
     color: $accordion-color;
   }
-  
+
   .accordion-link,
   .accordion-link:link {
     color: $accordion-color;
     display: block;
     padding-bottom: $accordion-vertical-padding;
-    padding-left: 1em;
-    padding-right: 0;
+    padding-left: $accordion-horizontal-padding;
+    padding-right: $accordion-horizontal-padding;
     padding-top: $accordion-vertical-padding;
   }
 
