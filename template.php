@@ -235,7 +235,7 @@ function wwuzen_preprocess_block(&$variables, $hook) {
  * @param $build
  *   An array of variables that comprise the node fields and information.
  */
-function wwuzen_node_view_alter(&$build) {
+/*function wwuzen_node_view_alter(&$build) {
   if (isset($build['field_slideshow_images'])) {
     $path = drupal_get_path('theme', 'wwuzen');
 
@@ -254,7 +254,7 @@ function wwuzen_node_view_alter(&$build) {
     $build['field_slideshow_images']['#attached']['js'][] = $images_loaded;
     $build['field_slideshow_images']['#attached']['js'][] = $slideshow_fix;
   }
-}
+}*/
 
 /**
  * Perform necessary alterations to JavaScript be it is presented on the page.
