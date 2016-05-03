@@ -3,121 +3,272 @@
  * jQuery UI accordion styles
  */
 
-/**
-* Start accordion style for our navigation menus.
-*/
+// Accordion.
+$accordion-background-color: #eee;
+$accordion-border-color: #fff;
+$accordion-border-style: solid;
+$accordion-border-width: 1px;
+$accordion-color: #222;
+$accordion-horizontal-padding: 1em;
+$accordion-vertical-padding: .66em;
+
+// Active Trail.
+$accordion-active-trail-background-color: #ddd;
+
+// Accordion Header Icon.
+$accordion-header-icon-background-color: #ddd;
+
+// Accordion Child.
+$accordion-child-horizontal-padding: 2;
+$accordion-child-horizontal-padding-increment: 1.5;
 
 .ui-helper-reset {
   line-height: 1.5;
 }
 
 .ui-accordion .ui-accordion-header {
-    padding: 0;
+  padding: 0;
 }
 
-//Accordion Item/Entry = Row
+.block-accordion-menu {
 
-.ui-accordion .accordion-row {
-
-// Active/Open Accordion Header/Title
-  .ui-state-active,
-  .ui-widget-content .ui-state-active,
-  .ui-widget-header .ui-state-active {
-    border:none;
-    border-bottom:solid 3px white;
-    background:#e9e9e9;
+  .ui-state-default a {
+    color: $accordion-color;
   }
 
-// Default/Closed Accordion Header/Title
-  .ui-state-default,
-  .ui-widget-content .ui-state-default,
-  .ui-widget-header .ui-state-default {
-    border:none;
-    background:none;
+  .accordion-link,
+  .accordion-link:link {
+    color: $accordion-color;
+    display: block;
+    padding-bottom: $accordion-vertical-padding;
+    padding-left: $accordion-horizontal-padding;
+    padding-right: $accordion-horizontal-padding;
+    padding-top: $accordion-vertical-padding;
   }
 
-// Accordion Body
-  .block-accordion-menu .ui-accordion-header,
-  .ui-accordion-content.ui-accordion-content-active,
+  .accordion-link:hover,
+  .accordion-link:focus {
+    @include transition(.3s);
+    color: $wwuOceanBlue;
+  }
+
+  .ui-accordion-header,
+  .ui-accordion .ui-accordion-content {
+    background-color: $accordion-background-color;
+    background-image: none;
+    border: 0;
+    border-bottom-color: $accordion-border-color;
+    border-bottom-style: $accordion-border-style;
+    border-bottom-width: $accordion-border-width;
+    color: $accordion-color;
+    margin: 0;
+  }
+
+  .has-children {
+    @include background-image(linear-gradient(
+      left,
+      $accordion-background-color 0%,
+      $accordion-background-color 83.5%,
+      $accordion-border-color 83.5%,
+      $accordion-border-color 84%,
+      $accordion-header-icon-background-color 84%,
+      $accordion-header-icon-background-color 100%
+    ));
+
+    .accordion-link {
+      margin-right: 2.75em;
+    }
+
+    .ui-icon {
+      left: auto;
+      margin: .5em 0;
+      right: .8em;
+      top: 10%;
+    }
+  }
+
+  .has-children.ui-state-active,
+  .has-children.active-trail {
+    @include background-image(linear-gradient(
+      left,
+      $accordion-active-trail-background-color 0%,
+      $accordion-active-trail-background-color 83.5%,
+      $accordion-border-color 83.5%,
+      $accordion-border-color 84%,
+      $accordion-header-icon-background-color 84%,
+      $accordion-header-icon-background-color 100%
+    ));
+  }
+
+  .no-children {
+
+    .accordion-link {
+      color: $accordion-color;
+    }
+
+    .ui-icon {
+      display: none;
+    }
+  }
+
+  .active-trail {
+    background-color: $accordion-active-trail-background-color;
+  }
+
+  .active {
+    background-color: $wwuLime;
+  }
+
+  .active:hover,
+  .active:focus {
+    @include transition(.3s);
+    color: $wwuGreen;
+  }
+
+  .ui-corner-all,
+  .ui-corner-top,
+  .ui-corner-bottom {
+    border-radius: 0;
+  }
+
+  .ui-accordion .ui-accordion-content {
+    border: 0;
+    font-family: $muli;
+    margin: 0;
+    padding: 0;
+    top: 0;
+  }
+
+  .ui-widget-content {
+    background: none;
+  }
+
+  .ui-widget {
+    font-size: 1em;
+  }
+
+  /* ALL LEVELS */
   .ui-accordion-content {
-    background-color:#e9e9e9;
-    border:none;
-    padding:1em;
+
+    .menu {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: block;
+
+      a {
+        border-bottom-color: $accordion-border-color;
+        border-bottom-style: $accordion-border-style;
+        border-bottom-width: $accordion-border-width;
+        display: block;
+        margin: 0;
+        padding-bottom: $accordion-vertical-padding;
+        padding-right: 0;
+        padding-top: $accordion-vertical-padding;
+        text-decoration: none;
+      }
+
+      .first a {
+        margin: 0;
+      }
+    }
+
+    .menu > .menu li,
+    .menu > .menu li > li {
+      padding-left: 0;
+    }
   }
 
-// Accordion Header/Title Link/H2
-  .ui-accordion-header a {
-    padding:.625em 0 .625em 0;
-    h2 {
-      font-size:1.17rem;
-      margin:0;
+  // Maximum number of levels UI Accordions may be nested.
+  $max-accordion-levels: 3;
+
+  // Variable to accumulate nested UI Accordion selector.
+  $nested-accordion-selector: '';
+
+  @for $accordion-level from 0 through $max-accordion-levels {
+    $nested-accordion-selector: $nested-accordion-selector + ' .ui-accordion-content';
+
+    #{$nested-accordion-selector} {
+
+      .ui-accordion-header .accordion-link {
+        padding-left: $accordion-level * $accordion-child-horizontal-padding-increment + $accordion-child-horizontal-padding * 1em;
+      }
+
+      // Variable to accumulate nested list item selector.
+      $nested-list-selector: '';
+
+      @for $list-level from $accordion-level through $max-accordion-levels {
+        $nested-list-selector: $nested-list-selector + ' li';
+
+        .menu #{$nested-list-selector} a {
+          padding-left: $list-level * $accordion-child-horizontal-padding-increment + $accordion-child-horizontal-padding * 1em;
+        }
+      }
+      // END LIST LOOP
+    }
+  }
+  // END ACCORDION LOOP
+}
+
+@import 'menu-icons.scss';
+
+.view .ui-accordion,
+.content-accordion {
+  font-family: $muli;
+  font-size: 100%;
+
+  .ui-widget-content {
+    background: transparent;
+    border: 0;
+    margin-left: 35px;
+    padding: .5em 0;
+
+    a {
+      color: $wwuOceanBlue
+    }
+  }
+
+  .ui-accordion-header {
+    background: transparent;
+    border: 0;
+    color: $wwuBlue;
+    padding: .5em 0;
+    padding-left: 35px;
+
+    a {
+      color: $wwuBlue;
     }
   }
 }
 
-.accordion-row .ui-accordion .accordion-row p:last-child { margin-bottom:0; }
-
-.accordion-row .ui-accordion ~ .item-list ul.pager { margin-top:.5em; }
-
-.accordion-row .ui-accordion-content a {
-  display:inline;
-  padding-left: 0;
-}
-
-/**
-* End accordion style for our navigation menus.
-*/
-
-/**
-* Start accordion style for accordion views and content accordions.
-*/
-
-.view .ui-accordion, .content-accordion {
-  font-family: $muli;
-  font-size: 100%;
-  .ui-widget-content {
-    background: transparent;
-    border: none;
-    padding: 0.5em 0;
-    margin-left: 35px;
-    a {color: $wwuOceanBlue;}
-  }
-  .ui-accordion-header {
-  	background: transparent;
-  	border: none;
-  	padding: 0.5em 0;
-  	padding-left: 35px;
-  	color: $wwuBlue;
-  	a {
-  		color: $wwuBlue;
-  	}
-  }
-}
-
 .ui-accordion.content-accordion {
-	.ui-accordion-header {
-		font-size: 25.6px;
-		display: block;
-		position: relative;
-		margin-top: 2px;
-		min-height: 0;
-		cursor: pointer;
-		.ui-accordion-header-icon {
-			position: absolute;
-			left: .5em;
-			top: 50%;
-			margin-top: -8px;
-		}
-	}
-	.ui-icon {
-	
-	}
+
+  .ui-accordion-header {
+    cursor: pointer;
+    display: block;
+    font-size: 25.6px;
+    margin-top: 2px;
+    min-height: 0;
+    position: relative;
+
+    .ui-accordion-header-icon {
+      left: .5em;
+      margin-top: -8px;
+      position: absolute;
+      top: 50%;
+    }
+  }
 }
 
-.accordion-fix-title a {position: relative; left: 1.7em; }
-.accordion-fix-body .field-body a {display: inline; padding: 0em; color: #0070B6; }
+.accordion-fix-title a {
+  left: 1.7em;
+  position: relative;
+}
 
-/**
-* End accordion style for accordion views and content accordions.
-*/
-
+.accordion-fix-body .field-body a {
+  color: #0070B6;
+  display: inline;
+  padding: 0;
+}
