@@ -1,0 +1,69 @@
+/**
+* These are the layout styles for the clean-chemistry panel.
+*/
+
+@import "panels";
+
+@media all and (min-width: 0) {
+
+  .wwu-100-percent-top {
+    $zen-column-count: 1;
+    $zen-gutter-width: 30px;
+    @include zen-grid-item(1,1);
+    @include zen-nested-container;
+    @include zen-clear(left);
+  }
+
+  .wwu-65-percent-left-column {
+    $zen-column-count: 1;
+    $zen-gutter-width: 30px;
+    @include zen-grid-item(1,1);
+    @include zen-nested-container();
+  }
+
+  .wwu-25-percent-right-column {
+    $zen-column-count: 1;
+    $zen-gutter-width: 30px;
+    @include zen-grid-item(1,1);
+    @include zen-clear(left);
+  }
+  .wwu-100-percent-bottom {
+    $zen-column-count: 1;
+    $zen-gutter-width: 30px;
+    @include zen-grid-item(1,1);
+    @include zen-clear(left);
+  }
+}
+
+@media all and (min-width: 800px) {
+
+  .wwu-100-percent-top {
+    $zen-column-count: 4;
+    $zen-gutter-width: 30px;
+    @include zen-grid-item(1,1);
+    @include zen-nested-container;
+    @include zen-clear(left);
+  }
+
+  .wwu-65-percent-left-column {
+    $zen-column-count: 4;
+    $zen-gutter-width: 30px;
+    @include zen-clear(left);
+    @include zen-grid-item(2.5,1);
+    @include zen-nested-container();
+  }
+
+  .wwu-35-percent-right-column {
+    $zen-column-count: 4;
+    $zen-gutter-width: 30px;
+    @include zen-grid-item(1.5,2.5);
+    @include zen-clear(none);
+  }
+
+  .wwu-100-percent-bottom {
+    $zen-column-count: 4;
+    $zen-gutter-width: 30px;
+    @include zen-grid-item(1,1);
+    @include zen-clear(left);
+  }
+}
