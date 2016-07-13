@@ -26,8 +26,8 @@
  <?php print $content['left']; ?>
 </div>
 
-<div class="wwu-35-percent-right-column<?php if(empty($content['left'])) {print 'empty-sidebar';}?>" <?php if (!empty($css_id)) {print "id=\"$css_id\"";} ?>>
- <?php print $content['right']; ?>>
+<div class="wwu-35-percent-right-column" <?php if (!empty($css_id)) {print "id=\"$css_id\"";} ?>>
+ <?php print $content['right']; ?>
 </div>
 
 <div class="wwu-100-percent-bottom" <?php if (!empty($css_id)) {print "id=\"$css_id\"";} ?>>

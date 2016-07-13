@@ -40,7 +40,7 @@
   .wwu-100-percent-top {
     $zen-column-count: 4;
     $zen-gutter-width: 30px;
-    @include zen-grid-item(1,1);
+    @include zen-grid-item(4,1);
     @include zen-nested-container;
     @include zen-clear(left);
   }
@@ -63,7 +63,7 @@
   .wwu-100-percent-bottom {
     $zen-column-count: 4;
     $zen-gutter-width: 30px;
-    @include zen-grid-item(1,1);
+    @include zen-grid-item(4,1);
     @include zen-clear(left);
   }
 }
