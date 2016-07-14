@@ -47,10 +47,12 @@
     attach: function (context) {
       $('.western-search > button', context).click(function () {
         var search = $('.western-search-widget');
+        var searchInput = $('.western-search-widget').find('form:first').find('input:first');
         if (search.is(':visible')) {
           search.hide("slide", { direction: "right" }, 400);
         } else {
           search.show("slide", { direction: "right" }, 200);
+          searchInput.focus();
         }
       });
     }
