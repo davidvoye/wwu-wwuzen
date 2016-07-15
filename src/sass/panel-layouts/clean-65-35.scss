@@ -4,66 +4,55 @@
 
 @import "panels";
 
+.clean-65-35-container {
+  @include zen-grid-container();
+}
+
 @media all and (min-width: 0) {
 
+  $zen-column-count: 1;
+  $zen-gutter-width: 30px;
+
   .wwu-100-percent-top {
-    $zen-column-count: 1;
-    $zen-gutter-width: 30px;
     @include zen-grid-item(1,1);
-    @include zen-nested-container;
-    @include zen-clear(left);
+    @include zen-float(none);
   }
 
   .wwu-65-percent-left-column {
-    $zen-column-count: 1;
-    $zen-gutter-width: 30px;
     @include zen-grid-item(1,1);
-    @include zen-nested-container();
+
   }
 
-  .wwu-25-percent-right-column {
-    $zen-column-count: 1;
-    $zen-gutter-width: 30px;
+  .wwu-35-percent-right-column {
     @include zen-grid-item(1,1);
-    @include zen-clear(left);
   }
   .wwu-100-percent-bottom {
-    $zen-column-count: 1;
-    $zen-gutter-width: 30px;
+    @include zen-clear(both);
     @include zen-grid-item(1,1);
-    @include zen-clear(left);
   }
 }
 
 @media all and (min-width: 800px) {
 
+  $zen-column-count: 4;
+  $zen-gutter-width: 30px;
+
   .wwu-100-percent-top {
-    $zen-column-count: 4;
-    $zen-gutter-width: 30px;
     @include zen-grid-item(4,1);
-    @include zen-nested-container;
-    @include zen-clear(left);
   }
 
   .wwu-65-percent-left-column {
-    $zen-column-count: 4;
-    $zen-gutter-width: 30px;
-    @include zen-clear(left);
+    @include zen-clear(both);
     @include zen-grid-item(2.5,1);
-    @include zen-nested-container();
   }
 
   .wwu-35-percent-right-column {
-    $zen-column-count: 4;
-    $zen-gutter-width: 30px;
-    @include zen-grid-item(1.5,2.5);
-    @include zen-clear(none);
+    @include zen-grid-item(1.5,1, right);
   }
 
   .wwu-100-percent-bottom {
-    $zen-column-count: 4;
-    $zen-gutter-width: 30px;
+    @include zen-clear(both);
     @include zen-grid-item(4,1);
-    @include zen-clear(left);
   }
+
 }

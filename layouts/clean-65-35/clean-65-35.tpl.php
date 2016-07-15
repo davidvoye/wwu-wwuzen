@@ -18,18 +18,22 @@
  */
 ?>
 
-<div class="wwu-100-percent-top" <?php if (!empty($css_id)) {print "id=\"$css_id\"";}?>>
-  <?php print $content['top']; ?>
-</div>
+<div class="clean-65-35-container">
 
-<div class="wwu-65-percent-left-column" <?php if (!empty($css_id)) {print "id=\"$css_id\"";} ?>>
- <?php print $content['left']; ?>
-</div>
+  <div class="wwu-100-percent-top" <?php if (!empty($css_id)) {print "id=\"$css_id\"";} ?>>
+    <?php print $content['top']; ?>
+  </div>
 
-<div class="wwu-35-percent-right-column" <?php if (!empty($css_id)) {print "id=\"$css_id\"";} ?>>
- <?php print $content['right']; ?>
-</div>
+  <div class="wwu-65-percent-left-column" <?php if(!empty($css_id)) {print "id=\"$css_id\"";} ?>>
+    <?php print $content['left']; ?>
+  </div>
 
-<div class="wwu-100-percent-bottom" <?php if (!empty($css_id)) {print "id=\"$css_id\"";} ?>>
- <?php print $content['bottom']; ?>
+  <div class="wwu-35-percent-right-column" <?php if (!empty($css_id)) {print "id=\"$css_id\"";} ?>>
+   <?php print $content['right']; ?>
+  </div>
+
+  <div class="wwu-100-percent-bottom" <?php if (!empty($css_id)) {print "id=\"$css_id\"";} ?>>
+   <?php print $content['bottom']; ?>
+  </div>
+
 </div>
