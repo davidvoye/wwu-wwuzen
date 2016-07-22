@@ -8,7 +8,7 @@
   @include zen-grid-container();
 }
 
-@media all and (min-width: 0) {
+@media all and (min-width: 0px) and (max-width:799px) {
 
   $zen-column-count: 1;
   $zen-gutter-width: 30px;
@@ -24,6 +24,7 @@
   }
 
   .wwu-35-percent-right-column {
+    @include zen-clear(both);
     @include zen-grid-item(1,1);
   }
   .wwu-100-percent-bottom {
