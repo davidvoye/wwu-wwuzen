@@ -205,6 +205,7 @@
 
           <div class="western-social-media">
             <ul>
+              <li><a class="westernIcons-WwuSocialIcon" href="https://social.wwu.edu">Western Social</a></li>
               <li><a class="westernIcons-FacebookIcon" href="http://www.facebook.com/westernwashingtonuniversity">Facebook</a></li>
               <li><a class="westernIcons-FlickrIcon" href="http://www.flickr.com/wwu">Flickr</a></li>
               <li><a class="westernIcons-TwitterIcon" href="https://twitter.com/#!/WWU">Twitter</a></li>

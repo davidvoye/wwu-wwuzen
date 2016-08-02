@@ -700,7 +700,9 @@ footer {
         border-bottom: 3px solid $wwuLime;
       }
     }
-
+    .westernIcons-WwuSocialIcon:before {
+      content: '\e82a';
+    }
     .westernIcons-FacebookIcon:before {
       content: '\101';
     }
@@ -775,7 +777,7 @@ html.js input.form-autocomplete {
 	  }
 	}
   }
-  
+
 }
 
 
