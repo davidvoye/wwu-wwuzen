@@ -111,59 +111,54 @@
   // START MENU EXPANSION ON CLICK
   Drupal.behaviors.menuExpansion = {
     attach: function (context) {
-      var $links,
-          $menuItems,
-          $submenuParents,
-          $window;
+      var $menu_items = $('#main-menu div > ul.menu li', context);
+      var $menu_links = $menu_items.find('a');
+      var $submenu_parents = $menu_items.has('ul');
+      var $window = $(window, context);
 
-      function bindHandlers() {
-        $submenuParents.unbind('click', clickSubmenuParent);
-        $links.unbind('click', clickLink);
-
-        if ($window.width() <= 800) {
-          $submenuParents.click(clickSubmenuParent);
-          $links.click(clickLink);
-        }
+      function closeSubmenu($parent) {
+        $parent.removeClass('opened');
+        $parent.find('.opened').removeClass('opened');
+        $parent.find('ul').slideUp();
       }
 
-      function clickLink(event) {
-        event.stopPropagation();
+      function openSubmenu($parent) {
+        $parent.addClass('opened');
+        $parent.children('ul').slideDown();
       }
 
       function clickSubmenuParent() {
-        var $opened,
-            $this;
+        var $this = $(this);
 
-        $this = $(this);
+        if ($window.width() > 800) {
+          return false;
+        }
 
         if ($this.hasClass('opened')) {
-          $this.removeClass('opened');
-          $this.find('.opened').removeClass('opened');
-          $this.find('ul').slideUp();
+          closeSubmenu($this);
         } else {
-          $opened = $this.siblings('.opened');
-          $opened.removeClass('opened');
-          $opened.find('.opened').removeClass('opened');
-          $opened.find('ul').slideUp();
-          $this.addClass('opened');
-          $this.children('ul').slideDown();
+          closeSubmenu($this.siblings('.opened'));
+          openSubmenu($this);
         }
       }
 
-      $window = $(window, context);
-      $menuItems = $('#main-menu div > ul.menu li', context);
-      $submenuParents = $menuItems.has('ul');
-      $links = $menuItems.find('a');
+      $menu_items.click(function (event) {
+        if ($window.width() > 800) {
+          return false;
+        }
 
-      $menuItems.click(function (event) {
         event.stopPropagation();
       });
 
-      $window.resize(function () {
-        bindHandlers();
+      $menu_links.click(function (event) {
+        if ($window.width() > 800) {
+          return false;
+        }
+
+        event.stopPropagation();
       });
 
-      bindHandlers();
+      $submenu_parents.click(clickSubmenuParent);
     }
   };
   // END MENU EXPANSION ON CLICK
