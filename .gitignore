@@ -1,16 +1,52 @@
+################################################################################
+#
+# FILE EXCLUSIONS
+#
+################################################################################
+
+# SASS cache files
 *.scssc
+
+# CSS files
 *.css
+
+# Minified JS files
 *.min.js
-.sass-cache/*
-sass-extensions/*
+
+# Mac OS filessytem
 .DS_Store
-.buildpath
-.project
-.settings
-node_modules
-vendor/gem
-images
+
+# Generated lgo and screenshot images
 /logo.png
 /screenshot.png
 
+################################################################################
+#
+# DIRECTORY EXCLUSIONS
+#
+################################################################################
+
+/.sass-cache
+
+# Eclipse project settings
+.buildpath
+.project
+.settings
+
+# node-js modules
+/node_modules
+
+# ruby gems
+/vendor/gem
+
+# Generated images
+/images
+
+################################################################################
+#
+# EXCEPTIONS
+#
+################################################################################
+
+# Images Loaded jQuery library
 !imagesloaded.*
