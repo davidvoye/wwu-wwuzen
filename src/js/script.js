@@ -144,7 +144,7 @@
 
       $menu_items.click(function (event) {
         if ($window.width() > 800) {
-          return false;
+          return true;
         }
 
         event.stopPropagation();
@@ -152,7 +152,7 @@
 
       $menu_links.click(function (event) {
         if ($window.width() > 800) {
-          return false;
+          return true;
         }
 
         event.stopPropagation();
