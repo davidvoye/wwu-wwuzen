@@ -131,7 +131,7 @@
         var $this = $(this);
 
         if ($window.width() > 800) {
-          return false;
+          return true;
         }
 
         if ($this.hasClass('opened')) {
