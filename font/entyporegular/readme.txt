@@ -34,5 +34,6 @@ $social-icons: (
   tumblr: '\0105',
   twitter: '\0106',
   rss: '\0107',
-  youtube: '\0108'
+  youtube: '\0108',
+  wwusocial: '\e82a'
 );
