@@ -1,7 +1,5 @@
 @import "panels";
-$mobile: max-width 480px;
-$tablet-only: 481px 800px;
-$tablet: max-width 800px;
+$tablet: 481px;
 $desktop: 801px;
 
 $zen-column-count: 4;
@@ -28,6 +26,15 @@ $zen-column-count: 4;
 
 .wwu-4-col-container {
   @include zen-clear();
+  @include breakpoint($tablet) {
+    .col-1, .col-3 {
+      @include zen-clear();
+      @include zen-grid-item(2,1); 
+    }
+    .col-2, .col-4 {
+      @include zen-grid-item(2,3);
+    }
+  }
   @include breakpoint($desktop) {
     .col-1 {
       @include zen-grid-item(1,1);
@@ -36,19 +43,11 @@ $zen-column-count: 4;
       @include zen-grid-item(1,2);
     }
     .col-3 {
+      @include zen-clear(none);
       @include zen-grid-item(1,3);
     }
     .col-4 {
       @include zen-grid-item(1,4);
-    }
-  }
-  @include breakpoint($tablet) {
-    .col-1, .col-3 {
-      @include zen-clear();
-      @include zen-grid-item(2,1); 
-    }
-    .col-2, .col-4 {
-      @include zen-grid-item(2,3);
     }
   }
 }
