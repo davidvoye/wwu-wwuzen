@@ -13,9 +13,10 @@
  * - $id: An optional CSS id to use for the layout.
  * - $content: An array of content, each item in the array is keyed to one
  *   panel of the layout. This layout supports the following sections:
- *   - $content['top']: Content for the top 100% row.
- *   - $content['left']: Content in the left column.
- *   - $content['right']: Content in the right column.
+ *   - $content['top_1']: Content for the top 100% row.
+ *   - $content['top_2']: Same as above but without the white background 
+ *   - $content['left_1..2']: Content in the left column. 
+ *   - $content['right_1..2']: Content in the right column.
  *   - $content['col_1..4'] Content for one of the four columns.
  *   - $content['bottom'] Content for the bottom 100% row.
  */
@@ -35,11 +36,19 @@
 <div class="section-wrapper white-bg">
   <div class="wwu-75-25-container wt-section">
     <div class="wwu-75-percent-left-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
-      <?php print $content['left']; ?>
+      <?php print $content['left_1']; ?>
     </div>
-
     <div class="wwu-25-percent-right-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
-      <?php print $content['right']; ?>
+      <?php print $content['right_1']; ?>
+    </div>
+  </div>
+
+  <div class="wwu-75-25-container wt-section">
+    <div class="wwu-75-percent-left-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+      <?php print $content['left_2']; ?>
+    </div>
+    <div class="wwu-25-percent-right-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+      <?php print $content['right_2']; ?>
     </div>
   </div>
 </div>
