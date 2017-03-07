@@ -1,0 +1,79 @@
+/**
+* These are the layout styles for the clean-meri panel.
+*/
+
+@import "panels";
+
+.clean-meri-container {
+  @include zen-grid-container();
+}
+
+@media all and (min-width: 0px) and (max-width:799px) {
+
+  $zen-column-count: 1;
+  $zen-gutter-width: 30px;
+
+  .wwu-100-percent-first-row {
+    @include zen-grid-item(1,1);
+    @include zen-float(none);
+  }
+
+  .wwu-100-percent-second-row {
+    @include zen-grid-item(1,1);
+    @include zen-float(none);
+  }
+
+  .wwu-100-percent-third-row {
+    @include zen-grid-item(1,1);
+    @include zen-float(none);
+  }
+
+  .wwu-60-percent-left-column {
+    @include zen-grid-item(1,1);
+  }
+
+  .wwu-40-percent-right-column {
+    @include zen-clear(both);
+    @include zen-grid-item(1,1);
+  }
+
+  .wwu-100-percent-bottom {
+    @include zen-clear(both);
+    @include zen-grid-item(1,1);
+  }
+}
+
+@media all and (min-width: 800px) {
+
+  $zen-column-count: 5;
+  $zen-gutter-width: 5px;
+
+  .wwu-100-percent-first-row {
+    @include zen-grid-item(5,1);
+    @include zen-clear(both);
+  }
+
+  .wwu-100-percent-second-row {
+    @include zen-grid-item(5,1);
+    @include zen-clear(both);
+  }
+
+  .wwu-100-percent-third-row {
+    @include zen-grid-item(5,1);
+    @include zen-clear(both);
+  }
+
+  .wwu-60-percent-left-column {
+    @include zen-clear(both);
+    @include zen-grid-item(3,1);
+  }
+
+  .wwu-40-percent-right-column {
+    @include zen-grid-item(2,1, right);
+  }
+
+  .wwu-100-percent-bottom {
+    @include zen-clear(both);
+    @include zen-grid-item(5,1);
+  }
+}

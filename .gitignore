@@ -20,6 +20,9 @@
 /logo.png
 /screenshot.png
 
+# Vim temp files.
+*.swp
+
 ################################################################################
 #
 # DIRECTORY EXCLUSIONS
