@@ -2,26 +2,37 @@
 $tablet: 481px;
 $desktop: 801px;
 
-$zen-column-count: 4;
+$zen-column-count: 8;
 
 .wwu-100-percent {
   @include zen-clear();
   @include breakpoint($desktop) {
-    @include zen-grid-item(4,1);
+    @include zen-grid-item(8,1);
   }
 }
 
 .wwu-75-percent-left-column {
   @include zen-clear();
   @include breakpoint($desktop) {
-    @include zen-grid-item(3,1);
+    @include zen-grid-item(6,1);
   }
 }
 
 .wwu-25-percent-right-column {
   @include breakpoint($desktop) {
-    @include zen-grid-item(1,4);
+    @include zen-grid-item(2,7);
   }
+}
+
+.wwu-left-half-column {
+  @include zen-clear();
+  @include zen-grid-item(3,1);
+}
+.wwu-mid-half-column {
+  @include zen-grid-item(3,4);  
+}
+.wwu-25-percent-right-column {
+  @include zen-grid-item(2,7);  
 }
 
 .wwu-4-col-container {
@@ -29,25 +40,25 @@ $zen-column-count: 4;
   @include breakpoint($tablet) {
     .col-1, .col-3 {
       @include zen-clear();
-      @include zen-grid-item(2,1); 
+      @include zen-grid-item(4,1); 
     }
     .col-2, .col-4 {
-      @include zen-grid-item(2,3);
+      @include zen-grid-item(4,3);
     }
   }
   @include breakpoint($desktop) {
     .col-1 {
-      @include zen-grid-item(1,1);
+      @include zen-grid-item(2,1);
     }
     .col-2 {
-      @include zen-grid-item(1,2);
+      @include zen-grid-item(2,3);
     }
     .col-3 {
       @include zen-clear(none);
-      @include zen-grid-item(1,3);
+      @include zen-grid-item(2,5);
     }
     .col-4 {
-      @include zen-grid-item(1,4);
+      @include zen-grid-item(2,7);
     }
   }
 }

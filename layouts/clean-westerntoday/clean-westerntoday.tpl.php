@@ -44,8 +44,11 @@
   </div>
 
   <div class="wwu-75-25-container wt-section">
-    <div class="wwu-75-percent-left-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+    <div class="wwu-left-half-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
       <?php print $content['left_2']; ?>
+    </div>
+    <div class="wwu-mid-half-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+      <?php print $content['mid_2']; ?>
     </div>
     <div class="wwu-25-percent-right-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
       <?php print $content['right_2']; ?>
