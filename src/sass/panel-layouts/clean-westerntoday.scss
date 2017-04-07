@@ -26,15 +26,20 @@ $zen-column-count: 8;
 
 .wwu-left-half-column {
   @include zen-clear();
-  @include zen-grid-item(3,1);
+  @include breakpoint($desktop) {
+    @include zen-grid-item(3,1);
+  }
 }
 .wwu-mid-half-column {
-  @include zen-grid-item(3,4);  
+  @include zen-clear();
+  @include breakpoint($tablet) {
+    @include zen-grid-item(4,1);
+  }
+  @include breakpoint($desktop) {
+    @include zen-clear(none);
+    @include zen-grid-item(3,4);  
+  }
 }
-.wwu-25-percent-right-column {
-  @include zen-grid-item(2,7);  
-}
-
 .wwu-4-col-container {
   @include zen-clear();
   @include breakpoint($tablet) {
@@ -43,7 +48,7 @@ $zen-column-count: 8;
       @include zen-grid-item(4,1); 
     }
     .col-2, .col-4 {
-      @include zen-grid-item(4,3);
+      @include zen-grid-item(4,5);
     }
   }
   @include breakpoint($desktop) {
