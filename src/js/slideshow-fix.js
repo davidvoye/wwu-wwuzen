@@ -12,6 +12,7 @@
         $('.flex-caption', context).each(function () {
           var height;
           var imageHeight;
+          var containerHeight;
           var topMargin;
           var $this;
 
