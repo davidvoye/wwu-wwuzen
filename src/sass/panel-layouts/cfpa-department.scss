@@ -52,7 +52,17 @@ $display-large: 850px;
     $zen-column-count: 2;
 
     .cfpa-department-top-left {
-      @include zen-grid-item(2,1);
+      @include zen-grid-item(1,1);
+      @include zen-clear(none);
+    }
+
+    .cfpa-department-top-right{
+      @include zen-grid-item(1,1);
+      @include zen-clear(none);
+    }
+
+    .cfpa-department-top-left {
+      @include zen-grid-item(1,1);
       @include zen-clear();
     }
 
@@ -62,7 +72,7 @@ $display-large: 850px;
     }
 
     .cfpa-department-bottom-left {
-      @include zen-grid-item(1,2);
+      @include zen-grid-item(1,1);
     }
 
     .cfpa-department-bottom-middle {
@@ -72,7 +82,7 @@ $display-large: 850px;
     }
 
     .cfpa-department-bottom-right {
-      @include zen-grid-item(1,2);
+      @include zen-grid-item(1,1);
       padding-bottom: 1em;
     }
   }
@@ -111,4 +121,3 @@ $display-large: 850px;
   }
 
 }
-
