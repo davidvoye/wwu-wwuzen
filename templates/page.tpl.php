@@ -190,7 +190,7 @@
         <?php print render($page['footer_center']); ?>
           <div class="western-privacy-statement">
             <a href="http://www.wwu.edu/privacy/">Website Privacy Statement</a><br>
-            <a href="https://www.wwu.edu/commitment-accessibility">Accessibility<a/>
+            <a href="https://www.wwu.edu/commitment-accessibility">Accessibility</a>
           </div>
       </div>
 
