@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Contains the theme's functions to manipulate Drupal's default markup.
@@ -154,8 +155,6 @@ function wwuzen_preprocess_page(&$variables, $hook) {
 }
 // */
 
-
-
 /**
  * Override or insert variables into the node templates.
  *
@@ -165,9 +164,9 @@ function wwuzen_preprocess_page(&$variables, $hook) {
  *   The name of the template being rendered ("node" in this case.)
  */
 function wwuzen_preprocess_node(&$variables, $hook) {
-  /* 
+  /*
    * Variables for nodes embedded via Node Embed
-   * 
+   *
    * The following Node Embed parameters are implemented:
    *   - align: left, right, or center
    *   - width: 25, 33, 50, 66, 75, 100 (percentages)
@@ -181,7 +180,7 @@ function wwuzen_preprocess_node(&$variables, $hook) {
       $k = str_replace('amp;', '', $key);
       $ne_vars[$k] = $val;
     }
-    
+
     $variables['ne_classes'] = "";
     // Check to see if the align Node Embed parameter exists
     if(isset($ne_vars['align'])) {
@@ -189,7 +188,7 @@ function wwuzen_preprocess_node(&$variables, $hook) {
       // Add the alignment value to the classes array used in our node template
       $variables['ne_classes'] .= ' '.check_plain($ne_vars['align']);
     }
-    
+
     // Check to see if the width Node Embed parameter exists
     if(isset($ne_vars['width'])) {
       // For security, run width through the check_plain() function
@@ -197,7 +196,7 @@ function wwuzen_preprocess_node(&$variables, $hook) {
       $width = filter_var(check_plain($ne_vars['width']), FILTER_SANITIZE_NUMBER_INT);
       $variables['ne_classes'] .= ' helper-width-'.$width.'-percent';
     }
-    
+
     $variables['ne_display_title'] = isset($ne_vars['display_title']) && strnatcasecmp($ne_vars['display_title'], "yes") == 0;
     $variables['ne_title_link'] = isset($ne_vars['title_link']) && strnatcasecmp($ne_vars['title_link'], "yes") == 0;
   }
@@ -341,4 +340,52 @@ function wwuzen_menu_link(array $variables) {
   }
 
   return $link;
+}
+
+/**
+ * Implements theme_date_nav_title().
+ */
+function wwuzen_date_nav_title($params) {
+  $granularity = $params['granularity'];
+  $view = $params['view'];
+  $date_info = $view->date_info;
+  $link = !empty($params['link']) ? $params['link'] : FALSE;
+  $format = !empty($params['format']) ? $params['format'] : NULL;
+
+  switch ($granularity) {
+    case 'year':
+      $title = $date_info->year;
+      $date_arg = $date_info->year;
+      break;
+
+    case 'month':
+      $format = !empty($format) ? $format : (empty($date_info->mini) ? 'F Y' : 'M');
+      $title = date_format_date($date_info->min_date, 'custom', $format);
+      $date_arg = $date_info->year . '-' . date_pad($date_info->month);
+      break;
+
+    case 'day':
+      $format = !empty($format) ? $format : (empty($date_info->mini) ? 'l, F j, Y' : 'l, F j');
+      $title = date_format_date($date_info->min_date, 'custom', $format);
+      $date_arg = $date_info->year . '-' . date_pad($date_info->month) . '-' . date_pad($date_info->day);
+      break;
+
+    case 'week':
+      $format = !empty($format) ? $format : (empty($date_info->mini) ? 'F j, Y' : 'F j');
+      $title = t('Week of @date', array(
+        '@date' => date_format_date($date_info->min_date, 'custom', $format),
+      ));
+      $date_arg = $date_info->year . '-W' . date_pad($date_info->week);
+      break;
+  }
+
+  if (!empty($date_info->mini) || $link) {
+    $attributes = array('title' => t('View full page month'));
+    $url = date_pager_url($view, $granularity, $date_arg, TRUE);
+
+    return l($title, $url, array('attributes' => $attributes));
+  }
+  else {
+    return $title;
+  }
 }
