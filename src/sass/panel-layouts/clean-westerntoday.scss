@@ -50,35 +50,18 @@ $zen-column-count: 8;
 .wwu-4-col-container {
   @include zen-clear();
 
-  @include breakpoint($tablet) {
-    .col-1,
-    .col-3 {
-      @include zen-clear();
-      @include zen-grid-item(4, 1);
+  display: flex;
+  flex-flow: row wrap;
+
+  [class^='col'] {
+    box-sizing: border-box;
+
+    @include breakpoint($tablet) {
+      width: 50%;
     }
 
-    .col-2,
-    .col-4 {
-      @include zen-grid-item(4, 5);
-    }
-  }
-
-  @include breakpoint($desktop) {
-    .col-1 {
-      @include zen-grid-item(2, 1);
-    }
-
-    .col-2 {
-      @include zen-grid-item(2, 3);
-    }
-
-    .col-3 {
-      @include zen-clear(none);
-      @include zen-grid-item(2, 5);
-    }
-
-    .col-4 {
-      @include zen-grid-item(2, 7);
+    @include breakpoint($desktop) {
+      width: 25%;
     }
   }
 }
