@@ -21,61 +21,102 @@
  *   - $content['bottom'] Content for the bottom 100% row.
  */
 ?>
-<div class="section-wrapper white-bg">
+<div class="wwu-100-percent-wrapper top-1-wrapper section-wrapper white-bg">
+
+  <?php if ($content['top_1']): ?>
   <div class="wwu-100-percent wt-section top" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
     <?php print $content['top_1']; ?>
-  </div> 
+  </div>
+  <?php endif; ?>
+
 </div>
 
-<div class="section-wrapper">
+<div class="wwu-100-percent-wrapper top-2-wrapper section-wrapper">
+
+  <?php if ($content['top_2']): ?>
   <div class="wwu-100-percent wt-section top" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
     <?php print $content['top_2']; ?>
-  </div> 
+  </div>
+  <?php endif; ?>
+
 </div>
 
-<div class="section-wrapper white-bg">
+<div class="wwu-75-25-wrapper middle-1-wrapper section-wrapper white-bg">
   <div class="wwu-75-25-container wt-section">
+
+    <?php if ($content['left_1']): ?>
     <div class="wwu-75-percent-left-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
       <?php print $content['left_1']; ?>
     </div>
+    <?php endif; ?>
+
+    <?php if ($content['right_1']): ?>
     <div class="wwu-25-percent-right-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
       <?php print $content['right_1']; ?>
     </div>
+    <?php endif; ?>
+
   </div>
 
   <div class="wwu-75-25-container wt-section">
+
+    <?php if ($content['left_2']): ?>
     <div class="wwu-left-half-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
       <?php print $content['left_2']; ?>
     </div>
+    <?php endif; ?>
+
+    <?php if ($content['mid_2']): ?>
     <div class="wwu-mid-half-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
       <?php print $content['mid_2']; ?>
     </div>
+    <?php endif; ?>
+
+    <?php if ($content['right_2']): ?>
     <div class="wwu-25-percent-right-column" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
       <?php print $content['right_2']; ?>
     </div>
+    <?php endif; ?>
+
   </div>
 </div>
 
-<div class="section-wrapper white-bg">
+<div class="wwu-4-col-wrapper middle-2-wrapper section-wrapper white-bg">
   <div class="wwu-4-col-container wt-section">
+
+    <?php if ($content['col_1']): ?>
     <div class="col-1" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
       <?php print $content['col_1']; ?>
     </div>
+    <?php endif; ?>
+
+    <?php if ($content['col_1']): ?>
     <div class="col-2" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
       <?php print $content['col_2']; ?>
     </div>
+    <?php endif; ?>
+
+    <?php if ($content['col_1']): ?>
     <div class="col-3" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
       <?php print $content['col_3']; ?>
     </div>
+    <?php endif; ?>
+
+    <?php if ($content['col_1']): ?>
     <div class="col-4" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
       <?php print $content['col_4']; ?>
     </div>
+    <?php endif; ?>
+
   </div>
 </div>
 
-<div class="section-wrapper">
+<div class="wwu-100-percent-wrapper bottom-wrapper section-wrapper">
+
+  <?php if ($content['bottom']): ?>
   <div class="wwu-100-percent wt-section bottom" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
     <?php print $content['bottom']; ?>
-  </div> 
-</div>
+  </div>
+  <?php endif; ?>
 
+</div>
