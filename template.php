@@ -389,3 +389,16 @@ function wwuzen_date_nav_title($params) {
     return $title;
   }
 }
+
+/**
+ * Implements theme_preprocess_views_view_unformatted().
+ */
+function wwuzen_preprocess_views_view_unformatted(&$variables) {
+  foreach ($variables['classes'] as $row_index => $row_classes) {
+    foreach ($row_classes as $row_class_index => $row_class) {
+      $variables['classes'][$row_index][$row_class_index] = drupal_html_class($row_class);
+    }
+
+    $variables['classes_array'][$row_index] = implode(' ', $variables['classes'][$row_index]);
+  }
+}
