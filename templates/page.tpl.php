@@ -68,6 +68,11 @@
  * @see zen_preprocess_page()
  * @see template_process()
  */
+
+ // Accordion Functionality
+ drupal_add_library('system', 'ui.accordion');
+ drupal_add_js('jQuery(document).ready(function() {jQuery(".accordion").accordion();});','inline');
+ 
 ?>
 
 <div class="page">
