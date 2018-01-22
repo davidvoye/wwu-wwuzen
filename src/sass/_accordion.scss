@@ -273,29 +273,31 @@ $accordion-child-horizontal-padding-increment: 1.5;
   padding: 0;
 }
 
-.ui-accordion-content-active { height: inherit !important; }
+.ui-accordion {
+  .ui-accordion-content-active { height: inherit !important; }
 
-.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br, .ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl, .ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl, .ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl
-{
-  border-radius: 0px;
-}
+  .ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br, .ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl, .ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl, .ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl
+  {
+    border-radius: 0px;
+  }
 
-.ui-accordion .ui-accordion-header {
-  padding: .25em 0em .25em 2em;
-}
+  .ui-accordion .ui-accordion-header {
+    padding: .25em 0em .25em 2em;
+  }
 
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-  border: none;
-  border-bottom: 2px solid white;
-  background: none;
-  background-color: #EEEEEE;
-}
+  .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    border: none;
+    border-bottom: 2px solid white;
+    background: none;
+    background-color: #EEEEEE;
+  }
 
-.ui-widget-content {
-  border: none;
-  color: #003f87;
-}
+  .ui-widget-content {
+    border: none;
+    color: #003f87;
+  }
 
-.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited {
-  color: #003f87;
+  .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited {
+    color: #003f87;
+  }
 }

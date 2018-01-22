@@ -293,7 +293,7 @@ function wwuzen_preprocess_block(&$variables, $hook) {
  * Perform necessary alterations to JavaScript be it is presented on the page.
  * Variou scripts are excluded from the footer as they are needed globally on the page.
  *
- * @param $javascript 
+ * @param $javascript
  *  The array of JavaScript files that have been added to the page
  */
 function wwuzen_js_alter(&$javascript) {
@@ -317,7 +317,7 @@ function wwuzen_js_alter(&$javascript) {
 
 /**
  * Implements theme_menu_link().
- * Allow display of a single link in the main menu as an icon instead of text. 
+ * Allow display of a single link in the main menu as an icon instead of text.
  * The option may be set in the administration page for all sub-themes of wwuzen.
  *
  * @param $variables
@@ -402,3 +402,7 @@ function wwuzen_preprocess_views_view_unformatted(&$variables) {
     $variables['classes_array'][$row_index] = implode(' ', $variables['classes'][$row_index]);
   }
 }
+
+// Accordion Functionality
+drupal_add_library('system', 'ui.accordion');
+drupal_add_js('jQuery(document).ready(function() {jQuery(".accordion").accordion();});','inline');
