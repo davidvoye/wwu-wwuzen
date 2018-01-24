@@ -152,6 +152,11 @@ function wwuzen_preprocess_page(&$variables, $hook) {
   //Render the search box variable so we can place it in the header.
   $search_box = drupal_get_form('google_appliance_block_form');
   $variables['search_box'] = drupal_render($search_box);
+  
+  // Accordion Functionality
+  drupal_add_library('system', 'ui.accordion');
+  drupal_add_js('jQuery(document).ready(function() {jQuery(".accordion").accordion();});','inline');
+
 }
 // */
 
@@ -402,7 +407,3 @@ function wwuzen_preprocess_views_view_unformatted(&$variables) {
     $variables['classes_array'][$row_index] = implode(' ', $variables['classes'][$row_index]);
   }
 }
-
-// Accordion Functionality
-drupal_add_library('system', 'ui.accordion');
-drupal_add_js('jQuery(document).ready(function() {jQuery(".accordion").accordion();});','inline');
