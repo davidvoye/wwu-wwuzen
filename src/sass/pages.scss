@@ -250,12 +250,25 @@ main {
 **************************************************** */
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
   color: $wwuOceanBlue; // Changed from Light Blue to "Ocean Blue" for color contrast
 
   &:hover, &:focus {text-decoration: underline;}
 }
 
+main {
+
+  ul, ol {
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
 /* ****************************************************
                     Typography
 **************************************************** */
@@ -492,8 +505,9 @@ ul.inline {
     display: inline;
     list-style-type: none;
     padding: 0 1em 0 0; /* LTR */
+
+    }
   }
-}
 
 /* The inline field label used by the Fences module */
 span.field-label {
