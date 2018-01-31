@@ -370,7 +370,6 @@ $zen-auto-include-item-base: false;
       list-style-type: none;
 
       li {
-        @include transition(.25s);
         width: 100%;
         float: none;
         text-align: left;
@@ -381,7 +380,6 @@ $zen-auto-include-item-base: false;
         padding: 0;
 
         a {
-          @include transition(1s);
           text-decoration: none;
           color:  #fff;
           padding: .7em 1em .65em 1em;
@@ -627,8 +625,7 @@ $zen-auto-include-item-base: false;
       display: table;
 
       li {
-        @include transition(.5s);
-        padding: 0px;
+        padding: 0;
         text-align: center;
         display: table-cell;
         float: none;
