@@ -121,17 +121,19 @@ li a.active {
         color:#fff;
         text-decoration:none;
         display:block;
-      }
-      &:hover, &:focus, &:active {
-        @include transition(.1s);
-        background-color: #ddd;
-        &, > a { color:$wwuBlue; }
+
+        &:hover, &:focus, &:active {
+          @include transition(.1s);
+          background-color: #ddd;
+          color:$wwuBlue;
+        }
       }
     }
     li.active {
       background-color:#ddd;
-      @include transition(.5s);
-      &:hover, &:focus, &:active { background-color:#eee; @include transition(.1s); }
+      a:hover, a:focus, a:active {
+        background-color:#eee;
+      }
       .active { color:$wwuBlue; }//ul.links li.active a.active
     }//ul.links li.active
   }//ul.links
