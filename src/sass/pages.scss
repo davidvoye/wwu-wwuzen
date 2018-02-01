@@ -157,6 +157,7 @@ header[role="banner"] button {
 
       &:hover, &:focus {
         color: $wwuOceanBlue;
+        text-decoration: underline;
       }
     }
   }
@@ -252,8 +253,6 @@ main {
 a {
   text-decoration: underline;
   color: $wwuOceanBlue; // Changed from Light Blue to "Ocean Blue" for color contrast
-
-  &:hover, &:focus {text-decoration: underline;}
 }
 
 main {
@@ -263,7 +262,7 @@ main {
     a {
       text-decoration: none;
 
-      &:hover {
+      &:hover, &:focus {
         text-decoration: underline;
       }
     }
