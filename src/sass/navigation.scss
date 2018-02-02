@@ -117,22 +117,25 @@ li a.active {
       background-color: $wwuBlue;
       cursor:pointer;
       a {
-        @include transition(.5s);
         color:#fff;
         text-decoration:none;
         display:block;
 
-        &:hover, &:focus, &:active {
-          background-color: #ddd;
-          color:$wwuBlue;
+        &:focus {
+          color: #bad80a;
+          text-decoration: underline;
         }
+      }
+      &:hover, &:focus, &:active {
+        @include transition(.1s);
+        background-color: #ddd;
+        &, > a { color:$wwuBlue; }
       }
     }
     li.active {
       background-color:#ddd;
-      a:hover, a:focus, a:active {
-        background-color:#eee;
-      }
+      @include transition(.5s);
+      &:hover, &:focus, &:active { background-color:#eee; @include transition(.1s); }
       .active { color:$wwuBlue; }//ul.links li.active a.active
     }//ul.links li.active
   }//ul.links
