@@ -122,7 +122,7 @@ li a.active {
         display:block;
 
         &:focus {
-          color: #bad80a;
+          color: $wwuLime;
           text-decoration: underline;
         }
       }
