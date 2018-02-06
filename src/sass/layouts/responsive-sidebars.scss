@@ -625,7 +625,7 @@ $zen-auto-include-item-base: false;
       display: table;
 
       li {
-        padding: 0;
+        padding: 5px 0;
         text-align: center;
         display: table-cell;
         float: none;
@@ -633,10 +633,6 @@ $zen-auto-include-item-base: false;
         border-color: white;
         border-width: 0 3px 0 0;
         text-transform: uppercase;
-
-        a {
-          padding: 5px 0;
-        }
 
         &:last-child {
           border: none;
