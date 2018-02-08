@@ -117,10 +117,14 @@ li a.active {
       background-color: $wwuBlue;
       cursor:pointer;
       a {
-        @include transition(.5s);
         color:#fff;
         text-decoration:none;
         display:block;
+
+        &:focus {
+          color: $wwuLime;
+          text-decoration: underline;
+        }
       }
       &:hover, &:focus, &:active {
         @include transition(.1s);
