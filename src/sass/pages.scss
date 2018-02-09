@@ -256,17 +256,6 @@ main {
     text-decoration: underline;
     color: $wwuOceanBlue; // Changed from Light Blue to "Ocean Blue" for color contrast
   }
-
-  ul, ol {
-
-    a {
-      text-decoration: none;
-
-      &:hover, &:focus {
-        text-decoration: underline;
-      }
-    }
-  }
 }
 /* ****************************************************
                     Typography
