@@ -250,11 +250,19 @@ main {
                         Links
 **************************************************** */
 
-main {
+article {
 
   a {
     text-decoration: underline;
     color: $wwuOceanBlue; // Changed from Light Blue to "Ocean Blue" for color contrast
+
+    &:focus, &:hover {
+      color: #fff;
+      background-color: $wwuRed;
+      text-decoration: none;
+      border-radius: 2px;
+      padding: 0 .2% .2%;
+    }
   }
 }
 /* ****************************************************
