@@ -90,7 +90,7 @@
           </ul>
         </div>
 
-        <div class="western-search" role="search" aria-label="University and Site Search" tabindex="0">
+        <div class="western-search" role="search" aria-label="University and Site Search">
           <button role="button" aria-pressed="false" aria-label="Open the search box">Open Search</button>
 
           <div class="western-search-widget">
