@@ -714,7 +714,7 @@ $zen-auto-include-item-base: false;
     .western-search {
       > button {
         &:focus {
-          border: 2px dotted $wwuBlue;
+          border: 2px dashed $wwuBlue;
         }
 
         top: 44px;
