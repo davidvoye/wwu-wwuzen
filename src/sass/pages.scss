@@ -544,8 +544,12 @@ footer {
   border-top: 10px solid #fff;
   padding-bottom: 0.5em;
 
-  a:hover, a:focus, a:active {
-    color:$wwuLime;
+  a {
+    text-decoration: underline;
+
+    &:hover, &:focus, &:active {
+      color:$wwuLime;
+    }
   }
 }
 
@@ -569,7 +573,7 @@ footer {
 
     a {
       color: #fff;
-      text-decoration: none;
+      text-decoration: underline;
       padding-left: 0.15em;
       text-transform: capitalize;
 
@@ -614,6 +618,10 @@ footer {
     a {
       color:#fff;
       text-decoration: underline;
+
+      &:focus, &:hover {
+        color: $wwuLime;
+      }
     }
     // Set the default styles for the p content in the right footer block
     p {
