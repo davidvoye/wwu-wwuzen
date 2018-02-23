@@ -104,7 +104,7 @@
     </section>
 
     <div>
-      <section class="site-header" aria-label="Site Header">
+      <div class="site-header" aria-label="Site Header">
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
           <?php if ($logo): ?>
             <div class="site-banner"><img src="<?php print $logo;?>" alt=""></div>
@@ -115,7 +115,7 @@
             <?php endif; ?>
           </div>
         </a>
-      </section>
+      </div>
 
       <nav class="main-nav" id="main-menu" role="navigation" aria-label="Main navigation">
         <?php print render($page['navigation']); ?>
@@ -134,7 +134,7 @@
       <?php print $breadcrumb; ?>
     </header>
 
-    <section class="content column">
+    <div class="content column">
       <?php print render($page['highlighted']); ?>
       <?php print render($title_suffix); ?>
       <?php print $messages; ?>
@@ -145,7 +145,7 @@
       <?php endif; ?>
       <?php print render($page['content']); ?>
       <?php print $feed_icons; ?>
-    </section>
+    </div>
 
     <?php if ($secondary_menu ): ?>
       <nav class="secondary-nav" role="navigation" aria-role="Secondary navigation">
