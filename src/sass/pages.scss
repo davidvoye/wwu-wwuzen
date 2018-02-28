@@ -157,6 +157,7 @@ header[role="banner"] button {
 
       &:hover, &:focus {
         color: $wwuOceanBlue;
+        text-decoration: underline;
       }
     }
   }
@@ -249,13 +250,21 @@ main {
                         Links
 **************************************************** */
 
-a {
-  text-decoration: none;
-  color: $wwuOceanBlue; // Changed from Light Blue to "Ocean Blue" for color contrast
+article {
 
-  &:hover, &:focus {text-decoration: underline;}
+  a {
+    text-decoration: underline;
+    color: $wwuOceanBlue; // Changed from Light Blue to "Ocean Blue" for color contrast
+
+    &:focus, &:hover {
+      color: #fff;
+      background-color: $wwuRed;
+      text-decoration: none;
+      border-radius: 2px;
+      padding: 0 .3% .2%;
+    }
+  }
 }
-
 /* ****************************************************
                     Typography
 **************************************************** */
@@ -492,8 +501,9 @@ ul.inline {
     display: inline;
     list-style-type: none;
     padding: 0 1em 0 0; /* LTR */
+
+    }
   }
-}
 
 /* The inline field label used by the Fences module */
 span.field-label {
