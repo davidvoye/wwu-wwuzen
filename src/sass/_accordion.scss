@@ -81,7 +81,7 @@ $accordion-child-horizontal-padding-increment: 1.5;
     ));
 
     .accordion-link {
-      margin-right: 2.75em;
+      margin-right: 16.5%;
     }
 
     .ui-icon {
@@ -106,11 +106,6 @@ $accordion-child-horizontal-padding-increment: 1.5;
   }
 
   .no-children {
-
-    .accordion-link {
-      color: $accordion-color;
-    }
-
     .ui-icon {
       display: none;
     }
