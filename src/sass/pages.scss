@@ -250,21 +250,19 @@ main {
                         Links
 **************************************************** */
 
-article {
+a {
+  text-decoration: underline;
+  color: $wwuOceanBlue; // Changed from Light Blue to "Ocean Blue" for color contrast
 
-  a {
-    text-decoration: underline;
-    color: $wwuOceanBlue; // Changed from Light Blue to "Ocean Blue" for color contrast
-
-    &:focus, &:hover {
-      color: #fff;
-      background-color: $wwuRed;
-      text-decoration: none;
-      border-radius: 2px;
-      padding: 0 .3% .2%;
-    }
+  &:focus, &:hover {
+    color: #fff;
+    background-color: $wwuRed;
+    text-decoration: none;
+    border-radius: 2px;
+    padding: 0 .3% .2%;
   }
 }
+
 /* ****************************************************
                     Typography
 **************************************************** */
