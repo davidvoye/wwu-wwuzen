@@ -49,7 +49,11 @@ body {
 **************************************************** */
 
 header[role="banner"] button {
-  outline:none;
+  outline: none;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .western-header {
