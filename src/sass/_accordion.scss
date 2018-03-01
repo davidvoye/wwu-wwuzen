@@ -12,6 +12,9 @@ $accordion-color: #222;
 $accordion-horizontal-padding: 1em;
 $accordion-vertical-padding: .66em;
 
+$accordion-hover-background-color: $wwuLime;
+$accordion-hover-color: $wwuBlue;
+
 // Active Trail.
 $accordion-active-trail-background-color: #ddd;
 
@@ -49,7 +52,9 @@ $accordion-child-horizontal-padding-increment: 1.5;
   .accordion-link:hover,
   .accordion-link:focus {
     @include transition(.3s);
-    color: $wwuOceanBlue;
+    background-color: $accordion-hover-background-color;
+    border-radius: 0;
+    color: $accordion-hover-color;
   }
 
   .ui-accordion-header,
