@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,800');
+@font-face {
+  font-family: 'fontello';
+  src: url("http://www.wwu.edu/sites/all/themes/wwuzen/font/fontello.eot?84055489");
+  src: url("http://www.wwu.edu/sites/all/themes/wwuzen/font/fontello.eot?84055489#iefix") format('embedded-opentype'),
+  url("http://www.wwu.edu/sites/all/themes/wwuzen/font/fontello.woff?84055489") format('woff'),
+  url("http://www.wwu.edu/sites/all/the:mes/wwuzen/font/fontello.ttf?84055489") format('truetype'),
+  url("http://www.wwu.edu/sites/all/themes/wwuzen/font/fontello.svg?84055489#fontello") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+form#ThunderstoneSearchForm table {
+    border-collapse: unset;
+    tbody tr td{
+        border-collapse: unset;
+        background-color: white;
+    }
+}
+
+#ThunderstoneSearchResults > table:nth-child(4) {
+  position: relative;
+  left: -23.5em;
+}
+
+div#ThunderstoneSearchResults {
+
+}
