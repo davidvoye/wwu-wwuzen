@@ -12,17 +12,12 @@
 
 form#ThunderstoneSearchForm table {
     border-collapse: unset;
-    tbody tr td{
+    tbody tr td {
         border-collapse: unset;
         background-color: white;
     }
 }
 
-#ThunderstoneSearchResults > table:nth-child(4) {
-  position: relative;
-  left: -23.5em;
-}
-
-div#ThunderstoneSearchResults {
-
+#ThunderstoneSearchResults > table {
+    float: left;
 }
