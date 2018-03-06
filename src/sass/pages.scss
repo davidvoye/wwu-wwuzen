@@ -260,10 +260,13 @@ main {
     text-decoration: underline;
 
     &:focus, &:hover {
-      background-color: $wwuRed;
-      border-radius: 2px;
-      color: #fff;
       text-decoration: none;
+      font-weight: bold;
+    }
+
+    &:focus {
+      border: solid $wwuOceanBlue 1px;
+      background-color: transparentize($wwuBlue, .95);
     }
   }
 }
