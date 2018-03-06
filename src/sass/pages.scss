@@ -264,7 +264,7 @@ main {
     }
 
     &:focus {
-      border: solid $wwuOceanBlue 1px;
+      box-shadow: 0px 0px 0px 1px $wwuOceanBlue;
       background-color: transparentize($wwuBlue, .95);
     }
   }
