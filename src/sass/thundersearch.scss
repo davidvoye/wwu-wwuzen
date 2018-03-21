@@ -149,7 +149,7 @@
   }
 
   /* Pager */
-  > table:last-of-type {
+  > table:nth-of-type(3) {
     display: block;
     margin: 1.5em auto;
 
