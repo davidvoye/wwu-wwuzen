@@ -2,9 +2,18 @@
 
 #ThunderstoneSearchForm {
 
+  #query {
+    border: solid #ccc 3px;
+    box-sizing: border-box;
+    height: 50px;
+    padding: 0 10px;
+    width: calc(60% - 44px);
+  }
+
   table {
     border-collapse: collapse;
     font-size: inherit;
+    width: 100%;
   }
 
   tbody {
@@ -25,16 +34,8 @@
     width: 100%;
   }
 
-  > table:first-of-type td[width="5%"] {
-    width: calc(70% - 30px);
-
-    #query {
-      width: 100%;
-    }
-  }
-
   input[value="Submit"] {
-    background-image: url('https://www.wwu.edu/sites/all/themes/wwuzen/images/icons/standard-sffd081bd62.png');
+    background: transparent url("../images/icons/search.png") top left / cover no-repeat;
     border: 0;
     color: transparent;
     height: 50px;
@@ -75,6 +76,7 @@
     border-spacing: 0;
     font-size: inherit;
     margin: 0 0 1.5em;
+    width: 100%;
   }
 
   tr {
@@ -106,8 +108,8 @@
 
     /* Results info */
     td {
-      border-bottom: #0083d6 solid 2px;
-      border-top: #0083d6 solid 2px;
+      border-bottom: $wwuLtblue solid 2px;
+      border-top: $wwuLtblue solid 2px;
       margin: 0;
       padding: 1em;
     }
@@ -174,7 +176,7 @@
 
       /* Previous */
       td:nth-child(1) {
-        flex: 1 0 auto;
+        flex: 1 0 20%;
         text-align: right;
       }
 
@@ -186,7 +188,7 @@
 
       /* Next */
       td:nth-child(3) {
-        flex: 1 0 auto;
+        flex: 1 0 20%;
         text-align: left;
       }
     }
@@ -211,10 +213,3 @@
   }
 }
 
-#query {
-  border: solid #ccc 3px;
-  height: 41px;
-  padding-left: 10px;
-  vertical-align: top;
-  width: calc(60% - 44px);
-}
