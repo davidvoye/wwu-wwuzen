@@ -32,6 +32,38 @@
       width: 100%;
     }
   }
+
+  input[value="Submit"] {
+    background-image: url('https://www.wwu.edu/sites/all/themes/wwuzen/images/icons/standard-sffd081bd62.png');
+    border: 0;
+    color: transparent;
+    height: 50px;
+    width: 50px;
+  }
+
+  input[value="Advanced"],
+  input[value="Hide Advanced"] {
+    display: none;
+  }
+
+  label[for="query"],
+  label[for="refine"],
+  #refine {
+    display: none;
+  }
+
+  [name="notq"],
+  [name="sq"]{
+    border: solid #ccc 3px;
+    height: 50px;
+    margin: 10px 0;
+    padding: 0 10px;
+    width: 50%;
+  }
+
+  [name="sq"] {
+    margin: 0 0 10px;
+  }
 }
 
 #ThunderstoneSearchResults {
@@ -185,40 +217,4 @@
   padding-left: 10px;
   vertical-align: top;
   width: calc(60% - 44px);
-}
-
-input[value="Submit"] {
-  background-image: url('https://www.wwu.edu/sites/all/themes/wwuzen/images/icons/standard-sffd081bd62.png');
-  border: 0;
-  color: transparent;
-  height: 50px;
-  width: 50px;
-}
-
-input[value="Advanced"],
-input[value="Hide Advanced"] {
-  display: none;
-}
-
-label[for="query"],
-label[for="refine"],
-#refine {
-  display: none;
-}
-
-header.page-title h1 {
-  margin: .17em 0 .4em;
-}
-
-[name="notq"],
-[name="sq"]{
-  border: solid #ccc 3px;
-  height: 50px;
-  margin: 10px 0;
-  padding: 0 10px;
-  width: 50%;
-}
-
-[name="sq"] {
-  margin: 0 0 10px;
 }
