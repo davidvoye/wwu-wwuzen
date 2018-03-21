@@ -1,21 +1,28 @@
+@import 'base';
+
 #ThunderstoneSearchForm {
+
   table {
-    border-collapse: unset;
+    border-collapse: collapse;
+    font-size: inherit;
+  }
 
-    tbody tr:nth-child(2) {
-      display: none;
-    }
+  tbody {
+    border: 0;
+  }
 
-    tbody tr th {
-      display: none;
-    }
+  tr:nth-child(2) {
+    display: none;
+  }
 
-    tbody tr td {
-      background-color: #fff;
-      border-collapse: unset;
-      padding: 0;
-      width: 100%;
-    }
+  th {
+    display: none;
+  }
+
+  td {
+    background-color: #fff;
+    padding: 0;
+    width: 100%;
   }
 
   > table:first-of-type td[width="5%"] {
@@ -27,39 +34,58 @@
   }
 }
 
-/* Advanced Search Styles */
 #ThunderstoneSearchResults {
-  margin-top: 20px;
+
+  table {
+    background: transparent;
+    border: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: inherit;
+    margin: 0 0 1.5em;
+  }
+
+  tr {
+    background: transparent;
+    border: 0;
+  }
+
+  td {
+    background: transparent;
+    border: 0;
+  }
 
   > table {
     float: left;
     table-layout: fixed;
 
     a {
-      white-space:normal !important;
+      white-space: normal !important;
     }
   }
 
   > table:first-of-type {
-    margin-bottom: 30px;
-  }
+    margin: 0;
 
-  /* Hide pager at top and results info at bottom */
-  > table:first-of-type tr:last-child {
-    display: none;
-  }
+    /* Hide pager at top */
+    tr:last-child {
+      display: none;
+    }
 
-  > table:first-of-type td {
-    border-top: #0083d6 solid 2px;
-    border-bottom: #0083d6 solid 2px;
-    padding: 12px;
+    /* Results info */
+    td {
+      border-bottom: #0083d6 solid 2px;
+      border-top: #0083d6 solid 2px;
+      margin: 0;
+      padding: 1em;
+    }
   }
 
   /* First column: results index */
   table table td:nth-child(1) {
     font-size: 0;
-    padding-right: 10px;
     padding: 0;
+    padding-right: 1em;
     width: 0;
   }
 
@@ -76,12 +102,12 @@
   }
 
   table table td:nth-child(3) img {
-    height: 1.2em;
+    height: 1.5em;
   }
 
   table table td:nth-child(3) img:first-child {
     background-color: #003f87;
-    margin-left: 20px;
+    margin-left: 1.5em;
   }
 
   table table td:nth-child(3) img:last-of-type {
@@ -90,33 +116,53 @@
 
   /* Pager */
   > table:last-of-type {
-    margin: 30px auto;
     display: block;
+    margin: 1.5em auto;
 
-    tbody{
+    tbody {
       display: block;
     }
 
     tr {
-      display: block;
+      display: flex;
+      flex-flow: row nowrap;
     }
 
     td {
       display: block;
+      width: auto;
     }
 
-    tr:nth-child(2) td:nth-child(1) {
+    /* Hide results info above pager */
+    tr:nth-child(1) {
+      display: none;
     }
 
-    tr:nth-child(2) td:nth-child(2) {
+    tr:nth-child(2) {
+
+      /* Previous */
+      td:nth-child(1) {
+        flex: 1 0 auto;
+        text-align: right;
+      }
+
+      /* Pages */
+      td:nth-child(2) {
+        flex: 0 1 auto;
+        text-align: center;
+      }
+
+      /* Next */
+      td:nth-child(3) {
+        flex: 1 0 auto;
+        text-align: left;
+      }
     }
 
-    tr:nth-child(2) td:nth-child(3) {
-    }
-
-    a {
+    /* Pages */
+    a, b {
       line-height: 2.5em;
-      margin: 0 10px;
+      margin: 0 1ex;
     }
   }
 }
@@ -143,8 +189,7 @@
 
 input[value="Submit"] {
   background-image: url('https://www.wwu.edu/sites/all/themes/wwuzen/images/icons/standard-sffd081bd62.png');
-  border: solid #ccc 3px;
-  border-left: 0;
+  border: 0;
   color: transparent;
   height: 50px;
   width: 50px;
