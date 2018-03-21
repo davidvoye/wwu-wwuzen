@@ -1,23 +1,179 @@
-@import url('https://fonts.googleapis.com/css?family=Muli:300,400,800');
-@font-face {
-  font-family: 'fontello';
-  src: url("http://www.wwu.edu/sites/all/themes/wwuzen/font/fontello.eot?84055489");
-  src: url("http://www.wwu.edu/sites/all/themes/wwuzen/font/fontello.eot?84055489#iefix") format('embedded-opentype'),
-  url("http://www.wwu.edu/sites/all/themes/wwuzen/font/fontello.woff?84055489") format('woff'),
-  url("http://www.wwu.edu/sites/all/the:mes/wwuzen/font/fontello.ttf?84055489") format('truetype'),
-  url("http://www.wwu.edu/sites/all/themes/wwuzen/font/fontello.svg?84055489#fontello") format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-form#ThunderstoneSearchForm table {
+#ThunderstoneSearchForm {
+  table {
     border-collapse: unset;
-    tbody tr td {
-        border-collapse: unset;
-        background-color: white;
+
+    tbody tr:nth-child(2) {
+      display: none;
     }
+
+    tbody tr th {
+      display: none;
+    }
+
+    tbody tr td {
+      background-color: #fff;
+      border-collapse: unset;
+      padding: 0;
+      width: 100%;
+    }
+  }
+
+  > table:first-of-type td[width="5%"] {
+    width: calc(70% - 30px);
+
+    #query {
+      width: 100%;
+    }
+  }
 }
 
-#ThunderstoneSearchResults > table {
+/* Advanced Search Styles */
+#ThunderstoneSearchResults {
+  margin-top: 20px;
+
+  > table {
     float: left;
+    table-layout: fixed;
+
+    a {
+      white-space:normal !important;
+    }
+  }
+
+  > table:first-of-type {
+    margin-bottom: 30px;
+  }
+
+  /* Hide pager at top and results info at bottom */
+  > table:first-of-type tr:last-child {
+    display: none;
+  }
+
+  > table:first-of-type td {
+    border-top: #0083d6 solid 2px;
+    border-bottom: #0083d6 solid 2px;
+    padding: 12px;
+  }
+
+  /* First column: results index */
+  table table td:nth-child(1) {
+    font-size: 0;
+    padding-right: 10px;
+    padding: 0;
+    width: 0;
+  }
+
+  /* Second column: link and description */
+  table table td:nth-child(2) {
+    line-height: 1.5;
+    width: 80%;
+  }
+
+  /* Third column: relevance and show more links */
+  table table td:nth-child(3) {
+    line-height: 1.5em;
+    text-align: left;
+  }
+
+  table table td:nth-child(3) img {
+    height: 1.2em;
+  }
+
+  table table td:nth-child(3) img:first-child {
+    background-color: #003f87;
+    margin-left: 20px;
+  }
+
+  table table td:nth-child(3) img:last-of-type {
+    background-color: #66b5e6;
+  }
+
+  /* Pager */
+  > table:last-of-type {
+    margin: 30px auto;
+    display: block;
+
+    tbody{
+      display: block;
+    }
+
+    tr {
+      display: block;
+    }
+
+    td {
+      display: block;
+    }
+
+    tr:nth-child(2) td:nth-child(1) {
+    }
+
+    tr:nth-child(2) td:nth-child(2) {
+    }
+
+    tr:nth-child(2) td:nth-child(3) {
+    }
+
+    a {
+      line-height: 2.5em;
+      margin: 0 10px;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  #ThunderstoneSearchResults table table td:nth-child(1) {
+    font-size: 1em;
+    padding-right: 10px;
+    width: 30px;
+  }
+
+  #ThunderstoneSearchResults table table td:nth-child(2) {
+    padding-right: 60px;
+  }
+}
+
+#query {
+  border: solid #ccc 3px;
+  height: 41px;
+  padding-left: 10px;
+  vertical-align: top;
+  width: calc(60% - 44px);
+}
+
+input[value="Submit"] {
+  background-image: url('https://www.wwu.edu/sites/all/themes/wwuzen/images/icons/standard-sffd081bd62.png');
+  border: solid #ccc 3px;
+  border-left: 0;
+  color: transparent;
+  height: 50px;
+  width: 50px;
+}
+
+input[value="Advanced"],
+input[value="Hide Advanced"] {
+  display: none;
+}
+
+label[for="query"],
+label[for="refine"],
+#refine {
+  display: none;
+}
+
+header.page-title h1 {
+  margin: .17em 0 .4em;
+}
+
+[name="notq"],
+[name="sq"]{
+  border: solid #ccc 3px;
+  height: 50px;
+  margin: 10px 0;
+  padding: 0 10px;
+  width: 50%;
+}
+
+[name="sq"] {
+  margin: 0 0 10px;
 }
