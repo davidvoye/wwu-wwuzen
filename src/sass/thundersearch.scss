@@ -1,72 +1,6 @@
 @import 'base';
 
-#ThunderstoneSearchForm {
-
-  #query {
-    border: solid #ccc 3px;
-    box-sizing: border-box;
-    height: 50px;
-    padding: 0 10px;
-    width: calc(60% - 44px);
-  }
-
-  table {
-    border-collapse: collapse;
-    font-size: inherit;
-    width: 100%;
-  }
-
-  tbody {
-    border: 0;
-  }
-
-  tr:nth-child(2) {
-    display: none;
-  }
-
-  th {
-    display: none;
-  }
-
-  td {
-    background-color: #fff;
-    padding: 0;
-    width: 100%;
-  }
-
-  input[value="Submit"] {
-    background: transparent url("../images/icons/search.png") top left / cover no-repeat;
-    border: 0;
-    color: transparent;
-    height: 50px;
-    width: 50px;
-  }
-
-  input[value="Advanced"],
-  input[value="Hide Advanced"] {
-    display: none;
-  }
-
-  label[for="query"],
-  label[for="refine"],
-  #refine {
-    display: none;
-  }
-
-  [name="notq"],
-  [name="sq"]{
-    border: solid #ccc 3px;
-    height: 50px;
-    margin: 10px 0;
-    padding: 0 10px;
-    width: 50%;
-  }
-
-  [name="sq"] {
-    margin: 0 0 10px;
-  }
-}
-
+#ThunderstoneSearchForm,
 #ThunderstoneSearchResults {
 
   table {
@@ -75,29 +9,67 @@
     border-collapse: collapse;
     border-spacing: 0;
     font-size: inherit;
-    margin: 0 0 1.5em;
+    table-layout: fixed;
     width: 100%;
   }
 
-  tr {
-    background: transparent;
-    border: 0;
+  th {
+    display: none;
   }
 
+  tbody,
+  tr,
+  th,
   td {
     background: transparent;
     border: 0;
+    margin: 0;
+    padding: 0;
   }
+}
 
-  > table {
-    float: left;
-    table-layout: fixed;
+#ThunderstoneSearchForm {
 
-    a {
-      white-space: normal !important;
+  #query {
+    border: solid #ccc 3px;
+    box-sizing: border-box;
+    height: 50px;
+    padding: 0 1em;
+    width: calc(100% - 50px);
+
+    @include breakpoint(600px) {
+      width: calc(50% - 50px);
     }
   }
 
+  tr:nth-child(2) {
+    display: none;
+  }
+
+  label {
+    @include squish-text;
+  }
+
+  [value="Submit"] {
+    @include hide-text;
+    background: transparent url('../images/icons/search.png') top left / cover no-repeat;
+    border: 0;
+    height: 50px;
+    width: 50px;
+  }
+}
+
+#ThunderstoneSearchResults {
+
+  dl {
+    margin-left: .5em;
+  }
+
+  table {
+    margin: 0 0 1.5em;
+  }
+
+  /* Results top */
   > table:first-of-type {
     margin: 0;
 
@@ -108,47 +80,13 @@
 
     /* Results info */
     td {
-      border-bottom: $wwuLtblue solid 2px;
-      border-top: $wwuLtblue solid 2px;
-      margin: 0;
+      border: $wwuLtblue solid 2px;
+      border-width: 2px 0;
       padding: 1em;
     }
   }
 
-  /* First column: results index */
-  table table td:nth-child(1) {
-    font-size: 0;
-    padding: 0;
-    padding-right: 1em;
-    width: 0;
-  }
-
-  /* Second column: link and description */
-  table table td:nth-child(2) {
-    line-height: 1.5;
-    width: 80%;
-  }
-
-  /* Third column: relevance and show more links */
-  table table td:nth-child(3) {
-    line-height: 1.5em;
-    text-align: left;
-  }
-
-  table table td:nth-child(3) img {
-    height: 1.5em;
-  }
-
-  table table td:nth-child(3) img:first-child {
-    background-color: #003f87;
-    margin-left: 1.5em;
-  }
-
-  table table td:nth-child(3) img:last-of-type {
-    background-color: #66b5e6;
-  }
-
-  /* Pager */
+  /* Results bottom */
   > table:nth-of-type(3) {
     display: block;
     margin: 1.5em auto;
@@ -172,6 +110,7 @@
       display: none;
     }
 
+    /* Pager */
     tr:nth-child(2) {
 
       /* Previous */
@@ -200,16 +139,3 @@
     }
   }
 }
-
-@media screen and (min-width: 600px) {
-  #ThunderstoneSearchResults table table td:nth-child(1) {
-    font-size: 1em;
-    padding-right: 10px;
-    width: 30px;
-  }
-
-  #ThunderstoneSearchResults table table td:nth-child(2) {
-    padding-right: 60px;
-  }
-}
-
