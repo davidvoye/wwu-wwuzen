@@ -1,0 +1,141 @@
+@import 'base';
+
+#ThunderstoneSearchForm,
+#ThunderstoneSearchResults {
+
+  table {
+    background: transparent;
+    border: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: inherit;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  th {
+    display: none;
+  }
+
+  tbody,
+  tr,
+  th,
+  td {
+    background: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+#ThunderstoneSearchForm {
+
+  #query {
+    border: solid #ccc 3px;
+    box-sizing: border-box;
+    height: 50px;
+    padding: 0 1em;
+    width: calc(100% - 50px);
+
+    @include breakpoint(600px) {
+      width: calc(50% - 50px);
+    }
+  }
+
+  tr:nth-child(2) {
+    display: none;
+  }
+
+  label {
+    @include squish-text;
+  }
+
+  [value="Submit"] {
+    @include hide-text;
+    background: transparent url('../images/icons/search.png') top left / cover no-repeat;
+    border: 0;
+    height: 50px;
+    width: 50px;
+  }
+}
+
+#ThunderstoneSearchResults {
+
+  dl {
+    margin-left: .5em;
+  }
+
+  table {
+    margin: 0 0 1.5em;
+  }
+
+  /* Results top */
+  > table:first-of-type {
+    margin: 0;
+
+    /* Hide pager at top */
+    tr:last-child {
+      display: none;
+    }
+
+    /* Results info */
+    td {
+      border: $wwuLtblue solid 2px;
+      border-width: 2px 0;
+      padding: 1em;
+    }
+  }
+
+  /* Results bottom */
+  > table:nth-of-type(3) {
+    display: block;
+    margin: 1.5em auto;
+
+    tbody {
+      display: block;
+    }
+
+    tr {
+      display: flex;
+      flex-flow: row nowrap;
+    }
+
+    td {
+      display: block;
+      width: auto;
+    }
+
+    /* Hide results info above pager */
+    tr:nth-child(1) {
+      display: none;
+    }
+
+    /* Pager */
+    tr:nth-child(2) {
+
+      /* Previous */
+      td:nth-child(1) {
+        flex: 1 0 20%;
+        text-align: right;
+      }
+
+      /* Pages */
+      td:nth-child(2) {
+        flex: 0 1 auto;
+        text-align: center;
+      }
+
+      /* Next */
+      td:nth-child(3) {
+        flex: 1 0 20%;
+        text-align: left;
+      }
+    }
+
+    /* Pages */
+    a, b {
+      line-height: 2.5em;
+      margin: 0 1ex;
+    }
+  }
+}
