@@ -77,7 +77,7 @@
     <section class="western-header" aria-label="University Links, Search, and Navigation">
       <span class="western-logo"><a href="http://www.wwu.edu">Western Washington University</a></span>
 
-      <nav role="navigation" aria-label="University related navigation.">
+      <nav aria-label="University related">
 
         <div class="western-quick-links" aria-label="Western Quick Links">
           <button role="button" aria-pressed="false" aria-label="Toggle Quick Links">Toggle Quick Links</button>
@@ -90,7 +90,7 @@
           </ul>
         </div>
 
-        <div class="western-search" role="search" aria-label="University and Site Search">
+        <div class="western-search" role="search" aria-label="University and Site">
           <button role="button" aria-pressed="false" aria-label="Open the search box">Open Search</button>
 
           <div class="western-search-widget">
@@ -117,7 +117,7 @@
         </a>
       </div>
 
-      <nav class="main-nav" id="main-menu" role="navigation" aria-label="Main navigation">
+      <nav class="main-nav" id="main-menu" aria-label="Main">
         <?php print render($page['navigation']); ?>
       </nav>
       <?php print render($page['header']); ?>
