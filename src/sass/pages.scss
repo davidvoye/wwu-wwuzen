@@ -94,6 +94,10 @@ header[role="banner"] button {
       }
     }
 
+    label {
+      @include squish-text;
+    }
+
     input {
       font-size: .85em;
       font-family: $muli;
