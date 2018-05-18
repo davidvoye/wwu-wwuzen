@@ -206,13 +206,13 @@
 
           <div class="western-social-media">
             <ul>
-              <li><a href="https://social.wwu.edu"><span aria-hidden="true" class="westernIcons-WwuSocialIcon"></span><span class="element-invisible">Western Social</span></a></li>
-              <li><a href="http://www.facebook.com/westernwashingtonuniversity"><span aria-hidden="true" class="westernIcons-FacebookIcon"></span><span class="element-invisible">Facebook</span></a></li>
-              <li><a href="http://www.flickr.com/wwu"><span aria-hidden="true" class="westernIcons-FlickrIcon"></span><span class="element-invisible">Flickr</span></a></li>
-              <li><a href="https://twitter.com/#!/WWU"><span aria-hidden="true" class="westernIcons-TwitterIcon"></span><span class="element-invisible">Twitter</span></a></li>
-              <li><a href="http://www.youtube.com/wwu"><span aria-hidden="true" class="westernIcons-YouTubeIcon"></span><span class="element-invisible">Youtube</span></a></li>
-              <li><a href="https://plus.google.com/+wwu/posts"><span aria-hidden="true" class="westernIcons-GooglePlusIcon"></span><span class="element-invisible">Google Plus</span></a></li>
-              <li><a href="http://news.wwu.edu/go/feed/1538/ru/atom/"><span aria-hidden="true" class="westernIcons-RSSicon"></span><span class="element-invisible">RSS</span></a></li>
+              <li><a href="https://social.wwu.edu"><span aria-hidden="true" class="westernIcons-WwuSocialIcon"></span>Western Social</a></li>
+              <li><a href="http://www.facebook.com/westernwashingtonuniversity"><span aria-hidden="true" class="westernIcons-FacebookIcon"></span>Facebook</a></li>
+              <li><a href="http://www.flickr.com/wwu"><span aria-hidden="true" class="westernIcons-FlickrIcon"></span>Flickr</a></li>
+              <li><a href="https://twitter.com/#!/WWU"><span aria-hidden="true" class="westernIcons-TwitterIcon"></span>Twitter</a></li>
+              <li><a href="http://www.youtube.com/wwu"><span aria-hidden="true" class="westernIcons-YouTubeIcon"></span>Youtube</a></li>
+              <li><a href="https://plus.google.com/+wwu/posts"><span aria-hidden="true" class="westernIcons-GooglePlusIcon"></span>Google Plus</a></li>
+              <li><a href="http://news.wwu.edu/go/feed/1538/ru/atom/"><span aria-hidden="true" class="westernIcons-RSSicon"></span>RSS</a></li>
             </ul>
           </div>
 
