@@ -1,141 +1,104 @@
 @import 'base';
+/*------------------------------------------------------------------------------
+SEARCH AREA STYLES
+------------------------------------------------------------------------------*/
+/*----------
+SEARCH BOX
+----------*/
+.search-area {
+  margin-top: 18px;
+  display: grid;
 
-#ThunderstoneSearchForm,
-#ThunderstoneSearchResults {
-
-  table {
-    background: transparent;
-    border: 0;
-    border-collapse: collapse;
-    border-spacing: 0;
-    font-size: inherit;
-    table-layout: fixed;
-    width: 100%;
+  grid-template-columns: 2fr 50px 1fr;
+  grid-template-rows: 50px auto auto;
+}
+.search-query {
+  height: 100%;
+  padding-left: 10px;
+  border: solid #ccc 3px;
+  font-size: 1em;
+  font-weight: 300;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+.search-submit {
+  background-image: url('../images/icons/search.png');
+  border: solid #ccc 3px;
+  background-size: contain;
+  border-left: 0;
+  width: 50px;
+  height: 50px;
+  color: transparent;
+}
+.search {
+  .advanced {
+    input {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background-color: #ccc;
+      font-size: 1em;
+      margin-left: 1em;
+    }
   }
-
-  th {
-    display: none;
+}
+/* Advanced Search Styles */
+.refine,
+.order,
+.metasearch-targets {
+  padding: 0;
+}
+.order  {
+  grid-row: 3;
+}
+.ranking-factors {
+  div {
+    display: inline-block;
+    margin-right: 1em;
   }
-
-  tbody,
-  tr,
-  th,
-  td {
-    background: transparent;
-    border: 0;
-    margin: 0;
-    padding: 0;
+}
+.ranking-factors {
+  h3 {
+    margin: 0 0 9px;
   }
 }
 
-#ThunderstoneSearchForm {
+/*----------------------------
+SEARCH RESULTS SUMMARY & PAGER
+----------------------------*/
+/* Info about matching results and sort link */
+.search-results-summary {
+  margin-top: 20px;
+  padding: 18px;
+  border-top: solid 2px $wwuLtblue;
+  border-bottom: solid 2px $wwuLtblue;
+  text-align: center;
+}
+.search-pager {
+  margin-top: 1em;
 
-  #query {
-    border: solid #ccc 3px;
-    box-sizing: border-box;
-    height: 50px;
-    padding: 0 1em;
-    width: calc(100% - 50px);
-
-    @include breakpoint(600px) {
-      width: calc(50% - 50px);
-    }
-  }
-
-  tr:nth-child(2) {
-    display: none;
-  }
-
-  label {
-    @include squish-text;
-  }
-
-  [value="Submit"] {
-    @include hide-text;
-    background: transparent url('../images/icons/search.png') top left / cover no-repeat;
-    border: 0;
-    height: 50px;
-    width: 50px;
+  span,
+  a {
+    margin: 0 .5em;
   }
 }
 
-#ThunderstoneSearchResults {
-
-  dl {
-    margin-left: .5em;
+/*------------
+SEARCH RESULTS
+-------------*/
+.search-result {
+  .result-number {
+    font-weight: bold;
+    margin-right: 0.5em;
   }
 
-  table {
-    margin: 0 0 1.5em;
-  }
+  dd {
+    margin-left: 1.2em;
+    margin-top: .5em;
 
-  /* Results top */
-  > table:first-of-type {
-    margin: 0;
-
-    /* Hide pager at top */
-    tr:last-child {
-      display: none;
-    }
-
-    /* Results info */
-    td {
-      border: $wwuLtblue solid 2px;
-      border-width: 2px 0;
-      padding: 1em;
-    }
-  }
-
-  /* Results bottom */
-  > table:nth-of-type(3) {
-    display: block;
-    margin: 1.5em auto;
-
-    tbody {
+    span {
       display: block;
-    }
-
-    tr {
-      display: flex;
-      flex-flow: row nowrap;
-    }
-
-    td {
-      display: block;
-      width: auto;
-    }
-
-    /* Hide results info above pager */
-    tr:nth-child(1) {
-      display: none;
-    }
-
-    /* Pager */
-    tr:nth-child(2) {
-
-      /* Previous */
-      td:nth-child(1) {
-        flex: 1 0 20%;
-        text-align: right;
-      }
-
-      /* Pages */
-      td:nth-child(2) {
-        flex: 0 1 auto;
-        text-align: center;
-      }
-
-      /* Next */
-      td:nth-child(3) {
-        flex: 1 0 20%;
-        text-align: left;
-      }
-    }
-
-    /* Pages */
-    a, b {
-      line-height: 2.5em;
-      margin: 0 1ex;
+      margin-bottom: .1em;
     }
   }
 }
