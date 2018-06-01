@@ -102,25 +102,6 @@
  *   http://drupal.org/node/223440 and http://drupal.org/node/1089656
  */
 
-
-/**
- * Override or insert variables into the maintenance page template.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("maintenance_page" in this case.)
- */
-/* -- Delete this line if you want to use this function
-function wwuzen_preprocess_maintenance_page(&$variables, $hook) {
-  // When a variable is manipulated or added in preprocess_html or
-  // preprocess_page, that same work is probably needed for the maintenance page
-  // as well, so we can just re-use those functions to do that work here.
-  wwuzen_preprocess_html($variables, $hook);
-  wwuzen_preprocess_page($variables, $hook);
-}
-// */
-
 /**
  * Override or insert variables into the html templates.
  *
@@ -130,14 +111,13 @@ function wwuzen_preprocess_maintenance_page(&$variables, $hook) {
  *   The name of the template being rendered ("html" in this case.)
  */
 function wwuzen_preprocess_html(&$variables, $hook) {
-  //Add the slide effect for our search box and wwumenu
+  // Add the slide effect for our search box and wwumenu.
   drupal_add_library('system','ui');
 
   // The body tag's classes are controlled by the $classes_array variable. To
   // remove a class from $classes_array, use array_diff().
-  //$variables['classes_array'] = array_diff($variables['classes_array'], array('class-to-remove'));
+  // $variables['classes_array'] = array_diff($variables['classes_array'], array('class-to-remove'));
 }
-// */
 
 /**
  * Override or insert variables into the page templates.
@@ -147,13 +127,11 @@ function wwuzen_preprocess_html(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-
 function wwuzen_preprocess_page(&$variables, $hook) {
-  //Render the search box variable so we can place it in the header.
+  // Render the search box variable so we can place it in the header.
   $search_box = drupal_get_form('thundersearch_form');
   $variables['search_box'] = drupal_render($search_box);
 }
-// */
 
 /**
  * Override or insert variables into the node templates.
@@ -165,64 +143,47 @@ function wwuzen_preprocess_page(&$variables, $hook) {
  */
 function wwuzen_preprocess_node(&$variables, $hook) {
   /*
-   * Variables for nodes embedded via Node Embed
+   * Variables for nodes embedded via Node Embed.
    *
    * The following Node Embed parameters are implemented:
-   *   - align: left, right, or center
-   *   - width: 25, 33, 50, 66, 75, 100 (percentages)
-   *   - display_title: if "yes", title is displayed
-   *   - title_link: if "yes", title will be displayed as a link to embedded node
+   *   - align: left, right, or center.
+   *   - width: 25, 33, 50, 66, 75, 100 (percentages).
+   *   - display_title: if "yes", title is displayed.
+   *   - title_link: if "yes", title will be displayed as a link to embedded
+   *       node.
    */
-  if ($variables['view_mode'] == 'node_embed') {
-    //Remove remains of escaped ampersands from variable names
+  if ($variables['view_mode'] === 'node_embed') {
+    // Remove remains of escaped ampersands from variable names.
     $ne_vars = array();
+
     foreach ($variables['node_embed_parameters'] as $key => $val) {
       $k = str_replace('amp;', '', $key);
       $ne_vars[$k] = $val;
     }
 
-    $variables['ne_classes'] = "";
-    // Check to see if the align Node Embed parameter exists
-    if(isset($ne_vars['align'])) {
-      // For security, run align through the check_plain() function
-      // Add the alignment value to the classes array used in our node template
-      $variables['ne_classes'] .= ' '.check_plain($ne_vars['align']);
+    $variables['ne_classes'] = '';
+
+    if (isset($ne_vars['align'])) {
+      $variables['ne_classes'] .= ' ' . check_plain($ne_vars['align']);
     }
 
-    // Check to see if the width Node Embed parameter exists
-    if(isset($ne_vars['width'])) {
-      // For security, run width through the check_plain() function
-      // Add the width value to the classes array used in our node template
+    if (isset($ne_vars['width'])) {
       $width = filter_var(check_plain($ne_vars['width']), FILTER_SANITIZE_NUMBER_INT);
-      $variables['ne_classes'] .= ' helper-width-'.$width.'-percent';
+      $variables['ne_classes'] .= ' helper-width-' . $width . '-percent';
     }
 
-    $variables['ne_display_title'] = isset($ne_vars['display_title']) && strnatcasecmp($ne_vars['display_title'], "yes") == 0;
-    $variables['ne_title_link'] = isset($ne_vars['title_link']) && strnatcasecmp($ne_vars['title_link'], "yes") == 0;
+    $variables['ne_display_title'] = isset($ne_vars['display_title']) && strnatcasecmp($ne_vars['display_title'], "yes") === 0;
+    $variables['ne_title_link'] = isset($ne_vars['title_link']) && strnatcasecmp($ne_vars['title_link'], "yes") === 0;
   }
 
   // Optionally, run node-type-specific preprocess functions, like
   // wwuzen_preprocess_node_page() or wwuzen_preprocess_node_story().
   $function = __FUNCTION__ . '_' . $variables['node']->type;
+
   if (function_exists($function)) {
     $function($variables, $hook);
   }
 }
-// */
-
-/**
- * Override or insert variables into the comment templates.
- *
- * @param $variables
- *   An array of variables to pass to the theme template.
- * @param $hook
- *   The name of the template being rendered ("comment" in this case.)
- */
-/* -- Delete this line if you want to use this function
-function wwuzen_preprocess_comment(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
-}
-// */
 
 /**
  * Override or insert variables into the region templates.
@@ -235,9 +196,9 @@ function wwuzen_preprocess_comment(&$variables, $hook) {
 /* -- Delete this line if you want to use this function
 function wwuzen_preprocess_region(&$variables, $hook) {
   // Don't use Zen's region--sidebar.tpl.php template for sidebars.
-  //if (strpos($variables['region'], 'sidebar_') === 0) {
-  //  $variables['theme_hook_suggestions'] = array_diff($variables['theme_hook_suggestions'], array('region__sidebar'));
-  //}
+  // if (strpos($variables['region'], 'sidebar_') === 0) {
+  //   $variables['theme_hook_suggestions'] = array_diff($variables['theme_hook_suggestions'], array('region__sidebar'));
+  // }
 }
 // */
 
@@ -287,28 +248,35 @@ function wwuzen_preprocess_block(&$variables, $hook) {
     $build['field_slideshow_images']['#attached']['js'][] = $images_loaded;
     $build['field_slideshow_images']['#attached']['js'][] = $slideshow_fix;
   }
-}*/
+}
+*/
 
 /**
  * Perform necessary alterations to JavaScript be it is presented on the page.
- * Variou scripts are excluded from the footer as they are needed globally on the page.
  *
- * @param $javascript 
- *  The array of JavaScript files that have been added to the page
+ * Various scripts are excluded from the footer as they are needed globally on
+ * the page.
+ *
+ * @param $javascript
+ *   The array of JavaScript files that have been added to the page.
  */
 function wwuzen_js_alter(&$javascript) {
   foreach ($javascript as &$value) {
     $data = $value['data'];
 
     if (!is_array($data)) {
-      $header = $data == 'misc/drupal.js' ||
-        strpos($data, 'google-analytics.com') ||
+      $header = (
+        strpos($data, 'ajax') ||
+        strpos($data, 'analytics') ||
+        strpos($data, 'drupal') ||
         strpos($data, 'imce') ||
         strpos($data, 'jquery') ||
-        strpos($data, 'analytics.js');
-        // Add additional footer excludes here
-    } else {
-      $header = false;
+        strpos($data, 'misc')
+        // Add addotional footer exlcudes here.
+      );
+    }
+    else {
+      $header = FALSE;
     }
 
     $value['scope'] = ($header) ? 'header' : 'footer';
@@ -317,25 +285,28 @@ function wwuzen_js_alter(&$javascript) {
 
 /**
  * Implements theme_menu_link().
- * Allow display of a single link in the main menu as an icon instead of text. 
- * The option may be set in the administration page for all sub-themes of wwuzen.
+ *
+ * Allow display of a single link in the main menu as an icon instead of text.
+ * The option may be set in the administration page for all sub-themes of
+ * wwuzen.
  *
  * @param $variables
- *  The associative array of elements in the current menu.
+ *   The associative array of elements in the current menu.
  */
 function wwuzen_menu_link(array $variables) {
   $element = $variables['element'];
   $menu_name = $element['#original_link']['menu_name'];
 
-  if (theme_get_setting('home_icon') == 1 && theme_get_setting('home_path') == $element['#href']) {
-    $element['#localized_options']['html'] = true;
+  if (theme_get_setting('home_icon') === 1 && theme_get_setting('home_path') === $element['#href']) {
+    $element['#localized_options']['html'] = TRUE;
     $element['#localized_options']['attributes']['class'][] = 'menu-link-icon';
 
     $format = "<li%s>%s</li>\n";
-    $output = l('<span class="menu-link-text">' . $element['#title']  . '</span>', $element['#href'], $element['#localized_options']);
+    $output = l('<span class="menu-link-text">' . $element['#title'] . '</span>', $element['#href'], $element['#localized_options']);
 
     $link = sprintf($format, drupal_attributes($element['#attributes']), $output);
-  } else {
+  }
+  else {
     $link = theme_menu_link($variables);
   }
 
