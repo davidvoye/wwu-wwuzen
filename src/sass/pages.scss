@@ -60,20 +60,24 @@ header[role="banner"] button {
   background-color: $wwuLime;
   width: 100%;
   margin-bottom:10px;
+
   a {
     @include transition(.1s);
     color: $wwuBlack;
     display: block;
+
     &:hover, &:active, &:focus {
       @include transition(.5s);
       text-decoration: none;
       color: $wwuBlue;
     }
+
     p {
       line-height: 34px;
       text-transform: uppercase;
     }
   }
+
   a p {
     margin: 0 0 0 260px;
   }
