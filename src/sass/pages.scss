@@ -62,7 +62,6 @@ header[role="banner"] button {
   margin-bottom:10px;
   a {
     @include transition(.1s);
-
     color: $wwuBlack;
     display: block;
     &:hover, &:active, &:focus {
