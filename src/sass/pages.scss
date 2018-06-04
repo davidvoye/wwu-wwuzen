@@ -62,7 +62,7 @@ header[role="banner"] button {
   width: 100%;
 
     a {
-      color: #111;
+      color: $wwuBlack;
       display: block;
       @include transition(.1s);
 
