@@ -131,7 +131,7 @@ function wwuzen_preprocess_page(&$variables, $hook) {
   // Render the search box variable so we can place it in the header.
   $search_box = drupal_get_form('thundersearch_form');
   $variables['search_box'] = drupal_render($search_box);
-  
+
   // Accordion Functionality
   drupal_add_library('system', 'ui.accordion');
   drupal_add_js('jQuery(document).ready(function() {jQuery(".accordion").accordion();});','inline');
@@ -259,19 +259,11 @@ function wwuzen_preprocess_block(&$variables, $hook) {
 /**
  * Perform necessary alterations to JavaScript be it is presented on the page.
  *
-<<<<<<< HEAD
  * Various scripts are excluded from the footer as they are needed globally on
  * the page.
  *
  * @param $javascript
  *   The array of JavaScript files that have been added to the page.
-||||||| merged common ancestors
- * @param $javascript 
- *  The array of JavaScript files that have been added to the page
-=======
- * @param $javascript
- *  The array of JavaScript files that have been added to the page
->>>>>>> f5de8dc0520204fdc28b6eddc5487f3952ca03f4
  */
 function wwuzen_js_alter(&$javascript) {
   foreach ($javascript as &$value) {
@@ -298,18 +290,10 @@ function wwuzen_js_alter(&$javascript) {
 
 /**
  * Implements theme_menu_link().
-<<<<<<< HEAD
  *
  * Allow display of a single link in the main menu as an icon instead of text.
  * The option may be set in the administration page for all sub-themes of
  * wwuzen.
-||||||| merged common ancestors
- * Allow display of a single link in the main menu as an icon instead of text. 
- * The option may be set in the administration page for all sub-themes of wwuzen.
-=======
- * Allow display of a single link in the main menu as an icon instead of text.
- * The option may be set in the administration page for all sub-themes of wwuzen.
->>>>>>> f5de8dc0520204fdc28b6eddc5487f3952ca03f4
  *
  * @param $variables
  *   The associative array of elements in the current menu.
