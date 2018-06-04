@@ -68,8 +68,7 @@
  * @see zen_preprocess_page()
  * @see template_process()
  */
-?>
-
+ ?>
 <div class="page">
 
   <header role="banner">
