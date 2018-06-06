@@ -396,20 +396,23 @@ table {
 }
 
 tr:nth-of-type(odd) {
-  background: #eee;
+  background: #ddd;
 }
 
 th {
   font-weight:normal;
+  a.active {
+    color: $wwuBlue;
+  }
 }
 
 td, th {
   padding: 0.5em;
   text-align: left;
+}
+
+td.active {
   background-color: #eee;
-  &:active {
-    background-color:#eee;
-  }
 }
 
 tr {
