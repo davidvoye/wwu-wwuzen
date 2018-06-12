@@ -674,7 +674,7 @@ footer {
     // Set the default styles for the p content in the right footer block
     p {
       position:relative;
-      padding-left:2em;
+      padding-left:.5em;
       margin-bottom:.75em;
       margin-top:0;
       line-height:1.5em;
@@ -687,6 +687,10 @@ footer {
         position:absolute;
         left:0;
       }
+
+      .western-address-city {
+          margin-left: 15px;
+        }
     }
 
     .western-address:before,
@@ -701,19 +705,24 @@ footer {
       width:14px;
       height:12px;
       margin-top:-1px;
+      margin-left: -4px;
+      padding-right: 8px;
     }
 
     .western-telephone:before {
       content: '\21';
       width:12px;
       height:10px;
+      margin-left: -4px;
+      padding-right: 8px;
     }
 
     .western-contact:before {
       content: '\25';
       width:11px;
       height:8px;
-      margin-left:1px;
+      margin-left: -4px;
+      padding-right: 8px;
     }
   }
 
