@@ -122,7 +122,7 @@ $accordion-child-horizontal-padding-increment: 1.5;
   .active:hover,
   .active:focus {
     @include transition(.3s);
-    color: $wwuGreen;
+    text-decoration: underline;
   }
 
   .ui-corner-all,
