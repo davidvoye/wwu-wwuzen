@@ -754,14 +754,15 @@ footer {
       overflow: hidden;
       white-space: nowrap;
 
-      &:before {
+      span:before {
         width: $social-icon-size;
         height: $social-icon-size;
         font-family: 'fontello';
         color: white;
       }
 
-      &:focus {
+      &:focus,
+      &:hover {
         border-bottom: 3px solid $wwuLime;
       }
     }
